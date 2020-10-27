@@ -5,7 +5,6 @@ using UnityEngine;
 public class VendingMachine : MonoBehaviour, IVendingMachine
 {
     public GameObject[] prefabOfItemsForSale;
-    //[SerializeField] private GameObject usersInteractableUI;
     public GameObject itemSpawnPoint;
 
 
@@ -16,14 +15,10 @@ public class VendingMachine : MonoBehaviour, IVendingMachine
 
     public void SpawnSoldItem(string itemName)
     {
-       // Debug.Log("Instantiate objects that were told to the user");
 
         if (prefabOfItemsForSale.Length > 0 && itemSpawnPoint) 
             Instantiate(prefabOfItemsForSale[0], itemSpawnPoint.transform.position, Quaternion.identity);
-        // else
-        // {
-        //     Debug.Log("error spawning item, itemSpawnPoint or prefab is null");
-        // }
+        
         
         Debug.Log("FAKE SOAP WAS PURCHASED!");
     
@@ -52,40 +47,7 @@ public class VendingMachine : MonoBehaviour, IVendingMachine
             Debug.Log("disable the vending machine ui");
     }
 
-
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     Debug.Log("press E to spawn item");
-    //
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         if (Input.GetKeyDown(KeyCode.E))
-    //         {
-    //             Debug.Log("User using vending machine");
-    //
-    //             SpawnSoldItem("test");
-    //         }
-    //     }
-    //     
-    // }
-
-    //rivate void OnTriggerStay(Collider other)
-    // private void OnControllerColliderHit(ControllerColliderHit other)
-    // {
-    //     Debug.Log("press E to spawn item");
-    //
-    //     if (other.gameObject.CompareTag("Player"))
-    //     {
-    //         if (Input.GetKeyDown(KeyCode.E))
-    //         {
-    //             Debug.Log("User using vending machine");
-    //
-    //
-    //             SpawnSoldItem("test");
-    //         }
-    //     }
-    //     
-    // }
+    
 
     private void OnTriggerStay(Collider other)
     {
