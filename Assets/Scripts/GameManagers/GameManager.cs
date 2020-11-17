@@ -39,9 +39,7 @@ public class GameManager : MonoBehaviour
     //loads the game level
     public void StartGame()
     {
-        //SceneManager.LoadScene("GameLevelScene");
-
-        SceneManager.LoadScene(1);  // TEMP LOAD FOR SAMPLE SCENE
+        SceneManager.LoadScene("LoadingScreen1"); 
     }
     //leaves the game
     public void QuitGame()
@@ -65,4 +63,9 @@ public class GameManager : MonoBehaviour
        // private set { _instance = value; }
     }
 
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("LoadingScreen2");  
+    }
+    //function with temp load for sample scene is now in LoadScreen2CanvasManager
 }
