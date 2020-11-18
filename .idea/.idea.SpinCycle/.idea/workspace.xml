@@ -20,35 +20,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6edd3356-5640-48c5-9fc2-63461a08671e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/TestingObject_Mats.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/TestingObject_Mats/Ground_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/TestingObject_Mats/Ground_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/TestingObject_Mats/TestPlayer_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/TestingObject_Mats/TestPlayer_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/TestingObject_Mats/item_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/TestingObject_Mats/item_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TestingPrefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TestingPrefabs/TestPlayer.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TestingPrefabs/TestPlayer.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TestingPrefabs/fakeSoapPrefab.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TestingPrefabs/fakeSoapPrefab.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/GamePlaySystems-Brian.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/GamePlaySystems-Brian.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TestItemsToSell.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TestItemsToSell/IItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TestItemsToSell/IItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TestItemsToSell/Item.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TestItemsToSell/Item.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TestPlayer.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TestPlayer/MouseLook.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TestPlayer/MouseLook.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TestPlayer/PlayerInventory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TestPlayer/PlayerInventory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TestPlayer/PlayerMovement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TestPlayer/PlayerMovement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/MasterAudioMixerGroup.mixer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/MasterAudioMixerGroup.mixer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/MasterSfxMixerGroup.mixer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/MasterSfxMixerGroup.mixer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/TestingFiles.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/TestingFiles/Coin.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/TestingFiles/Coin.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/TestingFiles/explosion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/TestingFiles/explosion.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/TestingFiles/laser.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/TestingFiles/laser.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/TestingFiles/theme1.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/TestingFiles/theme1.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/TestingFiles/theme2.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/TestingFiles/theme2.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/AudioManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/AudioManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/AudioManagerTESTING.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/AudioManagerTESTING/AudioManagerTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/AudioManagerTESTING/AudioManagerTest.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Timer/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Timer/Timer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,21 +59,39 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnityNetworking_LLAPI_Server/Assets/Scripts/Server.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../UnityProjects/2D_EventTest_Project1/Assets/Scripts/AimAtMouse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnitTest_Project1/Assets/_Project/Editor/MinMaxDrawer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnitTest_Project2/Assets/Tests/EditMode/damage_calculator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManagers/AudioManagerTESTING/AudioManagerTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/buttons.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Timer/Timer.cs" />
+        <option value="$PROJECT_DIR$/../../../UnityProjects/UnityNetworking_LLAPI_Server/Assets/Scripts/Server.cs" />
+        <option value="$PROJECT_DIR$/../../../UnityProjects/UnitTest_Project2/Assets/Tests/EditMode/damage_calculator.cs" />
+        <option value="$PROJECT_DIR$/../../../UnityProjects/2D_EventTest_Project1/Assets/Scripts/AimAtMouse.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/AudioManagerTESTING/AudioManagerTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/AudioManager.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1jXM3iP7Giz6FodzT2B7nRGS8ar" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30010834" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -109,6 +127,9 @@
       <updated>1603945786580</updated>
       <workItem from="1603945797442" duration="476000" />
       <workItem from="1603997712277" duration="721000" />
+      <workItem from="1604972345109" duration="10225000" />
+      <workItem from="1605660457922" duration="823000" />
+      <workItem from="1605710620498" duration="3311000" />
     </task>
     <servers />
   </component>
@@ -130,6 +151,92 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom" timestamp="1605639659854">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659854" />
+    <state width="1877" height="375" key="GridCell.Tab.0.center" timestamp="1605639659853">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.center/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659853" />
+    <state width="1877" height="375" key="GridCell.Tab.0.left" timestamp="1605639659853">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.left/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659853" />
+    <state width="1877" height="375" key="GridCell.Tab.0.right" timestamp="1605639659854">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.right/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659854" />
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1605639659854">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659854" />
+    <state width="1877" height="375" key="GridCell.Tab.1.center" timestamp="1605639659854">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.center/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659854" />
+    <state width="1877" height="375" key="GridCell.Tab.1.left" timestamp="1605639659854">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.left/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659854" />
+    <state width="1877" height="375" key="GridCell.Tab.1.right" timestamp="1605639659854">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.right/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659854" />
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom" timestamp="1605639659854">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659854" />
+    <state width="1877" height="375" key="GridCell.Tab.2.center" timestamp="1605639659854">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.center/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659854" />
+    <state width="1877" height="375" key="GridCell.Tab.2.left" timestamp="1605639659854">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.left/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659854" />
+    <state width="1877" height="375" key="GridCell.Tab.2.right" timestamp="1605639659854">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.right/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659854" />
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom" timestamp="1605639659854">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659854" />
+    <state width="1877" height="375" key="GridCell.Tab.3.center" timestamp="1605639659854">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.center/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659854" />
+    <state width="1877" height="375" key="GridCell.Tab.3.left" timestamp="1605639659854">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.left/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659854" />
+    <state width="1877" height="375" key="GridCell.Tab.3.right" timestamp="1605639659854">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.right/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1605639659854" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/GameManagers/AudioManagerTESTING/AudioManagerTest.cs</url>
+          <line>29</line>
+          <properties documentPath="C:\Dev\TFS\CAPSTONE\SpinCycle\Assets\Scripts\GameManagers\AudioManagerTESTING\AudioManagerTest.cs" initialLine="29">
+            <startOffsets>
+              <option value="669" />
+            </startOffsets>
+            <endOffsets>
+              <option value="705" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

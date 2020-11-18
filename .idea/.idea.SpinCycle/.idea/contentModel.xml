@@ -2,23 +2,77 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Dev\TFS\CAPSTONE\SpinCycle" t="IncludeRecursive">
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="CharacterMechanics" t="Include">
+            <e p="Character.cs" t="Include" />
+            <e p="MouseLook.cs" t="Include" />
+          </e>
+          <e p="GameManagers" t="Include">
+            <e p="AudioManager.cs" t="Include" />
+            <e p="AudioManagerTESTING" t="Include">
+              <e p="AudioManagerTest.cs" t="Include" />
+            </e>
+            <e p="CanvasManager.cs" t="Include" />
+            <e p="GameManager.cs" t="Include" />
+          </e>
           <e p="GamePlaySystems" t="Include">
-            <e p="TestItemsToSell" t="Include">
-              <e p="IItem.cs" t="Include" />
-              <e p="Item.cs" t="Include" />
-            </e>
-            <e p="TestPlayer" t="Include">
-              <e p="MouseLook.cs" t="Include" />
-              <e p="PlayerInventory.cs" t="Include" />
-              <e p="PlayerMovement.cs" t="Include" />
-            </e>
             <e p="VendingMachine" t="Include">
               <e p="IVendingMachine.cs" t="Include" />
               <e p="VendingMachine.cs" t="Include" />
             </e>
+            <e p="WashingMachine" t="Include">
+              <e p="WashingMachine.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Items" t="Include">
+            <e p="PickupAndCarryItems.cs" t="Include" />
+          </e>
+          <e p="Timer" t="Include">
+            <e p="Timer.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Standard Assets" t="Include">
+          <e p="Cameras" t="Include">
+            <e p="CameraGuidelines.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="AbstractTargetFollower.cs" t="Include" />
+              <e p="AutoCam.cs" t="Include" />
+              <e p="FreeLookCam.cs" t="Include" />
+              <e p="HandHeldCam.cs" t="Include" />
+              <e p="LookatTarget.cs" t="Include" />
+              <e p="PivotBasedCameraRig.cs" t="Include" />
+              <e p="ProtectCameraFromWallClip.cs" t="Include" />
+              <e p="TargetFieldOfView.cs" t="Include" />
+            </e>
+          </e>
+          <e p="CrossPlatformInput" t="Include">
+            <e p="CrossPlatformInputGuidelines.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="AxisTouchButton.cs" t="Include" />
+              <e p="ButtonHandler.cs" t="Include" />
+              <e p="CrossPlatformInputManager.cs" t="Include" />
+              <e p="InputAxisScrollbar.cs" t="Include" />
+              <e p="Joystick.cs" t="Include" />
+              <e p="MobileControlRig.cs" t="Include" />
+              <e p="PlatformSpecific" t="Include">
+                <e p="MobileInput.cs" t="Include" />
+                <e p="StandaloneInput.cs" t="Include" />
+              </e>
+              <e p="TiltInput.cs" t="Include" />
+              <e p="TouchPad.cs" t="Include" />
+              <e p="VirtualInput.cs" t="Include" />
+            </e>
+          </e>
+          <e p="ThirdPersonCharacter" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="AICharacterControl.cs" t="Include" />
+              <e p="ThirdPersonCharacter.cs" t="Include" />
+              <e p="ThirdPersonUserControl.cs" t="Include" />
+            </e>
+            <e p="ThirdPersonCharacterGuidelines.txt" t="Include" />
           </e>
         </e>
       </e>
