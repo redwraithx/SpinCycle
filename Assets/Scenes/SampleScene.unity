@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 1 
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -123,8 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &33161654 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6627814966707534623, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
@@ -900,8 +898,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1001 &1139351698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1349,7 +1345,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900108920}
   m_CullTransparentMesh: 0
->>>>>>> Stashed changes
 --- !u!1001 &2611496048655083238
 PrefabInstance:
   m_ObjectHideFlags: 0
