@@ -13,7 +13,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 
-        
+        public Transform ObjectHolder;
+        public bool carryObject;
+        public GameObject Item;
+       
         private void Start()
         {
             // get the transform of the main camera
@@ -35,6 +38,36 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Update()
         {
+          if(Input.GetKeyDown(KeyCode.R) && carryObject == false)
+            {
+                RaycastHit hit;
+                Ray directionRay = new Ray(transform.position, transform.forward);
+                if(Physics.Raycast(directionRay,out hit, 10f))
+                {
+                    if(hit.collider.tag == "Object" )
+                    {
+                        carryObject = true;                    
+                        if(carryObject == true)
+                        {
+                            Item = hit.collider.gameObject;
+                            
+                            Item.transform.SetParent(ObjectHolder);
+                           // Item.gameObject.transform.position = ObjectHolder.position;
+                            Item.GetComponent<Rigidbody>().isKinematic = true;
+                            Item.GetComponent<Rigidbody>().useGravity = false;
+                        }
+                    }
+                }    
+            }
+         else if(Input.GetKeyDown(KeyCode.R) && carryObject == true)
+            {
+                carryObject = false;
+                ObjectHolder.DetachChildren();
+                Item.GetComponent<Rigidbody>().isKinematic = false;
+                Item.GetComponent<Rigidbody>().useGravity = true;
+            }
+         
+          
             if (!m_Jump)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
