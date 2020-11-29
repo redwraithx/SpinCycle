@@ -56,7 +56,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenuScene");
     }
 
-    
+    public void ToSettings()
+    {
+        SceneManager.LoadScene("SettingsMenu");
+    }
     public static GameManager Instance
     {
         get { return _instance; }

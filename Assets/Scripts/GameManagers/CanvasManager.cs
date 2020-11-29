@@ -9,6 +9,7 @@ public class CanvasManager : MonoBehaviour
     public Button quitButton;
     public Button backToMainButton;
     public Button playButton;
+    public Button settingsButton;
     void Start()
     {
         //these are all just checking to see if you've hit the button and then triggering the scripts in game manager
@@ -28,6 +29,10 @@ public class CanvasManager : MonoBehaviour
         if (playButton)
         {
             playButton.onClick.AddListener(GameManager.Instance.PlayGame);
+        }
+        if (settingsButton)
+        {
+            settingsButton.onClick.AddListener(GameManager.Instance.ToSettings);
         }
     }
 
