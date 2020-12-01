@@ -197,6 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 197929433}
   m_Layer: 0
   m_Name: GrabPoint
@@ -207,12 +208,20 @@ GameObject:
   m_Layer: 5
   m_Name: Text
 >>>>>>> parent of 86c7354... Test commit
+=======
+  - component: {fileID: 197929433}
+  m_Layer: 0
+  m_Name: GrabPoint
+>>>>>>> parent of 418990b... Evan branch (#6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
 --- !u!4 &197929433
 Transform:
 =======
@@ -224,6 +233,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
   m_GameObject: {fileID: 197929432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.968, z: 0.66}
@@ -232,6 +244,7 @@ RectTransform:
   m_Father: {fileID: 605105725}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 =======
   m_GameObject: {fileID: 53897205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -299,6 +312,8 @@ CanvasRenderer:
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
 --- !u!1001 &289789166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -537,11 +552,15 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
 --- !u!4 &605105725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2095997803905305812, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
   m_PrefabInstance: {fileID: 1139351698}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 --- !u!1 &705507993
@@ -560,6 +579,9 @@ Transform:
 =======
 --- !u!1 &705507993
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
+=======
+--- !u!1 &705507993
+>>>>>>> parent of 418990b... Evan branch (#6)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -646,6 +668,7 @@ Transform:
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.5273208, y: 0.68445885, z: -0.40509933, w: 0.2989037}
   m_LocalPosition: {x: 0, y: 11.54, z: 9.494}
+<<<<<<< HEAD
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1446,11 +1469,43 @@ RectTransform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1368029674
+=======
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 60.434, y: 182.098, z: 76.444}
+--- !u!1 &706825675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 756229095}
+  - component: {fileID: 756229094}
+  - component: {fileID: 756229093}
+  - component: {fileID: 756229092}
+  - component: {fileID: 756229091}
+  - component: {fileID: 756229090}
+  - component: {fileID: 706825677}
+  - component: {fileID: 706825676}
+  m_Layer: 0
+  m_Name: '[AudioManager]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &706825676
+>>>>>>> parent of 418990b... Evan branch (#6)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1368029672}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1591,6 +1646,8 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
   m_GameObject: {fileID: 756229089}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1670,6 +1727,7 @@ MeshRenderer:
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &756229094
 MeshFilter:
+<<<<<<< HEAD
 =======
   m_GameObject: {fileID: 1388790032}
   m_Enabled: 1
@@ -1721,6 +1779,8 @@ MeshFilter:
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 MonoBehaviour:
 >>>>>>> parent of 86c7354... Test commit
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1731,6 +1791,9 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
   m_GameObject: {fileID: 756229089}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &756229095
@@ -1744,6 +1807,7 @@ MonoBehaviour:
   masterSfxMixerGroup: {fileID: 24300002, guid: 488fd56100e65b74794fa9dd33ec2c4a, type: 2}
 --- !u!4 &706825677
 Transform:
+<<<<<<< HEAD
 =======
   m_GameObject: {fileID: 1388790032}
 =======
@@ -1818,6 +1882,8 @@ Transform:
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1828,10 +1894,14 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
   m_GameObject: {fileID: 756229089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.56, z: 5.74}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
@@ -1842,6 +1912,8 @@ Transform:
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
   m_GameObject: {fileID: 706825675}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.653734, y: 25.027756, z: -20.752914}
@@ -1851,6 +1923,7 @@ Transform:
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &778336762
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1871,6 +1944,8 @@ Transform:
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1926,6 +2001,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
@@ -1936,6 +2012,8 @@ MonoBehaviour:
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
   timeRemaining: 3600
   timerIsRunning: 0
   timeText: {fileID: 310183728}
@@ -2154,6 +2232,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
@@ -2164,6 +2243,8 @@ Transform:
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
@@ -2339,6 +2420,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
@@ -2353,6 +2435,8 @@ PrefabInstance:
       value: 0.626
       objectReference: {fileID: 0}
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
     - target: {fileID: 5931836119547657180, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: prefabOfItemsForSale.Array.data[0]
       value: 
@@ -2361,6 +2445,7 @@ PrefabInstance:
       propertyPath: itemSpawnPoint
       value: 
       objectReference: {fileID: 33161654}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2419,6 +2504,8 @@ PrefabInstance:
       value: 0.56
       objectReference: {fileID: 0}
 >>>>>>> parent of 9c31ecd... deleted sample scene rename:Assets/Scenes/SampleSceneEvan.unity
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
     - target: {fileID: 7747588358384618644, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: prefabOfItemsForSale.Array.size
       value: 1
@@ -2613,6 +2700,7 @@ GameObject:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 1862719548}
   m_Layer: 5
   m_Name: testingAudioTextContainer
@@ -2632,6 +2720,8 @@ GameObject:
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
   - component: {fileID: 1862719548}
   m_Layer: 5
   m_Name: testingAudioTextContainer
@@ -2658,6 +2748,7 @@ RectTransform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
@@ -2668,6 +2759,8 @@ RectTransform:
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
   m_GameObject: {fileID: 1862719547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -2682,6 +2775,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2754,6 +2848,8 @@ CanvasRenderer:
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
+=======
+>>>>>>> parent of 418990b... Evan branch (#6)
 --- !u!1 &1900108920
 GameObject:
   m_ObjectHideFlags: 0
