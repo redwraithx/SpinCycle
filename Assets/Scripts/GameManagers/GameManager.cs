@@ -7,18 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance = null;
+    public static GameManager _instance = null;
 
-    
-    
-    #region GAMEMANAGER_CORE-EXTENTIONS
-
-    public static AudioManager audioManager = null; 
-    
-    
-    #endregion GAMEMANAGER_CORE-EXTENTIONS
-    
-    
 
     void Awake()
     {
@@ -28,14 +18,11 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            instance = this;
+            _instance = this;
             DontDestroyOnLoad(this);
         }
-        
-        
+
     }
-    
-    
 
     // checking to see if the player hit escape when in the game level
     void Update()
@@ -48,8 +35,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
-    
 
     //loads the game level
     public void StartGame()
@@ -58,21 +43,15 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene(1);  // TEMP LOAD FOR SAMPLE SCENE
     }
-    
-    
-    
     //leaves the game
     public void QuitGame()
     {
-        #if UNITY_EDITOR
-            EditorApplication.isPlaying = false;
-        #else
-            Application.Quit();
-        #endif
+#if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
-    
-    
-    
     // to get to the main menu
     public void ToMain()
     {
@@ -82,7 +61,7 @@ public class GameManager : MonoBehaviour
     
     public static GameManager Instance
     {
-        get { return instance; }
+        get { return _instance; }
        // private set { _instance = value; }
     }
 
