@@ -137,6 +137,7 @@ GameObject:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &197929432
 =======
 --- !u!1 &53897205
@@ -273,6 +274,8 @@ CanvasRenderer:
 >>>>>>> parent of 1de62c6... Grab and Player Data Class (#5)
 =======
 >>>>>>> parent of 1de62c6... Grab and Player Data Class (#5)
+=======
+>>>>>>> parent of b2885b4... Brian purdy (#2)
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -638,6 +641,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 60.434, y: 182.098, z: 76.444}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1934,6 +1938,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
 >>>>>>> parent of b2885b4... Brian purdy (#2)
+=======
+>>>>>>> parent of b2885b4... Brian purdy (#2)
 --- !u!1 &778336762
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2019,6 +2025,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
@@ -2034,6 +2041,9 @@ MonoBehaviour:
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
   timeRemaining: 3600
+=======
+  timeRemaining: 10
+>>>>>>> parent of b2885b4... Brian purdy (#2)
 =======
   timeRemaining: 10
 >>>>>>> parent of b2885b4... Brian purdy (#2)
@@ -2237,6 +2247,7 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Scenes/SampleScene.unity
 --- !u!1 &1545123719
 GameObject:
@@ -2287,6 +2298,8 @@ Transform:
   m_GameObject: {fileID: 1413503334}
   m_CullTransparentMesh: 0
 >>>>>>> parent of 86c7354... Test commit
+=======
+>>>>>>> parent of b2885b4... Brian purdy (#2)
 =======
 >>>>>>> parent of b2885b4... Brian purdy (#2)
 --- !u!1001 &1600124654
@@ -2619,10 +2632,14 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1862719547
 =======
 --- !u!1 &1896030595
 >>>>>>> parent of 86c7354... Test commit
+=======
+--- !u!1 &1900108920
+>>>>>>> parent of b2885b4... Brian purdy (#2)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2630,6 +2647,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2665,10 +2683,18 @@ GameObject:
   m_Layer: 5
   m_Name: testingAudioTextContainer
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
+=======
+  - component: {fileID: 1900108921}
+  - component: {fileID: 1900108923}
+  - component: {fileID: 1900108922}
+  m_Layer: 5
+  m_Name: Panel
+>>>>>>> parent of b2885b4... Brian purdy (#2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_IsActive: 0
 --- !u!224 &1862719548
@@ -2676,11 +2702,16 @@ GameObject:
   m_IsActive: 1
 --- !u!224 &1896030596
 >>>>>>> parent of 86c7354... Test commit
+=======
+  m_IsActive: 1
+--- !u!224 &1900108921
+>>>>>>> parent of b2885b4... Brian purdy (#2)
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2726,6 +2757,9 @@ RectTransform:
 <<<<<<< HEAD
 =======
   m_GameObject: {fileID: 1896030595}
+=======
+  m_GameObject: {fileID: 1900108920}
+>>>>>>> parent of b2885b4... Brian purdy (#2)
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2780,6 +2814,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896030595}
   m_CullTransparentMesh: 0
+<<<<<<< HEAD
 >>>>>>> parent of 86c7354... Test commit
 =======
 >>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
@@ -2872,6 +2907,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900108920}
   m_CullTransparentMesh: 0
+=======
+>>>>>>> parent of b2885b4... Brian purdy (#2)
 --- !u!1001 &2611496048655083238
 PrefabInstance:
   m_ObjectHideFlags: 0
