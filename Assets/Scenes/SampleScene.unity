@@ -839,6 +839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
+<<<<<<< HEAD:Assets/Scenes/SampleScene.unity
 --- !u!1 &1545123719
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,6 +883,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 9c31ecd... deleted sample scene rename:Assets/Scenes/SampleSceneEvan.unity
 --- !u!1001 &1600124654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -945,6 +948,49 @@ PrefabInstance:
       propertyPath: itemSpawnPoint
       value: 
       objectReference: {fileID: 33161654}
+<<<<<<< HEAD:Assets/Scenes/SampleScene.unity
+=======
+    - target: {fileID: 5931836119547657180, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: VendingUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931836119547657180, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: Sabotage.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931836119547657180, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: Sabotage.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931836119547657180, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: Sabotage.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931836119547657180, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: Sabotage.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931836119547657180, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: closeButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931836119547657180, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: sabotage1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7188340424249583252, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.098
+      objectReference: {fileID: 0}
+    - target: {fileID: 7188340424249583252, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.556
+      objectReference: {fileID: 0}
+    - target: {fileID: 7188340424249583252, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.56
+      objectReference: {fileID: 0}
+>>>>>>> parent of 9c31ecd... deleted sample scene rename:Assets/Scenes/SampleSceneEvan.unity
     - target: {fileID: 7747588358384618644, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: prefabOfItemsForSale.Array.size
       value: 1
