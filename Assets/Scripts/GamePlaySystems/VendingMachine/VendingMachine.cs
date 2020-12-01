@@ -19,7 +19,7 @@ public class VendingMachine : MonoBehaviour, IVendingMachine
         //     return;
         
         
-        GameObject newItem = Instantiate(prefabOfItemsForSale[0], itemSpawnPoint.transform.position, Quaternion.identity);
+        GameObject newItem = Instantiate(prefabOfItemsForSale[itemPrefabID], itemSpawnPoint.transform.position, Quaternion.identity);
         Destroy(newItem, 12f);    
         
         
@@ -61,8 +61,8 @@ public class VendingMachine : MonoBehaviour, IVendingMachine
             {
                 Debug.Log("User using vending machine trigger");
 
-
-                SpawnSoldItem(-1);
+                //*******this needs to be updated for the UI is attached, hard coding first Object******
+                SpawnSoldItem(0);
             }
         }
         
