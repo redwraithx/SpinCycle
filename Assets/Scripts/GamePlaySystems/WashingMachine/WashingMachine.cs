@@ -1,4 +1,5 @@
-﻿
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WashingMachine : MonoBehaviour
@@ -8,9 +9,16 @@ public class WashingMachine : MonoBehaviour
     public float timer;
     public bool timerSabotage = false;
     public bool isWashing = false;
+    public GameObject cleanLaundry;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
     public GameObject cleanLaundryPrefab;
-
-
     void Update()
     {
         if (timerSabotage == false)
