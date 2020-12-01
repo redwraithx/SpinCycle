@@ -62,8 +62,13 @@ public class VendingMachine : MonoBehaviour, IVendingMachine
                 Debug.Log("User using vending machine trigger");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 //*******this needs to be updated for the UI is attached, hard coding first Object******
                 SpawnSoldItem(0);
+=======
+
+                SpawnSoldItem(-1);
+>>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 =======
 
                 SpawnSoldItem(-1);
