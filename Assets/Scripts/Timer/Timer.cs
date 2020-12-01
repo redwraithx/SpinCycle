@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    [Tooltip("This is in seconds")]
     public float timeRemaining = 10;
     public bool timerIsRunning = false;
     public Text timeText;
