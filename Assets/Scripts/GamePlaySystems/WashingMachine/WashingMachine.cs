@@ -18,6 +18,7 @@ public class WashingMachine : MonoBehaviour
     }
 
     // Update is called once per frame
+    public GameObject cleanLaundryPrefab;
     void Update()
     {
         if (timerSabotage == false)
@@ -32,14 +33,13 @@ public class WashingMachine : MonoBehaviour
                 isWashing = false;
             }
         }
-
    
     }
 
     public void SpawnFinishedLaundry()
     {
         GameObject Clone;
-        Clone = (Instantiate(cleanLaundry, itemSpawnPoint.transform.position, Quaternion.identity));
+        Clone = (Instantiate(cleanLaundryPrefab, itemSpawnPoint.transform.position, Quaternion.identity));
     }
 
     public void WashClothes()

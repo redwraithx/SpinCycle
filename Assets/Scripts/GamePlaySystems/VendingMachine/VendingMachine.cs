@@ -6,22 +6,25 @@ public class VendingMachine : MonoBehaviour, IVendingMachine
 {
     public GameObject[] prefabOfItemsForSale;
     public GameObject itemSpawnPoint;
-
-
+    
+    
     public void DisplayItemsForSale()
     {
         Debug.Log("Displaying items for sale to user");
     }
 
-    public void SpawnSoldItem(string itemName)
+    public void SpawnSoldItem(int itemPrefabID)
     {
-
-        if (prefabOfItemsForSale.Length > 0 && itemSpawnPoint) 
-            Instantiate(prefabOfItemsForSale[0], itemSpawnPoint.transform.position, Quaternion.identity);
+        // if (prefabOfItemsForSale.Length <= 0 || itemSpawnPoint) 
+        //     return;
+        
+        
+        GameObject newItem = Instantiate(prefabOfItemsForSale[0], itemSpawnPoint.transform.position, Quaternion.identity);
+        Destroy(newItem, 12f);    
         
         
         Debug.Log("FAKE SOAP WAS PURCHASED!");
-    
+
     }
 
     public bool CanBuyItem(int itemForSalesValue, int usersCurrentCashAmount)
@@ -47,7 +50,6 @@ public class VendingMachine : MonoBehaviour, IVendingMachine
             Debug.Log("disable the vending machine ui");
     }
 
-    
 
     private void OnTriggerStay(Collider other)
     {
@@ -60,7 +62,7 @@ public class VendingMachine : MonoBehaviour, IVendingMachine
                 Debug.Log("User using vending machine trigger");
 
 
-                SpawnSoldItem("test");
+                SpawnSoldItem(-1);
             }
         }
         
