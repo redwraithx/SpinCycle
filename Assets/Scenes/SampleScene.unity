@@ -937,30 +937,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: VendingMachine
       objectReference: {fileID: 0}
-    - target: {fileID: 5931836119547657170, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.626
-      objectReference: {fileID: 0}
     - target: {fileID: 5931836119547657180, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: prefabOfItemsForSale.Array.data[0]
       value: 
-      objectReference: {fileID: 1532990882816903237, guid: 47ef5c3b1d27d6f42984f1a5eda19ef4, type: 3}
+      objectReference: {fileID: 7379920781896190754, guid: fba9840f0ac02f64b8a32d3928918923, type: 3}
     - target: {fileID: 5931836119547657180, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: itemSpawnPoint
       value: 
       objectReference: {fileID: 33161654}
-    - target: {fileID: 7188340424249583252, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.098
-      objectReference: {fileID: 0}
-    - target: {fileID: 7188340424249583252, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.556
-      objectReference: {fileID: 0}
-    - target: {fileID: 7188340424249583252, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.56
-      objectReference: {fileID: 0}
     - target: {fileID: 7747588358384618644, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: prefabOfItemsForSale.Array.size
       value: 1
@@ -968,7 +952,7 @@ PrefabInstance:
     - target: {fileID: 7747588358384618644, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: prefabOfItemsForSale.Array.data[0]
       value: 
-      objectReference: {fileID: 1532990882816903237, guid: 47ef5c3b1d27d6f42984f1a5eda19ef4, type: 3}
+      objectReference: {fileID: 3175498842662343976, guid: c6e11af0ab9467a4991c260f9781e6e6, type: 3}
     m_RemovedComponents:
     - {fileID: 7747588358384618644, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
