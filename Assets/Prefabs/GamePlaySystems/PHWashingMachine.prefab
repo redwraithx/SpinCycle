@@ -127,11 +127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 653208667fc434484acede7af9ab5798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSpawnPoint: {fileID: 0}
+  itemSpawnPoint: {fileID: 202502842116228322}
   timer: 0
   timerSabotage: 0
   isWashing: 0
-  cleanLaundry: {fileID: 0}
+  cleanLaundryPrefab: {fileID: 0}
 --- !u!65 &1376145823038642430
 BoxCollider:
   m_ObjectHideFlags: 0

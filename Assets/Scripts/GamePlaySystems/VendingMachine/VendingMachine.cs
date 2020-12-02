@@ -60,49 +60,9 @@ public class VendingMachine : MonoBehaviour, IVendingMachine
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("User using vending machine trigger");
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                 //*******this needs to be updated for the UI is attached, hard coding first Object******
-                SpawnSoldItem(0);
-=======
+                //SpawnSoldItem(-1);
 
-                SpawnSoldItem(-1);
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
-
-                SpawnSoldItem(-1);
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
-
-                SpawnSoldItem(-1);
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
-
-                SpawnSoldItem(-1);
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
-
-                SpawnSoldItem(-1);
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
-                //*******this needs to be updated for the UI is attached, hard coding first Object******
-                SpawnSoldItem(0);
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
-
-                SpawnSoldItem(-1);
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
-                //*******this needs to be updated for the UI is attached, hard coding first Object******
-                SpawnSoldItem(0);
->>>>>>> parent of 418990b... Evan branch (#6)
             }
         }
         

@@ -128,23 +128,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6627814966707534623, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
   m_PrefabInstance: {fileID: 1600124654}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!1 &197929432
-=======
 --- !u!1 &53897205
->>>>>>> parent of 86c7354... Test commit
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,66 +136,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - component: {fileID: 197929433}
-  m_Layer: 0
-  m_Name: GrabPoint
-=======
   - component: {fileID: 53897206}
   - component: {fileID: 53897208}
   - component: {fileID: 53897207}
   m_Layer: 5
   m_Name: Text
->>>>>>> parent of 86c7354... Test commit
-=======
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-  - component: {fileID: 197929433}
-  m_Layer: 0
-  m_Name: GrabPoint
->>>>>>> parent of 418990b... Evan branch (#6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
---- !u!4 &197929433
-Transform:
-=======
 --- !u!224 &53897206
 RectTransform:
->>>>>>> parent of 86c7354... Test commit
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-  m_GameObject: {fileID: 197929432}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.968, z: 0.66}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 605105725}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   m_GameObject: {fileID: 53897205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -267,38 +207,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53897205}
   m_CullTransparentMesh: 0
->>>>>>> parent of 86c7354... Test commit
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 --- !u!1001 &289789166
-=======
->>>>>>> parent of 1de62c6... Grab and Player Data Class (#5)
-=======
->>>>>>> parent of 1de62c6... Grab and Player Data Class (#5)
-=======
->>>>>>> parent of b2885b4... Brian purdy (#2)
-=======
->>>>>>> parent of b2885b4... Brian purdy (#2)
-=======
---- !u!1001 &289789166
->>>>>>> parent of 658ea51... Game play systems (#4)
-=======
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
---- !u!1001 &289789166
->>>>>>> parent of 658ea51... Game play systems (#4)
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -434,6 +343,164 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310183726}
   m_CullTransparentMesh: 0
+--- !u!1 &394793430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394793431}
+  - component: {fileID: 394793433}
+  - component: {fileID: 394793432}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &394793431
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394793430}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1296931182}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &394793432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394793430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: X
+--- !u!222 &394793433
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394793430}
+  m_CullTransparentMesh: 0
+--- !u!1 &437772572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 437772573}
+  - component: {fileID: 437772575}
+  - component: {fileID: 437772574}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &437772573
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437772572}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1388790033}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &437772574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437772572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Buy This
+--- !u!222 &437772575
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437772572}
+  m_CullTransparentMesh: 0
 --- !u!1 &498648505
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,48 +597,373 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
---- !u!4 &605105725 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2095997803905305812, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
-  m_PrefabInstance: {fileID: 1139351698}
-  m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
---- !u!1 &705507993
-=======
 --- !u!1 &574619729
->>>>>>> parent of 86c7354... Test commit
-=======
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 574619730}
+  - component: {fileID: 574619732}
+  - component: {fileID: 574619731}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &574619730
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574619729}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1338063378}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &574619731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574619729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Buy This
+--- !u!222 &574619732
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574619729}
+  m_CullTransparentMesh: 0
+--- !u!1 &595329982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 595329983}
+  - component: {fileID: 595329986}
+  - component: {fileID: 595329985}
+  - component: {fileID: 595329984}
+  m_Layer: 5
+  m_Name: Button3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &595329983
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595329982}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1896030596}
+  m_Father: {fileID: 704124491}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -85.9, y: 0}
+  m_SizeDelta: {x: 158.10406, y: 75.50293}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &595329984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595329982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 595329985}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &595329985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595329982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &595329986
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595329982}
+  m_CullTransparentMesh: 0
+--- !u!1 &640109168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 640109169}
+  - component: {fileID: 640109171}
+  - component: {fileID: 640109170}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &640109169
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640109168}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 704124491}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 19, y: 167}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &640109170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640109168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: This is the VendUI
+--- !u!222 &640109171
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640109168}
+  m_CullTransparentMesh: 0
+--- !u!1 &686135998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 202502842116228322, guid: 88677db8be3be4b3493fc0b61ec0039f, type: 3}
+  m_PrefabInstance: {fileID: 2611496048655083238}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &704124490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 704124491}
+  - component: {fileID: 704124493}
+  - component: {fileID: 704124492}
+  m_Layer: 5
+  m_Name: VendingUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &704124491
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704124490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1338063378}
+  - {fileID: 1109529623}
+  - {fileID: 1201114946}
+  - {fileID: 595329983}
+  - {fileID: 1388790033}
+  - {fileID: 1413503335}
+  - {fileID: 640109169}
+  - {fileID: 1296931182}
+  m_Father: {fileID: 1603353719}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 10.400024, y: 7}
+  m_SizeDelta: {x: -456.92554, y: -43.606995}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &704124492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704124490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &704124493
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704124490}
+  m_CullTransparentMesh: 0
 --- !u!1 &705507993
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
---- !u!1 &705507993
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
---- !u!1 &705507993
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
---- !u!1 &705507993
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
---- !u!1 &705507993
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
---- !u!1 &705507993
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -590,76 +982,11 @@ GameObject:
   m_IsActive: 1
 --- !u!108 &705507994
 Light:
-<<<<<<< HEAD
-=======
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.802082
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 1
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &705507995
-Transform:
->>>>>>> parent of 418990b... Evan branch (#6)
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705507993}
-<<<<<<< HEAD
   m_Enabled: 1
   serializedVersion: 10
   m_Type: 1
@@ -723,20 +1050,11 @@ Transform:
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.5273208, y: 0.68445885, z: -0.40509933, w: 0.2989037}
   m_LocalPosition: {x: 0, y: 11.54, z: 9.494}
-<<<<<<< HEAD
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 60.434, y: 182.098, z: 76.444}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1 &778336762
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,9 +1192,6 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1109529622
-=======
---- !u!1 &778336762
->>>>>>> parent of b2885b4... Brian purdy (#2)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -927,7 +1242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   m_Navigation:
     m_Mode: 3
     m_SelectOnUp: {fileID: 0}
@@ -1531,56 +1845,11 @@ RectTransform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1368029674
-=======
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-=======
-  m_LocalRotation: {x: 0.5273208, y: 0.68445885, z: -0.40509933, w: 0.2989037}
-  m_LocalPosition: {x: 0, y: 11.54, z: 9.494}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
->>>>>>> parent of 418990b... Evan branch (#6)
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 60.434, y: 182.098, z: 76.444}
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
---- !u!1 &706825675
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-<<<<<<< HEAD
-  - component: {fileID: 756229095}
-  - component: {fileID: 756229094}
-  - component: {fileID: 756229093}
-  - component: {fileID: 756229092}
-  - component: {fileID: 756229091}
-  - component: {fileID: 756229090}
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-  - component: {fileID: 706825677}
-  - component: {fileID: 706825676}
-  m_Layer: 0
-  m_Name: '[AudioManager]'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &706825676
-<<<<<<< HEAD
->>>>>>> parent of 418990b... Evan branch (#6)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_GameObject: {fileID: 1368029672}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1618,11 +1887,6 @@ CanvasRenderer:
   m_GameObject: {fileID: 1368029672}
   m_CullTransparentMesh: 0
 --- !u!1 &1388790032
-=======
-=======
->>>>>>> parent of 1de62c6... Grab and Player Data Class (#5)
---- !u!1 &705507993
->>>>>>> parent of 1de62c6... Grab and Player Data Class (#5)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1655,70 +1919,6 @@ RectTransform:
   - {fileID: 437772573}
   m_Father: {fileID: 704124491}
   m_RootOrder: 4
-<<<<<<< HEAD
-  m_LocalEulerAnglesHint: {x: 60.434, y: 182.098, z: 76.444}
-<<<<<<< HEAD
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
---- !u!1 &706825675
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - component: {fileID: 756229095}
-  - component: {fileID: 756229094}
-  - component: {fileID: 756229093}
-  - component: {fileID: 756229092}
-  - component: {fileID: 756229091}
-  - component: {fileID: 756229090}
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 1de62c6... Grab and Player Data Class (#5)
-=======
->>>>>>> parent of 1de62c6... Grab and Player Data Class (#5)
-  - component: {fileID: 706825677}
-  - component: {fileID: 706825676}
-  m_Layer: 0
-  m_Name: '[AudioManager]'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &706825676
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1726,101 +1926,11 @@ GameObject:
   m_SizeDelta: {x: 158.10406, y: 75.50293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1388790034
->>>>>>> parent of 86c7354... Test commit
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-  m_GameObject: {fileID: 756229089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8543c889b0837714ab2e12defc4942ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabPoint: {fileID: 197929433}
---- !u!54 &756229091
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756229089}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &756229092
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756229089}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &756229093
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756229089}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 388f2fa776ab2694bac9604777033e44, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &756229094
-MeshFilter:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   m_GameObject: {fileID: 1388790032}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1859,95 +1969,17 @@ MeshFilter:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1388790035
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
 MonoBehaviour:
->>>>>>> parent of 86c7354... Test commit
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-  m_GameObject: {fileID: 756229089}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &756229095
-=======
->>>>>>> parent of 1de62c6... Grab and Player Data Class (#5)
-  m_GameObject: {fileID: 706825675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0353ebda04a17a947af157459df0997a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  masterAudioMixerGroup: {fileID: 24300002, guid: 0db846f7ed54a6443b88cd9d4e726522, type: 2}
-  masterSfxMixerGroup: {fileID: 24300002, guid: 488fd56100e65b74794fa9dd33ec2c4a, type: 2}
---- !u!4 &706825677
-Transform:
-<<<<<<< HEAD
-=======
   m_GameObject: {fileID: 1388790032}
-=======
-  m_GameObject: {fileID: 706825675}
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
-  m_GameObject: {fileID: 706825675}
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
-  m_GameObject: {fileID: 706825675}
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
-  m_GameObject: {fileID: 706825675}
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
-=======
->>>>>>> parent of 1de62c6... Grab and Player Data Class (#5)
-  m_GameObject: {fileID: 706825675}
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
-  m_GameObject: {fileID: 706825675}
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
-  m_GameObject: {fileID: 756229089}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &756229095
-  m_GameObject: {fileID: 706825675}
->>>>>>> parent of 418990b... Evan branch (#6)
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0353ebda04a17a947af157459df0997a, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -1968,133 +2000,13 @@ Transform:
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1388790036
 CanvasRenderer:
->>>>>>> parent of 86c7354... Test commit
-=======
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-  masterAudioMixerGroup: {fileID: 24300002, guid: 0db846f7ed54a6443b88cd9d4e726522, type: 2}
-  masterSfxMixerGroup: {fileID: 24300002, guid: 488fd56100e65b74794fa9dd33ec2c4a, type: 2}
---- !u!4 &706825677
-Transform:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-  m_GameObject: {fileID: 756229089}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.56, z: 5.74}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 1de62c6... Grab and Player Data Class (#5)
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 1de62c6... Grab and Player Data Class (#5)
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-  m_GameObject: {fileID: 706825675}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.653734, y: 25.027756, z: -20.752914}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
->>>>>>> parent of b2885b4... Brian purdy (#2)
-=======
->>>>>>> parent of b2885b4... Brian purdy (#2)
---- !u!1 &778336762
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   m_GameObject: {fileID: 1388790032}
   m_CullTransparentMesh: 0
 --- !u!1 &1413503334
->>>>>>> parent of 86c7354... Test commit
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
---- !u!1 &778336762
->>>>>>> parent of 418990b... Evan branch (#6)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2102,171 +2014,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 778336763}
-  - component: {fileID: 778336764}
-<<<<<<< HEAD
-=======
+  - component: {fileID: 1413503335}
+  - component: {fileID: 1413503338}
+  - component: {fileID: 1413503337}
+  - component: {fileID: 1413503336}
   m_Layer: 5
-  m_Name: ClockTimerContainer
+  m_Name: Button2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &778336763
+--- !u!224 &1413503335
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778336762}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1413503334}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1900108921}
-  - {fileID: 310183727}
-  m_Father: {fileID: 1603353719}
-  m_RootOrder: 0
+  - {fileID: 53897206}
+  m_Father: {fileID: 704124491}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &778336764
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 83, y: 83.20001}
+  m_SizeDelta: {x: 158.10406, y: 75.50293}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1413503336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778336762}
+  m_GameObject: {fileID: 1413503334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 707dca5e8a429154887cc423b42b504e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 3600
-  timerIsRunning: 0
-  timeText: {fileID: 310183728}
---- !u!1 &923136298
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 923136299}
-  - component: {fileID: 923136302}
-  - component: {fileID: 923136301}
-  - component: {fileID: 923136300}
->>>>>>> parent of 418990b... Evan branch (#6)
-  m_Layer: 5
-  m_Name: ClockTimerContainer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &778336763
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778336762}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1900108921}
-  - {fileID: 310183727}
-  m_Father: {fileID: 1603353719}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &778336764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778336762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 707dca5e8a429154887cc423b42b504e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-  timeRemaining: 3600
-=======
-  timeRemaining: 10
->>>>>>> parent of b2885b4... Brian purdy (#2)
-=======
-  timeRemaining: 10
->>>>>>> parent of b2885b4... Brian purdy (#2)
-=======
-  timeRemaining: 10
->>>>>>> parent of b2885b4... Brian purdy (#2)
-  timerIsRunning: 0
-  timeText: {fileID: 310183728}
---- !u!1 &963194225
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 963194228}
-  - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
---- !u!20 &963194227
-Camera:
-=======
   m_Navigation:
     m_Mode: 3
     m_SelectOnUp: {fileID: 0}
@@ -2300,203 +2090,42 @@ Camera:
       m_Calls: []
 --- !u!114 &1413503337
 MonoBehaviour:
->>>>>>> parent of 86c7354... Test commit
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &963194228
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-  m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1139351698
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2095997803905038672, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
-      propertyPath: m_Name
-      value: ThirdPersonController
-      objectReference: {fileID: 0}
-    - target: {fileID: 2095997803905305812, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.6765924
-      objectReference: {fileID: 0}
-    - target: {fileID: 2095997803905305812, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2095997803905305812, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 2095997803905305812, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2095997803905305812, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2095997803905305812, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2095997803905305812, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2095997803905305812, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2095997803905305812, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2095997803905305812, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2095997803905305812, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 23a21b9ef4a0cd04380aede7195bb813, type: 3}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD:Assets/Scenes/SampleScene.unity
---- !u!1 &1545123719
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1545123721}
-  - component: {fileID: 1545123720}
-  m_Layer: 0
-  m_Name: '[GameManager]'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1545123720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545123719}
+  m_GameObject: {fileID: 1413503334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a965acf1cf80a44db1b43ca901ae859, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1545123721
-Transform:
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1413503338
+CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545123719}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.653734, y: 25.027756, z: -20.752914}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> parent of 9c31ecd... deleted sample scene rename:Assets/Scenes/SampleSceneEvan.unity
-=======
   m_GameObject: {fileID: 1413503334}
   m_CullTransparentMesh: 0
->>>>>>> parent of 86c7354... Test commit
-=======
->>>>>>> parent of b2885b4... Brian purdy (#2)
-=======
->>>>>>> parent of b2885b4... Brian purdy (#2)
-=======
->>>>>>> parent of b2885b4... Brian purdy (#2)
 --- !u!1001 &1600124654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2552,34 +2181,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: VendingMachine
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
     - target: {fileID: 5931836119547657170, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.626
       objectReference: {fileID: 0}
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
+    - target: {fileID: 5931836119547657180, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: Sabotage.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5931836119547657180, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: prefabOfItemsForSale.Array.data[0]
       value: 
@@ -2588,16 +2197,6 @@ PrefabInstance:
       propertyPath: itemSpawnPoint
       value: 
       objectReference: {fileID: 33161654}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD:Assets/Scenes/SampleScene.unity
-=======
     - target: {fileID: 5931836119547657180, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: VendingUI
       value: 
@@ -2626,35 +2225,22 @@ PrefabInstance:
       propertyPath: sabotage1
       value: 
       objectReference: {fileID: 1388790034}
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
+    - target: {fileID: 6627814966707534623, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 7188340424249583252, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.098
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7188340424249583252, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.556
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7188340424249583252, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.56
       objectReference: {fileID: 0}
->>>>>>> parent of 9c31ecd... deleted sample scene rename:Assets/Scenes/SampleSceneEvan.unity
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
     - target: {fileID: 7747588358384618644, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: prefabOfItemsForSale.Array.size
       value: 1
@@ -2757,6 +2343,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 778336763}
+  - {fileID: 704124491}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2765,6 +2352,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1700128327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3309655975237464614, guid: 88677db8be3be4b3493fc0b61ec0039f, type: 3}
+  m_PrefabInstance: {fileID: 2611496048655083238}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1700128334
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700128327}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.329185, y: 1.1028945, z: 1.1513834}
+  m_Center: {x: 0.005256176, y: 0.09736383, z: 0.5756917}
 --- !u!1 &1850972227
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,20 +2436,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!1 &1862719547
-=======
 --- !u!1 &1896030595
->>>>>>> parent of 86c7354... Test commit
-=======
---- !u!1 &1900108920
->>>>>>> parent of b2885b4... Brian purdy (#2)
-=======
---- !u!1 &1900108920
->>>>>>> parent of b2885b4... Brian purdy (#2)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2852,140 +2444,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - component: {fileID: 1862719548}
-  m_Layer: 5
-  m_Name: testingAudioTextContainer
-=======
   - component: {fileID: 1896030596}
   - component: {fileID: 1896030598}
   - component: {fileID: 1896030597}
   m_Layer: 5
   m_Name: Text
->>>>>>> parent of 86c7354... Test commit
-=======
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-  - component: {fileID: 1862719548}
-  m_Layer: 5
-  m_Name: testingAudioTextContainer
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
-=======
->>>>>>> parent of b2885b4... Brian purdy (#2)
-  - component: {fileID: 1900108921}
-  - component: {fileID: 1900108923}
-  - component: {fileID: 1900108922}
-  m_Layer: 5
-  m_Name: Panel
-<<<<<<< HEAD
->>>>>>> parent of b2885b4... Brian purdy (#2)
-=======
->>>>>>> parent of b2885b4... Brian purdy (#2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_IsActive: 0
---- !u!224 &1862719548
-=======
   m_IsActive: 1
 --- !u!224 &1896030596
->>>>>>> parent of 86c7354... Test commit
-=======
-  m_IsActive: 1
---- !u!224 &1900108921
->>>>>>> parent of b2885b4... Brian purdy (#2)
-=======
-  m_IsActive: 1
---- !u!224 &1900108921
->>>>>>> parent of b2885b4... Brian purdy (#2)
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-  m_GameObject: {fileID: 1862719547}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2104098150}
-  m_Father: {fileID: 923136299}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   m_GameObject: {fileID: 1896030595}
-=======
-=======
->>>>>>> parent of b2885b4... Brian purdy (#2)
-  m_GameObject: {fileID: 1900108920}
->>>>>>> parent of b2885b4... Brian purdy (#2)
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -3040,27 +2515,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896030595}
   m_CullTransparentMesh: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 86c7354... Test commit
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
-=======
->>>>>>> parent of 4754e8e... Merge branch 'main' of https://github.com/owenhooper/SpinCycle into main
-=======
->>>>>>> parent of b2885b4... Brian purdy (#2)
-=======
->>>>>>> parent of 418990b... Evan branch (#6)
 --- !u!1 &1900108920
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,10 +2590,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900108920}
   m_CullTransparentMesh: 0
-=======
->>>>>>> parent of b2885b4... Brian purdy (#2)
-=======
->>>>>>> parent of b2885b4... Brian purdy (#2)
 --- !u!1001 &2611496048655083238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3149,7 +2599,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1376145823038642430, guid: 88677db8be3be4b3493fc0b61ec0039f, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376145823038642430, guid: 88677db8be3be4b3493fc0b61ec0039f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2748236821714529793, guid: 88677db8be3be4b3493fc0b61ec0039f, type: 3}
       propertyPath: m_IsKinematic
@@ -3203,5 +2657,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PHWashingMachine
       objectReference: {fileID: 0}
+    - target: {fileID: 3951247726727477281, guid: 88677db8be3be4b3493fc0b61ec0039f, type: 3}
+      propertyPath: itemSpawnPoint
+      value: 
+      objectReference: {fileID: 686135998}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88677db8be3be4b3493fc0b61ec0039f, type: 3}
