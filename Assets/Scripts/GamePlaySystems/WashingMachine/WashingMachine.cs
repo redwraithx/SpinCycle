@@ -8,7 +8,7 @@ public class WashingMachine : MonoBehaviour
     public float timer;
     public bool timerSabotage = false;
     public bool isWashing = false;
-    public GameObject cleanLaundryPrefab;
+    public GameObject cleanLaundry;
 
 
     void Update()
@@ -31,7 +31,7 @@ public class WashingMachine : MonoBehaviour
     public void SpawnFinishedLaundry()
     {
         GameObject Clone;
-        Clone = (Instantiate(cleanLaundryPrefab, itemSpawnPoint.transform.position, Quaternion.identity));
+        Clone = (Instantiate(cleanLaundry, itemSpawnPoint.transform.position, Quaternion.identity));
     }
 
     public void WashClothes()
