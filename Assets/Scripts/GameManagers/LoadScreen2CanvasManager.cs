@@ -10,6 +10,8 @@ public class LoadScreen2CanvasManager : MonoBehaviour
     private AsyncOperation loadingOperation;
     public Slider progressBar;
     public Text percentLoaded;
+    
+    
     void Start()
     {
         loadingOperation = SceneManager.LoadSceneAsync("SampleScene"); // TEMP LOAD FOR SAMPLE SCENE

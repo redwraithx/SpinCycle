@@ -44,14 +44,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        // if (!player1)
-        // {
-        //     if (SceneManager.GetActiveScene().name == "SampleScene")
-        //     {
-        //         GameObject.Find
-        //     }
-        // }
-        
+
         if (Instance)
         {
             Destroy(gameObject);
