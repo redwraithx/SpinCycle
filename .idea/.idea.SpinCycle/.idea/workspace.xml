@@ -20,19 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6edd3356-5640-48c5-9fc2-63461a08671e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/GameLevelScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/GameLevelScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/GameLevelScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/GameLevelScene.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoadScreens/LoadingScreen1.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoadScreens/LoadingScreen1.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu/GameOverMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu/GameOverMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu/GameOverMenu.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu/GameOverMenu.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu/MainMenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu/MainMenuScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu/MainMenuScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu/MainMenuScene.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleSceneSettings.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleSceneSettings.lighting" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleSceneSettings.lighting.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleSceneSettings.lighting.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoadScreens/TitleScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoadScreens/TitleScreen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,17 +35,27 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnityNetworking_LLAPI_Server/Assets/Scripts/Server.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../UnityProjects/2D_EventTest_Project1/Assets/Scripts/AimAtMouse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/05250243-5982-472D-92DA-7F939C7F8164/31/64b90b70/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnitTest_Project1/Assets/_Project/Editor/MinMaxDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnitTest_Project2/Assets/Tests/EditMode/damage_calculator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/CrossPlatforms2_Lab7/Assets/Scripts/LoadSaveManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Funamentals2_Labs/Fundamentals2_Lab7/Assets/Scripts/Enemy/EnemyUnit.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/buttons.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1jXM3iP7Giz6FodzT2B7nRGS8ar" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

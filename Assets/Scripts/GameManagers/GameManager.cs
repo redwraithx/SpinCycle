@@ -10,6 +10,14 @@ public class GameManager : MonoBehaviour
     public static GameManager _instance = null;
 
 
+    #region GAMEMANAGER_CORE-EXTENTIONS
+
+    public static AudioManager audioManager = null; 
+    
+    
+    #endregion GAMEMANAGER_CORE-EXTENTIONS
+    
+
     void Awake()
     {
         if (Instance)
@@ -41,15 +49,19 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("LoadingScreen1"); 
     }
+    
+    
     //leaves the game
     public void QuitGame()
     {
-#if UNITY_EDITOR
-        EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        #if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
+    
+    
     // to get to the main menu
     public void ToMain()
     {
@@ -60,6 +72,8 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("SettingsMenu");
     }
+    
+    
     public static GameManager Instance
     {
         get { return _instance; }
@@ -71,4 +85,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("LoadingScreen2");  
     }
     //function with temp load for sample scene is now in LoadScreen2CanvasManager
+    
+    
 }
