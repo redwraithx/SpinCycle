@@ -9,7 +9,7 @@ public class CleaningItems : MonoBehaviour, IItem
     [SerializeField] private int price;
     [SerializeField] private float timeChange;
     [SerializeField] private ItemQuality quality;
-
+    [SerializeField] private float _timeAjustment;
 
     public enum ItemQuality
     {
@@ -20,11 +20,12 @@ public class CleaningItems : MonoBehaviour, IItem
     }
 
 
-    public CleaningItems(string name, string description, int price)
+    public CleaningItems(string name, string description, int price, float _time)
     {
         Name = name;
         Description = description;
         Price = price;
+        TimeAjustment = _time;
     }
 
     public CleaningItems()
@@ -88,6 +89,18 @@ public class CleaningItems : MonoBehaviour, IItem
         private set
         {
           quality = value;
+        }
+    }
+
+    public float TimeAjustment
+    {
+        get
+        {
+            return _timeAjustment;
+        }
+        private set
+        {
+            _timeAjustment = value;
         }
     }
 

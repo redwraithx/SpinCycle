@@ -20,8 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6edd3356-5640-48c5-9fc2-63461a08671e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TempItems/TempLaundry/Capsule.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TempItems/TempLaundry/Capsule.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TempItems/TempLaundry/Cylinder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TempItems/TempLaundry/Cylinder.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TempItems/TempLaundry/Sphere.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TempItems/TempLaundry/Sphere.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TempItems/WetWashItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TempItems/WetWashItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/ConveyerBelt/ConveyerBelt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/ConveyerBelt/ConveyerBelt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/ConveyerBelt/Destructor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/ConveyerBelt/Destructor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/CleaningItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/CleaningItems.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/IItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/IItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/PickupAndCarryItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/PickupAndCarryItems.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/PickupAndCarryItems.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/PickupAndCarryItems.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/TShirt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/TShirt.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +51,7 @@
     <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/CrossPlatforms2_Lab7/Assets/Scripts/LoadSaveManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Funamentals2_Labs/Fundamentals2_Lab7/Assets/Scripts/Enemy/EnemyUnit.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../TeamMileStone2/SpinCycle-Anthony/Assets/Scripts/Items/TShirt.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -52,6 +64,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/CanvasManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/LoadScreen2CanvasManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/WashingMachine/WashingMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/ConveyerBelt/Destructor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/ConveyerBelt/ConveyerBelt.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Items/TShirt.cs" />
       </list>
     </option>
   </component>
@@ -102,6 +118,8 @@
       <workItem from="1606940476454" duration="23000" />
       <workItem from="1607522806321" duration="17613000" />
       <workItem from="1607542916545" duration="929000" />
+      <workItem from="1607547582972" duration="1507000" />
+      <workItem from="1607553856904" duration="149000" />
     </task>
     <servers />
   </component>

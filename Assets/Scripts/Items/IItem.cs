@@ -7,7 +7,7 @@
 
     int Price { get; }
 
-
+    float TimeAjustment { get; }
 
 }
     

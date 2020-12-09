@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TShirt : MonoBehaviour, IItem 
+public class Clothing : MonoBehaviour, IItem 
 {
-    [SerializeField] private string _name = "";
-    [SerializeField] private string _description = "";
-    [SerializeField] private int _price = 0;
-    [SerializeField] private float _timeAdjustment = 0f;
+    [SerializeField] private string _name;
+    [SerializeField] private string _description;
+    [SerializeField] private int _price;
+    [SerializeField] private float _timeAjustment;
+    
+    
 
 
-    public TShirt(string name, string description, int price, float timeAdjustment)
+    public Clothing(string name, string description, int price, float _time)
     {
         Name = name;
         Description = description;
         Price = price;
-        TimeAjustment = timeAdjustment;
+        TimeAjustment = _time;
     }
 
-    public TShirt()
+    public Clothing()
     {
 
     }
@@ -61,10 +63,13 @@ public class TShirt : MonoBehaviour, IItem
 
     public float TimeAjustment
     {
-        get => _timeAdjustment;
+        get
+        {
+            return _timeAjustment;
+        }
         private set
         {
-            _timeAdjustment = value;
+            _timeAjustment = value;
         }
     }
 }

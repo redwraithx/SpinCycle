@@ -8,6 +8,7 @@
         <e p="Scripts" t="Include">
           <e p="CharacterMechanics" t="Include">
             <e p="Character.cs" t="Include" />
+            <e p="Enemy.cs" t="Include" />
             <e p="Grab.cs" t="Include" />
             <e p="MouseLook.cs" t="Include" />
             <e p="PlayerData.cs" t="Include" />
@@ -54,9 +55,12 @@
           </e>
           <e p="Items" t="Include">
             <e p="CleaningItems.cs" t="Include" />
+            <e p="Clothing.cs" t="Include" />
             <e p="IItem.cs" t="Include" />
             <e p="PickupAndCarryItems.cs" t="Include" />
             <e p="TShirt.cs" t="Include" />
+            <e p="WeaponPickUpScript.cs" t="Include" />
+            <e p="WeaponScript.cs" t="Include" />
           </e>
           <e p="Timer" t="Include">
             <e p="Timer.cs" t="Include" />

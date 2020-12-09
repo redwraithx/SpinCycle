@@ -11,7 +11,7 @@ public class ConveyerBelt : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "Laundry")
+        if (collision.gameObject.tag == "Item")
         {
             collision.transform.position = Vector3.MoveTowards(collision.transform.position, endPoint.position, speed * Time.deltaTime);
         }
