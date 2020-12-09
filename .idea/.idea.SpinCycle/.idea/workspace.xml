@@ -21,10 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="6edd3356-5640-48c5-9fc2-63461a08671e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/PlayerMaterials/PlayerSkin_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/PlayerMaterials/PlayerSkin_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ItemPreFabs/Clothing/Cleaning Item.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ItemPreFabs/Clothing/Cleaning Item.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoadScreens/TitleScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoadScreens/TitleScreen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ThirdPersonController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/ThirdPersonController.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +52,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/buttons.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/PlayerSpawner/PlayerStartingSpawnPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/Grab.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/MouseLook.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementRigidbody.cs" />
       </list>
     </option>
   </component>
@@ -97,6 +105,7 @@
       <workItem from="1603945797442" duration="476000" />
       <workItem from="1603997712277" duration="721000" />
       <workItem from="1606940476454" duration="23000" />
+      <workItem from="1607522806321" duration="17021000" />
     </task>
     <servers />
   </component>

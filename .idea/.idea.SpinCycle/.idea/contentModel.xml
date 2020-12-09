@@ -8,7 +8,9 @@
         <e p="Scripts" t="Include">
           <e p="CharacterMechanics" t="Include">
             <e p="Character.cs" t="Include" />
+            <e p="Grab.cs" t="Include" />
             <e p="MouseLook.cs" t="Include" />
+            <e p="PlayerData.cs" t="Include" />
           </e>
           <e p="GameManagers" t="Include">
             <e p="AudioManager.cs" t="Include" />
@@ -19,10 +21,28 @@
             <e p="GameManager.cs" t="Include" />
             <e p="LoadScreen2CanvasManager.cs" t="Include" />
             <e p="LoadScreenCanvasManager.cs" t="Include" />
+            <e p="PlayerSpawnManager.cs" t="Include" />
           </e>
           <e p="GamePlaySystems" t="Include">
             <e p="Buttons" t="Include">
               <e p="Button1.cs" t="Include" />
+            </e>
+            <e p="ConveyerBelt" t="Include">
+              <e p="ConveyerBelt.cs" t="Include" />
+              <e p="Destructor.cs" t="Include" />
+            </e>
+            <e p="DirtyLaundrySpawner" t="Include">
+              <e p="DirtyLaundrySpawner.cs" t="Include" />
+            </e>
+            <e p="Player" t="Include">
+              <e p="Health.cs" t="Include" />
+              <e p="HealthBarSlider.cs" t="Include" />
+              <e p="MouseLook.cs" t="Include" />
+              <e p="PlayerMovementCC.cs" t="Include" />
+              <e p="PlayerMovementRigidbody.cs" t="Include" />
+            </e>
+            <e p="PlayerSpawner" t="Include">
+              <e p="PlayerStartingSpawnPoint.cs" t="Include" />
             </e>
             <e p="VendingMachine" t="Include">
               <e p="IVendingMachine.cs" t="Include" />
@@ -33,7 +53,10 @@
             </e>
           </e>
           <e p="Items" t="Include">
+            <e p="CleaningItems.cs" t="Include" />
+            <e p="IItem.cs" t="Include" />
             <e p="PickupAndCarryItems.cs" t="Include" />
+            <e p="TShirt.cs" t="Include" />
           </e>
           <e p="Timer" t="Include">
             <e p="Timer.cs" t="Include" />

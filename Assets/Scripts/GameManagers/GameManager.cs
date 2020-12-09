@@ -17,9 +17,41 @@ public class GameManager : MonoBehaviour
     
     #endregion GAMEMANAGER_CORE-EXTENTIONS
     
+    #region Tracked_Variables
+
+    [SerializeField] private GameObject player1;
+
+    public GameObject Player1
+    {
+        get => player1 ? player1 : null;
+        set
+        {
+            if(!player1)
+                player1 = value;
+        }
+    }
+    
+    [SerializeField] private GameObject player2;
+    public GameObject Player2
+    {
+        get => player2 != null ? player2 : null;
+        set => player2 = value;
+    }
+
+    #endregion // Tracked_Variables
+    
+    
 
     void Awake()
     {
+        // if (!player1)
+        // {
+        //     if (SceneManager.GetActiveScene().name == "SampleScene")
+        //     {
+        //         GameObject.Find
+        //     }
+        // }
+        
         if (Instance)
         {
             Destroy(gameObject);
