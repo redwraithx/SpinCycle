@@ -20,19 +20,71 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6edd3356-5640-48c5-9fc2-63461a08671e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/riderModule.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TempItems/TempLaundry/Capsule.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TempItems/TempLaundry/Capsule.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TempItems/TempLaundry/Cylinder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TempItems/TempLaundry/Cylinder.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TempItems/TempLaundry/Sphere.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TempItems/TempLaundry/Sphere.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TempItems/WetWashItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TempItems/WetWashItem.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/ConveyerBelt/ConveyerBelt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/ConveyerBelt/ConveyerBelt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/ConveyerBelt/Destructor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/ConveyerBelt/Destructor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/CleaningItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/CleaningItems.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/IItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/IItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/PickupAndCarryItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/PickupAndCarryItems.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/PickupAndCarryItems.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/PickupAndCarryItems.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/TShirt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/TShirt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GamePlaySystems.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GamePlaySystems.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GamePlaySystems/TestingPlayers/PlayerCC.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GamePlaySystems/TestingPlayers/PlayerCC.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoadScreens/TitleScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoadScreens/TitleScreen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_models/GunHeavy.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_models/GunHeavy.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_models/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_models/Materials/GunHeavy-No Name.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_models/Materials/GunHeavy-No Name.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_models/Materials/No Name.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_models/Materials/No Name.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_prefabs/GunLight.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_prefabs/GunLight/SciFiGunLightYellow.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_prefabs/GunLight/SciFiGunLightYellow.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Black.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Black/GunTwo_AlbedoTransparency.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Black/GunTwo_AlbedoTransparency.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Black/GunTwo_SpecularSmoothness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Black/GunTwo_SpecularSmoothness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Blue.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Blue/GunTwo_AlbedoTransparency.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Blue/GunTwo_AlbedoTransparency.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Blue/GunTwo_SpecularSmoothness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Blue/GunTwo_SpecularSmoothness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/GunTwo_Emission1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/GunTwo_Emission1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/GunTwo_Emission2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/GunTwo_Emission2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/GunTwo_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/GunTwo_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Rad.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Rad/GunTwo_AlbedoTransparency.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Rad/GunTwo_AlbedoTransparency.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Rad/GunTwo_SpecularSmoothness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Rad/GunTwo_SpecularSmoothness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/White.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/White/GunTwo_AlbedoTransparency.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/White/GunTwo_AlbedoTransparency.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/White/GunTwo_SpecularSmoothness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/White/GunTwo_SpecularSmoothness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Yellow.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Yellow/GunTwo_AlbedoTransparency.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Yellow/GunTwo_AlbedoTransparency.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Yellow/GunTwo_SpecularSmoothness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sci Fi Gun Light/_textures/GunTwo/Yellow/GunTwo_SpecularSmoothness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/Grab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/Grab.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/WashingMachine/WashingMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/WashingMachine/WashingMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/WeaponScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/WeaponScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/WeaponScript.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/WeaponScript.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,33 +95,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnityNetworking_LLAPI_Server/Assets/Scripts/Server.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../UnityProjects/2D_EventTest_Project1/Assets/Scripts/AimAtMouse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/05250243-5982-472D-92DA-7F939C7F8164/31/64b90b70/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/CrossPlatforms2_Lab7/Assets/Scripts/LoadSaveManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnitTest_Project1/Assets/_Project/Editor/MinMaxDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnitTest_Project2/Assets/Tests/EditMode/damage_calculator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/CrossPlatforms2_Lab7/Assets/Scripts/LoadSaveManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Funamentals2_Labs/Fundamentals2_Lab7/Assets/Scripts/Enemy/EnemyUnit.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../UnityProjects/2D_EventTest_Project1/Assets/Scripts/AimAtMouse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../TeamMileStone2/SpinCycle-Anthony/Assets/Scripts/Items/TShirt.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/05250243-5982-472D-92DA-7F939C7F8164/31/64b90b70/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnityNetworking_LLAPI_Server/Assets/Scripts/Server.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/buttons.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/PlayerSpawner/PlayerStartingSpawnPoint.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/Grab.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/MouseLook.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementRigidbody.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/CanvasManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/LoadScreen2CanvasManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/WashingMachine/WashingMachine.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/ConveyerBelt/Destructor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/ConveyerBelt/ConveyerBelt.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Items/TShirt.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/WashingMachine/WashingMachine.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/Grab.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1jXM3iP7Giz6FodzT2B7nRGS8ar" />
   <component name="ProjectLevelVcsManager">
@@ -82,6 +123,7 @@
   <component name="PropertiesComponent">
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -91,7 +133,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -100,7 +142,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -120,6 +162,7 @@
       <workItem from="1607542916545" duration="929000" />
       <workItem from="1607547582972" duration="1507000" />
       <workItem from="1607553856904" duration="746000" />
+      <workItem from="1608234287208" duration="1041000" />
     </task>
     <servers />
   </component>

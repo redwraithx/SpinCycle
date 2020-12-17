@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WeaponScript : MonoBehaviour
 {
-    public Rigidbody projectile;            
+    public Rigidbody projectile;
+    public float projectileSpeed;
     public int ammo;                        
     public Transform projectileSpawnPoint;  
     public float projectileForce;
@@ -24,6 +25,26 @@ public class WeaponScript : MonoBehaviour
         }
 
 
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Fire1")) // Set in Edit | Project Settings | Input Manager
+        {
+            Debug.Log("Firingisdfjhasdkjahsdkjhaksd");
+            fire();
+        }
+    }
+    public void fire()
+    {
+        if (projectileSpawnPoint && projectile)
+        {
+            // Make bullet
+            Rigidbody temp = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+
+            // Shoot bullet
+            temp.AddForce(projectileSpawnPoint.forward * projectileSpeed, ForceMode.Impulse);
+        }
     }
 
     public int Shoot()

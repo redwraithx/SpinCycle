@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance = null;
-
-
+    public float points;
+    //points float added in
     #region GAMEMANAGER_CORE-EXTENTIONS
 
     public static AudioManager audioManager = null; 

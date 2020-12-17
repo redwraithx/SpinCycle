@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7755683574292906463}
+  - component: {fileID: 7504558961146768140}
+  - component: {fileID: 2873586944872153971}
   - component: {fileID: 341629049873640674}
   - component: {fileID: 7755683574292906456}
   - component: {fileID: 7755683574292906457}
@@ -38,6 +40,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7504558961146768140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755683574292906458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5fbc656703a37498d09f38ffbc5878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: -6487827619003692647, guid: ac266ad8da2d7cd4a891d49134b67487, type: 3}
+  projectileSpeed: 50
+  ammo: 0
+  projectileSpawnPoint: {fileID: 0}
+  projectileForce: 50
+--- !u!114 &2873586944872153971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755683574292906458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51947f110b656454b9a1fee36118acb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHitObject: {fileID: 0}
+  sphereRadius: 0
+  maxDistance: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  outOfRange: 1
 --- !u!114 &341629049873640674
 MonoBehaviour:
   m_ObjectHideFlags: 0

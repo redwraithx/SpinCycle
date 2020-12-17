@@ -1,6 +1,6 @@
 ﻿
 using UnityEngine;
-
+using UnityEngine.UI;
 public class WashingMachine : MonoBehaviour
 {
 
@@ -9,6 +9,7 @@ public class WashingMachine : MonoBehaviour
     public bool timerSabotage = false;
     public bool isWashing = false;
     public GameObject cleanLaundry;
+    public Slider time;
 
 
     void Update()
@@ -25,7 +26,7 @@ public class WashingMachine : MonoBehaviour
                 isWashing = false;
             }
         }
-   
+        time.value = timer;
     }
 
     public void SpawnFinishedLaundry()
@@ -48,7 +49,7 @@ public class WashingMachine : MonoBehaviour
         Debug.Log("Press E to interact with laundry machine");
 
         //Alter this tag based on machine
-        if (other.gameObject.CompareTag("Sock"))
+        if (other.gameObject.CompareTag("Item"))
         {
 
             //Revisit keybinds for next part later
@@ -57,6 +58,8 @@ public class WashingMachine : MonoBehaviour
                 //Once player is created, call to destroy the item in their hand here
                 WashClothes();
 
+                
+                Destroy(other.gameObject);
             }
         }
 
