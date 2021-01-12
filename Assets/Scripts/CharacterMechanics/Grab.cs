@@ -7,12 +7,12 @@ using UnityEngine.UIElements;
 public class Grab : MonoBehaviour
 {
     public Transform grabPoint = null;
-    [SerializeField] private bool canPickUpItem = false;
+    [SerializeField] public bool canPickUpItem = false;
     [SerializeField] private bool hasItemInHand = false;
     
 
     [SerializeField] private GameObject itemInHand = null;
-    [SerializeField] private GameObject itemToPickUp = null;
+    [SerializeField] public GameObject itemToPickUp = null;
 
 
     private void OnMouseDown()
@@ -43,6 +43,7 @@ public class Grab : MonoBehaviour
             
 
             hasItemInHand = true;
+            GetComponent<PlayerSphereCast>().itemInHand = true;
             itemInHand = itemToPickUp;
 
             foreach (var itemCollider in itemInHand.GetComponents<Collider>())
@@ -77,6 +78,7 @@ public class Grab : MonoBehaviour
         itemInHand.transform.parent = null;
 
         hasItemInHand = false;
+        GetComponent<PlayerSphereCast>().itemInHand = false;
         itemInHand = null;
     }
 
@@ -119,8 +121,8 @@ public class Grab : MonoBehaviour
         if (!other.gameObject.CompareTag("Item"))
             return;
         
-        canPickUpItem = true;
-        itemToPickUp = other.gameObject;
+        //canPickUpItem = true;
+        //itemToPickUp = other.gameObject;
         
     }
 
@@ -130,15 +132,15 @@ public class Grab : MonoBehaviour
         if (!other.gameObject.CompareTag("Item"))
             return;
 
-        canPickUpItem = true;
-        itemToPickUp = other.gameObject;
+        //canPickUpItem = true;
+        //itemToPickUp = other.gameObject;
         
     }
 
 
     private void OnTriggerExit(Collider other)
     {
-        canPickUpItem = false;
-        itemToPickUp = null;
+        //canPickUpItem = false;
+        //itemToPickUp = null;
     }
 }

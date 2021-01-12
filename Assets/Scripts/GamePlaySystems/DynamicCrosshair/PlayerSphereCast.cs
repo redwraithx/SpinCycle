@@ -17,8 +17,11 @@ public class PlayerSphereCast : MonoBehaviour
     private Vector3 direction;
 
     public bool outOfRange = true;
+    public bool itemInHand = false;
 
     private float currentHitDistance;
+
+    public Grab grab;
 
     // Start is called before the first frame update
     void Start()
@@ -27,14 +30,42 @@ public class PlayerSphereCast : MonoBehaviour
         {
             maxDistance = 10;
         }
+
+        grab = GetComponent<Grab>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (itemInHand == false)
+        {
+            maxDistance = 3;
+            sphereRadius = 1;
+            layerMask = LayerMask.GetMask("Items");
+        }
+        else
+        {
+            maxDistance = 7;
+            sphereRadius = 3;
+            layerMask = LayerMask.GetMask("Usable Objects");
+        }
 
         origin = transform.position;
         direction = transform.forward;
+
+        if (currentHitObject != null && currentHitObject.gameObject.tag == "Item")
+        {
+            grab.itemToPickUp = currentHitObject;
+            grab.canPickUpItem = true;
+        }
+
+        else
+        {
+            grab.itemToPickUp = null;
+            grab.canPickUpItem = false;
+        }
+
+        
 
         RaycastHit hit;
 

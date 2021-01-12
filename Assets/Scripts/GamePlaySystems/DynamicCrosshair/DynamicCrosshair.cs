@@ -19,7 +19,7 @@ public class DynamicCrosshair : MonoBehaviour
     private void PlayerSphereCast_ObjectSelected(GameObject obj)
     {
         Vector3 screenPos = cam.WorldToScreenPoint(obj.transform.position);
-        crosshair.transform.position = Vector3.MoveTowards(crosshair.transform.position, screenPos, 10);
+        crosshair.transform.position = Vector3.MoveTowards(crosshair.transform.position, screenPos, 30);
     }
 
     // Update is called once per frame

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5320066210988248458}
   - component: {fileID: 3214280266636067209}
   - component: {fileID: 3583830392436074081}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: T-Shirt
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -51,6 +51,7 @@ MonoBehaviour:
   _name: Red_T_Shirt
   _description: Red T-Shirt
   _price: 100
+  _timeAdjustment: 0
 --- !u!33 &3467446721770865137
 MeshFilter:
   m_ObjectHideFlags: 0
