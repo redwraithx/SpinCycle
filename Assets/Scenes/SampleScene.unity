@@ -1136,6 +1136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PHWashingMachine_Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 3055491103818368381, guid: e77d5887b6d40f24792fc043dda9d1f0, type: 3}
+      propertyPath: m_TagString
+      value: WashingMachine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e77d5887b6d40f24792fc043dda9d1f0, type: 3}
 --- !u!1 &704124490
@@ -1657,6 +1661,10 @@ PrefabInstance:
       propertyPath: projectileSpawnPoint
       value: 
       objectReference: {fileID: 1830173604}
+    - target: {fileID: 7504558961146768140, guid: c1aa21066d36c0042a3b8ccba45781ab, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7755683574292906458, guid: c1aa21066d36c0042a3b8ccba45781ab, type: 3}
       propertyPath: m_Name
       value: PlayerCC

@@ -1,19 +1,30 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
+using GamePlaySystems.Utilities;
+using Microsoft.Win32.SafeHandles;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Grab : MonoBehaviour
 {
     public Transform grabPoint = null;
+    
     [SerializeField] public bool canPickUpItem = false;
     [SerializeField] private bool hasItemInHand = false;
-    
-
     [SerializeField] private GameObject itemInHand = null;
-    [SerializeField] public GameObject itemToPickUp = null;
+    [SerializeField] internal GameObject itemToPickUp = null;
+    [SerializeField] private ItemTypeForUsingItem machineInteractionObject = null;
+    [SerializeField] private bool canUseHeldItem = false;
 
+    [SerializeField] private ItemTypeForUsingItem objectYouCanUse = null;
+
+    public bool CanUseHeldItem
+    {
+        get => canUseHeldItem;
+        set => canUseHeldItem = value;
+    }
 
     private void OnMouseDown()
     {
@@ -94,6 +105,39 @@ public class Grab : MonoBehaviour
         {
             CheckForMouseUp();
         }
+
+        if (hasItemInHand)
+        {
+            
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("trying to use item in hand");
+
+                var isValidItemObject = false;
+                
+                // is it an item? or weapon?
+                if(itemInHand)
+                    isValidItemObject = itemInHand.GetComponent<ItemTypeForItem>() ? true : false;
+
+                if (isValidItemObject && canUseHeldItem)
+                {
+                    Debug.Log("Using item in hand now");
+
+                    if (machineInteractionObject)
+                    {
+                       // use object action will only work on one event per object
+                       machineInteractionObject.thisObjectEvent.Invoke(itemInHand);
+
+                       itemInHand = null;
+                       
+                       ClearGrabValues();
+                       
+                    }
+                    
+                }
+
+            }
+        }
     }
 
     
@@ -117,30 +161,128 @@ public class Grab : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // can only hold items in your hand not machines
-        if (!other.gameObject.CompareTag("Item"))
-            return;
+        var item = other.gameObject.CompareTag("Item");
+        var washingMachine = other.gameObject.CompareTag("WashingMachine");
         
-        //canPickUpItem = true;
-        //itemToPickUp = other.gameObject;
+        // can only hold items in your hand not machines
+        if (item || washingMachine)
+        {
+            if ((machineInteractionObject = other.GetComponent<ItemTypeForUsingItem>()) == true && itemInHand)
+            {
+                CanUseHeldItem = true;
+            }
+            else
+            {
+                canUseHeldItem = false;
+                machineInteractionObject = null;
+            
+            }
+            
+            
+            if(item)
+            {
+                canPickUpItem = true;
+                itemToPickUp = other.gameObject;
+            
+            }
+            else
+            {
+                canPickUpItem = false;
+                itemToPickUp = null;
+            
+            }
+
+            if (itemInHand)
+            {
+                var isItemASabbotage = itemInHand?.GetComponent<ItemTypeForItem>();
+                if (isItemASabbotage)
+                {
+                    if (isItemASabbotage.itemType == ItemTypeForItem.ItemType.SabotageWaterGun)
+                        canUseHeldItem = false;
+                }
+            }
+
+        }
         
     }
 
     private void OnTriggerStay(Collider other)
     {
-        // can only hold items in your hand not machines
-        if (!other.gameObject.CompareTag("Item"))
-            return;
-
-        //canPickUpItem = true;
-        //itemToPickUp = other.gameObject;
+        var item = other.gameObject.CompareTag("Item");
+        var washingMachine = other.gameObject.CompareTag("WashingMachine");
         
+        // can only hold items in your hand not machines
+        if (item || washingMachine)
+        {
+            Debug.Log("collided with " + other.gameObject.tag);
+            
+            
+            // NEW VERSION
+            if ((machineInteractionObject = other.GetComponent<ItemTypeForUsingItem>()) == true && itemInHand)
+            {
+                CanUseHeldItem = true;
+            }
+            else
+            {
+                canUseHeldItem = false;
+                machineInteractionObject = null;
+            }
+            
+            
+            if(item)
+            {
+                canPickUpItem = true;
+                itemToPickUp = other.gameObject;
+            }
+            else
+            {
+                canPickUpItem = false;
+                itemToPickUp = null;
+            }
+
+            if (itemInHand)
+            {
+                var isItemASabbotage = itemInHand?.GetComponent<ItemTypeForItem>();
+                if (isItemASabbotage)
+                {
+                    if (isItemASabbotage.itemType == ItemTypeForItem.ItemType.SabotageWaterGun)
+                        canUseHeldItem = false;
+                }
+            }
+        }
     }
 
 
     private void OnTriggerExit(Collider other)
     {
-        //canPickUpItem = false;
-        //itemToPickUp = null;
+
+        ClearGrabValues();
+    }
+    
+
+    private void ClearGrabValues()
+    {
+        if (itemInHand)
+        {
+            var isItemASabbotage = itemInHand.GetComponent<ItemTypeForItem>().itemType;
+            if (isItemASabbotage == ItemTypeForItem.ItemType.SabotageWaterGun)
+            {
+                canUseHeldItem = true;
+                
+                Debug.Log("you have sabotageWaterGun");
+            }
+            
+        }
+        else
+        {
+            itemInHand = null;
+            canUseHeldItem = false;
+        }
+
+        canPickUpItem = false;
+        itemToPickUp = null;
+
+        machineInteractionObject = null;
+
     }
 }

@@ -1,6 +1,10 @@
 ﻿
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using System.Collections;
+
+
 public class WashingMachine : MonoBehaviour
 {
 
@@ -40,27 +44,26 @@ public class WashingMachine : MonoBehaviour
         timer = 100;
         isWashing = true;
 
-        //Add animation trigger here or in timer later
+        //Add animation trigger here or in timer later if needed
+        
     }
 
-    private void OnTriggerStay(Collider other)
+    public void UseMachine(GameObject other)
     {
 
-        Debug.Log("Press E to interact with laundry machine");
+        Debug.Log("if dirty item, it will be added to the machine");
 
         //Alter this tag based on machine
-        if (other.gameObject.CompareTag("Item"))
+        if (other.CompareTag("Item"))
         {
-
-            //Revisit keybinds for next part later
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                //Once player is created, call to destroy the item in their hand here
-                WashClothes();
+            Debug.Log("we have a dirty item");
 
                 
-                Destroy(other.gameObject);
-            }
+            //Once player is created, call to destroy the item in their hand here
+            WashClothes();
+
+            // we may want to use a bool incase the machine is full we dont destroy or use the object
+            Destroy(other);
         }
 
     }
