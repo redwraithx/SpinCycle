@@ -41,7 +41,7 @@ public class WashingMachine : MonoBehaviour
 
     public void WashClothes()
     {
-        timer = 100;
+        timer = 50;
         isWashing = true;
 
         //Add animation trigger here or in timer later if needed
@@ -57,7 +57,7 @@ public class WashingMachine : MonoBehaviour
         if (other.CompareTag("Item"))
         {
             Debug.Log("we have a dirty item");
-
+            cleanLaundry = other;
                 
             //Once player is created, call to destroy the item in their hand here
             WashClothes();
