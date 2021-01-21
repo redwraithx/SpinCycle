@@ -85,12 +85,14 @@ public class PlayerSphereCast : MonoBehaviour
             if (Vector3.Distance(transform.position, currentHitObject.transform.position) <= maxDistance)
             {
                 outOfRange = false;
+                grab.outOfRange = false;
                 if (ObjectSelected != null)
                     ObjectSelected(currentHitObject);
             }
             else
             {
                 outOfRange = true;
+                grab.outOfRange = true;
             }
 
         }

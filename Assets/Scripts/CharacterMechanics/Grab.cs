@@ -17,6 +17,7 @@ public class Grab : MonoBehaviour
     [SerializeField] internal GameObject itemToPickUp = null;
     [SerializeField] private ItemTypeForUsingItem machineInteractionObject = null;
     [SerializeField] private bool canUseHeldItem = false;
+    [SerializeField] internal bool outOfRange = true;
 
     [SerializeField] private ItemTypeForUsingItem objectYouCanUse = null;
 
@@ -49,7 +50,7 @@ public class Grab : MonoBehaviour
     
     private void CheckForMouseDown()
     {
-        if (canPickUpItem && itemToPickUp)
+        if (canPickUpItem && itemToPickUp && outOfRange == false)
         {
             
 
@@ -277,10 +278,12 @@ public class Grab : MonoBehaviour
         {
             itemInHand = null;
             canUseHeldItem = false;
+            GetComponent<PlayerSphereCast>().itemInHand = false;
         }
 
         canPickUpItem = false;
         itemToPickUp = null;
+        
 
         machineInteractionObject = null;
 
