@@ -661,6 +661,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3426346566255165634, guid: 5e1bdba4871afe844b2891a8f251f0ee, type: 3}
+      propertyPath: pooledItems.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426346566255165634, guid: 5e1bdba4871afe844b2891a8f251f0ee, type: 3}
+      propertyPath: pooledItems.Array.data[1]
+      value: 
+      objectReference: {fileID: 2097404848044861107, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
+    - target: {fileID: 3426346566255165634, guid: 5e1bdba4871afe844b2891a8f251f0ee, type: 3}
+      propertyPath: pooledItems.Array.data[2]
+      value: 
+      objectReference: {fileID: 2097404848044861107, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
     - target: {fileID: 3426346566255165635, guid: 5e1bdba4871afe844b2891a8f251f0ee, type: 3}
       propertyPath: m_Name
       value: LaundryPool
