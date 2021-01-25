@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class Item : MonoBehaviour, IItem
@@ -10,6 +13,12 @@ public class Item : MonoBehaviour, IItem
     [SerializeField] private float _timeAjustment;
 
 
+    private void Awake()
+    {
+        gameObject.tag = "Item";
+
+        gameObject.layer = LayerMask.NameToLayer("Items");
+    }
 
 
     public Item(string name, string description, int price, float _time)

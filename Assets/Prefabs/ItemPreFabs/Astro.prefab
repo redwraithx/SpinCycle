@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 5657563142154269516}
   - component: {fileID: 4406515418087974015}
   - component: {fileID: 4838928589937991697}
-  - component: {fileID: 3831872881766653779}
+  - component: {fileID: 7344437518405505154}
+  - component: {fileID: 4349421767298004567}
+  - component: {fileID: 1091545670}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Astro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3831872881766653779
+--- !u!114 &7344437518405505154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,9 +124,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 3175498842662343976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20d2ba73191588348a1c3fb810e603c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f90a41f1c18f8e4aa8eede153b212ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Astro
-  _description: T-Shirt
-  _price: 50
+  _name: astro
+  _description: stuff slides
+  _price: 1000
+  _timeAjustment: 0
+--- !u!114 &4349421767298004567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175498842662343976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2e483fbd70d9e4da185468f0ca5bd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 5
+  laundryType: 0
+--- !u!135 &1091545670
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175498842662343976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}

@@ -7,8 +7,6 @@ using EnumSpace;
 
 public class DirtyLaundrySpawner : MonoBehaviour
 {
-
-    public GameObject[] dirtyLaundryPrefabs;
     public GameObject spawnPoint;
     public float timeSinceLastSpawn = 0f;
     public float spawnRate;
@@ -16,13 +14,9 @@ public class DirtyLaundrySpawner : MonoBehaviour
     float randTime;
     int laundryRandomizer;
     public LaundryType laundryType;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
+    
 
-    // Update is called once per frame
     void Update()
     {
         spawnRate = randTime;

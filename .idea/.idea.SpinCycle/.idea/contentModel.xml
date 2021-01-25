@@ -18,7 +18,6 @@
             <e p="AudioManagerTESTING" t="Include">
               <e p="AudioManagerTest.cs" t="Include" />
             </e>
-            <e p="ButtonHover.cs" t="Include" />
             <e p="CanvasManager.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="LoadScreen2CanvasManager.cs" t="Include" />
@@ -36,9 +35,18 @@
             <e p="DirtyLaundrySpawner" t="Include">
               <e p="DirtyLaundrySpawner.cs" t="Include" />
             </e>
+            <e p="DryingMachine" t="Include">
+              <e p="DryingMachine.cs" t="Include" />
+            </e>
             <e p="DynamicCrosshair" t="Include">
               <e p="DynamicCrosshair.cs" t="Include" />
               <e p="PlayerSphereCast.cs" t="Include" />
+            </e>
+            <e p="Enumerators" t="Include">
+              <e p="Enums.cs" t="Include" />
+            </e>
+            <e p="LaundryBasket" t="Include">
+              <e p="LaundryBasket.cs" t="Include" />
             </e>
             <e p="Player" t="Include">
               <e p="Health.cs" t="Include" />
@@ -50,11 +58,21 @@
             <e p="PlayerSpawner" t="Include">
               <e p="PlayerStartingSpawnPoint.cs" t="Include" />
             </e>
+            <e p="Pooling" t="Include">
+              <e p="LaundryPool.cs" t="Include" />
+            </e>
+            <e p="Utilities" t="Include">
+              <e p="ItemTypeForItem.cs" t="Include" />
+              <e p="ItemTypeForUsingItem.cs" t="Include" />
+            </e>
             <e p="VendingMachine" t="Include">
+              <e p="ButtonHover.cs" t="Include" />
               <e p="IVendingMachine.cs" t="Include" />
+              <e p="VendingIndex.cs" t="Include" />
               <e p="VendingMachine.cs" t="Include" />
             </e>
             <e p="WashingMachine" t="Include">
+              <e p="MachineScript.cs" t="Include" />
               <e p="WashingMachine.cs" t="Include" />
             </e>
           </e>
@@ -62,6 +80,7 @@
             <e p="CleaningItems.cs" t="Include" />
             <e p="Clothing.cs" t="Include" />
             <e p="IItem.cs" t="Include" />
+            <e p="Item.cs" t="Include" />
             <e p="PickupAndCarryItems.cs" t="Include" />
             <e p="TShirt.cs" t="Include" />
             <e p="WeaponPickUpScript.cs" t="Include" />

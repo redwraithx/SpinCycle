@@ -40,6 +40,7 @@ public class LaundryPool : MonoBehaviour
     public GameObject GetItem(LaundryType type)
     {
         int id = (int)type;
+        
         if (pool[id].Count > 0)
         {
             for (int i = 0; i < pool[id].Count; i++)
