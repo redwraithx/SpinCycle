@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EnumSpace;
 
 [System.Serializable]
 
-public class ItemPool : MonoBehaviour
+public class LaundryPool : MonoBehaviour
 {
-    public static ItemPool poolInstance;
+    public static LaundryPool poolInstance;
 
     [SerializeField]
     public GameObject[] pooledItems;
@@ -14,12 +15,7 @@ public class ItemPool : MonoBehaviour
 
     private List<GameObject>[] pool;
 
-    public enum ItemType
-    {
-        tshirt,
-        pants,
-        socks
-    }
+
 
 
     private void Awake()
@@ -41,7 +37,7 @@ public class ItemPool : MonoBehaviour
     }
 
     // Update is called once per frame
-    public GameObject GetItem(ItemType type)
+    public GameObject GetItem(LaundryType type)
     {
         int id = (int)type;
         if (pool[id].Count > 0)

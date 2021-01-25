@@ -49,7 +49,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2e483fbd70d9e4da185468f0ca5bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
+  itemType: 1
+  laundryType: 0
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097404848044861107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74405fc03aba74499545f2d9611cf7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Red_T_Shirt
+  _description: Red T-Shirt
+  _price: 100
+  _timeAdjustment: 0
 --- !u!33 &3467446721770865137
 MeshFilter:
   m_ObjectHideFlags: 0

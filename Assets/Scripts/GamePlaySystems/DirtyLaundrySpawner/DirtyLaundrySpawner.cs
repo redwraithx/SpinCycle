@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using EnumSpace;
 
 public class DirtyLaundrySpawner : MonoBehaviour
 {
@@ -12,6 +15,7 @@ public class DirtyLaundrySpawner : MonoBehaviour
     public bool isSpawning;
     float randTime;
     int laundryRandomizer;
+    public LaundryType laundryType;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,19 +28,22 @@ public class DirtyLaundrySpawner : MonoBehaviour
         spawnRate = randTime;
         if (Time.time >= timeSinceLastSpawn + spawnRate)
         {
-            randTime = Random.Range(1f, 10f);
+            randTime = UnityEngine.Random.Range(1f, 10f);
             timeSinceLastSpawn = Time.time;
             if (isSpawning == true)
             {
-                laundryRandomizer = Random.Range(0, dirtyLaundryPrefabs.Length);
-                SpawnDirtyLaundry(laundryRandomizer);
+                laundryType = (LaundryType)UnityEngine.Random.Range(0, (int)Enum.GetValues(typeof(LaundryType)).Cast<LaundryType>().Max());
+                SpawnDirtyLaundry(laundryType);
             }
         }
     }
 
-    public void SpawnDirtyLaundry(int i)
+    public void SpawnDirtyLaundry(LaundryType type)
     {
-        GameObject newLaundry = Instantiate(dirtyLaundryPrefabs[i], spawnPoint.transform.position, Quaternion.identity);
+        GameObject newLaundry = LaundryPool.poolInstance.GetItem(type);
+        newLaundry.transform.position = spawnPoint.transform.position;
+        newLaundry.transform.rotation = spawnPoint.transform.rotation;
+        newLaundry.SetActive(true);
 
     }
 }

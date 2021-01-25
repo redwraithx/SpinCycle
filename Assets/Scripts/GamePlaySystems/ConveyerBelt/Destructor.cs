@@ -12,9 +12,9 @@ public class Destructor : MonoBehaviour
     {
         if (collision.gameObject.tag == "Item")
         {
-        
-        
-            Destroy(collision.gameObject);
+
+
+            collision.gameObject.SetActive(false);
         }
     }
 }
