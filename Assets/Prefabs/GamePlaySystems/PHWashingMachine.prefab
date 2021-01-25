@@ -240,14 +240,14 @@ GameObject:
   - component: {fileID: 2784792741303249052}
   - component: {fileID: 1227874847744878393}
   - component: {fileID: 3958311003772982259}
+  - component: {fileID: 3951247726727477281}
   - component: {fileID: 1376145823038642430}
   - component: {fileID: 2748236821714529793}
   - component: {fileID: 4235516802737459794}
   - component: {fileID: 8615470195637058898}
-  - component: {fileID: 3788546499026853713}
   m_Layer: 10
   m_Name: PHWashingMachine
-  m_TagString: Machine
+  m_TagString: WashingMachine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,6 +317,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3951247726727477281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3309655975237464614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653208667fc434484acede7af9ab5798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSpawnPoint: {fileID: 202502842116228322}
+  timer: 0
+  timerSabotage: 0
+  isWashing: 0
+  cleanLaundry: {fileID: 0}
+  time: {fileID: 9035103788946318229}
 --- !u!65 &1376145823038642430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -371,12 +389,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac21268cb68d6f49bfccd64ca14a9c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 01000000
+  itemType: 
   thisObjectEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3788546499026853713}
-        m_TargetAssemblyTypeName: MachineScript, Assembly-CSharp
+      - m_Target: {fileID: 3951247726727477281}
+        m_TargetAssemblyTypeName: WashingMachine, Assembly-CSharp
         m_MethodName: UseMachine
         m_Mode: 0
         m_Arguments:
@@ -387,26 +405,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3788546499026853713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3309655975237464614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8236382c68b3340ad3d9920022d658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cycleLength: 50
-  itemSpawnPoint: {fileID: 202502842116228322}
-  timer: 0
-  timerSabotage: 0
-  isEnabled: 0
-  sliderTime: {fileID: 9035103788946318229}
-  laundryType: 0
-  machineType: 0
 --- !u!1 &8238276113407010175
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,6 @@ public class Grab : MonoBehaviour
     [SerializeField] private bool hasItemInHand = false;
     [SerializeField] private GameObject itemInHand = null;
     [SerializeField] internal GameObject itemToPickUp = null;
-    [SerializeField] internal GameObject objectToInteractWith = null;
     [SerializeField] private ItemTypeForUsingItem machineInteractionObject = null;
     [SerializeField] private bool canUseHeldItem = false;
     [SerializeField] internal bool outOfRange = true;
@@ -161,16 +160,13 @@ public class Grab : MonoBehaviour
         itemInHand = null;
     }
 
-    //We should rewrite this function with the spherecast instead of the collider.  I have added private internal objectToInteractWith that has a value passed to it whenever the spherecast is on a machine.  
-    //Further parameters of that function are available in the spherecast script but it should be working properly if we want to just rewrite the below functions using that variable instead.
-
     private void OnTriggerEnter(Collider other)
     {
         var item = other.gameObject.CompareTag("Item");
-        var machine = other.gameObject.CompareTag("Machine");
+        var washingMachine = other.gameObject.CompareTag("WashingMachine");
         
         // can only hold items in your hand not machines
-        if (item || machine)
+        if (item || washingMachine)
         {
             if ((machineInteractionObject = other.GetComponent<ItemTypeForUsingItem>()) == true && itemInHand)
             {
@@ -214,10 +210,10 @@ public class Grab : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         var item = other.gameObject.CompareTag("Item");
-        var machine = other.gameObject.CompareTag("Machine");
+        var washingMachine = other.gameObject.CompareTag("WashingMachine");
         
         // can only hold items in your hand not machines
-        if (item || machine)
+        if (item || washingMachine)
         {
             Debug.Log("collided with " + other.gameObject.tag);
             

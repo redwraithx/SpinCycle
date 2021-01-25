@@ -65,22 +65,6 @@ public class PlayerSphereCast : MonoBehaviour
             grab.canPickUpItem = false;
         }
 
-        if (currentHitObject != null && currentHitObject.gameObject.tag == "Machine")
-        {
-            grab.objectToInteractWith = currentHitObject;
-        }
-
-        else if (currentHitObject != null && currentHitObject.gameObject.tag == "UsableObjects")
-        {
-            if (itemInHand == false)
-                grab.objectToInteractWith = currentHitObject;
-        }
-
-        else
-        {
-            grab.objectToInteractWith = null;
-        }
-
         
 
         RaycastHit hit;

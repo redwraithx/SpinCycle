@@ -248,14 +248,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &20282575
@@ -324,67 +316,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 242236203403975052, guid: b720eaed843a2a548a768519f93132a6, type: 3}
   m_PrefabInstance: {fileID: 20282575}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &31312855
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2097404848044861107, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
-      propertyPath: m_Name
-      value: T-Shirt
-      objectReference: {fileID: 0}
-    - target: {fileID: 4442845815558936321, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.659873
-      objectReference: {fileID: 0}
-    - target: {fileID: 4442845815558936321, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4442845815558936321, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.7644367
-      objectReference: {fileID: 0}
-    - target: {fileID: 4442845815558936321, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4442845815558936321, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4442845815558936321, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4442845815558936321, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4442845815558936321, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4442845815558936321, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4442845815558936321, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4442845815558936321, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4677257949682030615, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
-      propertyPath: itemType
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
 --- !u!1001 &39202396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -439,14 +370,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -1134,14 +1057,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -1988,14 +1903,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!4 &158274421 stripped
@@ -2057,14 +1964,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -2183,14 +2082,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -2388,14 +2279,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -2658,25 +2541,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88677db8be3be4b3493fc0b61ec0039f, type: 3}
---- !u!1 &206583289 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4451483930129201316, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-  m_PrefabInstance: {fileID: 1480824438}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &206583296
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206583289}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &208631524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3135,14 +2999,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!4 &318630236 stripped
@@ -3552,14 +3408,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (10)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!4 &351829449 stripped
@@ -3890,14 +3738,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &367754011
@@ -3955,14 +3795,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &369513770
@@ -4002,7 +3834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5931836118849173896, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5931836118849173896, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4207,14 +4039,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -4480,14 +4304,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &419769713
@@ -4614,14 +4430,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -5160,14 +4968,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &498627980
@@ -5407,14 +5207,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!4 &518168723 stripped
@@ -5537,14 +5329,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -6426,14 +6210,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (12)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!4 &621037624 stripped
@@ -6763,14 +6539,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -7207,14 +6975,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &701758708
@@ -7417,14 +7177,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1 &722903349
@@ -7621,14 +7373,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -8099,10 +7843,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 992414637}
     m_Modifications:
-    - target: {fileID: 1376145823038642430, guid: 88677db8be3be4b3493fc0b61ec0039f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2784792741303249052, guid: 88677db8be3be4b3493fc0b61ec0039f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -8154,10 +7894,6 @@ PrefabInstance:
     - target: {fileID: 3309655975237464614, guid: 88677db8be3be4b3493fc0b61ec0039f, type: 3}
       propertyPath: m_Name
       value: PHWashingMachine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235516802737459794, guid: 88677db8be3be4b3493fc0b61ec0039f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88677db8be3be4b3493fc0b61ec0039f, type: 3}
@@ -8215,14 +7951,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -8430,14 +8158,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -8764,14 +8484,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -9151,14 +8863,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -9570,7 +9274,7 @@ Transform:
   - {fileID: 148650326}
   - {fileID: 1746949038}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &946718400
 PrefabInstance:
@@ -9762,14 +9466,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -10558,14 +10254,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &1044511804
@@ -10962,14 +10650,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &1092177544
@@ -11224,14 +10904,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -11652,7 +11324,7 @@ Transform:
   - {fileID: 1397374708}
   - {fileID: 1970672385}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1147706894
 PrefabInstance:
@@ -12245,14 +11917,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &1247856529
@@ -12520,14 +12184,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -12945,7 +12601,7 @@ RectTransform:
   - {fileID: 766007595}
   - {fileID: 1175535454}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13249,14 +12905,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &1338997116
@@ -13420,7 +13068,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!4 &1350161295 stripped
 Transform:
@@ -13613,14 +13261,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -14247,7 +13887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5931836118849173896, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5931836118849173896, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14387,14 +14027,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -14807,68 +14439,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88677db8be3be4b3493fc0b61ec0039f, type: 3}
---- !u!1001 &1480824438
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 177847113838168014, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-      propertyPath: pointsText
-      value: 
-      objectReference: {fileID: 529101341}
-    - target: {fileID: 4451483930129201312, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451483930129201312, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451483930129201312, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451483930129201312, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451483930129201312, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451483930129201312, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451483930129201312, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451483930129201312, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451483930129201312, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451483930129201312, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451483930129201312, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451483930129201316, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-      propertyPath: m_Name
-      value: LaundryBasket
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4451483930025124913, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: cea84d54c274d3142a2ce1c6947e85da, type: 3}
 --- !u!1001 &1483324371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15324,14 +14894,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!4 &1534180072 stripped
@@ -15437,7 +14999,7 @@ Transform:
   m_LocalScale: {x: 52.70063, y: 0.99999994, z: 53.468464}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1547128622
 PrefabInstance:
@@ -15625,14 +15187,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -16140,14 +15694,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &1610759630
@@ -16381,7 +15927,7 @@ Transform:
   - {fileID: 1225555828}
   - {fileID: 1289160416}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1622203343 stripped
 Transform:
@@ -16512,14 +16058,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -17118,14 +16656,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &1704037653
@@ -17182,14 +16712,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -17896,14 +17418,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &1783698394
@@ -18234,14 +17748,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &1838718092
@@ -18380,51 +17886,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 73a46140258066444902a5717619ec9c, type: 3}
   m_PrefabInstance: {fileID: 1841033517}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1846265192
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1846265194}
-  - component: {fileID: 1846265193}
-  m_Layer: 0
-  m_Name: LaundryPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1846265193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846265192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 340f027c7a805f441b253b57240eca58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooledItems:
-  - {fileID: 2097404848044861107, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
---- !u!4 &1846265194
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846265192}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.544279, y: -19.770615, z: 3.9821234}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1846580727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18536,7 +17997,7 @@ Transform:
   - {fileID: 1932414355}
   - {fileID: 2104170987}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1854237970 stripped
 Transform:
@@ -18739,14 +18200,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &1869431146
@@ -18926,14 +18379,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &1896055754
@@ -19056,14 +18501,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -19987,14 +19424,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &2006067685
@@ -20291,14 +19720,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!4 &2062173844 stripped
@@ -20360,14 +19781,6 @@ PrefabInstance:
     - target: {fileID: 5415683452110538403, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_Name
       value: DryingMachine (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
@@ -20812,14 +20225,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 5477427036161077227, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
 --- !u!1001 &2118199073
@@ -21254,7 +20659,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2143144445 stripped
 Transform:
@@ -21327,3 +20732,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 242236203403975052, guid: b720eaed843a2a548a768519f93132a6, type: 3}
   m_PrefabInstance: {fileID: 242236204828644814}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1598573121063297748
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1598573121505575306, guid: 7ee97a457464ba34e8200a329d6a5349, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598573121505575306, guid: 7ee97a457464ba34e8200a329d6a5349, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598573121505575306, guid: 7ee97a457464ba34e8200a329d6a5349, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598573121505575306, guid: 7ee97a457464ba34e8200a329d6a5349, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598573121505575306, guid: 7ee97a457464ba34e8200a329d6a5349, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598573121505575306, guid: 7ee97a457464ba34e8200a329d6a5349, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598573121505575306, guid: 7ee97a457464ba34e8200a329d6a5349, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598573121505575306, guid: 7ee97a457464ba34e8200a329d6a5349, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598573121505575306, guid: 7ee97a457464ba34e8200a329d6a5349, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598573121505575306, guid: 7ee97a457464ba34e8200a329d6a5349, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598573121505575306, guid: 7ee97a457464ba34e8200a329d6a5349, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598573121505575310, guid: 7ee97a457464ba34e8200a329d6a5349, type: 3}
+      propertyPath: m_Name
+      value: LaundryBasket
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998917713918770916, guid: 7ee97a457464ba34e8200a329d6a5349, type: 3}
+      propertyPath: pointsText
+      value: 
+      objectReference: {fileID: 529101341}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ee97a457464ba34e8200a329d6a5349, type: 3}
