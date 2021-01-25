@@ -1,7 +1,9 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(EventSystem))]
 public class VendingMachine : MonoBehaviour /*IVendingMachine*/
 {
     //add index for button hover

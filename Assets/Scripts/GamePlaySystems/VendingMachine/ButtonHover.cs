@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
+
 public class ButtonHover : MonoBehaviour
     , IPointerEnterHandler
     , IPointerExitHandler
@@ -40,8 +41,11 @@ public class ButtonHover : MonoBehaviour
             VendingIndex = new VendingIndex(saleItem.name, saleItem.Description, saleItem.Price.ToString());
         }
     }
+    
     public void OnPointerEnter(PointerEventData eventData)
     {
+        Debug.Log("Pointer enter");
+        
         if (!FirstRun)
         {
             DescriptionText.text = VendingIndex.Description;
@@ -56,6 +60,8 @@ public class ButtonHover : MonoBehaviour
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        Debug.Log("Pointer exit");
+        
         Description.SetActive(false);
         Price.SetActive(false);
         Name.SetActive(false);
