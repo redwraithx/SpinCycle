@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5931836118849173896}
-  - component: {fileID: 7747588358384618644}
+  - component: {fileID: 1346370036}
   m_Layer: 10
   m_Name: VendingMachine
   m_TagString: VendingMachine
@@ -224,7 +224,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7747588358384618644
+--- !u!114 &1346370036
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,11 +233,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5931836118849173903}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 255c700cf7b6e4d41a35a0250ce4eac3, type: 3}
+  m_Script: {fileID: 11500000, guid: ffec26c1740b1884da4acd9b498f877a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabOfItemsForSale: {fileID: 8962084270595068334, guid: 9d21fa6f202012841ac38a21ef8e4a9d, type: 3}
-  itemSpawnPoint: {fileID: 6627814966707534623}
+  ItemPrefab: {fileID: 0}
+  Price: 100
+  Description: This is a water gun!
 --- !u!1 &5931836119521031337
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +455,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5931836119547657169}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.71, z: 0.62}
+  m_LocalPosition: {x: 0, y: 0.71, z: 0.626}
   m_LocalScale: {x: 1.3468, y: 1, z: 1.6217114}
   m_Children: []
   m_Father: {fileID: 5931836118849173896}
@@ -485,8 +486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255c700cf7b6e4d41a35a0250ce4eac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabOfItemsForSale: {fileID: 0}
-  itemSpawnPoint: {fileID: 0}
+  VendingUI: {fileID: 0}
+  closeButton: {fileID: 0}
 --- !u!1 &5931836119654696707
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,7 +822,7 @@ GameObject:
   m_Layer: 10
   m_Name: SpawnPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -833,7 +834,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6627814966707534623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.54, z: 3.55}
+  m_LocalPosition: {x: 0.1, y: 0.56, z: 2.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5931836118849173896}
