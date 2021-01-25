@@ -15,8 +15,10 @@ public class Grab : MonoBehaviour
     [SerializeField] private bool hasItemInHand = false;
     [SerializeField] private GameObject itemInHand = null;
     [SerializeField] internal GameObject itemToPickUp = null;
+    [SerializeField] internal GameObject objectToInteractWith = null;
     [SerializeField] private ItemTypeForUsingItem machineInteractionObject = null;
     [SerializeField] private bool canUseHeldItem = false;
+    [SerializeField] internal bool outOfRange = true;
 
     [SerializeField] private ItemTypeForUsingItem objectYouCanUse = null;
 
@@ -49,7 +51,7 @@ public class Grab : MonoBehaviour
     
     private void CheckForMouseDown()
     {
-        if (canPickUpItem && itemToPickUp)
+        if (canPickUpItem && itemToPickUp && outOfRange == false)
         {
             
 
@@ -159,13 +161,16 @@ public class Grab : MonoBehaviour
         itemInHand = null;
     }
 
+    //We should rewrite this function with the spherecast instead of the collider.  I have added private internal objectToInteractWith that has a value passed to it whenever the spherecast is on a machine.  
+    //Further parameters of that function are available in the spherecast script but it should be working properly if we want to just rewrite the below functions using that variable instead.
+
     private void OnTriggerEnter(Collider other)
     {
         var item = other.gameObject.CompareTag("Item");
-        var washingMachine = other.gameObject.CompareTag("WashingMachine");
+        var machine = other.gameObject.CompareTag("Machine");
         
         // can only hold items in your hand not machines
-        if (item || washingMachine)
+        if (item || machine)
         {
             if ((machineInteractionObject = other.GetComponent<ItemTypeForUsingItem>()) == true && itemInHand)
             {
@@ -209,10 +214,10 @@ public class Grab : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         var item = other.gameObject.CompareTag("Item");
-        var washingMachine = other.gameObject.CompareTag("WashingMachine");
+        var machine = other.gameObject.CompareTag("Machine");
         
         // can only hold items in your hand not machines
-        if (item || washingMachine)
+        if (item || machine)
         {
             Debug.Log("collided with " + other.gameObject.tag);
             
@@ -277,10 +282,12 @@ public class Grab : MonoBehaviour
         {
             itemInHand = null;
             canUseHeldItem = false;
+            GetComponent<PlayerSphereCast>().itemInHand = false;
         }
 
         canPickUpItem = false;
         itemToPickUp = null;
+        
 
         machineInteractionObject = null;
 

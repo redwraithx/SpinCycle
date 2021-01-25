@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using EnumSpace;
 
 namespace GamePlaySystems.Utilities
 {
@@ -7,12 +8,15 @@ namespace GamePlaySystems.Utilities
     {
 
         public ItemType itemType;
+        public LaundryType laundryType;
 
         public enum ItemType
         {
             None,
-            ClothingClean,
             ClothingDirty,
+            ClothingWet,
+            ClothingUnfolded,
+            ClothingDone,
             SabotageWaterGun,
             SabotageClothing
         }

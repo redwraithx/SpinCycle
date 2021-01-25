@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4442845815558936321}
   - component: {fileID: 4677257949682030615}
-  - component: {fileID: 2464030454900053167}
   - component: {fileID: 3467446721770865137}
   - component: {fileID: 4456269620609796133}
   - component: {fileID: 5320066210988248458}
   - component: {fileID: 3214280266636067209}
   - component: {fileID: 3583830392436074081}
+  - component: {fileID: 3298320535348533755}
   m_Layer: 11
   m_Name: T-Shirt
   m_TagString: Item
@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2e483fbd70d9e4da185468f0ca5bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
---- !u!114 &2464030454900053167
+  itemType: 1
+  laundryType: 0
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,3 +157,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.97
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3298320535348533755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097404848044861107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f90a41f1c18f8e4aa8eede153b212ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Shirt
+  _description: this is a shirt
+  _price: 1000
+  _timeAjustment: 0
