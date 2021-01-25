@@ -10,6 +10,8 @@ public class TShirt : MonoBehaviour, IItem
     [SerializeField] private float _timeAdjustment = 0f;
 
 
+
+
     public TShirt(string name, string description, int price, float timeAdjustment)
     {
         Name = name;
