@@ -5,13 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 using GamePlaySystems.Utilities;
-using EnumSpace;
 
 public class LaundryBasket : MonoBehaviour
 {
 
     public Text pointsText = null;
     public int points;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,16 +34,46 @@ public class LaundryBasket : MonoBehaviour
 
          }
      }*/
+    
+    
 
-    private void OnCollisionEnter(Collision collision)
+    // private void OnCollisionEnter(Collision collision)
+    // {
+    //     if (collision.gameObject.tag == "Item")
+    //     {
+    //         if (collision.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemTypeForItem.ItemType.ClothingUnfolded)
+    //         {
+    //             points += collision.gameObject.GetComponent<TShirt>().Price;
+    //             Debug.Log(points);
+    //             collision.gameObject.SetActive(false);
+    //         }
+    //     }
+    // }
+    //
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Item")
+        if (other.gameObject.tag == "Item")
         {
-            if (collision.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemTypeForItem.ItemType.ClothingUnfolded)
+            if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemTypeForItem.ItemType.ClothingUnfolded)
             {
-                points += collision.gameObject.GetComponent<TShirt>().Price;
+                points += other.gameObject.GetComponent<Item>().Price;
                 Debug.Log(points);
-                collision.gameObject.SetActive(false);
+                other.gameObject.SetActive(false);
+            }
+        }
+    }
+    
+    public void AddClothing(GameObject other)
+    {
+        if (other.tag == "Item")
+        {
+            if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemTypeForItem.ItemType.ClothingUnfolded)
+            {
+                points += other.gameObject.GetComponent<Item>().Price;
+                
+                Debug.Log(points);
+                
+                other.gameObject.SetActive(false);
             }
         }
     }

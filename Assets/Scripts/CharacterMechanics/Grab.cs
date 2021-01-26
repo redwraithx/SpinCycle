@@ -97,13 +97,12 @@ public class Grab : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) )// || Input.GetButton("Fire2"))
         {
             CheckForMouseDown();
             
         }
-
-        if (Input.GetMouseButtonUp(1))
+        else if (Input.GetMouseButtonUp(1) )//|| Input.GetButton("Fire2"))
         {
             CheckForMouseUp();
         }
@@ -111,7 +110,7 @@ public class Grab : MonoBehaviour
         if (hasItemInHand)
         {
             
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))// || Input.GetButton("Fire1"))
             {
                 Debug.Log("trying to use item in hand");
 
@@ -269,6 +268,8 @@ public class Grab : MonoBehaviour
     {
         if (itemInHand)
         {
+            Debug.Log("you have item in hand");
+            
             var isItemASabbotage = itemInHand.GetComponent<ItemTypeForItem>().itemType;
             if (isItemASabbotage == ItemTypeForItem.ItemType.SabotageWaterGun)
             {
@@ -280,6 +281,8 @@ public class Grab : MonoBehaviour
         }
         else
         {
+            Debug.Log("you have NO item");
+            
             itemInHand = null;
             canUseHeldItem = false;
             GetComponent<PlayerSphereCast>().itemInHand = false;
@@ -292,4 +295,5 @@ public class Grab : MonoBehaviour
         machineInteractionObject = null;
 
     }
+    
 }

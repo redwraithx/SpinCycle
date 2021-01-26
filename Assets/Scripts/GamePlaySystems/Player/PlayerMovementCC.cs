@@ -18,7 +18,8 @@ public class PlayerMovementCC : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance;
     public LayerMask groundMask;
-    
+
+    [SerializeField] private float rotationSpeed = 0f;
 
     private Vector3 velocity;
     public bool isGrounded;
@@ -65,11 +66,16 @@ public class PlayerMovementCC : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal") * ((Xspeed * m_moveSpeedMultiplier) * Time.deltaTime);
         float moveZ = Input.GetAxis("Vertical") * ((Zspeed * m_moveSpeedMultiplier) * Time.deltaTime);;
 
-        Vector3 move = transform.right * moveX + transform.forward * moveZ;
+        //Vector3 move = transform.right * moveX + transform.forward * moveZ;
 
+        transform.Rotate(0F, moveX * rotationSpeed, 0f);
+
+
+        Vector3 move = transform.forward * moveZ;
+        
         controller.Move(move);
-        
-        
+
+
         // can we jump?
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
