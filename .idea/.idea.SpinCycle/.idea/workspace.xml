@@ -20,15 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6edd3356-5640-48c5-9fc2-63461a08671e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GamePlaySystems/DryingMachine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GamePlaySystems/DryingMachine.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GamePlaySystems/TestingPlayers/PlayerCC.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GamePlaySystems/TestingPlayers/PlayerCC.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/Grab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/Grab.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/LaundryBasket/LaundryBasket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/LaundryBasket/LaundryBasket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/ButtonHover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/ButtonHover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,12 +63,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Pooling/LaundryPool.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/LoadScreen2CanvasManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/ButtonHover.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/CinemachineMouseLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/Grab.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/LaundryBasket/LaundryBasket.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/Grab.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/ButtonHover.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jXM3iP7Giz6FodzT2B7nRGS8ar" />
@@ -129,7 +125,7 @@
       <workItem from="1608236482059" duration="367000" />
       <workItem from="1610472159527" duration="898000" />
       <workItem from="1611595511028" duration="9676000" />
-      <workItem from="1611679941623" duration="2200000" />
+      <workItem from="1611679941623" duration="6642000" />
     </task>
     <servers />
   </component>

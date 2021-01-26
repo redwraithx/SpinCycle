@@ -1,4 +1,5 @@
 ﻿using System;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
     public Button closeButton;
 
     [SerializeField] private GameObject currentObject = null;
+    [SerializeField] private CinemachineBrain currentObjectMouseLook = null;
 
 
     void Start()
@@ -39,6 +41,7 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
         if (other.gameObject.CompareTag("Player"))
         {
             currentObject = other.gameObject;
+            currentObjectMouseLook = currentObject.GetComponentInChildren<CinemachineBrain>();
         }
 
     }
@@ -60,15 +63,27 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
         {
             Debug.Log("User using vending machine trigger");
             VendingUI.SetActive(true);
+            
+            // enable mouse
             Cursor.lockState = CursorLockMode.None;
+            
+            // disable mouse camera view
+            currentObjectMouseLook.enabled = false;
         }
     }
 
 
 private void CloseUI()
     {
+        // enable mouse camera movement
+        currentObjectMouseLook.enabled = true;
+        
         VendingUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        
+        // clear current object
+        currentObject = null;
+        
     }
     
 }

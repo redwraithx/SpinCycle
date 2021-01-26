@@ -110,7 +110,7 @@ public class Grab : MonoBehaviour
         if (hasItemInHand)
         {
             
-            if (Input.GetMouseButtonDown(0))// || Input.GetButton("Fire1"))
+            if (Input.GetMouseButtonDown(0) )// || Input.GetButton("Fire1"))
             {
                 Debug.Log("trying to use item in hand");
 
