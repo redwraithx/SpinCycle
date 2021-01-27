@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -24,6 +24,7 @@ public class ButtonHover : MonoBehaviour
     public bool FirstRun = false;
     public Item saleItem;
 
+    
     private void Start()
     {
         saleItem = SaleItem.GetComponent<Item>();
@@ -33,6 +34,8 @@ public class ButtonHover : MonoBehaviour
 
         if (ThisButton)
         {
+            // CHECK IF PLAYER HAS THE POINTS/MONEY TO BUY THIS OBJECT HERE
+            
             ThisButton.onClick.AddListener(Buy);
         }
 

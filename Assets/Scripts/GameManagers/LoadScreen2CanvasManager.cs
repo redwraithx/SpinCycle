@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -14,8 +13,8 @@ public class LoadScreen2CanvasManager : MonoBehaviour
     
     void Start()
     {
-        //loadingOperation = SceneManager.LoadSceneAsync("SampleScene"); // TEMP LOAD FOR SAMPLE SCENE
-        loadingOperation = SceneManager.LoadSceneAsync("Scenes/Levels/OwenLevel"); // TEMP LOAD FOR SAMPLE SCENE
+        loadingOperation = SceneManager.LoadSceneAsync("SampleScene"); // TEMP LOAD FOR SAMPLE SCENE
+        //loadingOperation = SceneManager.LoadSceneAsync("Scenes/Levels/OwenLevel"); // TEMP LOAD FOR SAMPLE SCENE
     }
 
     void Update()

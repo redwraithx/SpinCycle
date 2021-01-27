@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -11,7 +11,7 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
     public GameObject VendingUI;
     public Button closeButton;
 
-    [SerializeField] private GameObject currentObject = null;
+    [SerializeField] internal GameObject currentUser = null;
     [SerializeField] private CinemachineBrain currentObjectMouseLook = null;
 
 
@@ -29,7 +29,7 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
 
         if (other.gameObject.CompareTag("Player"))
         {
-            currentObject = other.gameObject;
+            currentUser = other.gameObject;
         }
 
     }
@@ -40,15 +40,15 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
 
         if (other.gameObject.CompareTag("Player"))
         {
-            currentObject = other.gameObject;
-            currentObjectMouseLook = currentObject.GetComponentInChildren<CinemachineBrain>();
+            currentUser = other.gameObject;
+            currentObjectMouseLook = currentUser.GetComponentInChildren<CinemachineBrain>();
         }
 
     }
 
     private void OnTriggerExit(Collider other)
     {
-        currentObject = null;
+        currentUser = null;
 
         if (VendingUI.activeInHierarchy)
         {
@@ -59,7 +59,7 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
     private void Update()
     {
         
-        if(currentObject && Input.GetKeyDown(KeyCode.E))
+        if(currentUser && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("User using vending machine trigger");
             VendingUI.SetActive(true);
@@ -82,7 +82,7 @@ private void CloseUI()
         Cursor.lockState = CursorLockMode.Locked;
         
         // clear current object
-        currentObject = null;
+        currentUser = null;
         
     }
     
