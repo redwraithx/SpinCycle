@@ -9,19 +9,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance = null;
-    public Text Player1Counter = null;
-    public float points;
-    public float Points 
-    {
-        get => points;
-        set
-        {
-            points += value;
 
-            Player1Counter.text = points.ToString();
-        }
-    }
-    //points float added in
     #region GAMEMANAGER_CORE-EXTENTIONS
 
     public static AudioManager audioManager = null; 
