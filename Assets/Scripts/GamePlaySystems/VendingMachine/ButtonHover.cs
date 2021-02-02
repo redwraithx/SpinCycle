@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -16,17 +15,19 @@ public class ButtonHover : MonoBehaviour
     public TextMeshProUGUI DescriptionText;
     public TextMeshProUGUI PriceText;
     public TextMeshProUGUI NameText;
-    public float RealPrice;
+    public int RealPrice;
     public Button ThisButton;
     public GameObject SaleItem;
     public GameObject itemSpawnPoint;
     public VendingIndex VendingIndex;
     public bool FirstRun = false;
     public Item saleItem;
+    PlayerPoints playerPoints = null;
 
-    
+
     private void Start()
     {
+        playerPoints = GameObject.Find("PlayerCC").GetComponent<PlayerPoints>();
         saleItem = SaleItem.GetComponent<Item>();
         Description.SetActive(false);
         Price.SetActive(false);
@@ -34,8 +35,6 @@ public class ButtonHover : MonoBehaviour
 
         if (ThisButton)
         {
-            // CHECK IF PLAYER HAS THE POINTS/MONEY TO BUY THIS OBJECT HERE
-            
             ThisButton.onClick.AddListener(Buy);
         }
 
@@ -72,11 +71,15 @@ public class ButtonHover : MonoBehaviour
     
     public void Buy()
     {
-        Debug.Log("buyingItemButtonHoverCS");
-        GameManager.Instance.points = GameManager.Instance.points -= saleItem.Price;
-        GameObject sale = Instantiate(SaleItem, itemSpawnPoint.transform.position, Quaternion.identity);
-        // this is filler code so it actually sells stuff while I experiment with indexes in a seperate project
-        //index thing gets spawned
+        RealPrice = RealPrice += int.Parse(VendingIndex.Price);
+        if (RealPrice >= playerPoints.points)
+        {
+            Debug.Log("buyingItemButtonHoverCS");
+            playerPoints.points -= RealPrice;
+            GameObject sale = Instantiate(SaleItem, itemSpawnPoint.transform.position, Quaternion.identity);
+            // this is filler code so it actually sells stuff while I experiment with indexes in a seperate project
+            //index thing gets spawned
+        }
     }
     
     

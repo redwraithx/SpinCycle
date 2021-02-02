@@ -9,18 +9,20 @@ public class LaundryBasket : MonoBehaviour
 
     public Text pointsText = null;
     public int points;
-    
+    PlayerPoints playerPoints = null;
+    public string pointsToText;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerPoints = GameObject.Find("PlayerCC").GetComponent<PlayerPoints>();
+        points += playerPoints.points;
     }
 
     // Update is called once per frame
     void Update()
     {
-        pointsText.text = points.ToString();
+        
     }
 
     /* public void DepositLaundry(GameObject other)
@@ -72,6 +74,11 @@ public class LaundryBasket : MonoBehaviour
                 Debug.Log(points);
                 
                 other.gameObject.SetActive(false);
+
+                pointsToText = points.ToString();
+                Debug.Log(pointsToText);
+                pointsText.text = pointsToText;
+                playerPoints.points += points;
             }
         }
     }
