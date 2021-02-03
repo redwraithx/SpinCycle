@@ -202,6 +202,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53897205}
   m_CullTransparentMesh: 0
+--- !u!1 &110368150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5556265380199348752, guid: c1aa21066d36c0042a3b8ccba45781ab, type: 3}
+  m_PrefabInstance: {fileID: 1152378072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &110368154
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110368150}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3252224991405807402, guid: 95fc114546ecc3f4aba3a574d0c53ce1, type: 3}
 --- !u!1001 &289789166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1119,6 +1138,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7755683574292906463, guid: c1aa21066d36c0042a3b8ccba45781ab, type: 3}
   m_PrefabInstance: {fileID: 1152378072}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1108420235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 704124490, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+  m_PrefabInstance: {fileID: 1600124654}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1152378072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1132,7 +1156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 801424384506256396, guid: c1aa21066d36c0042a3b8ccba45781ab, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000020643611
+      value: 0.0000000020643605
       objectReference: {fileID: 0}
     - target: {fileID: 801424384506256396, guid: c1aa21066d36c0042a3b8ccba45781ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1144,7 +1168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 801424384506256396, guid: c1aa21066d36c0042a3b8ccba45781ab, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017082098
+      value: -0.00000001708209
       objectReference: {fileID: 0}
     - target: {fileID: 801424384506256396, guid: c1aa21066d36c0042a3b8ccba45781ab, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2297,10 +2321,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1346370036, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: Description
+      value: You aren't supposed to read this
+      objectReference: {fileID: 0}
     - target: {fileID: 1388790037, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: saleItem
       value: 
       objectReference: {fileID: 3298320535348533755, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
+    - target: {fileID: 1388790037, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: VendingUI
+      value: 
+      objectReference: {fileID: 1108420235}
+    - target: {fileID: 1413503339, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: VendingUI
+      value: 
+      objectReference: {fileID: 1108420235}
     - target: {fileID: 5931836118849173896, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.2157454

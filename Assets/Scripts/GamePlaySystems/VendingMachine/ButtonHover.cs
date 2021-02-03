@@ -23,6 +23,7 @@ public class ButtonHover : MonoBehaviour
     public bool FirstRun = false;
     public Item saleItem;
     PlayerPoints playerPoints = null;
+    public GameObject VendingUI;
 
 
     private void Start()
@@ -72,13 +73,12 @@ public class ButtonHover : MonoBehaviour
     public void Buy()
     {
         RealPrice = RealPrice += int.Parse(VendingIndex.Price);
-        if (RealPrice >= playerPoints.points)
+        if (RealPrice <= playerPoints.points)
         {
             Debug.Log("buyingItemButtonHoverCS");
             playerPoints.points -= RealPrice;
             GameObject sale = Instantiate(SaleItem, itemSpawnPoint.transform.position, Quaternion.identity);
-            // this is filler code so it actually sells stuff while I experiment with indexes in a seperate project
-            //index thing gets spawned
+            VendingUI.SetActive(false);
         }
     }
     
