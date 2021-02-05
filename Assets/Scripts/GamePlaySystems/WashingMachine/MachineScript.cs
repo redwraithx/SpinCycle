@@ -81,6 +81,7 @@ public class MachineScript : MonoBehaviour
             ProcessItems();
 
             // we may want to use a bool incase the machine is full we dont destroy or use the object
+            other.transform.parent = null;
             other.gameObject.SetActive(false);
         }
 
