@@ -39,14 +39,14 @@ public class PlayerSphereCast : MonoBehaviour
     {
         if (itemInHand == false)
         {
-            maxDistance = 3;
-            sphereRadius = 1;
+            maxDistance = 2;
+            sphereRadius = 0.5f;
             layerMask = LayerMask.GetMask("Items");
         }
         else
         {
-            maxDistance = 7;
-            sphereRadius = 3;
+            maxDistance = 4;
+            sphereRadius = 1;
             layerMask = LayerMask.GetMask("Usable Objects");
         }
 
