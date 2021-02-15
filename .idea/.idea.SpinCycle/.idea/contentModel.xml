@@ -4,6 +4,9 @@
     <e p="C:\Dev\TFS\CAPSTONE\SpinCycle" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Models" t="Include">
+          <e p="New Text Document.txt" t="Include" />
+        </e>
         <e p="Photon" t="Include">
           <e p="PhotonChat" t="Include">
             <e p="Code" t="Include">
@@ -386,6 +389,11 @@
             <e p="GameOverScript.cs" t="Include" />
             <e p="LoadScreen2CanvasManager.cs" t="Include" />
             <e p="LoadScreenCanvasManager.cs" t="Include" />
+            <e p="NetworkScriptsMyExample" t="Include">
+              <e p="Launcher.cs" t="Include" />
+              <e p="NetworkManager.cs" t="Include" />
+              <e p="PlayerNameInputField.cs" t="Include" />
+            </e>
             <e p="PlayerSpawnManager.cs" t="Include" />
           </e>
           <e p="GamePlaySystems" t="Include">
@@ -428,6 +436,7 @@
             </e>
             <e p="Utilities" t="Include">
               <e p="ItemOutOfGameDestroy.cs" t="Include" />
+              <e p="ItemTypeEnums.cs" t="Include" />
               <e p="ItemTypeForItem.cs" t="Include" />
               <e p="ItemTypeForUsingItem.cs" t="Include" />
             </e>
