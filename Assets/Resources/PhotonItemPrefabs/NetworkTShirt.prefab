@@ -155,10 +155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f90a41f1c18f8e4aa8eede153b212ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _name: Shirt
   _description: this is a shirt
   _price: 1000
-  _timeAjustment: 0
+  _timeAdjustment: 0
 --- !u!114 &7825522198619210564
 MonoBehaviour:
   m_ObjectHideFlags: 0

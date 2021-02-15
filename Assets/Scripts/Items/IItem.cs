@@ -1,5 +1,6 @@
 ﻿public interface IItem 
 {
+    int Id { get; }
 
     string Name { get; }
 
@@ -7,7 +8,7 @@
 
     int Price { get; }
 
-    float TimeAjustment { get; }
+    float TimeAdjustment { get; }
 
 }
     

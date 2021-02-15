@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TShirt : MonoBehaviour, IItem 
 {
+    [SerializeField] private int _id = 0;
     [SerializeField] private string _name = "";
     [SerializeField] private string _description = "";
     [SerializeField] private int _price = 0;
@@ -12,12 +13,13 @@ public class TShirt : MonoBehaviour, IItem
 
     // THIS IS OBSOLETE
 
-    public TShirt(string name, string description, int price, float timeAdjustment)
+    public TShirt(int id, string name, string description, int price, float timeAdjustment)
     {
+        Id = id;
         Name = name;
         Description = description;
         Price = price;
-        TimeAjustment = timeAdjustment;
+        TimeAdjustment = timeAdjustment;
     }
 
     public TShirt()
@@ -25,49 +27,34 @@ public class TShirt : MonoBehaviour, IItem
 
     }
 
+    public int Id
+    {
+        get => _id;
+        private set => _id = value;
+    }
+
     public string Name
     {
-        get
-        {
-            return _name;
-        }
-        private set
-        {
-            _name = value;
-        }
+        get => _name;
+        private set => _name = value;
     }
 
     public string Description
     {
-        get
-        {
-            return _description;
-        }
-        private set
-        {
-            _description = value;
-        }
+        get => _description;
+        private set => _description = value;
     }
 
     public int Price
     {
-        get
-        {
-            return _price;
-        }
-        private set
-        {
-            _price = value;
-        }
+        get => _price;
+        private set => _price = value;
     }
 
-    public float TimeAjustment
+    public float TimeAdjustment
     {
         get => _timeAdjustment;
-        private set
-        {
-            _timeAdjustment = value;
-        }
+        private set => _timeAdjustment = value;
     }
 }
     

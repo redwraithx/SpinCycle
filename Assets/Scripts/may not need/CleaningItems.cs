@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class CleaningItems : MonoBehaviour, IItem
 {
+    [SerializeField] private int id;
     [SerializeField] private string name;
     [SerializeField] private string description;
     [SerializeField] private int price;
     [SerializeField] private float timeChange;
     [SerializeField] private ItemQuality quality;
-    [SerializeField] private float _timeAjustment;
+    [SerializeField] private float _timeAdjustment;
 
     public enum ItemQuality
     {
@@ -20,12 +21,13 @@ public class CleaningItems : MonoBehaviour, IItem
     }
 
 
-    public CleaningItems(string name, string description, int price, float _time)
+    public CleaningItems(int id, string name, string description, int price, float _time)
     {
+        Id = id;
         Name = name;
         Description = description;
         Price = price;
-        TimeAjustment = _time;
+        TimeAdjustment = _time;
     }
 
     public CleaningItems()
@@ -33,75 +35,45 @@ public class CleaningItems : MonoBehaviour, IItem
 
     }
 
+    public int Id
+    {
+        get => id;
+        private set => id = value;
+    }
+
     public string Name
     {
-        get
-        {
-            return name;
-        }
-        private set
-        {
-            name = value;
-        }
+        get => name;
+        private set => name = value;
     }
 
     public string Description
     {
-        get
-        {
-            return description;
-        }
-        private set
-        {
-            description = value;
-        }
+        get =>  description;
+        private set => description = value;
     }
 
     public int Price
     {
-        get
-        {
-            return price;
-        }
-        private set
-        {
-            price = value;
-        }
+        get => price;
+        private set => price = value;
     }
 
     public float TimeChange
     {
-        get
-        {
-            return timeChange;
-        }
-        private set
-        {
-            timeChange = value;
-        }
+        get => timeChange;
+        private set => timeChange = value;
     }
     public ItemQuality Quality
     {
-        get
-        {
-            return quality;
-        }
-        private set
-        {
-          quality = value;
-        }
+        get =>  quality;
+        private set => quality = value;
     }
 
-    public float TimeAjustment
+    public float TimeAdjustment
     {
-        get
-        {
-            return _timeAjustment;
-        }
-        private set
-        {
-            _timeAjustment = value;
-        }
+        get =>  _timeAdjustment;
+        private set => _timeAdjustment = value;
     }
 
 }

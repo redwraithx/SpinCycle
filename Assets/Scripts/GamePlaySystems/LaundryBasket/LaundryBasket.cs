@@ -22,7 +22,7 @@ public class LaundryBasket : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Item"))
         {
-            if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemTypeForItem.ItemType.ClothingUnfolded)
+            if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingUnfolded)
             {
                 points += other.gameObject.GetComponent<Item>().Price;
                 Debug.Log(points);
@@ -35,7 +35,7 @@ public class LaundryBasket : MonoBehaviour
     {
         if (other.CompareTag("Item"))
         {
-            if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemTypeForItem.ItemType.ClothingUnfolded)
+            if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingUnfolded)
             {
                 points += other.gameObject.GetComponent<Item>().Price;
                 

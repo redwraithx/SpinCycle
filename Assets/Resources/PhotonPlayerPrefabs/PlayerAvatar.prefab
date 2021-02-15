@@ -794,6 +794,7 @@ MonoBehaviour:
   canUseHeldItem: 0
   outOfRange: 1
   objectYouCanUse: {fileID: 0}
+  _photonView: {fileID: 0}
 --- !u!114 &6735945028913086524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,8 +870,7 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: -6873798126841584195}
+  ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

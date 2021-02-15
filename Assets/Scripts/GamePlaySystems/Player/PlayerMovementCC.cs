@@ -1,4 +1,10 @@
 ﻿
+using System;
+using Cinemachine;
+using Photon.Pun;
+using Photon.Realtime;
+
+
 using UnityEngine;
 
 public class PlayerMovementCC : MonoBehaviour
@@ -21,6 +27,12 @@ public class PlayerMovementCC : MonoBehaviour
 
     private Vector3 velocity;
     public bool isGrounded;
+    
+    
+    // networking
+    private PhotonView _photonView = null;
+    private Vector3 correctPosition = Vector3.zero;
+    private Quaternion correctRotation = Quaternion.identity;
 
     public float MoveSpeed
     {
@@ -45,8 +57,38 @@ public class PlayerMovementCC : MonoBehaviour
     }
 
 
+    private void Awake()
+    {
+        if (!_photonView)
+            _photonView = GetComponent<PhotonView>();
+        
+        
+        if (!_photonView.IsMine)
+        {
+            var cam = gameObject.GetComponentInChildren<Camera>();
+            cam.gameObject.SetActive(false);
+
+            var disableCamera = GetComponentInChildren<CinemachineFreeLook>();
+            disableCamera.gameObject.SetActive(false);
+        }
+    }
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+       
+        
+        
+        if (!_photonView.IsMine)
+            this.enabled = false;
+    }
+
+    // Update is called once per frame
     void Update()
     {
+        
+        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -56,6 +98,8 @@ public class PlayerMovementCC : MonoBehaviour
         
         float moveX = Input.GetAxis("Horizontal") * ((Xspeed * m_moveSpeedMultiplier) * Time.deltaTime);
         float moveZ = Input.GetAxis("Vertical") * ((Zspeed * m_moveSpeedMultiplier) * Time.deltaTime);;
+
+        //Vector3 move = transform.right * moveX + transform.forward * moveZ;
 
         transform.Rotate(0F, moveX * rotationSpeed, 0f);
 
@@ -74,11 +118,46 @@ public class PlayerMovementCC : MonoBehaviour
         velocity.y += (gravity * gravityMulitplier) * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+        
+        
     }
+
+
+    private void FixedUpdate()
+    {
+        if (!_photonView.IsMine)
+        {
+            transform.position = Vector3.Lerp(transform.position, correctPosition, Time.fixedDeltaTime * 5);
+            transform.rotation = Quaternion.Lerp(transform.rotation, correctRotation, Time.fixedDeltaTime * 5);
+            
+            _photonView.RPC("SendMessage", RpcTarget.All, 5, transform.position, transform.rotation);
+        }
+        
+        
+        
+        
+    }
+
+
+    void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(transform.position);
+            stream.SendNext(transform.rotation);
+        }
+        else
+        {
+            correctPosition = (Vector3) stream.ReceiveNext();
+            correctRotation = (Quaternion) stream.ReceiveNext();
+        }
+    }
+    
 
 
     private float Jump()
     {
+        // v = SQRT(h * -2 * g) or velocity = sqrt(jumpHeight * -2 * gravity)
         return (Mathf.Sqrt((jumpHeight * m_jumpPowerMultiplier) * -2 * (gravity * gravityMulitplier)));
     }
     
