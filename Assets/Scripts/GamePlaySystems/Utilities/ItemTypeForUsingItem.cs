@@ -43,7 +43,7 @@ namespace GamePlaySystems.Utilities
             {
                 foreach (var item in itemTypeToMatch)
                 {
-                    Debug.Log($"itemOther: {itemOther.itemType}, item: {item}");
+                    //Debug.Log($"itemOther: {itemOther.itemType}, item: {item}");
                     
                     if (itemOther.itemType == item)
                     {

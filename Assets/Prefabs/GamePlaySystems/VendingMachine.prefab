@@ -1269,6 +1269,7 @@ MonoBehaviour:
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
+  VendingUI: {fileID: 0}
 --- !u!1 &640109168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,6 +1983,7 @@ MonoBehaviour:
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
+  VendingUI: {fileID: 0}
 --- !u!1 &1201114945
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,6 +2133,7 @@ MonoBehaviour:
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
+  VendingUI: {fileID: 0}
 --- !u!1 &1205041784
 GameObject:
   m_ObjectHideFlags: 0
@@ -2881,6 +2884,7 @@ MonoBehaviour:
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
+  VendingUI: {fileID: 0}
 --- !u!1 &1368029672
 GameObject:
   m_ObjectHideFlags: 0
@@ -3108,7 +3112,8 @@ MonoBehaviour:
   itemSpawnPoint: {fileID: 6627814966707534623}
   VendingIndex: {fileID: 0}
   FirstRun: 0
-  saleItem: {fileID: 0}
+  saleItem: {fileID: 3298320535348533755, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
+  VendingUI: {fileID: 704124490}
 --- !u!1 &1413503334
 GameObject:
   m_ObjectHideFlags: 0
@@ -3258,6 +3263,7 @@ MonoBehaviour:
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
+  VendingUI: {fileID: 704124490}
 --- !u!1 &1419202271
 GameObject:
   m_ObjectHideFlags: 0
@@ -4479,7 +4485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Price: 100
-  Description: This is a water gun!
+  Description: You aren't supposed to read this
 --- !u!1 &5931836119521031337
 GameObject:
   m_ObjectHideFlags: 0
@@ -4682,7 +4688,7 @@ GameObject:
   - component: {fileID: 5931836119547657171}
   - component: {fileID: 5931836119547657180}
   m_Layer: 10
-  m_Name: Buy Items Here
+  m_Name: Buy Items HereZone
   m_TagString: VendingMachine
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4729,7 +4735,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VendingUI: {fileID: 704124490}
   closeButton: {fileID: 1296931183}
-  currentObject: {fileID: 0}
+  currentUser: {fileID: 0}
+  currentObjectMouseLook: {fileID: 0}
 --- !u!1 &5931836119654696707
 GameObject:
   m_ObjectHideFlags: 0

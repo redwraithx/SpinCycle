@@ -1,6 +1,5 @@
 ﻿
 
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -73,9 +72,6 @@ namespace RedWraith.Player
 
         private void Update()
         {
-            // if (isPlayerDead)
-            //     return;
-
             if (CurrentHealth <= 0 && !isPlayerDead)
             {
                 isPlayerDead = true;

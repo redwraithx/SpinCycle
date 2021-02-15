@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 namespace RedWraith.Player
@@ -23,21 +20,16 @@ namespace RedWraith.Player
         {
             rb = GetComponent<Rigidbody>();
             
-            
         }
 
 
         private void Update()
         {
-
             isGrounded = Physics.CheckSphere(new Vector3(groundDetect.GetSiblingIndex(), groundDetect.position.y, groundDetect.position.z), distanceToGround, groundLayerMask);
-            
             
             float _moveX = Input.GetAxis("Horizontal");
             float _moveZ = Input.GetAxis("Vertical");
             
-            
-            //transform.transform += new Vector3(_moveX, 0f, _moveZ) * (moveSpeed * (moveSpeedMultiplier * Time.deltaTime));
             
             transform.Translate(new Vector3(_moveX, 0f, _moveZ) * (moveSpeed * (moveSpeedMultiplier * Time.deltaTime)));
             

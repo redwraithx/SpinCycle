@@ -1,18 +1,17 @@
 ﻿using System;
-using System.Collections;
 using System.Linq;
-using System.Collections.Generic;
 using UnityEngine;
 using EnumSpace;
+
 
 public class DirtyLaundrySpawner : MonoBehaviour
 {
     public GameObject spawnPoint;
     public float timeSinceLastSpawn = 0f;
-    public float spawnRate;
-    public bool isSpawning;
-    float randTime;
-    int laundryRandomizer;
+    public float spawnRate = 0f;
+    public bool isSpawning = true;
+    float randTime = 0f;
+    int laundryRandomizer = 0;
     public LaundryType laundryType;
     
     
@@ -32,7 +31,7 @@ public class DirtyLaundrySpawner : MonoBehaviour
         }
     }
 
-    public void SpawnDirtyLaundry(LaundryType type)
+    private void SpawnDirtyLaundry(LaundryType type)
     {
         GameObject newLaundry = LaundryPool.poolInstance.GetItem(type);
         newLaundry.transform.position = spawnPoint.transform.position;

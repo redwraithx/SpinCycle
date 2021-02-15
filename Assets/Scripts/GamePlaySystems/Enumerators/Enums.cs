@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 namespace EnumSpace
 {
-    public enum LaundryType
+    public enum LaundryType  // DO WE NEED THIS?
     {
         tshirt,
         pants,

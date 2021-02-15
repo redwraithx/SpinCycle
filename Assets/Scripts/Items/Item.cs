@@ -32,50 +32,26 @@ public class Item : MonoBehaviour, IItem
 
     public string Name
     {
-        get
-        {
-            return _name;
-        }
-        private set
-        {
-            _name = value;
-        }
+        get =>  _name;
+        private set => _name = value;
     }
 
     public string Description
     {
-        get
-        {
-            return _description;
-        }
-        private set
-        {
-            _description = value;
-        }
+        get => _description;
+        private set => _description = value;
     }
 
     public int Price
     {
-        get
-        {
-            return _price;
-        }
-        private set
-        {
-            _price = value;
-        }
+        get => _price;
+        private set => _price = value;
     }
 
     public float TimeAjustment
     {
-        get
-        {
-            return _timeAjustment;
-        }
-        private set
-        {
-            _timeAjustment = value;
-        }
+        get => _timeAjustment;
+        private set => _timeAjustment = value;
     }
 }
 

@@ -22,26 +22,6 @@ public class Grab : MonoBehaviour
         get => canUseHeldItem;
         set => canUseHeldItem = value;
     }
-
-    private void OnMouseDown()
-    {
-        // orifinal code
-        // GetComponent<Collider>().enabled = false; // update from BoxCollider to Collider to work with all colliders
-        // GetComponent<Rigidbody>().useGravity = false;
-        // this.transform.position = grabPoint.position;
-        //
-        // // making the player the child of the item they pick up?
-        // this.transform.parent = GameObject.Find("Item").transform; // this is expensive, also updated "Other" to "Item as that is the tag for all items thus far
-    }
-
-    private void OnMouseUp()
-    {
-        // original
-        // this.transform.parent = null;
-        // GetComponent<Rigidbody>().useGravity = true;
-        // GetComponent<Collider>().enabled = true; // update from BoxCollider to Collider to work with all colliders
-    }
-    
     
     
     private void CheckForMouseDown()
@@ -92,12 +72,12 @@ public class Grab : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1) )// || Input.GetButton("Fire2"))
+        if (Input.GetMouseButtonDown(1) )
         {
             CheckForMouseDown();
             
         }
-        else if (Input.GetMouseButtonUp(1) )//|| Input.GetButton("Fire2"))
+        else if (Input.GetMouseButtonUp(1) )
         {
             CheckForMouseUp();
         }
@@ -105,10 +85,8 @@ public class Grab : MonoBehaviour
         if (hasItemInHand)
         {
             
-            if (Input.GetMouseButtonDown(0) )// || Input.GetButton("Fire1"))
+            if (Input.GetMouseButtonDown(0) )
             {
-                Debug.Log("trying to use item in hand");
-
                 var isValidItemObject = false;
                 
                 // is it an item? or weapon?
@@ -117,8 +95,6 @@ public class Grab : MonoBehaviour
 
                 if (isValidItemObject && canUseHeldItem)
                 {
-                    Debug.Log("Using item in hand now");
-
                     if (machineInteractionObject)
                     {
                        // use object action will only work on one event per object
@@ -155,15 +131,12 @@ public class Grab : MonoBehaviour
         itemInHand = null;
     }
 
-    //We should rewrite this function with the spherecast instead of the collider.  I have added private internal objectToInteractWith that has a value passed to it whenever the spherecast is on a machine.  
-    //Further parameters of that function are available in the spherecast script but it should be working properly if we want to just rewrite the below functions using that variable instead.
-
     private void OnTriggerEnter(Collider other)
     {
         var item = other.gameObject.CompareTag("Item");
         var machine = other.gameObject.CompareTag("Machine");
         
-        // can only hold items in your hand not machines
+
         if (item || machine)
         {
             if ((machineInteractionObject = other.GetComponent<ItemTypeForUsingItem>()) == true && itemInHand)
@@ -247,6 +220,7 @@ public class Grab : MonoBehaviour
                     if (isItemASabbotage.itemType == ItemTypeForItem.ItemType.SabotageWaterGun)
                         canUseHeldItem = false;
                 }
+                
             }
         }
     }
@@ -263,21 +237,15 @@ public class Grab : MonoBehaviour
     {
         if (itemInHand)
         {
-            Debug.Log("you have item in hand");
-            
             var isItemASabbotage = itemInHand.GetComponent<ItemTypeForItem>().itemType;
             if (isItemASabbotage == ItemTypeForItem.ItemType.SabotageWaterGun)
             {
                 canUseHeldItem = true;
-                
-                Debug.Log("you have sabotageWaterGun");
             }
             
         }
         else
         {
-            Debug.Log("you have NO item");
-            
             itemInHand = null;
             canUseHeldItem = false;
             GetComponent<PlayerSphereCast>().itemInHand = false;

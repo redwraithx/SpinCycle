@@ -9,6 +9,7 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
 {
     //add index for button hover
     public GameObject VendingUI;
+    public ButtonHover[] buttonHoverScripts;
     public Button closeButton;
 
     [SerializeField] internal GameObject currentUser = null;
@@ -63,6 +64,16 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
         {
             Debug.Log("User using vending machine trigger");
             VendingUI.SetActive(true);
+
+            foreach (var buttonHoverScript in buttonHoverScripts)
+            {
+                
+                Debug.Log("button haslddf");
+                buttonHoverScript.Description.SetActive(false);
+                buttonHoverScript.Price.SetActive(false);
+                buttonHoverScript.Name.SetActive(false);
+            }
+            
             
             // enable mouse
             Cursor.lockState = CursorLockMode.None;

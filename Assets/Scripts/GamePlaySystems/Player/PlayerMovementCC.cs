@@ -43,15 +43,8 @@ public class PlayerMovementCC : MonoBehaviour
     {
         m_jumpPowerMultiplier = 3.5f;
     }
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -63,8 +56,6 @@ public class PlayerMovementCC : MonoBehaviour
         
         float moveX = Input.GetAxis("Horizontal") * ((Xspeed * m_moveSpeedMultiplier) * Time.deltaTime);
         float moveZ = Input.GetAxis("Vertical") * ((Zspeed * m_moveSpeedMultiplier) * Time.deltaTime);;
-
-        //Vector3 move = transform.right * moveX + transform.forward * moveZ;
 
         transform.Rotate(0F, moveX * rotationSpeed, 0f);
 
@@ -88,7 +79,6 @@ public class PlayerMovementCC : MonoBehaviour
 
     private float Jump()
     {
-        // v = SQRT(h * -2 * g) or velocity = sqrt(jumpHeight * -2 * gravity)
         return (Mathf.Sqrt((jumpHeight * m_jumpPowerMultiplier) * -2 * (gravity * gravityMulitplier)));
     }
     

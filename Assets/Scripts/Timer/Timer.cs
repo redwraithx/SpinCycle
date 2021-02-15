@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                Debug.Log("Time has run out!");
+                Debug.Log("Time has run out! May want to use a UI element here");
                 timeRemaining = 0;
                 timerIsRunning = false;
             }

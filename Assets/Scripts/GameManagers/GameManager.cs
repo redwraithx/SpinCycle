@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
+
 
 public class GameManager : MonoBehaviour
 {
@@ -47,7 +45,7 @@ public class GameManager : MonoBehaviour
 
         if (Instance)
         {
-            Destroy(gameObject);
+            DestroyImmediate(gameObject);
         }
         else
         {
@@ -101,15 +99,14 @@ public class GameManager : MonoBehaviour
     
     public static GameManager Instance
     {
-        get { return _instance; }
-       // private set { _instance = value; }
+        get => _instance;
+        //private set => _instance = value;
     }
 
+    
+    //function with temp load for sample scene is now in LoadScreen2CanvasManager
     public void PlayGame()
     {
         SceneManager.LoadScene("LoadingScreen2");  
     }
-    //function with temp load for sample scene is now in LoadScreen2CanvasManager
-    
-    
 }

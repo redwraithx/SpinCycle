@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 using GamePlaySystems.Utilities;
 using EnumSpace;
+
+
 public class MachineScript : MonoBehaviour
 {
     public float cycleLength;
@@ -80,7 +82,7 @@ public class MachineScript : MonoBehaviour
             //Once player is created, call to destroy the item in their hand here
             ProcessItems();
 
-            // we may want to use a bool incase the machine is full we dont destroy or use the object
+            // we may want to use a bool in case the machine is full we dont destroy or use the object
             other.transform.parent = null;
             other.gameObject.SetActive(false);
         }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 427630}
   - component: {fileID: 1853742472520727441}
   - component: {fileID: 2234390548643602735}
+  - component: {fileID: 9166322802219049896}
   - component: {fileID: 3397912}
   - component: {fileID: 2332142}
   - component: {fileID: 4534208812291276707}
@@ -31,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.966001, y: 2.0237794, z: 5.4314585}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6351245443662043792}
@@ -50,7 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2e483fbd70d9e4da185468f0ca5bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 3
+  itemType: 5
+  laundryType: 0
 --- !u!114 &2234390548643602735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +69,19 @@ MonoBehaviour:
   _description: its a gun
   _price: 400
   _timeAjustment: 0
+--- !u!114 &9166322802219049896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60ef0819c0dcd14fb60d0b10c8ee6a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depthOfItemWhenOutOfWorld: -500
 --- !u!33 &3397912
 MeshFilter:
   m_ObjectHideFlags: 0

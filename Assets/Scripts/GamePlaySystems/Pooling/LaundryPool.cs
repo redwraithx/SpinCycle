@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using EnumSpace;
 
+
 [System.Serializable]
 
 public class LaundryPool : MonoBehaviour
 {
-    public static LaundryPool poolInstance;
+    public static LaundryPool poolInstance = null;
 
     [SerializeField]
     public GameObject[] pooledItems;
@@ -16,13 +17,11 @@ public class LaundryPool : MonoBehaviour
     private List<GameObject>[] pool;
 
 
-
-
     private void Awake()
     {
         poolInstance = this;
     }
-    // Start is called before the first frame update
+    
     void Start()
     {
         pool = new List<GameObject>[pooledItems.Length];
@@ -36,7 +35,6 @@ public class LaundryPool : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     public GameObject GetItem(LaundryType type)
     {
         int id = (int)type;

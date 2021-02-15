@@ -15,9 +15,9 @@ public class ButtonHover : MonoBehaviour
     public TextMeshProUGUI DescriptionText;
     public TextMeshProUGUI PriceText;
     public TextMeshProUGUI NameText;
-    public int RealPrice;
+    public int RealPrice = 0;
     public Button ThisButton;
-    public GameObject SaleItem;
+    public GameObject SaleItemGameObject;
     public GameObject itemSpawnPoint;
     public VendingIndex VendingIndex;
     public bool FirstRun = false;
@@ -25,12 +25,14 @@ public class ButtonHover : MonoBehaviour
     PlayerPoints playerPoints = null;
 
     public GameObject VendingUI;
-
+    
 
     private void Start()
     {
+        Debug.Log("sldfkjsdlkfjlsdkjf");
+        
         playerPoints = GameObject.Find("PlayerCC").GetComponent<PlayerPoints>();
-        saleItem = SaleItem.GetComponent<Item>();
+        saleItem = SaleItemGameObject.GetComponent<Item>();
         Description.SetActive(false);
         Price.SetActive(false);
         Name.SetActive(false);
@@ -40,12 +42,20 @@ public class ButtonHover : MonoBehaviour
             ThisButton.onClick.AddListener(Buy);
         }
 
-        if (SaleItem)
+        if (SaleItemGameObject)
         {
             VendingIndex = new VendingIndex(saleItem.name, saleItem.Description, saleItem.Price.ToString());
         }
     }
-    
+
+    internal void OpenVendingMachine()
+    {
+        Debug.Log("OnEnable");
+        DescriptionText.text = "";
+        PriceText.text = "";
+        NameText.text = "";
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("Pointer enter");
@@ -73,13 +83,15 @@ public class ButtonHover : MonoBehaviour
     
     public void Buy()
     {
-        RealPrice = RealPrice += int.Parse(VendingIndex.Price);
+        RealPrice = RealPrice += Convert.ToInt32(VendingIndex.Price); //int.Parse(VendingIndex.Price);
         
-        if (RealPrice <= playerPoints.points)
+        
+        if (RealPrice <= playerPoints.Points)
         {
             Debug.Log("buyingItemButtonHoverCS");
-            playerPoints.points -= RealPrice;
-            GameObject sale = Instantiate(SaleItem, itemSpawnPoint.transform.position, Quaternion.identity);
+            //playerPoints.points -= RealPrice;
+            playerPoints.Points = -RealPrice;
+            GameObject sale = Instantiate(SaleItemGameObject, itemSpawnPoint.transform.position, Quaternion.identity);
 
             VendingUI.SetActive(false);
 
