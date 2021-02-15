@@ -48,13 +48,13 @@ public class MachineScript : MonoBehaviour
         switch(machineType)
         {
             case MachineType.washer:
-                laundry.GetComponent<ItemTypeForItem>().itemType = ItemTypeForItem.ItemType.ClothingWet;
+                laundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingWet;
                 break;
             case MachineType.dryer:
-                laundry.GetComponent<ItemTypeForItem>().itemType = ItemTypeForItem.ItemType.ClothingUnfolded;
+                laundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingUnfolded;
                 break;
             case MachineType.folder:
-                laundry.GetComponent<ItemTypeForItem>().itemType = ItemTypeForItem.ItemType.ClothingDone;
+                laundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingDone;
                 break;
         }
 

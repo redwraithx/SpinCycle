@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class Clothing : MonoBehaviour, IItem 
 {
+    [SerializeField] private int _id;
     [SerializeField] private string _name;
     [SerializeField] private string _description;
     [SerializeField] private int _price;
-    [SerializeField] private float _timeAjustment;
+    [SerializeField] private float _timeAdjustment;
     
     
 
 
-    public Clothing(string name, string description, int price, float _time)
+    public Clothing(int id, string name, string description, int price, float _time)
     {
+        Id = id;
         Name = name;
         Description = description;
         Price = price;
-        TimeAjustment = _time;
+        TimeAdjustment = _time;
     }
 
     public Clothing()
@@ -25,52 +27,34 @@ public class Clothing : MonoBehaviour, IItem
 
     }
 
+    public int Id
+    {
+        get => _id;
+        set => _id = value;
+    }
+    
     public string Name
     {
-        get
-        {
-            return _name;
-        }
-        private set
-        {
-            _name = value;
-        }
+        get => _name;
+        private set => _name = value;
     }
 
     public string Description
     {
-        get
-        {
-            return _description;
-        }
-        private set
-        {
-            _description = value;
-        }
+        get => _description;
+        private set => _description = value;
     }
 
     public int Price
     {
-        get
-        {
-            return _price;
-        }
-        private set
-        {
-            _price = value;
-        }
+        get => _price;
+        private set => _price = value;
     }
 
-    public float TimeAjustment
+    public float TimeAdjustment
     {
-        get
-        {
-            return _timeAjustment;
-        }
-        private set
-        {
-            _timeAjustment = value;
-        }
+        get =>  _timeAdjustment;
+        private set => _timeAdjustment = value;
     }
 }
     

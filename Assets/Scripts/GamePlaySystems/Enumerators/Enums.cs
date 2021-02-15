@@ -6,6 +6,7 @@ namespace EnumSpace
 {
     public enum LaundryType
     {
+        None,
         tshirt,
         pants,
         socks

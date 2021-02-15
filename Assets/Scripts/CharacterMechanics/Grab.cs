@@ -1,5 +1,6 @@
 ﻿
 using GamePlaySystems.Utilities;
+using Photon.Pun;
 using UnityEngine;
 
 public class Grab : MonoBehaviour
@@ -16,6 +17,9 @@ public class Grab : MonoBehaviour
     [SerializeField] internal bool outOfRange = true;
 
     [SerializeField] private ItemTypeForUsingItem objectYouCanUse = null;
+
+    
+    [SerializeField] private PhotonView _photonView;
 
     public bool CanUseHeldItem
     {
@@ -169,6 +173,14 @@ public class Grab : MonoBehaviour
             if ((machineInteractionObject = other.GetComponent<ItemTypeForUsingItem>()) == true && itemInHand)
             {
                 CanUseHeldItem = true;
+
+                Item _item = other.gameObject.GetComponent<Item>();
+                
+                // // networking TEST
+                // if (PickupObject(_item) == true)
+                // {
+                //     PickupObject(_item);
+                // }
             }
             else
             {
@@ -196,7 +208,7 @@ public class Grab : MonoBehaviour
                 var isItemASabbotage = itemInHand?.GetComponent<ItemTypeForItem>();
                 if (isItemASabbotage)
                 {
-                    if (isItemASabbotage.itemType == ItemTypeForItem.ItemType.SabotageWaterGun)
+                    if (isItemASabbotage.itemType == ItemType.SabotageWaterGun)
                         canUseHeldItem = false;
                 }
             }
@@ -204,6 +216,31 @@ public class Grab : MonoBehaviour
         }
         
     }
+
+    // [PunRPC]
+    // bool PickupObject(Item itemObject)
+    // {
+    //     if (itemObject)
+    //     {
+    //         _photonView.RPC("RpcPickupItem", RpcTarget.AllBuffered, itemObject.gameObject.transform.position, itemObject.gameObject.transform.rotation);
+    //         
+    //         Debug.Log("updating position and rotation of object picked up");
+    //         
+    //
+    //         return true;
+    //     }
+    //
+    //     return false;
+    // }
+    //
+    // [PunRPC]
+    // protected void OnPickup(int viewId)
+    // {
+    //     PhotonView view = PhotonView.Find(viewId);
+    //
+    //     Debug.Log("id of object is from: " + view.gameObject.name);
+    //     
+    // }
 
     private void OnTriggerStay(Collider other)
     {
@@ -244,7 +281,7 @@ public class Grab : MonoBehaviour
                 var isItemASabbotage = itemInHand?.GetComponent<ItemTypeForItem>();
                 if (isItemASabbotage)
                 {
-                    if (isItemASabbotage.itemType == ItemTypeForItem.ItemType.SabotageWaterGun)
+                    if (isItemASabbotage.itemType == ItemType.SabotageWaterGun)
                         canUseHeldItem = false;
                 }
             }
@@ -266,7 +303,7 @@ public class Grab : MonoBehaviour
             Debug.Log("you have item in hand");
             
             var isItemASabbotage = itemInHand.GetComponent<ItemTypeForItem>().itemType;
-            if (isItemASabbotage == ItemTypeForItem.ItemType.SabotageWaterGun)
+            if (isItemASabbotage == ItemType.SabotageWaterGun)
             {
                 canUseHeldItem = true;
                 
