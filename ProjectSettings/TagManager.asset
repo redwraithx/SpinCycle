@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - VendingMachine
+  - Item
+  - PlayerSpawner
+  - WashingMachine
+  - Machine
   layers:
   - Default
   - TransparentFX
@@ -13,10 +18,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Entities
+  - Usable Objects
+  - Items
   - 
   - 
   - 
