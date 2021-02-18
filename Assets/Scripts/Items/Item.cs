@@ -1,11 +1,11 @@
 ﻿
 using System;
+using System.IO;
 using UnityEngine;
 
 using Photon;
 using Photon.Realtime;
 using Photon.Pun;
-using TreeEditor;
 
 
 public class GetLocationData
@@ -13,6 +13,9 @@ public class GetLocationData
     public int id;
     public Vector3 position;
     public Quaternion rotation;
+
+    public PhotonStream stream;
+    public PhotonMessageInfo info;
 
     public GetLocationData(int id, Vector3 position, Quaternion rotation)
     {
@@ -24,7 +27,7 @@ public class GetLocationData
 
 
 
-public class Item : MonoBehaviour, IItem
+public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
 {
     [SerializeField] private int _id;
     [SerializeField] private string _name;
@@ -34,73 +37,53 @@ public class Item : MonoBehaviour, IItem
 
     private PhotonView _photonView = null;
     private PhotonTransformView _photonTransformView = null;
-    private Vector3 correctPosition = Vector3.zero;
-    private Quaternion correctRotation = Quaternion.identity;
+    [SerializeField] private Vector3 correctPosition = Vector3.zero;
+    [SerializeField] private Quaternion correctRotation = Quaternion.identity;
+    
+    
     
     
     private void Awake()
     {
-        _photonView = GetComponent<PhotonView>();
-        _photonTransformView = GetComponent<PhotonTransformView>();
+        if(!_photonView)
+            _photonView = GetComponent<PhotonView>();
+        
+        if(_photonTransformView)
+            _photonTransformView = GetComponent<PhotonTransformView>();
         
         gameObject.tag = "Item";
 
         gameObject.layer = LayerMask.NameToLayer("Items");
-    }
 
-    private void Start()
-    {
+        PhotonNetwork.SendRate = 20;
         
     }
+    
+    
 
-
-    [PunRPC]
-    private void UpdateMyPosition(PhotonStream stream, PhotonMessageInfo info)
+    private void Update()
     {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(transform.position);
-            stream.SendNext(transform.rotation);
-        }
-        else
-        {
-            correctPosition = (Vector3) stream.ReceiveNext();
-            correctRotation = (Quaternion) stream.ReceiveNext();
-        }
+        //UpdatePosition();
+        //_photonView.RPC("UpdateObject", RpcTarget.AllBuffered, transform.position, transform.rotation);
+
     }
 
+    [PunRPC]
+    public void UpdateObject(Vector3 pos, Quaternion rot)
+    {
+        transform.position = pos;
+        transform.rotation = rot;
+    }
 
     private void FixedUpdate()
     {
         if (!_photonView)
             return;
 
-        UpdateLocation();
     }
 
-    [PunRPC]
-    private void UpdateLocation()
-    {
-        
-        if (_photonView.IsMine) 
-        {
-            transform.position = Vector3.Lerp(transform.position, correctPosition, Time.fixedDeltaTime * 5);
-            transform.rotation = Quaternion.Lerp(transform.rotation, correctRotation, Time.fixedDeltaTime * 5);
-            
-            //_photonView.RPC("OnPhotonSerializeView", RpcTarget.AllBuffered, 5, transform.position, transform.rotation);
-            
-            _photonView.RPC("UpdateMyPosition", RpcTarget.AllBuffered,  transform.position, transform.rotation );
-            
-        }
 
-    }
-
-    // [PunRPC]
-    // public void OnOwnershipRequest()
-    // {
-    //     _photonView.TransferOwnership();
-    // }
-
+    
 
     public Item(int id, string name, string description, int price, float _time)
     {
@@ -145,6 +128,23 @@ public class Item : MonoBehaviour, IItem
         get => _timeAdjustment;
         private set => _timeAdjustment = value;
     }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(transform.position);
+            stream.SendNext(transform.rotation);
+        }
+        else
+        {
+            correctPosition = (Vector3) stream.ReceiveNext();
+            correctRotation = (Quaternion) stream.ReceiveNext();
+        }
+    }
+    
+    
+    
 }
 
 

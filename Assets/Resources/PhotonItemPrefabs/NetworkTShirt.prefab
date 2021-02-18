@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6711916209328053319}
   - component: {fileID: 4709687650575623133}
   - component: {fileID: 7825522198619210564}
+  - component: {fileID: -4379363572358360283}
   m_Layer: 11
   m_Name: NetworkTShirt
   m_TagString: Item
@@ -160,6 +161,8 @@ MonoBehaviour:
   _description: this is a shirt
   _price: 1000
   _timeAdjustment: 0
+  correctPosition: {x: 0, y: 0, z: 0}
+  correctRotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &7825522198619210564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,10 +178,27 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
-  Synchronization: 3
+  observableSearch: 0
+  Synchronization: 1
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 4709687650575623133}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-4379363572358360283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8179289414102195349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1

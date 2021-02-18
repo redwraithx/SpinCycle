@@ -20,14 +20,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6edd3356-5640-48c5-9fc2-63461a08671e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Networking/Loading2.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Networking/Loading2.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Networking/Loading2/NetworkManager.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Networking/Loading2/NetworkManager.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Networking/Lobby/NetworkManager.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Networking/Lobby/NetworkManager.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Networking/Must Be In All Networked Levels.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Networking/Must Be In All Networked Levels.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/CrossPlatformInputManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/TiltInput.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/ItemMaterials/Clothing/RedShirtMAT.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/ItemMaterials/Clothing/RedShirtMAT.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/NetworkTShirt.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/NetworkTShirt.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonPlayerPrefabs/PhotonNetworkPlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PhotonPlayerPrefabs/PhotonNetworkPlayer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonPlayerPrefabs/PlayerAvatar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PhotonPlayerPrefabs/PlayerAvatar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AnhHoaiScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/AnhHoaiScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/BrandonLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/BrandonLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MultiplayerTestLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MultiplayerTestLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/LoadScreen2CanvasManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/LoadScreen2CanvasManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/Network_ObjectSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Network_ObjectSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/machine.config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/machine.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/settings.map" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/settings.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/web.config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/web.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/machine.config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/machine.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/settings.map" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/settings.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/web.config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/web.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/machine.config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/machine.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/settings.map" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/settings.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/web.config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/web.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/browscap.ini" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/browscap.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/mconfig/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/mconfig/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/app.info" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/app.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/boot.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/globalgamemanagers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/globalgamemanagers.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level1" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level2" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level3" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level4" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level5" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level6" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/resources.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets0.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets1.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets1.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets2.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets2.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets3.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets3.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets4.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets4.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets4.assets.resS" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets5.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets5.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets6.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets6.assets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,13 +88,23 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/7zO4725A6D3/DeathRaceGameManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/CrossPlatforms2_Lab7/Assets/Scripts/LoadSaveManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/7zO47258F93/CarMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnitTest_Project1/Assets/_Project/Editor/MinMaxDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnitTest_Project2/Assets/Tests/EditMode/damage_calculator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/7zO4724EF62/NetworkManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Funamentals2_Labs/Fundamentals2_Lab7/Assets/Scripts/Enemy/EnemyUnit.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/7zO472E4E22/CarMovement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/7zO4727B7F7/TakeDamage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../UnityProjects/2D_EventTest_Project1/Assets/Scripts/AimAtMouse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../TeamMileStone2/SpinCycle-Anthony/Assets/Scripts/Items/TShirt.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/7zO472254B4/Shooting.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/05250243-5982-472D-92DA-7F939C7F8164/31/64b90b70/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/Crossplatforms2_networking/Assets/Scripts/Level1/Player/PlayerWeapon.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/Crossplatforms2_networking/Assets/Scripts/Level1/Player/PlayerHealth.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/Crossplatforms2_networking/Assets/Scripts/Level1/Player/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../TeamMileStone2/SpinCycle-Anthony/Assets/Scripts/Items/TShirt.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/7zO47284463/MultiplayerRacingGame.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnityNetworking_LLAPI_Server/Assets/Scripts/Server.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -66,7 +117,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Items/WeaponPickUpScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Items/TShirt.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Items/PickupAndCarryItems.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Items/Clothing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/WashingMachine/MachineScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Utilities/ItemTypeForUsingItem.cs" />
@@ -99,10 +149,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/OutOfWorld/OutofWorld.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameOverScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/LoadScreen2CanvasManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/CanvasManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/ExitScene/ExitSceneFadeIn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Utilities/ItemOutOfGameDestroy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/LoadScreen2CanvasManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Network_ObjectSpawner.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jXM3iP7Giz6FodzT2B7nRGS8ar" />
@@ -173,6 +225,7 @@
       <workItem from="1613407186652" duration="9201000" />
       <workItem from="1613421701098" duration="2141000" />
       <workItem from="1613429985365" duration="153000" />
+      <workItem from="1613590059113" duration="11395000" />
     </task>
     <servers />
   </component>
