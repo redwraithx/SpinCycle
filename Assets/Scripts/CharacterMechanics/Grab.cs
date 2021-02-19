@@ -109,7 +109,14 @@ public class Grab : MonoBehaviour
                        ClearGrabValues();
                        
                     }
-                    
+                    else if (itemInHand.GetComponent<RepairToolUse>())
+                    {
+                        itemInHand.GetComponent<RepairToolUse>().UseItem();
+
+                        itemInHand = null;
+
+                        ClearGrabValues();
+                    }
                 }
 
             }
@@ -139,6 +146,7 @@ public class Grab : MonoBehaviour
     {
         var item = other.gameObject.CompareTag("Item");
         var machine = other.gameObject.CompareTag("Machine");
+        RepairToolUse repairTool = null;
         
 
         if (item || machine)
@@ -154,6 +162,11 @@ public class Grab : MonoBehaviour
                 // {
                 //     PickupObject(_item);
                 // }
+            }
+            else if ((repairTool = other.GetComponent<RepairToolUse>()) == true)
+            {
+                canUseHeldItem = true;
+                Debug.Log("GrabScriptRepairToolDebug");
             }
             else
             {
@@ -219,7 +232,8 @@ public class Grab : MonoBehaviour
     {
         var item = other.gameObject.CompareTag("Item");
         var machine = other.gameObject.CompareTag("Machine");
-        
+        RepairToolUse repairTool = null;
+
         // can only hold items in your hand not machines
         if (item || machine)
         {
@@ -231,8 +245,14 @@ public class Grab : MonoBehaviour
             {
                 CanUseHeldItem = true;
             }
+            else if ((repairTool = other.GetComponent<RepairToolUse>()) == true)
+            {
+                canUseHeldItem = true;
+                Debug.Log("GrabScriptRepairToolDebug2");
+            }
             else
             {
+                Debug.Log("GrabScriptRepairToolDebugElse");
                 canUseHeldItem = false;
                 machineInteractionObject = null;
             }
@@ -259,6 +279,8 @@ public class Grab : MonoBehaviour
                 }
                 
             }
+
+
         }
     }
 

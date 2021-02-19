@@ -123,8 +123,8 @@ public class ServerSettingsInspector : Editor
 
         if (!string.IsNullOrEmpty(PhotonNetwork.BestRegionSummaryInPreferences))
         {
-            this.regionsPrefsList = PhotonNetwork.BestRegionSummaryInPreferences.Split(new[] {';'}, StringSplitOptions.RemoveEmptyEntries);
-            if (this.regionsPrefsList.Length < 2)
+            this.regionsPrefsList = PhotonNetwork.BestRegionSummaryInPreferences.Split(';');
+            if (this.regionsPrefsList == null || this.regionsPrefsList.Length == 0 || string.IsNullOrEmpty(this.regionsPrefsList[0]))
             {
                 this.prefLabel = notAvailableLabel;
             }

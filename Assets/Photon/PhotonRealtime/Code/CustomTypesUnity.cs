@@ -8,17 +8,12 @@
 // <author>developer@exitgames.com</author>
 // ----------------------------------------------------------------------------
 
-#if UNITY_4_7 || UNITY_5 || UNITY_5_3_OR_NEWER
-#define SUPPORTED_UNITY
-#endif
 
-#if SUPPORTED_UNITY
 namespace Photon.Realtime
 {
+    using UnityEngine;
     using Photon.Realtime;
     using ExitGames.Client.Photon;
-    using UnityEngine;
-    using Debug = UnityEngine.Debug;
 
 
     /// <summary>
@@ -145,4 +140,3 @@ namespace Photon.Realtime
         #endregion
     }
 }
-#endif

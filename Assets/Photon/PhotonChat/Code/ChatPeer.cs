@@ -28,7 +28,7 @@ namespace Photon.Chat
     {
         /// <summary>Name Server Host Name for Photon Cloud. Without port and without any prefix.</summary>
         public string NameServerHost = "ns.exitgames.com";
-
+        
         /// <summary>Name Server port per protocol (the UDP port is different than TCP, etc).</summary>
         private static readonly Dictionary<ConnectionProtocol, int> ProtocolToNameServerPort = new Dictionary<ConnectionProtocol, int>() { { ConnectionProtocol.Udp, 5058 }, { ConnectionProtocol.Tcp, 4533 }, { ConnectionProtocol.WebSocket, 9093 }, { ConnectionProtocol.WebSocketSecure, 19093 } }; //, { ConnectionProtocol.RHttp, 6063 } };
 
@@ -104,7 +104,7 @@ namespace Photon.Chat
         {
             var protocolPort = 0;
             ProtocolToNameServerPort.TryGetValue(this.TransportProtocol, out protocolPort);
-
+            
             if (this.NameServerPortOverride != 0)
             {
                 this.Listener.DebugReturn(DebugLevel.INFO, string.Format("Using NameServerPortInAppSettings as port for Name Server: {0}", this.NameServerPortOverride));
@@ -162,7 +162,7 @@ namespace Photon.Chat
                 if (authValues.AuthType != CustomAuthenticationType.None)
                 {
                     opParameters[ParameterCode.ClientAuthenticationType] = (byte) authValues.AuthType;
-                    if (authValues.Token != null)
+                    if (!string.IsNullOrEmpty(authValues.Token))
                     {
                         opParameters[ParameterCode.Secret] = authValues.Token;
                     }
@@ -260,7 +260,7 @@ namespace Photon.Chat
 
         /// <summary>Internal <b>Photon token</b>. After initial authentication, Photon provides a token for this client, subsequently used as (cached) validation.</summary>
         /// <remarks>Any token for custom authentication should be set via SetAuthPostData or AddAuthParameter.</remarks>
-        public object Token { get; protected internal set; }
+        public string Token { get; protected internal set; }
 
         /// <summary>The UserId should be a unique identifier per user. This is for finding friends, etc..</summary>
         /// <remarks>See remarks of AuthValues for info about how this is set and used.</remarks>
@@ -319,7 +319,7 @@ namespace Photon.Chat
         /// <returns>string representation of this object.</returns>
         public override string ToString()
         {
-            return string.Format("AuthenticationValues Type: {3} UserId: {0}, GetParameters: {1} Token available: {2}", this.UserId, this.AuthGetParameters, this.Token != null, this.AuthType);
+            return string.Format("AuthenticationValues Type: {3} UserId: {0}, GetParameters: {1} Token available: {2}", this.UserId, this.AuthGetParameters, !string.IsNullOrEmpty(this.Token), this.AuthType);
         }
 
         /// <summary>

@@ -340,7 +340,7 @@ namespace Photon.Realtime
                 op[ParameterCode.RoomName] = opParams.RoomName;
             }
 
-            if (opParams.JoinMode == JoinMode.CreateIfNotExists)
+            if (opParams.CreateIfNotExists)
             {
                 op[ParameterCode.JoinMode] = (byte)JoinMode.CreateIfNotExists;
                 if (opParams.Lobby != null && !opParams.Lobby.IsDefault)
@@ -348,8 +348,9 @@ namespace Photon.Realtime
                     op[ParameterCode.LobbyName] = opParams.Lobby.Name;
                     op[ParameterCode.LobbyType] = (byte)opParams.Lobby.Type;
                 }
-            } 
-            else if (opParams.JoinMode == JoinMode.RejoinOnly)
+            }
+
+            if (opParams.RejoinOnly)
             {
                 op[ParameterCode.JoinMode] = (byte)JoinMode.RejoinOnly; // changed from JoinMode.JoinOrRejoin
             }
@@ -367,7 +368,7 @@ namespace Photon.Realtime
                 }
                 op[ParameterCode.Broadcast] = true; // broadcast actor properties
 
-                if (opParams.JoinMode == JoinMode.CreateIfNotExists)
+                if (opParams.CreateIfNotExists)
                 {
                     this.RoomOptionsToOpParameters(op, opParams.RoomOptions);
                 }
@@ -844,7 +845,7 @@ namespace Photon.Realtime
                 if (authValues.AuthType != CustomAuthenticationType.None)
                 {
                     opParameters[ParameterCode.ClientAuthenticationType] = (byte)authValues.AuthType;
-                    if (authValues.Token != null)
+                    if (!string.IsNullOrEmpty(authValues.Token))
                     {
                         opParameters[ParameterCode.Token] = authValues.Token;
                     }
@@ -1083,8 +1084,10 @@ namespace Photon.Realtime
         public Hashtable PlayerProperties;
         /// <summary>Internally used value to skip some values when the operation is sent to the Master Server.</summary>
         protected internal bool OnGameServer = true; // defaults to true! better send more parameter than too few (GS needs all)
-        /// <summary>Internally used value to check which join mode we should call.</summary>
-        protected internal JoinMode JoinMode;
+        /// <summary>Matchmaking can optionally create a room if it is not existing. Also useful, when joining a room with a team: It does not matter who is first.</summary>
+        public bool CreateIfNotExists;
+        /// <summary>Signals, if the user attempts to return to a room or joins one. Set by the methods that call an operation.</summary>
+        public bool RejoinOnly;
         /// <summary>A list of users who are expected to join the room along with this client. Reserves slots for rooms with MaxPlayers value.</summary>
         public string[] ExpectedUsers;
     }
@@ -2139,7 +2142,7 @@ namespace Photon.Realtime
 
         /// <summary>Internal <b>Photon token</b>. After initial authentication, Photon provides a token for this client, subsequently used as (cached) validation.</summary>
         /// <remarks>Any token for custom authentication should be set via SetAuthPostData or AddAuthParameter.</remarks>
-        public object Token { get; protected internal set; }
+        public string Token { get; protected internal set; }
 
         /// <summary>The UserId should be a unique identifier per user. This is for finding friends, etc..</summary>
         /// <remarks>See remarks of AuthValues for info about how this is set and used.</remarks>
@@ -2203,7 +2206,7 @@ namespace Photon.Realtime
                                  this.UserId,
                                  string.IsNullOrEmpty(this.AuthGetParameters) ? " GetParameters: yes" : "",
                                  this.AuthPostData == null ? "" : " PostData: yes",
-                                 this.Token == null ? "" : " Token: yes");
+                                 string.IsNullOrEmpty(this.Token) ? "" : " Token: yes");
         }
 
         /// <summary>
