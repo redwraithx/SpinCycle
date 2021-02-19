@@ -1,12 +1,4 @@
-﻿#if UNITY_WEBGL || WEBSOCKET || ((UNITY_XBOXONE || UNITY_GAMECORE) && UNITY_EDITOR)
-
-// --------------------------------------------------------------------------------------------------------------------
-// <summary>
-//   Provided originally by Unity to cover WebSocket support in WebGL and the Editor. Modified by Exit Games GmbH.
-// </summary>
-// <author>developer@exitgames.com</author>
-// --------------------------------------------------------------------------------------------------------------------
-
+﻿#if UNITY_WEBGL || UNITY_XBOXONE || WEBSOCKET
 
 using System;
 using System.Text;

@@ -64,7 +64,7 @@ namespace Photon.Pun
     public static partial class PhotonNetwork
     {
         /// <summary>Version number of PUN. Used in the AppVersion, which separates your playerbase in matchmaking.</summary>
-        public const string PunVersion = "2.27";
+        public const string PunVersion = "2.25";
 
         /// <summary>Version number of your game. Setting this updates the AppVersion, which separates your playerbase in matchmaking.</summary>
         /// <remarks>
@@ -1755,10 +1755,11 @@ namespace Photon.Pun
             opParams.RoomName = roomName;
             opParams.RoomOptions = roomOptions;
             opParams.Lobby = typedLobby;
+            opParams.CreateIfNotExists = true;
             opParams.PlayerProperties = LocalPlayer.CustomProperties;
             opParams.ExpectedUsers = expectedUsers;
 
-            return NetworkingClient.OpJoinOrCreateRoom(opParams);
+            return NetworkingClient.OpJoinRoom(opParams);
         }
 
 
@@ -1861,7 +1862,12 @@ namespace Photon.Pun
                 return false;
             }
 
-            return NetworkingClient.OpRejoinRoom(roomName);
+            EnterRoomParams opParams = new EnterRoomParams(); // the this.enterRoomParamsCache is updated in OpJoinRoom, so this method does not do it.
+            opParams.RoomName = roomName;
+            opParams.RejoinOnly = true;
+            opParams.PlayerProperties = LocalPlayer.CustomProperties;
+
+            return NetworkingClient.OpJoinRoom(opParams);
         }
 
 
@@ -2262,27 +2268,21 @@ namespace Photon.Pun
             return true;
         }
 
-        [Obsolete("Renamed. Use AllocateRoomViewID instead")]
-        public static bool AllocateSceneViewID(PhotonView view)
-        {
-            return AllocateRoomViewID(view);
-        }
-
         /// <summary>
-        /// Enables the Master Client to allocate a viewID for room objects.
+        /// Enables the Master Client to allocate a viewID for scene objects.
         /// </summary>
         /// <returns>True if a viewId was assigned. False if the PhotonView already had a non-zero viewID or if this client is not the Master Client.</returns>
-        public static bool AllocateRoomViewID(PhotonView view)
+        public static bool AllocateSceneViewID(PhotonView view)
         {
             if (!PhotonNetwork.IsMasterClient)
             {
-                Debug.LogError("Only the Master Client can AllocateRoomViewID(). Check PhotonNetwork.IsMasterClient!");
+                Debug.LogError("Only the Master Client can AllocateSceneViewID(). Check PhotonNetwork.IsMasterClient!");
                 return false;
             }
 
             if (view.ViewID != 0)
             {
-                Debug.LogError("AllocateRoomViewID() can't be used for PhotonViews that already have a viewID. This view is: " + view.ToString());
+                Debug.LogError("AllocateSceneViewID() can't be used for PhotonViews that already have a viewID. This view is: " + view.ToString());
                 return false;
             }
 
@@ -2291,24 +2291,24 @@ namespace Photon.Pun
             return true;
         }
 
-        /// <summary>Allocates a viewID for the current/local player or the room.</summary>
-        /// <param name="roomObject">Use true, to allocate a room viewID and false to allocate a viewID for the local player.</param>
-        /// <returns>Returns a viewID (combined owner and sequential number) that can be assigned as PhotonView.ViewID.</returns>
-        public static int AllocateViewID(bool roomObject)
+        /// <summary>Allocates a viewID for the current/local player or the scene.</summary>
+        /// <param name="sceneObject">Use true, to allocate a scene viewID and false to allocate a viewID for the local player.</param>
+        /// <returns>Returns a viewID (combined owner and sequential number) that can be assigend as PhotonView.ViewID.</returns>
+        public static int AllocateViewID(bool sceneObject)
         {
-            if (roomObject && !LocalPlayer.IsMasterClient)
+            if (sceneObject && !LocalPlayer.IsMasterClient)
             {
-                Debug.LogError("Only a Master Client can AllocateViewID() for room objects. This client/player is not a Master Client. Returning an invalid viewID: -1.");
+                Debug.LogError("Only a Master Client can AllocateViewID() for scene objects. This client/player is not a Master Client. Returning an invalid viewID: -1.");
                 return 0;
             }
 
-            int ownerActorNumber = roomObject ? 0 : LocalPlayer.ActorNumber;
+            int ownerActorNumber = sceneObject ? 0 : LocalPlayer.ActorNumber;
             return AllocateViewID(ownerActorNumber);
         }
 
-        /// <summary>Allocates a viewID for the current/local player or the room.</summary>
+        /// <summary>Allocates a viewID for the current/local player or the scene.</summary>
         /// <param name="ownerId">ActorNumber to allocate a viewID for.</param>
-        /// <returns>Returns a viewID (combined owner and sequential number) that can be assigned as PhotonView.ViewID.</returns>
+        /// <returns>Returns a viewID (combined owner and sequential number) that can be assigend as PhotonView.ViewID.</returns>
         public static int AllocateViewID(int ownerId)
         {
             if (ownerId == 0)
@@ -2334,7 +2334,7 @@ namespace Photon.Pun
                 }
 
                 // this is the error case: we didn't find any (!) free subId for this user
-                throw new Exception(string.Format("AllocateViewID() failed. The room (user {0}) is out of 'room' viewIDs. It seems all available are in use.", ownerId));
+                throw new Exception(string.Format("AllocateViewID() failed. The room (user {0}) is out of 'scene' viewIDs. It seems all available are in use.", ownerId));
             }
             else
             {
@@ -2468,7 +2468,7 @@ namespace Photon.Pun
 
         private static readonly HashSet<string> PrefabsWithoutMagicCallback = new HashSet<string>();
 
-        private static GameObject NetworkInstantiate(Pun.InstantiateParameters parameters, bool roomObject = false, bool instantiateEvent = false)
+        private static GameObject NetworkInstantiate(Pun.InstantiateParameters parameters, bool sceneObject = false, bool instantiateEvent = false)
         {
             //Instantiate(name, pos, rot)
             //pv[] GetPhotonViewsInChildren()
@@ -2515,8 +2515,8 @@ namespace Photon.Pun
                 if (localInstantiate)
                 {
                     // when this client instantiates a GO, it has to allocate viewIDs accordingly.
-                    // ROOM objects are created as actorNumber 0 (no matter which number this player has).
-                    parameters.viewIDs[i] = (roomObject) ? AllocateViewID(0) : AllocateViewID(parameters.creator.ActorNumber);
+                    // SCENE objects are created as actorNumber 0 (no matter which number this player has).
+                    parameters.viewIDs[i] = (sceneObject) ? AllocateViewID(0) : AllocateViewID(parameters.creator.ActorNumber);
                 }
 
                 var view = photonViews[i];
@@ -2537,7 +2537,7 @@ namespace Photon.Pun
             if (localInstantiate)
             {
                 // send instantiate network event
-                SendInstantiate(parameters, roomObject);
+                SendInstantiate(parameters, sceneObject);
             }
 
             go.SetActive(true);
@@ -2567,7 +2567,7 @@ namespace Photon.Pun
         private static readonly Hashtable SendInstantiateEvHashtable = new Hashtable();                             // SendInstantiate reuses this to reduce GC
         private static readonly RaiseEventOptions SendInstantiateRaiseEventOptions = new RaiseEventOptions();       // SendInstantiate reuses this to reduce GC
 
-        internal static bool SendInstantiate(Pun.InstantiateParameters parameters, bool roomObject = false)
+        internal static bool SendInstantiate(Pun.InstantiateParameters parameters, bool sceneObject = false)
         {
             // first viewID is now also the gameobject's instantiateId
             int instantiateId = parameters.viewIDs[0];   // LIMITS PHOTONVIEWS&PLAYERS
@@ -2611,7 +2611,7 @@ namespace Photon.Pun
             SendInstantiateEvHashtable[keyByteSeven] = instantiateId;
 
 
-            SendInstantiateRaiseEventOptions.CachingOption = (roomObject) ? EventCaching.AddToRoomCacheGlobal : EventCaching.AddToRoomCache;
+            SendInstantiateRaiseEventOptions.CachingOption = (sceneObject) ? EventCaching.AddToRoomCacheGlobal : EventCaching.AddToRoomCache;
 
             return PhotonNetwork.RaiseEventInternal(PunEvent.Instantiation, SendInstantiateEvHashtable, SendInstantiateRaiseEventOptions, SendOptions.SendReliable);
         }
@@ -2635,7 +2635,7 @@ namespace Photon.Pun
         /// The GameObject must be under this client's control:
         /// - Instantiated and owned by this client.
         /// - Instantiated objects of players who left the room are controlled by the Master Client.
-        /// - Room-owned game objects are controlled by the Master Client.
+        /// - Scene-owned game objects are controlled by the Master Client.
         /// - GameObject can be destroyed while client is not in a room.
         /// </remarks>
         /// <returns>Nothing. Check error debug log for any issues.</returns>
@@ -2669,7 +2669,7 @@ namespace Photon.Pun
         /// The GameObject must be under this client's control:
         /// - Instantiated and owned by this client.
         /// - Instantiated objects of players who left the room are controlled by the Master Client.
-        /// - Room-owned game objects are controlled by the Master Client.
+        /// - Scene-owned game objects are controlled by the Master Client.
         /// - GameObject can be destroyed while client is not in a room.
         /// </remarks>
         /// <returns>Nothing. Check error debug log for any issues.</returns>
