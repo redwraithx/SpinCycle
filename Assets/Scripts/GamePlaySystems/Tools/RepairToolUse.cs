@@ -17,7 +17,9 @@ public class RepairToolUse : MonoBehaviour, IRepairToolUse
     void Start()
     {
         spawner = RepairToolSpawn.instance.spawnPointPosition;
+
         timer = 60;
+
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class RepairToolUse : MonoBehaviour, IRepairToolUse
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
+                RepairToolSpawn.instance.RemoveObject();
                 Destroy(this.gameObject);
             }
         }
