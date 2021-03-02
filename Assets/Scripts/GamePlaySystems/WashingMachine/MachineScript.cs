@@ -10,33 +10,49 @@ public class MachineScript : MonoBehaviour
 {
     public float cycleLength;
     public GameObject itemSpawnPoint;
-    public float timer;
-    public bool timerSabotage = false;
+    public float laundryTimer;
+    public float sabotageTimer;
+    public bool isSabotaged = false;
     public bool isEnabled = false;
     public Slider sliderTime;
     public LaundryType laundryType;
     public MachineType machineType;
+    public ParticleSystem part;
 
     private void Start()
     {
         sliderTime.maxValue = cycleLength;
     }
+
     void Update()
     {
-        if (timerSabotage == false)
+        if (isSabotaged == false)
         {
-            if (timer > 0)
+            if (laundryTimer > 0)
             {
-                timer -= Time.deltaTime;
+                laundryTimer -= Time.deltaTime;
             }
-            if (timer <= 0 && isEnabled == true)
+            if (laundryTimer <= 0 && isEnabled == true)
             {
                 SpawnFinishedProduct(laundryType);
                 isEnabled = false;
             }
         }
 
-        sliderTime.value = timer;
+        if (isSabotaged == true)
+        {
+            if (sabotageTimer > 0)
+            {
+                sabotageTimer -= Time.deltaTime;
+            }
+            if (sabotageTimer <= 0)
+            {
+                part.Stop();
+                isSabotaged = false;
+            }
+        }
+
+        sliderTime.value = laundryTimer;
 
     }
 
@@ -65,27 +81,48 @@ public class MachineScript : MonoBehaviour
 
     public void ProcessItems()
     {
-        timer = cycleLength;
+        laundryTimer = cycleLength;
         isEnabled = true;
         
     }
 
     public void UseMachine(GameObject other)
-    {   
-
+    {
         //Alter this tag based on machine
         if (other.CompareTag("Item"))
         {
             Debug.Log($"we have a item {other.GetComponent<ItemTypeForItem>().itemType}");
             laundryType = other.GetComponent<ItemTypeForItem>().laundryType;
-                
-            //Once player is created, call to destroy the item in their hand here
-            ProcessItems();
+            if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.RepairTool)
+            {
+                FixMachine();
+                RepairToolSpawn.instance.RemoveObject();
+                other.gameObject.SetActive(false);
+            }
+            else
+            {
+                //Once player is created, call to destroy the item in their hand here
+                ProcessItems();
 
-            // we may want to use a bool in case the machine is full we dont destroy or use the object
-            other.transform.parent = null;
-            other.gameObject.SetActive(false);
+                // we may want to use a bool in case the machine is full we dont destroy or use the object
+                other.transform.parent = null;
+                other.gameObject.SetActive(false);
+            }
         }
 
+
+    }
+
+    public void SabotageMachine(float time)
+    {
+        sabotageTimer = time;
+        isSabotaged = true;
+        part.Play();
+    }
+    public void FixMachine()
+    {
+        isSabotaged = false;
+        sabotageTimer = 0;
+        part.Stop();
     }
 }

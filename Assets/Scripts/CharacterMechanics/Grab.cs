@@ -103,7 +103,7 @@ public class Grab : MonoBehaviour
                     {
                        // use object action will only work on one event per object
                        machineInteractionObject.thisObjectEvent.Invoke(itemInHand);
-
+                        //If you are getting an error that calls here, make sure the machine has the event set up properly
                        itemInHand = null;
                        
                        ClearGrabValues();
