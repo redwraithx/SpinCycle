@@ -319,10 +319,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4639710144801987609}
-  - component: {fileID: 5455843870653548405}
   - component: {fileID: 5294258101506776683}
   - component: {fileID: 1803425232764618408}
   - component: {fileID: 2888946947650144008}
+  - component: {fileID: 3959449516023700202}
   m_Layer: 10
   m_Name: DryingMachine
   m_TagString: Machine
@@ -349,26 +349,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5455843870653548405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5415683452110538403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8236382c68b3340ad3d9920022d658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cycleLength: 50
-  itemSpawnPoint: {fileID: 5181733003640371472}
-  timer: 0
-  timerSabotage: 0
-  isEnabled: 0
-  sliderTime: {fileID: 1723971360546199101}
-  laundryType: 0
-  machineType: 1
 --- !u!114 &5294258101506776683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,7 +365,7 @@ MonoBehaviour:
   thisObjectEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5455843870653548405}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MachineScript, Assembly-CSharp
         m_MethodName: UseMachine
         m_Mode: 0
@@ -423,6 +403,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.98979145, y: 1.2796111, z: 1.0454288}
   m_Center: {x: -0.2123482, y: 0.6966231, z: -0.20066047}
+--- !u!114 &3959449516023700202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5415683452110538403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38265891638d2a648bb7ae58a9418fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cycleLength: 0
+  itemSpawnPoint: {fileID: 5181733003640371472}
+  laundryTimer: 0
+  sabotageTimer: 0
+  isSabotaged: 0
+  isEnabled: 0
+  sliderTime: {fileID: 1723971360546199101}
+  laundryType: 0
+  machineType: 1
 --- !u!1 &5529081166599032172
 GameObject:
   m_ObjectHideFlags: 0
