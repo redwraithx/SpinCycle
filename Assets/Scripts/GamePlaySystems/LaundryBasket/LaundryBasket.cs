@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 using GamePlaySystems.Utilities;
+using System.Collections;
 
 public class LaundryBasket : MonoBehaviour
 {
@@ -14,10 +15,13 @@ public class LaundryBasket : MonoBehaviour
     
     void Start()
     {
-        playerPoints = GameObject.Find("PlayerCC").GetComponent<PlayerPoints>();
-        points += playerPoints.Points;
+        StartCoroutine (CheckForPlayer());
     }
 
+    private void Update()
+    {
+       
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Item"))
@@ -26,6 +30,7 @@ public class LaundryBasket : MonoBehaviour
             {
                 points += other.gameObject.GetComponent<Item>().Price;
                 Debug.Log(points);
+                playerPoints.Points += points;
                 other.gameObject.SetActive(false);
             }
         }
@@ -40,14 +45,31 @@ public class LaundryBasket : MonoBehaviour
                 points += other.gameObject.GetComponent<Item>().Price;
                 
                 Debug.Log(points);
-                
+                playerPoints.Points += points;
                 other.gameObject.SetActive(false);
 
                 //pointsToText = points.ToString();
                 //Debug.Log(pointsToText);
                 //pointsText.text = pointsToText;
-                playerPoints.Points += points;
+                //playerPoints.Points += points;
             }
         }
+    }
+
+
+    IEnumerator CheckForPlayer()
+    {
+        yield return new WaitForSeconds(2f);
+
+            if(!GameManager.Instance.Player1)
+            {
+                StartCoroutine (CheckForPlayer());
+            }
+            else
+            {
+                playerPoints = GameManager.Instance.Player1.GetComponent<PlayerPoints>();
+                points += playerPoints.Points;
+                StopCoroutine(CheckForPlayer());
+            }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
+using UnityEngine;
 using UnityEngine.UI;
 
 
@@ -15,10 +16,17 @@ public class PlayerPoints : MonoBehaviour
         {
             points += value;
             
-            playerPointText.text = points.ToString();
+           // playerPointText.text = points.ToString();
         }
     }
 
+    private void Start()
+    {
+        if(GetComponent<PhotonView>().IsMine)
+        {
+            playerPointText = GameObject.FindWithTag("PointsCounter").GetComponent<Text>();
+        }
+    }
     private void Update()
     {
         

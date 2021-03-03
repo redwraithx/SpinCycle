@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 6531922087489004602}
-  - component: {fileID: 4432188085740058247}
   m_Layer: 0
   m_Name: OilCan2
   m_TagString: Untagged
@@ -96,20 +95,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.925625, y: 0.7623122, z: 2.5555706}
   m_Center: {x: -0.10886651, y: 0, z: 1.2777853}
---- !u!114 &4432188085740058247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 542130dc321939a4b9b62910f39ed5d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedMultiplier: 2
-  duration: 5
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +105,8 @@ GameObject:
   m_Component:
   - component: {fileID: 400002}
   - component: {fileID: 11100000}
+  - component: {fileID: 1985373347212791015}
+  - component: {fileID: -6092252719019702054}
   m_Layer: 0
   m_Name: OilCan2
   m_TagString: Untagged
@@ -157,3 +144,36 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &1985373347212791015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b148622cc1351f146a17a2aeac436f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMultiplier: 2
+  duration: 5
+--- !u!114 &-6092252719019702054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f90a41f1c18f8e4aa8eede153b212ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0
+  _name: SpeedBoostOil
+  _description: this is the speed boost
+  _price: 102
+  _timeAdjustment: 0
+  correctPosition: {x: 0, y: 0, z: 0}
+  correctRotation: {x: 0, y: 0, z: 0, w: 1}

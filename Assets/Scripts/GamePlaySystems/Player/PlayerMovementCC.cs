@@ -30,7 +30,7 @@ public class PlayerMovementCC : MonoBehaviour
     
     
     // networking
-    private PhotonView _photonView = null;
+    internal PhotonView _photonView = null;
     private Vector3 correctPosition = Vector3.zero;
     private Quaternion correctRotation = Quaternion.identity;
 
@@ -71,6 +71,8 @@ public class PlayerMovementCC : MonoBehaviour
             var disableCamera = GetComponentInChildren<CinemachineFreeLook>();
             disableCamera.gameObject.SetActive(false);
         }
+
+        GameManager.Instance.Player1 = this.gameObject;
     }
 
 
