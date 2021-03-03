@@ -9,15 +9,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 680678549295112260, guid: c9834801603eaed48ae1f0b69cd38543, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 680678549295112260, guid: c9834801603eaed48ae1f0b69cd38543, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 680678549295112260, guid: c9834801603eaed48ae1f0b69cd38543, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -29.81
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 680678549295112260, guid: c9834801603eaed48ae1f0b69cd38543, type: 3}
       propertyPath: m_LocalRotation.x
@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 680678549295112263, guid: c9834801603eaed48ae1f0b69cd38543, type: 3}
       propertyPath: m_Name
-      value: SpawnPoint2
+      value: SpawnPoint Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9834801603eaed48ae1f0b69cd38543, type: 3}
