@@ -1201,7 +1201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 801424384506256396, guid: c1aa21066d36c0042a3b8ccba45781ab, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000020643605
+      value: -0.0000000020643611
       objectReference: {fileID: 0}
     - target: {fileID: 801424384506256396, guid: c1aa21066d36c0042a3b8ccba45781ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1213,7 +1213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 801424384506256396, guid: c1aa21066d36c0042a3b8ccba45781ab, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001708209
+      value: 0.000000017082098
       objectReference: {fileID: 0}
     - target: {fileID: 801424384506256396, guid: c1aa21066d36c0042a3b8ccba45781ab, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1251,6 +1251,10 @@ PrefabInstance:
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 1068322950}
+    - target: {fileID: 7504558961146768140, guid: c1aa21066d36c0042a3b8ccba45781ab, type: 3}
+      propertyPath: projectileSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7541388268804435044, guid: c1aa21066d36c0042a3b8ccba45781ab, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.13796711
@@ -2374,6 +2378,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 595329987, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: SaleItemGameObject
+      value: 
+      objectReference: {fileID: 2097404848044861107, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
+    - target: {fileID: 1109529627, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: SaleItemGameObject
+      value: 
+      objectReference: {fileID: 2097404848044861107, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
+    - target: {fileID: 1201114950, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: SaleItemGameObject
+      value: 
+      objectReference: {fileID: 2097404848044861107, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
+    - target: {fileID: 1338063382, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: SaleItemGameObject
+      value: 
+      objectReference: {fileID: 2097404848044861107, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
     - target: {fileID: 1346370036, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: Description
       value: You aren't supposed to read this
@@ -2386,10 +2406,18 @@ PrefabInstance:
       propertyPath: VendingUI
       value: 
       objectReference: {fileID: 1108420235}
+    - target: {fileID: 1388790037, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: SaleItemGameObject
+      value: 
+      objectReference: {fileID: 2097404848044861107, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
     - target: {fileID: 1413503339, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: VendingUI
       value: 
       objectReference: {fileID: 1108420235}
+    - target: {fileID: 1413503339, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: SaleItemGameObject
+      value: 
+      objectReference: {fileID: 2097404848044861107, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
     - target: {fileID: 5931836118849173896, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.2157454

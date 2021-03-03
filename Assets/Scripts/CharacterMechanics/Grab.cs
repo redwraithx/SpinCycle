@@ -6,7 +6,7 @@ using UnityEngine;
 public class Grab : MonoBehaviour
 {
     public Transform grabPoint = null;
-    
+    public WeaponScript weapon = null;
     [SerializeField] public bool canPickUpItem = false;
     [SerializeField] private bool hasItemInHand = false;
     [SerializeField] private GameObject itemInHand = null;
@@ -21,13 +21,21 @@ public class Grab : MonoBehaviour
     
     [SerializeField] private PhotonView _photonView;
 
+
     public bool CanUseHeldItem
     {
         get => canUseHeldItem;
         set => canUseHeldItem = value;
     }
-    
-    
+
+    private void Start()
+    {
+        if (!weapon)
+            weapon = GetComponent<WeaponScript>();
+        
+
+        
+    }
     private void CheckForMouseDown()
     {
         if (canPickUpItem && itemToPickUp && outOfRange == false)
@@ -103,7 +111,7 @@ public class Grab : MonoBehaviour
                     {
                        // use object action will only work on one event per object
                        machineInteractionObject.thisObjectEvent.Invoke(itemInHand);
-
+                        //If you are getting an error that calls here, make sure the machine has the event set up properly
                        itemInHand = null;
                        
                        ClearGrabValues();
@@ -117,9 +125,53 @@ public class Grab : MonoBehaviour
 
                         ClearGrabValues();
                     }
+
+                    
+                }
+                else if (itemInHand.GetComponent<ItemTypeForItem>().itemType == ItemType.SabotageWaterGun)
+                {
+                    if(weapon.enabled)
+                        weapon.fire();
+                    //itemInHand.GetComponent<RepairToolUse>().UseItem();
+                    Debug.Log("Gun");
+                    //itemInHand = null;
+
+                    //ClearGrabValues();
                 }
 
             }
+        }
+        if (itemInHand)
+        {
+            var isValidItem = itemInHand?.GetComponent<ItemTypeForItem>();
+            if (isValidItem)
+            {
+                Debug.Log(isValidItem.itemType);
+                if (isValidItem.itemType == ItemType.SabotageWaterGun)
+                {
+                    if (!weapon.enabled)
+                    {
+                        weapon.enabled = true;
+                        weapon.projectileSpawnPoint = itemInHand.GetComponentInChildren<Transform>();
+                    }
+                    if (!canUseHeldItem)
+                        canUseHeldItem = true;
+                    
+                    Debug.Log("2");
+                }
+                
+            }
+            
+        }
+        else
+        {
+            if (weapon.enabled)
+            {
+                weapon.enabled = false;
+                weapon.projectileSpawnPoint = null;
+            }
+            //if (!canUseHeldItem)
+            //canUseHeldItem = false;
         }
     }
 
@@ -189,15 +241,20 @@ public class Grab : MonoBehaviour
             
             }
 
-            if (itemInHand)
-            {
-                var isItemASabbotage = itemInHand?.GetComponent<ItemTypeForItem>();
-                if (isItemASabbotage)
-                {
-                    if (isItemASabbotage.itemType == ItemType.SabotageWaterGun)
-                        canUseHeldItem = false;
-                }
-            }
+            //if (itemInHand)
+            //{
+            //    var isItemASabbotage = itemInHand?.GetComponent<ItemTypeForItem>();
+            //    if (isItemASabbotage)
+            //    {
+            //        Debug.Log(isItemASabbotage.itemType);
+            //        if (isItemASabbotage.itemType == ItemType.SabotageWaterGun)
+            //        {
+            //            canUseHeldItem = true;
+            //            weapon.enabled = true;
+            //            Debug.Log("2");
+            //        }
+            //    }
+            //}
 
         }
         
@@ -269,16 +326,16 @@ public class Grab : MonoBehaviour
                 itemToPickUp = null;
             }
 
-            if (itemInHand)
-            {
-                var isItemASabbotage = itemInHand?.GetComponent<ItemTypeForItem>();
-                if (isItemASabbotage)
-                {
-                    if (isItemASabbotage.itemType == ItemType.SabotageWaterGun)
-                        canUseHeldItem = false;
-                }
+            //if (itemInHand)
+            //{
+            //    var isItemASabbotage = itemInHand?.GetComponent<ItemTypeForItem>();
+            //    if (isItemASabbotage)
+            //    {
+            //        if (isItemASabbotage.itemType == ItemType.SabotageWaterGun)
+            //            canUseHeldItem = false;
+            //    }
                 
-            }
+            //}
 
 
         }
