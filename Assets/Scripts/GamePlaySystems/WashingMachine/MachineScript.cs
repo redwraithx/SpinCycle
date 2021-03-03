@@ -12,8 +12,10 @@ public class MachineScript : MonoBehaviour
     public GameObject itemSpawnPoint;
     public float laundryTimer;
     public float sabotageTimer;
+    public float boostTimer;
     public bool isSabotaged = false;
     public bool isEnabled = false;
+    public bool isBoosted = false;
     public Slider sliderTime;
     public LaundryType laundryType;
     public MachineType machineType;
@@ -22,6 +24,11 @@ public class MachineScript : MonoBehaviour
     private void Start()
     {
         sliderTime.maxValue = cycleLength;
+
+        if (isSabotaged == true)
+        {
+            part.Play();
+        }
     }
 
     void Update()
@@ -52,7 +59,20 @@ public class MachineScript : MonoBehaviour
             }
         }
 
+        if (isBoosted == true)
+        {
+            if (boostTimer > 0)
+            {
+                boostTimer -= Time.deltaTime;
+            }
+            if (boostTimer <= 0)
+            {
+                isBoosted = false;
+            }
+        }
+
         sliderTime.value = laundryTimer;
+
 
     }
 
@@ -108,6 +128,7 @@ public class MachineScript : MonoBehaviour
                 other.transform.parent = null;
                 other.gameObject.SetActive(false);
             }
+            // need an insert for using powerups for machines that triggers the BoostMachine function below
         }
 
 
@@ -124,5 +145,11 @@ public class MachineScript : MonoBehaviour
         isSabotaged = false;
         sabotageTimer = 0;
         part.Stop();
+    }
+
+    public void BoostMachine()
+    {
+        cycleLength = cycleLength / 2;
+        sliderTime.maxValue = cycleLength;
     }
 }
