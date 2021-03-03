@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OilCanPowerUp : MonoBehaviour
+public class OilCanPowerUp1 : MonoBehaviour
 {
     public float speedMultiplier = 2.0f;
     public float duration = 5.0f;

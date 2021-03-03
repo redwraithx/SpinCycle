@@ -30,8 +30,8 @@ public class ButtonHover : MonoBehaviour
     private void Start()
     {
         Debug.Log("sldfkjsdlkfjlsdkjf");
-        
-        playerPoints = GameObject.Find("PlayerCC").GetComponent<PlayerPoints>();
+
+        playerPoints = GameManager.Instance.Player1.GetComponent<PlayerPoints>();
         saleItem = SaleItemGameObject.GetComponent<Item>();
         Description.SetActive(false);
         Price.SetActive(false);

@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a965acf1cf80a44db1b43ca901ae859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 4778513313587291068, guid: 7aa9a10950ee72a43ab4cf239f86f263, type: 3}
+  player1: {fileID: 0}
   player2: {fileID: 0}
 --- !u!4 &278309392
 Transform:
@@ -657,6 +657,7 @@ MonoBehaviour:
   backToMainButton: {fileID: 263151933}
   playButton: {fileID: 0}
   settingsButton: {fileID: 0}
+  MainMenuSceneIndex: 0
 --- !u!1 &1893400644
 GameObject:
   m_ObjectHideFlags: 0
