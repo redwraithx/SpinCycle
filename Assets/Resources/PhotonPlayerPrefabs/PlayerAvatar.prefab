@@ -785,6 +785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabPoint: {fileID: 2397029692007260952}
+  weapon: {fileID: 0}
   canPickUpItem: 0
   hasItemInHand: 0
   itemInHand: {fileID: 0}
@@ -870,7 +871,8 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -6873798126841584195}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

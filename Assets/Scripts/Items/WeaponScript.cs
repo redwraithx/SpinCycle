@@ -4,6 +4,7 @@ using UnityEngine;
 public class WeaponScript : MonoBehaviour
 {
     public Rigidbody projectile;
+    //public GameObject projectile;
     public float projectileSpeed;
     public int ammo;                        
     public Transform projectileSpawnPoint;  
@@ -33,38 +34,42 @@ public class WeaponScript : MonoBehaviour
     }
     public void fire()
     {
+        
         if (projectileSpawnPoint && projectile)
         {
             // Make bullet
             Rigidbody temp = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
 
+            //GameObject temp = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+            
             // Shoot bullet
-            temp.AddForce(projectileSpawnPoint.forward * projectileSpeed, ForceMode.Impulse);
+            temp.GetComponent<Rigidbody>().AddForce(projectileSpawnPoint.forward * projectileSpeed, ForceMode.Impulse);
+            
         }
     }
 
-    public int Shoot()
-    {
+    //public int Shoot()
+    //{
         
-        if (projectile && ammo > 0)
-        {
+    //    if (projectile && ammo > 0)
+    //    {
             
-            Rigidbody temp = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation) as Rigidbody;
+    //        GameObject temp = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
 
             
-            temp.AddForce(transform.forward * projectileForce, ForceMode.Impulse);
+    //        temp.GetComponent<Rigidbody>().AddForce(transform.forward * projectileForce, ForceMode.Impulse);
 
-            Destroy(temp.gameObject, 2.0f);
+    //        Destroy(temp.gameObject, 2.0f);
             
-            ammo--;
-        }
+    //        ammo--;
+    //    }
         
-        else
-        {
+    //    else
+    //    {
             
-            Debug.Log("Auto Reload if we need this?");
-        }
+    //        Debug.Log("Auto Reload if we need this?");
+    //    }
 
-        return ammo;
-    }
+    //    return ammo;
+    //}
 }
