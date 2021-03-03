@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1176669068517430329}
   m_Layer: 0
   m_Name: BulletSpawnPoint
-  m_TagString: Untagged
+  m_TagString: ProjectileSpawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,10 +94,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f90a41f1c18f8e4aa8eede153b212ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _name: Gun
   _description: its a gun
   _price: 400
-  _timeAjustment: 0
+  _timeAdjustment: 0
+  correctPosition: {x: 0, y: 0, z: 0}
+  correctRotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!33 &5219802106467407793
 MeshFilter:
   m_ObjectHideFlags: 0
