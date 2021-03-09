@@ -12,7 +12,6 @@ public class MachineScript : MonoBehaviour
     public GameObject itemSpawnPoint;
     public float laundryTimer;
     public float sabotageTimer;
-    public float boostTimer;
     public bool isSabotaged = false;
     public bool isEnabled = false;
     public bool isBoosted = false;
@@ -59,18 +58,6 @@ public class MachineScript : MonoBehaviour
             }
         }
 
-        if (isBoosted == true)
-        {
-            if (boostTimer > 0)
-            {
-                boostTimer -= Time.deltaTime;
-            }
-            if (boostTimer <= 0)
-            {
-                isBoosted = false;
-            }
-        }
-
         sliderTime.value = laundryTimer;
 
 
@@ -113,6 +100,12 @@ public class MachineScript : MonoBehaviour
         {
             Debug.Log($"we have a item {other.GetComponent<ItemTypeForItem>().itemType}");
             laundryType = other.GetComponent<ItemTypeForItem>().laundryType;
+
+            if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.WasherBoost)
+            {
+                BoostMachine();
+                other.gameObject.SetActive(false);
+            }
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.RepairTool)
             {
                 FixMachine();
@@ -151,5 +144,6 @@ public class MachineScript : MonoBehaviour
     {
         cycleLength = cycleLength / 2;
         sliderTime.maxValue = cycleLength;
+        isBoosted = true;
     }
 }
