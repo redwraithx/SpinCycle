@@ -700,11 +700,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6735945028913086523}
+  - component: {fileID: 2733049915812289532}
+  - component: {fileID: 6735945028913086524}
+  - component: {fileID: 6735945028913086525}
   - component: {fileID: 6845145786595109608}
   - component: {fileID: 1241396284157182615}
   - component: {fileID: 3631852390364212486}
-  - component: {fileID: 6735945028913086524}
-  - component: {fileID: 6735945028913086525}
   - component: {fileID: 220156917522375862}
   - component: {fileID: 3757612865807166193}
   - component: {fileID: -6873798126841584195}
@@ -734,6 +735,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &2733049915812289532
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735945028913086526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!114 &6735945028913086524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735945028913086526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c0aa986a63eb34a823f44def99e2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 6735945028913086525}
+  Xspeed: 12
+  Zspeed: 10
+  gravity: -9.8
+  gravityMulitplier: 2
+  jumpHeight: 3
+  groundCheck: {fileID: 6735945029965138975}
+  groundDistance: 0.2
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
+  rotationSpeed: 25
+  isGrounded: 0
+--- !u!143 &6735945028913086525
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735945028913086526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.98, z: 0}
 --- !u!114 &6845145786595109608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -796,49 +854,6 @@ MonoBehaviour:
   outOfRange: 1
   objectYouCanUse: {fileID: 0}
   _photonView: {fileID: 0}
---- !u!114 &6735945028913086524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6735945028913086526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7c0aa986a63eb34a823f44def99e2d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 6735945028913086525}
-  Xspeed: 12
-  Zspeed: 10
-  gravity: -9.8
-  gravityMulitplier: 2
-  jumpHeight: 3
-  groundCheck: {fileID: 6735945029965138975}
-  groundDistance: 0.2
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 256
-  rotationSpeed: 25
-  isGrounded: 0
---- !u!143 &6735945028913086525
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6735945028913086526}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.98, z: 0}
 --- !u!114 &220156917522375862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,7 +1113,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8796010687644086387}
-  m_LocalRotation: {x: 0.11997646, y: 0.000000017082098, z: -0.0000000020643611, w: 0.99277675}
+  m_LocalRotation: {x: 0.11997646, y: -0.00000001708209, z: 0.0000000020643605, w: 0.99277675}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
