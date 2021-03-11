@@ -22,6 +22,7 @@ public class MachineScript : MonoBehaviour
 
     private void Start()
     {
+        cycleLength = 5;
         sliderTime.maxValue = cycleLength;
 
         if (isSabotaged == true)

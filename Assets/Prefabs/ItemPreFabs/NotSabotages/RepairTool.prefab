@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2e483fbd70d9e4da185468f0ca5bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 7
+  itemType: 9
   laundryType: 0
 --- !u!114 &5271457510973741642
 MonoBehaviour:
@@ -84,6 +84,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2814132a58a8de499ef05c8a16a02f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  repairIndex: 0
+  timer: 0
+  spawner: {x: 0, y: 0, z: 0}
 --- !u!33 &5271457510973741641
 MeshFilter:
   m_ObjectHideFlags: 0
