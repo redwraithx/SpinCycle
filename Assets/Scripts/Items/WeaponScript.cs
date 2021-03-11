@@ -1,8 +1,12 @@
 ﻿
 using UnityEngine;
+using EnumSpace;
+using GamePlaySystems.Utilities;
 
 public class WeaponScript : MonoBehaviour
 {
+    public ItemType itemType;
+    public Rigidbody[] projectiles;
     public Rigidbody projectile;
     //public GameObject projectile;
     public float projectileSpeed;
@@ -21,6 +25,8 @@ public class WeaponScript : MonoBehaviour
         {
             projectileForce = 3.0f;
         }
+        
+
 
     }
 
@@ -30,6 +36,19 @@ public class WeaponScript : MonoBehaviour
         {
             Debug.Log("Firing");
             fire();
+        }
+
+        switch (itemType)
+        {
+            case ItemType.SabotageWaterGun:
+                projectile = projectiles[0];
+                break;
+            case ItemType.SabotageIceGun:
+                projectile = projectiles[1];
+                break;
+            case ItemType.SabotageSoapGun:
+                projectile = projectiles[2];
+                break;
         }
     }
     public void fire()

@@ -7,6 +7,7 @@ public class Grab : MonoBehaviour
 {
     public Transform grabPoint = null;
     public WeaponScript weapon = null;
+    public GameObject weaponCamera;
     [SerializeField] public bool canPickUpItem = false;
     [SerializeField] private bool hasItemInHand = false;
     [SerializeField] private GameObject itemInHand = null;
@@ -147,12 +148,15 @@ public class Grab : MonoBehaviour
             if (isValidItem)
             {
                 Debug.Log(isValidItem.itemType);
-                if (isValidItem.itemType == ItemType.SabotageWaterGun)
+                if (isValidItem.itemType == ItemType.SabotageWaterGun || isValidItem.itemType == ItemType.SabotageIceGun || isValidItem.itemType == ItemType.SabotageSoapGun)
                 {
                     if (!weapon.enabled)
                     {
                         weapon.enabled = true;
+                        weapon.itemType = isValidItem.itemType;
                         weapon.projectileSpawnPoint = itemInHand.GetComponentInChildren<Transform>();
+                        weaponCamera.gameObject.SetActive(true);
+                        itemInHand.gameObject.transform.rotation = transform.rotation;
                     }
                     if (!canUseHeldItem)
                         canUseHeldItem = true;
@@ -169,6 +173,7 @@ public class Grab : MonoBehaviour
             {
                 weapon.enabled = false;
                 weapon.projectileSpawnPoint = null;
+                weaponCamera.gameObject.SetActive(false);
             }
             //if (!canUseHeldItem)
             //canUseHeldItem = false;
