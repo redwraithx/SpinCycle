@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 7109747777233407146}
   - component: {fileID: 7109747777233407149}
   - component: {fileID: 7109747777233407148}
+  - component: {fileID: -6306133044903348344}
   m_Layer: 0
   m_Name: RepairToolSpawnLocation
   m_TagString: Untagged
@@ -127,3 +128,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &-6306133044903348344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109747777233407151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbce21eeeaa4e7b4a8d59c51e48fd7f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repairTool: {fileID: 5271457510973741645, guid: 9d1129bd47d2d0c499e306c570462871, type: 3}
+  spawnPoint: {fileID: 3147263741431070682}
+  spawnPointPosition: {x: 0, y: 0, z: 0}
+  repairToolInstance: {fileID: 0}
+  spawnTimer: 0
+  repairTools: []
