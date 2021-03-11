@@ -27,6 +27,8 @@ public class PlayerMovementCC : MonoBehaviour
 
     private Vector3 velocity;
     public bool isGrounded;
+
+    public bool isFrozen;
     
     
     // networking
@@ -98,17 +100,34 @@ public class PlayerMovementCC : MonoBehaviour
             velocity.y = -2f;
         }
         
-        float moveX = Input.GetAxis("Horizontal") * ((Xspeed * m_moveSpeedMultiplier) * Time.deltaTime);
-        float moveZ = Input.GetAxis("Vertical") * ((Zspeed * m_moveSpeedMultiplier) * Time.deltaTime);;
+        if(isFrozen == false)
+        {
+            float moveX = Input.GetAxis("Horizontal") * ((Xspeed * m_moveSpeedMultiplier) * Time.deltaTime);
+            float moveZ = Input.GetAxis("Vertical") * ((Zspeed * m_moveSpeedMultiplier) * Time.deltaTime);
+
+            transform.Rotate(0F, moveX * rotationSpeed, 0f);
+
+
+            Vector3 move = transform.forward * moveZ;
+
+            controller.Move(move);
+        }
+
+        if(isFrozen == true)
+        {
+            float frozenTimer = 10;
+            frozenTimer -= Time.deltaTime;
+            if (frozenTimer <= 0)
+            {
+                isFrozen = false;
+            }
+
+        }
+
 
         //Vector3 move = transform.right * moveX + transform.forward * moveZ;
 
-        transform.Rotate(0F, moveX * rotationSpeed, 0f);
-
-
-        Vector3 move = transform.forward * moveZ;
         
-        controller.Move(move);
 
 
         // can we jump?
