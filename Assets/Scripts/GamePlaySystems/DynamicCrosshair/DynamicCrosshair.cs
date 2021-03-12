@@ -14,6 +14,7 @@ public class DynamicCrosshair : MonoBehaviour
     
     void Start()
     {
+        player = transform.parent.gameObject;
         PlayerSphereCast.ObjectSelected += PlayerSphereCast_ObjectSelected;
     }
 
