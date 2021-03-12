@@ -13,6 +13,7 @@ TagManager:
   - NetworkManager
   - ProjectileSpawnPoint
   - PointsCounter
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Entities
   - Usable Objects
   - Items
-  - 
+  - Layout
   - 
   - 
   - 
