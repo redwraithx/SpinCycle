@@ -1679,7 +1679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2362,30 +2362,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 595329987, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
-      propertyPath: SaleItemGameObject
-      value: 
-      objectReference: {fileID: 3242775700426257762, guid: 6de3237025caf854eb4685e48eec08df, type: 3}
-    - target: {fileID: 1109529627, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
-      propertyPath: SaleItemGameObject
-      value: 
-      objectReference: {fileID: 214584614075172200, guid: 385333d2b26eadb49b7022dfa255bac5, type: 3}
-    - target: {fileID: 1201114950, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
-      propertyPath: SaleItemGameObject
-      value: 
-      objectReference: {fileID: 3247722976170699440, guid: 72ff02956de85534bbc9b403e0f8d224, type: 3}
-    - target: {fileID: 1338063382, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
-      propertyPath: SaleItemGameObject
-      value: 
-      objectReference: {fileID: 6399440935282412963, guid: a70e070f6386d8a4584c96387a294c62, type: 3}
-    - target: {fileID: 1388790037, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
-      propertyPath: SaleItemGameObject
-      value: 
-      objectReference: {fileID: 3247722976170699440, guid: 72ff02956de85534bbc9b403e0f8d224, type: 3}
-    - target: {fileID: 1413503339, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
-      propertyPath: SaleItemGameObject
-      value: 
-      objectReference: {fileID: 3385750515038209516, guid: afbaeecc4e814dc45805fb8c75e81500, type: 3}
+    - target: {fileID: 704124490, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5931836118849173896, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.423805
@@ -2430,24 +2410,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5931836118849173896, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5931836118849173896, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5931836118849173896, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5931836118849173903, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
       propertyPath: m_Name
       value: VendingMachine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+--- !u!1 &620469735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1419202271, guid: 2d539f267dac5f24fb2ad5798069ac1d, type: 3}
+  m_PrefabInstance: {fileID: 620469734}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &620469736
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620469735}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &622843438
 PrefabInstance:
   m_ObjectHideFlags: 0
