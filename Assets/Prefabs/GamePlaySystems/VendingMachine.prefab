@@ -1264,12 +1264,12 @@ MonoBehaviour:
   NameText: {fileID: 191481543}
   RealPrice: 0
   ThisButton: {fileID: 595329984}
-  SaleItem: {fileID: 191150, guid: 841f0ca7a430c324d92c5583a9df3793, type: 3}
+  SaleItemGameObject: {fileID: 3242775700426257762, guid: 6de3237025caf854eb4685e48eec08df, type: 3}
   itemSpawnPoint: {fileID: 6627814966707534623}
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
-  VendingUI: {fileID: 0}
+  VendingUI: {fileID: 704124490}
 --- !u!1 &640109168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,12 +1978,12 @@ MonoBehaviour:
   NameText: {fileID: 1482845911}
   RealPrice: 0
   ThisButton: {fileID: 1109529624}
-  SaleItem: {fileID: 191150, guid: 841f0ca7a430c324d92c5583a9df3793, type: 3}
+  SaleItemGameObject: {fileID: 214584614075172200, guid: 385333d2b26eadb49b7022dfa255bac5, type: 3}
   itemSpawnPoint: {fileID: 6627814966707534623}
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
-  VendingUI: {fileID: 0}
+  VendingUI: {fileID: 704124490}
 --- !u!1 &1201114945
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,12 +2128,12 @@ MonoBehaviour:
   NameText: {fileID: 1240984353}
   RealPrice: 0
   ThisButton: {fileID: 1201114947}
-  SaleItem: {fileID: 191150, guid: 841f0ca7a430c324d92c5583a9df3793, type: 3}
+  SaleItemGameObject: {fileID: 3247722976170699440, guid: 72ff02956de85534bbc9b403e0f8d224, type: 3}
   itemSpawnPoint: {fileID: 6627814966707534623}
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
-  VendingUI: {fileID: 0}
+  VendingUI: {fileID: 704124490}
 --- !u!1 &1205041784
 GameObject:
   m_ObjectHideFlags: 0
@@ -2879,12 +2879,12 @@ MonoBehaviour:
   NameText: {fileID: 1236318473}
   RealPrice: 0
   ThisButton: {fileID: 1338063379}
-  SaleItem: {fileID: 191150, guid: 841f0ca7a430c324d92c5583a9df3793, type: 3}
+  SaleItemGameObject: {fileID: 6399440935282412963, guid: a70e070f6386d8a4584c96387a294c62, type: 3}
   itemSpawnPoint: {fileID: 6627814966707534623}
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
-  VendingUI: {fileID: 0}
+  VendingUI: {fileID: 704124490}
 --- !u!1 &1368029672
 GameObject:
   m_ObjectHideFlags: 0
@@ -3108,11 +3108,11 @@ MonoBehaviour:
   NameText: {fileID: 774755811}
   RealPrice: 100
   ThisButton: {fileID: 1388790034}
-  SaleItem: {fileID: 191150, guid: 841f0ca7a430c324d92c5583a9df3793, type: 3}
+  SaleItemGameObject: {fileID: 3247722976170699440, guid: 72ff02956de85534bbc9b403e0f8d224, type: 3}
   itemSpawnPoint: {fileID: 6627814966707534623}
   VendingIndex: {fileID: 0}
   FirstRun: 0
-  saleItem: {fileID: 3298320535348533755, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
+  saleItem: {fileID: 0}
   VendingUI: {fileID: 704124490}
 --- !u!1 &1413503334
 GameObject:
@@ -3258,7 +3258,7 @@ MonoBehaviour:
   NameText: {fileID: 1269548967}
   RealPrice: 0
   ThisButton: {fileID: 1413503336}
-  SaleItem: {fileID: 2097404848044861107, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
+  SaleItemGameObject: {fileID: 3385750515038209516, guid: afbaeecc4e814dc45805fb8c75e81500, type: 3}
   itemSpawnPoint: {fileID: 6627814966707534623}
   VendingIndex: {fileID: 0}
   FirstRun: 0
@@ -3276,7 +3276,7 @@ GameObject:
   - component: {fileID: 1419202275}
   - component: {fileID: 1419202274}
   - component: {fileID: 1419202273}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4246,6 +4246,72 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &43502030265668333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476810421296385585}
+  - component: {fileID: 2178580973637373898}
+  - component: {fileID: 3577069582899642134}
+  m_Layer: 10
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &476810421296385585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43502030265668333}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5931836118849173896}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2178580973637373898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43502030265668333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &3577069582899642134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43502030265668333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1 &5931836118627522482
 GameObject:
   m_ObjectHideFlags: 0
@@ -4462,12 +4528,13 @@ Transform:
   m_GameObject: {fileID: 5931836118849173903}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5931836119922587195}
   - {fileID: 5931836119547657170}
   - {fileID: 7188340424249583252}
   - {fileID: 1419202272}
+  - {fileID: 476810421296385585}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4734,6 +4801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VendingUI: {fileID: 704124490}
+  buttonHoverScripts: []
   closeButton: {fileID: 1296931183}
   currentUser: {fileID: 0}
   currentObjectMouseLook: {fileID: 0}
