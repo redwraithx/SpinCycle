@@ -58,8 +58,19 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
         PhotonNetwork.SendRate = 20;
         
     }
-    
-    
+
+    private void OnEnable()
+    {
+        foreach(Collider collider in GetComponents<Collider>())
+        {
+            if(!collider.enabled)
+            {
+                collider.enabled = true;
+            }
+        }
+    }
+
+
 
     private void Update()
     {

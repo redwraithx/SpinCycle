@@ -45,6 +45,7 @@ public class ButtonHover : MonoBehaviour
         if (SaleItemGameObject)
         {
             VendingIndex = new VendingIndex(saleItem.name, saleItem.Description, saleItem.Price.ToString());
+            //If an error with the vending machine is pointing out this line make sure all objects listed in the vending machine have the right item setup
         }
     }
 
@@ -55,7 +56,7 @@ public class ButtonHover : MonoBehaviour
         PriceText.text = "";
         NameText.text = "";
     }
-
+    //if the following functions dont work make sure there is no ui items blocking the vending UI ESPECIALLY THE BLACK SCREEN OBJECT, disable raycast :)
     public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("Pointer enter");
