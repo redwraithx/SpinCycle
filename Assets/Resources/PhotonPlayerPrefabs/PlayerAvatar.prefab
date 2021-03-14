@@ -441,13 +441,14 @@ MonoBehaviour:
   bodyRotate: {x: 0, y: 0, z: 0}
 --- !u!114 &2953232017528260344
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3372013682644937991, guid: e0a7b607abebe8946844e28ab6254631, type: 3}
-  m_PrefabInstance: {fileID: 3103663497662882091}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4853268244736857518}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowDebugText: 0
@@ -598,8 +599,9 @@ MonoBehaviour:
   _photonView: {fileID: 0}
 --- !u!114 &4853268245562139062
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6394782056388974019, guid: e0a7b607abebe8946844e28ab6254631, type: 3}
-  m_PrefabInstance: {fileID: 3103663497662882091}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4853268245562139060}
   m_Enabled: 1
