@@ -126,6 +126,16 @@ public class Grab : MonoBehaviour
 
                         ClearGrabValues();
                     }
+                    else if (itemInHand.GetComponent<BombThrow>())
+                    {
+                        itemInHand.GetComponent<BombThrow>().Throw();
+
+                        CheckForMouseUp();
+
+                        itemInHand = null;
+
+                        ClearGrabValues();
+                    }
 
                     
                 }
