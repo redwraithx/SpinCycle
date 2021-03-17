@@ -91,8 +91,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1870697758691282361}
     m_Modifications:
+    - target: {fileID: 2091179035403574611, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091179044819966789, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3959449516023700202, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: machineType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959449516023700202, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
+      propertyPath: cycleLength
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959449516023700202, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
+      propertyPath: isSabotaged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4639710144801987609, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}

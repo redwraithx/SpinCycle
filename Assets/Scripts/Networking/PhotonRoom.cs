@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 using Photon.Pun;
 using Photon.Realtime;
@@ -39,6 +40,8 @@ public class PhotonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
     private float atMaxPlayers;
     private const int MAX_PLAYERS_PER_GAME = 2;
     private float timeToStart;
+
+
 
     private void Awake()
     {
@@ -133,7 +136,8 @@ public class PhotonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
         //     }
         //     
         // }
-        
+
+
     }
 
     public override void OnJoinedRoom()
@@ -227,9 +231,11 @@ public class PhotonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
             PhotonNetwork.CurrentRoom.IsOpen = false;
         }
         */
-        
+
         // NEED TO ADD THE ACTUAL LEVEL TO LOAD 1 will not be valid
         PhotonNetwork.LoadLevel(multiplayerScene);
+
+        
 
     }
 
@@ -297,4 +303,5 @@ public class PhotonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
         //playersInRoom--;
     }
     
+
 }

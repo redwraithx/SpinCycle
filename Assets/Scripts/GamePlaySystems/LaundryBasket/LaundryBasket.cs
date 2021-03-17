@@ -28,24 +28,30 @@ public class LaundryBasket : MonoBehaviour
         {
             if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
             {
-                points += other.gameObject.GetComponent<Item>().Price;
+                points = other.gameObject.GetComponent<Item>().Price;
                 Debug.Log(points);
-                playerPoints.Points += points;
+
+                //above two lines aren't needed for this code to run, only for debugging purposes
+
+                playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
                 other.gameObject.SetActive(false);
             }
         }
     }
     
+    // below is the function to click items in which is needed for when the actual models come in place, above is dropping them in
     public void AddClothing(GameObject other)
     {
         if (other.CompareTag("Item"))
         {
             if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
             {
-                points += other.gameObject.GetComponent<Item>().Price;
-                
+                points = other.gameObject.GetComponent<Item>().Price;                
                 Debug.Log(points);
-                playerPoints.Points += points;
+
+                //above two lines aren't needed for this code to run, only for debugging purposes
+
+                playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
                 other.gameObject.SetActive(false);
 
                 //pointsToText = points.ToString();
@@ -68,7 +74,6 @@ public class LaundryBasket : MonoBehaviour
             else
             {
                 playerPoints = GameManager.Instance.Player1.GetComponent<PlayerPoints>();
-                points += playerPoints.Points;
                 StopCoroutine(CheckForPlayer());
             }
     }

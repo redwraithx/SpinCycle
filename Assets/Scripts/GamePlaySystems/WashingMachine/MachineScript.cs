@@ -89,9 +89,9 @@ public class MachineScript : MonoBehaviour
 
     public void ProcessItems()
     {
+        sliderTime.maxValue = cycleLength;
         laundryTimer = cycleLength;
         isEnabled = true;
-        
     }
 
     public void UseMachine(GameObject other)
@@ -113,19 +113,30 @@ public class MachineScript : MonoBehaviour
                 RepairToolSpawn.instance.RemoveObject();
                 other.gameObject.SetActive(false);
             }
-            else
+            else if (other.GetComponent<ItemTypeForItem>().itemType == this.gameObject.GetComponent<ItemTypeForUsingItem>().itemType[0])
             {
                 //Once player is created, call to destroy the item in their hand here
                 ProcessItems();
-
                 // we may want to use a bool in case the machine is full we dont destroy or use the object
                 other.transform.parent = null;
                 other.gameObject.SetActive(false);
             }
-            // need an insert for using powerups for machines that triggers the BoostMachine function below
+
         }
 
 
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "SoapBomb(Clone)")
+        {
+            SabotageMachine(60);
+        }
+        else if (collision.gameObject.name == "EMPbomb(Clone)")
+        {
+            SabotageMachine(20);
+        }
     }
 
     public void SabotageMachine(float time)
@@ -143,8 +154,6 @@ public class MachineScript : MonoBehaviour
 
     public void BoostMachine()
     {
-        cycleLength = cycleLength / 2;
-        sliderTime.maxValue = cycleLength;
         isBoosted = true;
     }
 }

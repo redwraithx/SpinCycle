@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1870561264611907675}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -98, z: 0}
-  m_LocalScale: {x: 1000, y: 100, z: 1000}
+  m_LocalScale: {x: 2000, y: 100, z: 2000}
   m_Children: []
   m_Father: {fileID: 6399440935282643331}
   m_RootOrder: 1
@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 6399440935282510596}
   - component: {fileID: 6399440935282510597}
   - component: {fileID: 8067821108934822514}
+  - component: {fileID: 908708346}
   m_Layer: 11
   m_Name: SoapBomb
   m_TagString: Item
@@ -157,7 +158,7 @@ Transform:
   m_GameObject: {fileID: 6399440935282412963}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 17.607872, y: 1.78, z: -7.65}
-  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
+  m_LocalScale: {x: 0.002, y: 0.002, z: 0.002}
   m_Children:
   - {fileID: 1547343218730668568}
   - {fileID: 1268966408704868397}
@@ -192,7 +193,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &6399440935282510596
 MonoBehaviour:
@@ -222,8 +223,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   _name: SoapBomb
-  _description: its a soapy bomb
-  _price: 84
+  _description: hitting a machine with this soap bomb will cause it to break down
+    and spew bubbles requiring a repair tool to fix it
+  _price: 100
   _timeAdjustment: 0
   correctPosition: {x: 0, y: 0, z: 0}
   correctRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -244,6 +246,20 @@ MonoBehaviour:
   detonated: 0
   timer: 0
   startingTimer: 0
+--- !u!114 &908708346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6399440935282412963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78814c2c2ad08ed46bcaeb80e4e9ef60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ElevationAngle: 30
+  m_Impulse: 10
 --- !u!1 &6399440935282412965
 GameObject:
   m_ObjectHideFlags: 0
