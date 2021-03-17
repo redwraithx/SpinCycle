@@ -29,7 +29,7 @@ public class PlayerMovementCC : MonoBehaviour
     public bool isGrounded;
 
     public bool isFrozen;
-    
+    public float frozenTimer = 10;
     
     // networking
     internal PhotonView _photonView = null;
@@ -115,11 +115,11 @@ public class PlayerMovementCC : MonoBehaviour
 
         if(isFrozen == true)
         {
-            float frozenTimer = 10;
             frozenTimer -= Time.deltaTime;
             if (frozenTimer <= 0)
             {
                 isFrozen = false;
+                frozenTimer = 10;
             }
 
         }

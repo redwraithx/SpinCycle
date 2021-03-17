@@ -128,6 +128,18 @@ public class MachineScript : MonoBehaviour
 
     }
 
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "SoapBomb(Clone)")
+        {
+            SabotageMachine(60);
+        }
+        else if (collision.gameObject.name == "EMPbomb(Clone)")
+        {
+            SabotageMachine(20);
+        }
+    }
+
     public void SabotageMachine(float time)
     {
         sabotageTimer = time;

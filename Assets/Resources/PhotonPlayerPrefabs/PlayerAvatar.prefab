@@ -501,6 +501,7 @@ GameObject:
   - component: {fileID: 4853268245562139063}
   - component: {fileID: 2910540240945321004}
   - component: {fileID: -536580298606152821}
+  - component: {fileID: -818876612657301381}
   m_Layer: 0
   m_Name: PlayerAvatar
   m_TagString: Player
@@ -680,6 +681,20 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &-818876612657301381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4853268245562139060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f47a7a588608e64790713ff67b883e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPointText: {fileID: 5974232468517108716}
+  points: 0
 --- !u!1 &5076229496600931310
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +831,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8626896725383861287, guid: 7167533695d5ef247bd717459ab3d944, type: 3}
   m_PrefabInstance: {fileID: 2688745853262646463}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5974232468517108716 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8626896725553411923, guid: 7167533695d5ef247bd717459ab3d944, type: 3}
+  m_PrefabInstance: {fileID: 2688745853262646463}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3103663497662882091
 PrefabInstance:
   m_ObjectHideFlags: 0
