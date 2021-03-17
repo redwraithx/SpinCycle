@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using Cinemachine;
 
 
 public class ButtonHover : MonoBehaviour
@@ -25,7 +26,9 @@ public class ButtonHover : MonoBehaviour
     PlayerPoints playerPoints = null;
 
     public GameObject VendingUI;
-    
+
+
+
 
     private void Start()
     {
@@ -91,15 +94,17 @@ public class ButtonHover : MonoBehaviour
         {
             Debug.Log("buyingItemButtonHoverCS");
             //playerPoints.points -= RealPrice;
-            playerPoints.Points = -RealPrice;
+            playerPoints.Points -= RealPrice;
             GameObject sale = Instantiate(SaleItemGameObject, itemSpawnPoint.transform.position, Quaternion.identity);
-
+            Description.SetActive(false);
+            Price.SetActive(false);
+            Name.SetActive(false);
             VendingUI.SetActive(false);
 
             // this is filler code so it actually sells stuff while I experiment with indexes in a seperate project
             //index thing gets spawned
         }
     }
-    
-    
+
+
 }

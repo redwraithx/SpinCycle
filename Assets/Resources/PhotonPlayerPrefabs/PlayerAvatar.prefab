@@ -624,6 +624,7 @@ MonoBehaviour:
   rotationSpeed: 30
   isGrounded: 0
   isFrozen: 0
+  frozenTimer: 10
 --- !u!143 &4853268245562139063
 CharacterController:
   m_ObjectHideFlags: 0
