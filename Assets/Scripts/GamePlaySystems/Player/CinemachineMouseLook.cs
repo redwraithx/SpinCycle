@@ -40,9 +40,11 @@ public class CinemachineMouseLook : MonoBehaviour
         RaycastHit currentHit;
         if (Physics.Raycast(transform.position, direction, out currentHit, length, layerMask))
         {
+            
             TransparentWalls transparentWall = currentHit.transform.GetComponent<TransparentWalls>();
             if (transparentWall)
             {
+                Debug.Log("hitting wall");
                 if (currentTransparentWall && currentTransparentWall.gameObject != transparentWall.gameObject)
                 {
                     currentTransparentWall.ChangeTransparency(false);

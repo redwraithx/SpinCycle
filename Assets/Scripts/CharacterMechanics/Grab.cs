@@ -164,6 +164,7 @@ public class Grab : MonoBehaviour
                     {
                         weapon.enabled = true;
                         weapon.itemType = isValidItem.itemType;
+                        weapon.gun = itemInHand;
                         weapon.projectileSpawnPoint = itemInHand.GetComponentInChildren<Transform>();
                         weaponCamera.gameObject.SetActive(true);
                         itemInHand.gameObject.transform.rotation = transform.rotation;
