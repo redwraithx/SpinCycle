@@ -227,7 +227,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   _name: EMPbomb
-  _description: this is an emp
+  _description: Currently slightly bugged due to model setup, soap bomb does the
+    same effect but less buggy in the current version (update this text if you fix
+    the EMP)
   _price: 99
   _timeAdjustment: 0
   correctPosition: {x: 0, y: 0, z: 0}

@@ -223,8 +223,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   _name: SoapBomb
-  _description: its a soapy bomb
-  _price: 84
+  _description: hitting a machine with this soap bomb will cause it to break down
+    and spew bubbles requiring a repair tool to fix it
+  _price: 100
   _timeAdjustment: 0
   correctPosition: {x: 0, y: 0, z: 0}
   correctRotation: {x: 0, y: 0, z: 0, w: 1}
