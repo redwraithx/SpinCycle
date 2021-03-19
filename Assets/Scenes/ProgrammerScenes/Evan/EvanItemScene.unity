@@ -356,10 +356,6 @@ PrefabInstance:
       propertyPath: thisObjectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8904683309168984200, guid: 455d2bf6ec2695541ade7ac378f4d957, type: 3}
-      propertyPath: viewIdField
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 455d2bf6ec2695541ade7ac378f4d957, type: 3}
 --- !u!1001 &405791915
@@ -724,10 +720,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7134714424541622064, guid: 04da02540a2eaef429e838ac0b095356, type: 3}
-      propertyPath: viewIdField
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8199866142302314774, guid: 04da02540a2eaef429e838ac0b095356, type: 3}
       propertyPath: thisObjectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 1
@@ -788,10 +780,6 @@ PrefabInstance:
     - target: {fileID: 1870697758691282361, guid: 1df297b0c3e65d0499aedc93edf34f08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 5029413882513055464, guid: 1df297b0c3e65d0499aedc93edf34f08, type: 3}
-      propertyPath: viewIdField
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6270223990210285774, guid: 1df297b0c3e65d0499aedc93edf34f08, type: 3}
       propertyPath: thisObjectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState

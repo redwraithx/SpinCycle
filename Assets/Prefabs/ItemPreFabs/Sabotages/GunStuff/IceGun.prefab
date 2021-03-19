@@ -65,8 +65,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 0
-  _name: Gun
-  _description: its a gun
+  _name: Ice Gun
+  _description: This ice gun will freeze any player you hit with it and create an
+    area of effect on the level causing any who go over it to slip
   _price: 400
   _timeAdjustment: 0
   correctPosition: {x: 0, y: 0, z: 0}

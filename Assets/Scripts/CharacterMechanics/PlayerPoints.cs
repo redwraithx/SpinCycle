@@ -14,7 +14,7 @@ public class  PlayerPoints : MonoBehaviour
         get => points;
         set
         {
-            points += value;
+            points = value;
             
            playerPointText.text = points.ToString();
         }

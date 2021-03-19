@@ -37,7 +37,7 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
     
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("press E to spawn item trigger");
+        Debug.Log("press E to spawn item trigger (stay)");
 
         if (other.gameObject.CompareTag("Player"))
         {
@@ -52,6 +52,10 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
         currentUser = null;
 
         if (VendingUI.activeInHierarchy)
+        {
+            CloseUI();
+        }
+        if (!VendingUI.activeInHierarchy)
         {
             CloseUI();
         }
