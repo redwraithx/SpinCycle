@@ -46,6 +46,9 @@ public class Grab : MonoBehaviour
             hasItemInHand = true;
             GetComponent<PlayerSphereCast>().itemInHand = true;
             itemInHand = itemToPickUp;
+            
+            if(itemInHand.GetComponent<ItemTypeForItem>())
+                itemInHand.GetComponent<ItemTypeForItem>().RequestOwnership();
 
             foreach (var itemCollider in itemInHand.GetComponents<Collider>())
             {
@@ -56,6 +59,7 @@ public class Grab : MonoBehaviour
             itemInHand.transform.position = grabPoint.position;
             
             itemInHand.transform.parent = gameObject.transform;
+            itemInHand.GetComponent<Item>().UpdateObjectsRigidBody(true);
         }
     }
 
@@ -76,6 +80,11 @@ public class Grab : MonoBehaviour
         }
         
         itemInHand.GetComponent<Rigidbody>().useGravity = true;
+        itemInHand.GetComponent<Item>().UpdateObjectsRigidBody(false);
+        
+        if(itemInHand.GetComponent<ItemTypeForItem>())
+            itemInHand.GetComponent<ItemTypeForItem>().RequestTransferOwnershipToHost();
+        
         itemInHand.transform.parent = null;
 
         hasItemInHand = false;
@@ -113,7 +122,7 @@ public class Grab : MonoBehaviour
                        // use object action will only work on one event per object
                        machineInteractionObject.thisObjectEvent.Invoke(itemInHand);
                         //If you are getting an error that calls here, make sure the machine has the event set up properly
-                       itemInHand = null;
+                       //itemInHand = null;
                        
                        ClearGrabValues();
                        
@@ -121,6 +130,16 @@ public class Grab : MonoBehaviour
                     else if (itemInHand.GetComponent<RepairToolUse>())
                     {
                         itemInHand.GetComponent<RepairToolUse>().UseItem();
+
+                        itemInHand = null;
+
+                        ClearGrabValues();
+                    }
+                    else if (itemInHand.GetComponent<BombThrow>())
+                    {
+                        itemInHand.GetComponent<BombThrow>().Throw();
+
+                        CheckForMouseUp();
 
                         itemInHand = null;
 
@@ -154,6 +173,7 @@ public class Grab : MonoBehaviour
                     {
                         weapon.enabled = true;
                         weapon.itemType = isValidItem.itemType;
+                        weapon.gun = itemInHand;
                         weapon.projectileSpawnPoint = itemInHand.GetComponentInChildren<Transform>();
                         weaponCamera.gameObject.SetActive(true);
                         itemInHand.gameObject.transform.rotation = transform.rotation;
@@ -264,31 +284,7 @@ public class Grab : MonoBehaviour
         }
         
     }
-
-    // [PunRPC]
-    // bool PickupObject(Item itemObject)
-    // {
-    //     if (itemObject)
-    //     {
-    //         _photonView.RPC("RpcPickupItem", RpcTarget.AllBuffered, itemObject.gameObject.transform.position, itemObject.gameObject.transform.rotation);
-    //         
-    //         Debug.Log("updating position and rotation of object picked up");
-    //         
-    //
-    //         return true;
-    //     }
-    //
-    //     return false;
-    // }
-    //
-    // [PunRPC]
-    // protected void OnPickup(int viewId)
-    // {
-    //     PhotonView view = PhotonView.Find(viewId);
-    //
-    //     Debug.Log("id of object is from: " + view.gameObject.name);
-    //     
-    // }
+    
 
     private void OnTriggerStay(Collider other)
     {

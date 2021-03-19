@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 
 [System.Serializable]
-public class PlayerPoints : MonoBehaviour
+public class  PlayerPoints : MonoBehaviour
 {
     public Text playerPointText = null;
     public int points = 0;
@@ -14,7 +14,7 @@ public class PlayerPoints : MonoBehaviour
         get => points;
         set
         {
-            points += value;
+            points = value;
             
            playerPointText.text = points.ToString();
         }

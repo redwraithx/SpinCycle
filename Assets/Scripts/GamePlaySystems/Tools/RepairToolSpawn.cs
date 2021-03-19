@@ -60,7 +60,7 @@ public class RepairToolSpawn : MonoBehaviour
         }
         else
         {
-            Debug.Log(repairTools.Count);
+            //Debug.Log(repairTools.Count);
         }
     }
 

@@ -125,9 +125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707dca5e8a429154887cc423b42b504e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 3600
+  timeRemaining: 240
   timerIsRunning: 0
   timeText: {fileID: 3809407896071902740}
+  GameOverImage: {fileID: 0}
+  BlackImage: {fileID: 0}
+  anim: {fileID: 0}
+  GameOverSceneIndex: 0
 --- !u!1 &3809407896071902730
 GameObject:
   m_ObjectHideFlags: 0
