@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: 3214280266636067209}
   - component: {fileID: 3583830392436074081}
   - component: {fileID: 3298320535348533755}
+  - component: {fileID: 6832526362924805502}
+  - component: {fileID: 2327566558696658681}
+  - component: {fileID: 4237481838049671181}
   m_Layer: 11
   m_Name: T-Shirt
   m_TagString: Item
@@ -168,7 +171,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f90a41f1c18f8e4aa8eede153b212ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _name: Shirt
   _description: this is a shirt
   _price: 1000
-  _timeAjustment: 0
+  _timeAdjustment: 0
+  correctPosition: {x: 0, y: 0, z: 0}
+  correctRotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &6832526362924805502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097404848044861107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 1
+  OwnershipTransfer: 1
+  ObservedComponents:
+  - {fileID: 3298320535348533755}
+  - {fileID: 2327566558696658681}
+  - {fileID: 4237481838049671181}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &2327566558696658681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097404848044861107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 0
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 1
+  m_TeleportIfDistanceGreaterThan: 0.0001
+--- !u!114 &4237481838049671181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097404848044861107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 0

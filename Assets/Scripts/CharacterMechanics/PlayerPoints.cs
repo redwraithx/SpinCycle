@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 
 [System.Serializable]
-public class PlayerPoints : MonoBehaviour
+public class  PlayerPoints : MonoBehaviour
 {
     public Text playerPointText = null;
     public int points = 0;
