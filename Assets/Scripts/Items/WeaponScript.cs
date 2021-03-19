@@ -5,6 +5,7 @@ using GamePlaySystems.Utilities;
 
 public class WeaponScript : MonoBehaviour
 {
+    public GameObject gun;
     public ItemType itemType;
     public Rigidbody[] projectiles;
     public Rigidbody projectile;
@@ -13,6 +14,11 @@ public class WeaponScript : MonoBehaviour
     public int ammo;                        
     public Transform projectileSpawnPoint;  
     public float projectileForce;
+
+    //rotation values
+    public float mouseSensitivity = 100f;
+    public float yRotation = 0f;
+    public Vector3 gunRotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +38,12 @@ public class WeaponScript : MonoBehaviour
 
     private void Update()
     {
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        yRotation -= mouseY;
+        yRotation = Mathf.Clamp(yRotation, -45f, 45f);
+        gun.transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
+        
+
         if (Input.GetButtonDown("Fire1")) // Set in Edit | Project Settings | Input Manager
         {
             Debug.Log("Firing");
@@ -41,12 +53,15 @@ public class WeaponScript : MonoBehaviour
         switch (itemType)
         {
             case ItemType.SabotageWaterGun:
+                projectileSpeed = 50f;
                 projectile = projectiles[0];
                 break;
             case ItemType.SabotageIceGun:
+                projectileSpeed = 30;
                 projectile = projectiles[1];
                 break;
             case ItemType.SabotageSoapGun:
+                projectileSpeed = 40;
                 projectile = projectiles[2];
                 break;
         }
