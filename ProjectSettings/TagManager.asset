@@ -14,6 +14,9 @@ TagManager:
   - ProjectileSpawnPoint
   - PointsCounter
   - Ground
+  - YourPlayersNameInputBox
+  - JoinThisGameButton
+  - ConnectionFeedbackInfoText
   layers:
   - Default
   - TransparentFX
