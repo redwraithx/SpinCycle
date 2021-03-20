@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 1803425232764618408}
   - component: {fileID: 2888946947650144008}
   - component: {fileID: 3959449516023700202}
+  - component: {fileID: 6606962663204163661}
   m_Layer: 10
   m_Name: DryingMachine
   m_TagString: Machine
@@ -427,6 +428,28 @@ MonoBehaviour:
   laundryType: 0
   machineType: 1
   part: {fileID: 2091179044819966789}
+--- !u!114 &6606962663204163661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5415683452110538403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 1
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &5529081166599032172
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Security.AccessControl;
 using UnityEngine;
 
 using Photon;
@@ -27,6 +28,9 @@ public class GetLocationData
 
 
 
+[RequireComponent(typeof(PhotonView))]
+[RequireComponent(typeof(PhotonRigidbodyView))]
+//[RequireComponent(typeof(PhotonTransformView))]
 public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
 {
     [SerializeField] private int _id;
@@ -39,8 +43,10 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
     private PhotonTransformView _photonTransformView = null;
     [SerializeField] private Vector3 correctPosition = Vector3.zero;
     [SerializeField] private Quaternion correctRotation = Quaternion.identity;
-    
-    
+
+    [SerializeField] private Transform originalParent = null;
+
+    private Rigidbody rb = null;
     
     
     private void Awake()
@@ -48,8 +54,14 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
         if(!_photonView)
             _photonView = GetComponent<PhotonView>();
         
-        if(_photonTransformView)
-            _photonTransformView = GetComponent<PhotonTransformView>();
+        // if(!_photonTransformView)
+        //     _photonTransformView = GetComponent<PhotonTransformView>();
+
+        if (!rb)
+            rb = GetComponent<Rigidbody>();
+
+        if (!originalParent)
+            originalParent = transform.parent;
         
         gameObject.tag = "Item";
 
@@ -79,19 +91,19 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
 
     }
 
-    [PunRPC]
-    public void UpdateObject(Vector3 pos, Quaternion rot)
-    {
-        transform.position = pos;
-        transform.rotation = rot;
-    }
-
-    private void FixedUpdate()
-    {
-        if (!_photonView)
-            return;
-
-    }
+    // [PunRPC]
+    // public void UpdateObject(Vector3 pos, Quaternion rot)
+    // {
+    //     transform.position = pos;
+    //     transform.rotation = rot;
+    // }
+    //
+    // private void FixedUpdate()
+    // {
+    //     if (!_photonView)
+    //         return;
+    //
+    // }
 
 
     
@@ -144,18 +156,84 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
     {
         if (stream.IsWriting)
         {
-            stream.SendNext(transform.position);
-            stream.SendNext(transform.rotation);
+            //stream.SendNext(transform);
+            //stream.SendNext(transform.rotation);
+            
+            stream.SendNext(rb.useGravity);
+            stream.SendNext(rb.constraints);
+            
+        }
+        else if(stream.IsReading)
+        {
+            //correctPosition = 
+            //var newParent = (Transform) stream.ReceiveNext();
+            
+            //transform.SetParent(newParent);
+            //correctRotation = (Quaternion) stream.ReceiveNext();
+
+            rb.useGravity = (bool) stream.ReceiveNext();
+            rb.constraints = (RigidbodyConstraints) stream.ReceiveNext();
+            
+        }
+    }
+
+    
+    // [PunRPC]
+    // public void SetObjectsParent(Transform newParentsTransform)
+    // {
+    //     Debug.Log("network call item parent");
+    //
+    //     if (newParentsTransform == null)
+    //     {
+    //         transform.SetParent(originalParent);
+    //     }
+    //     else
+    //     {
+    //         transform.SetParent(newParentsTransform);
+    //         
+    //     }
+    //     
+    // }
+    //
+    // public void UpdateObjectsParent(Transform newParentTransform)
+    // {
+    //     Debug.Log("updateObjects been called, sending network info");
+    //     
+    //     photonView.RPC("SetObjectsParent", RpcTarget.AllBuffered, newParentTransform);
+    // }
+
+
+    [PunRPC]
+    public void SetObjectsRigidBody(bool hasPickedUpItem = false)
+    {
+        Debug.Log("network call items been picked up, gravity off, constraints off");
+
+        if (hasPickedUpItem)
+        {
+            // picked up item
+            rb.useGravity = false;
+
+            rb.constraints = RigidbodyConstraints.FreezeAll;
         }
         else
         {
-            correctPosition = (Vector3) stream.ReceiveNext();
-            correctRotation = (Quaternion) stream.ReceiveNext();
+            // dropped up item
+            rb.useGravity = true;
+
+            rb.constraints = RigidbodyConstraints.None;
         }
     }
-    
-    
-    
+
+
+    public void UpdateObjectsRigidBody(bool hasPickedUpItem = false)
+    {
+        Debug.Log("sending RPC call to update rigidbody: gravity and constraints");
+        
+        photonView.RPC("SetObjectsRigidBody", RpcTarget.AllBuffered, hasPickedUpItem);
+    }
+
+
+
 }
 
 

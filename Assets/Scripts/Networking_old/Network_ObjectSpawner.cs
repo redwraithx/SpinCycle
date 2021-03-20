@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using System.IO;
-using GamePlaySystems.Utilities;
-using EnumSpace;
-using ExitGames.Client.Photon.StructWrapping;
 using UnityEngine;
 
 using Photon.Realtime;
@@ -31,9 +26,14 @@ public class Network_ObjectSpawner : MonoBehaviourPun
 
                 newObject.name = newObject.name + "_" + newObject.GetComponent<PhotonView>().ViewID;
                 Debug.Log(newObject.name + ": " + newObject.GetComponent<PhotonView>().Owner);
+                
                 //newObject.AddComponent<PhotonView>();
                 //newObject.AddComponent<PhotonTransformView>();
                 
+                Destroy(gameObject);
+            }
+            else
+            {
                 Destroy(gameObject);
             }
 
