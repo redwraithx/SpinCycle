@@ -1039,7 +1039,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6071313163213872554}
-  m_LocalRotation: {x: -0.016034985, y: 0.6678345, z: -0.065803595, w: 0.74122185}
+  m_LocalRotation: {x: -0.016034983, y: 0.6678346, z: -0.0658036, w: 0.7412218}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1133,6 +1133,7 @@ GameObject:
   - component: {fileID: 1390668085025345390}
   - component: {fileID: 3463295151114985727}
   - component: {fileID: 6848871425079053765}
+  - component: {fileID: 1882224007562441043}
   - component: {fileID: 6848871425079053764}
   - component: {fileID: 6848871425079053761}
   - component: {fileID: 3761070197516384351}
@@ -1200,6 +1201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5fbc656703a37498d09f38ffbc5878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gun: {fileID: 0}
   itemType: 0
   projectiles:
   - {fileID: -6487827619003692647, guid: ac266ad8da2d7cd4a891d49134b67487, type: 3}
@@ -1210,6 +1212,9 @@ MonoBehaviour:
   ammo: 0
   projectileSpawnPoint: {fileID: 0}
   projectileForce: 50
+  mouseSensitivity: 100
+  yRotation: 0
+  gunRotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1390668085025345390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,6 +1288,20 @@ MonoBehaviour:
   isGrounded: 0
   isFrozen: 0
   frozenTimer: 10
+--- !u!114 &1882224007562441043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6848871425079053767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f47a7a588608e64790713ff67b883e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPointText: {fileID: 5674233447180277663}
+  points: 1000
 --- !u!143 &6848871425079053764
 CharacterController:
   m_ObjectHideFlags: 0
