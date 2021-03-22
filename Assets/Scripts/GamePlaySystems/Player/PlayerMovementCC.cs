@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections;
 using Cinemachine;
 using Photon.Pun;
 using Photon.Realtime;
@@ -18,6 +19,14 @@ public class PlayerMovementCC : MonoBehaviour
     public float gravity = -9.8f;
     public float gravityMulitplier = 2f;
     public float jumpHeight = 3f;
+
+    public float diveSpeed = 100f;
+    public float diveMultiplier = 1f;
+    public float _dashTime = 0f;
+    public float _initialDashTime = 2f;
+    public Vector3 originalVel = Vector3.zero;
+    public Rigidbody rb = null;
+    public Transform playerModelTransform = null;
 
     public Transform groundCheck;
     public float groundDistance;
@@ -75,6 +84,9 @@ public class PlayerMovementCC : MonoBehaviour
         }
 
         GameManager.Instance.Player1 = this.gameObject;
+
+        if (!rb)
+            rb = GetComponent<Rigidbody>();
     }
 
 
@@ -127,6 +139,20 @@ public class PlayerMovementCC : MonoBehaviour
 
         //Vector3 move = transform.right * moveX + transform.forward * moveZ;
 
+        Vector3 newVec = Vector3.zero;
+        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("diving maybe");
+            
+            
+            //Diving(true);
+
+            StartCoroutine(DiveCoroutine());
+            
+            
+        }
+        
         
 
 
@@ -173,9 +199,44 @@ public class PlayerMovementCC : MonoBehaviour
             correctRotation = (Quaternion) stream.ReceiveNext();
         }
     }
+
+
+    private void Diving(bool canDive)
+    {
+        if (!canDive || !isGrounded)
+            return;
+        
+        //Vector3 localForward = transform.worldToLocalMatrix.MultiplyVector(transform.forward);
+        
+        //rb.AddForce(transform.forward * (diveMultiplier * diveSpeed), ForceMode.Force);
+
+        //controller.Move(localForward * (diveSpeed * diveMultiplier * Time.deltaTime));
+
+        controller.enabled = false;
+        Debug.Log("controller off");
+        
+        //rb.AddForce(playerModelTransform.up * (diveSpeed * diveMultiplier), ForceMode.Force);
+        transform.Translate(transform.forward * (diveSpeed * diveMultiplier), Space.World);
+        
+        controller.enabled = true;
+        Debug.Log("controller on");
+    }
     
 
-
+    private IEnumerator DiveCoroutine()
+    {
+        Debug.Log("diving coroutine");
+        
+        float startTime = Time.time; // need to remember this to know how long to dash
+        while(Time.time < startTime + _initialDashTime)
+        {
+            transform.Translate(transform.forward * (diveSpeed * Time.deltaTime), Space.World);
+            // or controller.Move(...), dunno about that script
+            yield return null; // this will make Unity stop here and continue next frame
+        }
+    }
+    
+    
     private float Jump()
     {
         // v = SQRT(h * -2 * g) or velocity = sqrt(jumpHeight * -2 * gravity)

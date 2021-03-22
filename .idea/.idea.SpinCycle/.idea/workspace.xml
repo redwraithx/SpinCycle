@@ -20,124 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6edd3356-5640-48c5-9fc2-63461a08671e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/NetworkingMatrials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/NetworkingMatrials/SpawnPoint_MAT.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/NetworkingMatrials/SpawnPoint_MAT.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/NetworkingPrefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/NetworkingPrefabs/NetworkedPlayerAvatar.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/NetworkingPrefabs/NetworkedPlayerAvatar.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/NetworkingPrefabs/NetworkingLevelManager.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/NetworkingPrefabs/NetworkingLevelManager.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkLevelManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkLevelManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkedPlayer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkedPlayer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/PhotonServerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUtilities/PackObject/CodeGen/Editor/Resources/TypeCatalogue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUtilities/PackObject/CodeGen/Editor/Resources/TypeCatalogue.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/Simple/Core/NetMaster/NetMasterLate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/Simple/Core/NetMaster/NetMasterLate.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GamePlaySystems/OldMachines/DryingMachine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GamePlaySystems/OldMachines/DryingMachine.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GamePlaySystems/OldMachines/PHWashingMachine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GamePlaySystems/OldMachines/PHWashingMachine.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ItemPreFabs/Clothing/T-Shirt.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ItemPreFabs/Clothing/T-Shirt.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ItemPreFabs/NotSabotages/Detergent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ItemPreFabs/NotSabotages/Detergent.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ItemPreFabs/NotSabotages/SpeedOil.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ItemPreFabs/NotSabotages/SpeedOil.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ItemPreFabs/Sabotages/Bombs/EMPbomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ItemPreFabs/Sabotages/Bombs/EMPbomb.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ItemPreFabs/Sabotages/Bombs/SoapBomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ItemPreFabs/Sabotages/Bombs/SoapBomb.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ItemPreFabs/Sabotages/GunStuff/WaterGunTester.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ItemPreFabs/Sabotages/GunStuff/WaterGunTester.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/NetworkTShirt.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/NetworkTShirt.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonPlayerPrefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonPlayerPrefabs/PhotonNetworkPlayer.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonPlayerPrefabs/PhotonNetworkPlayer.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonPlayerPrefabs/PlayerAvatar.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonPlayerPrefabs/PlayerAvatar.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonPlayerPrefabs/PlayerAvatarOld.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonPlayerPrefabs/PlayerAvatarOld.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkingPrefabs/NetworkedPlayerAvatar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkingPrefabs/NetworkedPlayerAvatar.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoadScreens/TitleScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoadScreens/TitleScreen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu/BasicLobbyRoom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu/BasicLobbyRoom.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ProgrammerScenes/Brian/MultiplayerTestLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ProgrammerScenes/Brian/MultiplayerTestLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ProgrammerScenes/Evan/EvanItemScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ProgrammerScenes/Evan/EvanItemScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/Grab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/Grab.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/PlayerPoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/PlayerPoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/CanvasManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/CanvasManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/LoadScreen2CanvasManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/LoadScreen2CanvasManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Utilities/ItemTypeForItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Utilities/ItemTypeForItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/AvatarSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/AvatarSetup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/AvatarSetup.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/AvatarSetup.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/GameSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/GameSetup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/GameSetup.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/GameSetup.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/GameSetup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/GameSetup.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/GameSetup.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/GameSetup.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/MenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/MenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/MenuController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/MenuController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/MultiplayerSetting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/MultiplayerSetting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/MultiplayerSetting.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/MultiplayerSetting.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/NetworkManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/NetworkManager.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/Network_ObjectSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/Network_ObjectSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/Network_ObjectSpawner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/Network_ObjectSpawner.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/PhotonLobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/PhotonLobby.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/PhotonLobby.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/PhotonLobby.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/PhotonPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/PhotonPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/PhotonPlayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/PhotonPlayer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/PhotonRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/PhotonRoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/PhotonRoom.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/PhotonRoom.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/PhotonRoomController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/PhotonRoomController.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/PhotonRoomController.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/PhotonRoomController.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/PlayerInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/PlayerInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/PlayerInfo.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/PlayerInfo.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/SpawnPoint1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/SpawnPoint1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/SpawnPoint1.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/SpawnPoint1.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/SpawnPoint2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/SpawnPoint2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/SpawnPoint2.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/SpawnPoint2.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/machine.config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/machine.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/settings.map" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/settings.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/web.config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/2.0/web.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/machine.config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/machine.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/settings.map" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/settings.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/web.config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.0/web.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/machine.config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/machine.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/settings.map" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/settings.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/web.config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/4.5/web.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/browscap.ini" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/browscap.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/mconfig/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/MonoBleedingEdge/etc/mono/mconfig/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/app.info" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/app.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/boot.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/globalgamemanagers" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/globalgamemanagers.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level1" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level2" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level3" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level4" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level5" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level6" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/level6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/resources.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/resources.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/resources.assets.resS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets0.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets1.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets1.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets2.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets2.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets3.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets3.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets4.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets4.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets5.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets5.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets5.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets5.assets.resS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets6.assets" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentBuild/SpinCycle_Data/sharedassets6.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementRigidbody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementRigidbody.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,8 +70,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Utilities/ItemTypeForUsingItem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Pooling/LaundryPool.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/PlayerSpawner/PlayerStartingSpawnPoint.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementRigidbody.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/MouseLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/HealthBarSlider.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/Health.cs" />
@@ -222,6 +108,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/Grab.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking_old/Network_ObjectSpawner.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementRigidbody.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jXM3iP7Giz6FodzT2B7nRGS8ar" />
@@ -296,6 +184,7 @@
       <workItem from="1613667278715" duration="398000" />
       <workItem from="1615817719359" duration="16274000" />
       <workItem from="1616006261946" duration="20539000" />
+      <workItem from="1616401581079" duration="8201000" />
     </task>
     <servers />
   </component>
