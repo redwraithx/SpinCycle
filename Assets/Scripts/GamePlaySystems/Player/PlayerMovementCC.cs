@@ -141,7 +141,7 @@ public class PlayerMovementCC : MonoBehaviour
 
         Vector3 newVec = Vector3.zero;
         
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             Debug.Log("diving maybe");
             
