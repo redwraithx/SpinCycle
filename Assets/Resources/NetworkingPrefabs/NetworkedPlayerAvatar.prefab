@@ -1286,6 +1286,7 @@ MonoBehaviour:
   originalVel: {x: 0, y: 0, z: 0}
   rb: {fileID: 6848871425079053761}
   playerModelTransform: {fileID: 8285968112571116727}
+  playerDiveIndex: 0
   groundCheck: {fileID: 6848871426206990822}
   groundDistance: 0.2
   groundMask:
@@ -1293,6 +1294,7 @@ MonoBehaviour:
     m_Bits: 256
   rotationSpeed: 30
   isGrounded: 0
+  diveReuseDelayTime: 1
   isFrozen: 0
   frozenTimer: 10
 --- !u!114 &1882224007562441043

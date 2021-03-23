@@ -20,8 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6edd3356-5640-48c5-9fc2-63461a08671e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkingPrefabs/NetworkedPlayerAvatar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkingPrefabs/NetworkedPlayerAvatar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkLevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkLevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking_old/GameSetup.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/GameSetup.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,16 +46,17 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/CrossPlatforms2_Lab7/Assets/Scripts/LoadSaveManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/Crossplatforms2_networking/Assets/Scripts/Level1/Player/PlayerWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnitTest_Project1/Assets/_Project/Editor/MinMaxDrawer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/Crossplatforms2_networking/Assets/Scripts/Level1/Player/PlayerHealth.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Networking/ItemSpawner/Network_ItemSpawn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnitTest_Project2/Assets/Tests/EditMode/damage_calculator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Funamentals2_Labs/Fundamentals2_Lab7/Assets/Scripts/Enemy/EnemyUnit.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/Crossplatforms2_networking/Assets/Scripts/Level1/Player/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../UnityProjects/2D_EventTest_Project1/Assets/Scripts/AimAtMouse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../TeamMileStone2/SpinCycle-Anthony/Assets/Scripts/Items/TShirt.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/05250243-5982-472D-92DA-7F939C7F8164/31/64b90b70/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/Crossplatforms2_networking/Assets/Scripts/Level1/Player/PlayerWeapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/Crossplatforms2_networking/Assets/Scripts/Level1/Player/PlayerHealth.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/Crossplatforms2_networking/Assets/Scripts/Level1/Player/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../TeamMileStone2/SpinCycle-Anthony/Assets/Scripts/Items/TShirt.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/05250243-5982-472D-92DA-7F939C7F8164/15/a0ac672e/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnityNetworking_LLAPI_Server/Assets/Scripts/Server.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -92,19 +98,19 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Utilities/ItemOutOfGameDestroy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Network_ObjectSpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Photon/PhotonChat/Code/ChatAppSettings.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/LoadScreen2CanvasManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/PlayerPoints.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Utilities/ItemTypeForItem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking/ItemSpawner/Network_ItemSpawn.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkLevelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/DynamicCrosshair/DynamicCrosshair.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkedPlayer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/Grab.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking_old/Network_ObjectSpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementRigidbody.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkLevelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs" />
     </changedPaths>
   </component>
@@ -180,7 +186,8 @@
       <workItem from="1613667278715" duration="398000" />
       <workItem from="1615817719359" duration="16274000" />
       <workItem from="1616006261946" duration="20539000" />
-      <workItem from="1616401581079" duration="8802000" />
+      <workItem from="1616401581079" duration="9400000" />
+      <workItem from="1616515640508" duration="1687000" />
     </task>
     <servers />
   </component>
