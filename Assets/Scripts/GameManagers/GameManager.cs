@@ -12,12 +12,15 @@ public class GameManager : MonoBehaviour
 
     public static AudioManager audioManager = null;
     public static NetworkManager networkManager = null;
+    public static NetworkLevelManager networkLevelManager = null;
     
     
     #endregion GAMEMANAGER_CORE-EXTENTIONS
     
     #region Tracked_Variables
 
+    
+    
     [SerializeField] private GameObject player1;
 
     public GameObject Player1
@@ -89,6 +92,8 @@ public class GameManager : MonoBehaviour
     // to get to the main menu
     public void ToMain()
     {
+        networkLevelManager = null;
+        
         SceneManager.LoadScene("MainMenuScene");
     }
 

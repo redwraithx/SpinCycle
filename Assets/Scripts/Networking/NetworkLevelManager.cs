@@ -1,10 +1,8 @@
 ﻿
 using System.Collections.Generic;
 using System.IO;
-using System.Net;
 using UnityEngine;
 using Photon.Pun;
-using Photon.Pun.UtilityScripts;
 using Photon.Realtime;
 
 
@@ -14,9 +12,13 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
 
     public List<GameObject> playersJoined;
 
+    //public bool[] isPlayersDiveDelayEnabled = new bool[GameManager.networkManager.maxPlayersPerRoom];
+    //public float initialDiveReuseDelay = 10f;
     
     private void Awake()
     {
+        GameManager.networkLevelManager = this;
+        
         Vector3 startingPosition = Vector3.zero;
         Quaternion startingRotation = Quaternion.identity;
         GameObject networkedPlayer = null;
@@ -35,8 +37,10 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
         
         if (PhotonNetwork.IsConnected)
         {
-            startingPosition = playerStartingPositions[PhotonNetwork.CurrentRoom.PlayerCount - 1].position;
-            startingRotation = playerStartingPositions[PhotonNetwork.CurrentRoom.PlayerCount - 1].rotation;
+            int newPlayerIndex = PhotonNetwork.CurrentRoom.PlayerCount - 1;
+                
+            startingPosition = playerStartingPositions[newPlayerIndex].position;
+            startingRotation = playerStartingPositions[newPlayerIndex].rotation;
 
             if (NetworkedPlayer.LocalPlayerInstance == null)
             {
@@ -45,6 +49,7 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
                 // spawn networked Player
                 networkedPlayer = PhotonNetwork.Instantiate(Path.Combine("NetworkingPrefabs", "NetworkedPlayerAvatar"), startingPosition, startingRotation, 0);
 
+                networkedPlayer.GetComponent<PlayerMovementCC>().playerDiveIndex = newPlayerIndex;
                 
                 Debug.Log($"spawning player {networkedPlayer.name}");
 
