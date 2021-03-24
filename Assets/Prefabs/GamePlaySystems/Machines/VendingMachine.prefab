@@ -1264,11 +1264,12 @@ MonoBehaviour:
   NameText: {fileID: 191481543}
   RealPrice: 0
   ThisButton: {fileID: 595329984}
-  SaleItemGameObject: {fileID: 3242775700426257762, guid: 6de3237025caf854eb4685e48eec08df, type: 3}
+  SaleItemGameObject: {fileID: 3017053831450171255, guid: 91a5347425b20bb4ebc4a8cf9baed3bc, type: 3}
   itemSpawnPoint: {fileID: 6627814966707534623}
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
+  networkItemToSpawn: 
   VendingUI: {fileID: 704124490}
 --- !u!1 &640109168
 GameObject:
@@ -1978,11 +1979,12 @@ MonoBehaviour:
   NameText: {fileID: 1482845911}
   RealPrice: 0
   ThisButton: {fileID: 1109529624}
-  SaleItemGameObject: {fileID: 214584614075172200, guid: 385333d2b26eadb49b7022dfa255bac5, type: 3}
+  SaleItemGameObject: {fileID: 7188559868490336958, guid: 52f6ddbc494d3d64db06960542bd40fb, type: 3}
   itemSpawnPoint: {fileID: 6627814966707534623}
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
+  networkItemToSpawn: 
   VendingUI: {fileID: 704124490}
 --- !u!1 &1201114945
 GameObject:
@@ -2128,11 +2130,12 @@ MonoBehaviour:
   NameText: {fileID: 1240984353}
   RealPrice: 0
   ThisButton: {fileID: 1201114947}
-  SaleItemGameObject: {fileID: 3247722976170699440, guid: 72ff02956de85534bbc9b403e0f8d224, type: 3}
+  SaleItemGameObject: {fileID: 6067415297196609079, guid: 7faf033d3f513ed449321d649523b10f, type: 3}
   itemSpawnPoint: {fileID: 6627814966707534623}
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
+  networkItemToSpawn: 
   VendingUI: {fileID: 704124490}
 --- !u!1 &1205041784
 GameObject:
@@ -2879,11 +2882,12 @@ MonoBehaviour:
   NameText: {fileID: 1236318473}
   RealPrice: 0
   ThisButton: {fileID: 1338063379}
-  SaleItemGameObject: {fileID: 6399440935282412963, guid: a70e070f6386d8a4584c96387a294c62, type: 3}
+  SaleItemGameObject: {fileID: 7188559868490336958, guid: 52f6ddbc494d3d64db06960542bd40fb, type: 3}
   itemSpawnPoint: {fileID: 6627814966707534623}
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
+  networkItemToSpawn: 
   VendingUI: {fileID: 704124490}
 --- !u!1 &1368029672
 GameObject:
@@ -3108,11 +3112,12 @@ MonoBehaviour:
   NameText: {fileID: 774755811}
   RealPrice: 100
   ThisButton: {fileID: 1388790034}
-  SaleItemGameObject: {fileID: 3247722976170699440, guid: 72ff02956de85534bbc9b403e0f8d224, type: 3}
+  SaleItemGameObject: {fileID: 3471065922271756398, guid: 99fe5fe90188fb64b9f9f0709bca19e9, type: 3}
   itemSpawnPoint: {fileID: 6627814966707534623}
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
+  networkItemToSpawn: 
   VendingUI: {fileID: 704124490}
 --- !u!1 &1413503334
 GameObject:
@@ -3258,11 +3263,12 @@ MonoBehaviour:
   NameText: {fileID: 1269548967}
   RealPrice: 0
   ThisButton: {fileID: 1413503336}
-  SaleItemGameObject: {fileID: 3385750515038209516, guid: afbaeecc4e814dc45805fb8c75e81500, type: 3}
+  SaleItemGameObject: {fileID: 4870835614521512990, guid: 401984a8a55b06944b19e03266a5ba90, type: 3}
   itemSpawnPoint: {fileID: 6627814966707534623}
   VendingIndex: {fileID: 0}
   FirstRun: 0
   saleItem: {fileID: 0}
+  networkItemToSpawn: 
   VendingUI: {fileID: 704124490}
 --- !u!1 &1419202271
 GameObject:

@@ -133,9 +133,21 @@ public class MachineScript : MonoBehaviour
         {
             SabotageMachine(60);
         }
-        else if (collision.gameObject.name == "EMPbomb(Clone)")
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.name == "EMPSphere")
         {
-            SabotageMachine(20);
+            if (isSabotaged == true)
+            {
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                SabotageMachine(20);
+                Destroy(other.gameObject);
+            }
         }
     }
 
