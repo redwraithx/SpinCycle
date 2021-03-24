@@ -7,8 +7,9 @@ public class BombDetonate : MonoBehaviour
     public GameObject Bomb;
     public GameObject Radius;
     public bool detonated;
-    public float timer;
+    private float timer;
     public float startingTimer;
+    public float timerAdjust;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +25,9 @@ public class BombDetonate : MonoBehaviour
             {
                 Bomb.SetActive(false);
                 Radius.SetActive(true);
-                timer = 10;
+                timer = timerAdjust;
                 detonated = true;
+                Radius.transform.parent = null;
             }
         }
 
