@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: 5271457510973741643}
   - component: {fileID: 5271457510973741655}
   - component: {fileID: 5271457511788236584}
+  - component: {fileID: 7869408135015731500}
+  - component: {fileID: 5320384189620555538}
+  - component: {fileID: -254806548768844225}
   m_Layer: 11
   m_Name: RepairTool
   m_TagString: Item
@@ -72,6 +75,7 @@ MonoBehaviour:
   _timeAdjustment: 0
   correctPosition: {x: 0, y: 0, z: 0}
   correctRotation: {x: 0, y: 0, z: 0, w: 1}
+  originalParent: {fileID: 0}
 --- !u!114 &5727568501014975541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +184,63 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.023183823, y: 0, z: 0.07441759}
+--- !u!114 &7869408135015731500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271457510973741645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 1
+  OwnershipTransfer: 1
+  ObservedComponents:
+  - {fileID: 5271457510973741642}
+  - {fileID: 5320384189620555538}
+  - {fileID: -254806548768844225}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &5320384189620555538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271457510973741645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 0
+--- !u!114 &-254806548768844225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271457510973741645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 0
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 1
+  m_TeleportIfDistanceGreaterThan: 0.0001
 --- !u!1001 &5271457510734246660
 PrefabInstance:
   m_ObjectHideFlags: 0

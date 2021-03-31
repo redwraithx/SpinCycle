@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
 namespace RedWraith.Player
@@ -12,6 +13,7 @@ namespace RedWraith.Player
         [SerializeField] private LayerMask groundLayerMask;
         [SerializeField] private Transform groundDetect = null;
         [SerializeField] private bool isGrounded = false;
+
         
         private Rigidbody rb = null;
 
@@ -34,6 +36,7 @@ namespace RedWraith.Player
             transform.Translate(new Vector3(_moveX, 0f, _moveZ) * (moveSpeed * (moveSpeedMultiplier * Time.deltaTime)));
             
         }
+        
     }
 
 }

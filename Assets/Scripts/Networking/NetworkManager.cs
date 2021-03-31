@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    private byte maxPlayersPerRoom = 4;  // THIS MUST BE CHANGED FOR RELEASE
+    internal byte maxPlayersPerRoom = 4;  // THIS MUST BE CHANGED FOR RELEASE
     private bool isConnecting = false;
 
     public TMP_Text feedbackText = null;

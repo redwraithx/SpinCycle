@@ -4,7 +4,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 using Cinemachine;
-
+using Photon.Pun;
+using Photon.Realtime;
+using System.IO;
 
 public class ButtonHover : MonoBehaviour
     , IPointerEnterHandler
@@ -24,6 +26,7 @@ public class ButtonHover : MonoBehaviour
     public bool FirstRun = false;
     public Item saleItem;
     PlayerPoints playerPoints = null;
+    public string networkItemToSpawn = "";
 
     public GameObject VendingUI;
 
@@ -32,8 +35,6 @@ public class ButtonHover : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("sldfkjsdlkfjlsdkjf");
-
         playerPoints = GameManager.Instance.Player1.GetComponent<PlayerPoints>();
         saleItem = SaleItemGameObject.GetComponent<Item>();
         Description.SetActive(false);
@@ -69,6 +70,7 @@ public class ButtonHover : MonoBehaviour
             DescriptionText.text = VendingIndex.Description;
             PriceText.text = VendingIndex.Price;
             NameText.text = VendingIndex.Name;
+            networkItemToSpawn = VendingIndex.Name;
             FirstRun = true;
         }
         Description.SetActive(true);
@@ -87,22 +89,20 @@ public class ButtonHover : MonoBehaviour
     
     public void Buy()
     {
-        RealPrice = RealPrice += Convert.ToInt32(VendingIndex.Price); //int.Parse(VendingIndex.Price);
+        RealPrice = RealPrice += Convert.ToInt32(VendingIndex.Price); 
         
         
         if (RealPrice <= playerPoints.Points)
         {
             Debug.Log("buyingItemButtonHoverCS");
-            //playerPoints.points -= RealPrice;
             playerPoints.Points -= RealPrice;
-            GameObject sale = Instantiate(SaleItemGameObject, itemSpawnPoint.transform.position, Quaternion.identity);
+            GameObject sale = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), itemSpawnPoint.transform.position, Quaternion.identity);
             Description.SetActive(false);
             Price.SetActive(false);
             Name.SetActive(false);
             VendingUI.SetActive(false);
 
-            // this is filler code so it actually sells stuff while I experiment with indexes in a seperate project
-            //index thing gets spawned
+
         }
     }
 
