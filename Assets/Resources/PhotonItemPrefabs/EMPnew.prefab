@@ -92,7 +92,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595446439655873830}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -144,14 +144,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3415631838338275096}
-  - component: {fileID: 444753708108903401}
-  - component: {fileID: 8491013417752535230}
   - component: {fileID: 6048301785746614683}
   - component: {fileID: 5891673973939213401}
   - component: {fileID: 6752406968193675915}
   - component: {fileID: 6316662527560639034}
   - component: {fileID: 5806057363815300317}
+  - component: {fileID: 444753708108903401}
   - component: {fileID: -6204517095679571965}
+  - component: {fileID: 8491013417752535230}
   - component: {fileID: 5181427208348646664}
   m_Layer: 0
   m_Name: EMPnew
@@ -176,40 +176,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &444753708108903401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4870835614521512990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f90a41f1c18f8e4aa8eede153b212ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: 0
-  _name: EMP
-  _description: Breaks machines and freeze players inside its radius
-  _price: 200
-  _timeAdjustment: 0
-  correctPosition: {x: 0, y: 0, z: 0}
-  correctRotation: {x: 0, y: 0, z: 0, w: 1}
-  originalParent: {fileID: 0}
---- !u!114 &8491013417752535230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4870835614521512990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df2e483fbd70d9e4da185468f0ca5bd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemType: 6
-  laundryType: 0
 --- !u!114 &6048301785746614683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,8 +242,8 @@ MonoBehaviour:
   Synchronization: 1
   OwnershipTransfer: 1
   ObservedComponents:
-  - {fileID: 444753708108903401}
   - {fileID: 5806057363815300317}
+  - {fileID: 444753708108903401}
   - {fileID: -6204517095679571965}
   viewIdField: 0
   InstantiationId: 0
@@ -298,6 +264,26 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 0.0001
+--- !u!114 &444753708108903401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4870835614521512990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f90a41f1c18f8e4aa8eede153b212ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0
+  _name: EMP
+  _description: Breaks machines and freeze players inside its radius
+  _price: 200
+  _timeAdjustment: 0
+  correctPosition: {x: 0, y: 0, z: 0}
+  correctRotation: {x: 0, y: 0, z: 0, w: 1}
+  originalParent: {fileID: 0}
 --- !u!114 &-6204517095679571965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +300,20 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 0
+--- !u!114 &8491013417752535230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4870835614521512990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2e483fbd70d9e4da185468f0ca5bd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 6
+  laundryType: 0
 --- !u!65 &5181427208348646664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -323,10 +323,10 @@ BoxCollider:
   m_GameObject: {fileID: 4870835614521512990}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.53974634, y: 0.33895516, z: 0.9515355}
-  m_Center: {x: -0.0183855, y: 0.13697326, z: -0.070807666}
+  m_Size: {x: 0.79941887, y: 0.33895516, z: 0.9515355}
+  m_Center: {x: 0.00017532706, y: 0.13697326, z: -0.070807666}
 --- !u!1001 &5593625621648272048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -397,10 +397,6 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 7665215c8eddc0a44a216110cdeced13, type: 3}
       propertyPath: m_Convex
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6400000, guid: 7665215c8eddc0a44a216110cdeced13, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7665215c8eddc0a44a216110cdeced13, type: 3}
