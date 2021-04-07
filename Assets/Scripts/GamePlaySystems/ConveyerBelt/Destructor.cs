@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using Photon.Realtime;
+using Photon.Pun;
 
 
 public class Destructor : MonoBehaviour
@@ -8,7 +10,7 @@ public class Destructor : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Item"))
         {
-            collision.gameObject.SetActive(false);
+            collision.gameObject.GetComponent<Item>().DisableObject();
         }
     }
 }
