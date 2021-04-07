@@ -2,12 +2,9 @@
 using System.Linq;
 using UnityEngine;
 using EnumSpace;
-<<<<<<< Updated upstream
-=======
 using GamePlaySystems.Utilities;
 using Photon.Pun;
 using Photon.Realtime;
->>>>>>> Stashed changes
 
 
 public class DirtyLaundrySpawner : MonoBehaviour
@@ -46,6 +43,7 @@ public class DirtyLaundrySpawner : MonoBehaviour
         GameObject newLaundry = LaundryPool.poolInstance.GetItem(type);
         newLaundry.transform.position = spawnPoint.transform.position;
         newLaundry.transform.rotation = spawnPoint.transform.rotation;
+        newLaundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingDirty;
         newLaundry.SetActive(true);
 
     }

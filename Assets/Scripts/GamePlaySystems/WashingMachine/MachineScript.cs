@@ -10,33 +10,57 @@ public class MachineScript : MonoBehaviour
 {
     public float cycleLength;
     public GameObject itemSpawnPoint;
-    public float timer;
-    public bool timerSabotage = false;
+    public float laundryTimer;
+    public float sabotageTimer;
+    public bool isSabotaged = false;
     public bool isEnabled = false;
+    public bool isBoosted = false;
     public Slider sliderTime;
     public LaundryType laundryType;
     public MachineType machineType;
+    public ParticleSystem part;
 
     private void Start()
     {
+        cycleLength = 5;
         sliderTime.maxValue = cycleLength;
+
+        if (isSabotaged == true)
+        {
+            part.Play();
+        }
     }
+
     void Update()
     {
-        if (timerSabotage == false)
+        if (isSabotaged == false)
         {
-            if (timer > 0)
+            if (laundryTimer > 0)
             {
-                timer -= Time.deltaTime;
+                laundryTimer -= Time.deltaTime;
             }
-            if (timer <= 0 && isEnabled == true)
+            if (laundryTimer <= 0 && isEnabled == true)
             {
                 SpawnFinishedProduct(laundryType);
                 isEnabled = false;
             }
         }
 
-        sliderTime.value = timer;
+        if (isSabotaged == true)
+        {
+            if (sabotageTimer > 0)
+            {
+                sabotageTimer -= Time.deltaTime;
+            }
+            if (sabotageTimer <= 0)
+            {
+                part.Stop();
+                isSabotaged = false;
+            }
+        }
+
+        sliderTime.value = laundryTimer;
+
 
     }
 
@@ -65,27 +89,83 @@ public class MachineScript : MonoBehaviour
 
     public void ProcessItems()
     {
-        timer = cycleLength;
+        sliderTime.maxValue = cycleLength;
+        laundryTimer = cycleLength;
         isEnabled = true;
-        
     }
 
     public void UseMachine(GameObject other)
-    {   
-
+    {
         //Alter this tag based on machine
         if (other.CompareTag("Item"))
         {
             Debug.Log($"we have a item {other.GetComponent<ItemTypeForItem>().itemType}");
             laundryType = other.GetComponent<ItemTypeForItem>().laundryType;
-                
-            //Once player is created, call to destroy the item in their hand here
-            ProcessItems();
 
-            // we may want to use a bool in case the machine is full we dont destroy or use the object
-            other.transform.parent = null;
-            other.gameObject.SetActive(false);
+            if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.WasherBoost)
+            {
+                BoostMachine();
+                other.gameObject.SetActive(false);
+            }
+            if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.RepairTool)
+            {
+                FixMachine();
+                RepairToolSpawn.instance.RemoveObject();
+                other.gameObject.SetActive(false);
+            }
+            else if (other.GetComponent<ItemTypeForItem>().itemType == this.gameObject.GetComponent<ItemTypeForUsingItem>().itemType[0])
+            {
+                //Once player is created, call to destroy the item in their hand here
+                ProcessItems();
+                // we may want to use a bool in case the machine is full we dont destroy or use the object
+                other.transform.parent = null;
+                other.gameObject.SetActive(false);
+            }
+
         }
 
+
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "SoapBomb(Clone)")
+        {
+            SabotageMachine(60);
+        }
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.name == "EMPSphere")
+        {
+            if (isSabotaged == true)
+            {
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                SabotageMachine(20);
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
+    public void SabotageMachine(float time)
+    {
+        sabotageTimer = time;
+        isSabotaged = true;
+        part.Play();
+    }
+    public void FixMachine()
+    {
+        isSabotaged = false;
+        sabotageTimer = 0;
+        part.Stop();
+    }
+
+    public void BoostMachine()
+    {
+        isBoosted = true;
     }
 }

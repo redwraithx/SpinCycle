@@ -12,8 +12,12 @@ namespace GamePlaySystems.Utilities
         ClothingUnfolded,
         ClothingDone,
         SabotageWaterGun,
+        SabotageIceGun,
+        SabotageSoapGun,
         SabotageClothing,
-        RepairTool
+        RepairTool,
+        WasherBoost,
+        DryerBoost
     }
 
 

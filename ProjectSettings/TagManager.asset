@@ -11,6 +11,12 @@ TagManager:
   - Machine
   - Bullet
   - NetworkManager
+  - ProjectileSpawnPoint
+  - PointsCounter
+  - Ground
+  - YourPlayersNameInputBox
+  - JoinThisGameButton
+  - ConnectionFeedbackInfoText
   layers:
   - Default
   - TransparentFX
@@ -24,7 +30,7 @@ TagManager:
   - Entities
   - Usable Objects
   - Items
-  - 
+  - Layout
   - 
   - 
   - 

@@ -4,6 +4,9 @@ using UnityEngine;
 public class CinemachineMouseLook : MonoBehaviour
 {
 
+
+    public LayerMask layerMask;
+
     public float mouseSensitivity = 100f;
 
     public Transform playerBody;
@@ -13,6 +16,10 @@ public class CinemachineMouseLook : MonoBehaviour
     public Vector3 bodyRotate = Vector3.zero;
 
     private bool isAlive = true;
+
+    private TransparentWalls currentTransparentWall;
+
+    
 
     
     void Start()
@@ -25,7 +32,36 @@ public class CinemachineMouseLook : MonoBehaviour
     {
         if (!isAlive)
             return;
-        
+
+        Vector3 direction = playerBody.position - transform.position;
+        float length = Vector3.Distance(playerBody.position, transform.position);
+        Debug.DrawRay(transform.position, direction.normalized * length, Color.red);
+
+        RaycastHit currentHit;
+        if (Physics.Raycast(transform.position, direction, out currentHit, length, layerMask))
+        {
+            
+            TransparentWalls transparentWall = currentHit.transform.GetComponent<TransparentWalls>();
+            if (transparentWall)
+            {
+                Debug.Log("hitting wall");
+                if (currentTransparentWall && currentTransparentWall.gameObject != transparentWall.gameObject)
+                {
+                    currentTransparentWall.ChangeTransparency(false);
+                }
+                transparentWall.ChangeTransparency(true);
+                currentTransparentWall = transparentWall;
+            }
+        }
+        else
+        {
+            if (currentTransparentWall)
+            {
+                currentTransparentWall.ChangeTransparency(false);
+            }
+        }
+
+
     }
 
 
