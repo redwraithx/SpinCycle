@@ -2,6 +2,12 @@
 using System.Linq;
 using UnityEngine;
 using EnumSpace;
+<<<<<<< Updated upstream
+=======
+using GamePlaySystems.Utilities;
+using Photon.Pun;
+using Photon.Realtime;
+>>>>>>> Stashed changes
 
 
 public class DirtyLaundrySpawner : MonoBehaviour
@@ -18,17 +24,21 @@ public class DirtyLaundrySpawner : MonoBehaviour
 
     void Update()
     {
-        spawnRate = randTime;
-        if (Time.time >= timeSinceLastSpawn + spawnRate)
+        if (PhotonNetwork.IsMasterClient)
         {
-            randTime = UnityEngine.Random.Range(1f, 10f);
-            timeSinceLastSpawn = Time.time;
-            if (isSpawning == true)
+            spawnRate = randTime;
+            if (Time.time >= timeSinceLastSpawn + spawnRate)
             {
-                laundryType = (LaundryType)UnityEngine.Random.Range(0, (int)Enum.GetValues(typeof(LaundryType)).Cast<LaundryType>().Max());
-                SpawnDirtyLaundry(laundryType);
+                randTime = UnityEngine.Random.Range(1f, 10f);
+                timeSinceLastSpawn = Time.time;
+                if (isSpawning == true)
+                {
+                    laundryType = (LaundryType)UnityEngine.Random.Range(0, (int)Enum.GetValues(typeof(LaundryType)).Cast<LaundryType>().Max());
+                    SpawnDirtyLaundry(laundryType);
+                }
             }
         }
+
     }
 
     private void SpawnDirtyLaundry(LaundryType type)
