@@ -34,7 +34,7 @@ public class LaundryBasket : MonoBehaviour
                 //above two lines aren't needed for this code to run, only for debugging purposes
 
                 playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
-                other.gameObject.SetActive(false);
+                other.gameObject.GetComponent<Item>().DisableObject();
             }
         }
     }

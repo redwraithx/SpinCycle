@@ -44,7 +44,7 @@ public class DirtyLaundrySpawner : MonoBehaviour
         newLaundry.transform.position = spawnPoint.transform.position;
         newLaundry.transform.rotation = spawnPoint.transform.rotation;
         newLaundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingDirty;
-        newLaundry.SetActive(true);
+        newLaundry.GetComponent<Item>().EnableObject();
 
     }
 }
