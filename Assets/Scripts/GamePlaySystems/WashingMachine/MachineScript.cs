@@ -84,7 +84,7 @@ public class MachineScript : MonoBehaviour
                 break;
         }
 
-        laundry.SetActive(true);
+        laundry.GetComponent<Item>().EnableObject();
     }
 
     public void ProcessItems()
@@ -119,7 +119,7 @@ public class MachineScript : MonoBehaviour
                 ProcessItems();
                 // we may want to use a bool in case the machine is full we dont destroy or use the object
                 other.transform.parent = null;
-                other.gameObject.SetActive(false);
+                other.gameObject.GetComponent<Item>().DisableObject();
             }
 
         }
