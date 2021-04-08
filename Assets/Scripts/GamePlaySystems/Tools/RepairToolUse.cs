@@ -10,13 +10,13 @@ public class RepairToolUse : MonoBehaviour, IRepairToolUse
     public void UseItem()
     {
         Debug.Log("repair tool goes away");
-        RepairToolSpawn.instance.RemoveObject();
+        RepairToolZoneSpawn.instance.RemoveObject();
         Destroy(gameObject);
     }
 
     void Start()
     {
-        spawner = RepairToolSpawn.instance.spawnPointPosition;
+        spawner = RepairToolZoneSpawn.instance.spawnPointPosition;
 
         timer = 60;
 
@@ -30,7 +30,7 @@ public class RepairToolUse : MonoBehaviour, IRepairToolUse
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                RepairToolSpawn.instance.RemoveObject();
+                RepairToolZoneSpawn.instance.RemoveObject();
                 Destroy(this.gameObject);
             }
         }
