@@ -110,7 +110,7 @@ public class MachineScript : MonoBehaviour
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.RepairTool)
             {
                 FixMachine();
-                RepairToolSpawn.instance.RemoveObject();
+                RepairToolZoneSpawn.instance.RemoveObject();
                 other.gameObject.SetActive(false);
             }
             else if (other.GetComponent<ItemTypeForItem>().itemType == this.gameObject.GetComponent<ItemTypeForUsingItem>().itemType[0])
