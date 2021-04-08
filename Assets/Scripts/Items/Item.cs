@@ -232,6 +232,17 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
         photonView.RPC("SetObjectsRigidBody", RpcTarget.AllBuffered, hasPickedUpItem);
     }
 
+    public void DisableObject()
+    {
+        PhotonView Disable = GetComponent<PhotonView>();
+        gameObject.SetActive(false);
+
+    }
+    public void EnableObject()
+    {
+        PhotonView Enable = GetComponent<PhotonView>();
+        gameObject.SetActive(true);
+    }
 
 
 }

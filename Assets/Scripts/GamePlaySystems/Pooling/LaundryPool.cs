@@ -65,7 +65,7 @@ public GameObject GetItem(LaundryType type)
 
         if (notEnoughObjectsInPool)
         {
-            GameObject obj = Instantiate(pooledItems[id]);
+            GameObject obj = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", pooledItems[id].name), transform.position, Quaternion.identity, 0);
             obj.SetActive(false);
             pool[id].Add(obj);
             return obj;
