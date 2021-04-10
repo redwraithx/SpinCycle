@@ -6,7 +6,8 @@ using UnityEngine;
 public class Grab : MonoBehaviour
 {
     public Transform grabPoint = null;
-    
+    public WeaponScript weapon = null;
+    public GameObject weaponCamera;
     [SerializeField] public bool canPickUpItem = false;
     [SerializeField] private bool hasItemInHand = false;
     [SerializeField] private GameObject itemInHand = null;
@@ -21,13 +22,21 @@ public class Grab : MonoBehaviour
     
     [SerializeField] private PhotonView _photonView;
 
+
     public bool CanUseHeldItem
     {
         get => canUseHeldItem;
         set => canUseHeldItem = value;
     }
-    
-    
+
+    private void Start()
+    {
+        if (!weapon)
+            weapon = GetComponent<WeaponScript>();
+        
+
+        
+    }
     private void CheckForMouseDown()
     {
         if (canPickUpItem && itemToPickUp && outOfRange == false)
@@ -37,6 +46,9 @@ public class Grab : MonoBehaviour
             hasItemInHand = true;
             GetComponent<PlayerSphereCast>().itemInHand = true;
             itemInHand = itemToPickUp;
+            
+            if(itemInHand.GetComponent<ItemTypeForItem>())
+                itemInHand.GetComponent<ItemTypeForItem>().RequestOwnership();
 
             foreach (var itemCollider in itemInHand.GetComponents<Collider>())
             {
@@ -47,6 +59,7 @@ public class Grab : MonoBehaviour
             itemInHand.transform.position = grabPoint.position;
             
             itemInHand.transform.parent = gameObject.transform;
+            itemInHand.GetComponent<Item>().UpdateObjectsRigidBody(true);
         }
     }
 
@@ -67,6 +80,11 @@ public class Grab : MonoBehaviour
         }
         
         itemInHand.GetComponent<Rigidbody>().useGravity = true;
+        itemInHand.GetComponent<Item>().UpdateObjectsRigidBody(false);
+        
+        if(itemInHand.GetComponent<ItemTypeForItem>())
+            itemInHand.GetComponent<ItemTypeForItem>().RequestTransferOwnershipToHost();
+        
         itemInHand.transform.parent = null;
 
         hasItemInHand = false;
@@ -103,8 +121,8 @@ public class Grab : MonoBehaviour
                     {
                        // use object action will only work on one event per object
                        machineInteractionObject.thisObjectEvent.Invoke(itemInHand);
-
-                       itemInHand = null;
+                        //If you are getting an error that calls here, make sure the machine has the event set up properly
+                       //itemInHand = null;
                        
                        ClearGrabValues();
                        
@@ -117,9 +135,68 @@ public class Grab : MonoBehaviour
 
                         ClearGrabValues();
                     }
+                    else if (itemInHand.GetComponent<BombThrow>())
+                    {
+                        itemInHand.GetComponent<BombThrow>().Throw();
+
+                        CheckForMouseUp();
+
+                        itemInHand = null;
+
+                        ClearGrabValues();
+                    }
+
+                    
+                }
+                else if (itemInHand.GetComponent<ItemTypeForItem>().itemType == ItemType.SabotageWaterGun)
+                {
+                    if(weapon.enabled)
+                        weapon.fire();
+                    //itemInHand.GetComponent<RepairToolUse>().UseItem();
+                    Debug.Log("Gun");
+                    //itemInHand = null;
+
+                    //ClearGrabValues();
                 }
 
             }
+        }
+        if (itemInHand)
+        {
+            var isValidItem = itemInHand?.GetComponent<ItemTypeForItem>();
+            if (isValidItem)
+            {
+                Debug.Log(isValidItem.itemType);
+                if (isValidItem.itemType == ItemType.SabotageWaterGun || isValidItem.itemType == ItemType.SabotageIceGun || isValidItem.itemType == ItemType.SabotageSoapGun)
+                {
+                    if (!weapon.enabled)
+                    {
+                        weapon.enabled = true;
+                        weapon.itemType = isValidItem.itemType;
+                        weapon.gun = itemInHand;
+                        weapon.projectileSpawnPoint = itemInHand.GetComponentInChildren<Transform>();
+                        weaponCamera.gameObject.SetActive(true);
+                        itemInHand.gameObject.transform.rotation = transform.rotation;
+                    }
+                    if (!canUseHeldItem)
+                        canUseHeldItem = true;
+                    
+                    Debug.Log("2");
+                }
+                
+            }
+            
+        }
+        else
+        {
+            if (weapon.enabled)
+            {
+                weapon.enabled = false;
+                weapon.projectileSpawnPoint = null;
+                weaponCamera.gameObject.SetActive(false);
+            }
+            //if (!canUseHeldItem)
+            //canUseHeldItem = false;
         }
     }
 
@@ -189,44 +266,25 @@ public class Grab : MonoBehaviour
             
             }
 
-            if (itemInHand)
-            {
-                var isItemASabbotage = itemInHand?.GetComponent<ItemTypeForItem>();
-                if (isItemASabbotage)
-                {
-                    if (isItemASabbotage.itemType == ItemType.SabotageWaterGun)
-                        canUseHeldItem = false;
-                }
-            }
+            //if (itemInHand)
+            //{
+            //    var isItemASabbotage = itemInHand?.GetComponent<ItemTypeForItem>();
+            //    if (isItemASabbotage)
+            //    {
+            //        Debug.Log(isItemASabbotage.itemType);
+            //        if (isItemASabbotage.itemType == ItemType.SabotageWaterGun)
+            //        {
+            //            canUseHeldItem = true;
+            //            weapon.enabled = true;
+            //            Debug.Log("2");
+            //        }
+            //    }
+            //}
 
         }
         
     }
-
-    // [PunRPC]
-    // bool PickupObject(Item itemObject)
-    // {
-    //     if (itemObject)
-    //     {
-    //         _photonView.RPC("RpcPickupItem", RpcTarget.AllBuffered, itemObject.gameObject.transform.position, itemObject.gameObject.transform.rotation);
-    //         
-    //         Debug.Log("updating position and rotation of object picked up");
-    //         
-    //
-    //         return true;
-    //     }
-    //
-    //     return false;
-    // }
-    //
-    // [PunRPC]
-    // protected void OnPickup(int viewId)
-    // {
-    //     PhotonView view = PhotonView.Find(viewId);
-    //
-    //     Debug.Log("id of object is from: " + view.gameObject.name);
-    //     
-    // }
+    
 
     private void OnTriggerStay(Collider other)
     {
@@ -269,16 +327,16 @@ public class Grab : MonoBehaviour
                 itemToPickUp = null;
             }
 
-            if (itemInHand)
-            {
-                var isItemASabbotage = itemInHand?.GetComponent<ItemTypeForItem>();
-                if (isItemASabbotage)
-                {
-                    if (isItemASabbotage.itemType == ItemType.SabotageWaterGun)
-                        canUseHeldItem = false;
-                }
+            //if (itemInHand)
+            //{
+            //    var isItemASabbotage = itemInHand?.GetComponent<ItemTypeForItem>();
+            //    if (isItemASabbotage)
+            //    {
+            //        if (isItemASabbotage.itemType == ItemType.SabotageWaterGun)
+            //            canUseHeldItem = false;
+            //    }
                 
-            }
+            //}
 
 
         }

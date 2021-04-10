@@ -1,9 +1,13 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using Photon.Realtime;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class RepairToolSpawn : MonoBehaviour
 {
+    public string networkItemToSpawn = "";
     public GameObject repairTool;
     public GameObject spawnPoint;
     public Vector3 spawnPointPosition;
@@ -20,27 +24,33 @@ public class RepairToolSpawn : MonoBehaviour
         }
         instance = this;
         spawnPointPosition = spawnPoint.transform.position;
-        repairToolInstance = Instantiate(repairTool, spawnPointPosition, Quaternion.identity);
-        repairToolInstance.GetComponent<RepairToolUse>().spawner = transform.position;
-        spawnTimer += 3;
-        repairTools.Add(repairToolInstance);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            repairToolInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
+            repairToolInstance.GetComponent<RepairToolUse>().spawner = transform.position;
+            spawnTimer += 3;
+            repairTools.Add(repairToolInstance);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        repairToolInstance = GameObject.Find("RepairTool(Clone)");
+        repairToolInstance = GameObject.Find("NetworkRepairTool(Clone)");
 
         if (repairToolInstance == null)
         {
             spawnTimer -= Time.deltaTime;
             if (spawnTimer <= 0)
             {
-                spawnPointPosition = spawnPoint.transform.position;
-                Instantiate(repairTool, spawnPointPosition, Quaternion.identity);
-                spawnTimer = 3;
-                repairTools.Add(repairToolInstance);
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    spawnPointPosition = spawnPoint.transform.position;
+                    repairToolInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
+                    spawnTimer = 3;
+                    repairTools.Add(repairToolInstance);
+                }
             }
 
         }
@@ -52,7 +62,7 @@ public class RepairToolSpawn : MonoBehaviour
                 if (spawnTimer <= 0)
                 {
                     spawnPointPosition = spawnPoint.transform.position;
-                    Instantiate(repairTool, spawnPointPosition, Quaternion.identity);
+                    repairToolInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
                     spawnTimer = 3;
                     repairTools.Add(repairToolInstance);
                 }
@@ -60,7 +70,7 @@ public class RepairToolSpawn : MonoBehaviour
         }
         else
         {
-            Debug.Log(repairTools.Count);
+            //Debug.Log(repairTools.Count);
         }
     }
 
