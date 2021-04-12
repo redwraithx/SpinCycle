@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
@@ -12,12 +13,11 @@ public class Timer : MonoBehaviour
     public Image GameOverImage;
     public Image BlackImage;
     public Animator anim;
-    public Text winnerText;
-    public Text pointText;
     public float player1Points;
     public float player2Points;
     public string player1Name;
     public string player2Name;
+    public TMP_Text pointText;
 
     public int GameOverSceneIndex = 0;
 
@@ -48,16 +48,29 @@ public class Timer : MonoBehaviour
                 if (GameManager.networkLevelManager.playersJoined.Count < 2)
                 {
                     player1Points = GameManager.networkLevelManager.playersJoined[0].GetComponent<PlayerPoints>().points;
-                    Debug.Log("remaining player wins with a score of " + player1Points);
+                    player1Name = GameManager.networkLevelManager.playersJoined[0].name;
+                    pointText.text = ("One player left, remaining player" + player1Name + "wins with a score of " + player1Points);
                 }
                 else if (GameManager.networkLevelManager.playersJoined.Count == 2)
                 {
                     player1Points = GameManager.networkLevelManager.playersJoined[0].GetComponent<PlayerPoints>().points;
                     player2Points = GameManager.networkLevelManager.playersJoined[1].GetComponent<PlayerPoints>().points;
-                    Debug.Log(Mathf.Max(player1Points, player2Points));
+                    player1Name = GameManager.networkLevelManager.playersJoined[0].name;
+                    player2Name = GameManager.networkLevelManager.playersJoined[0].name;
                 }
 
-
+                if(player1Points > player2Points)
+                {
+                    pointText.text = ("player1 wins with a score of " + player1Points);
+                }
+                if (player2Points > player1Points)
+                {
+                    pointText.text = ("player2 wins with a score of " + player2Points);
+                }
+                else if(player1Points == player2Points)
+                {
+                    pointText.text = ("Tied with a score of " + player1Points);
+                }
                 Debug.Log("Time has run out! May want to use a UI element here");
                 timeRemaining = 0;
                 timerIsRunning = false;
