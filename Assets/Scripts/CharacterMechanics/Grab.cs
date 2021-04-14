@@ -50,9 +50,13 @@ public class Grab : MonoBehaviour
             if(itemInHand.GetComponent<ItemTypeForItem>())
                 itemInHand.GetComponent<ItemTypeForItem>().RequestOwnership();
 
+            
+            
             foreach (var itemCollider in itemInHand.GetComponents<Collider>())
             {
-                    itemCollider.enabled = false;
+                Physics.IgnoreCollision(GetComponent<Collider>(), itemCollider, true);
+                
+                    //itemCollider.enabled = false;
             }
             
             itemInHand.GetComponent<Rigidbody>().useGravity = false;
@@ -76,7 +80,8 @@ public class Grab : MonoBehaviour
 
         foreach (var itemCollider in itemInHand.GetComponents<Collider>())
         {
-                itemCollider.enabled = true;
+            Physics.IgnoreCollision(GetComponent<Collider>(), itemCollider, false);
+                //itemCollider.enabled = true;
         }
         
         itemInHand.GetComponent<Rigidbody>().useGravity = true;
@@ -210,7 +215,9 @@ public class Grab : MonoBehaviour
 
         foreach (var itemCollider in itemInHand.GetComponents<Collider>())
         {
-            itemCollider.enabled = true;
+            Physics.IgnoreCollision(GetComponent<Collider>(), itemCollider, false);
+
+            //itemCollider.enabled = true;
         }
         
         itemInHand.GetComponent<Rigidbody>().useGravity = true;
