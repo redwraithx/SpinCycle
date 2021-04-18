@@ -263,5 +263,20 @@ public class PlayerMovementCC : MonoBehaviour
         // v = SQRT(h * -2 * g) or velocity = sqrt(jumpHeight * -2 * gravity)
         return (Mathf.Sqrt((jumpHeight * m_jumpPowerMultiplier) * -2 * (gravity * gravityMulitplier)));
     }
-    
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.name == "EMPSphere")
+        {
+            if (isFrozen == true)
+            {
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                isFrozen = true;
+                Destroy(other.gameObject);
+            }
+        }
+    }
 }
