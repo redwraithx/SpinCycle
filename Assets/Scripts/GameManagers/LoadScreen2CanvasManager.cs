@@ -15,10 +15,11 @@ public class LoadScreen2CanvasManager : MonoBehaviour
     {
         //loadingOperation = SceneManager.LoadSceneAsync("Scenes/Levels/OwenLevel"); // TEMP LOAD FOR SAMPLE SCENE
         //loadingOperation = SceneManager.LoadSceneAsync("AnhHoaiScene");
-        loadingOperation = SceneManager.LoadSceneAsync("MultiplayerTestLevel");
+        //loadingOperation = SceneManager.LoadSceneAsync("MultiplayerTestLevel");
         //loadingOperation = SceneManager.LoadSceneAsync("ChiragCameraScene");
         //loadingOperation = SceneManager.LoadSceneAsync("BrandonLevel_new");
         //loadingOperation = SceneManager.LoadSceneAsync("EvanItemScene");
+        loadingOperation = SceneManager.LoadSceneAsync("PlayerGrabScene");
     }
 
     void Update()

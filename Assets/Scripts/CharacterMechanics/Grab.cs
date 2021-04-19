@@ -10,7 +10,7 @@ public class Grab : MonoBehaviour
     public GameObject weaponCamera;
     [SerializeField] public bool canPickUpItem = false;
     [SerializeField] private bool hasItemInHand = false;
-    [SerializeField] private GameObject itemInHand = null;
+    [SerializeField] internal GameObject itemInHand = null;
     [SerializeField] internal GameObject itemToPickUp = null;
     [SerializeField] internal GameObject objectToInteractWith = null;
     [SerializeField] private ItemTypeForUsingItem machineInteractionObject = null;
