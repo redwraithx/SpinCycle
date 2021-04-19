@@ -12,6 +12,8 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
 
     public PlayerSphereCast playerSphereCastScript = null;
     public Grab grabScript = null;
+    public GrabAndHold grabAndHoldScript = null;
+    public GameObject strengthBarGO = null;
     public PlayerMovementCC playerMovementCCScript = null;
     //public PlayerPoints playerPointsScript = null;
     public GameObject playerPointsGO = null;
@@ -71,6 +73,12 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
                 cameraBrainGO.SetActive(false);
             else
                 gameObject.GetComponentInChildren<CinemachineFreeLook>().gameObject.SetActive(false);
+
+            if (grabAndHoldScript)
+                grabAndHoldScript.enabled = false;
+
+            if (strengthBarGO)
+                strengthBarGO.SetActive(false);
 
             if (cameraBrainShouldGO)
                 cameraBrainShouldGO.SetActive(false);
