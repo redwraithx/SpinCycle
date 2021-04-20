@@ -28,8 +28,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         if (GameManager.networkManager)
         {
             DestroyImmediate(gameObject);
-        }
 
+            return;
+        }
+        
+        
         GameManager.networkManager = this;
             
         DontDestroyOnLoad(this);
@@ -174,9 +177,16 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     
     public override void OnDisconnected(DisconnectCause cause)
     {
-        //base.OnDisconnected(cause);
-
-        feedbackText.text += "\nDisconnected because: " + cause;
+        //
+        
+        
+        
+        if(feedbackText)
+            feedbackText.text += $"\n{PhotonNetwork.NickName} has Disconnected because: " + cause;
+        else
+        {
+            Debug.Log($"{PhotonNetwork.NickName} has disconnected from the game");
+        }
 
         isConnecting = false;
     }
