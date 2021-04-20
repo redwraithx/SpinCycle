@@ -29,8 +29,6 @@ public class AudioManager : MonoBehaviour
         if (GameManager.audioManager)
         {
             DestroyImmediate(gameObject);
-
-            return;
         }
 
         GameManager.audioManager = this;
