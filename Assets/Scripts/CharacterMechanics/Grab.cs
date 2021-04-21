@@ -10,7 +10,7 @@ public class Grab : MonoBehaviour
     public GameObject weaponCamera;
     [SerializeField] public bool canPickUpItem = false;
     [SerializeField] private bool hasItemInHand = false;
-    [SerializeField] internal GameObject itemInHand = null;
+    [SerializeField] private GameObject itemInHand = null;
     [SerializeField] internal GameObject itemToPickUp = null;
     [SerializeField] internal GameObject objectToInteractWith = null;
     [SerializeField] private ItemTypeForUsingItem machineInteractionObject = null;
@@ -50,13 +50,9 @@ public class Grab : MonoBehaviour
             if(itemInHand.GetComponent<ItemTypeForItem>())
                 itemInHand.GetComponent<ItemTypeForItem>().RequestOwnership();
 
-            
-            
             foreach (var itemCollider in itemInHand.GetComponents<Collider>())
             {
-                Physics.IgnoreCollision(GetComponent<Collider>(), itemCollider, true);
-                
-                    //itemCollider.enabled = false;
+                    itemCollider.enabled = false;
             }
             
             itemInHand.GetComponent<Rigidbody>().useGravity = false;
@@ -80,8 +76,7 @@ public class Grab : MonoBehaviour
 
         foreach (var itemCollider in itemInHand.GetComponents<Collider>())
         {
-            Physics.IgnoreCollision(GetComponent<Collider>(), itemCollider, false);
-                //itemCollider.enabled = true;
+                itemCollider.enabled = true;
         }
         
         itemInHand.GetComponent<Rigidbody>().useGravity = true;
@@ -215,9 +210,7 @@ public class Grab : MonoBehaviour
 
         foreach (var itemCollider in itemInHand.GetComponents<Collider>())
         {
-            Physics.IgnoreCollision(GetComponent<Collider>(), itemCollider, false);
-
-            //itemCollider.enabled = true;
+            itemCollider.enabled = true;
         }
         
         itemInHand.GetComponent<Rigidbody>().useGravity = true;
