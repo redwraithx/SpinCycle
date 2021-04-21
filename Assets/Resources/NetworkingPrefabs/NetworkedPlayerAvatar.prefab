@@ -1762,6 +1762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 6848871425079053764}
+  grabHold: {fileID: 0}
   Xspeed: 12
   Zspeed: 10
   gravity: -9.8

@@ -11,6 +11,7 @@ using UnityEngine;
 public class PlayerMovementCC : MonoBehaviour
 {
     public CharacterController controller;
+    public GrabAndHold grabHold;
     public float Xspeed = 12f;
     public float Zspeed = 10f;
     private float m_moveSpeedMultiplier = 1f;
@@ -107,6 +108,9 @@ public class PlayerMovementCC : MonoBehaviour
         
         if (!_photonView.IsMine)
             this.enabled = false;
+
+        if (!grabHold)
+            grabHold = GetComponent<GrabAndHold>();
     }
 
     // Update is called once per frame
@@ -160,11 +164,16 @@ public class PlayerMovementCC : MonoBehaviour
             //if(!GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex])
             if(canDive)
                 StartCoroutine(DiveCoroutine());
+
+            //Input a way to let go of the player when diving.
+            grabHold.isBeingGrabbed = false;
+            grabHold.isHoldingOtherPlayer = false;
             
-            
+
+
         }
-        
-        
+
+
 
 
         // can we jump?
@@ -231,6 +240,7 @@ public class PlayerMovementCC : MonoBehaviour
         
         controller.enabled = true;
         Debug.Log("controller on");
+
     }
     
 
@@ -255,6 +265,10 @@ public class PlayerMovementCC : MonoBehaviour
 
         //GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex] = false;
         canDive = true;
+
+        
+        
+
     }
     
     

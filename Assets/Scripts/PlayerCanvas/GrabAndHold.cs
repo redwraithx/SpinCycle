@@ -9,9 +9,10 @@ public class GrabAndHold : MonoBehaviourPun
     private GameObject targetPlayer = null;
     private Grab grab = null;
     private StrengthBarUI strengthBar = null;
+    private PlayerMovementCC playerCC = null;
     public CapsuleCollider grabCollider = null;
-    bool isBeingGrabbed = false;
-    bool isHoldingOtherPlayer = false;
+    internal bool isBeingGrabbed = false;
+    internal bool isHoldingOtherPlayer = false;
     float playerSpeedWhenBeingGrabed;
 
     PhotonView originalClientPhotonViewID = null;
@@ -30,6 +31,9 @@ public class GrabAndHold : MonoBehaviourPun
 
         if (!strengthBar)
             strengthBar = GetComponent<StrengthBarUI>();
+
+        if (!playerCC)
+            playerCC = GetComponent<PlayerMovementCC>();
 
         if (targetPlayer)
             targetPlayer = null;
@@ -67,18 +71,21 @@ public class GrabAndHold : MonoBehaviourPun
 
 
         }
-        
+
         if(targetPlayer && Input.GetMouseButtonUp(0) && isHoldingOtherPlayer)
         {
             
             //Reverts the becoming of the other player's parent!
             targetPlayersGrabHoldScript.RemoveParent();
 
-           // targetPlayersGrabHoldScript.RequestTransferOwnershipToOriginalHost();
+            // targetPlayersGrabHoldScript.RequestTransferOwnershipToOriginalHost();
 
             targetPlayersGrabHoldScript.isBeingGrabbed = false;
 
             isHoldingOtherPlayer = false;
+
+            
+
         }
     }
     private void OnTriggerEnter(Collider other)
