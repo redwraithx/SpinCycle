@@ -315,8 +315,8 @@ MonoBehaviour:
   Bomb: {fileID: 2552920339261572059}
   Radius: {fileID: 8147367968212161942}
   detonated: 0
-  timer: 0
   startingTimer: 0
+  timerAdjust: 0
 --- !u!114 &7558400885098480695
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3433483721744697369}
   - component: {fileID: 595275633978588371}
   m_Layer: 0
-  m_Name: Dryer 1
+  m_Name: Dryer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,6 +163,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 463c5b1f14b195b48872a78f05cd0e74, type: 2}
+    - target: {fileID: 5181733003640371475, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181733003640371475, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.164
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181733003640371475, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.546
+      objectReference: {fileID: 0}
     - target: {fileID: 5294258101506776683, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: itemType.Array.data[0]
       value: 2
