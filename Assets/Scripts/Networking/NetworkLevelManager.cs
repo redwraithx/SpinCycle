@@ -12,6 +12,10 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
 
     public List<GameObject> playersJoined;
 
+    public GameObject timer;
+
+    bool timerStarted = false;
+
     //public bool[] isPlayersDiveDelayEnabled = new bool[GameManager.networkManager.maxPlayersPerRoom];
     //public float initialDiveReuseDelay = 10f;
     
@@ -63,10 +67,7 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
                 // if we need the host to setup the level it will happen here
                 // game timers etc...
                 // we may want to wait for other players till the room lobby has been setup
-                    // if (PhotonNetwork.CurrentRoom.MaxPlayers == 2)
-                    // {
-                    //     // join room and force all clients to join as well
-                    // }
+                    
             }
             
             
@@ -83,7 +84,28 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
         
 
     }
-    
-    
+
+    private void Update()
+    {
+
+        if (PhotonNetwork.CurrentRoom.PlayerCount <= 2)
+        {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                if(!timerStarted)
+                {
+                    timer.GetComponent<NetworkedTimerNew>().InitializeTimer();
+                    timerStarted = true;
+                }
+
+            }
+
+        }
+
+
+
+    }
+
+
 
 }
