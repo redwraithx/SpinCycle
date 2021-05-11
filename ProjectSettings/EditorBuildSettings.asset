@@ -4,55 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/LoadScreens/TitleScreen.unity
-    guid: 1673f559ea0d47547aacd2dcf06c2baf
-  - enabled: 1
-    path: Assets/Scenes/Menu/MainMenuScene.unity
-    guid: 8765085149a651b4db02dd8e0ae25954
-  - enabled: 1
-    path: Assets/Scenes/Menu/SettingsMenu.unity
-    guid: 1a4b0b2fb2026ee42b537c5374d01f63
-  - enabled: 1
-    path: Assets/Scenes/LoadScreens/LoadingScreen1.unity
-    guid: becbbd453bd30584d972b0b7a5dea3be
-  - enabled: 1
-    path: Assets/Scenes/Menu/BasicLobbyRoom.unity
-    guid: 7aa2d5d2b2f0389418bd9c455f0109c2
-  - enabled: 1
-    path: Assets/Scenes/LoadScreens/LoadingScreen2.unity
-    guid: b7d2d09e80bb4424c9eab97d39f70a01
-  - enabled: 1
-<<<<<<< Updated upstream
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/AnhHoaiScene.unity
-    guid: 23271ed24321add4c9a9cd4f81b34e00
-=======
-    path: Assets/Scenes/Menu/BasicLobbyRoom.unity
-    guid: 7aa2d5d2b2f0389418bd9c455f0109c2
-  - enabled: 1
-    path: Assets/Scenes/ProgrammerScenes/Brian/MultiplayerTestLevel.unity
-    guid: 1f6cea932d730e04d98ad959594d229d
-  - enabled: 1
-    path: Assets/Scenes/Levels/BrandonLevel_new.unity
-    guid: bdaa00e9f414a0a4cb38d24cb78309e0
-  - enabled: 1
-    path: Assets/Scenes/ProgrammerScenes/AnhHoai/AnhHoaiScene.unity
-    guid: 23271ed24321add4c9a9cd4f81b34e00
-  - enabled: 1
-    path: Assets/Scenes/ProgrammerScenes/Chirag/ChiragCameraScene.unity
-    guid: 120b027452079274885c6e3606c00886
-  - enabled: 1
-    path: Assets/Scenes/ProgrammerScenes/Evan/EvanItemScene.unity
-    guid: efe1b4379c895304ab395ba956939113
-  - enabled: 1
-    path: Assets/Scenes/ProgrammerScenes/Owen/PhysicsPlayground.unity
-    guid: 7c7d8d04d85772445a0f42beb0c1c4ae
->>>>>>> Stashed changes
-  - enabled: 1
-    path: Assets/Scenes/Menu/GameOverMenu.unity
-    guid: 4c5352f1104eee844921703af6d4dc9c
+  m_Scenes: []
   m_configObjects: {}

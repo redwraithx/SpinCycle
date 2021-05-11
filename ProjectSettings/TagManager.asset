@@ -3,24 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - VendingMachine
-  - Item
-  - PlayerSpawner
-  - WashingMachine
-  - Machine
-<<<<<<< Updated upstream
-=======
-  - Bullet
-  - NetworkManager
-  - ProjectileSpawnPoint
-  - PointsCounter
-  - Ground
-  - YourPlayersNameInputBox
-  - JoinThisGameButton
-  - ConnectionFeedbackInfoText
-  - Light
->>>>>>> Stashed changes
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -30,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
-  - Entities
-  - Usable Objects
-  - Items
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
