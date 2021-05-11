@@ -9,6 +9,18 @@ TagManager:
   - PlayerSpawner
   - WashingMachine
   - Machine
+<<<<<<< Updated upstream
+=======
+  - Bullet
+  - NetworkManager
+  - ProjectileSpawnPoint
+  - PointsCounter
+  - Ground
+  - YourPlayersNameInputBox
+  - JoinThisGameButton
+  - ConnectionFeedbackInfoText
+  - Light
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
