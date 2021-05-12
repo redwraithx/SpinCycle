@@ -119,12 +119,19 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         //
         // laundry.GetComponent<Item>().EnableObject();
 
-
-        if(PhotonNetwork.IsMasterClient)
+        GameObject newGO = null;
+        if (PhotonNetwork.IsMasterClient)
         {
-            var newGO = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), itemSpawnPoint.transform.position, itemSpawnPoint.transform.rotation, 0);
+            newGO = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), itemSpawnPoint.transform.position, itemSpawnPoint.transform.rotation, 0);
+        }
+
+        if (newGO)
+        {
+            Debug.Log($"new Item Type: {SpawnFinishedProductItemType}");
+            
             newGO.GetComponent<ItemTypeForItem>().itemType = SpawnFinishedProductItemType;
         }
+            
 
         Debug.Log("final owner is: " + _photonView.Owner);
         
@@ -296,12 +303,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     
     public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
     {
-        Debug.Log("requesting ownership for: " + requestingPlayer.NickName + " of machine viewID: " + targetView.ViewID);
+        Debug.Log("requesting ownership by: " + requestingPlayer.NickName + " of machine viewID: " + targetView.ViewID);
 
         if (targetView != base.photonView)
             return;
         
-        //photonView.TransferOwnership(requestingPlayer);
         
         base.photonView.TransferOwnership(requestingPlayer);
         
@@ -338,18 +344,14 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             
             stream.SendNext(textString);
             stream.SendNext(counter);
-            
-            
-            
+            showTextString = $"Sending: {counter}";
+
+
             stream.SendNext(laundryTimer);
             stream.SendNext(cycleLength);
             stream.SendNext(isEnabled);
 
-            
-            
-            showTextString = $"Sending: {counter}";
-            
-            
+
             counter++;
         }
         else if(stream.IsReading)
@@ -358,8 +360,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             
             string newTextString = (string) stream.ReceiveNext();
             int newCounter = (int) stream.ReceiveNext();
+            showTextString = $"Receiving: {newCounter}";
 
-            
+
             float laundry = (float) stream.ReceiveNext();
             float cycle = (float) stream.ReceiveNext();
             bool sliderIsEnabled = (bool) stream.ReceiveNext();
@@ -369,15 +372,12 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
             if (cycle > cycleLength || cycle < cycleLength)
                 cycleLength = cycle;
-            
+
             if (isEnabled != sliderIsEnabled)
                 isEnabled = sliderIsEnabled;
-            
-            
+
+
             Debug.Log($"LaundryTimer: {laundryTimer}\ncycleLength: {cycleLength}\nsiEnabled: {isEnabled}");
-            
-            
-            showTextString = $"Receiving: {newCounter}";
         }
     }
 }
