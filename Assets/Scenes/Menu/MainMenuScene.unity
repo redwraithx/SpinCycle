@@ -912,7 +912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.06488074, g: 0.509434, b: 0.49379033, a: 1}
+  m_Color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1259,6 +1259,7 @@ MonoBehaviour:
   backToMainButton: {fileID: 0}
   playButton: {fileID: 0}
   settingsButton: {fileID: 1085891431}
+  MainMenuSceneIndex: 0
 --- !u!1 &1707402318
 GameObject:
   m_ObjectHideFlags: 0
