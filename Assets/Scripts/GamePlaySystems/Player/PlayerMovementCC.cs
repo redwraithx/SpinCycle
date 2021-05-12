@@ -1,30 +1,30 @@
-﻿
-<<<<<<< HEAD
-=======
+
 using System;
 using System.Collections;
 using Cinemachine;
 using Photon.Pun;
 using Photon.Realtime;
-
-
->>>>>>> main
 using UnityEngine;
 
 public class PlayerMovementCC : MonoBehaviour
 {
     public CharacterController controller;
+    public GrabAndHold grabHold;
     public float Xspeed = 12f;
     public float Zspeed = 10f;
     private float m_moveSpeedMultiplier = 1f;
     private float m_jumpPowerMultiplier = 1f;
-    
+
+    public float slowedXspeed = 4f;
+    public float slowedZspeed = 3f;
+    public bool isGrabbed = false;
+
+
     public float gravity = -9.8f;
     public float gravityMulitplier = 2f;
     public float jumpHeight = 3f;
 
-<<<<<<< HEAD
-=======
+
     public float diveSpeed = 100f;
     public float diveMultiplier = 1f;
     public float _dashTime = 0f;
@@ -33,8 +33,8 @@ public class PlayerMovementCC : MonoBehaviour
     public Rigidbody rb = null;
     public Transform playerModelTransform = null;
     public int playerDiveIndex = 0;
-    
->>>>>>> main
+
+
     public Transform groundCheck;
     public float groundDistance;
     public LayerMask groundMask;
@@ -44,8 +44,6 @@ public class PlayerMovementCC : MonoBehaviour
     private Vector3 velocity;
     public bool isGrounded;
 
-<<<<<<< HEAD
-=======
     private bool canDive = true;
     public float diveReuseDelayTime = 1f;
 
@@ -57,7 +55,6 @@ public class PlayerMovementCC : MonoBehaviour
     private Vector3 correctPosition = Vector3.zero;
     private Quaternion correctRotation = Quaternion.identity;
 
->>>>>>> main
     public float MoveSpeed
     {
         get => m_moveSpeedMultiplier;
@@ -79,14 +76,6 @@ public class PlayerMovementCC : MonoBehaviour
     {
         m_jumpPowerMultiplier = 3.5f;
     }
-<<<<<<< HEAD
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-=======
 
 
     private void Awake()
@@ -124,17 +113,15 @@ public class PlayerMovementCC : MonoBehaviour
         
         if (!_photonView.IsMine)
             this.enabled = false;
->>>>>>> main
+
+        if (!grabHold)
+            grabHold = GetComponent<GrabAndHold>();
+            
     }
 
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
-=======
-        
-        
->>>>>>> main
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -142,23 +129,25 @@ public class PlayerMovementCC : MonoBehaviour
             velocity.y = -2f;
         }
         
-<<<<<<< HEAD
-        float moveX = Input.GetAxis("Horizontal") * ((Xspeed * m_moveSpeedMultiplier) * Time.deltaTime);
-        float moveZ = Input.GetAxis("Vertical") * ((Zspeed * m_moveSpeedMultiplier) * Time.deltaTime);;
-
-        //Vector3 move = transform.right * moveX + transform.forward * moveZ;
-
-        transform.Rotate(0F, moveX * rotationSpeed, 0f);
-
-
-        Vector3 move = transform.forward * moveZ;
         
-        controller.Move(move);
-=======
         if(isFrozen == false)
         {
-            float moveX = Input.GetAxis("Horizontal") * ((Xspeed * m_moveSpeedMultiplier) * Time.deltaTime);
-            float moveZ = Input.GetAxis("Vertical") * ((Zspeed * m_moveSpeedMultiplier) * Time.deltaTime);
+            float moveX;
+            float moveZ;
+
+            if (!isGrabbed)
+            {
+                moveX = Input.GetAxis("Horizontal") * ((Xspeed * m_moveSpeedMultiplier) * Time.deltaTime);
+                moveZ = Input.GetAxis("Vertical") * ((Zspeed * m_moveSpeedMultiplier) * Time.deltaTime);
+            }
+            else
+            {
+                moveX = Input.GetAxis("Horizontal") * ((slowedXspeed * m_moveSpeedMultiplier) * Time.deltaTime);
+                moveZ = Input.GetAxis("Vertical") * ((slowedZspeed * m_moveSpeedMultiplier) * Time.deltaTime);
+            }
+                
+
+
 
             transform.Rotate(0F, moveX * rotationSpeed, 0f);
 
@@ -194,12 +183,16 @@ public class PlayerMovementCC : MonoBehaviour
             //if(!GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex])
             if(canDive)
                 StartCoroutine(DiveCoroutine());
-            
-            
+
+            //Input a way to let go of the player when diving.
+            grabHold.isBeingGrabbed = false;
+            grabHold.isHoldingOtherPlayer = false;
+
+            GetComponent<GrabAndHold>().BeingReleased();
+            SpeedUp();
+
         }
-        
-        
->>>>>>> main
+
 
 
         // can we jump?
@@ -211,11 +204,6 @@ public class PlayerMovementCC : MonoBehaviour
         velocity.y += (gravity * gravityMulitplier) * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
-<<<<<<< HEAD
-    }
-
-
-=======
         
         
     }
@@ -223,6 +211,9 @@ public class PlayerMovementCC : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!_photonView)
+            return;
+
         if (!_photonView.IsMine)
         {
             transform.position = Vector3.Lerp(transform.position, correctPosition, Time.fixedDeltaTime * 5);
@@ -271,6 +262,9 @@ public class PlayerMovementCC : MonoBehaviour
         
         controller.enabled = true;
         Debug.Log("controller on");
+
+        
+
     }
     
 
@@ -295,14 +289,28 @@ public class PlayerMovementCC : MonoBehaviour
 
         //GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex] = false;
         canDive = true;
+
+        
+
+
     }
-    
-    
->>>>>>> main
+
     private float Jump()
     {
         // v = SQRT(h * -2 * g) or velocity = sqrt(jumpHeight * -2 * gravity)
         return (Mathf.Sqrt((jumpHeight * m_jumpPowerMultiplier) * -2 * (gravity * gravityMulitplier)));
     }
     
+    public void SlowDown()
+    {
+        isGrabbed = true;
+    }
+
+    public void SpeedUp()
+    {
+        isGrabbed = false;
+
+
+    }
+
 }

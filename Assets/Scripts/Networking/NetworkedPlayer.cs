@@ -10,8 +10,10 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
 {
     public static GameObject LocalPlayerInstance = null; // this is your character when your playing
 
+   
     public PlayerSphereCast playerSphereCastScript = null;
     public Grab grabScript = null;
+    public GrabAndHold grabAndHoldScript = null;
     public PlayerMovementCC playerMovementCCScript = null;
     //public PlayerPoints playerPointsScript = null;
     public GameObject playerPointsGO = null;
@@ -56,6 +58,11 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
                 grabScript.enabled = false;
             else
                 gameObject.GetComponent<Grab>().enabled = false;
+
+            if (grabAndHoldScript)
+                grabScript.enabled = false;
+            else
+                gameObject.GetComponent<GrabAndHold>().enabled = false;
 
             if (playerMovementCCScript)
                 playerMovementCCScript.enabled = false;
