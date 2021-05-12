@@ -27,15 +27,15 @@ public class Timer : MonoBehaviour
     public GameObject vStand;
     public GameObject loserVille;
     public GameObject vStandPrefab;
-    
+
+    public NetworkedTimerNew networkedTimer;
 
     public int GameOverSceneIndex = 0;
 
     private void Start()
     {
         // Starts the timer automatically
-        timerIsRunning = true;
-
+        networkedTimer = GameObject.FindGameObjectWithTag("Timer").GetComponent<NetworkedTimerNew>();
     }
 
     void Update()
@@ -46,11 +46,19 @@ public class Timer : MonoBehaviour
         //    timerIsRunning = true;
         //}
 
+        if (networkedTimer.currentMatchTime <= 0.1)
+        {
+            timerIsRunning = false;
+        }
+        else
+        {
+            timerIsRunning = true;
+        }
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
             {
-                timeRemaining -= Time.deltaTime;
+                timeRemaining = networkedTimer.currentMatchTime - 1f; 
                 DisplayTime(timeRemaining);
             }
             else
