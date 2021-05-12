@@ -88,7 +88,7 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
     private void Update()
     {
 
-        if (PhotonNetwork.CurrentRoom.PlayerCount <= 2)
+        if (PhotonNetwork.CurrentRoom.PlayerCount >= 2)
         {
             if (PhotonNetwork.IsMasterClient)
             {

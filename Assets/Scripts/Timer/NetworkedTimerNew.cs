@@ -10,7 +10,7 @@ public class NetworkedTimerNew : MonoBehaviourPunCallbacks, IOnEventCallback
 {
 
     public int matchLength = 180;
-    private int currentMatchTime;
+    public int currentMatchTime;
 
     private Coroutine timerCoroutine;
     public const byte refreshTimer = 1;
@@ -18,7 +18,6 @@ public class NetworkedTimerNew : MonoBehaviourPunCallbacks, IOnEventCallback
 
     //use for demonstration of effect
     public Text ui_timer;
-
 
     // Start is called before the first frame update
     void Start()
