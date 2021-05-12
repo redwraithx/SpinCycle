@@ -17,7 +17,17 @@ public class Timer : MonoBehaviour
     public float player2Points;
     public string player1Name;
     public string player2Name;
+
+    public TMP_Text pointText2;
     public TMP_Text pointText;
+    public TMP_Text loserText;
+
+    public GameObject winner;
+    public GameObject loser;
+    public GameObject vStand;
+    public GameObject loserVille;
+    public GameObject vStandPrefab;
+    
 
     public int GameOverSceneIndex = 0;
 
@@ -49,32 +59,42 @@ public class Timer : MonoBehaviour
                 {
                     player1Points = GameManager.networkLevelManager.playersJoined[0].GetComponent<PlayerPoints>().points;
                     player1Name = GameManager.networkLevelManager.playersJoined[0].name;
-                    pointText.text = ("One player left, remaining player" + player1Name + "wins with a score of " + player1Points);
+                    winner = GameManager.networkLevelManager.playersJoined[0];
+                    pointText.text = player1Points.ToString();
+                    pointText2.text = ("Abandoned Match");
+                    loserText.text = ("Coward");
                 }
                 else if (GameManager.networkLevelManager.playersJoined.Count == 2)
                 {
                     player1Points = GameManager.networkLevelManager.playersJoined[0].GetComponent<PlayerPoints>().points;
                     player2Points = GameManager.networkLevelManager.playersJoined[1].GetComponent<PlayerPoints>().points;
                     player1Name = GameManager.networkLevelManager.playersJoined[0].name;
-                    player2Name = GameManager.networkLevelManager.playersJoined[0].name;
-                }
+                    player2Name = GameManager.networkLevelManager.playersJoined[1].name;
 
-                if(player1Points > player2Points)
-                {
-                    pointText.text = ("player1 wins with a score of " + player1Points);
+                    if (player1Points > player2Points)
+                    {
+                        pointText.text = player1Points.ToString();
+                        pointText2.text = player2Points.ToString();
+                        winner = GameManager.networkLevelManager.playersJoined[0];
+                        loser = GameManager.networkLevelManager.playersJoined[1];
+                    }
+                    if (player2Points > player1Points)
+                    {
+                        pointText2.text = player1Points.ToString();
+                        pointText.text = player2Points.ToString();
+                        winner = GameManager.networkLevelManager.playersJoined[1];
+                        loser = GameManager.networkLevelManager.playersJoined[0];
+                    }
+                    else if (player1Points == player2Points)
+                    {
+                        pointText.text = ("Tied");
+                        loserText.text = ("Tied");
+                        winner = GameManager.networkLevelManager.playersJoined[1];
+                        loser = GameManager.networkLevelManager.playersJoined[0];
+                    }
                 }
-                if (player2Points > player1Points)
-                {
-                    pointText.text = ("player2 wins with a score of " + player2Points);
-                }
-                else if(player1Points == player2Points)
-                {
-                    pointText.text = ("Tied with a score of " + player1Points);
-                }
-                Debug.Log("Time has run out! May want to use a UI element here");
                 timeRemaining = 0;
                 timerIsRunning = false;
-                GameOverImage.gameObject.SetActive(true);
                 StartCoroutine(Fading());
             }
         }
@@ -95,7 +115,19 @@ public class Timer : MonoBehaviour
     {
         anim.SetBool("Fade", true);
         yield return new WaitUntil(() => BlackImage.color.a == 1);
-        SceneManager.LoadScene(GameOverSceneIndex);
+        vStandPrefab.gameObject.SetActive(true);
+        winner.gameObject.GetComponent<PlayerMovementCC>().enabled = false;
+        winner.gameObject.transform.position = vStand.transform.position;
+        winner.gameObject.transform.rotation = vStand.transform.rotation;
+        if(GameManager.networkLevelManager.playersJoined.Count == 2)
+        {
+            loser.gameObject.GetComponent<PlayerMovementCC>().enabled = false;
+            loser.gameObject.transform.position = loserVille.transform.position;
+            loser.gameObject.transform.rotation = loserVille.transform.rotation;
+        }
+        //SceneManager.LoadScene(GameOverSceneIndex);
 
     }
+
+
 }
