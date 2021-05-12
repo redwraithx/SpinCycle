@@ -1184,6 +1184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSphereCastScript: {fileID: 1390668085025345390}
   grabScript: {fileID: 3463295151114985727}
+  grabAndHoldScript: {fileID: 5727379525457626761}
   playerMovementCCScript: {fileID: 6848871425079053765}
   playerPointsGO: {fileID: 5674233446801159402}
   rb: {fileID: 6848871425079053761}
@@ -1280,6 +1281,9 @@ MonoBehaviour:
   grabHold: {fileID: 0}
   Xspeed: 12
   Zspeed: 10
+  slowedXspeed: 4
+  slowedZspeed: 3
+  isGrabbed: 0
   gravity: -9.8
   gravityMulitplier: 2
   jumpHeight: 3
@@ -1329,6 +1333,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPlayer: {fileID: 0}
   grabCollider: {fileID: 4855654507495282724}
+  holdTimeDuration: 5
+  currentHoldTimer: 0
+  isHoldTimerEnabled: 0
+  hasLostGripOfPlayer: 0
+  textString: Sending
+  showTextString: 
+  counter: 0
 --- !u!143 &6848871425079053764
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1380,8 +1391,9 @@ MonoBehaviour:
   prefixField: -1
   observableSearch: 2
   Synchronization: 1
-  OwnershipTransfer: 2
+  OwnershipTransfer: 1
   ObservedComponents:
+  - {fileID: 5727379525457626761}
   - {fileID: 7267682287793758200}
   - {fileID: 6848871425079053766}
   viewIdField: 0
@@ -1946,7 +1958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6865062880335169961, guid: a8a7c944f6609f342a52ec354c0e36c4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.268
       objectReference: {fileID: 0}
     - target: {fileID: 6865062880335169961, guid: a8a7c944f6609f342a52ec354c0e36c4, type: 3}
       propertyPath: m_LocalRotation.x
