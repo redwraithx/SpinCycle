@@ -32,7 +32,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public MachineType machineType;
     public ParticleSystem part;
     
-    public ItemType SpawnFinishedProductItemType = ItemType.ClothingWet
+    public ItemType SpawnFinishedProductItemType = ItemType.ClothingWet;
 
     public string textString = "Sending";
     public string showTextString = "";
