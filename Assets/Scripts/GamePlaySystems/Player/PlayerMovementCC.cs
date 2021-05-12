@@ -1,4 +1,6 @@
 ﻿
+<<<<<<< HEAD
+=======
 using System;
 using System.Collections;
 using Cinemachine;
@@ -6,6 +8,7 @@ using Photon.Pun;
 using Photon.Realtime;
 
 
+>>>>>>> main
 using UnityEngine;
 
 public class PlayerMovementCC : MonoBehaviour
@@ -20,6 +23,8 @@ public class PlayerMovementCC : MonoBehaviour
     public float gravityMulitplier = 2f;
     public float jumpHeight = 3f;
 
+<<<<<<< HEAD
+=======
     public float diveSpeed = 100f;
     public float diveMultiplier = 1f;
     public float _dashTime = 0f;
@@ -29,6 +34,7 @@ public class PlayerMovementCC : MonoBehaviour
     public Transform playerModelTransform = null;
     public int playerDiveIndex = 0;
     
+>>>>>>> main
     public Transform groundCheck;
     public float groundDistance;
     public LayerMask groundMask;
@@ -38,6 +44,8 @@ public class PlayerMovementCC : MonoBehaviour
     private Vector3 velocity;
     public bool isGrounded;
 
+<<<<<<< HEAD
+=======
     private bool canDive = true;
     public float diveReuseDelayTime = 1f;
 
@@ -49,6 +57,7 @@ public class PlayerMovementCC : MonoBehaviour
     private Vector3 correctPosition = Vector3.zero;
     private Quaternion correctRotation = Quaternion.identity;
 
+>>>>>>> main
     public float MoveSpeed
     {
         get => m_moveSpeedMultiplier;
@@ -70,6 +79,14 @@ public class PlayerMovementCC : MonoBehaviour
     {
         m_jumpPowerMultiplier = 3.5f;
     }
+<<<<<<< HEAD
+    
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+=======
 
 
     private void Awake()
@@ -107,13 +124,17 @@ public class PlayerMovementCC : MonoBehaviour
         
         if (!_photonView.IsMine)
             this.enabled = false;
+>>>>>>> main
     }
 
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
+=======
         
         
+>>>>>>> main
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -121,6 +142,19 @@ public class PlayerMovementCC : MonoBehaviour
             velocity.y = -2f;
         }
         
+<<<<<<< HEAD
+        float moveX = Input.GetAxis("Horizontal") * ((Xspeed * m_moveSpeedMultiplier) * Time.deltaTime);
+        float moveZ = Input.GetAxis("Vertical") * ((Zspeed * m_moveSpeedMultiplier) * Time.deltaTime);;
+
+        //Vector3 move = transform.right * moveX + transform.forward * moveZ;
+
+        transform.Rotate(0F, moveX * rotationSpeed, 0f);
+
+
+        Vector3 move = transform.forward * moveZ;
+        
+        controller.Move(move);
+=======
         if(isFrozen == false)
         {
             float moveX = Input.GetAxis("Horizontal") * ((Xspeed * m_moveSpeedMultiplier) * Time.deltaTime);
@@ -165,6 +199,7 @@ public class PlayerMovementCC : MonoBehaviour
         }
         
         
+>>>>>>> main
 
 
         // can we jump?
@@ -176,6 +211,11 @@ public class PlayerMovementCC : MonoBehaviour
         velocity.y += (gravity * gravityMulitplier) * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+<<<<<<< HEAD
+    }
+
+
+=======
         
         
     }
@@ -258,6 +298,7 @@ public class PlayerMovementCC : MonoBehaviour
     }
     
     
+>>>>>>> main
     private float Jump()
     {
         // v = SQRT(h * -2 * g) or velocity = sqrt(jumpHeight * -2 * gravity)

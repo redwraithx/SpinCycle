@@ -9,7 +9,10 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
 {
     //add index for button hover
     public GameObject VendingUI;
+<<<<<<< HEAD
+=======
     public ButtonHover[] buttonHoverScripts;
+>>>>>>> main
     public Button closeButton;
 
     [SerializeField] internal GameObject currentUser = null;
@@ -37,7 +40,11 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
     
     private void OnTriggerStay(Collider other)
     {
+<<<<<<< HEAD
+        Debug.Log("press E to spawn item trigger");
+=======
         Debug.Log("press E to spawn item trigger (stay)");
+>>>>>>> main
 
         if (other.gameObject.CompareTag("Player"))
         {
@@ -55,10 +62,13 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
         {
             CloseUI();
         }
+<<<<<<< HEAD
+=======
         if (!VendingUI.activeInHierarchy)
         {
             CloseUI();
         }
+>>>>>>> main
     }
 
     private void Update()
@@ -68,6 +78,8 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
         {
             Debug.Log("User using vending machine trigger");
             VendingUI.SetActive(true);
+<<<<<<< HEAD
+=======
 
             foreach (var buttonHoverScript in buttonHoverScripts)
             {
@@ -78,6 +90,7 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
                 buttonHoverScript.Name.SetActive(false);
             }
             
+>>>>>>> main
             
             // enable mouse
             Cursor.lockState = CursorLockMode.None;
