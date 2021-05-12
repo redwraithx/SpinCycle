@@ -69,6 +69,7 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
 
         PhotonNetwork.SendRate = 20;
         
+        
     }
 
     private void OnEnable()
@@ -80,9 +81,15 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
                 collider.enabled = true;
             }
         }
+        
+        PhotonNetwork.AddCallbackTarget(this);
     }
 
-
+    private void OnDestroy()
+    {
+        PhotonNetwork.RemoveCallbackTarget(this);
+    }
+    
 
     private void Update()
     {
@@ -244,7 +251,27 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
         gameObject.SetActive(true);
     }
 
+    // [PunRPC]
+    // public void DestroyObject()//PhotonView view)
+    // {
+    //     // if (view.ViewID == photonView.ViewID)
+    //     // {
+    //         Debug.Log("destroy object");
+    //         
+    //         //Destroy(gameObject);
+    //     //}
+    // }
+    //
+    // public void RemoveThisObject()
+    // {
+    //     photonView.RPC("DestroyObject", RpcTarget.Others, 0);//1, _photonView);
+    // }
 
+    
+
+
+    
+    
 }
 
 
