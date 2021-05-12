@@ -5,7 +5,11 @@ using UnityEngine.UI;
 using GamePlaySystems.Utilities;
 using System.Collections;
 
-public class LaundryBasket : MonoBehaviour
+using Photon.Pun;
+using Photon.Realtime;
+
+
+public class LaundryBasket : MonoBehaviourPun
 {
 
     public Text pointsText = null;
@@ -52,7 +56,9 @@ public class LaundryBasket : MonoBehaviour
                 //above two lines aren't needed for this code to run, only for debugging purposes
 
                 playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
-                other.gameObject.SetActive(false);
+                //other.gameObject.SetActive(false);
+                
+                PhotonNetwork.Destroy(other.gameObject);
 
                 //pointsToText = points.ToString();
                 //Debug.Log(pointsToText);

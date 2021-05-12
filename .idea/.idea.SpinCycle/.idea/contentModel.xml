@@ -976,6 +976,9 @@
             <e p="ItemSpawner" t="Include">
               <e p="Network_ItemSpawn.cs" t="Include" />
             </e>
+            <e p="MaschinesSpawner" t="Include">
+              <e p="Network_MachineSpawn.cs" t="Include" />
+            </e>
             <e p="NetworkedPlayer.cs" t="Include" />
             <e p="NetworkLevelManager.cs" t="Include" />
             <e p="NetworkManager.cs" t="Include" />
