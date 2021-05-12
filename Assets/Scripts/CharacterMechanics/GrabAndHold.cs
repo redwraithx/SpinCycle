@@ -4,9 +4,9 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class GrabAndHold : MonoBehaviourPun
+public class GrabAndHold : MonoBehaviourPunCallbacks
 {
-    private GameObject targetPlayer = null;
+    public GameObject targetPlayer = null;
     private Grab grab = null;
     private StrengthBarUI strengthBar = null;
     private PlayerMovementCC playerCC = null;
@@ -14,6 +14,7 @@ public class GrabAndHold : MonoBehaviourPun
     internal bool isBeingGrabbed = false;
     internal bool isHoldingOtherPlayer = false;
     float playerSpeedWhenBeingGrabed;
+    private bool isGettingOwnership = false;
 
     PhotonView originalClientPhotonViewID = null;
     PhotonView myPhotonViewID = null;
@@ -43,48 +44,54 @@ public class GrabAndHold : MonoBehaviourPun
         {
             Physics.IgnoreCollision(grabCollider, collider, true);
         }
+
+        
     }
 
     private void Update()
     {
-        CheckGrab();
+        if (targetPlayer)
+            CheckGrab();
     }
 
     private void CheckGrab() 
-    { 
-        GrabAndHold targetPlayersGrabHoldScript = null;
-        if (targetPlayer)
-             targetPlayersGrabHoldScript = targetPlayer.GetComponent<GrabAndHold>();
+    {
+        GrabAndHold otherPlayersGrabAndHoldScript = targetPlayer.GetComponent<GrabAndHold>();
+
+        if (!otherPlayersGrabAndHoldScript)
+            return;
 
         if (targetPlayer && Input.GetMouseButtonDown(0) && !isBeingGrabbed)
         {
+            if (!targetPlayer)
+                return;
 
-            isHoldingOtherPlayer = true;
+            otherPlayersGrabAndHoldScript.isBeingGrabbed = true;
 
-            targetPlayersGrabHoldScript.isBeingGrabbed = true;
 
-            //targetPlayersGrabHoldScript.RequestOwnerShip(photonView);
+
+            
 
             //You become the other player's parent!
-            targetPlayersGrabHoldScript.SetParent(transform);
+            otherPlayersGrabAndHoldScript.SetParent(transform);
 
 
+
+            isHoldingOtherPlayer = true;
 
         }
 
         if(targetPlayer && Input.GetMouseButtonUp(0) && isHoldingOtherPlayer)
         {
-            
+
             //Reverts the becoming of the other player's parent!
-            targetPlayersGrabHoldScript.RemoveParent();
-
-            // targetPlayersGrabHoldScript.RequestTransferOwnershipToOriginalHost();
-
-            targetPlayersGrabHoldScript.isBeingGrabbed = false;
+            otherPlayersGrabAndHoldScript.RemoveParent();
+                    
+            otherPlayersGrabAndHoldScript.isBeingGrabbed = false;
 
             isHoldingOtherPlayer = false;
 
-            
+            otherPlayersGrabAndHoldScript.RequestOwnerShip(photonView);
 
         }
     }
