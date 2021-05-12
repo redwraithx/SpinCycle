@@ -16,11 +16,19 @@ namespace RedWraith.Player
 
         private bool isAlive = true;
 
+<<<<<<< HEAD
+        // Start is called before the first frame update
+=======
+>>>>>>> main
         void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
 
+<<<<<<< HEAD
+        // Update is called once per frame
+=======
+>>>>>>> main
         void Update()
         {
             if (!isAlive)
@@ -42,6 +50,12 @@ namespace RedWraith.Player
                 
                 playerBody.Rotate(bodyRotate, Space.World);
             }
+<<<<<<< HEAD
+        
+             
+
+=======
+>>>>>>> main
 
         }
 

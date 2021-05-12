@@ -1,12 +1,36 @@
 ﻿using UnityEngine;
 using EnumSpace;
+<<<<<<< HEAD
+=======
 using Photon.Pun;
 using Photon.Realtime;
 
+>>>>>>> main
 
 namespace GamePlaySystems.Utilities
 {
 
+<<<<<<< HEAD
+    public class ItemTypeForItem : MonoBehaviour
+    {
+
+        public ItemType itemType;
+        public LaundryType laundryType;
+
+        public enum ItemType
+        {
+            None,
+            ClothingDirty,
+            ClothingWet,
+            ClothingUnfolded,
+            ClothingDone,
+            SabotageWaterGun,
+            SabotageClothing
+        }
+    }
+
+    
+=======
     public class ItemTypeForItem : MonoBehaviourPunCallbacks
     {
         public ItemType itemType;
@@ -57,4 +81,5 @@ namespace GamePlaySystems.Utilities
 
     
     
+>>>>>>> main
 }

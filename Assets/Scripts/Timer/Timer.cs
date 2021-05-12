@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+<<<<<<< HEAD
+=======
 using UnityEngine.SceneManagement;
 using TMPro;
+>>>>>>> main
 
 public class Timer : MonoBehaviour
 {
     public float timeRemaining = 10;
     public bool timerIsRunning = false;
     public Text timeText;
+<<<<<<< HEAD
+=======
     public Image GameOverImage;
     public Image BlackImage;
     public Animator anim;
@@ -31,15 +36,22 @@ public class Timer : MonoBehaviour
     public NetworkedTimerNew networkedTimer;
 
     public int GameOverSceneIndex = 0;
+>>>>>>> main
 
     private void Start()
     {
         // Starts the timer automatically
+<<<<<<< HEAD
+        timerIsRunning = true;
+=======
         networkedTimer = GameObject.FindGameObjectWithTag("Timer").GetComponent<NetworkedTimerNew>();
+>>>>>>> main
     }
 
     void Update()
     {
+<<<<<<< HEAD
+=======
         //if (GameManager.networkLevelManager.playersJoined.Count == 2)
         //{
         //    Debug.Log("2 players in scene and the clock is ticking");
@@ -54,15 +66,27 @@ public class Timer : MonoBehaviour
         {
             timerIsRunning = true;
         }
+>>>>>>> main
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
             {
+<<<<<<< HEAD
+                timeRemaining -= Time.deltaTime;
+=======
                 timeRemaining = networkedTimer.currentMatchTime - 1f; 
+>>>>>>> main
                 DisplayTime(timeRemaining);
             }
             else
             {
+<<<<<<< HEAD
+                Debug.Log("Time has run out!");
+                timeRemaining = 0;
+                timerIsRunning = false;
+            }
+        }
+=======
                 if (GameManager.networkLevelManager.playersJoined.Count < 2)
                 {
                     player1Points = GameManager.networkLevelManager.playersJoined[0].GetComponent<PlayerPoints>().points;
@@ -107,6 +131,7 @@ public class Timer : MonoBehaviour
             }
         }
 
+>>>>>>> main
     }
 
     void DisplayTime(float timeToDisplay)
@@ -118,6 +143,8 @@ public class Timer : MonoBehaviour
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+<<<<<<< HEAD
+=======
 
     IEnumerator Fading()
     {
@@ -138,4 +165,5 @@ public class Timer : MonoBehaviour
     }
 
 
+>>>>>>> main
 }

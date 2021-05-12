@@ -1,11 +1,9 @@
-﻿
+
 using System;
 using System.Collections;
 using Cinemachine;
 using Photon.Pun;
 using Photon.Realtime;
-
-
 using UnityEngine;
 
 public class PlayerMovementCC : MonoBehaviour
@@ -26,6 +24,7 @@ public class PlayerMovementCC : MonoBehaviour
     public float gravityMulitplier = 2f;
     public float jumpHeight = 3f;
 
+
     public float diveSpeed = 100f;
     public float diveMultiplier = 1f;
     public float _dashTime = 0f;
@@ -34,7 +33,8 @@ public class PlayerMovementCC : MonoBehaviour
     public Rigidbody rb = null;
     public Transform playerModelTransform = null;
     public int playerDiveIndex = 0;
-    
+
+
     public Transform groundCheck;
     public float groundDistance;
     public LayerMask groundMask;
@@ -116,19 +116,19 @@ public class PlayerMovementCC : MonoBehaviour
 
         if (!grabHold)
             grabHold = GetComponent<GrabAndHold>();
+            
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
+        
         
         if(isFrozen == false)
         {
@@ -192,7 +192,6 @@ public class PlayerMovementCC : MonoBehaviour
             SpeedUp();
 
         }
-
 
 
 
@@ -295,8 +294,7 @@ public class PlayerMovementCC : MonoBehaviour
 
 
     }
-    
-    
+
     private float Jump()
     {
         // v = SQRT(h * -2 * g) or velocity = sqrt(jumpHeight * -2 * gravity)

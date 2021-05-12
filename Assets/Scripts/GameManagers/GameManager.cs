@@ -1,8 +1,18 @@
+<<<<<<< HEAD
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+=======
 ﻿using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
+>>>>>>> main
 
 public class GameManager : MonoBehaviour
 {
@@ -10,17 +20,24 @@ public class GameManager : MonoBehaviour
 
     #region GAMEMANAGER_CORE-EXTENTIONS
 
+<<<<<<< HEAD
+    public static AudioManager audioManager = null; 
+=======
     public static AudioManager audioManager = null;
     public static NetworkManager networkManager = null;
     public static NetworkLevelManager networkLevelManager = null;
+>>>>>>> main
     
     
     #endregion GAMEMANAGER_CORE-EXTENTIONS
     
     #region Tracked_Variables
 
+<<<<<<< HEAD
+=======
     
     
+>>>>>>> main
     [SerializeField] private GameObject player1;
 
     public GameObject Player1
@@ -49,7 +66,11 @@ public class GameManager : MonoBehaviour
 
         if (Instance)
         {
+<<<<<<< HEAD
+            Destroy(gameObject);
+=======
             DestroyImmediate(gameObject);
+>>>>>>> main
         }
         else
         {
@@ -92,8 +113,11 @@ public class GameManager : MonoBehaviour
     // to get to the main menu
     public void ToMain()
     {
+<<<<<<< HEAD
+=======
         networkLevelManager = null;
         
+>>>>>>> main
         SceneManager.LoadScene("MainMenuScene");
     }
 
@@ -105,14 +129,27 @@ public class GameManager : MonoBehaviour
     
     public static GameManager Instance
     {
+<<<<<<< HEAD
+        get { return _instance; }
+       // private set { _instance = value; }
+    }
+
+=======
         get => _instance;
         //private set => _instance = value;
     }
 
     
     //function with temp load for sample scene is now in LoadScreen2CanvasManager
+>>>>>>> main
     public void PlayGame()
     {
         SceneManager.LoadScene("LoadingScreen2");  
     }
+<<<<<<< HEAD
+    //function with temp load for sample scene is now in LoadScreen2CanvasManager
+    
+    
+=======
+>>>>>>> main
 }
