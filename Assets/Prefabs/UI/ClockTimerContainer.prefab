@@ -131,12 +131,7 @@ MonoBehaviour:
   GameOverImage: {fileID: 0}
   BlackImage: {fileID: 0}
   anim: {fileID: 0}
-  player1Points: 0
-  player2Points: 0
-  player1Name: 
-  player2Name: 
-  pointText: {fileID: 0}
-  GameOverSceneIndex: 7
+  GameOverSceneIndex: 0
 --- !u!1 &3809407896071902730
 GameObject:
   m_ObjectHideFlags: 0
