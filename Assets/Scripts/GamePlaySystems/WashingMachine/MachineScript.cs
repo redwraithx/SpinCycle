@@ -1,13 +1,25 @@
 
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.IO;
+using emotitron;
 using UnityEngine;
 using UnityEngine.UI;
 
 using GamePlaySystems.Utilities;
 using EnumSpace;
 
+using Photon.Pun;
+using Photon.Realtime;
+using Debug = UnityEngine.Debug;
 
-public class MachineScript : MonoBehaviour
+
+public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 {
+    public PhotonView _photonView = null;
+    public string networkItemToSpawn = "";
+    
     public float cycleLength;
     public GameObject itemSpawnPoint;
     public float laundryTimer;
@@ -19,6 +31,22 @@ public class MachineScript : MonoBehaviour
     public LaundryType laundryType;
     public MachineType machineType;
     public ParticleSystem part;
+
+    public string textString = "Sending";
+    public string showTextString = "";
+    public int counter = 0;
+
+
+    private void Awake()
+    {
+        if (!_photonView)
+        {
+            _photonView = GetComponent<PhotonView>();
+
+            PhotonNetwork.SendRate = 22;
+            PhotonNetwork.SerializationRate = 22;
+        }
+    }
 
     private void Start()
     {
@@ -66,52 +94,134 @@ public class MachineScript : MonoBehaviour
 
     public void SpawnFinishedProduct(LaundryType type)
     {
-        GameObject laundry = LaundryPool.poolInstance.GetItem(type);
-        laundry.transform.position = itemSpawnPoint.transform.position;
-        laundry.transform.rotation = itemSpawnPoint.transform.rotation;
 
-        //Determine laundry finished state by machine
-        switch(machineType)
-        {
-            case MachineType.washer:
-                laundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingWet;
-                break;
-            case MachineType.dryer:
-                laundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingUnfolded;
-                break;
-            case MachineType.folder:
-                laundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingDone;
-                break;
-        }
+        
+        
+        // GameObject laundry = LaundryPool.poolInstance.GetItem(type);
+        // laundry.transform.position = itemSpawnPoint.transform.position;
+        // laundry.transform.rotation = itemSpawnPoint.transform.rotation;
+        //
+        // //Determine laundry finished state by machine
+        // switch(machineType)
+        // {
+        //     case MachineType.washer:
+        //         laundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingWet;
+        //         break;
+        //     case MachineType.dryer:
+        //         laundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingUnfolded;
+        //         break;
+        //     case MachineType.folder:
+        //         laundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingDone;
+        //         break;
+        // }
+        //
+        // laundry.GetComponent<Item>().EnableObject();
 
-        laundry.GetComponent<Item>().EnableObject();
+
+        if(PhotonNetwork.IsMasterClient)
+            PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), itemSpawnPoint.transform.position, itemSpawnPoint.transform.rotation, 0);
+
+        Debug.Log("final owner is: " + _photonView.Owner);
+        
+        RequestTransferOwnershipToHost();
+
     }
 
     public void ProcessItems()
     {
+        Debug.Log("processing item in machine");
+        
         sliderTime.maxValue = cycleLength;
         laundryTimer = cycleLength;
         isEnabled = true;
     }
 
+    // public void UseMachine(GameObject other)
+    // {
+    //     OnOwnershipRequest(_photonView, PhotonNetwork.LocalPlayer);
+    //     
+    //     //Alter this tag based on machine
+    //     if (other.CompareTag("Item"))
+    //     {
+    //         //RequestOwnership();
+    //         //other.GetComponent<Grab>().objectToInteractWith.GetComponent<MachineScript>().RequestOwnership();
+    //         
+    //         //Debug.Log("Localplayer is: " + PhotonNetwork.LocalPlayer.NickName + ", owner of this machine is: " + _photonView.Owner);
+    //           
+    //         //PhotonNetwork.
+    //         
+    //         //Debug.Log($"we have a item {other.GetComponent<ItemTypeForItem>().itemType}");
+    //         laundryType = other.GetComponent<ItemTypeForItem>().laundryType;
+    //
+    //         if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.WasherBoost)
+    //         {
+    //             BoostMachine();
+    //             other.gameObject.SetActive(false);
+    //             //Destroy(other.gameObject);
+    //
+    //         }
+    //         if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.RepairTool)
+    //         {
+    //             FixMachine();
+    //             RepairToolZoneSpawn.instance.RemoveObject();
+    //             other.gameObject.SetActive(false);
+    //             //Destroy(other.gameObject);
+    //         }
+    //         else if (other.GetComponent<ItemTypeForItem>().itemType == this.gameObject.GetComponent<ItemTypeForUsingItem>().itemType[0])
+    //         {
+    //             //Once player is created, call to destroy the item in their hand here
+    //             ProcessItems();
+    //             // we may want to use a bool in case the machine is full we dont destroy or use the object
+    //             other.transform.parent = null;
+    //             //other.gameObject.GetComponent<Item>().DisableObject();
+    //             
+    //             
+    //             // send msg to destroy other copies of this object on other network clients here
+    //             //other.GetComponent<Item>().RemoveThisObject();
+    //             
+    //             PhotonNetwork.Destroy(other.gameObject);
+    //             //other.gameObject.SetActive(false);
+    //             //Destroy(other.gameObject);
+    //         }
+    //         
+    //         //RequestTransferOwnershipToHost();
+    //
+    //     }
+    //
+    //
+    // }
+
+
     public void UseMachine(GameObject other)
     {
-        //Alter this tag based on machine
+        OnOwnershipRequest(_photonView, PhotonNetwork.LocalPlayer);
+
+        StartCoroutine(UseMachineDelay(other, 0.25f));
+    }
+    
+    private IEnumerator UseMachineDelay(GameObject other, float delayTime)
+    {
+
+        yield return new WaitForSeconds(delayTime);
+        
+        
         if (other.CompareTag("Item"))
         {
-            Debug.Log($"we have a item {other.GetComponent<ItemTypeForItem>().itemType}");
             laundryType = other.GetComponent<ItemTypeForItem>().laundryType;
 
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.WasherBoost)
             {
                 BoostMachine();
                 other.gameObject.SetActive(false);
+                //Destroy(other.gameObject);
+
             }
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.RepairTool)
             {
                 FixMachine();
                 RepairToolZoneSpawn.instance.RemoveObject();
                 other.gameObject.SetActive(false);
+                //Destroy(other.gameObject);
             }
             else if (other.GetComponent<ItemTypeForItem>().itemType == this.gameObject.GetComponent<ItemTypeForUsingItem>().itemType[0])
             {
@@ -119,13 +229,23 @@ public class MachineScript : MonoBehaviour
                 ProcessItems();
                 // we may want to use a bool in case the machine is full we dont destroy or use the object
                 other.transform.parent = null;
-                other.gameObject.GetComponent<Item>().DisableObject();
+                //other.gameObject.GetComponent<Item>().DisableObject();
+                
+                
+                // send msg to destroy other copies of this object on other network clients here
+                //other.GetComponent<Item>().RemoveThisObject();
+                
+                PhotonNetwork.Destroy(other.gameObject);
+                //other.gameObject.SetActive(false);
+                //Destroy(other.gameObject);
             }
-
         }
 
-
+        if(other.gameObject)
+            RequestTransferOwnershipToHost();
     }
+
+    
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -167,5 +287,92 @@ public class MachineScript : MonoBehaviour
     public void BoostMachine()
     {
         isBoosted = true;
+    }
+    
+    public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
+    {
+        Debug.Log("requesting ownership for: " + requestingPlayer.NickName + " of machine viewID: " + targetView.ViewID);
+
+        if (targetView != base.photonView)
+            return;
+        
+        //photonView.TransferOwnership(requestingPlayer);
+        
+        base.photonView.TransferOwnership(requestingPlayer);
+        
+        Debug.Log("ownership of this object is: " + photonView.Owner);
+    }
+   
+    public void RequestOwnership()
+    {
+        Debug.Log("request ownership from host");
+
+        // get ownership of the object were about to pickup
+        base.photonView.RequestOwnership();
+
+
+    }
+
+    public void RequestTransferOwnershipToHost()
+    {
+        Debug.Log("give ownership back to host");
+        
+        // return ownership back to master client.
+        base.photonView.TransferOwnership(PhotonNetwork.MasterClient);
+            
+        Debug.Log("master client is new owner. ownership of this object is: " + photonView.Owner);
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        Debug.Log("OnPhotonSerializeView called");
+        
+        if (stream.IsWriting)
+        {
+            Debug.Log("stream.IsWriting");
+            
+            stream.SendNext(textString);
+            stream.SendNext(counter);
+            
+            
+            
+            stream.SendNext(laundryTimer);
+            stream.SendNext(cycleLength);
+            stream.SendNext(isEnabled);
+
+            
+            
+            showTextString = $"Sending: {counter}";
+            
+            
+            counter++;
+        }
+        else if(stream.IsReading)
+        {
+            Debug.Log("stream.IsReading");
+            
+            string newTextString = (string) stream.ReceiveNext();
+            int newCounter = (int) stream.ReceiveNext();
+
+            
+            float laundry = (float) stream.ReceiveNext();
+            float cycle = (float) stream.ReceiveNext();
+            bool sliderIsEnabled = (bool) stream.ReceiveNext();
+
+            if (laundry > laundryTimer || laundry < laundryTimer)
+                laundryTimer = laundry;
+
+            if (cycle > cycleLength || cycle < cycleLength)
+                cycleLength = cycle;
+            
+            if (isEnabled != sliderIsEnabled)
+                isEnabled = sliderIsEnabled;
+            
+            
+            Debug.Log($"LaundryTimer: {laundryTimer}\ncycleLength: {cycleLength}\nsiEnabled: {isEnabled}");
+            
+            
+            showTextString = $"Receiving: {newCounter}";
+        }
     }
 }
