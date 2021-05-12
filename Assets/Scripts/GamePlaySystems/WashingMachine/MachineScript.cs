@@ -31,6 +31,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public LaundryType laundryType;
     public MachineType machineType;
     public ParticleSystem part;
+    
+    public ItemType SpawnFinishedProductItemType = ItemType.ClothingWet
 
     public string textString = "Sending";
     public string showTextString = "";
@@ -119,7 +121,10 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
 
         if(PhotonNetwork.IsMasterClient)
-            PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), itemSpawnPoint.transform.position, itemSpawnPoint.transform.rotation, 0);
+        {
+            var newGO = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), itemSpawnPoint.transform.position, itemSpawnPoint.transform.rotation, 0);
+            newGO.GetComponent<ItemTypeForItem>().itemType = SpawnFinishedProductItemType;
+        }
 
         Debug.Log("final owner is: " + _photonView.Owner);
         
