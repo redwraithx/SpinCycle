@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+=======
+﻿
+>>>>>>> main
 
 public class Enemy 
 {
@@ -9,5 +13,8 @@ public class Enemy
     private float enemyDamage;
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 }

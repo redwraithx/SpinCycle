@@ -26,7 +26,11 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+<<<<<<< HEAD
   m_SkyboxMaterial: {fileID: 2100000, guid: 69e10e886d52d20478f9ed5424126be8, type: 2}
+=======
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+>>>>>>> main
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +42,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.26530764, g: 0.09746974, b: 0.01193476, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+>>>>>>> main
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,8 +160,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a965acf1cf80a44db1b43ca901ae859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   player1: {fileID: 0}
   player2: {fileID: 0}
+=======
+>>>>>>> main
 --- !u!4 &291035206
 Transform:
   m_ObjectHideFlags: 0
@@ -185,7 +196,11 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
   m_IsActive: 0
+=======
+  m_IsActive: 1
+>>>>>>> main
 --- !u!224 &736035189
 RectTransform:
   m_ObjectHideFlags: 0
@@ -464,7 +479,10 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+<<<<<<< HEAD
   m_PresetInfoIsWorld: 0
+=======
+>>>>>>> main
 --- !u!223 &1191704627
 Canvas:
   m_ObjectHideFlags: 0
@@ -525,7 +543,10 @@ MonoBehaviour:
   backToMainButton: {fileID: 2008914942}
   playButton: {fileID: 0}
   settingsButton: {fileID: 0}
+<<<<<<< HEAD
   MainMenuSceneIndex: 0
+=======
+>>>>>>> main
 --- !u!1 &1506817433
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +623,10 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+<<<<<<< HEAD
   m_UseViewFrustumForShadowCasterCull: 1
+=======
+>>>>>>> main
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1506817435
@@ -797,7 +821,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+<<<<<<< HEAD
     m_WrapAround: 0
+=======
+>>>>>>> main
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}

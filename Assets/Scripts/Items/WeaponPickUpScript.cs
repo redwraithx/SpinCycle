@@ -1,7 +1,11 @@
 ﻿using System.Collections;
+<<<<<<< HEAD
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+=======
+using UnityEngine;
+>>>>>>> main
 
 
 public class WeaponPickUpScript : MonoBehaviour
@@ -79,7 +83,11 @@ public class WeaponPickUpScript : MonoBehaviour
         if (!weapon && hit.gameObject.CompareTag("Weapon") || !weapon && hit.gameObject.CompareTag("Item"))
         {
 
+<<<<<<< HEAD
             weapon = hit.gameObject;//hit.gameObject.GetComponent<WeaponScript>();
+=======
+            weapon = hit.gameObject;
+>>>>>>> main
 
 
 
@@ -108,6 +116,7 @@ public class WeaponPickUpScript : MonoBehaviour
 
         {
 
+<<<<<<< HEAD
         yield return new WaitForSeconds(timeToDisable);
 
 
@@ -115,6 +124,15 @@ public class WeaponPickUpScript : MonoBehaviour
 
 
         weapon = null;
+=======
+            yield return new WaitForSeconds(timeToDisable);
+
+
+            Physics.IgnoreCollision(weapon.transform.GetComponent<Collider>(), transform.GetComponent<Collider>(), false);
+
+
+            weapon = null;
+>>>>>>> main
         }
         else
         {

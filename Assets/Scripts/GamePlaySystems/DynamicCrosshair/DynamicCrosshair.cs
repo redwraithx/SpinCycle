@@ -10,9 +10,17 @@ public class DynamicCrosshair : MonoBehaviour
     public GameObject player;
 
     bool outOfRange = true;
+<<<<<<< HEAD
     // Start is called before the first frame update
     void Start()
     {
+=======
+
+    
+    void Start()
+    {
+        player = transform.parent.gameObject;
+>>>>>>> main
         PlayerSphereCast.ObjectSelected += PlayerSphereCast_ObjectSelected;
     }
 
@@ -22,7 +30,11 @@ public class DynamicCrosshair : MonoBehaviour
         crosshair.transform.position = Vector3.MoveTowards(crosshair.transform.position, screenPos, 30);
     }
 
+<<<<<<< HEAD
     // Update is called once per frame
+=======
+
+>>>>>>> main
     void Update()
     {
         outOfRange = player.gameObject.GetComponent<PlayerSphereCast>().outOfRange;
@@ -50,4 +62,8 @@ public class DynamicCrosshair : MonoBehaviour
     {
 
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> main
 }

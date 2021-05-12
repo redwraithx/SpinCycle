@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 255938354675898425}
   - component: {fileID: 2991763260362755424}
   - component: {fileID: 8695597738697161774}
+<<<<<<< HEAD
   - component: {fileID: 6827934511089915264}
   - component: {fileID: 2275855487496239849}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -92,6 +95,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870561264611907675}
   m_Material: {fileID: 0}
+<<<<<<< HEAD
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
@@ -126,6 +130,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+=======
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+>>>>>>> main
 --- !u!1 &5442914656944164374
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +274,10 @@ MonoBehaviour:
   _timeAdjustment: 0
   correctPosition: {x: 0, y: 0, z: 0}
   correctRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   originalParent: {fileID: 0}
+=======
+>>>>>>> main
 --- !u!114 &8067821108934822514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,8 +293,13 @@ MonoBehaviour:
   Bomb: {fileID: 5442914656944164374}
   Radius: {fileID: 1870561264611907675}
   detonated: 0
+<<<<<<< HEAD
   startingTimer: 0
   timerAdjust: 0
+=======
+  timer: 0
+  startingTimer: 0
+>>>>>>> main
 --- !u!114 &908708346
 MonoBehaviour:
   m_ObjectHideFlags: 0

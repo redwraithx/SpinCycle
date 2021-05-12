@@ -1,4 +1,14 @@
 ﻿
+<<<<<<< HEAD
+=======
+using System;
+using System.Collections;
+using Cinemachine;
+using Photon.Pun;
+using Photon.Realtime;
+
+
+>>>>>>> main
 using UnityEngine;
 
 public class PlayerMovementCC : MonoBehaviour
@@ -13,6 +23,18 @@ public class PlayerMovementCC : MonoBehaviour
     public float gravityMulitplier = 2f;
     public float jumpHeight = 3f;
 
+<<<<<<< HEAD
+=======
+    public float diveSpeed = 100f;
+    public float diveMultiplier = 1f;
+    public float _dashTime = 0f;
+    public float _initialDashTime = 2f;
+    public Vector3 originalVel = Vector3.zero;
+    public Rigidbody rb = null;
+    public Transform playerModelTransform = null;
+    public int playerDiveIndex = 0;
+    
+>>>>>>> main
     public Transform groundCheck;
     public float groundDistance;
     public LayerMask groundMask;
@@ -22,6 +44,20 @@ public class PlayerMovementCC : MonoBehaviour
     private Vector3 velocity;
     public bool isGrounded;
 
+<<<<<<< HEAD
+=======
+    private bool canDive = true;
+    public float diveReuseDelayTime = 1f;
+
+    public bool isFrozen;
+    public float frozenTimer = 10;
+    
+    // networking
+    internal PhotonView _photonView = null;
+    private Vector3 correctPosition = Vector3.zero;
+    private Quaternion correctRotation = Quaternion.identity;
+
+>>>>>>> main
     public float MoveSpeed
     {
         get => m_moveSpeedMultiplier;
@@ -43,17 +79,62 @@ public class PlayerMovementCC : MonoBehaviour
     {
         m_jumpPowerMultiplier = 3.5f;
     }
+<<<<<<< HEAD
     
     
     // Start is called before the first frame update
     void Start()
     {
         
+=======
+
+
+    private void Awake()
+    {
+        
+        if (!_photonView)
+            _photonView = GetComponent<PhotonView>();
+        
+        
+        if (!_photonView.IsMine)
+        {
+            var cam = gameObject.GetComponentInChildren<Camera>();
+            cam.gameObject.SetActive(false);
+
+            var disableCamera = GetComponentInChildren<CinemachineFreeLook>();
+            disableCamera.gameObject.SetActive(false);
+        }
+
+        GameManager.Instance.Player1 = this.gameObject;
+
+        if (!rb)
+            rb = GetComponent<Rigidbody>();
+    }
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Debug.Log($"player dive inde: {playerDiveIndex}");
+        //GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex] = false;
+        canDive = true;
+
+        if (diveReuseDelayTime < 1f)
+            diveReuseDelayTime = 1f;
+        
+        if (!_photonView.IsMine)
+            this.enabled = false;
+>>>>>>> main
     }
 
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
+=======
+        
+        
+>>>>>>> main
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -61,6 +142,7 @@ public class PlayerMovementCC : MonoBehaviour
             velocity.y = -2f;
         }
         
+<<<<<<< HEAD
         float moveX = Input.GetAxis("Horizontal") * ((Xspeed * m_moveSpeedMultiplier) * Time.deltaTime);
         float moveZ = Input.GetAxis("Vertical") * ((Zspeed * m_moveSpeedMultiplier) * Time.deltaTime);;
 
@@ -72,6 +154,52 @@ public class PlayerMovementCC : MonoBehaviour
         Vector3 move = transform.forward * moveZ;
         
         controller.Move(move);
+=======
+        if(isFrozen == false)
+        {
+            float moveX = Input.GetAxis("Horizontal") * ((Xspeed * m_moveSpeedMultiplier) * Time.deltaTime);
+            float moveZ = Input.GetAxis("Vertical") * ((Zspeed * m_moveSpeedMultiplier) * Time.deltaTime);
+
+            transform.Rotate(0F, moveX * rotationSpeed, 0f);
+
+
+            Vector3 move = transform.forward * moveZ;
+
+            controller.Move(move);
+        }
+
+        if(isFrozen == true)
+        {
+            frozenTimer -= Time.deltaTime;
+            if (frozenTimer <= 0)
+            {
+                isFrozen = false;
+                frozenTimer = 10;
+            }
+
+        }
+
+
+        //Vector3 move = transform.right * moveX + transform.forward * moveZ;
+
+        Vector3 newVec = Vector3.zero;
+        
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Debug.Log("diving maybe");
+            
+            
+            //Diving(true);
+
+            //if(!GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex])
+            if(canDive)
+                StartCoroutine(DiveCoroutine());
+            
+            
+        }
+        
+        
+>>>>>>> main
 
 
         // can we jump?
@@ -83,9 +211,94 @@ public class PlayerMovementCC : MonoBehaviour
         velocity.y += (gravity * gravityMulitplier) * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+<<<<<<< HEAD
     }
 
 
+=======
+        
+        
+    }
+
+
+    private void FixedUpdate()
+    {
+        if (!_photonView.IsMine)
+        {
+            transform.position = Vector3.Lerp(transform.position, correctPosition, Time.fixedDeltaTime * 5);
+            transform.rotation = Quaternion.Lerp(transform.rotation, correctRotation, Time.fixedDeltaTime * 5);
+            
+            _photonView.RPC("SendMessage", RpcTarget.All, 5, transform.position, transform.rotation);
+        }
+        
+        
+        
+        
+    }
+
+
+    void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(transform.position);
+            stream.SendNext(transform.rotation);
+        }
+        else
+        {
+            correctPosition = (Vector3) stream.ReceiveNext();
+            correctRotation = (Quaternion) stream.ReceiveNext();
+        }
+    }
+
+
+    private void Diving(bool canDive)
+    {
+        if (!canDive || !isGrounded)
+            return;
+        
+        //Vector3 localForward = transform.worldToLocalMatrix.MultiplyVector(transform.forward);
+        
+        //rb.AddForce(transform.forward * (diveMultiplier * diveSpeed), ForceMode.Force);
+
+        //controller.Move(localForward * (diveSpeed * diveMultiplier * Time.deltaTime));
+
+        controller.enabled = false;
+        Debug.Log("controller off");
+        
+        //rb.AddForce(playerModelTransform.up * (diveSpeed * diveMultiplier), ForceMode.Force);
+        transform.Translate(transform.forward * (diveSpeed * diveMultiplier), Space.World);
+        
+        controller.enabled = true;
+        Debug.Log("controller on");
+    }
+    
+
+    private IEnumerator DiveCoroutine()
+    {
+        Debug.Log("diving coroutine");
+        
+        //GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex] = true;
+        canDive = false;
+        
+        float startTime = Time.time; // need to remember this to know how long to dash
+        while(Time.time < startTime + _initialDashTime)
+        {
+            transform.Translate(transform.forward * (diveSpeed * Time.deltaTime), Space.World);
+            // or controller.Move(...), dunno about that script
+            yield return null; // this will make Unity stop here and continue next frame
+        }
+
+
+        //yield return new WaitForSeconds(GameManager.networkLevelManager.initialDiveReuseDelay);
+        yield return new WaitForSeconds(diveReuseDelayTime);
+
+        //GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex] = false;
+        canDive = true;
+    }
+    
+    
+>>>>>>> main
     private float Jump()
     {
         // v = SQRT(h * -2 * g) or velocity = sqrt(jumpHeight * -2 * gravity)

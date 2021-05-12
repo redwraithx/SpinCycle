@@ -89,7 +89,11 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2959210635784124075}
+<<<<<<< HEAD
   m_Material: {fileID: 13400000, guid: d7180a7f45981264ca4258a48df3be66, type: 2}
+=======
+  m_Material: {fileID: 0}
+>>>>>>> main
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -237,7 +241,10 @@ MonoBehaviour:
   _timeAdjustment: 0
   correctPosition: {x: 0, y: 0, z: 0}
   correctRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   originalParent: {fileID: 0}
+=======
+>>>>>>> main
 --- !u!114 &9194044214675729262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,8 +274,13 @@ MonoBehaviour:
   Bomb: {fileID: 3242775700426257762}
   Radius: {fileID: 2959210635784124075}
   detonated: 0
+<<<<<<< HEAD
   startingTimer: 0
   timerAdjust: 0
+=======
+  timer: 0
+  startingTimer: 0
+>>>>>>> main
 --- !u!114 &-1641563684357143308
 MonoBehaviour:
   m_ObjectHideFlags: 0

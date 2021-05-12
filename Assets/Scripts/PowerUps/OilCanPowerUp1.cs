@@ -6,9 +6,13 @@ public class OilCanPowerUp1 : MonoBehaviour
 {
     public float speedMultiplier = 2.0f;
     public float duration = 5.0f;
+<<<<<<< HEAD
     float blinktime = 0;
     float turnOffTime;
     GameObject light; 
+=======
+
+>>>>>>> main
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -17,6 +21,7 @@ public class OilCanPowerUp1 : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     private void Update()
     {
         GameObject light = GameObject.FindGameObjectWithTag("Light");
@@ -37,11 +42,20 @@ public class OilCanPowerUp1 : MonoBehaviour
         light.active = false;
         turnOffTime = Time.deltaTime;
        // light.active = true;
+=======
+    void Pickup(Collider player)
+    {
+        Debug.Log("Picked up a Speed Boost!");
+
+>>>>>>> main
         PlayerMovementCC stats = player.GetComponent<PlayerMovementCC>();
         stats.Xspeed *= speedMultiplier;
 
         Destroy(gameObject);
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> main
 }
