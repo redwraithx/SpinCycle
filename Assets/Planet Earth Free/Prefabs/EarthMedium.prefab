@@ -91,7 +91,6 @@ GameObject:
   m_Component:
   - component: {fileID: 405376}
   - component: {fileID: 11435818}
-  - component: {fileID: 49339065}
   m_Layer: 0
   m_Name: EarthMedium
   m_TagString: Untagged
@@ -108,7 +107,7 @@ Transform:
   m_GameObject: {fileID: 135778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.674646, y: 1.674646, z: 1.674646}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 466696}
   - {fileID: 495052}
@@ -133,25 +132,6 @@ MonoBehaviour:
   clockwise: 1
   direction: 1
   directionChangeSpeed: 2
---- !u!95 &49339065
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 135778}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6777f422ca1f6874e97a7556c812feab, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &171858
 GameObject:
   m_ObjectHideFlags: 0
