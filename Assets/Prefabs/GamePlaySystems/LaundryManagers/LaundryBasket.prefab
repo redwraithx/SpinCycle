@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1aba56f6ba1bedc4689177f6a8661073, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointsText: {fileID: 0}
   points: 100
+  pointsToText: 
 --- !u!114 &4451483930025124913
 MonoBehaviour:
   m_ObjectHideFlags: 0
