@@ -48,7 +48,7 @@ public class Clothing : MonoBehaviour, IItem
     public int Price
     {
         get => _price;
-        private set => _price = value;
+        set => _price = value;
     }
 
     public float TimeAdjustment
