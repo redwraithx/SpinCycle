@@ -56,7 +56,7 @@ public class CleaningItems : MonoBehaviour, IItem
     public int Price
     {
         get => price;
-        private set => price = value;
+        set => price = value;
     }
 
     public float TimeChange

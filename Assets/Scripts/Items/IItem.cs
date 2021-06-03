@@ -6,7 +6,7 @@
 
     string Description { get; }
 
-    int Price { get; }
+    int Price { get; set; }
 
     float TimeAdjustment { get; }
 

@@ -379,9 +379,11 @@ MonoBehaviour:
   itemSpawnPoint: {fileID: 3769048221565347036}
   laundryTimer: 0
   sabotageTimer: 0
-  isSabotaged: 1
+  ruinTimer: 0
+  isSabotaged: 0
   isEnabled: 0
   isBoosted: 0
+  isRuined: 0
   sliderTime: {fileID: 7227055864326327281}
   laundryType: 0
   machineType: 1
@@ -390,6 +392,10 @@ MonoBehaviour:
   textString: Sending
   showTextString: 
   counter: 0
+  priceAddition: 50
+  initialPrice: 0
+  loadRuinerMachinePart: {fileID: 0}
+  boostMachinePart: {fileID: 0}
 --- !u!114 &2889000184108486017
 MonoBehaviour:
   m_ObjectHideFlags: 0
