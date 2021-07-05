@@ -7,6 +7,7 @@ using Photon.Realtime;
 public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 {
     public GameObject targetPlayer = null;
+    public GameObject grabber;
     private Grab grab = null;
     private StrengthBarUI strengthBar = null;
     private PlayerMovementCC playerCC = null;
@@ -121,12 +122,13 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
             //otherPlayersGrabAndHoldScript.isBeingGrabbed = true;
 
             otherPlayersGrabAndHoldScript.BeingGrabbed();
+            targetPlayer.GetComponent<PlayerMovementCC>().enemyGrab = grabber;
 
             //targetPlayer.GetComponent<PlayerMovementCC>().isGrabbed = true;
-            
+
             //You become the other player's parent!
             //otherPlayersGrabAndHoldScript.SetParent(transform);
-            
+
             isHoldingOtherPlayer = true;
 
         }
@@ -135,6 +137,7 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
         {
 
             RelasedHeldPlayer();
+            targetPlayer.GetComponent<PlayerMovementCC>().enemyGrab = null;
 
             //otherPlayersGrabAndHoldScript.BeingReleased();
 
@@ -149,6 +152,7 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
         isBeingGrabbed = true;
 
         GetComponent<PlayerMovementCC>().SlowDown();
+
 
         isHoldingOtherPlayer = true;
 

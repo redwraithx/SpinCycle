@@ -8,16 +8,19 @@ using UnityEngine;
 
 public class PlayerMovementCC : MonoBehaviour
 {
+    public Camera cinemachineCamera;
     public CharacterController controller;
     public GrabAndHold grabHold;
-    public float Xspeed = 12f;
+    public float Xspeed = 8f;
     public float Zspeed = 10f;
+    public float rotation;
     private float m_moveSpeedMultiplier = 1f;
     private float m_jumpPowerMultiplier = 1f;
 
     public float slowedXspeed = 4f;
     public float slowedZspeed = 3f;
     public bool isGrabbed = false;
+    public GameObject enemyGrab;
 
 
     public float gravity = -9.8f;
@@ -98,6 +101,8 @@ public class PlayerMovementCC : MonoBehaviour
 
         if (!rb)
             rb = GetComponent<Rigidbody>();
+
+        
     }
 
 
@@ -145,16 +150,30 @@ public class PlayerMovementCC : MonoBehaviour
                 moveX = Input.GetAxis("Horizontal") * ((slowedXspeed * m_moveSpeedMultiplier) * Time.deltaTime);
                 moveZ = Input.GetAxis("Vertical") * ((slowedZspeed * m_moveSpeedMultiplier) * Time.deltaTime);
             }
-                
 
 
 
-            transform.Rotate(0F, moveX * rotationSpeed, 0f);
+
+            //transform.Rotate(0F, moveX * rotationSpeed, 0f);
+
+            //fix rotation flipping issue
+            rotation = cinemachineCamera.transform.localRotation.y;
+            
+            transform.Rotate(0, rotation * 50, 0f);
 
 
             Vector3 move = transform.forward * moveZ;
+            move += transform.right * moveX;
 
-            controller.Move(move);
+            if (!isGrabbed)
+            {
+                controller.Move(move);
+            }
+            else
+            {
+                controller.Move(enemyGrab.transform.position);
+            }
+
         }
 
         if(isFrozen == true)
