@@ -172,6 +172,7 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
     // WARNING THERE IS TO BE ONLY ONE OF THIS PER INSTANCE OF THE GAME 
     public void OnOwnershipTransfered(PhotonView targetView, Player previousOwner)
     {
-        base.photonView.TransferOwnership(previousOwner);
+        Debug.Log("transferring ownership to prev player");
+       // base.photonView.TransferOwnership(previousOwner);
     }
 }

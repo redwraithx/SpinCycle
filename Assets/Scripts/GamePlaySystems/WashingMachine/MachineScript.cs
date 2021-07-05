@@ -381,6 +381,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(laundryTimer);
             stream.SendNext(cycleLength);
             stream.SendNext(isEnabled);
+            stream.SendNext(isSabotaged);
+            stream.SendNext(isRuined);
+            stream.SendNext(isBoosted);
 
 
             counter++;
@@ -397,6 +400,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             float laundry = (float) stream.ReceiveNext();
             float cycle = (float) stream.ReceiveNext();
             bool sliderIsEnabled = (bool) stream.ReceiveNext();
+            bool machineSabotaged = (bool)stream.ReceiveNext();
+            bool loadRuined = (bool) stream.ReceiveNext();
+            bool machineBoosted = (bool)stream.ReceiveNext();
 
             if (laundry > laundryTimer || laundry < laundryTimer)
                 laundryTimer = laundry;
@@ -406,6 +412,15 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
             if (isEnabled != sliderIsEnabled)
                 isEnabled = sliderIsEnabled;
+
+            if (isSabotaged != machineSabotaged)
+                isSabotaged = machineSabotaged;
+
+            if (isRuined != loadRuined)
+                isRuined = loadRuined;
+
+            if (isBoosted != machineBoosted)
+                isBoosted = machineBoosted;
 
 
             Debug.Log($"LaundryTimer: {laundryTimer}\ncycleLength: {cycleLength}\nsiEnabled: {isEnabled}");

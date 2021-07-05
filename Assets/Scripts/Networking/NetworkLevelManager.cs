@@ -87,34 +87,35 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-
-        if (PhotonNetwork.CurrentRoom.PlayerCount >= 2)
+        if (PhotonNetwork.CurrentRoom != null)
         {
-            if (PhotonNetwork.IsMasterClient)
+            if (PhotonNetwork.CurrentRoom.PlayerCount >= 2)
             {
-                if (!timerStarted)
+                if (PhotonNetwork.IsMasterClient)
                 {
-                    timer.GetComponent<NetworkedTimerNew>().InitializeTimer();
-                    timerStarted = true;
+                    if (!timerStarted)
+                    {
+                        timer.GetComponent<NetworkedTimerNew>().InitializeTimer();
+                        timerStarted = true;
+                    }
+
                 }
 
-            }
-
-            if (playersJoined.Count <= 2)
-            {
-                foreach (var Player in GameObject.FindGameObjectsWithTag("Player"))
+                if (playersJoined.Count <= 2)
                 {
-                    if (!playersJoined.Contains(Player))
+                    foreach (var Player in GameObject.FindGameObjectsWithTag("Player"))
                     {
-                        playersJoined.Add(Player);
+                        if (!playersJoined.Contains(Player))
+                        {
+                            playersJoined.Add(Player);
+                        }
                     }
                 }
+
+
+
             }
-
-
-
         }
-
 
 
     }

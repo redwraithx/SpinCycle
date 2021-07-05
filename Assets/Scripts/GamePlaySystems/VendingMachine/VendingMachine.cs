@@ -47,19 +47,19 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
 
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        currentUser = null;
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    currentUser = null;
 
-        if (VendingUI.activeInHierarchy)
-        {
-            CloseUI();
-        }
-        if (!VendingUI.activeInHierarchy)
-        {
-            CloseUI();
-        }
-    }
+    //    if (VendingUI.activeInHierarchy)
+    //    {
+    //        CloseUI();
+    //    }
+    //    if (!VendingUI.activeInHierarchy)
+    //    {
+    //        CloseUI();
+    //    }
+    //}
 
     private void Update()
     {

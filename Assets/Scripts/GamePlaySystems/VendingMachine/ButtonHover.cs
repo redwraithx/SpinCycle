@@ -30,6 +30,8 @@ public class ButtonHover : MonoBehaviour
 
     public GameObject VendingUI;
 
+    public GameObject BuyItemZone;
+
 
 
 
@@ -100,8 +102,7 @@ public class ButtonHover : MonoBehaviour
             Description.SetActive(false);
             Price.SetActive(false);
             Name.SetActive(false);
-            VendingUI.SetActive(false);
-
+            BuyItemZone.BroadcastMessage("CloseUI");
 
         }
     }
