@@ -37,8 +37,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         
         // photon async loading of scenes for all who join
         PhotonNetwork.AutomaticallySyncScene = true;
-
-
     }
     
 

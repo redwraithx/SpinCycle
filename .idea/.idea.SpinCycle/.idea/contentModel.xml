@@ -844,6 +844,9 @@
             </e>
           </e>
         </e>
+        <e p="Planet Earth Free" t="Include">
+          <e p="SpinFree.cs" t="Include" />
+        </e>
         <e p="PlanetScripts" t="Include">
           <e p="ColourGenerator.cs" t="Include" />
           <e p="ColourSettings.cs" t="Include" />
@@ -866,9 +869,11 @@
             <e p="Character.cs" t="Include" />
             <e p="Enemy.cs" t="Include" />
             <e p="Grab.cs" t="Include" />
+            <e p="GrabAndHold.cs" t="Include" />
             <e p="MouseLook.cs" t="Include" />
             <e p="PlayerData.cs" t="Include" />
             <e p="PlayerPoints.cs" t="Include" />
+            <e p="StrengthBarUI.cs" t="Include" />
           </e>
           <e p="GameManagers" t="Include">
             <e p="AudioManager.cs" t="Include" />
@@ -976,6 +981,14 @@
             <e p="ItemSpawner" t="Include">
               <e p="Network_ItemSpawn.cs" t="Include" />
             </e>
+            <e p="Lobby" t="Include">
+              <e p="Data.cs" t="Include" />
+              <e p="GameSettings.cs" t="Include" />
+              <e p="NetworkLobby.cs" t="Include" />
+              <e p="NetworkLobbyMenu.cs" t="Include" />
+              <e p="RoomButtonInfo.cs" t="Include" />
+              <e p="TESTOnly.cs" t="Include" />
+            </e>
             <e p="MaschinesSpawner" t="Include">
               <e p="Network_MachineSpawn.cs" t="Include" />
             </e>
@@ -998,6 +1011,7 @@
             <e p="OilCanPowerUp1.cs" t="Include" />
           </e>
           <e p="Timer" t="Include">
+            <e p="NetworkedTimerNew.cs" t="Include" />
             <e p="Timer.cs" t="Include" />
           </e>
         </e>
