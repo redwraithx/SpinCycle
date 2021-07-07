@@ -3,7 +3,6 @@ using System;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Security.AccessControl;
 using NetworkProfile;
 
 
@@ -60,9 +59,11 @@ namespace Data
                     Debug.Log("profile Loaded from saved file, successfully");
                 }
             }
-            catch
+            catch(Exception e)
             {
-                Debug.Log("File was not found.");
+                Debug.Log($"File was not found at: {e.Message}");
+
+                return null;
             }
             
             return profile;

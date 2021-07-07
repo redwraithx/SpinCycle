@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 using NetworkLobbyGameSettings;
@@ -63,9 +62,6 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     public GameObject tabRooms;
     public GameObject tabCreate;
 
-
-    public Transform contentParent;
-
     public GameObject buttonRoom;
 
     public MapData[] maps;
@@ -84,10 +80,8 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
             
         }
         
-        // update currentmap index
+        // update current map index
         currentMap = SceneManager.GetActiveScene().buildIndex;
-        
-        
 
         Connect();
     }
@@ -112,7 +106,6 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         Create();
 
         base.OnJoinRandomFailed(returnCode, message);
-
     }
 
     public void Connect()
@@ -148,7 +141,6 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         options.CustomRoomProperties = properties;
 
         PhotonNetwork.CreateRoom(roomNameField.text, options);
-        
     }
 
     public void ChangeMap()
@@ -212,8 +204,6 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
 
         // GOING TO CHANGE THIS TO A DROP DOWN MENU I THINK
         //maxPlayersSlider.value = maxPlayersSlider.maxValue;
-
-        
         
         // // Players selection
         // // int 0 = 1 vs 1
@@ -224,15 +214,11 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         //     maxPlayersValue.text = "2";
         // else
         //     maxPlayersValue.text = "4";
-
-
-
     }
 
     private void ClearRoomList()
     {
         Transform content = tabRooms.transform.Find("Scroll View/Viewport/Content");
-        //Transform content = contentParent;
         
         foreach(Transform item in content)
             Destroy(item.gameObject);
@@ -243,9 +229,6 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         if (string.IsNullOrEmpty(userNameField.text))
         {
             myProfile.userName = "Random_User_" + UnityEngine.Random.Range(100, 10000);
-            
-            // may want to check if someone else has this name but not important right nwo
-            
         }
         else
         {
@@ -259,8 +242,6 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         ClearRoomList();
 
         Transform content = tabRooms.transform.Find("Scroll View/Viewport/Content");
-        //Transform content = contentParent;
-
 
         // if (roomList.Count <= 0)
         //     return;
@@ -269,12 +250,6 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         {
             GameObject newRoomButton = Instantiate(buttonRoom, content) as GameObject;
 
-            
-            //Debug.Log("roomName: " + item.Name);
-            //Debug.Log("mapName: " + maps[(int) item.CustomProperties["map"]].name);
-            //Debug.Log("playersCounter: " + item.PlayerCount + " / "+ item.MaxPlayers);
-            
-            
             newRoomButton.transform.GetComponent<RoomButtonInfo>().roomName.text = item.Name;
             newRoomButton.transform.GetComponent<RoomButtonInfo>().playersCounter.text = item.PlayerCount + " / " + item.MaxPlayers;
             
@@ -285,11 +260,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
             
             Debug.Log("new room buttons name: " + newRoomButton.name);
             
-            //newRoomButton.GetComponent<RoomButtonInfo>().joinRoomButton.onClick.AddListener( delegate { JoinRoom(newRoomButton.transform); });
-            newRoomButton.GetComponent<Button>().onClick.AddListener( delegate { JoinRoom(newRoomButton.transform); });
-            
-            // if you join the room you are auto loaded to that scene, removed this option because of this for now
-            //newRoomButton.GetComponent<RoomButtonInfo>().leaveRoomButton.onClick.AddListener(LeaveRoomList);
+            newRoomButton.GetComponent<RoomButtonInfo>().joinRoomButton.onClick.AddListener( delegate { JoinRoom(newRoomButton.transform); });
         }
 
         base.OnRoomListUpdate(roomList);
@@ -301,8 +272,8 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     {
         Debug.Log("Join Room Func Entered");
         
-        string _roomName = _button.Find("RoomName").GetComponent<TMP_Text>().text;
-        //string _roomName = _button.GetComponent<RoomButtonInfo>().roomName.text;
+        //string _roomName = _button.Find("RoomName").GetComponent<TMP_Text>().text;
+        string _roomName = _button.GetComponent<RoomButtonInfo>().roomName.text;
         
         Debug.Log("join room name: " + _roomName);
         
