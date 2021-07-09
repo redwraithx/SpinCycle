@@ -83,7 +83,7 @@ public class ButtonHover : MonoBehaviour
     public void OnPointerExit(PointerEventData eventData)
     {
         Debug.Log("Pointer exit");
-        
+
         Description.SetActive(false);
         Price.SetActive(false);
         Name.SetActive(false);
@@ -107,5 +107,12 @@ public class ButtonHover : MonoBehaviour
         }
     }
 
-
+    private void OnDisable()
+    {
+        Debug.Log($"{gameObject.name} has been disabled");
+        
+        Description.SetActive(false);
+        Price.SetActive(false);
+        Name.SetActive(false);
+    }
 }
