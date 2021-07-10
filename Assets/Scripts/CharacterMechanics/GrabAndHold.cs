@@ -150,11 +150,11 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
     public void BeingGrabbed()
     {
         isBeingGrabbed = true;
-
+        GetComponent<PlayerMovementCC>().isGrabbed = true;
         GetComponent<PlayerMovementCC>().SlowDown();
 
 
-        isHoldingOtherPlayer = true;
+        //isHoldingOtherPlayer = true;
 
         currentHoldTimer = holdTimeDuration;
 
@@ -169,6 +169,7 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 
         isHoldingOtherPlayer = false;
 
+        GetComponent<PlayerMovementCC>().isGrabbed = false;
         //GetComponent<PlayerMovementCC>().SpeedUp();
 
         isBeingGrabbed = false;
