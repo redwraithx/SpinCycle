@@ -1,43 +1,50 @@
 ﻿using System;
-using System.Collections;
 using System.Linq;
-using System.Collections.Generic;
 using UnityEngine;
 using EnumSpace;
+using GamePlaySystems.Utilities;
+using Photon.Pun;
+using Photon.Realtime;
+
 
 public class DirtyLaundrySpawner : MonoBehaviour
 {
     public GameObject spawnPoint;
     public float timeSinceLastSpawn = 0f;
-    public float spawnRate;
-    public bool isSpawning;
-    float randTime;
-    int laundryRandomizer;
+    public float spawnRate = 0f;
+    public bool isSpawning = true;
+    float randTime = 0f;
+    int laundryRandomizer = 0;
     public LaundryType laundryType;
     
     
 
     void Update()
     {
-        spawnRate = randTime;
-        if (Time.time >= timeSinceLastSpawn + spawnRate)
+        if (PhotonNetwork.IsMasterClient)
         {
-            randTime = UnityEngine.Random.Range(1f, 10f);
-            timeSinceLastSpawn = Time.time;
-            if (isSpawning == true)
+            spawnRate = randTime;
+            if (Time.time >= timeSinceLastSpawn + spawnRate)
             {
-                laundryType = (LaundryType)UnityEngine.Random.Range(0, (int)Enum.GetValues(typeof(LaundryType)).Cast<LaundryType>().Max());
-                SpawnDirtyLaundry(laundryType);
+                randTime = UnityEngine.Random.Range(1f, 10f);
+                timeSinceLastSpawn = Time.time;
+                if (isSpawning == true)
+                {
+                    laundryType = (LaundryType)UnityEngine.Random.Range(0, (int)Enum.GetValues(typeof(LaundryType)).Cast<LaundryType>().Max());
+                    SpawnDirtyLaundry(laundryType);
+                }
             }
         }
+
     }
 
-    public void SpawnDirtyLaundry(LaundryType type)
+    private void SpawnDirtyLaundry(LaundryType type)
     {
         GameObject newLaundry = LaundryPool.poolInstance.GetItem(type);
         newLaundry.transform.position = spawnPoint.transform.position;
         newLaundry.transform.rotation = spawnPoint.transform.rotation;
-        newLaundry.SetActive(true);
+        newLaundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingDirty;
+        newLaundry.GetComponent<Item>().EnableObject();
 
     }
 }

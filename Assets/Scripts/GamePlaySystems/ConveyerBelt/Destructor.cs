@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using Photon.Realtime;
+using Photon.Pun;
+
 
 public class Destructor : MonoBehaviour
 {
 
-    // Start is called before the first frame update
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Item")
+        if (collision.gameObject.CompareTag("Item"))
         {
-
-
-            collision.gameObject.SetActive(false);
+            collision.gameObject.GetComponent<Item>().DisableObject();
         }
     }
 }

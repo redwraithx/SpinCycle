@@ -229,7 +229,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 237251107}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 841314203}
+        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &237251107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -415,6 +427,7 @@ MonoBehaviour:
   GameOverImage: {fileID: 0}
   BlackImage: {fileID: 352794087}
   anim: {fileID: 352794086}
+  GameOverSceneIndex: 0
 --- !u!4 &521237435
 Transform:
   m_ObjectHideFlags: 0
@@ -637,6 +650,7 @@ MonoBehaviour:
   backToMainButton: {fileID: 1357648626}
   playButton: {fileID: 0}
   settingsButton: {fileID: 0}
+  MainMenuSceneIndex: 0
 --- !u!114 &841314204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,7 +804,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game Over:(
+  m_Text: Game Over
 --- !u!222 &1277684744
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -860,7 +874,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1357648627}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 841314203}
+        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
+        m_MethodName: LoadMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1357648627
 MonoBehaviour:
   m_ObjectHideFlags: 0

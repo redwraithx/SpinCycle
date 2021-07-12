@@ -1,13 +1,14 @@
 ﻿public interface IItem 
 {
+    int Id { get; }
 
     string Name { get; }
 
     string Description { get; }
 
-    int Price { get; }
+    int Price { get; set; }
 
-    float TimeAjustment { get; }
+    float TimeAdjustment { get; }
 
 }
     

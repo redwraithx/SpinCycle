@@ -4,47 +4,64 @@ using UnityEngine;
 public class CinemachineMouseLook : MonoBehaviour
 {
 
+
+    public LayerMask layerMask;
+
     public float mouseSensitivity = 100f;
 
     public Transform playerBody;
 
     public float xRotation = 0f;
 
-    public Vector3 bodyRotate;
+    public Vector3 bodyRotate = Vector3.zero;
 
     private bool isAlive = true;
 
-    // Start is called before the first frame update
+    private TransparentWalls currentTransparentWall;
+
+    
+
+    
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (!isAlive)
             return;
 
-        // float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        // float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-        //
-        // xRotation -= mouseY;
-        // xRotation = Mathf.Clamp(xRotation, -90f, 70f);
-        //
-        // transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        //
-        // if (mouseX > 0.01f || mouseX < 0.01f)
-        // {
-        //     bodyRotate = Vector3.up * mouseX;
-        //     Quaternion newQuad = Quaternion.Euler(bodyRotate);
-        //     
-        //     
-        //     playerBody.Rotate(bodyRotate, Space.World);
-        // }
+        Vector3 direction = playerBody.position - transform.position;
+        float length = Vector3.Distance(playerBody.position, transform.position);
+        Debug.DrawRay(transform.position, direction.normalized * length, Color.red);
 
-        
-        
+        RaycastHit currentHit;
+        if (Physics.Raycast(transform.position, direction, out currentHit, length, layerMask))
+        {
+            
+            TransparentWalls transparentWall = currentHit.transform.parent.gameObject.GetComponent<TransparentWalls>();
+            if (transparentWall)
+            {
+                Debug.Log("hitting wall");
+                if (currentTransparentWall && currentTransparentWall.gameObject != transparentWall.gameObject)
+                {
+                    currentTransparentWall.ChangeTransparency(false);
+                }
+                transparentWall.ChangeTransparency(true);
+                currentTransparentWall = transparentWall;
+            }
+        }
+        else
+        {
+            if (currentTransparentWall)
+            {
+                currentTransparentWall.ChangeTransparency(false);
+            }
+        }
+
+
     }
 
 

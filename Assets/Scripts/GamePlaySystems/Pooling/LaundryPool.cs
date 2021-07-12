@@ -1,13 +1,17 @@
 ﻿
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using EnumSpace;
+using Photon.Pun;
+using Photon.Realtime;
+
 
 [System.Serializable]
 
 public class LaundryPool : MonoBehaviour
 {
-    public static LaundryPool poolInstance;
+    public static LaundryPool poolInstance = null;
 
     [SerializeField]
     public GameObject[] pooledItems;
@@ -16,28 +20,35 @@ public class LaundryPool : MonoBehaviour
     private List<GameObject>[] pool;
 
 
-
-
     private void Awake()
     {
         poolInstance = this;
     }
-    // Start is called before the first frame update
+    
     void Start()
     {
-        pool = new List<GameObject>[pooledItems.Length];
-
-        for (int i = 0; i < pooledItems.Length; i++)
+        if (PhotonNetwork.IsMasterClient)
         {
-            pool[i] = new List<GameObject>();
-            GameObject obj = Instantiate(pooledItems[i]);
-            obj.SetActive(false);
-            pool[i].Add(obj);
+            pool = new List<GameObject>[pooledItems.Length];
+
+            for (int i = 0; i < pooledItems.Length; i++)
+            {
+                pool[i] = new List<GameObject>();
+                GameObject obj = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", pooledItems[i].name), transform.position, Quaternion.identity, 0);
+                obj.SetActive(false);
+                pool[i].Add(obj);
+            }
         }
+
     }
 
-    // Update is called once per frame
-    public GameObject GetItem(LaundryType type)
+    void OnPhotonInstantiate(PhotonMessageInfo info)
+    {
+        info.Sender.TagObject = gameObject.tag;
+    }
+
+
+public GameObject GetItem(LaundryType type)
     {
         int id = (int)type;
         
@@ -54,7 +65,7 @@ public class LaundryPool : MonoBehaviour
 
         if (notEnoughObjectsInPool)
         {
-            GameObject obj = Instantiate(pooledItems[id]);
+            GameObject obj = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", pooledItems[id].name), transform.position, Quaternion.identity, 0);
             obj.SetActive(false);
             pool[id].Add(obj);
             return obj;

@@ -1,6 +1,5 @@
 ﻿
 
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -17,11 +16,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioMixerGroup masterAudioMixerGroup;
     [SerializeField] private AudioMixerGroup masterSfxMixerGroup;
     
-        private  AudioSource _musicSource1;
-        private AudioSource _musicSource2;
-        private AudioSource _sfxSource;
+        private  AudioSource m_MusicSource1;
+        private AudioSource m_MusicSource2;
+        private AudioSource m_SfxSource;
 
-        private bool _firstMusicSourceIsPlaying;
+        private bool m_FirstMusicSourceIsPlaying;
     #endregion // Fields
 
 
@@ -37,20 +36,20 @@ public class AudioManager : MonoBehaviour
         // make sure this instance does not get destroyed until the game is closed
         DontDestroyOnLoad(this.gameObject);
 
-        _musicSource1 = this.gameObject.AddComponent<AudioSource>();
-        _musicSource1.GetComponent<AudioSource>().outputAudioMixerGroup = masterAudioMixerGroup;
+        m_MusicSource1 = this.gameObject.AddComponent<AudioSource>();
+        m_MusicSource1.GetComponent<AudioSource>().outputAudioMixerGroup = masterAudioMixerGroup;
         
-        _musicSource2 = this.gameObject.AddComponent<AudioSource>();
-        _musicSource1.GetComponent<AudioSource>().outputAudioMixerGroup = masterAudioMixerGroup;
+        m_MusicSource2 = this.gameObject.AddComponent<AudioSource>();
+        m_MusicSource1.GetComponent<AudioSource>().outputAudioMixerGroup = masterAudioMixerGroup;
         
         
-        _sfxSource = this.gameObject.AddComponent<AudioSource>();
-        _sfxSource.GetComponent<AudioSource>().outputAudioMixerGroup = masterSfxMixerGroup;
+        m_SfxSource = this.gameObject.AddComponent<AudioSource>();
+        m_SfxSource.GetComponent<AudioSource>().outputAudioMixerGroup = masterSfxMixerGroup;
         
         
         // music tracks are looped
-        _musicSource1.loop = true;
-        _musicSource2.loop = true;
+        m_MusicSource1.loop = true;
+        m_MusicSource2.loop = true;
 
     }
 
@@ -58,7 +57,7 @@ public class AudioManager : MonoBehaviour
     
     public void PlayMusic(AudioClip musicClip)
     {
-        AudioSource activeSource = (_firstMusicSourceIsPlaying) ? _musicSource1 : _musicSource2;
+        AudioSource activeSource = (m_FirstMusicSourceIsPlaying) ? m_MusicSource1 : m_MusicSource2;
         
         activeSource.clip = musicClip;
         activeSource.volume = 1f;
@@ -68,7 +67,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusicWithFade(AudioClip newClip, float transitionTime = 1.0f)
     {
-        AudioSource activeSource = (_firstMusicSourceIsPlaying) ? _musicSource1 : _musicSource2;
+        AudioSource activeSource = (m_FirstMusicSourceIsPlaying) ? m_MusicSource1 : m_MusicSource2;
 
         StartCoroutine(UpdateMusicWithFade(activeSource, newClip, transitionTime));
     }
@@ -76,10 +75,10 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusicWithCrossFade(AudioClip musicClip, float transitionTime = 1.0f)
     {
-        AudioSource activeSource = (_firstMusicSourceIsPlaying) ? _musicSource1 : _musicSource2;
-        AudioSource newSource = (_firstMusicSourceIsPlaying) ? _musicSource2 : _musicSource1;
+        AudioSource activeSource = (m_FirstMusicSourceIsPlaying) ? m_MusicSource1 : m_MusicSource2;
+        AudioSource newSource = (m_FirstMusicSourceIsPlaying) ? m_MusicSource2 : m_MusicSource1;
 
-        _firstMusicSourceIsPlaying = !_firstMusicSourceIsPlaying;
+        m_FirstMusicSourceIsPlaying = !m_FirstMusicSourceIsPlaying;
 
         newSource.clip = musicClip;
         newSource.Play();
@@ -145,7 +144,7 @@ public class AudioManager : MonoBehaviour
             for (fadeTime = 0f; fadeTime < transitionTime; fadeTime += Time.deltaTime)
             {
                 activeSource.volume = (1 - (fadeTime / transitionTime));
-                //yield return new WaitForSeconds(transitionTime);
+                
                 yield return null;
             }
         }
@@ -156,32 +155,32 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySfx(AudioClip clip)
     {
-        _sfxSource.PlayOneShot(clip);
+        m_SfxSource.PlayOneShot(clip);
     }
     
     
     public void PlaySfx(AudioClip clip, float volume)
     {
-        _sfxSource.PlayOneShot(clip, volume);
+        m_SfxSource.PlayOneShot(clip, volume);
     }
     
 
     public void SetMusicVolume(float volume)
     {
-        _musicSource1.volume = volume;
-        _musicSource2.volume = volume;
+        m_MusicSource1.volume = volume;
+        m_MusicSource2.volume = volume;
     }
     
 
     public void SetSfxVolume(float volume)
     {
-        _sfxSource.volume = volume;
+        m_SfxSource.volume = volume;
     }
     
 
     public void StopMusic()
     {
-        AudioSource activeSource = (_firstMusicSourceIsPlaying) ? _musicSource1 : _musicSource2;
+        AudioSource activeSource = (m_FirstMusicSourceIsPlaying) ? m_MusicSource1 : m_MusicSource2;
         
         StartCoroutine(FadeMusic(activeSource, 3f));
         
@@ -189,8 +188,8 @@ public class AudioManager : MonoBehaviour
 
     public void StopSfx()
     {
-        if(_sfxSource.isPlaying)
-            _sfxSource.Stop();
+        if(m_SfxSource.isPlaying)
+            m_SfxSource.Stop();
     }
 
 }

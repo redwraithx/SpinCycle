@@ -9,6 +9,9 @@ public class GameOverScript : MonoBehaviour
     public Image GameOverImage;
     public Image BlackImage;
     public Animator anim;
+
+    public int GameOverSceneIndex = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +33,7 @@ public class GameOverScript : MonoBehaviour
     {
         anim.SetBool("Fade", true);
         yield return new WaitUntil(()=> BlackImage.color.a==1);
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(GameOverSceneIndex);
     
     }
 }
