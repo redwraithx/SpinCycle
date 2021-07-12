@@ -30,7 +30,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             DestroyImmediate(gameObject);
         }
 
-        GameManager.networkManager = this;
+        //GameManager.networkManager = this;
             
         DontDestroyOnLoad(this);
 

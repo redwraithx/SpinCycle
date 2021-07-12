@@ -71,6 +71,18 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
 
     public void Awake()
     {
+        if (GameManager.networkManager)
+        {
+            Destroy(GameManager.networkManager);
+
+            GameManager.networkManager = null;
+        }
+        
+        DontDestroyOnLoad(this);
+
+        GameManager.networkManager = this;
+        
+        
         PhotonNetwork.AutomaticallySyncScene = true;
 
         myProfile = DataClass.LoadProfile();
@@ -82,6 +94,8 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         
         // update current map index
         currentMap = SceneManager.GetActiveScene().buildIndex;
+        
+        
 
         Connect();
     }
@@ -345,7 +359,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
             PhotonNetwork.LoadLevel(maps[currentMap].scene);
         }
     }
+        
     
-
-
+    
 }

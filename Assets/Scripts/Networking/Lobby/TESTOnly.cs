@@ -4,6 +4,7 @@
 using System;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class TESTOnly : MonoBehaviourPun
@@ -37,9 +38,21 @@ public class TESTOnly : MonoBehaviourPun
         }
     }
 
+    public void GoToMainMenu()
+    {
+        GameObject networkObj = GameObject.FindWithTag("NetworkManager");
+
+        if (networkObj)
+            Destroy(networkObj);
+
+        SceneManager.LoadScene(0); // 0 is title scene
+    }
+    
 
     public void QuitApp()
     {
         Application.Quit();
     }
+    
+    
 }
