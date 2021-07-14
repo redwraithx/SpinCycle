@@ -24,7 +24,7 @@ namespace NetworkProfile
         public ProfileData()
         {
             userName = "";
-
+            
         }
 
         public ProfileData(string userName)
