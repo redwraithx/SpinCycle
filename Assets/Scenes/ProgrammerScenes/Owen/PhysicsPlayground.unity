@@ -242,6 +242,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6163153131456082545, guid: a70e070f6386d8a4584c96387a294c62, type: 3}
+      propertyPath: viewIdField
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6399440935282412963, guid: a70e070f6386d8a4584c96387a294c62, type: 3}
       propertyPath: m_Name
       value: SoapBomb
@@ -379,6 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbce21eeeaa4e7b4a8d59c51e48fd7f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkItemToSpawn: 
   repairTool: {fileID: 5271457510973741645, guid: 9d1129bd47d2d0c499e306c570462871, type: 3}
   spawnPoint: {fileID: 1767616085}
   spawnPointPosition: {x: 0, y: 0, z: 0}
@@ -647,6 +652,10 @@ PrefabInstance:
       propertyPath: laundryType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6832526362924805502, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
+      propertyPath: viewIdField
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
 --- !u!1 &607842271 stripped
@@ -687,6 +696,7 @@ MonoBehaviour:
   _timeAdjustment: 0
   correctPosition: {x: 0, y: 0, z: 0}
   correctRotation: {x: 0, y: 0, z: 0, w: 1}
+  originalParent: {fileID: 0}
 --- !u!65 &607842274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -893,6 +903,10 @@ PrefabInstance:
       propertyPath: itemType
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 3140913775698764561, guid: 385333d2b26eadb49b7022dfa255bac5, type: 3}
+      propertyPath: viewIdField
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 385333d2b26eadb49b7022dfa255bac5, type: 3}
 --- !u!1 &1234058455
@@ -1046,6 +1060,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine
       objectReference: {fileID: 0}
+    - target: {fileID: 6606962663204163661, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
+      propertyPath: viewIdField
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1110,6 +1128,10 @@ PrefabInstance:
     - target: {fileID: 4677257949682030615, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
       propertyPath: laundryType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832526362924805502, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
+      propertyPath: viewIdField
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
@@ -1522,6 +1544,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1488181537, guid: 24c3701d7c7cf6c4b90dbf8642c2bb00, type: 3}
+      propertyPath: viewIdField
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7109747777233407147, guid: 24c3701d7c7cf6c4b90dbf8642c2bb00, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.476446
@@ -1644,6 +1670,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4033882545733787680, guid: e72c2c498a4c59143962221b8845fcca, type: 3}
+      propertyPath: viewIdField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5219802106468393991, guid: e72c2c498a4c59143962221b8845fcca, type: 3}
       propertyPath: m_Name
       value: WaterGunTester
