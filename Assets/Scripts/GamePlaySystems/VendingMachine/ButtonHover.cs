@@ -12,14 +12,16 @@ public class ButtonHover : MonoBehaviour
     , IPointerEnterHandler
     , IPointerExitHandler
 {
+    [Header("Parts of the Buttons")]
     public GameObject Description;
     public GameObject Price;
     public GameObject Name;
     public TextMeshProUGUI DescriptionText;
     public TextMeshProUGUI PriceText;
     public TextMeshProUGUI NameText;
-    public int RealPrice = 0;
     public Button ThisButton;
+
+    [Header("Parts of the Machine")]
     public GameObject SaleItemGameObject;
     public GameObject itemSpawnPoint;
     public VendingIndex VendingIndex;
@@ -43,6 +45,8 @@ public class ButtonHover : MonoBehaviour
     //public TextMeshProUGUI PriceText2;
     //public TextMeshProUGUI NameText2;
 
+    [Header("Math")]
+    public int RealPrice = 0;
 
     private void Start()
     {

@@ -7,29 +7,32 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    [Header("Timer Functions"), ] 
     public float timeRemaining = 10;
     public bool timerIsRunning = false;
     public Text timeText;
     public Image GameOverImage;
     public Image BlackImage;
     public Animator anim;
+
+    [Header("Autofill Sections"), ] 
     public float player1Points;
     public float player2Points;
     public string player1Name;
     public string player2Name;
+    public GameObject winner;
+    public GameObject loser;
+    public NetworkedTimerNew networkedTimer;
 
+    [Header("Victory Stand Items"), ]
+    public GameObject vStand;
+    public GameObject loserVille;
     public TMP_Text pointTextL;
     public TMP_Text pointTextW;
     public TMP_Text loserText;
     public TMP_Text winnerText;
-
-    public GameObject winner;
-    public GameObject loser;
-    public GameObject vStand;
-    public GameObject loserVille;
     public GameObject vStandPrefab;
 
-    public NetworkedTimerNew networkedTimer;
 
     public int GameOverSceneIndex = 0;
 
