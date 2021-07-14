@@ -18,7 +18,7 @@ public class LaundrySpawn : MonoBehaviour
     {
         spawnPointPosition = spawnPoint.transform.position;
         spawnObject = spawnObjectGameObject.GetComponent<Item>();
-        VendingIndex = new VendingIndex(spawnObject.name, spawnObject.Description, spawnObject.Price.ToString());
+        VendingIndex = new VendingIndex(spawnObject.name, spawnObject.Description, spawnObject.Price.ToString(), spawnObject.sprite);
         networkItemToSpawn = VendingIndex.Name;
         if (PhotonNetwork.IsMasterClient)
         {
