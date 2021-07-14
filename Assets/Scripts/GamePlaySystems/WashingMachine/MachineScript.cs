@@ -237,7 +237,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.WasherBoost)
             {
                 BoostMachine();
-                other.gameObject.SetActive(false);
+                PhotonNetwork.Destroy(other.gameObject);
+                //other.gameObject.SetActive(false);
                 //Destroy(other.gameObject);
 
             }
@@ -245,13 +246,15 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 FixMachine();
                 RepairToolZoneSpawn.instance.RemoveObject();
-                other.gameObject.SetActive(false);
+                //other.gameObject.SetActive(false);
+                PhotonNetwork.Destroy(other.gameObject);
                 //Destroy(other.gameObject);
             }
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.LoadRuiner)
             {
                 RuinLoad();
-                other.gameObject.SetActive(false);
+                PhotonNetwork.Destroy(other.gameObject);
+                //other.gameObject.SetActive(false);
             }
             else if (other.GetComponent<ItemTypeForItem>().itemType == this.gameObject.GetComponent<ItemTypeForUsingItem>().itemType[0])
             {
