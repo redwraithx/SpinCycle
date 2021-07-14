@@ -978,6 +978,9 @@
             <e p="WashingMachine.cs" t="Include" />
           </e>
           <e p="Networking" t="Include">
+            <e p="Events" t="Include">
+              <e p="EventManager.cs" t="Include" />
+            </e>
             <e p="ItemSpawner" t="Include">
               <e p="Network_ItemSpawn.cs" t="Include" />
             </e>

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 using TMPro;
 
@@ -20,17 +22,18 @@ namespace NetworkProfile
     public class ProfileData
     {
         public string userName;
+        //public ulong scoreOverPlayersLife;
 
         public ProfileData()
         {
             userName = "";
-            
+            //scoreOverPlayersLife = 0;
         }
 
-        public ProfileData(string userName)
+        public ProfileData(string userName)//, ulong lifeTimeScore)
         {
             this.userName = userName;
-
+           // this.scoreOverPlayersLife = lifeTimeScore;
         }
 
     }
@@ -50,6 +53,9 @@ namespace NetworkMaps
 
 public class NetworkLobby : MonoBehaviourPunCallbacks
 {
+    public bool perpetual = false;
+    public float waitTimeTillReturningToMainMenu = 6f;
+    
     public TMP_InputField userNameField;
     public TMP_InputField roomNameField;
     public TMP_Text mapValue;
@@ -361,5 +367,66 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     }
         
     
+    
+    // this is not tested
+    private void EndGame()
+    {
+        // set state of game
+        // state  = GameState.Ending;
+        
+        
+        // set timer to 0 if networked
+        
+        
+        // update timer UI if needed
+        
+        
+        
+        // disable Room
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.DestroyAll();
+
+            if (!perpetual)
+            {
+                PhotonNetwork.CurrentRoom.IsVisible = false;
+                PhotonNetwork.CurrentRoom.IsOpen = false;
+            }
+        }
+        
+        // could show end game UI here if we want
+        
+        
+        // wait X seconds then return to main menu
+        StartCoroutine(End(waitTimeTillReturningToMainMenu));
+    }
+    
+    
+    
+    #region Coroutine_Methods
+    
+    private IEnumerator End(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        if (perpetual) // new game?
+        {
+            Debug.Log("perpetual");
+            
+            // new match
+            // if (PhotonNetwork.IsMasterClient)
+            // {
+            //     NewMatch_Send();
+            // }
+        }
+        else
+        {
+            // disconnect
+            PhotonNetwork.AutomaticallySyncScene = false;
+            PhotonNetwork.LeaveRoom();
+        }
+    }
+    
+    #endregion // Coroutine_Methods
     
 }
