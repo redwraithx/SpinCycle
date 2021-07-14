@@ -36,12 +36,12 @@ public class ButtonHover : MonoBehaviour
     [Header("External View Items")]
 
     public Image displayButton;
-    public GameObject Description2;
-    public GameObject Price2;
-    public GameObject Name2;
-    public TextMeshProUGUI DescriptionText2;
-    public TextMeshProUGUI PriceText2;
-    public TextMeshProUGUI NameText2;
+    //public GameObject Description2;
+    //public GameObject Price2;
+    //public GameObject Name2;
+    //public TextMeshProUGUI DescriptionText2;
+    //public TextMeshProUGUI PriceText2;
+    //public TextMeshProUGUI NameText2;
 
 
     private void Start()
