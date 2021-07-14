@@ -94,9 +94,9 @@ public class ButtonHover : MonoBehaviour
             DescriptionText.text = VendingIndex.Description;
             PriceText.text = VendingIndex.Price;
             NameText.text = VendingIndex.Name;
-            DescriptionText2.text = VendingIndex.Description;
-            PriceText2.text = VendingIndex.Price;
-            NameText2.text = VendingIndex.Name;
+            //DescriptionText2.text = VendingIndex.Description;
+            //PriceText2.text = VendingIndex.Price;
+            //NameText2.text = VendingIndex.Name;
             networkItemToSpawn = VendingIndex.Name;
             FirstRun = true;
         }
