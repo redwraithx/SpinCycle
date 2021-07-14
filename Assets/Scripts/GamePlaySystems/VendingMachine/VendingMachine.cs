@@ -10,6 +10,7 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
 {
     //add index for button hover
     public GameObject VendingUI;
+    public GameObject Canvas;
     public ButtonHover[] buttonHoverScripts;
     public Button closeButton;
 
@@ -25,6 +26,11 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
         {
             closeButton.onClick.AddListener(CloseUI);
         }
+
+        Canvas.GetComponent<CanvasGroup>().alpha = 1;
+        Canvas.GetComponent<CanvasGroup>().interactable = true;
+        Canvas.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        VendingUI.SetActive(false);
     }
     
 
