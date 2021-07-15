@@ -17,11 +17,9 @@ using Debug = UnityEngine.Debug;
 
 public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 {
-    public GameObject boost;
-    public GameObject load;
     public PhotonView _photonView = null;
     public string networkItemToSpawn = "";
-    public Transform target;
+    
     public float cycleLength;
     public GameObject itemSpawnPoint;
     public float laundryTimer;
@@ -106,8 +104,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
 
     }
-
-    
 
     public void SpawnFinishedProduct(LaundryType type)
     {
@@ -241,8 +237,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.WasherBoost)
             {
                 BoostMachine();
-               
-                other.gameObject.SetActive(false);
+                PhotonNetwork.Destroy(other.gameObject);
+                //other.gameObject.SetActive(false);
                 //Destroy(other.gameObject);
 
             }
@@ -250,13 +246,15 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 FixMachine();
                 RepairToolZoneSpawn.instance.RemoveObject();
-                other.gameObject.SetActive(false);
+                //other.gameObject.SetActive(false);
+                PhotonNetwork.Destroy(other.gameObject);
                 //Destroy(other.gameObject);
             }
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.LoadRuiner)
             {
                 RuinLoad();
-                other.gameObject.SetActive(false);
+                PhotonNetwork.Destroy(other.gameObject);
+                //other.gameObject.SetActive(false);
             }
             else if (other.GetComponent<ItemTypeForItem>().itemType == this.gameObject.GetComponent<ItemTypeForUsingItem>().itemType[0])
             {
@@ -323,20 +321,15 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public void BoostMachine()
     {
         isBoosted = true;
-        boost.SetActive(true);
         if(boostMachinePart != null)
         {
-            
             boostMachinePart.SetActive(true);
-
         }
-
     }
     
     public void RuinLoad()
     {
         isRuined = true;
-        load.SetActive(true);
         if (loadRuinerMachinePart != null)
         {
             loadRuinerMachinePart.SetActive(true);
