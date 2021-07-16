@@ -20,7 +20,7 @@ public class PlayerMovementCC : MonoBehaviour
     public float slowedXspeed = 4f;
     public float slowedZspeed = 3f;
     public bool isGrabbed = false;
-    public GameObject enemyGrab;
+    public Transform enemyGrab;
 
 
     public float gravity = -9.8f;
@@ -154,12 +154,12 @@ public class PlayerMovementCC : MonoBehaviour
 
 
 
-            //transform.Rotate(0F, moveX * rotationSpeed, 0f);
-
-            //fix rotation flipping issue
-            rotation = cinemachineCamera.transform.localRotation.y;
             
-            transform.Rotate(0, rotation * 50, 0f);
+            //rotate based on camera
+            Quaternion lookRotation = cinemachineCamera.transform.rotation;
+            lookRotation.x = 0f;
+            lookRotation.z = 0f;         
+            transform.rotation = lookRotation;
 
 
             Vector3 move = transform.forward * moveZ;
