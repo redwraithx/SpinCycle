@@ -6,7 +6,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
-public class PlayerMovementCC : MonoBehaviour
+public class PlayerMovementCC : MonoBehaviourPun
 {
     public Camera cinemachineCamera;
     public CharacterController controller;

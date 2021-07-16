@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Grab : MonoBehaviour
 {
+    
     public Transform grabPoint = null;
+    public Transform target = null;
     public WeaponScript weapon = null;
     public GameObject weaponCamera;
     [SerializeField] public bool canPickUpItem = false;
@@ -41,7 +43,7 @@ public class Grab : MonoBehaviour
     {
         if (canPickUpItem && itemToPickUp && outOfRange == false)
         {
-            
+            Debug.Log("Can Pick Up Item?" + canPickUpItem);
 
             hasItemInHand = true;
             GetComponent<PlayerSphereCast>().itemInHand = true;
@@ -65,31 +67,28 @@ public class Grab : MonoBehaviour
 
     public void CheckForMouseUp()
     {
-        
-        
-
-
-        if (!itemInHand)
-            return;
-        
-        canPickUpItem = false;
-
-        foreach (var itemCollider in itemInHand.GetComponents<Collider>())
+        if (itemInHand)
         {
-                itemCollider.enabled = true;
-        }
-        
-        itemInHand.GetComponent<Rigidbody>().useGravity = true;
-        itemInHand.GetComponent<Item>().UpdateObjectsRigidBody(false);
-        
-        if(itemInHand.GetComponent<ItemTypeForItem>())
-            itemInHand.GetComponent<ItemTypeForItem>().RequestTransferOwnershipToHost();
-        
-        itemInHand.transform.parent = null;
 
-        hasItemInHand = false;
-        GetComponent<PlayerSphereCast>().itemInHand = false;
-        itemInHand = null;
+            canPickUpItem = false;
+
+            foreach (var itemCollider in itemInHand.GetComponents<Collider>())
+            {
+                itemCollider.enabled = true;
+            }
+
+            itemInHand.GetComponent<Rigidbody>().useGravity = true;
+            itemInHand.GetComponent<Item>().UpdateObjectsRigidBody(false);
+
+            if (itemInHand.GetComponent<ItemTypeForItem>())
+                itemInHand.GetComponent<ItemTypeForItem>().RequestTransferOwnershipToHost();
+
+            itemInHand.transform.parent = null;
+
+            hasItemInHand = false;
+            GetComponent<PlayerSphereCast>().itemInHand = false;
+            itemInHand = null;
+        }
     }
 
     private void Update()
@@ -99,7 +98,8 @@ public class Grab : MonoBehaviour
             CheckForMouseDown();
             
         }
-        else if (Input.GetMouseButtonUp(1) )
+
+        if (Input.GetMouseButtonUp(1) )
         {
             CheckForMouseUp();
         }
@@ -166,7 +166,7 @@ public class Grab : MonoBehaviour
             var isValidItem = itemInHand?.GetComponent<ItemTypeForItem>();
             if (isValidItem)
             {
-                Debug.Log(isValidItem.itemType);
+                //Debug.Log(isValidItem.itemType);
                 if (isValidItem.itemType == ItemType.SabotageWaterGun || isValidItem.itemType == ItemType.SabotageIceGun || isValidItem.itemType == ItemType.SabotageSoapGun)
                 {
                     if (!weapon.enabled)
