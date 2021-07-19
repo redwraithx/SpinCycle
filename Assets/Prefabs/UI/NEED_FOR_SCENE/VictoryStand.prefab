@@ -756,13 +756,14 @@ GameObject:
   - component: {fileID: 4812627673556595576}
   - component: {fileID: 4812627673556595577}
   - component: {fileID: 4812627673556595574}
+  - component: {fileID: 4812627673460941129}
   m_Layer: 0
   m_Name: VictoryStand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4812627673556595579
 Transform:
   m_ObjectHideFlags: 0
@@ -843,6 +844,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4812627673460941129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4812627673556595575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b1c8c660207b740bda80bb4069de5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startButton: {fileID: 0}
+  quitButton: {fileID: 1391531317235318909}
+  backToMainButton: {fileID: 1841468820849116368}
+  playButton: {fileID: 0}
+  settingsButton: {fileID: 0}
+  MainMenuSceneIndex: 0
 --- !u!1 &4812627673721793061
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,7 +1007,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4812627673858079779}
   - component: {fileID: 4812627673858079780}
-  - component: {fileID: 4812627673858079781}
   - component: {fileID: 4812627673858079778}
   m_Layer: 0
   m_Name: Camera
@@ -1054,14 +1072,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4812627673858079781
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4812627673858079776}
-  m_Enabled: 1
 --- !u!114 &4812627673858079778
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,7 @@
-﻿public interface IItem 
+﻿
+using UnityEngine;
+
+public interface IItem 
 {
 <<<<<<< HEAD
 =======
@@ -9,13 +12,15 @@
 
     string Description { get; }
 
-    int Price { get; }
+    int Price { get; set; }
 
 <<<<<<< HEAD
     float TimeAjustment { get; }
 =======
     float TimeAdjustment { get; }
 >>>>>>> main
+
+    Sprite sprite { get; }
 
 }
     

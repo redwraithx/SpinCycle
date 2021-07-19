@@ -49,18 +49,15 @@ namespace GamePlaySystems.Utilities
         {
             Debug.Log("request ownership from host");
 
-            if (isItemHeld)
-                return;
-            
-            // get ownership of the object were about to pickup
-            base.photonView.RequestOwnership();
+            if (!isItemHeld)
+            {
+                // get ownership of the object were about to pickup
+                base.photonView.RequestOwnership();
 
-            gameObject.GetComponent<Rigidbody>().useGravity = false;
-            gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            
-
-            isItemHeld = true;
-
+                gameObject.GetComponent<Rigidbody>().useGravity = false;
+                gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+                isItemHeld = true;
+            }  
         }
 
         public void RequestTransferOwnershipToHost()

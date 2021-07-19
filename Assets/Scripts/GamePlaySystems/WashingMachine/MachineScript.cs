@@ -53,9 +53,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject itemSpawnPoint;
     public float laundryTimer;
     public float sabotageTimer;
+    public float ruinTimer;
     public bool isSabotaged = false;
     public bool isEnabled = false;
     public bool isBoosted = false;
+    public bool isRuined = false;
     public Slider sliderTime;
     public LaundryType laundryType;
     public MachineType machineType;
@@ -67,6 +69,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public string showTextString = "";
     public int counter = 0;
 
+    public float priceAddition;
+    public float initialPrice;
+
+    public GameObject loadRuinerMachinePart;
+    public GameObject boostMachinePart;
 
     private void Awake()
     {
@@ -97,6 +104,10 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             if (laundryTimer > 0)
             {
                 laundryTimer -= Time.deltaTime;
+                if (isRuined)
+                {
+                    ruinTimer += Time.deltaTime;
+                }
             }
             if (laundryTimer <= 0 && isEnabled == true)
 >>>>>>> main
@@ -185,6 +196,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             Debug.Log($"new Item Type: {SpawnFinishedProductItemType}");
             
             newGO.GetComponent<ItemTypeForItem>().itemType = SpawnFinishedProductItemType;
+            float ruinedPrice = (10 * ruinTimer);
+            newGO.GetComponent<Item>().Price += ((int)initialPrice + (int)priceAddition) - (int)ruinedPrice;
         }
             
 
@@ -222,7 +235,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
 =======
         Debug.Log("processing item in machine");
-        
+        ruinTimer = 0;
         sliderTime.maxValue = cycleLength;
         laundryTimer = cycleLength;
         isEnabled = true;
@@ -304,7 +317,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.WasherBoost)
             {
                 BoostMachine();
-                other.gameObject.SetActive(false);
+                PhotonNetwork.Destroy(other.gameObject);
+                //other.gameObject.SetActive(false);
                 //Destroy(other.gameObject);
 
             }
@@ -312,11 +326,19 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 FixMachine();
                 RepairToolZoneSpawn.instance.RemoveObject();
-                other.gameObject.SetActive(false);
+                //other.gameObject.SetActive(false);
+                PhotonNetwork.Destroy(other.gameObject);
                 //Destroy(other.gameObject);
+            }
+            if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.LoadRuiner)
+            {
+                RuinLoad();
+                PhotonNetwork.Destroy(other.gameObject);
+                //other.gameObject.SetActive(false);
             }
             else if (other.GetComponent<ItemTypeForItem>().itemType == this.gameObject.GetComponent<ItemTypeForUsingItem>().itemType[0])
             {
+                initialPrice = other.GetComponent<Item>().Price;
                 //Once player is created, call to destroy the item in their hand here
                 ProcessItems();
                 // we may want to use a bool in case the machine is full we dont destroy or use the object
@@ -379,8 +401,20 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public void BoostMachine()
     {
         isBoosted = true;
+        if(boostMachinePart != null)
+        {
+            boostMachinePart.SetActive(true);
+        }
     }
     
+    public void RuinLoad()
+    {
+        isRuined = true;
+        if (loadRuinerMachinePart != null)
+        {
+            loadRuinerMachinePart.SetActive(true);
+        }
+    }
     public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
     {
         Debug.Log("requesting ownership by: " + requestingPlayer.NickName + " of machine viewID: " + targetView.ViewID);
@@ -430,6 +464,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(laundryTimer);
             stream.SendNext(cycleLength);
             stream.SendNext(isEnabled);
+            stream.SendNext(isSabotaged);
+            stream.SendNext(isRuined);
+            stream.SendNext(isBoosted);
 
 
             counter++;
@@ -446,6 +483,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             float laundry = (float) stream.ReceiveNext();
             float cycle = (float) stream.ReceiveNext();
             bool sliderIsEnabled = (bool) stream.ReceiveNext();
+            bool machineSabotaged = (bool)stream.ReceiveNext();
+            bool loadRuined = (bool) stream.ReceiveNext();
+            bool machineBoosted = (bool)stream.ReceiveNext();
 
             if (laundry > laundryTimer || laundry < laundryTimer)
                 laundryTimer = laundry;
@@ -455,6 +495,15 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
             if (isEnabled != sliderIsEnabled)
                 isEnabled = sliderIsEnabled;
+
+            if (isSabotaged != machineSabotaged)
+                isSabotaged = machineSabotaged;
+
+            if (isRuined != loadRuined)
+                isRuined = loadRuined;
+
+            if (isBoosted != machineBoosted)
+                isBoosted = machineBoosted;
 
 
             Debug.Log($"LaundryTimer: {laundryTimer}\ncycleLength: {cycleLength}\nsiEnabled: {isEnabled}");

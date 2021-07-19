@@ -64,6 +64,7 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
     [SerializeField] private string _description;
     [SerializeField] private int _price;
     [SerializeField] private float _timeAdjustment;
+    [SerializeField] private Sprite _sprite;
 
     private PhotonView _photonView = null;
     private PhotonTransformView _photonTransformView = null;
@@ -224,13 +225,19 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
     }
 =======
         get => _price;
-        private set => _price = value;
+        set => _price = value;
     }
 
     public float TimeAdjustment
     {
         get => _timeAdjustment;
         private set => _timeAdjustment = value;
+    }
+
+    public Sprite sprite
+    {
+        get => _sprite;
+        private set => _sprite = value;
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

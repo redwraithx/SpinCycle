@@ -281,6 +281,7 @@ MonoBehaviour:
   _description: Breaks machines and freeze players inside its radius
   _price: 200
   _timeAdjustment: 0
+  _sprite: {fileID: 21300000, guid: 89b44901fe04867458e41e8ee04e830a, type: 3}
   correctPosition: {x: 0, y: 0, z: 0}
   correctRotation: {x: 0, y: 0, z: 0, w: 1}
   originalParent: {fileID: 0}
@@ -312,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2e483fbd70d9e4da185468f0ca5bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 6
+  itemType: 0
   laundryType: 0
 --- !u!135 &2568307419595532612
 SphereCollider:

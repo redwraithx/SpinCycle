@@ -126,20 +126,13 @@ public class LaundryBasket : MonoBehaviourPun
         {
             if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
             {
-                points = other.gameObject.GetComponent<Item>().Price;                
+                points = other.gameObject.GetComponent<Item>().Price;
                 Debug.Log(points);
 
                 //above two lines aren't needed for this code to run, only for debugging purposes
 
                 playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
-                //other.gameObject.SetActive(false);
-                
-                PhotonNetwork.Destroy(other.gameObject);
-
-                //pointsToText = points.ToString();
-                //Debug.Log(pointsToText);
-                //pointsText.text = pointsToText;
-                //playerPoints.Points += points;
+                other.gameObject.GetComponent<Item>().DisableObject();
             }
         }
     }

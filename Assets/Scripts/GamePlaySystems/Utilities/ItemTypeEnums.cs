@@ -17,7 +17,8 @@ namespace GamePlaySystems.Utilities
         SabotageClothing,
         RepairTool,
         WasherBoost,
-        DryerBoost
+        DryerBoost,
+        LoadRuiner
     }
 
 
