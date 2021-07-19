@@ -58,6 +58,7 @@ MonoBehaviour:
   _description: this is a shirt
   _price: 0
   _timeAdjustment: 0
+  _sprite: {fileID: 0}
   correctPosition: {x: 0, y: 0, z: 0}
   correctRotation: {x: 0, y: 0, z: 0, w: 1}
   originalParent: {fileID: 0}
@@ -231,10 +232,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 4943318792776943735}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9829a0f9e19a8964794ed27ceccaa403, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9829a0f9e19a8964794ed27ceccaa403, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.834
       objectReference: {fileID: 0}
@@ -247,10 +244,6 @@ PrefabInstance:
       value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9829a0f9e19a8964794ed27ceccaa403, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9829a0f9e19a8964794ed27ceccaa403, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -260,6 +253,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9829a0f9e19a8964794ed27ceccaa403, type: 3}
       propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9829a0f9e19a8964794ed27ceccaa403, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9829a0f9e19a8964794ed27ceccaa403, type: 3}
+      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9829a0f9e19a8964794ed27ceccaa403, type: 3}

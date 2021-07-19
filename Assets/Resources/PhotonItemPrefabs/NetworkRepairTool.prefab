@@ -73,6 +73,7 @@ MonoBehaviour:
   _description: This is the repair tool its not just a tube
   _price: 4
   _timeAdjustment: 0
+  _sprite: {fileID: 0}
   correctPosition: {x: 0, y: 0, z: 0}
   correctRotation: {x: 0, y: 0, z: 0, w: 1}
   originalParent: {fileID: 0}
@@ -249,10 +250,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 743204714180158750}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a98a7b3b19664354fb6b8cc96da9104c, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a98a7b3b19664354fb6b8cc96da9104c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.556
       objectReference: {fileID: 0}
@@ -265,10 +262,6 @@ PrefabInstance:
       value: -0.136
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a98a7b3b19664354fb6b8cc96da9104c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a98a7b3b19664354fb6b8cc96da9104c, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -278,6 +271,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a98a7b3b19664354fb6b8cc96da9104c, type: 3}
       propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a98a7b3b19664354fb6b8cc96da9104c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a98a7b3b19664354fb6b8cc96da9104c, type: 3}
+      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a98a7b3b19664354fb6b8cc96da9104c, type: 3}

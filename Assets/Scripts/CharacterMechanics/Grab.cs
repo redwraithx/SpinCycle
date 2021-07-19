@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Grab : MonoBehaviour
 {
+    
     public Transform grabPoint = null;
+    public Transform target = null;
     public WeaponScript weapon = null;
     public GameObject weaponCamera;
     [SerializeField] public bool canPickUpItem = false;
@@ -63,7 +65,7 @@ public class Grab : MonoBehaviour
         }
     }
 
-    private void CheckForMouseUp()
+    public void CheckForMouseUp()
     {
         if (itemInHand)
         {

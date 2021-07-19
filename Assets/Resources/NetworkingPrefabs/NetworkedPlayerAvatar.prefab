@@ -84,7 +84,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!114 &1098603128737339556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1253,6 +1252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabPoint: {fileID: 2536938193671778017}
+  target: {fileID: 0}
   weapon: {fileID: 0}
   weaponCamera: {fileID: 3795880657246068852}
   canPickUpItem: 0
@@ -1683,7 +1683,6 @@ MonoBehaviour:
   m_StopNaN: 0
   m_Dithering: 0
   m_ClearDepth: 1
-  m_AllowXRRendering: 1
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
