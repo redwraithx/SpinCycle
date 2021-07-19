@@ -55,6 +55,9 @@ public class PlayerMovementCC : MonoBehaviourPun
     internal PhotonView _photonView = null;
     private Vector3 correctPosition = Vector3.zero;
     private Quaternion correctRotation = Quaternion.identity;
+    
+    
+    private static readonly int Run = Animator.StringToHash("Run");
 
     public float MoveSpeed
     {
@@ -99,6 +102,9 @@ public class PlayerMovementCC : MonoBehaviourPun
 
         if (!rb)
             rb = GetComponent<Rigidbody>();
+
+        if (!characterAnimator)
+            characterAnimator = GetComponentInChildren<Animator>();
     }
 
 
@@ -161,11 +167,11 @@ public class PlayerMovementCC : MonoBehaviourPun
 
         if (Input.GetKeyDown("w")||  Input.GetKeyDown("s"))
         {
-            characterAnimator.SetBool("Run",true);
+            characterAnimator.SetBool(Run,true);
         }
         if (Input.GetKeyUp("w") || Input.GetKeyUp("s"))
         {
-            characterAnimator.SetBool("Run", false);
+            characterAnimator.SetBool(Run, false);
         }
 
         if (isFrozen == true)

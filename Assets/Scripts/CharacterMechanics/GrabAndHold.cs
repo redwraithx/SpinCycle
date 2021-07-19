@@ -7,7 +7,6 @@ using Photon.Realtime;
 public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 {
     public GameObject targetPlayer = null;
-    public Transform grabber;
     private Grab grab = null;
     private StrengthBarUI strengthBar = null;
     private PlayerMovementCC playerCC = null;
@@ -65,12 +64,12 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
         //Physics.IgnoreCollision(grabCollider, GetComponent<CharacterController>());
 
 
-
+        
         Physics.SphereCast(transform.position + new Vector3(0f, 0.5f, 0f), 0.5f, transform.forward, out hit, 0.5f);
 
-        if (hit.collider != null)
-            Debug.Log("can hit: " + hit.collider.name);
-
+        if(hit.collider != null)
+           Debug.Log("can hit: " + hit.collider.name);
+        
     }
 
     private void Update()
@@ -79,17 +78,17 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
         {
             CheckGrab();
         }
-        else if (targetPlayer && hasLostGripOfPlayer)
+        else if(targetPlayer && hasLostGripOfPlayer)
         {
             RelasedHeldPlayer();
         }
+            
 
-
-        if (isHoldTimerEnabled)
+        if(isHoldTimerEnabled)
         {
             currentHoldTimer -= Time.deltaTime;
 
-            if (currentHoldTimer <= 0f)
+            if(currentHoldTimer <= 0f)
             {
                 isHoldTimerEnabled = false;
 
@@ -103,7 +102,7 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 
     }
 
-    private void CheckGrab()
+    private void CheckGrab() 
     {
         otherPlayersGrabAndHoldScript = targetPlayer.GetComponent<GrabAndHold>();
 
@@ -121,26 +120,24 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 
             //otherPlayersGrabAndHoldScript.isBeingGrabbed = true;
 
-            //otherPlayersGrabAndHoldScript.BeingGrabbed();
-            //targetPlayer.GetComponent<PlayerMovementCC>().enemyGrab = grabber.position;
+            otherPlayersGrabAndHoldScript.BeingGrabbed();
 
             //targetPlayer.GetComponent<PlayerMovementCC>().isGrabbed = true;
-
+            
             //You become the other player's parent!
             //otherPlayersGrabAndHoldScript.SetParent(transform);
-
+            
             isHoldingOtherPlayer = true;
 
         }
 
-        if (targetPlayer && Input.GetMouseButtonUp(0) && isHoldingOtherPlayer)
+        if(targetPlayer && Input.GetMouseButtonUp(0) && isHoldingOtherPlayer)
         {
 
-            //RelasedHeldPlayer();
-            //targetPlayer.GetComponent<PlayerMovementCC>().enemyGrab = Vector3.zero;
+            RelasedHeldPlayer();
 
             //otherPlayersGrabAndHoldScript.BeingReleased();
-            isHoldingOtherPlayer = false;
+
         }
 
 
@@ -150,17 +147,16 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
     public void BeingGrabbed()
     {
         isBeingGrabbed = true;
-        GetComponent<PlayerMovementCC>().isGrabbed = true;
+
         GetComponent<PlayerMovementCC>().SlowDown();
 
-
-        //isHoldingOtherPlayer = true;
+        isHoldingOtherPlayer = true;
 
         currentHoldTimer = holdTimeDuration;
 
         isHoldTimerEnabled = true;
 
-
+        
     }
 
     public void BeingReleased()
@@ -169,7 +165,6 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 
         isHoldingOtherPlayer = false;
 
-        GetComponent<PlayerMovementCC>().isGrabbed = false;
         //GetComponent<PlayerMovementCC>().SpeedUp();
 
         isBeingGrabbed = false;
@@ -195,7 +190,7 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
             return;
 
         if (grab)
-            if (grab.itemInHand)
+            if(grab.itemInHand)
                 return;
 
         if (targetPlayer)
@@ -204,12 +199,12 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
         if (!other.gameObject)
             return;
 
-        targetPlayer = other.gameObject;
-        Debug.Log("Target player = true");
-
+            targetPlayer = other.gameObject;
+        Debug.Log("Target player = true");           
+         
     }
 
-
+    
     private void OnTriggerExit(Collider other)
     {
         //This is where we set the potential target to null.
@@ -253,7 +248,7 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 
         foreach (var player in PhotonNetwork.PlayerList)
         {
-            if (targetView.OwnerActorNr == player.ActorNumber)
+            if(targetView.OwnerActorNr == player.ActorNumber)
             {
                 originalTargetView = targetView;
                 originalPlayer = player;
@@ -269,7 +264,7 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 
         if (stream.IsWriting)
         {
-
+            
             Debug.Log("Stream.IsWritting");
 
             stream.SendNext(textString);
@@ -278,15 +273,12 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 
             counter++;
 
-            Vector3 pos = grabber.position;
-
-            stream.SendNext(isBeingGrabbed);
-            //stream.SendNext(GetComponent<PlayerMovementCC>().isGrabbed);
-            stream.SendNext(pos);
+            stream.SendNext(isBeingGrabbed); 
+            stream.SendNext(GetComponent<PlayerMovementCC>().isGrabbed);
             stream.SendNext(isHoldingOtherPlayer);
             stream.SendNext(currentHoldTimer);
             stream.SendNext(isHoldTimerEnabled);
-
+            
         }
         else if (stream.IsReading)
         {
@@ -299,41 +291,27 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
             bool beingGrabbed = (bool)stream.ReceiveNext();
             //if (beingGrabbed != isBeingGrabbed)
             //{
-            isBeingGrabbed = beingGrabbed;
-
-            GetComponent<PlayerMovementCC>().isGrabbed = isBeingGrabbed;
+                isBeingGrabbed = beingGrabbed;
             //}
 
-            //Transform grabLocation = (Transform)stream.ReceiveNext();
-
-            var garbageVec = (Vector3)stream.ReceiveNext();
-
-            if (isBeingGrabbed)
-            {
-
-                Debug.Log("Update Location");
-
-                //GetComponent<PlayerMovementCC>().enemyGrab = garbageVec;
-            }
-
-            //bool grabbed = (bool)stream.ReceiveNext();
+            bool grabbed = (bool)stream.ReceiveNext();
             //if (grabbed != GetComponent<PlayerMovementCC>().isGrabbed)
             //{
-            //GetComponent<PlayerMovementCC>().isGrabbed = grabbed;
+                GetComponent<PlayerMovementCC>().isGrabbed = grabbed;
             //}
 
             bool holdingOtherPlayer = (bool)stream.ReceiveNext();
             //if(holdingOtherPlayer != isHoldingOtherPlayer)
             //{
-            isHoldingOtherPlayer = holdingOtherPlayer;
-            //}
+                isHoldingOtherPlayer = holdingOtherPlayer;
+           //}
 
             currentHoldTimer = (float)stream.ReceiveNext();
 
             bool holdingTimerEnabled = (bool)stream.ReceiveNext();
             //if(holdingTimerEnabled != isHoldTimerEnabled)
             //{
-            isHoldTimerEnabled = holdingTimerEnabled;
+                isHoldTimerEnabled = holdingTimerEnabled;
             //}
 
 
@@ -343,11 +321,11 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
     public void RelasedHeldPlayer()
     {
         if (!targetPlayer)
-            return;
+            return; 
         //Reverts the becoming of the other player's parent!
         //otherPlayersGrabAndHoldScript.RemoveParent();
 
-        //otherPlayersGrabAndHoldScript.isBeingGrabbed = false;
+       //otherPlayersGrabAndHoldScript.isBeingGrabbed = false;
 
         //targetPlayer.GetComponent<PlayerMovementCC>().isGrabbed = false;
 

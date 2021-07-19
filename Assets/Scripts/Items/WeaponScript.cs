@@ -78,20 +78,8 @@ public class WeaponScript : MonoBehaviour
             
             // Shoot bullet
             temp.GetComponent<Rigidbody>().AddForce(projectileSpawnPoint.forward * projectileSpeed, ForceMode.Impulse);
-            DropWeapon();
             
         }
-    }
-
-    public void DropWeapon()
-    {
-        GetComponentInParent<Grab>().CheckForMouseUp();
-        Invoke("DestroyWeapon", 1f);
-    }
-
-    public void DestroyWeapon()
-    {
-        Destroy(gameObject);
     }
 
     //public int Shoot()
