@@ -378,6 +378,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6832526362924805502, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
+      propertyPath: viewIdField
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
 --- !u!1 &498648505
@@ -596,6 +600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryingMachine
       objectReference: {fileID: 0}
+    - target: {fileID: 6606962663204163661, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
+      propertyPath: viewIdField
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8002849724096925118, guid: 9126cdd5cfbb2b6458bc4ade981a9b5d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -730,6 +738,24 @@ MonoBehaviour:
   timeRemaining: 3600
   timerIsRunning: 0
   timeText: {fileID: 310183728}
+  GameOverImage: {fileID: 0}
+  BlackImage: {fileID: 0}
+  anim: {fileID: 0}
+  player1Points: 0
+  player2Points: 0
+  player1Name: 
+  player2Name: 
+  pointTextL: {fileID: 0}
+  pointTextW: {fileID: 0}
+  loserText: {fileID: 0}
+  winnerText: {fileID: 0}
+  winner: {fileID: 0}
+  loser: {fileID: 0}
+  vStand: {fileID: 0}
+  loserVille: {fileID: 0}
+  vStandPrefab: {fileID: 0}
+  networkedTimer: {fileID: 0}
+  GameOverSceneIndex: 0
 --- !u!1001 &882164943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2061,6 +2087,10 @@ PrefabInstance:
       propertyPath: itemType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6832526362924805502, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
+      propertyPath: viewIdField
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
 --- !u!1 &1692752781
@@ -2803,6 +2833,10 @@ PrefabInstance:
     - target: {fileID: 4442845815558936321, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832526362924805502, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
+      propertyPath: viewIdField
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5cbf482c710db84197d2980b12424dc, type: 3}
