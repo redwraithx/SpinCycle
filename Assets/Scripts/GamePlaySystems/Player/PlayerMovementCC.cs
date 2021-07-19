@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class PlayerMovementCC : MonoBehaviourPun
 {
+    public Animator characterAnimator;
     public CharacterController controller;
     public GrabAndHold grabHold;
     public float Xspeed = 12f;
@@ -157,7 +158,17 @@ public class PlayerMovementCC : MonoBehaviourPun
             controller.Move(move);
         }
 
-        if(isFrozen == true)
+
+        if (Input.GetKeyDown("w")||  Input.GetKeyDown("s"))
+        {
+            characterAnimator.SetBool("Run",true);
+        }
+        if (Input.GetKeyUp("w") || Input.GetKeyUp("s"))
+        {
+            characterAnimator.SetBool("Run", false);
+        }
+
+        if (isFrozen == true)
         {
             frozenTimer -= Time.deltaTime;
             if (frozenTimer <= 0)
@@ -201,11 +212,28 @@ public class PlayerMovementCC : MonoBehaviourPun
             velocity.y = Jump();
         }
 
+
+        if (Input.GetKeyDown("space"))
+        {
+            characterAnimator.SetBool("Jump", true);
+        }
+        if (Input.GetKeyUp("space"))
+        {
+            characterAnimator.SetBool("Jump", false);
+        }
+
         velocity.y += (gravity * gravityMulitplier) * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
-        
-        
+
+        if (Input.GetKeyDown("p"))
+        {
+            characterAnimator.SetBool("Attack", true);
+        }
+        if (Input.GetKeyUp("p"))
+        {
+            characterAnimator.SetBool("Attack", false);
+        }
     }
 
 
