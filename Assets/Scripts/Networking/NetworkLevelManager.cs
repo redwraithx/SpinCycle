@@ -52,6 +52,7 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
 
                 // spawn networked Player
                 networkedPlayer = PhotonNetwork.Instantiate(Path.Combine("NetworkingPrefabs", "NetworkedPlayerAvatar"), startingPosition, startingRotation, 0);
+                //networkedPlayer = PhotonNetwork.Instantiate(Path.Combine("NetworkingPrefabs", "NetworkedPlayerAvatar_withAnimations"), startingPosition, startingRotation, 0);
 
                 networkedPlayer.GetComponent<PlayerMovementCC>().playerDiveIndex = newPlayerIndex;
 
