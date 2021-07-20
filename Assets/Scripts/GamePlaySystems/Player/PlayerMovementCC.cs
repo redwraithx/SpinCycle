@@ -8,19 +8,17 @@ using UnityEngine;
 
 public class PlayerMovementCC : MonoBehaviourPun
 {
-    public Camera cinemachineCamera;
+    public Animator characterAnimator;
     public CharacterController controller;
     public GrabAndHold grabHold;
-    public float Xspeed = 8f;
+    public float Xspeed = 12f;
     public float Zspeed = 10f;
-    public float rotation;
     private float m_moveSpeedMultiplier = 1f;
     private float m_jumpPowerMultiplier = 1f;
 
     public float slowedXspeed = 4f;
     public float slowedZspeed = 3f;
     public bool isGrabbed = false;
-    public Transform enemyGrab;
 
 
     public float gravity = -9.8f;
@@ -57,6 +55,9 @@ public class PlayerMovementCC : MonoBehaviourPun
     internal PhotonView _photonView = null;
     private Vector3 correctPosition = Vector3.zero;
     private Quaternion correctRotation = Quaternion.identity;
+    
+    
+    
 
     public float MoveSpeed
     {
@@ -102,7 +103,8 @@ public class PlayerMovementCC : MonoBehaviourPun
         if (!rb)
             rb = GetComponent<Rigidbody>();
 
-        
+        if (!characterAnimator)
+            characterAnimator = GetComponentInChildren<Animator>();
     }
 
 
@@ -150,33 +152,29 @@ public class PlayerMovementCC : MonoBehaviourPun
                 moveX = Input.GetAxis("Horizontal") * ((slowedXspeed * m_moveSpeedMultiplier) * Time.deltaTime);
                 moveZ = Input.GetAxis("Vertical") * ((slowedZspeed * m_moveSpeedMultiplier) * Time.deltaTime);
             }
+                
 
 
 
-
-            
-            //rotate based on camera
-            Quaternion lookRotation = cinemachineCamera.transform.rotation;
-            lookRotation.x = 0f;
-            lookRotation.z = 0f;         
-            transform.rotation = lookRotation;
+            transform.Rotate(0F, moveX * rotationSpeed, 0f);
 
 
             Vector3 move = transform.forward * moveZ;
-            move += transform.right * moveX;
 
-            if (!isGrabbed)
-            {
-                controller.Move(move);
-            }
-            else
-            {
-                controller.Move(enemyGrab.transform.position);
-            }
-
+            controller.Move(move);
         }
 
-        if(isFrozen == true)
+
+        if (Input.GetKeyDown("w")||  Input.GetKeyDown("s"))
+        {
+            characterAnimator.SetBool("Run",true);
+        }
+        if (Input.GetKeyUp("w") || Input.GetKeyUp("s"))
+        {
+            characterAnimator.SetBool("Run", false);
+        }
+
+        if (isFrozen == true)
         {
             frozenTimer -= Time.deltaTime;
             if (frozenTimer <= 0)
@@ -220,11 +218,28 @@ public class PlayerMovementCC : MonoBehaviourPun
             velocity.y = Jump();
         }
 
+
+        if (Input.GetKeyDown("space"))
+        {
+            characterAnimator.SetBool("Jump", true);
+        }
+        if (Input.GetKeyUp("space"))
+        {
+            characterAnimator.SetBool("Jump", false);
+        }
+
         velocity.y += (gravity * gravityMulitplier) * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
-        
-        
+
+        if (Input.GetKeyDown("p"))
+        {
+            characterAnimator.SetBool("Attack", true);
+        }
+        if (Input.GetKeyUp("p"))
+        {
+            characterAnimator.SetBool("Attack", false);
+        }
     }
 
 
