@@ -65,7 +65,7 @@ public class Grab : MonoBehaviour
         }
     }
 
-    private void CheckForMouseUp()
+    public void CheckForMouseUp()
     {
         if (itemInHand)
         {
