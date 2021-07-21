@@ -208,7 +208,7 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IPunObservable
             Vector3 grabLocation = (Vector3)stream.ReceiveNext();
             if(!isGrabbing)
             {
-                playerCC.enemyGrab.transform.position = grabLocation;
+                //playerCC.enemyGrab.transform.position = grabLocation;
             }
 
             playerCC.isGrabbed = (bool)stream.ReceiveNext();

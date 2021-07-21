@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     [Header("Timer Functions"), ] 
     public float timeRemaining = 10;
     public bool timerIsRunning = false;
-    public Text timeText;
+    public TMP_Text timeText;
     public Image GameOverImage;
     public Image BlackImage;
     public Animator anim;
