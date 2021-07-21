@@ -46,21 +46,14 @@ public class WeaponScript : MonoBehaviourPun
         yRotation = Mathf.Clamp(yRotation, -45f, 45f);
         gun.transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
 
-        if(gun && !destroyGun)
-        {
-            destroyGun = gun.GetComponent<WeaponDestroyScript>();
-        }
-        else
-        {
-            destroyGun = null;
-        }
-        
-
-        if (Input.GetButtonDown("Fire1")) // Set in Edit | Project Settings | Input Manager
-        {
-            Debug.Log("Firing");
-            fire();
-        }
+        //if(gun && !destroyGun)
+        //{
+        //    destroyGun = gun.GetComponent<WeaponDestroyScript>();
+        //}
+        //else
+        //{
+        //    destroyGun = null;
+        //}
 
         switch (itemType)
         {
@@ -78,7 +71,12 @@ public class WeaponScript : MonoBehaviourPun
                 break;
         }
 
-        
+        if (Input.GetButtonDown("Fire1")) // Set in Edit | Project Settings | Input Manager
+        {
+            Debug.Log("Firing");
+            fire();
+        }
+                             
     }
     public void fire()
     {
