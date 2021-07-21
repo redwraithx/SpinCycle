@@ -6,14 +6,12 @@ using Photon.Realtime;
 using UnityEngine;
 
 
-public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
+public class NetworkedPlayer : MonoBehaviourPunCallbacks //IPunOwnershipCallbacks
 {
     public static GameObject LocalPlayerInstance = null; // this is your character when your playing
 
-   
     public PlayerSphereCast playerSphereCastScript = null;
     public Grab grabScript = null;
-    public GrabAndHold grabAndHoldScript = null;
     public PlayerMovementCC playerMovementCCScript = null;
     //public PlayerPoints playerPointsScript = null;
     public GameObject playerPointsGO = null;
@@ -58,11 +56,6 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
                 grabScript.enabled = false;
             else
                 gameObject.GetComponent<Grab>().enabled = false;
-
-            if (grabAndHoldScript)
-                grabScript.enabled = false;
-            else
-                gameObject.GetComponent<GrabAndHold>().enabled = false;
 
             if (playerMovementCCScript)
                 playerMovementCCScript.enabled = false;
@@ -163,7 +156,7 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
     
     
     // WARNING THERE IS TO BE ONLY ONE OF THIS PER INSTANCE OF THE GAME
-    public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
+    /*public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
     {
         Debug.Log("trying to request ownership of object");
         
@@ -174,12 +167,11 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
         Debug.Log($"getting ownership of object for player: {requestingPlayer.NickName}");
         
         base.photonView.TransferOwnership(requestingPlayer);
-    }
+    }*/
 
     // WARNING THERE IS TO BE ONLY ONE OF THIS PER INSTANCE OF THE GAME 
-    public void OnOwnershipTransfered(PhotonView targetView, Player previousOwner)
+    /*public void OnOwnershipTransfered(PhotonView targetView, Player previousOwner)
     {
-        Debug.Log("transferring ownership to prev player");
-       // base.photonView.TransferOwnership(previousOwner);
-    }
+        base.photonView.TransferOwnership(previousOwner);
+    }*/
 }

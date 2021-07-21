@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-=======
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
->>>>>>> main
 using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
@@ -15,20 +9,14 @@ public class CanvasManager : MonoBehaviour
     public Button backToMainButton;
     public Button playButton;
     public Button settingsButton;
-<<<<<<< HEAD
-=======
 
     public int MainMenuSceneIndex = 0;
->>>>>>> main
     
     
     void Start()
     {
-<<<<<<< HEAD
-=======
         Cursor.lockState = CursorLockMode.None;
         
->>>>>>> main
         //these are all just checking to see if you've hit the button and then triggering the scripts in game manager
         if (startButton)
         {
@@ -53,13 +41,6 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
-   
-    void Update()
-    {
-        
-    }
-=======
     public void LoadMainMenu()
     {
         Debug.Log("goto main menu");
@@ -77,5 +58,4 @@ public class CanvasManager : MonoBehaviour
     }
 
 
->>>>>>> main
 }

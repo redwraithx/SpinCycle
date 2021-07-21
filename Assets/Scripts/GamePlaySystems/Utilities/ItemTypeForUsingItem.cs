@@ -13,11 +13,7 @@ namespace GamePlaySystems.Utilities
     public class ItemTypeForUsingItem : MonoBehaviour
     {
         [Header("Item Types valid to use with this object")]
-<<<<<<< HEAD
-        public ItemTypeForItem.ItemType[] itemType;
-=======
         public ItemType[] itemType;
->>>>>>> main
 
         [Space, Header("Only Add ONE event function per machine.")]
         public InteractableObjectEvent thisObjectEvent;
@@ -31,11 +27,7 @@ namespace GamePlaySystems.Utilities
         }
 
 
-<<<<<<< HEAD
-        public ItemTypeForItem UseItem(GameObject other, ItemTypeForItem.ItemType[] itemTypeToMatch)
-=======
         public ItemTypeForItem UseItem(GameObject other, ItemType[] itemTypeToMatch)
->>>>>>> main
         {
             // if other is null
             if (!other || itemTypeToMatch.Length <= 0)
@@ -51,11 +43,7 @@ namespace GamePlaySystems.Utilities
             {
                 foreach (var item in itemTypeToMatch)
                 {
-<<<<<<< HEAD
-                    Debug.Log($"itemOther: {itemOther.itemType}, item: {item}");
-=======
                     //Debug.Log($"itemOther: {itemOther.itemType}, item: {item}");
->>>>>>> main
                     
                     if (itemOther.itemType == item)
                     {

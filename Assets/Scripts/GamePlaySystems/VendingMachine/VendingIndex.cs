@@ -7,14 +7,12 @@ public class VendingIndex : MonoBehaviour
     public string Name;
     public string Price;
     public string Description;
-    public Sprite Sprite;
 
-    public VendingIndex(string name, string desc, string price, Sprite sprite)
+    public VendingIndex(string name, string desc, string price)
         {
         Name = name;
         Price = price;
         Description = desc;
-        Sprite = sprite;
         Debug.Log($"Name: {name}, Desc: {desc}, Price: {price}");
     }
 

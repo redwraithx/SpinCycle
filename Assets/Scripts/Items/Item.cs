@@ -1,30 +1,4 @@
 ﻿
-<<<<<<< HEAD
-using UnityEngine;
-
-public class Item : MonoBehaviour, IItem
-{
-    [SerializeField] private string _name;
-    [SerializeField] private string _description;
-    [SerializeField] private int _price;
-    [SerializeField] private float _timeAjustment;
-
-
-    private void Awake()
-    {
-        gameObject.tag = "Item";
-
-        gameObject.layer = LayerMask.NameToLayer("Items");
-    }
-
-
-    public Item(string name, string description, int price, float _time)
-    {
-        Name = name;
-        Description = description;
-        Price = price;
-        TimeAjustment = _time;
-=======
 using System;
 using System.IO;
 using System.Security.AccessControl;
@@ -64,7 +38,6 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
     [SerializeField] private string _description;
     [SerializeField] private int _price;
     [SerializeField] private float _timeAdjustment;
-    [SerializeField] private Sprite _sprite;
 
     private PhotonView _photonView = null;
     private PhotonTransformView _photonTransformView = null;
@@ -149,7 +122,6 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
         Description = description;
         Price = price;
         TimeAdjustment = _time;
->>>>>>> main
     }
 
     public Item()
@@ -157,18 +129,6 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
 
     }
 
-<<<<<<< HEAD
-    public string Name
-    {
-        get
-        {
-            return _name;
-        }
-        private set
-        {
-            _name = value;
-        }
-=======
     public int Id
     {
         get => _id;
@@ -179,51 +139,16 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
     {
         get => _name;
         private set => _name = value;
->>>>>>> main
     }
 
     public string Description
     {
-<<<<<<< HEAD
-        get
-        {
-            return _description;
-        }
-        private set
-        {
-            _description = value;
-        }
-=======
         get => _description;
         private set => _description = value;
->>>>>>> main
     }
 
     public int Price
     {
-<<<<<<< HEAD
-        get
-        {
-            return _price;
-        }
-        private set
-        {
-            _price = value;
-        }
-    }
-
-    public float TimeAjustment
-    {
-        get
-        {
-            return _timeAjustment;
-        }
-        private set
-        {
-            _timeAjustment = value;
-        }
-    }
-=======
         get => _price;
         set => _price = value;
     }
@@ -232,12 +157,6 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
     {
         get => _timeAdjustment;
         private set => _timeAdjustment = value;
-    }
-
-    public Sprite sprite
-    {
-        get => _sprite;
-        private set => _sprite = value;
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -353,7 +272,6 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
 
     
     
->>>>>>> main
 }
 
 

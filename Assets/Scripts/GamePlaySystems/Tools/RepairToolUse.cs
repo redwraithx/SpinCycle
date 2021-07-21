@@ -1,5 +1,4 @@
-﻿using Photon.Pun;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +11,7 @@ public class RepairToolUse : MonoBehaviour, IRepairToolUse
     {
         Debug.Log("repair tool goes away");
         RepairToolZoneSpawn.instance.RemoveObject();
-        PhotonNetwork.Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     void Start()
@@ -32,8 +31,7 @@ public class RepairToolUse : MonoBehaviour, IRepairToolUse
             if (timer <= 0)
             {
                 RepairToolZoneSpawn.instance.RemoveObject();
-                //Destroy(this.gameObject);
-                PhotonNetwork.Destroy(gameObject);
+                Destroy(this.gameObject);
             }
         }
     }

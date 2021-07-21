@@ -29,8 +29,6 @@ public class RepairToolZoneSpawn : MonoBehaviour
         {
             repairToolInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
             repairToolInstance.GetComponent<RepairToolUse>().spawner = transform.position;
-
-
             spawnTimer += 3;
             repairTools.Add(repairToolInstance);
         }
