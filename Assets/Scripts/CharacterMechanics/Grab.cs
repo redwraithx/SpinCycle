@@ -152,11 +152,11 @@ public class Grab : MonoBehaviour
                 {
                     if(weapon.enabled)
                         weapon.fire();
-                    //itemInHand.GetComponent<RepairToolUse>().UseItem();
+                   
                     Debug.Log("Gun");
-                    //itemInHand = null;
+                    itemInHand = null;
 
-                    //ClearGrabValues();
+                    ClearGrabValues();
                 }
 
             }
@@ -175,6 +175,7 @@ public class Grab : MonoBehaviour
                         weapon.itemType = isValidItem.itemType;
                         weapon.gun = itemInHand;
                         weapon.projectileSpawnPoint = itemInHand.GetComponentInChildren<Transform>();
+                        weapon.destroyGun = weapon.gun.GetComponent<WeaponDestroyScript>();
                         weaponCamera.gameObject.SetActive(true);
                         itemInHand.gameObject.transform.rotation = transform.rotation;
                     }
@@ -352,6 +353,8 @@ public class Grab : MonoBehaviour
 
     private void ClearGrabValues()
     {
+
+
         if (itemInHand)
         {
             var isItemASabbotage = itemInHand.GetComponent<ItemTypeForItem>().itemType;
@@ -363,9 +366,11 @@ public class Grab : MonoBehaviour
         }
         else
         {
+            //weapon.destroyGun = null;
             itemInHand = null;
             canUseHeldItem = false;
             GetComponent<PlayerSphereCast>().itemInHand = false;
+            
         }
 
         canPickUpItem = false;

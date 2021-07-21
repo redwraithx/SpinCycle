@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 using GamePlaySystems.Utilities;
 using System.Collections;
 
@@ -12,7 +12,7 @@ using Photon.Realtime;
 public class LaundryBasket : MonoBehaviourPun
 {
 
-    public Text pointsText = null;
+    public TMP_Text pointsText = null;
     public int points;
     PlayerPoints playerPoints = null;
     public string pointsToText;
