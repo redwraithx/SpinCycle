@@ -229,6 +229,9 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 237251107}
   m_OnClick:
     m_PersistentCalls:
+<<<<<<< HEAD
+      m_Calls: []
+=======
       m_Calls:
       - m_Target: {fileID: 841314203}
         m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
@@ -242,6 +245,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+>>>>>>> main
 --- !u!114 &237251107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +375,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
+<<<<<<< HEAD
+  m_RaycastTarget: 1
+=======
   m_RaycastTarget: 0
+>>>>>>> main
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -427,7 +435,10 @@ MonoBehaviour:
   GameOverImage: {fileID: 0}
   BlackImage: {fileID: 352794087}
   anim: {fileID: 352794086}
+<<<<<<< HEAD
+=======
   GameOverSceneIndex: 0
+>>>>>>> main
 --- !u!4 &521237435
 Transform:
   m_ObjectHideFlags: 0
@@ -650,7 +661,10 @@ MonoBehaviour:
   backToMainButton: {fileID: 1357648626}
   playButton: {fileID: 0}
   settingsButton: {fileID: 0}
+<<<<<<< HEAD
+=======
   MainMenuSceneIndex: 0
+>>>>>>> main
 --- !u!114 &841314204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -804,7 +818,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
+<<<<<<< HEAD
+  m_Text: Game Over:(
+=======
   m_Text: Game Over
+>>>>>>> main
 --- !u!222 &1277684744
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -874,6 +892,9 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1357648627}
   m_OnClick:
     m_PersistentCalls:
+<<<<<<< HEAD
+      m_Calls: []
+=======
       m_Calls:
       - m_Target: {fileID: 841314203}
         m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
@@ -887,6 +908,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+>>>>>>> main
 --- !u!114 &1357648627
 MonoBehaviour:
   m_ObjectHideFlags: 0

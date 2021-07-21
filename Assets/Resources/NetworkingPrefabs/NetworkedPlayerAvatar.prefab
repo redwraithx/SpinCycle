@@ -85,6 +85,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1098603128737339556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1407,6 +1408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSphereCastScript: {fileID: 1390668085025345390}
   grabScript: {fileID: 3463295151114985727}
+  grabAndHoldScript: {fileID: 5727379525457626761}
   playerMovementCCScript: {fileID: 6848871425079053765}
   playerPointsGO: {fileID: 5674233446801159402}
   rb: {fileID: 6848871425079053761}
@@ -2357,10 +2359,6 @@ PrefabInstance:
     - target: {fileID: 6615020359985601250, guid: 1a5670133afbb8146ab7ba9eb29bcf5a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6615020360654104552, guid: 1a5670133afbb8146ab7ba9eb29bcf5a, type: 3}
-      propertyPath: m_Interactable
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6615020360823470152, guid: 1a5670133afbb8146ab7ba9eb29bcf5a, type: 3}
       propertyPath: m_Name

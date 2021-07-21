@@ -1,5 +1,11 @@
 ﻿
 
+<<<<<<< HEAD
+using System;
+using System.Collections;
+using System.Collections.Generic;
+=======
+>>>>>>> main
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,8 +23,12 @@ public class AudioManagerTest : MonoBehaviour
 
     private void Update()
     {
+<<<<<<< HEAD
+        if (Input.GetKeyDown(KeyCode.Tab))
+=======
         // THIS IS TO BE REMOVED
         if (Input.GetKeyDown(KeyCode.Tab)) 
+>>>>>>> main
         {
             // enable / disable the visual add for audio testing
             textVisualsContainer.SetActive(!textVisualsContainer.activeInHierarchy);

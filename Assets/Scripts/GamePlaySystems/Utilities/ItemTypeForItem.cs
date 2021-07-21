@@ -1,12 +1,36 @@
 ﻿using UnityEngine;
 using EnumSpace;
+<<<<<<< HEAD
+=======
 using Photon.Pun;
 using Photon.Realtime;
 
+>>>>>>> main
 
 namespace GamePlaySystems.Utilities
 {
 
+<<<<<<< HEAD
+    public class ItemTypeForItem : MonoBehaviour
+    {
+
+        public ItemType itemType;
+        public LaundryType laundryType;
+
+        public enum ItemType
+        {
+            None,
+            ClothingDirty,
+            ClothingWet,
+            ClothingUnfolded,
+            ClothingDone,
+            SabotageWaterGun,
+            SabotageClothing
+        }
+    }
+
+    
+=======
     public class ItemTypeForItem : MonoBehaviourPunCallbacks
     {
         public ItemType itemType;
@@ -25,18 +49,15 @@ namespace GamePlaySystems.Utilities
         {
             Debug.Log("request ownership from host");
 
-            if (isItemHeld)
-                return;
-            
-            // get ownership of the object were about to pickup
-            base.photonView.RequestOwnership();
+            if (!isItemHeld)
+            {
+                // get ownership of the object were about to pickup
+                base.photonView.RequestOwnership();
 
-            gameObject.GetComponent<Rigidbody>().useGravity = false;
-            gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            
-
-            isItemHeld = true;
-
+                gameObject.GetComponent<Rigidbody>().useGravity = false;
+                gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+                isItemHeld = true;
+            }  
         }
 
         public void RequestTransferOwnershipToHost()
@@ -57,4 +78,5 @@ namespace GamePlaySystems.Utilities
 
     
     
+>>>>>>> main
 }

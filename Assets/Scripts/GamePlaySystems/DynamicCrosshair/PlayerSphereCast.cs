@@ -7,6 +7,16 @@ public class PlayerSphereCast : MonoBehaviour
 {
     public static event Action<GameObject> ObjectSelected;
 
+<<<<<<< HEAD
+    public GameObject currentHitObject;
+
+    public float sphereRadius;
+    public float maxDistance;
+    public LayerMask layerMask;
+
+    private Vector3 origin;
+    private Vector3 direction;
+=======
     public GameObject currentHitObject = null;
 
     public float sphereRadius = 0f;
@@ -15,6 +25,7 @@ public class PlayerSphereCast : MonoBehaviour
 
     private Vector3 origin = Vector3.zero;
     private Vector3 direction = Vector3.zero;
+>>>>>>> main
 
     public bool outOfRange = true;
     public bool itemInHand = false;
@@ -23,7 +34,11 @@ public class PlayerSphereCast : MonoBehaviour
 
     public Grab grab;
 
+<<<<<<< HEAD
+    // Start is called before the first frame update
+=======
     
+>>>>>>> main
     void Start()
     {
         if (maxDistance <= 0)
@@ -34,7 +49,11 @@ public class PlayerSphereCast : MonoBehaviour
         grab = GetComponent<Grab>();
     }
 
+<<<<<<< HEAD
+    // Update is called once per frame
+=======
 
+>>>>>>> main
     void Update()
     {
         if (itemInHand == false)
@@ -53,7 +72,11 @@ public class PlayerSphereCast : MonoBehaviour
         origin = transform.position;
         direction = transform.forward;
 
+<<<<<<< HEAD
+        if (currentHitObject != null && currentHitObject.gameObject.tag == "Item")
+=======
         if (currentHitObject != null && currentHitObject.gameObject.CompareTag("Item"))
+>>>>>>> main
         {
             grab.itemToPickUp = currentHitObject;
             grab.canPickUpItem = true;
@@ -65,16 +88,28 @@ public class PlayerSphereCast : MonoBehaviour
             grab.canPickUpItem = false;
         }
 
+<<<<<<< HEAD
+        if (currentHitObject != null && currentHitObject.gameObject.tag == "Machine")
+=======
         if (currentHitObject && currentHitObject.gameObject.CompareTag("Machine"))
+>>>>>>> main
         {
             grab.objectToInteractWith = currentHitObject;
         }
 
+<<<<<<< HEAD
+        else if (currentHitObject != null && currentHitObject.gameObject.tag == "UsableObjects")
+        {
+            if (itemInHand == false)
+                grab.objectToInteractWith = currentHitObject;
+        }
+=======
         // else if (currentHitObject && currentHitObject.gameObject.CompareTag("UsableObjects"))
         // {
         //     if (itemInHand == false)
         //         grab.objectToInteractWith = currentHitObject;
         // }
+>>>>>>> main
 
         else
         {
@@ -96,7 +131,11 @@ public class PlayerSphereCast : MonoBehaviour
             currentHitDistance = maxDistance;
         }
 
+<<<<<<< HEAD
+        if (currentHitObject != null)
+=======
         if (currentHitObject)
+>>>>>>> main
         {
             if (Vector3.Distance(transform.position, currentHitObject.transform.position) <= maxDistance)
             {
@@ -114,7 +153,10 @@ public class PlayerSphereCast : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
+=======
     
+>>>>>>> main
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
