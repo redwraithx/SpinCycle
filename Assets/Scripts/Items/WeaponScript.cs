@@ -2,10 +2,12 @@
 using UnityEngine;
 using EnumSpace;
 using GamePlaySystems.Utilities;
+using Photon.Pun;
 
-public class WeaponScript : MonoBehaviour
+public class WeaponScript : MonoBehaviourPun
 {
     public GameObject gun;
+    public WeaponDestroyScript destroyGun = null;
     public ItemType itemType;
     public Rigidbody[] projectiles;
     public Rigidbody projectile;
@@ -14,6 +16,7 @@ public class WeaponScript : MonoBehaviour
     public int ammo;                        
     public Transform projectileSpawnPoint;  
     public float projectileForce;
+    private bool hasFired = false; 
 
     //rotation values
     public float mouseSensitivity = 100f;
@@ -42,6 +45,15 @@ public class WeaponScript : MonoBehaviour
         yRotation -= mouseY;
         yRotation = Mathf.Clamp(yRotation, -45f, 45f);
         gun.transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
+
+        if(gun && !destroyGun)
+        {
+            destroyGun = gun.GetComponent<WeaponDestroyScript>();
+        }
+        else
+        {
+            destroyGun = null;
+        }
         
 
         if (Input.GetButtonDown("Fire1")) // Set in Edit | Project Settings | Input Manager
@@ -65,12 +77,20 @@ public class WeaponScript : MonoBehaviour
                 projectile = projectiles[2];
                 break;
         }
+
+        
     }
     public void fire()
     {
-        
+
+
+        if (!destroyGun || destroyGun.hasFired)
+            return;
+
         if (projectileSpawnPoint && projectile)
         {
+            destroyGun.hasFired = true;
+
             // Make bullet
             Rigidbody temp = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
 
@@ -78,8 +98,15 @@ public class WeaponScript : MonoBehaviour
             
             // Shoot bullet
             temp.GetComponent<Rigidbody>().AddForce(projectileSpawnPoint.forward * projectileSpeed, ForceMode.Impulse);
-            
+
+            //gameObject.transform.SetParent(null);
+
+            //PhotonNetwork.Destroy(gameObject);
+
         }
+
+
+
     }
 
     //public int Shoot()

@@ -1233,6 +1233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 0}
+  destroyGun: {fileID: 0}
   itemType: 0
   projectiles:
   - {fileID: -6487827619003692647, guid: ac266ad8da2d7cd4a891d49134b67487, type: 3}

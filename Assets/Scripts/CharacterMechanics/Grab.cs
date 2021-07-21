@@ -152,11 +152,11 @@ public class Grab : MonoBehaviour
                 {
                     if(weapon.enabled)
                         weapon.fire();
-                    //itemInHand.GetComponent<RepairToolUse>().UseItem();
+                   
                     Debug.Log("Gun");
-                    //itemInHand = null;
+                    itemInHand = null;
 
-                    //ClearGrabValues();
+                    ClearGrabValues();
                 }
 
             }
