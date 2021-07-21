@@ -1,12 +1,13 @@
 ﻿using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 [System.Serializable]
 public class  PlayerPoints : MonoBehaviour
 {
-    public Text playerPointText = null;
+    public TMP_Text playerPointText = null;
     public int points = 0;
 
     public int Points

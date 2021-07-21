@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1179965799072671665}
   - component: {fileID: 1179965799072671664}
   - component: {fileID: -1250203477789854827}
+  - component: {fileID: 4047601884342108568}
   m_Layer: 0
   m_Name: ItemStand
   m_TagString: Untagged
@@ -143,6 +144,19 @@ MonoBehaviour:
   maxSpeedBoosts: 0
   speedBoostsUsed: 0
   randomNum: 0
+--- !u!65 &4047601884342108568
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179965799072671629}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2.0000002, z: 3.2478294}
+  m_Center: {x: 0, y: -1.5307497e-12, z: 0.6239146}
 --- !u!1 &1179965799084090313
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179965799084090313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 4.8}
+  m_LocalPosition: {x: 0, y: 0, z: 5.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1179965799072671630}
