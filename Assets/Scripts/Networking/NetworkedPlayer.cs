@@ -6,7 +6,7 @@ using Photon.Realtime;
 using UnityEngine;
 
 
-public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
+public class NetworkedPlayer : MonoBehaviourPunCallbacks //IPunOwnershipCallbacks
 {
     public static GameObject LocalPlayerInstance = null; // this is your character when your playing
 
@@ -156,7 +156,7 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
     
     
     // WARNING THERE IS TO BE ONLY ONE OF THIS PER INSTANCE OF THE GAME
-    public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
+    /*public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
     {
         Debug.Log("trying to request ownership of object");
         
@@ -167,11 +167,11 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
         Debug.Log($"getting ownership of object for player: {requestingPlayer.NickName}");
         
         base.photonView.TransferOwnership(requestingPlayer);
-    }
+    }*/
 
     // WARNING THERE IS TO BE ONLY ONE OF THIS PER INSTANCE OF THE GAME 
-    public void OnOwnershipTransfered(PhotonView targetView, Player previousOwner)
+    /*public void OnOwnershipTransfered(PhotonView targetView, Player previousOwner)
     {
         base.photonView.TransferOwnership(previousOwner);
-    }
+    }*/
 }

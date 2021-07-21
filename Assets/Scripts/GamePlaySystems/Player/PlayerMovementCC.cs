@@ -20,7 +20,7 @@ public class PlayerMovementCC : MonoBehaviour
     public float slowedXspeed = 4f;
     public float slowedZspeed = 3f;
     public bool isGrabbed = false;
-    public Transform enemyGrab;
+    public Vector3 enemyGrab;
 
 
     public float gravity = -9.8f;
@@ -167,11 +167,13 @@ public class PlayerMovementCC : MonoBehaviour
 
             if (!isGrabbed)
             {
+                controller.enabled = true;
                 controller.Move(move);
             }
             else
             {
-                controller.Move(enemyGrab.transform.position);
+                controller.enabled = false;
+                transform.position = enemyGrab;
             }
 
         }

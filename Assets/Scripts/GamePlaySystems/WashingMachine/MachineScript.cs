@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Diagnostics;
 using System.IO;
-using emotitron;
+//using emotitron;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -367,11 +367,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        Debug.Log("OnPhotonSerializeView called");
+        //Debug.Log("OnPhotonSerializeView called");
         
         if (stream.IsWriting)
         {
-            Debug.Log("stream.IsWriting");
+           // Debug.Log("stream.IsWriting");
             
             stream.SendNext(textString);
             stream.SendNext(counter);
@@ -387,7 +387,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         }
         else if(stream.IsReading)
         {
-            Debug.Log("stream.IsReading");
+            //Debug.Log("stream.IsReading");
             
             string newTextString = (string) stream.ReceiveNext();
             int newCounter = (int) stream.ReceiveNext();
@@ -408,7 +408,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 isEnabled = sliderIsEnabled;
 
 
-            Debug.Log($"LaundryTimer: {laundryTimer}\ncycleLength: {cycleLength}\nsiEnabled: {isEnabled}");
+            //Debug.Log($"LaundryTimer: {laundryTimer}\ncycleLength: {cycleLength}\nsiEnabled: {isEnabled}");
         }
     }
 }
