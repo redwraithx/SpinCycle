@@ -962,7 +962,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1737658225}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TESTOnly, Assembly-CSharp
         m_MethodName: QuitApp
         m_Mode: 1
@@ -1294,13 +1294,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1737658220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c61737392b9c8047899463e00eaadd2, type: 3}
+  m_Script: {fileID: 11500000, guid: 218d8513fa99be448962b91c6d3b707b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverContainer: {fileID: 1564014863}
   waitForItContainer: {fileID: 37330847}
   LevelGameLevelToLoad: 7
   isTheGameOver: 0
+  hasLevelBeenLoaded: 0
 --- !u!1 &1864929855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,7 +1518,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1737658225}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TESTOnly, Assembly-CSharp
         m_MethodName: GoToMainMenu
         m_Mode: 1
