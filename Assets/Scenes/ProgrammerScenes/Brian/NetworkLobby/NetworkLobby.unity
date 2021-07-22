@@ -222,7 +222,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 02c9ab8dab8e765489ca34fa95a46bfe, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: dbcbe0b5a4e6b74478e60320b9a958b7, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2562,13 +2562,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 681139988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a43ac6abc84b5b40999ce729686b233, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c6ea765605ff854599d55bd71b345b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   loadingText: {fileID: 214922285}
   tabsContainer: {fileID: 1145872041}
   tickCounter: 5
-  tickTimer: 0.75
+  tickTimer: 0.5
 --- !u!1 &735471256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,7 +2650,7 @@ GameObject:
   - component: {fileID: 828913769}
   - component: {fileID: 828913768}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ModeValueText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2998,7 +2998,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 02c9ab8dab8e765489ca34fa95a46bfe, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: dbcbe0b5a4e6b74478e60320b9a958b7, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -3355,7 +3355,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 02c9ab8dab8e765489ca34fa95a46bfe, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: dbcbe0b5a4e6b74478e60320b9a958b7, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -3564,7 +3564,7 @@ GameObject:
   - component: {fileID: 948853620}
   - component: {fileID: 948853619}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MapValueText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3912,7 +3912,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 02c9ab8dab8e765489ca34fa95a46bfe, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: dbcbe0b5a4e6b74478e60320b9a958b7, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -4091,6 +4091,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006981053}
   m_CullTransparentMesh: 0
+--- !u!1 &1009703935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2563316462467134415}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2563316462467134416}
+  m_Layer: 0
+  m_Name: Room Button (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1016843386
 GameObject:
   m_ObjectHideFlags: 0
@@ -4714,7 +4730,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1335047490}
+  - {fileID: 2563316462467134416}
   m_Father: {fileID: 2037134024}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5410,11 +5426,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
---- !u!224 &1335047490 stripped
+--- !u!224 &1335047490
 RectTransform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 2563316461385844365, guid: 98abe966aca3eea4f8d27d19d740c626, type: 3}
   m_PrefabInstance: {fileID: 2563316462467134415}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712660907}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2563316462467134416}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1414446436
 GameObject:
   m_ObjectHideFlags: 0
@@ -5969,7 +5999,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 02c9ab8dab8e765489ca34fa95a46bfe, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: dbcbe0b5a4e6b74478e60320b9a958b7, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -6193,7 +6223,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 02c9ab8dab8e765489ca34fa95a46bfe, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: dbcbe0b5a4e6b74478e60320b9a958b7, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -6651,7 +6681,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 02c9ab8dab8e765489ca34fa95a46bfe, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: dbcbe0b5a4e6b74478e60320b9a958b7, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -6853,6 +6883,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672353212}
   m_CullTransparentMesh: 0
+--- !u!1 &1712660907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2563316462467134415}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1335047490}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1776703384
 GameObject:
   m_ObjectHideFlags: 0
@@ -7506,7 +7552,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 02c9ab8dab8e765489ca34fa95a46bfe, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: dbcbe0b5a4e6b74478e60320b9a958b7, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -7524,7 +7570,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1921770804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8070,7 +8116,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2077689299}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 177c3ea27af59884fb1f409ae841e580, type: 3}
+  m_Script: {fileID: 11500000, guid: b71b8cf0b381e4a49bb3ca7311bc1a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   launcher: {fileID: 2077689302}
@@ -8083,7 +8129,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2077689299}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50126fb673bae6d45af71b5ffb8a793b, type: 3}
+  m_Script: {fileID: 11500000, guid: 803a34fbc75f06344bb8143ae976863e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   perpetual: 0
@@ -8096,7 +8142,7 @@ MonoBehaviour:
   tabMain: {fileID: 1541953336}
   tabRooms: {fileID: 2062948205}
   tabCreate: {fileID: 2116003608}
-  buttonRoom: {fileID: 2563316461385844366, guid: 98abe966aca3eea4f8d27d19d740c626, type: 3}
+  buttonRoom: {fileID: 2563316461385844366, guid: 2388724bbafba554090348b18882ecda, type: 3}
   maps:
   - name: Level 1
     scene: 6
@@ -8313,3 +8359,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98abe966aca3eea4f8d27d19d740c626, type: 3}
+--- !u!4 &2563316462467134416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2563316462467134415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009703935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1335047490}
+  m_Father: {fileID: 1227164641}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

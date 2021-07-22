@@ -23,13 +23,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Menu/BasicLobbyRoom.unity
     guid: 7aa2d5d2b2f0389418bd9c455f0109c2
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/ProgrammerScenes/Brian/NetworkLobby/NetworkLobby.unity
+    guid: 77b276e8dca283f408cbd8c5ee4a1e69
+  - enabled: 1
+    path: Assets/Scenes/ProgrammerScenes/Brian/NetworkLobby/NetworkLevel1.unity
+    guid: 866340289b8b0ee49b2084043a354de2
+  - enabled: 1
     path: Assets/Scenes/ProgrammerScenes/Brian/MultiplayerTestLevel.unity
     guid: 1f6cea932d730e04d98ad959594d229d
   - enabled: 0
@@ -62,7 +62,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ProgrammerScenes/Chirag/LobbyWaitingRoomScene.unity
     guid: f043c827f58ff3a4cb6fbcdf3d84e944
-  - enabled: 1
-    path: Assets/Scenes/Levels/TutorialLevel.unity
-    guid: 13438a926261d9245a188985cbe628d2
   m_configObjects: {}
