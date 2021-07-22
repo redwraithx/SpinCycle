@@ -23,21 +23,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/OldModels/Placeholders/Bombs pack/Magnetic bomb/Meshes/Magnetic bomb.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/OldModels/Placeholders/Bombs pack/Old-timer bomb/Meshes/Old-timer bomb.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/OldModels/Placeholders/Bombs pack/Plastic bomb/Meshes/Plastic bomb.obj.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUtilities/PackObject/CodeGen/Editor/Resources/TypeCatalogue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUtilities/PackObject/CodeGen/Editor/Resources/TypeCatalogue.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Planet Items/Graphics/Planet Material 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Items/Graphics/Planet Material 2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Planet Items/Graphics/Planet Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Items/Graphics/Planet Material.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkMachinePrefabs/NetworkedMachine_Dryer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkMachinePrefabs/NetworkedMachine_Dryer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkMachinePrefabs/NetworkedMachine_Folder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkMachinePrefabs/NetworkedMachine_Folder.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkMachinePrefabs/NetworkedMachine_Washer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkMachinePrefabs/NetworkedMachine_Washer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkingPrefabs/NetworkedPlayerAvatar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkingPrefabs/NetworkedPlayerAvatar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/NetworkRepairTool.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/NetworkRepairTool.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/NetworkSpawned_T-Shirt_Dirty.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/NetworkSpawned_T-Shirt_Dirty.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/MainLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/MainLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/ButtonHover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/ButtonHover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/LoadScreenCanvasManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/LoadScreenCanvasManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +65,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/LoadScreenCanvasManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Items/WeaponScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Timer/Timer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Items/WeaponPickUpScript.cs" />
@@ -117,14 +107,15 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/Grab.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking_old/Network_ObjectSpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementRigidbody.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkLevelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/PlayerMovementCC.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/LaundryBasket/LaundryBasket.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/WashingMachine/MachineScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/VendingMachine.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/VendingMachine/ButtonHover.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/LoadScreenCanvasManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jXM3iP7Giz6FodzT2B7nRGS8ar" />
@@ -203,6 +194,7 @@
       <workItem from="1616515640508" duration="1687000" />
       <workItem from="1619023437677" duration="306000" />
       <workItem from="1620791119245" duration="10428000" />
+      <workItem from="1626969129060" duration="2018000" />
     </task>
     <servers />
   </component>

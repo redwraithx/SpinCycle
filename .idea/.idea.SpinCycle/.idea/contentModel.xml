@@ -915,6 +915,7 @@
             <e p="Grab.cs" t="Include" />
             <e p="GrabAndHold.cs" t="Include" />
             <e p="MouseLook.cs" t="Include" />
+            <e p="NetworkedGrab.cs" t="Include" />
             <e p="PlayerData.cs" t="Include" />
             <e p="PlayerPoints.cs" t="Include" />
             <e p="StrengthBarUI.cs" t="Include" />
@@ -946,6 +947,10 @@
               <e p="DirtyLaundrySpawner.cs" t="Include" />
               <e p="LaundrySpawn.cs" t="Include" />
             </e>
+            <e p="Doors" t="Include">
+              <e p="DoorMechanic.cs" t="Include" />
+              <e p="DoorMechanic2.cs" t="Include" />
+            </e>
             <e p="DynamicCrosshair" t="Include">
               <e p="DynamicCrosshair.cs" t="Include" />
               <e p="PlayerSphereCast.cs" t="Include" />
@@ -953,6 +958,7 @@
             <e p="Enumerators" t="Include">
               <e p="Enums.cs" t="Include" />
             </e>
+            <e p="EscapeMenu.cs" t="Include" />
             <e p="ExitScene" t="Include">
               <e p="ExitSceneFadeIn.cs" t="Include" />
             </e>
@@ -981,6 +987,7 @@
             </e>
             <e p="Tools" t="Include">
               <e p="IRepairToolUse.cs" t="Include" />
+              <e p="RandomItemSpawn.cs" t="Include" />
               <e p="RepairToolSpawn.cs" t="Include" />
               <e p="RepairToolUse.cs" t="Include" />
               <e p="RepairToolZoneSpawn.cs" t="Include" />
@@ -990,6 +997,7 @@
               <e p="ItemTypeEnums.cs" t="Include" />
               <e p="ItemTypeForItem.cs" t="Include" />
               <e p="ItemTypeForUsingItem.cs" t="Include" />
+              <e p="WeaponDestroyScript.cs" t="Include" />
             </e>
             <e p="VendingMachine" t="Include">
               <e p="ButtonHover.cs" t="Include" />
@@ -1013,18 +1021,29 @@
             <e p="WeaponScript.cs" t="Include" />
           </e>
           <e p="may not need" t="Include">
-            <e p="CleaningItems.cs" t="Include" />
-            <e p="Clothing.cs" t="Include" />
             <e p="DryingMachine" t="Include">
               <e p="DryingMachine.cs" t="Include" />
             </e>
             <e p="PickupAndCarryItems.cs" t="Include" />
-            <e p="TShirt.cs" t="Include" />
             <e p="WashingMachine.cs" t="Include" />
           </e>
           <e p="Networking" t="Include">
+            <e p="Events" t="Include">
+              <e p="EventManager.cs" t="Include" />
+            </e>
             <e p="ItemSpawner" t="Include">
               <e p="Network_ItemSpawn.cs" t="Include" />
+            </e>
+            <e p="Lobby" t="Include">
+              <e p="Data.cs" t="Include" />
+              <e p="GameSettings.cs" t="Include" />
+              <e p="LoadingNetworkLobby.cs" t="Include" />
+              <e p="MapData.cs" t="Include" />
+              <e p="NetworkLobby.cs" t="Include" />
+              <e p="NetworkLobbyMenu.cs" t="Include" />
+              <e p="ProfileData.cs" t="Include" />
+              <e p="RoomButtonInfo.cs" t="Include" />
+              <e p="TESTOnly.cs" t="Include" />
             </e>
             <e p="MaschinesSpawner" t="Include">
               <e p="Network_MachineSpawn.cs" t="Include" />
