@@ -8145,7 +8145,9 @@ MonoBehaviour:
   buttonRoom: {fileID: 2563316461385844366, guid: dbea03dce38550b48bfed45b54b71597, type: 3}
   maps:
   - name: LoadingScene
-    scene: 6
+    sceneBuildIndex: 0
+  - name: Owens Level
+    sceneBuildIndex: 0
   currentMap: 0
 --- !u!1 &2094536560
 GameObject:

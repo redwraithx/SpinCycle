@@ -381,7 +381,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
             
             DataClass.SaveProfile(myProfile);
             
-            PhotonNetwork.LoadLevel(maps[currentMap].scene);
+            PhotonNetwork.LoadLevel(maps[currentMap].sceneBuildIndex);
         }
     }
         

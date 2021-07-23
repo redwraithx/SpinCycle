@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class PlayerMovementCC : MonoBehaviourPun
 {
+    public Camera cinemachineCamera;
     public Animator characterAnimator;
     public CharacterController controller;
     public GrabAndHold grabHold;
@@ -19,7 +20,8 @@ public class PlayerMovementCC : MonoBehaviourPun
     public float slowedXspeed = 4f;
     public float slowedZspeed = 3f;
     public bool isGrabbed = false;
-
+    public Vector3 enemyGrab;
+    
 
     public float gravity = -9.8f;
     public float gravityMulitplier = 2f;
@@ -153,15 +155,27 @@ public class PlayerMovementCC : MonoBehaviourPun
                 moveZ = Input.GetAxis("Vertical") * ((slowedZspeed * m_moveSpeedMultiplier) * Time.deltaTime);
             }
                 
-
-
-
-            transform.Rotate(0F, moveX * rotationSpeed, 0f);
+            //rotate based on camera
+            Quaternion lookRotation = cinemachineCamera.transform.rotation;
+            lookRotation.x = 0f;
+            lookRotation.z = 0f;         
+            transform.rotation = lookRotation;
 
 
             Vector3 move = transform.forward * moveZ;
+            move += transform.right * moveX;
 
-            controller.Move(move);
+            if (!isGrabbed)
+            {
+                controller.enabled = true;
+                controller.Move(move);
+            }
+            else
+            {
+                controller.enabled = false;
+                transform.position = enemyGrab;
+            }
+            
         }
 
 
@@ -253,11 +267,8 @@ public class PlayerMovementCC : MonoBehaviourPun
             transform.position = Vector3.Lerp(transform.position, correctPosition, Time.fixedDeltaTime * 5);
             transform.rotation = Quaternion.Lerp(transform.rotation, correctRotation, Time.fixedDeltaTime * 5);
             
-            _photonView.RPC("SendMessage", RpcTarget.All, 5, transform.position, transform.rotation);
+            _photonView.RPC("SendMessage", RpcTarget.AllBuffered, 5, transform.position, transform.rotation);
         }
-        
-        
-        
         
     }
 
