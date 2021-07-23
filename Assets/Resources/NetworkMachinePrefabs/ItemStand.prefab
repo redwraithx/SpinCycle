@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 123529948777408208}
   - component: {fileID: 1179965799072671665}
   - component: {fileID: 1179965799072671664}
-  - component: {fileID: -1250203477789854827}
   - component: {fileID: 4047601884342108568}
+  - component: {fileID: 7473196079013038958}
   m_Layer: 0
   m_Name: ItemStand
   m_TagString: Untagged
@@ -115,7 +115,20 @@ MonoBehaviour:
   Price: a
   Description: a
   Sprite: {fileID: 0}
---- !u!114 &-1250203477789854827
+--- !u!65 &4047601884342108568
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179965799072671629}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2.0000002, z: 3.2478294}
+  m_Center: {x: 0, y: -1.5307497e-12, z: 0.6239146}
+--- !u!114 &7473196079013038958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,7 +137,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1179965799072671629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3abc002ac74d8f42a7309d94072094c, type: 3}
+  m_Script: {fileID: 11500000, guid: d9516de8bb656dd4681d66602b2d8dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObjectGameObject: {fileID: 0}
@@ -144,19 +157,6 @@ MonoBehaviour:
   maxSpeedBoosts: 0
   speedBoostsUsed: 0
   randomNum: 0
---- !u!65 &4047601884342108568
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1179965799072671629}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2.0000002, z: 3.2478294}
-  m_Center: {x: 0, y: -1.5307497e-12, z: 0.6239146}
 --- !u!1 &1179965799084090313
 GameObject:
   m_ObjectHideFlags: 0
