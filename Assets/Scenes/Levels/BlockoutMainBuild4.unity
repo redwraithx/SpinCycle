@@ -283,7 +283,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh80716
+  m_Name: pb_Mesh53130
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1323,7 +1323,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh80620
+  m_Name: pb_Mesh53034
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1487,7 +1487,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh80778
+  m_Name: pb_Mesh53192
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2423,7 +2423,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh80650
+  m_Name: pb_Mesh53064
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2737,7 +2737,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh80680
+  m_Name: pb_Mesh53094
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4426,7 +4426,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh80756
+  m_Name: pb_Mesh53170
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11208,7 +11208,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh80842
+  m_Name: pb_Mesh53250
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12914,7 +12914,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh80790
+  m_Name: pb_Mesh53204
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13079,6 +13079,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6482560510592446120, guid: d96b75ee765376b4d8425b1079f66986, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -960
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482560510592446120, guid: d96b75ee765376b4d8425b1079f66986, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 540
+      objectReference: {fileID: 0}
     - target: {fileID: 6482560510592446127, guid: d96b75ee765376b4d8425b1079f66986, type: 3}
       propertyPath: loserVille
       value: 
@@ -13220,12 +13228,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1823523365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69c9b9c2dc7aa2846a9bef7b2ac7b1e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e6766ad4736c6e4dab93bab80e994ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnButton: {fileID: 1369248420}
-  quitButton: {fileID: 1587992008}
-  menu: {fileID: 1799506369}
+  returnButton: {fileID: 0}
+  quitButton: {fileID: 0}
+  menu: {fileID: 0}
 --- !u!1 &1843295415
 GameObject:
   m_ObjectHideFlags: 0

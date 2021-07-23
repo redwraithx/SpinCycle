@@ -41,7 +41,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ProgrammerScenes/Owen/PhysicsPlayground.unity
     guid: 7c7d8d04d85772445a0f42beb0c1c4ae
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ProgrammerScenes/Evan/EvanMainScene.unity
     guid: b5c2121a6b68a7348a28740b1b705432
   - enabled: 0
@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ProgrammerScenes/Chirag/LobbyWaitingRoomScene.unity
     guid: f043c827f58ff3a4cb6fbcdf3d84e944
+  - enabled: 1
+    path: Assets/Scenes/Levels/BlockoutMainBuild4.unity
+    guid: 474fb83598363eb4983269bfeec7ea6e
   m_configObjects: {}

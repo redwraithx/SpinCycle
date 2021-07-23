@@ -700,7 +700,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 222776134}
   m_Template: {fileID: 1114044937}
   m_CaptionText: {fileID: 287438252}
@@ -712,6 +712,8 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: 2 Players
+      m_Image: {fileID: 0}
+    - m_Text: 1 Player
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5004,7 +5006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1260252954
 Transform:
   m_ObjectHideFlags: 0
@@ -8145,9 +8147,9 @@ MonoBehaviour:
   buttonRoom: {fileID: 2563316461385844366, guid: dbea03dce38550b48bfed45b54b71597, type: 3}
   maps:
   - name: LoadingScene
-    sceneBuildIndex: 0
-  - name: Owens Level
-    sceneBuildIndex: 0
+    sceneBuildIndex: 6
+  - name: Solo Level
+    sceneBuildIndex: 8
   currentMap: 0
 --- !u!1 &2094536560
 GameObject:

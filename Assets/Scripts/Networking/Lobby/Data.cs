@@ -6,7 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using NetworkProfile;
 
 
-namespace Data
+namespace PlayerProfileData
 {
     public class DataClass : MonoBehaviour
     {

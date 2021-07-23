@@ -7,8 +7,8 @@ namespace NetworkLobbyGameSettings
 
     public enum GameModeSelections
     {
-        One_VS_One
-        
+        One_VS_One,
+        Solo
     }
 
 

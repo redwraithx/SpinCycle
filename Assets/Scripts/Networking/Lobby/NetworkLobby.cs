@@ -6,7 +6,7 @@ using TMPro;
 using NetworkLobbyGameSettings;
 using NetworkProfile;
 using NetworkMaps;
-using Data;
+using PlayerProfileData;
 
 using Photon.Pun;
 using Photon.Realtime;
@@ -153,6 +153,10 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         if (playersSelection == 0)
         {
             currentGamesMaxPlayers = 2;
+        }
+        else// if (playersSelection == 1)
+        {
+            currentGamesMaxPlayers = 1;
         }
         
         options.MaxPlayers = (byte) currentGamesMaxPlayers;
