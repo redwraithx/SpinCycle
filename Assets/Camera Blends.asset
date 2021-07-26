@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Camera Blends
   m_EditorClassIdentifier: 
   m_CustomBlends:
-  - m_From: CM FreeLook1
-    m_To: CM NewShoulderLook
+  - m_From: CM vcam1
+    m_To: CM FreeLook1
     m_Blend:
       m_Style: 1
       m_Time: 0.5
@@ -24,11 +24,11 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
-  - m_From: 
-    m_To: 
+  - m_From: CM FreeLook1
+    m_To: CM ShoulderLook
     m_Blend:
       m_Style: 3
-      m_Time: 0
+      m_Time: 0.5
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []

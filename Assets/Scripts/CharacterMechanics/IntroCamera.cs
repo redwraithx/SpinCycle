@@ -1,0 +1,36 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class IntroCamera : MonoBehaviour
+{
+    public GameObject freeLook;
+    public float initTime = 0f;
+    // Start is called before the first frame update
+    void Start()
+    {
+        freeLook.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        //use this function once networking is active again
+        /*        if(!freeLook.activeSelf)
+                {
+                    if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime < 180)
+                    {
+                        freeLook.SetActive(true);
+                    }
+                }*/
+
+        initTime += Time.deltaTime;
+        if (initTime >= 5f)
+        {
+            freeLook.SetActive(true);
+        }
+
+    }
+}
+
