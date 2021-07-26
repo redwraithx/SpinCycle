@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Grab : MonoBehaviour
 {
-    
+    public Animator characterAnimator;
     public Transform grabPoint = null;
     public Transform target = null;
     public WeaponScript weapon = null;
@@ -43,6 +43,8 @@ public class Grab : MonoBehaviour
     {
         if (canPickUpItem && itemToPickUp && outOfRange == false)
         {
+            characterAnimator.SetBool("PickUp", true);
+         
             Debug.Log("Can Pick Up Item?" + canPickUpItem);
 
             hasItemInHand = true;
@@ -67,6 +69,7 @@ public class Grab : MonoBehaviour
 
     public void CheckForMouseUp()
     {
+        characterAnimator.SetBool("PickUp", false);
         if (itemInHand)
         {
 
@@ -117,6 +120,9 @@ public class Grab : MonoBehaviour
 
                 if (isValidItemObject && canUseHeldItem)
                 {
+                    
+                    characterAnimator.SetTrigger("PutOn");
+                    
                     if (machineInteractionObject)
                     {
                        // use object action will only work on one event per object
@@ -158,7 +164,11 @@ public class Grab : MonoBehaviour
 
                     ClearGrabValues();
                 }
-
+              
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+               
             }
         }
         if (itemInHand)
