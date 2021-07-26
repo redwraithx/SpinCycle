@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class PlayerMovementCC : MonoBehaviourPun
 {
+    public Camera cinemachineCamera;
+    public CinemachineVirtualCamera shoulderCam;
     public Animator characterAnimator;
     public CharacterController controller;
     public GrabAndHold grabHold;
@@ -15,11 +17,15 @@ public class PlayerMovementCC : MonoBehaviourPun
     public float Zspeed = 10f;
     private float m_moveSpeedMultiplier = 1f;
     private float m_jumpPowerMultiplier = 1f;
+    Vector3 movementDirection;
+    float mouseRotation = 0f;
+    bool captureMouseRotation = false;
 
     public float slowedXspeed = 4f;
     public float slowedZspeed = 3f;
     public bool isGrabbed = false;
-
+    public Vector3 enemyGrab;
+    
 
     public float gravity = -9.8f;
     public float gravityMulitplier = 2f;
@@ -55,6 +61,9 @@ public class PlayerMovementCC : MonoBehaviourPun
     internal PhotonView _photonView = null;
     private Vector3 correctPosition = Vector3.zero;
     private Quaternion correctRotation = Quaternion.identity;
+    
+    
+    
 
     public float MoveSpeed
     {
@@ -99,6 +108,9 @@ public class PlayerMovementCC : MonoBehaviourPun
 
         if (!rb)
             rb = GetComponent<Rigidbody>();
+
+        if (!characterAnimator)
+            characterAnimator = GetComponentInChildren<Animator>();
     }
 
 
@@ -146,16 +158,66 @@ public class PlayerMovementCC : MonoBehaviourPun
                 moveX = Input.GetAxis("Horizontal") * ((slowedXspeed * m_moveSpeedMultiplier) * Time.deltaTime);
                 moveZ = Input.GetAxis("Vertical") * ((slowedZspeed * m_moveSpeedMultiplier) * Time.deltaTime);
             }
-                
+
+
+            /*Vector3 movement;
+            movement = cinemachineCamera.transform.right * Input.GetAxis("Horizontal") * (Xspeed * m_moveSpeedMultiplier) * Time.deltaTime;
+            movement += cinemachineCamera.transform.forward * Input.GetAxis("Vertical") * (Zspeed * m_moveSpeedMultiplier) * Time.deltaTime;
+            movement.y = 0.0f;*/
+
+            
+
+
+            //rotate based on camera
+            /*Quaternion lookRotation = cinemachineCamera.transform.rotation;
+            lookRotation.x = 0f;
+            lookRotation.z = 0f;         
+            transform.rotation = lookRotation;*/
+
+
+            Vector3 move = cinemachineCamera.transform.forward * moveZ;
+            move += cinemachineCamera.transform.right * moveX;
+
+            Vector3 targetPosition = controller.transform.position + move;
+
+            movementDirection = targetPosition - controller.transform.position;
+
+            if (!isGrabbed)
+            {
+                controller.enabled = true;
+                controller.Move(move);
+            }
+            else
+            {
+                controller.enabled = false;
+                transform.position = enemyGrab;
+            }
+
+            if(shoulderCam.isActiveAndEnabled == true)
+            {
+                if(!captureMouseRotation)
+                {
+                    mouseRotation = transform.rotation.y;
+                    captureMouseRotation = true;
+                }
+                float mouseY = (Input.GetAxis("Mouse X") * -1) * 300 * Time.deltaTime;
+                mouseRotation -= mouseY;
+                Debug.Log(mouseRotation);
+                transform.rotation = Quaternion.Euler(0f, mouseRotation, 0f);
+            }
+
+            else if (move.sqrMagnitude > Mathf.Epsilon)
+            {
+                captureMouseRotation = false;
+                Quaternion syncRotation = Quaternion.identity;
+                syncRotation = Quaternion.LookRotation(movementDirection);
+                syncRotation.x = 0;
+                syncRotation.z = 0;
+                transform.rotation = syncRotation;
+            }
 
 
 
-            transform.Rotate(0F, moveX * rotationSpeed, 0f);
-
-
-            Vector3 move = transform.forward * moveZ;
-
-            controller.Move(move);
         }
 
 
@@ -247,11 +309,8 @@ public class PlayerMovementCC : MonoBehaviourPun
             transform.position = Vector3.Lerp(transform.position, correctPosition, Time.fixedDeltaTime * 5);
             transform.rotation = Quaternion.Lerp(transform.rotation, correctRotation, Time.fixedDeltaTime * 5);
             
-            _photonView.RPC("SendMessage", RpcTarget.All, 5, transform.position, transform.rotation);
+            _photonView.RPC("SendMessage", RpcTarget.AllBuffered, 5, transform.position, transform.rotation);
         }
-        
-        
-        
         
     }
 

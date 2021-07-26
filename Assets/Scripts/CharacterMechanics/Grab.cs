@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Grab : MonoBehaviour
 {
-    
+    public Animator characterAnimator;
     public Transform grabPoint = null;
     public Transform target = null;
     public WeaponScript weapon = null;
@@ -43,6 +43,8 @@ public class Grab : MonoBehaviour
     {
         if (canPickUpItem && itemToPickUp && outOfRange == false)
         {
+            characterAnimator.SetBool("PickUp", true);
+         
             Debug.Log("Can Pick Up Item?" + canPickUpItem);
 
             hasItemInHand = true;
@@ -67,6 +69,7 @@ public class Grab : MonoBehaviour
 
     public void CheckForMouseUp()
     {
+        characterAnimator.SetBool("PickUp", false);
         if (itemInHand)
         {
 
@@ -117,8 +120,12 @@ public class Grab : MonoBehaviour
 
                 if (isValidItemObject && canUseHeldItem)
                 {
+                    
+                  
+                    
                     if (machineInteractionObject)
                     {
+                          characterAnimator.SetTrigger("PutOn");
                        // use object action will only work on one event per object
                        machineInteractionObject.thisObjectEvent.Invoke(itemInHand);
                         //If you are getting an error that calls here, make sure the machine has the event set up properly
@@ -152,13 +159,17 @@ public class Grab : MonoBehaviour
                 {
                     if(weapon.enabled)
                         weapon.fire();
-                    //itemInHand.GetComponent<RepairToolUse>().UseItem();
+                   
                     Debug.Log("Gun");
-                    //itemInHand = null;
+                    itemInHand = null;
 
-                    //ClearGrabValues();
+                    ClearGrabValues();
                 }
-
+              
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+               
             }
         }
         if (itemInHand)
@@ -175,6 +186,7 @@ public class Grab : MonoBehaviour
                         weapon.itemType = isValidItem.itemType;
                         weapon.gun = itemInHand;
                         weapon.projectileSpawnPoint = itemInHand.GetComponentInChildren<Transform>();
+                        weapon.destroyGun = weapon.gun.GetComponent<WeaponDestroyScript>();
                         weaponCamera.gameObject.SetActive(true);
                         itemInHand.gameObject.transform.rotation = transform.rotation;
                     }
@@ -352,6 +364,8 @@ public class Grab : MonoBehaviour
 
     private void ClearGrabValues()
     {
+
+
         if (itemInHand)
         {
             var isItemASabbotage = itemInHand.GetComponent<ItemTypeForItem>().itemType;
@@ -363,9 +377,11 @@ public class Grab : MonoBehaviour
         }
         else
         {
+            //weapon.destroyGun = null;
             itemInHand = null;
             canUseHeldItem = false;
             GetComponent<PlayerSphereCast>().itemInHand = false;
+            
         }
 
         canPickUpItem = false;
