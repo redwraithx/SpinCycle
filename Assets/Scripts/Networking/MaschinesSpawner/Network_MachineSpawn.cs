@@ -16,8 +16,8 @@ public class Network_MachineSpawn : MonoBehaviour
 
         if (PhotonNetwork.IsMasterClient)
         {
-            GameObject newObject = PhotonNetwork.Instantiate(Path.Combine("NetworkMachinePrefabs", networkItemToSpawn), transform.position, Quaternion.identity, 0);
-            newObject.transform.rotation = transform.rotation;
+            GameObject newObject = PhotonNetwork.Instantiate(Path.Combine("NetworkMachinePrefabs", networkItemToSpawn), transform.position, transform.rotation, 0);
+            //newObject.transform.rotation = transform.rotation;
             newObject.name = newObject.name + "_" + newObject.GetComponentInChildren<PhotonView>().ViewID;
             Debug.Log(newObject.name + ": " + newObject.GetComponentInChildren<PhotonView>().Owner);
                 
