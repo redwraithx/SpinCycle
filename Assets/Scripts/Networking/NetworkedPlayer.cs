@@ -30,6 +30,7 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
 
 
     private bool hasJoinedGame = false;
+    bool introCamera = true;
 
     private void Start()
     {
@@ -118,6 +119,9 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
 
     private void Update()
     {
+
+
+
         // if (playerNameUI)
         // {
         //     if (targetPlayer)

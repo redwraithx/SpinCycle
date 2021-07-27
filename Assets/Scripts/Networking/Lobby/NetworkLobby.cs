@@ -72,7 +72,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     public MapData[] maps;
     public int currentMap = 0;
 
-    public List<RoomInfo> roomList;
+    [SerializeField] public List<RoomInfo> roomList;
 
     public void Awake()
     {
