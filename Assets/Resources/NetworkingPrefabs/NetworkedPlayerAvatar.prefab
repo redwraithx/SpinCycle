@@ -1482,6 +1482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a2e62ad87a8d34eb83785d020e8bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterAnimator: {fileID: 6954034557952010186}
   grabPoint: {fileID: 2536938193671778017}
   target: {fileID: 0}
   weapon: {fileID: 0}
