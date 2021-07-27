@@ -56,7 +56,8 @@ public class Grab : MonoBehaviour
             {
                     itemCollider.enabled = false;
             }
-            
+
+            itemInHand.GetComponent<Item>().OwnerID = this.gameObject.GetComponent<PhotonView>().ViewID;
             itemInHand.GetComponent<Rigidbody>().useGravity = false;
             itemInHand.transform.position = grabPoint.position;
             
