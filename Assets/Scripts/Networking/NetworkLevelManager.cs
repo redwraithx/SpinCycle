@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 
 
-public class NetworkLevelManager : MonoBehaviourPunCallbacks
+public class NetworkLevelManager : MonoBehaviourPunCallbacks, IPunObservable
 {
     public Transform[] playerStartingPositions;
 
@@ -15,6 +16,15 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
     public GameObject timer;
 
     bool timerStarted = false;
+
+    public Text player1;
+
+    public Text player2;
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        throw new System.NotImplementedException();
+    }
 
     //public bool[] isPlayersDiveDelayEnabled = new bool[GameManager.networkManager.maxPlayersPerRoom];
     //public float initialDiveReuseDelay = 10f;
@@ -101,7 +111,6 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
                         timer.GetComponent<NetworkedTimerNew>().InitializeTimer();
                         timerStarted = true;
                     }
-
                 }
 
                 if (playersJoined.Count <= 2)
@@ -114,12 +123,7 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
                         }
                     }
                 }
-
-
-
             }
         }
-
-
     }
 }
