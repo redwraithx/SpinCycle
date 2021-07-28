@@ -49,6 +49,7 @@ public class Grab : MonoBehaviour
 
             hasItemInHand = true;
             GetComponent<PlayerSphereCast>().itemInHand = true;
+            GetComponent<PlayerSphereCast>().currentHitObject = null;
             itemInHand = itemToPickUp;
             
             if(itemInHand.GetComponent<ItemTypeForItem>())
