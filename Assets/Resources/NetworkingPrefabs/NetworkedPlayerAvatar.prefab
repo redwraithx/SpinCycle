@@ -1283,6 +1283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabPoint: {fileID: 2536938193671778017}
+  target: {fileID: 0}
   weapon: {fileID: 0}
   weaponCamera: {fileID: 3795880657246068852}
   canPickUpItem: 0
