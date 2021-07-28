@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class IntroCamera : MonoBehaviour
+public class IntroCamera : MonoBehaviourPun
 {
     public GameObject freeLook;
     public float initTime = 0f;
@@ -28,7 +29,8 @@ public class IntroCamera : MonoBehaviour
         initTime += Time.deltaTime;
         if (initTime >= 5f)
         {
-            freeLook.SetActive(true);
+            if(photonView.IsMine)
+                freeLook.SetActive(true);
         }
 
     }

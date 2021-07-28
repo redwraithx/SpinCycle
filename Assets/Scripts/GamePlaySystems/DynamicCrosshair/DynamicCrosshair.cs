@@ -27,6 +27,7 @@ public class DynamicCrosshair : MonoBehaviour
 
     void Update()
     {
+        
         outOfRange = player.gameObject.GetComponent<PlayerSphereCast>().outOfRange;
 
         crosshair.transform.Rotate(0, 0, 50 * Time.deltaTime);
