@@ -6,6 +6,7 @@ using System.IO;
 using emotitron;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 using GamePlaySystems.Utilities;
 using EnumSpace;
@@ -33,6 +34,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public LaundryType laundryType;
     public MachineType machineType;
     public ParticleSystem part;
+    public TMP_Text pointsAdded;
     
     public ItemType SpawnFinishedProductItemType = ItemType.ClothingWet;
 
@@ -150,6 +152,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             
             newGO.GetComponent<ItemTypeForItem>().itemType = SpawnFinishedProductItemType;
             float ruinedPrice = (10 * ruinTimer);
+            pointsAdded.text = (((int)initialPrice + (int)priceAddition) - (int)ruinedPrice).ToString() + "!";
             newGO.GetComponent<Item>().Price += ((int)initialPrice + (int)priceAddition) - (int)ruinedPrice;
             
         }
