@@ -914,6 +914,8 @@
             <e p="Enemy.cs" t="Include" />
             <e p="Grab.cs" t="Include" />
             <e p="GrabAndHold.cs" t="Include" />
+            <e p="IntroCamera.cs" t="Include" />
+            <e p="IntroGameText.cs" t="Include" />
             <e p="MouseLook.cs" t="Include" />
             <e p="NetworkedGrab.cs" t="Include" />
             <e p="PlayerData.cs" t="Include" />
@@ -992,6 +994,7 @@
               <e p="RepairToolUse.cs" t="Include" />
               <e p="RepairToolZoneSpawn.cs" t="Include" />
             </e>
+            <e p="TutorialBot.cs" t="Include" />
             <e p="Utilities" t="Include">
               <e p="ItemOutOfGameDestroy.cs" t="Include" />
               <e p="ItemTypeEnums.cs" t="Include" />
@@ -1071,7 +1074,6 @@
             <e p="Timer.cs" t="Include" />
           </e>
         </e>
-        <e p="TutorialBot.cs" t="Include" />
       </e>
       <e p="BitpackersASMDEF.csproj" t="IncludeRecursive" />
       <e p="EmoCompressUtilsASMDEF.csproj" t="IncludeRecursive" />
