@@ -95,14 +95,14 @@ public class PlayerMovementCC : MonoBehaviourPun
             _photonView = GetComponent<PhotonView>();
         
         
-        if (!_photonView.IsMine)
-        {
-            var cam = gameObject.GetComponentInChildren<Camera>();
-            cam.gameObject.SetActive(false);
-
-            var disableCamera = GetComponentInChildren<CinemachineFreeLook>();
-            disableCamera.gameObject.SetActive(false);
-        }
+        // if (!_photonView.IsMine)
+        // {
+        //     var cam = gameObject.GetComponentInChildren<Camera>();
+        //     cam.gameObject.SetActive(false);
+        //
+        //     var disableCamera = GetComponentInChildren<CinemachineFreeLook>();
+        //     disableCamera.gameObject.SetActive(false);
+        // }
 
         GameManager.Instance.Player1 = this.gameObject;
 
