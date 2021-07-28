@@ -112,6 +112,11 @@ public class PlayerSphereCast : MonoBehaviour
             }
 
         }
+        else
+        {
+            outOfRange = true;
+            
+        }
     }
 
     

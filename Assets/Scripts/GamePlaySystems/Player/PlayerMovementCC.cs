@@ -21,6 +21,9 @@ public class PlayerMovementCC : MonoBehaviourPun
     float mouseRotation = 0f;
     bool captureMouseRotation = false;
 
+    //using this bool to transition between move states
+    bool shoulderCamActive = true;
+
     public float slowedXspeed = 4f;
     public float slowedZspeed = 3f;
     public bool isGrabbed = false;
@@ -193,19 +196,24 @@ public class PlayerMovementCC : MonoBehaviourPun
                 transform.position = enemyGrab;
             }
 
-            if(shoulderCam.isActiveAndEnabled == true)
+            if (shoulderCam.isActiveAndEnabled == true)
             {
-                if(!captureMouseRotation)
+                shoulderCamActive = true;
+                if (!captureMouseRotation)
                 {
                     mouseRotation = transform.rotation.y;
                     captureMouseRotation = true;
                 }
                 float mouseY = (Input.GetAxis("Mouse X") * -1) * 300 * Time.deltaTime;
                 mouseRotation -= mouseY;
-                Debug.Log(mouseRotation);
+                //Debug.Log(mouseRotation);
                 transform.rotation = Quaternion.Euler(0f, mouseRotation, 0f);
             }
+            else if (shoulderCam.isActiveAndEnabled == false && shoulderCamActive == true)
+            {
+                Invoke("RotationTransition", 1.0f);
 
+            }
             else if (move.sqrMagnitude > Mathf.Epsilon)
             {
                 captureMouseRotation = false;
@@ -312,6 +320,11 @@ public class PlayerMovementCC : MonoBehaviourPun
             _photonView.RPC("SendMessage", RpcTarget.AllBuffered, 5, transform.position, transform.rotation);
         }
         
+    }
+
+    void RotationTransition()
+    {
+        shoulderCamActive = false;
     }
 
 
