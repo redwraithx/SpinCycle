@@ -32,7 +32,9 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
         foreach (var cam in GameObject.FindGameObjectsWithTag("MainCamera"))
         {
             //GameObject.FindWithTag("MainCamera").gameObject.SetActive(false);
-            cam.SetActive(false);
+            //cam.SetActive(false);
+            
+            Destroy(cam);
         }
 
         // we can add character selection here if / when we get that.
@@ -41,24 +43,25 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
 
         if (PhotonNetwork.IsConnected)
         {
-            int newPlayerIndex = PhotonNetwork.CurrentRoom.PlayerCount - 1;
+            //int newPlayerIndex = PhotonNetwork.CurrentRoom.PlayerCount - 1;
+            int newPlayerIndex = playersJoined.Count;
 
             startingPosition = playerStartingPositions[newPlayerIndex].position;
             startingRotation = playerStartingPositions[newPlayerIndex].rotation;
 
             if (NetworkedPlayer.LocalPlayerInstance == null)
             {
-
-
                 // spawn networked Player
                 networkedPlayer = PhotonNetwork.Instantiate(Path.Combine("NetworkingPrefabs", "NetworkedPlayerAvatar"), startingPosition, startingRotation, 0);
 
-                networkedPlayer.GetComponent<PlayerMovementCC>().playerDiveIndex = newPlayerIndex;
+                networkedPlayer.GetComponent<PlayerMovementCC>().playerDiveIndex = newPlayerIndex; // what is this for?
 
                 Debug.Log($"spawning player {networkedPlayer.name}");
 
 
                 playersJoined.Add(networkedPlayer);
+
+                
 
             }
 
