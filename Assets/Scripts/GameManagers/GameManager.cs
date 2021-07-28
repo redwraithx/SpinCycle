@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     #region GAMEMANAGER_CORE-EXTENTIONS
 
     public static AudioManager audioManager = null;
-    public static NetworkManager networkManager = null;
+    public static NetworkLobby networkManager = null;
     public static NetworkLevelManager networkLevelManager = null;
     
     

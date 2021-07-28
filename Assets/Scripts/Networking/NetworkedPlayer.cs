@@ -1,5 +1,6 @@
 ﻿
 
+using System;
 using Cinemachine;
 using Photon.Pun;
 using Photon.Realtime;
@@ -23,6 +24,11 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
     public GameObject cameraBrainShouldGO = null;
     public GameObject camGO = null;
 
+    public IntroCamera introCam = null;
+    public GameObject dynamicCrossHair = null;
+    
+    //public CinemachineFreeLook cineFreeLook = null;
+
     public GameObject canvasGO = null;
 
     //public Transform targetPlayer = null;
@@ -30,6 +36,7 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
 
 
     private bool hasJoinedGame = false;
+    bool introCamera = true;
 
     private void Start()
     {
@@ -68,9 +75,18 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
                 gameObject.GetComponent<PlayerPoints>().enabled = false;
 
             if (cameraBrainGO)
-                cameraBrainGO.SetActive(false);
+            {
+                Debug.Log("cameraBrainGO reference found and disabling it");
+                
+                //cameraBrainGO.SetActive(false);
+                Destroy(cameraBrainGO);
+            }
             else
-                gameObject.GetComponentInChildren<CinemachineFreeLook>().gameObject.SetActive(false);
+            {
+                Debug.Log("no reference finding cameraBrainGO and disabling it");
+                
+                Destroy(gameObject.GetComponentInChildren<CinemachineFreeLook>().gameObject);
+            }
 
             if (cameraBrainShouldGO)
                 cameraBrainShouldGO.SetActive(false);
@@ -86,7 +102,23 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
 
             if(canvasGO)
                 canvasGO.SetActive(false);
-            
+
+            if (introCam)
+                introCam.enabled = false;
+            else
+                gameObject.GetComponent<IntroCamera>().enabled = false;
+
+            if (dynamicCrossHair)
+                dynamicCrossHair.SetActive(false);
+            else
+                throw new Exception("Error! Network Player Character is missing dynamic cross hair reference in NetworkPlayer Script");
+
+            // this will need to be cleaned up during bug fixes
+            // if(camera)
+            //     camera.gameObject.SetActive(false);
+            // else
+            //     gameObject.GetComponentInChildren<Camera>()
+
 
             // gameObject.GetComponent<PlayerMovementCC>().enabled = false;
             // gameObject.GetComponentInChildren<AudioListener>().enabled = false;
@@ -118,6 +150,9 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
 
     private void Update()
     {
+
+
+
         // if (playerNameUI)
         // {
         //     if (targetPlayer)

@@ -10,7 +10,8 @@ public class LoadScreenCanvasManager : MonoBehaviour
     public Text percentLoaded;
     void Start()
     {
-        loadingOperation = SceneManager.LoadSceneAsync("BasicLobbyRoom");
+        //loadingOperation = SceneManager.LoadSceneAsync("BasicLobbyRoom");
+        loadingOperation = SceneManager.LoadSceneAsync("NetworkLobby");  // THIS MAY NEED TO BE HARD CODED TO THE NEW LOBBY SCENE
     }
 
     void Update()

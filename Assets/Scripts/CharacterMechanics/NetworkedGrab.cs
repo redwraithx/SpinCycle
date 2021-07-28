@@ -1,37 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ExitGames.Client.Photon;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.UI;
 
-public class NetworkedGrab : MonoBehaviourPunCallbacks, IPunObservable
+public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
 {
     public GameObject targetPlayer = null;
-    public Transform grabber;
-    Transform otherGrabber;
+    public GameObject grabber;
+    private Vector3 grabberPos;
+    public Transform otherGrabber;
     private Grab grab = null;
     private StrengthBarUI strengthBar = null;
     private PlayerMovementCC playerCC = null;
-    internal bool isBeingGrabbed = false;
+    public bool isBeingGrabbed = false;
     public CapsuleCollider grabCollider = null;
-    internal bool isGrabbing = false;
-    public float holdTimeDuration = 5f;
-    public float currentHoldTimer = 0f;
-    public bool isHoldTimerEnabled = false;
-    public bool hasLostGripOfPlayer = false;
+    public bool isGrabbing = false;
 
-    PhotonView originalClientPhotonViewID = null;
     PhotonView myPhotonViewID = null;
-    PhotonView originalTargetView = null;
-    Player originalPlayer = null;
-    NetworkedGrab otherPlayersNetworkedGrab = null;
+    public const byte grabByte = 2;
+    public const byte secondGrabByte = 3;
+    //public const byte secondPlayerGrab = 3;
+
     RaycastHit hit;
+
 
     public string textString = "Sending";
     public string showTextString = "";
     public int counter = 0;
-    
 
+    public Text vectorText;
+    public Text myVectorText;
+
+
+    private void OnEnable()
+    {
+        PhotonNetwork.AddCallbackTarget(this);
+    }
+    private void OnDisable()
+    {
+        PhotonNetwork.RemoveCallbackTarget(this);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -58,51 +69,44 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IPunObservable
             Physics.IgnoreCollision(grabCollider, collider, true);
         }
 
-        currentHoldTimer = holdTimeDuration;
 
         Physics.SphereCast(transform.position + new Vector3(0f, 0.5f, 0f), 0.5f, transform.forward, out hit, 0.5f);
 
         if (hit.collider != null)
             Debug.Log("can hit: " + hit.collider.name);
 
-        otherGrabber.position = Vector3.zero;
+        //otherGrabber.transform.position = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (targetPlayer && !hasLostGripOfPlayer)
+        //isBeingGrabbed = playerCC.isGrabbed;
+        CheckGrab();
+        if (isGrabbing == true)
         {
-            CheckGrab();
-        }
-        else if (targetPlayer && hasLostGripOfPlayer)
-        {
-            ReleaseHeldPlayer();
-        }
-
-        if (isHoldTimerEnabled)
-        {
-            currentHoldTimer -= Time.deltaTime;
-
-            if (currentHoldTimer <= 0f)
-            {
-                isHoldTimerEnabled = false;
-                currentHoldTimer = holdTimeDuration;
-                isBeingGrabbed = false;
-                hasLostGripOfPlayer = true;
-
-            }
+            if (PhotonNetwork.IsMasterClient)
+                GrabMaster_S();
+            else
+                GrabSecondary_S();
         }
 
+        if (photonView.IsMine)
+            grabberPos = grabber.transform.position;
+        else
+        {
+           grabberPos = GetOtherGrabberPos();
+        }
+            
+
+        //myVectorText.text = grabberPos.ToString();
+
+        //vectorText.text = grabber.position.ToString();
 
     }
 
     private void CheckGrab()
     {
-        otherPlayersNetworkedGrab = targetPlayer.GetComponent<NetworkedGrab>();
-
-        if (!otherPlayersNetworkedGrab)
-            return;
 
         if (targetPlayer && Input.GetMouseButtonDown(0) && !isBeingGrabbed)
         {
@@ -110,24 +114,19 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IPunObservable
                 return;
 
             isGrabbing = true;
+
         }
 
-        if (targetPlayer && Input.GetMouseButtonUp(0) && isGrabbing)
+        if (Input.GetMouseButtonUp(0))
         {
             isGrabbing = false;
+            if (PhotonNetwork.IsMasterClient)
+                GrabMaster_S();
+            else
+                GrabSecondary_S();
         }
 
 
-    }
-
-    public void ReleaseHeldPlayer()
-    {
-        if (!targetPlayer)
-            return;
-
-        isGrabbing = false;
-        hasLostGripOfPlayer = false;
-        targetPlayer = null;
     }
 
 
@@ -165,56 +164,74 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IPunObservable
         Debug.Log("Target lost");
     }
 
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    public void GrabMaster_S()
     {
-        if (stream.IsWriting)
-        {
-            Debug.Log("Stream.IsWriting");
+        
+        object[] package = new object[] {  grabberPos, isGrabbing };
 
-            stream.SendNext(textString);
-            stream.SendNext(counter);
-            showTextString = $"Sending: {counter}";
-            counter++;
-
-            Vector3 pos;
-            if (isGrabbing)
-            {
-                pos = grabber.position;
-            }
-            else
-            {
-                pos = otherGrabber.position;
-            }
-            stream.SendNext(pos);
-
-            bool isBeingHeld;
-            if (isGrabbing)
-            {
-                isBeingHeld = true;
-            }
-            else
-            {
-                isBeingHeld = false;
-            }
-            stream.SendNext(isBeingHeld);
-        }
-        else if (stream.IsReading)
-        {
-            Debug.Log("stream.IsReading");
-            string newTextString = (string)stream.ReceiveNext();
-            int newCounter = (int)stream.ReceiveNext();
-            showTextString = $"Receiving: {newCounter}";
-
-            Vector3 grabLocation = (Vector3)stream.ReceiveNext();
-            if(!isGrabbing)
-            {
-                playerCC.enemyGrab.transform.position = grabLocation;
-            }
-
-            playerCC.isGrabbed = (bool)stream.ReceiveNext();
-
-            
-        }
-            
+        PhotonNetwork.RaiseEvent(
+            (byte)grabByte,
+            package,
+            new RaiseEventOptions { Receivers = ReceiverGroup.All },
+            new SendOptions { Reliability = true }
+            );
     }
+
+    public void GrabSecondary_S()
+    {
+        
+        object[] package = new object[] { this.grabberPos, isGrabbing };
+
+        PhotonNetwork.RaiseEvent(
+            (byte)secondGrabByte,
+            package,
+            new RaiseEventOptions { Receivers = ReceiverGroup.All },
+            new SendOptions { Reliability = true }
+            );
+    }
+
+    public void OnEvent (EventData photonEvent)
+    {
+        if (photonEvent.Code == 2)
+        {
+            if(!PhotonNetwork.IsMasterClient)
+            {
+                object[] data = (object[])photonEvent.CustomData;
+                Vector3 grabMovement = (Vector3)data[0];
+                playerCC.enemyGrab = grabMovement;            
+                //Debug.Log(data[0]);
+                playerCC.isGrabbed = (bool)data[1];
+
+                //vectorText.text = grabMovement.ToString();
+            }
+
+        }
+        
+        if (photonEvent.Code == 3)
+        {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                object[] data = (object[])photonEvent.CustomData;
+                Vector3 grabMovement = (Vector3)data[0];
+                playerCC.enemyGrab = grabMovement;
+                //Debug.Log(data[0]);
+                playerCC.isGrabbed = (bool)data[1];
+
+                //vectorText.text = grabMovement.ToString();
+            }
+        }
+    }
+
+    Vector3 GetOtherGrabberPos()
+    {
+        foreach (GameObject player in GameManager.networkLevelManager.playersJoined)
+        {
+            if (player.GetComponent<PhotonView>().ViewID != myPhotonViewID.ViewID)
+            {
+                return player.GetComponent<NetworkedGrab>().grabber.transform.position;
+            }
+        }
+        return Vector3.zero;
+    }
+
 }
