@@ -165,6 +165,10 @@ public class Grab : MonoBehaviour
 
                     ClearGrabValues();
                 }
+                else
+                {
+                    //do something
+                }
               
             }
             if (Input.GetMouseButtonUp(0))
