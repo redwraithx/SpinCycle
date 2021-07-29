@@ -38,7 +38,7 @@ public class RepairToolZoneSpawn : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        if (Vector3.Distance(repairToolInstance.transform.position, spawnPointPosition) >= 1)
+        if (repairToolInstance == null || Vector3.Distance(repairToolInstance.transform.position, spawnPointPosition) >= 1)
         {
                 if (PhotonNetwork.IsMasterClient)
                 {
