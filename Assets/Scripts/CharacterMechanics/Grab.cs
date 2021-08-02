@@ -49,7 +49,6 @@ public class Grab : MonoBehaviour
 
             hasItemInHand = true;
             GetComponent<PlayerSphereCast>().itemInHand = true;
-            GetComponent<PlayerSphereCast>().currentHitObject = null;
             itemInHand = itemToPickUp;
             
             if(itemInHand.GetComponent<ItemTypeForItem>())
@@ -156,20 +155,17 @@ public class Grab : MonoBehaviour
 
                     
                 }
-                else if (itemInHand.GetComponent<ItemTypeForItem>().itemType == ItemType.SabotageWaterGun)
-                {
-                    if(weapon.enabled)
-                        weapon.fire();
+                //else if (itemInHand.GetComponent<ItemTypeForItem>().itemType == ItemType.SabotageWaterGun)
+                //{
+                //    if(weapon.enabled)
+                //        weapon.fire();
                    
-                    Debug.Log("Gun");
-                    itemInHand = null;
+                //    Debug.Log("Gun");
+                //    itemInHand = null;
 
-                    ClearGrabValues();
-                }
-                else
-                {
-                    //do something
-                }
+                //    ClearGrabValues();
+                //}
+
               
             }
             if (Input.GetMouseButtonUp(0))
