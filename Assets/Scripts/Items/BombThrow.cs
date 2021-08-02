@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombThrow : MonoBehaviour, IBombThrow
+public class BombThrow : MonoBehaviourPun, IBombThrow
 {
 
     public float elevationAngle { get { return m_ElevationAngle; } set { m_ElevationAngle = value; } }
@@ -25,6 +26,8 @@ public class BombThrow : MonoBehaviour, IBombThrow
 
     public void Throw()
     {
+        GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient);
+
         GameObject bomb = this.gameObject;
 
         Vector3 direction = facingDirection;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class OilCanPowerUp1 : MonoBehaviour
 {
@@ -21,7 +22,8 @@ public class OilCanPowerUp1 : MonoBehaviour
 
         PlayerMovementCC stats = player.GetComponent<PlayerMovementCC>();
         stats.Xspeed *= speedMultiplier;
+        stats.Zspeed *= speedMultiplier;
 
-        Destroy(gameObject);
+        PhotonNetwork.Destroy(gameObject);
     }
 }

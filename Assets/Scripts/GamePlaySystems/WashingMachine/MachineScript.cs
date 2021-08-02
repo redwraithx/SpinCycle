@@ -6,6 +6,7 @@ using System.IO;
 using emotitron;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 using GamePlaySystems.Utilities;
 using EnumSpace;
@@ -33,6 +34,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public LaundryType laundryType;
     public MachineType machineType;
     public ParticleSystem part;
+    public TMP_Text pointsAdded;
     
     public ItemType SpawnFinishedProductItemType = ItemType.ClothingWet;
 
@@ -59,7 +61,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Start()
     {
-        cycleLength = 5;
+        cycleLength = 30;
         sliderTime.maxValue = cycleLength;
 
         if (isSabotaged == true)
@@ -70,6 +72,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     void Update()
     {
+        if (_photonView == null)
+            return;
+
+        Debug.Log("Is it sabotaged?" + isSabotaged + photonView.ViewID);
+
         if (isSabotaged == false)
         {
             if (laundryTimer > 0)
@@ -87,18 +94,18 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             }
         }
 
-        if (isSabotaged == true)
-        {
-            if (sabotageTimer > 0)
-            {
-                sabotageTimer -= Time.deltaTime;
-            }
-            if (sabotageTimer <= 0)
-            {
-                part.Stop();
-                isSabotaged = false;
-            }
-        }
+        //if (isSabotaged == true)
+        //{
+        //    if (sabotageTimer > 0)
+        //    {
+        //        sabotageTimer -= Time.deltaTime;
+        //    }
+        //    if (sabotageTimer <= 0)
+        //    {
+        //        part.Stop();
+        //        isSabotaged = false;
+        //    }
+        //}
 
         sliderTime.value = laundryTimer;
 
@@ -116,28 +123,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public void SpawnFinishedProduct(LaundryType type)
     {
 
-        
-        
-        // GameObject laundry = LaundryPool.poolInstance.GetItem(type);
-        // laundry.transform.position = itemSpawnPoint.transform.position;
-        // laundry.transform.rotation = itemSpawnPoint.transform.rotation;
-        //
-        // //Determine laundry finished state by machine
-        // switch(machineType)
-        // {
-        //     case MachineType.washer:
-        //         laundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingWet;
-        //         break;
-        //     case MachineType.dryer:
-        //         laundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingUnfolded;
-        //         break;
-        //     case MachineType.folder:
-        //         laundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingDone;
-        //         break;
-        // }
-        //
-        // laundry.GetComponent<Item>().EnableObject();
-
         GameObject newGO = null;
         if (PhotonNetwork.IsMasterClient)
         {
@@ -150,6 +135,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             
             newGO.GetComponent<ItemTypeForItem>().itemType = SpawnFinishedProductItemType;
             float ruinedPrice = (10 * ruinTimer);
+            pointsAdded.text = (((int)initialPrice + (int)priceAddition) - (int)ruinedPrice).ToString() + "!";
             newGO.GetComponent<Item>().Price += ((int)initialPrice + (int)priceAddition) - (int)ruinedPrice;
             
         }
@@ -169,61 +155,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         laundryTimer = cycleLength;
         isEnabled = true;
     }
-
-    // public void UseMachine(GameObject other)
-    // {
-    //     OnOwnershipRequest(_photonView, PhotonNetwork.LocalPlayer);
-    //     
-    //     //Alter this tag based on machine
-    //     if (other.CompareTag("Item"))
-    //     {
-    //         //RequestOwnership();
-    //         //other.GetComponent<Grab>().objectToInteractWith.GetComponent<MachineScript>().RequestOwnership();
-    //         
-    //         //Debug.Log("Localplayer is: " + PhotonNetwork.LocalPlayer.NickName + ", owner of this machine is: " + _photonView.Owner);
-    //           
-    //         //PhotonNetwork.
-    //         
-    //         //Debug.Log($"we have a item {other.GetComponent<ItemTypeForItem>().itemType}");
-    //         laundryType = other.GetComponent<ItemTypeForItem>().laundryType;
-    //
-    //         if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.WasherBoost)
-    //         {
-    //             BoostMachine();
-    //             other.gameObject.SetActive(false);
-    //             //Destroy(other.gameObject);
-    //
-    //         }
-    //         if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.RepairTool)
-    //         {
-    //             FixMachine();
-    //             RepairToolZoneSpawn.instance.RemoveObject();
-    //             other.gameObject.SetActive(false);
-    //             //Destroy(other.gameObject);
-    //         }
-    //         else if (other.GetComponent<ItemTypeForItem>().itemType == this.gameObject.GetComponent<ItemTypeForUsingItem>().itemType[0])
-    //         {
-    //             //Once player is created, call to destroy the item in their hand here
-    //             ProcessItems();
-    //             // we may want to use a bool in case the machine is full we dont destroy or use the object
-    //             other.transform.parent = null;
-    //             //other.gameObject.GetComponent<Item>().DisableObject();
-    //             
-    //             
-    //             // send msg to destroy other copies of this object on other network clients here
-    //             //other.GetComponent<Item>().RemoveThisObject();
-    //             
-    //             PhotonNetwork.Destroy(other.gameObject);
-    //             //other.gameObject.SetActive(false);
-    //             //Destroy(other.gameObject);
-    //         }
-    //         
-    //         //RequestTransferOwnershipToHost();
-    //
-    //     }
-    //
-    //
-    // }
 
 
     public void UseMachine(GameObject other)
@@ -269,20 +200,23 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 if (isEnabled == false)
                 {
-                    initialPrice = other.GetComponent<Item>().Price;
-                    //Once player is created, call to destroy the item in their hand here
-                    ProcessItems();
-                    // we may want to use a bool in case the machine is full we dont destroy or use the object
-                    other.transform.parent = null;
-                    //other.gameObject.GetComponent<Item>().DisableObject();
+                    if (isSabotaged == false)
+                    {
+                        initialPrice = other.GetComponent<Item>().Price;
+                        //Once player is created, call to destroy the item in their hand here
+                        ProcessItems();
+                        // we may want to use a bool in case the machine is full we dont destroy or use the object
+                        other.transform.parent = null;
+                        //other.gameObject.GetComponent<Item>().DisableObject();
 
 
-                    // send msg to destroy other copies of this object on other network clients here
-                    //other.GetComponent<Item>().RemoveThisObject();
+                        // send msg to destroy other copies of this object on other network clients here
+                        //other.GetComponent<Item>().RemoveThisObject();
 
-                    PhotonNetwork.Destroy(other.gameObject);
-                    //other.gameObject.SetActive(false);
-                    //Destroy(other.gameObject);
+                        PhotonNetwork.Destroy(other.gameObject);
+                        //other.gameObject.SetActive(false);
+                        //Destroy(other.gameObject);
+                    }
                 }
             }
         }
@@ -291,18 +225,14 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             RequestTransferOwnershipToHost();
     }
 
-    
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.name == "SoapBomb(Clone)")
-        {
-            SabotageMachine(60);
-        }
-    }
-
     public void OnTriggerStay(Collider other)
     {
+
+        if (other.gameObject.name == "AOE Effects(Clone)")
+        {
+            SabotageMachine();
+        }
+
         if (other.gameObject.name == "EMPSphere")
         {
             if (isSabotaged == true)
@@ -311,15 +241,14 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             }
             else
             {
-                SabotageMachine(20);
+                SabotageMachine();
                 Destroy(other.gameObject);
             }
         }
     }
 
-    public void SabotageMachine(float time)
+    public void SabotageMachine()
     {
-        sabotageTimer = time;
         isSabotaged = true;
         part.Play();
     }
@@ -438,7 +367,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 isBoosted = machineBoosted;
 
 
-            Debug.Log($"LaundryTimer: {laundryTimer}\ncycleLength: {cycleLength}\nsiEnabled: {isEnabled}");
+            Debug.Log($"LaundryTimer: {laundryTimer}\ncycleLength: {cycleLength}\nsiEnabled: {isEnabled}/nisSabotaged: {isSabotaged}");
         }
     }
 }

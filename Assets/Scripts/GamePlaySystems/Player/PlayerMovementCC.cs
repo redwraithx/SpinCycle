@@ -266,10 +266,10 @@ public class PlayerMovementCC : MonoBehaviourPun
                 StartCoroutine(DiveCoroutine());
 
             //Input a way to let go of the player when diving.
-            grabHold.isBeingGrabbed = false;
-            grabHold.isHoldingOtherPlayer = false;
+            //grabHold.isBeingGrabbed = false;
+            //grabHold.isHoldingOtherPlayer = false;
 
-            GetComponent<GrabAndHold>().BeingReleased();
+            //GetComponent<GrabAndHold>().BeingReleased();
             SpeedUp();
 
         }

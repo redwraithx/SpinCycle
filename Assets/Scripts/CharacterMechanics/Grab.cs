@@ -155,16 +155,17 @@ public class Grab : MonoBehaviour
 
                     
                 }
-                else if (itemInHand.GetComponent<ItemTypeForItem>().itemType == ItemType.SabotageWaterGun)
-                {
-                    if(weapon.enabled)
-                        weapon.fire();
+                //else if (itemInHand.GetComponent<ItemTypeForItem>().itemType == ItemType.SabotageWaterGun)
+                //{
+                //    if(weapon.enabled)
+                //        weapon.fire();
                    
-                    Debug.Log("Gun");
-                    itemInHand = null;
+                //    Debug.Log("Gun");
+                //    itemInHand = null;
 
-                    ClearGrabValues();
-                }
+                //    ClearGrabValues();
+                //}
+
               
             }
             if (Input.GetMouseButtonUp(0))
