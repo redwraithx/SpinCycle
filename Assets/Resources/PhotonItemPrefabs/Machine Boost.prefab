@@ -340,7 +340,6 @@ GameObject:
   - component: {fileID: 3683861950584251396}
   - component: {fileID: 3683861950584251399}
   - component: {fileID: 3683861950584251395}
-  - component: {fileID: 3246493774786615042}
   m_Layer: 0
   m_Name: Machine Boost
   m_TagString: Untagged
@@ -492,18 +491,6 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 0
---- !u!114 &3246493774786615042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4602359123049961802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e395ab410111174786878fcca306cb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7546825561260221424
 GameObject:
   m_ObjectHideFlags: 0
