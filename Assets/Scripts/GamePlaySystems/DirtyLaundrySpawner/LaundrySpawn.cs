@@ -28,13 +28,13 @@ public class LaundrySpawn : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        Debug.Log("trigger exit item spawner");
-        //if not working make sure there is a collider set as a trigger on the object
-        if (Vector3.Distance(objectInstance.transform.position, spawnPointPosition) >= 1 || objectInstance == null)
+        if (PhotonNetwork.IsMasterClient)
         {
-            if (PhotonNetwork.IsMasterClient)
+            Debug.Log("trigger exit item spawner");
+            //if not working make sure there is a collider set as a trigger on the object
+            if (Vector3.Distance(objectInstance.transform.position, spawnPointPosition) >= 1 || objectInstance == null)
             {
-                objectInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
+               objectInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
             }
         }
     }

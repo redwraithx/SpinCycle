@@ -62,7 +62,6 @@ public class RandomItemSpawn : MonoBehaviour
     {
         if (objectInstance == null)
         {
-            Debug.Log("trigger exit item spawner Null");
             if (PhotonNetwork.IsMasterClient)
             {
                 spawnObject = spawnObjectGameObject.GetComponent<Item>();
@@ -75,7 +74,6 @@ public class RandomItemSpawn : MonoBehaviour
         }
         else if (objectInstance != null)
         {
-            Debug.Log("trigger exit item spawner NotNull");
             if (Vector3.Distance(objectInstance.transform.position, spawnPointPosition) >= 1)
             {
                 if (PhotonNetwork.IsMasterClient)
