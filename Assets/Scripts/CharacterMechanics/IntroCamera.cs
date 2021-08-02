@@ -1,15 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
+using Photon.Pun;
 using UnityEngine;
+using Photon.Pun;
 
-public class IntroCamera : MonoBehaviour
+public class IntroCamera : MonoBehaviourPun
 {
     public GameObject freeLook;
     public float initTime = 0f;
+    //public PhotonView photonView = null;
+    
     // Start is called before the first frame update
     void Start()
     {
         freeLook.SetActive(false);
+        
+        // if(!photonView)
+        //     photonView =  
     }
 
     // Update is called once per frame
@@ -28,7 +36,8 @@ public class IntroCamera : MonoBehaviour
         initTime += Time.deltaTime;
         if (initTime >= 5f)
         {
-            freeLook.SetActive(true);
+            if(photonView.IsMine)
+                freeLook.SetActive(true);
         }
 
     }

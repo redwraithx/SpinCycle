@@ -6,6 +6,7 @@ using System.IO;
 using emotitron;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 using GamePlaySystems.Utilities;
 using EnumSpace;
@@ -33,6 +34,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public LaundryType laundryType;
     public MachineType machineType;
     public ParticleSystem part;
+    public TMP_Text pointsAdded;
     
     public ItemType SpawnFinishedProductItemType = ItemType.ClothingWet;
 
@@ -102,7 +104,15 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
         sliderTime.value = laundryTimer;
 
+        if(isSabotaged == true && part.isPlaying == false)
+        {
+            part.Play();
+        }
 
+        if (isSabotaged == false && part.isPlaying == true)
+        {
+            part.Stop();
+        }
     }
 
     public void SpawnFinishedProduct(LaundryType type)
@@ -142,7 +152,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             
             newGO.GetComponent<ItemTypeForItem>().itemType = SpawnFinishedProductItemType;
             float ruinedPrice = (10 * ruinTimer);
+            pointsAdded.text = (((int)initialPrice + (int)priceAddition) - (int)ruinedPrice).ToString() + "!";
             newGO.GetComponent<Item>().Price += ((int)initialPrice + (int)priceAddition) - (int)ruinedPrice;
+            
         }
             
 
@@ -258,20 +270,23 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             }
             else if (other.GetComponent<ItemTypeForItem>().itemType == this.gameObject.GetComponent<ItemTypeForUsingItem>().itemType[0])
             {
-                initialPrice = other.GetComponent<Item>().Price;
-                //Once player is created, call to destroy the item in their hand here
-                ProcessItems();
-                // we may want to use a bool in case the machine is full we dont destroy or use the object
-                other.transform.parent = null;
-                //other.gameObject.GetComponent<Item>().DisableObject();
-                
-                
-                // send msg to destroy other copies of this object on other network clients here
-                //other.GetComponent<Item>().RemoveThisObject();
-                
-                PhotonNetwork.Destroy(other.gameObject);
-                //other.gameObject.SetActive(false);
-                //Destroy(other.gameObject);
+                if (isEnabled == false)
+                {
+                    initialPrice = other.GetComponent<Item>().Price;
+                    //Once player is created, call to destroy the item in their hand here
+                    ProcessItems();
+                    // we may want to use a bool in case the machine is full we dont destroy or use the object
+                    other.transform.parent = null;
+                    //other.gameObject.GetComponent<Item>().DisableObject();
+
+
+                    // send msg to destroy other copies of this object on other network clients here
+                    //other.GetComponent<Item>().RemoveThisObject();
+
+                    PhotonNetwork.Destroy(other.gameObject);
+                    //other.gameObject.SetActive(false);
+                    //Destroy(other.gameObject);
+                }
             }
         }
 

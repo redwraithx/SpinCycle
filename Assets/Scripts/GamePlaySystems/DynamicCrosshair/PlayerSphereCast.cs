@@ -36,17 +36,18 @@ public class PlayerSphereCast : MonoBehaviour
 
 
     void Update()
-    {
+    {       
+
         if (itemInHand == false)
         {
-            maxDistance = 2;
-            sphereRadius = 0.5f;
+            maxDistance = 5;
+            sphereRadius = 1f;
             layerMask = LayerMask.GetMask("Items");
         }
         else
         {
-            maxDistance = 4;
-            sphereRadius = 1;
+            maxDistance = 7;
+            sphereRadius = 2;
             layerMask = LayerMask.GetMask("Usable Objects");
         }
 
@@ -111,6 +112,11 @@ public class PlayerSphereCast : MonoBehaviour
                 grab.outOfRange = true;
             }
 
+        }
+        else
+        {
+            outOfRange = true;
+            
         }
     }
 

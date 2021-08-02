@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 
 
-public class NetworkLevelManager : MonoBehaviourPunCallbacks
+public class NetworkLevelManager : MonoBehaviourPunCallbacks, IPunObservable
 {
     public Transform[] playerStartingPositions;
 
@@ -15,6 +16,15 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
     public GameObject timer;
 
     bool timerStarted = false;
+
+    public Text player1;
+
+    public Text player2;
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        throw new System.NotImplementedException();
+    }
 
     //public bool[] isPlayersDiveDelayEnabled = new bool[GameManager.networkManager.maxPlayersPerRoom];
     //public float initialDiveReuseDelay = 10f;
@@ -32,7 +42,9 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
         foreach (var cam in GameObject.FindGameObjectsWithTag("MainCamera"))
         {
             //GameObject.FindWithTag("MainCamera").gameObject.SetActive(false);
-            cam.SetActive(false);
+            //cam.SetActive(false);
+            
+            Destroy(cam);
         }
 
         // we can add character selection here if / when we get that.
@@ -41,25 +53,25 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
 
         if (PhotonNetwork.IsConnected)
         {
-            int newPlayerIndex = PhotonNetwork.CurrentRoom.PlayerCount - 1;
+            //int newPlayerIndex = PhotonNetwork.CurrentRoom.PlayerCount - 1;
+            int newPlayerIndex = playersJoined.Count;
 
             startingPosition = playerStartingPositions[newPlayerIndex].position;
             startingRotation = playerStartingPositions[newPlayerIndex].rotation;
 
             if (NetworkedPlayer.LocalPlayerInstance == null)
             {
-
-
                 // spawn networked Player
                 networkedPlayer = PhotonNetwork.Instantiate(Path.Combine("NetworkingPrefabs", "NetworkedPlayerAvatar"), startingPosition, startingRotation, 0);
-                //networkedPlayer = PhotonNetwork.Instantiate(Path.Combine("NetworkingPrefabs", "NetworkedPlayerAvatar_withAnimations"), startingPosition, startingRotation, 0);
 
-                networkedPlayer.GetComponent<PlayerMovementCC>().playerDiveIndex = newPlayerIndex;
+                networkedPlayer.GetComponent<PlayerMovementCC>().playerDiveIndex = newPlayerIndex; // what is this for?
 
                 Debug.Log($"spawning player {networkedPlayer.name}");
 
 
                 playersJoined.Add(networkedPlayer);
+
+                
 
             }
 
@@ -99,7 +111,6 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
                         timer.GetComponent<NetworkedTimerNew>().InitializeTimer();
                         timerStarted = true;
                     }
-
                 }
 
                 if (playersJoined.Count <= 2)
@@ -112,12 +123,7 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
                         }
                     }
                 }
-
-
-
             }
         }
-
-
     }
 }

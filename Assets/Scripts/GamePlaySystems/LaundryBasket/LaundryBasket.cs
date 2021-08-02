@@ -19,7 +19,7 @@ public class LaundryBasket : MonoBehaviourPun
     
     void Start()
     {
-        StartCoroutine (CheckForPlayer());
+        //StartCoroutine (CheckForPlayer());
     }
 
     private void Update()
@@ -32,13 +32,15 @@ public class LaundryBasket : MonoBehaviourPun
         {
             if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
             {
+                playerPoints = PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
                 points = other.gameObject.GetComponent<Item>().Price;
                 Debug.Log(points);
 
                 //above two lines aren't needed for this code to run, only for debugging purposes
 
                 playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
-                other.gameObject.GetComponent<Item>().DisableObject();
+                //other.gameObject.GetComponent<Item>().DisableObject();
+                PhotonNetwork.Destroy(other.gameObject);
             }
         }
     }
@@ -50,13 +52,15 @@ public class LaundryBasket : MonoBehaviourPun
         {
             if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
             {
+                playerPoints =  PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
                 points = other.gameObject.GetComponent<Item>().Price;
                 Debug.Log(points);
 
                 //above two lines aren't needed for this code to run, only for debugging purposes
 
                 playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
-                other.gameObject.GetComponent<Item>().DisableObject();
+                //other.gameObject.GetComponent<Item>().DisableObject();
+                PhotonNetwork.Destroy(other.gameObject);
             }
         }
     }

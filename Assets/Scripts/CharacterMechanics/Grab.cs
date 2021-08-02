@@ -49,6 +49,7 @@ public class Grab : MonoBehaviour
 
             hasItemInHand = true;
             GetComponent<PlayerSphereCast>().itemInHand = true;
+            GetComponent<PlayerSphereCast>().currentHitObject = null;
             itemInHand = itemToPickUp;
             
             if(itemInHand.GetComponent<ItemTypeForItem>())
@@ -58,7 +59,8 @@ public class Grab : MonoBehaviour
             {
                     itemCollider.enabled = false;
             }
-            
+
+            itemInHand.GetComponent<Item>().OwnerID = this.gameObject.GetComponent<PhotonView>().ViewID;
             itemInHand.GetComponent<Rigidbody>().useGravity = false;
             itemInHand.transform.position = grabPoint.position;
             
@@ -164,6 +166,10 @@ public class Grab : MonoBehaviour
 
                     ClearGrabValues();
                 }
+                else
+                {
+                    //do something
+                }
               
             }
             if (Input.GetMouseButtonUp(0))
@@ -181,18 +187,23 @@ public class Grab : MonoBehaviour
                 {
                     if (!weapon.enabled)
                     {
-                        weapon.enabled = true;
+                        
                         weapon.itemType = isValidItem.itemType;
                         weapon.gun = itemInHand;
                         weapon.projectileSpawnPoint = itemInHand.GetComponentInChildren<Transform>();
                         weapon.destroyGun = weapon.gun.GetComponent<WeaponDestroyScript>();
                         weaponCamera.gameObject.SetActive(true);
                         itemInHand.gameObject.transform.rotation = transform.rotation;
+                        if(isValidItem.itemType == ItemType.SabotageIceGun)
+                            itemInHand.GetComponent<DrawProjection>().weaponScript = weapon;
+                        weapon.enabled = true;
+
+
                     }
                     if (!canUseHeldItem)
                         canUseHeldItem = true;
                     
-                    Debug.Log("2");
+                    //Debug.Log("2");
                 }
                 
             }
@@ -205,6 +216,9 @@ public class Grab : MonoBehaviour
                 weapon.enabled = false;
                 weapon.projectileSpawnPoint = null;
                 weaponCamera.gameObject.SetActive(false);
+                
+
+
             }
             //if (!canUseHeldItem)
             //canUseHeldItem = false;
@@ -226,6 +240,8 @@ public class Grab : MonoBehaviour
         
         itemInHand.GetComponent<Rigidbody>().useGravity = true;
         itemInHand.transform.SetParent(null);
+        
+
 
         itemInHand = null;
     }
