@@ -262,6 +262,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public void BoostMachine()
     {
         isBoosted = true;
+        cycleLength = cycleLength * 0.75f;
         if(boostMachinePart != null)
         {
             boostMachinePart.SetActive(true);
