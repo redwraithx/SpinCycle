@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public static AudioManager audioManager = null;
     public static NetworkLobby networkManager = null;
     public static NetworkLevelManager networkLevelManager = null;
+    public static UIDebugger uiDebugger = null;
     
     
     #endregion GAMEMANAGER_CORE-EXTENTIONS
