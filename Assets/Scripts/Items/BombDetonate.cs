@@ -12,15 +12,17 @@ public class BombDetonate : MonoBehaviourPun
     public bool detonated;
     public float timer;
     public float timerAdjust;
+
+    public GameObject debugger;
     // Start is called before the first frame update
     void Start()
     {
-
+    
     }
 
     public void OnCollisionEnter(Collision collision)
     {
-
+        
         if (CanDetonateObject(collision))
         {
 
@@ -28,9 +30,12 @@ public class BombDetonate : MonoBehaviourPun
             {
                 BroadcastMessage("SabotageMachine");
             }
+            if (GameManager.uiDebugger != null)
+            {
+                GameManager.uiDebugger.ItemInfo(this.gameObject.GetComponent<PhotonView>().ViewID, this.gameObject.name, photonView.Owner.IsMasterClient);
+            }
 
-
-             Radius = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", radiusName), transform.position, transform.rotation);
+            Radius = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", radiusName), transform.position, transform.rotation);
              detonated = true;
 
 
@@ -42,7 +47,6 @@ public class BombDetonate : MonoBehaviourPun
     }
     private bool CanDetonateObject(Collision other)
     {
-
 
         if (detonated)
             return false;
@@ -63,7 +67,8 @@ public class BombDetonate : MonoBehaviourPun
     }
     private void Update()
     {
-        Debug.Log(photonView.Owner.IsMasterClient + " for master client owning this soap bomb");
+
+
 
         if (detonated == true)
         {
@@ -76,7 +81,13 @@ public class BombDetonate : MonoBehaviourPun
 
                 if (photonView.Owner.IsMasterClient == true)
                 {
-                  PhotonNetwork.Destroy(gameObject);
+                    Debug.Log(photonView.Owner.IsMasterClient + " for master client owning this soap bomb");
+
+                    if (PhotonNetwork.IsMasterClient)
+                    {
+                        Debug.Log("this should be destroying itself right now");
+                        PhotonNetwork.Destroy(gameObject);
+                    }
                 }
 
             }

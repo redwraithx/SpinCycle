@@ -69,7 +69,7 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks, IPunObservable
                 Debug.Log($"spawning player {networkedPlayer.name}");
 
 
-                playersJoined.Add(networkedPlayer);
+                //playersJoined.Add(networkedPlayer);
 
                 
 
@@ -119,7 +119,20 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks, IPunObservable
                     {
                         if (!playersJoined.Contains(Player))
                         {
-                            playersJoined.Add(Player);
+                            if(Player.GetComponent<PhotonView>().Owner.IsMasterClient == true && playersJoined.Count >= 0)
+                            {
+                                playersJoined.Add(Player);
+                            }
+                            else if(Player.GetComponent<PhotonView>().Owner.IsMasterClient == false && playersJoined.Count >= 1)
+                            {
+                                playersJoined.Add(Player);
+                            }
+                            else
+                            {
+                                Debug.Log("having trouble finding player 2");
+                            }
+
+
                         }
                     }
                 }
