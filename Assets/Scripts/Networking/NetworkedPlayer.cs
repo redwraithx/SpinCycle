@@ -210,4 +210,9 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
         Debug.Log("transferring ownership to prev player");
        // base.photonView.TransferOwnership(previousOwner);
     }
+
+    public void OnOwnershipTransferFailed(PhotonView targetView, Player senderOfFailedRequest)
+    {
+        Debug.Log($"Error Transfering ownership has failed. From: {senderOfFailedRequest.NickName} <> To: {targetView.Controller.NickName}");
+    }
 }
