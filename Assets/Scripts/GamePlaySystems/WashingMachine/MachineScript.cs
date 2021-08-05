@@ -54,14 +54,14 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         {
             _photonView = GetComponent<PhotonView>();
 
-            PhotonNetwork.SendRate = 22;
-            PhotonNetwork.SerializationRate = 22;
+            //PhotonNetwork.SendRate = 22;
+            //PhotonNetwork.SerializationRate = 22;
         }
     }
 
     private void Start()
     {
-        cycleLength = 30;
+        cycleLength = 15;
         sliderTime.maxValue = cycleLength;
 
         if (isSabotaged == true)

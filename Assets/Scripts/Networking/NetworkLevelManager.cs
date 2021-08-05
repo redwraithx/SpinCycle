@@ -24,6 +24,7 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks, IPunObservable
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         throw new System.NotImplementedException();
+
     }
 
     //public bool[] isPlayersDiveDelayEnabled = new bool[GameManager.networkManager.maxPlayersPerRoom];
@@ -139,4 +140,13 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks, IPunObservable
             }
         }
     }
+
+
+
+    public void PlayerPoints()
+    {
+
+    }
+
+
 }

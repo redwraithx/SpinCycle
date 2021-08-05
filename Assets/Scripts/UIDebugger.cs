@@ -38,6 +38,8 @@ public class UIDebugger : MonoBehaviourPun
             P1Points.text = GameManager.networkLevelManager.playersJoined[0].GetComponent<PlayerPoints>().points.ToString();
             P1Name.text = GameManager.networkLevelManager.playersJoined[0].GetComponent<PhotonView>().Owner.NickName;
 
+
+
             P2 = GameManager.networkLevelManager.playersJoined[1];
             P2Points.text = GameManager.networkLevelManager.playersJoined[1].GetComponent<PlayerPoints>().points.ToString();
             P2Name.text = GameManager.networkLevelManager.playersJoined[1].GetComponent<PhotonView>().Owner.NickName;
