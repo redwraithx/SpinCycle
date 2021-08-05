@@ -56,12 +56,10 @@ public class  PlayerPoints : MonoBehaviourPun, IPunObservable
 
         if (stream.IsWriting)
         {
-            Debug.Log("ping");
             stream.SendNext(points);
         }
         else if (stream.IsReading)
         {
-            Debug.Log("pong");
             int netpoints = (int)stream.ReceiveNext();
 
             if (netpoints > points)

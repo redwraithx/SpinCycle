@@ -109,8 +109,9 @@ MonoBehaviour:
   Radius: {fileID: 0}
   radiusName: AOE Effects
   detonated: 0
-  timer: 0
+  timer: 0.05
   timerAdjust: 0.05
+  _photonView: {fileID: 0}
   debugger: {fileID: 0}
 --- !u!114 &7558400885098480695
 MonoBehaviour:
@@ -143,9 +144,10 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 1
   OwnershipTransfer: 1
-  observableSearch: 2
+  observableSearch: 0
   ObservedComponents:
   - {fileID: 3471065922271790792}
+  - {fileID: 509607157689714623}
   - {fileID: 7840989850767465967}
   - {fileID: 3192681237246911868}
   sceneViewId: 0

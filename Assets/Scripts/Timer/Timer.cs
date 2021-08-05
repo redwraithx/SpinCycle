@@ -55,7 +55,6 @@ public class Timer : MonoBehaviour
     }
     public void UpdatePoints()
     {
-        Debug.Log("Points updating");
 
         player1Points = GameManager.networkLevelManager.playersJoined[0].GetComponent<PlayerPoints>().points;
         player1PointCounter.text = player1Points.ToString();

@@ -18,7 +18,8 @@ namespace GamePlaySystems.Utilities
         RepairTool,
         WasherBoost,
         DryerBoost,
-        LoadRuiner
+        LoadRuiner,
+        Bomb
     }
 
 

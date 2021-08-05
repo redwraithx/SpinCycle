@@ -26,7 +26,7 @@ public class BombThrow : MonoBehaviourPun, IBombThrow
 
     public void Throw()
     {
-        GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient);
+        
 
         GameObject bomb = this.gameObject;
 
