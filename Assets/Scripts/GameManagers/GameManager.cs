@@ -51,12 +51,17 @@ public class GameManager : MonoBehaviour
         if (Instance)
         {
             DestroyImmediate(gameObject);
+
+            return;
         }
         else
         {
             _instance = this;
             DontDestroyOnLoad(this);
         }
+
+        networkManager = null;
+        networkLevelManager = null;
 
     }
 

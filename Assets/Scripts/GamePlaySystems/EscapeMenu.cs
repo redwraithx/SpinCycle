@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -81,7 +82,13 @@ public class EscapeMenu : MonoBehaviour
     public void Quit()
     {
         //Photon if statement
-        SceneManager.LoadScene("MainMenuScene");
+        //SceneManager.LoadScene("MainMenuScene")
+        
+        Debug.Log($"network manager status: {GameManager.networkManager}");
+        Debug.Log($"audio manager status: {GameManager.audioManager}");
+
+        if(GameManager.networkManager)
+            GameManager.networkManager.LeavingGame();
     }
 
     public void OpenMenu()

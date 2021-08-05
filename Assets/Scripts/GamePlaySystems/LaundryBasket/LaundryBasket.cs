@@ -32,7 +32,16 @@ public class LaundryBasket : MonoBehaviourPun
         {
             if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
             {
-                playerPoints = PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
+                //playerPoints = PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
+                
+                bool updatedPlayerPoints = UpdatePlayerPoints(other.gameObject);
+                
+                if(updatedPlayerPoints)
+                    Debug.Log("Players Points where updated");
+                else
+                    Debug.Log("Players Points were not found to be updated.");
+                
+                
                 points = other.gameObject.GetComponent<Item>().Price;
                 Debug.Log(points);
 
@@ -52,7 +61,15 @@ public class LaundryBasket : MonoBehaviourPun
         {
             if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
             {
-                playerPoints =  PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
+                // playerPoints =  PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();  // this causes errors randomly, should be done in GameManager
+                bool updatedPlayerPoints = UpdatePlayerPoints(other);
+                
+                if(updatedPlayerPoints)
+                    Debug.Log("Players Points where updated");
+                else
+                    Debug.Log("Players Points were not found to be updated.");
+                
+               
                 points = other.gameObject.GetComponent<Item>().Price;
                 Debug.Log(points);
 
@@ -80,4 +97,14 @@ public class LaundryBasket : MonoBehaviourPun
                 StopCoroutine(CheckForPlayer());
             }
     }
+
+
+
+    private bool UpdatePlayerPoints(GameObject other)
+    {
+        PlayerPoints playerPointsReference = PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
+
+        return playerPoints = playerPointsReference;
+    }
+    
 }
