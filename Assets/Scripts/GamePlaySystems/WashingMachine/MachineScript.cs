@@ -75,7 +75,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         if (_photonView == null)
             return;
 
-        Debug.Log("Is it sabotaged?" + isSabotaged + photonView.ViewID);
+       // Debug.Log("Is it sabotaged?" + isSabotaged + photonView.ViewID);
 
         if (isSabotaged == false)
         {

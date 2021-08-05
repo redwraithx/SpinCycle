@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -10,48 +11,19 @@ using PlayerProfileData;
 
 using Photon.Pun;
 using Photon.Realtime;
+//using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
 
 
-//
-// namespace NetworkProfile
-// {
-//     [System.Serializable]
-//     public class ProfileData
-//     {
-//         public string userName;
-//         //public ulong scoreOverPlayersLife;
-//
-//         public ProfileData()
-//         {
-//             userName = "";
-//             //scoreOverPlayersLife = 0;
-//         }
-//
-//         public ProfileData(string userName)//, ulong lifeTimeScore)
-//         {
-//             this.userName = userName;
-//            // this.scoreOverPlayersLife = lifeTimeScore;
-//         }
-//
-//     }
-// }
-
-
-// namespace NetworkMaps
-// {
-//     [System.Serializable]
-//     public class MapData
-//     {
-//         public string name;
-//         public int scene;
-//     }
-// }
 
 
 public class NetworkLobby : MonoBehaviourPunCallbacks
 {
+    internal static NetworkLobby networkManager = null;
+    
+    [Min(-1)]public int networkLobbySceneIndex = -1;
+    
     public bool perpetual = false;
     public float waitTimeTillReturningToMainMenu = 6f;
     
@@ -62,6 +34,8 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     public TMP_Dropdown maxPlayersDropDown;
     //public Text maxPlayersValue;
     public static ProfileData myProfile = new ProfileData();
+    
+    public GameObject loadingLobby = null;
 
     public GameObject tabMain;
     public GameObject tabRooms;
@@ -74,40 +48,187 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
 
     [SerializeField] public List<RoomInfo> roomList;
 
+    [SerializeField] private bool hasLobbyLoaded = false;
+
+    [SerializeField] private bool hasSuccessfullyLeftCurrentRoom = true;
+    
     public void Awake()
     {
-        if (GameManager.networkManager)
+        
+        
+        //if (GameManager.networkManager)
+        if(networkManager)
         {
-            Destroy(this);
+            Debug.Log("network lobby instance exists, destroying this copy");
+            
+            DestroyImmediate(gameObject);
+
+            return;
+        }
+        else
+        {
+            Debug.Log("Setting network lobby instance");
+            
+            DontDestroyOnLoad(this);
+
+            networkManager = this;
+        
+            GameManager.networkManager = networkManager;
         }
         
-        DontDestroyOnLoad(this);
+        
+        
+        
+        
+        if (networkLobbySceneIndex == -1)
+        {
+            networkLobbySceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        GameManager.networkManager = this;
+            //throw new Exception("Error! networkLobbySceneIndex for NetworkLobby script has not been set. This must be the buildIndex of the lobby Scene Index in build settings");
+        }
         
         
         PhotonNetwork.AutomaticallySyncScene = true;
-
-        myProfile = DataClass.LoadProfile();
-        if (!string.IsNullOrEmpty(myProfile.userName))
-        {
-            userNameField.text = myProfile.userName;
-            
-        }
         
+
+        //
+        // myProfile = DataClass.LoadProfile();
+        // if (!string.IsNullOrEmpty(myProfile.userName))
+        // {
+        //     userNameField.text = myProfile.userName;
+        //     
+        // }
+        //
         // update current map index
         currentMap = SceneManager.GetActiveScene().buildIndex;
-        
-        
 
-        Connect();
+        //Connect();
     }
 
+    private void Update()
+    {
+        if (CheckForLobbyHasLoaded())
+        {
+            //StopCoroutine(End(1f));
+            
+            if (Cursor.lockState == CursorLockMode.Locked || Cursor.visible == false)
+            {
+                Debug.Log("unlock and show cursor Func");
+                
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+    
+    
+            if (!userNameField)
+            {
+                Debug.Log("get userNameField Ref");
+                
+                userNameField = LocalLobbyManager.localInstance.userNameField;
+            }
+    
+            if (!roomNameField)
+            {
+                Debug.Log("get roomNameField Ref");
+                
+                roomNameField = LocalLobbyManager.localInstance.roomNameField;
+            }
+    
+            if (!mapValue)
+            {
+                Debug.Log("get mapValue Ref");
+                
+                mapValue = LocalLobbyManager.localInstance.mapValueText;
+            }
+    
+            if (!modeValue)
+            {
+                Debug.Log("get modeValue Ref");
+                
+                modeValue = LocalLobbyManager.localInstance.modeValueText;
+            }
+    
+            if (!maxPlayersDropDown)
+            {
+                Debug.Log("Get maxPlayersDropDown Ref");
+                
+                maxPlayersDropDown = LocalLobbyManager.localInstance.maxPlayersDropDown;
+            }
+            
+            
+            if (!loadingLobby)
+            {
+                Debug.Log("get loadingLobby Ref");
+                
+                loadingLobby = LocalLobbyManager.localInstance.loadingLobbyUI;
+    
+                HideLoadingLobby();
+            }
+    
+            if (!tabMain)
+            {
+                Debug.Log("get tabMain Ref");
+                
+                tabMain = LocalLobbyManager.localInstance.tabMainUI;
+                
+                tabMain.SetActive(false);
+            }
+    
+            if (!tabRooms)
+            {
+                Debug.Log("get tabRooms Ref");
+                
+                tabRooms = LocalLobbyManager.localInstance.tabRoomsUI;
+                
+                tabRooms.SetActive(false);
+            }
+    
+            if (!tabCreate)
+            {
+                Debug.Log("get tabCreate Ref");
+                
+                tabCreate = LocalLobbyManager.localInstance.tabCreateUI;
+                
+                tabCreate.SetActive(false);
+            }
+    
+            Debug.Log($"references found <> loadingLobby: {loadingLobby}, tabMain: {tabMain}, tabRooms: {tabRooms}, tabCreate: {tabCreate}");
+            if (loadingLobby && tabMain && tabCreate && tabRooms)
+            {
+                Debug.Log("got all references for network lobby");
+                
+                
+                
+                hasLobbyLoaded = true;
+                
+                ResetTabsForLobby();
+                
+                // load player data if it exists
+                myProfile = DataClass.LoadProfile();
+                if (myProfile != null && !string.IsNullOrEmpty(myProfile.userName))
+                {
+                    userNameField.text = myProfile.userName;
+                }
+                
+                if(!PhotonNetwork.IsConnected)
+                    Connect();
+            }
+        }
+    }
+
+    private bool CheckForLobbyHasLoaded() => !hasLobbyLoaded && SceneManager.GetActiveScene().buildIndex == networkLobbySceneIndex;
+
+    
+    
+    
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to master server!");
-
-        PhotonNetwork.JoinLobby();
+        
+        //PhotonNetwork.JoinLobby();
+        
+        JoinLobby();
+        
         base.OnConnectedToMaster();
     }
 
@@ -118,6 +239,13 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         base.OnJoinedRoom();
     }
 
+    public override void OnJoinedLobby()
+    {
+        base.OnJoinedLobby();
+        
+        Debug.Log($"you have joined: {PhotonNetwork.CurrentLobby.Name}");
+    }
+
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
         Create();
@@ -125,9 +253,25 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         base.OnJoinRandomFailed(returnCode, message);
     }
 
+    public override void OnLeftRoom()
+    {
+        base.OnLeftRoom();
+
+        RemoveOldLobbyReferences();
+        
+        while(!hasSuccessfullyLeftCurrentRoom)
+            Debug.Log("waiting on last room left");
+        
+        //PhotonNetwork.LoadLevel(networkLobbySceneIndex);
+
+        JoinLobby();
+        
+        SceneManager.LoadScene(networkLobbySceneIndex);
+    }
+
     public void Connect()
     {
-        Debug.Log("Trying to connect...");
+        Debug.Log("connect to master server...");
 
         PhotonNetwork.GameVersion = "0.0.0"; // we need to set this up
         PhotonNetwork.ConnectUsingSettings();
@@ -145,7 +289,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
             return;
         
         RoomOptions options = new RoomOptions();
-
+    
         // Assign max players here
         int currentGamesMaxPlayers = 1;
         int playersSelection = maxPlayersDropDown.value;
@@ -160,105 +304,167 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         }
         
         options.MaxPlayers = (byte) currentGamesMaxPlayers;
-
+    
         options.CustomRoomPropertiesForLobby = new string[]
         {
             "map", 
             "mode"
         };
-
+    
         ExitGames.Client.Photon.Hashtable properties = new ExitGames.Client.Photon.Hashtable();
         properties.Add("map", currentMap);
         properties.Add("mode", (int) GameSettings.GameMode);
         options.CustomRoomProperties = properties;
-
+    
         PhotonNetwork.CreateRoom(roomNameField.text, options);
     }
 
-    public void ChangeMap()
-    {
-        currentMap++;
+    // public void ChangeMap()
+    // {
+    //     currentMap++;
+    //
+    //     if (currentMap >= maps.Length)
+    //         currentMap = 0;
+    //
+    //     mapValue.text = "Map: " + maps[currentMap].name.ToUpper();
+    // }
 
-        if (currentMap >= maps.Length)
-            currentMap = 0;
-
-        mapValue.text = "Map: " + maps[currentMap].name.ToUpper();
-    }
-
-    public void ChangeMode()
-    {
-        int newMode = (int) GameSettings.GameMode + 1;
-
-        if (newMode >= System.Enum.GetValues(typeof(GameModeSelections)).Length) 
-            newMode = 0;
-
-        GameSettings.GameMode = (GameModeSelections) newMode;
-
-        modeValue.text = "Mode: " + System.Enum.GetName(typeof(GameModeSelections), newMode);
-    }
+    // public void ChangeMode()
+    // {
+    //     int newMode = (int) GameSettings.GameMode + 1;
+    //
+    //     if (newMode >= System.Enum.GetValues(typeof(GameModeSelections)).Length) 
+    //         newMode = 0;
+    //
+    //     GameSettings.GameMode = (GameModeSelections) newMode;
+    //
+    //     modeValue.text = "Mode: " + System.Enum.GetName(typeof(GameModeSelections), newMode);
+    // }
 
     // public void ChangeMaxPlayersSlider(float _value)
     // {
     //     maxPlayersValue.text = Mathf.RoundToInt(_value).ToString();
     // }
+    
+    private void ResetTabsForLobby()
+    {
+        Debug.Log("Reset Tabs For Lobby Func");
+        
+        TabCloseAll();
+        
+        ShowLoadingLobby();
+    }
+    
+    private void ShowLoadingLobby()
+    {
+        Debug.Log("Show Loading Lobby Func");
+        
+        loadingLobby.SetActive(true);
+    }
+
+    private void HideLoadingLobby()
+    {
+        Debug.Log("Hide Loading Lobby Func");
+        
+        loadingLobby.SetActive(false);
+    }
+    
+    private void RemoveOldLobbyReferences()
+    {
+        Debug.Log("network lobby reference links are set to null");
+
+
+        userNameField = null;
+        roomNameField = null;
+        mapValue = null;
+        modeValue = null;
+        maxPlayersDropDown = null;
+        
+        loadingLobby = null;
+        tabMain = null;
+        tabCreate = null;
+        tabRooms = null;
+
+        hasLobbyLoaded = false;
+
+        
+        //roomList.Clear();
+    }
+    
+    
+    
+    
 
     private void TabCloseAll()
     {
+        Debug.Log("disabling lobby tabs: Main, rooms, create");
+        
         tabMain.SetActive(false);
         tabRooms.SetActive(false);
         tabCreate.SetActive(false);
     }
 
-    public void TabOpenMain()
+    public void StopCoroutineBeforeJoiningNewGame()
     {
-        TabCloseAll();
-        tabMain.SetActive(true);
+        StopCoroutine(End(0.5f));
     }
 
-    public void TabOpenRooms()
-    {
-        TabCloseAll();
-        tabRooms.SetActive(true);
-    }
+    // public void TabOpenMain()
+    // {
+    //     TabCloseAll();
+    //     tabMain.SetActive(true);
+    // }
 
-    public void TabOpenCreate()
-    {
-        TabCloseAll();
-        tabCreate.SetActive(true);
+    // public void TabOpenRooms()
+    // {
+    //     TabCloseAll();
+    //     tabRooms.SetActive(true);
+    // }
 
-        roomNameField.text = "";
-
-        currentMap = 0;
-        mapValue.text = "Map: " + maps[currentMap].name.ToUpper();
-
-        GameSettings.GameMode = (GameModeSelections) 0;
-        modeValue.text = "Mode: " + System.Enum.GetName(typeof(GameModeSelections), (GameModeSelections) 0);
-
-        // GOING TO CHANGE THIS TO A DROP DOWN MENU I THINK
-        //maxPlayersSlider.value = maxPlayersSlider.maxValue;
-        
-        // Players selection
-        // int 0 = 1 vs 1
-        // int 1 = 2 vs 2
-        int playersSelection = maxPlayersDropDown.value;
-
-        if (playersSelection == 0)
-        {
-            Debug.Log("2 players selected");
-            
-            
-        }
-        // else
-        //     Debug.Log("4");
-        
-    }
+    // public void TabOpenCreate()
+    // {
+    //     TabCloseAll();
+    //     tabCreate.SetActive(true);
+    //
+    //     roomNameField.text = "";
+    //
+    //     currentMap = 0;
+    //     mapValue.text = "Map: " + maps[currentMap].name.ToUpper();
+    //
+    //     GameSettings.GameMode = (GameModeSelections) 0;
+    //     modeValue.text = "Mode: " + System.Enum.GetName(typeof(GameModeSelections), (GameModeSelections) 0);
+    //
+    //     // GOING TO CHANGE THIS TO A DROP DOWN MENU I THINK
+    //     //maxPlayersSlider.value = maxPlayersSlider.maxValue;
+    //     
+    //     // Players selection
+    //     // int 0 = 1 vs 1
+    //     // int 1 = 2 vs 2
+    //     int playersSelection = maxPlayersDropDown.value;
+    //
+    //     if (playersSelection == 0)
+    //     {
+    //         Debug.Log("2 players selected");
+    //         
+    //         
+    //     }
+    //     // else
+    //     //     Debug.Log("4");
+    //     
+    // }
 
     private void ClearRoomList()
     {
-        Transform content = tabRooms.transform.Find("Scroll View/Viewport/Content");
-        
-        foreach(Transform item in content)
-            Destroy(item.gameObject);
+        if (!tabRooms)
+            return;
+            
+        Transform content = tabRooms?.transform.Find("Scroll View/Viewport/Content");
+
+        if (content)
+        {
+            foreach (Transform item in content)
+                Destroy(item.gameObject);
+        }
     }
 
     private void VerifyUserName()
@@ -275,29 +481,60 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
 
     public override void OnRoomListUpdate(List<RoomInfo> list)
     {
+        if (list.Count <= 0)
+            return;
+        
+        if (!loadingLobby || !tabMain || !tabCreate || !tabRooms)
+            return;
+        
+        // update list of rooms?
         roomList = list;
         ClearRoomList();
+        
+        
+        // // verify list is valid
+        // foreach (RoomInfo roomInfo in roomList)
+        // {
+        //     if (roomInfo.PlayerCount == 0)
+        //     {
+        //         Debug.Log("removing dead room");
+        //         
+        //         roomList.Remove(roomInfo);
+        //     }
+        // }
+        
 
-        Transform content = tabRooms.transform.Find("Scroll View/Viewport/Content");
+        Transform content = tabRooms?.transform.Find("Scroll View/Viewport/Content");
 
         // if (roomList.Count <= 0)
         //     return;
         
-        foreach (RoomInfo item in roomList)
+        foreach (RoomInfo room in roomList)
         {
+            if (room.RemovedFromList == false)
+            {
+                Debug.Log($"room [ {room.Name} ] is open");
+            }
+            else
+            {
+                Debug.Log($"room [ {room.Name} ] is closed");
+
+                continue;
+            }
+            
             GameObject newRoomButton = Instantiate(buttonRoom, content) as GameObject;
 
-            newRoomButton.transform.GetComponent<RoomButtonInfo>().roomName.text = item.Name;
+            newRoomButton.transform.GetComponent<RoomButtonInfo>().roomName.text = room.Name;
             
-            int playersSelection = maxPlayersDropDown.value;
+            //int playersSelection = maxPlayersDropDown.value;
 
-            newRoomButton.transform.GetComponent<RoomButtonInfo>().playersCounter.text = item.PlayerCount + " / " + item.MaxPlayers;
+            newRoomButton.transform.GetComponent<RoomButtonInfo>().playersCounter.text = room.PlayerCount + " / " + room.MaxPlayers;
             
             // send max players through network event
             
             
-            if (item.CustomProperties.ContainsKey("map"))
-                newRoomButton.transform.GetComponent<RoomButtonInfo>().mapName.text = maps[(int) item.CustomProperties["map"]].name;
+            if (room.CustomProperties.ContainsKey("map"))
+                newRoomButton.transform.GetComponent<RoomButtonInfo>().mapName.text = maps[(int) room.CustomProperties["map"]].name;
             else
                 newRoomButton.transform.GetComponent<RoomButtonInfo>().mapName.text = "-----";
             
@@ -372,6 +609,9 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
 
     public void LoadGameSettings(RoomInfo roomInfo)
     {
+        if(roomInfo.PlayerCount == 0)
+            roomList.Remove(roomInfo);
+        
         GameSettings.GameMode = (GameModeSelections)roomInfo.CustomProperties["mode"];
     }
 
@@ -445,11 +685,62 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         else
         {
             // disconnect
-            PhotonNetwork.AutomaticallySyncScene = false;
-            PhotonNetwork.LeaveRoom();
+            //PhotonNetwork.AutomaticallySyncScene = false;
+
+            LeavingGame();
         }
     }
     
     #endregion // Coroutine_Methods
-    
+
+
+    internal void LeavingGame()
+    {
+        StopCoroutine(DisconnectAndLoad());
+        
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.CurrentRoom.IsOpen = false;
+            PhotonNetwork.CurrentRoom.IsVisible = false;
+
+            PhotonNetwork.CurrentRoom.ClearExpectedUsers();
+        } 
+        
+        //PhotonNetwork.LeaveRoom(false);
+        //PhotonNetwork.LeaveLobby();
+
+        //PhotonNetwork.Disconnect();
+
+        
+        StartCoroutine(DisconnectAndLoad());
+        
+    }
+
+
+    private IEnumerator DisconnectAndLoad()
+    {
+        hasSuccessfullyLeftCurrentRoom = false;
+        
+        //PhotonNetwork.Disconnect();
+        PhotonNetwork.LeaveRoom();
+        
+        if(PhotonNetwork.InRoom)
+            Debug.Log($"**** BEFORE ****   should be out of the game room you were int, current room name is: {PhotonNetwork.CurrentRoom.Name}");
+        
+        //while (PhotonNetwork.IsConnected)
+        while(PhotonNetwork.InRoom)
+            yield return null;
+        
+        
+        if(PhotonNetwork.InRoom)
+            Debug.Log($"**** AFTER ****   should be out of the game room you were int, current room name is: {PhotonNetwork.CurrentRoom.Name}");
+        // can load level here if on room left is not used
+
+        hasSuccessfullyLeftCurrentRoom = true;
+    }
+
+    private void JoinLobby()
+    {
+        PhotonNetwork.JoinLobby();
+    }
 }
