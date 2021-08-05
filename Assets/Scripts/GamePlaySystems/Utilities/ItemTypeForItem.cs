@@ -39,9 +39,12 @@ namespace GamePlaySystems.Utilities
         public void RequestTransferOwnershipToHost()
         {
             Debug.Log("give ownership back to host");
-        
+
             // return ownership back to master client.
-            base.photonView.TransferOwnership(PhotonNetwork.MasterClient);
+            if (!this.gameObject.GetComponent<BombDetonate>())
+            {
+                base.photonView.TransferOwnership(PhotonNetwork.MasterClient);
+            }
             
             gameObject.GetComponent<Rigidbody>().useGravity = true;
             gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;

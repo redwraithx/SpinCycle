@@ -21,7 +21,9 @@ public class NetworkLevelManager : MonoBehaviourPun
 
     public Text player2;
 
+
     
+
     //public bool[] isPlayersDiveDelayEnabled = new bool[GameManager.networkManager.maxPlayersPerRoom];
     //public float initialDiveReuseDelay = 10f;
 
@@ -111,6 +113,5 @@ public class NetworkLevelManager : MonoBehaviourPun
             }
         }
     }
-    
-    
+
 }

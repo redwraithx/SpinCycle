@@ -45,6 +45,7 @@ public class LaundryBasket : MonoBehaviourPun
                 points = other.gameObject.GetComponent<Item>().Price;
                 Debug.Log(points);
 
+                
                 //above two lines aren't needed for this code to run, only for debugging purposes
 
                 playerPoints.Points += other.gameObject.GetComponent<Item>().Price;

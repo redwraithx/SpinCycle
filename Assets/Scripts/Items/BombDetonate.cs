@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class BombDetonate : MonoBehaviourPun
+public class BombDetonate : MonoBehaviourPun, IPunObservable
 {
     public GameObject Bomb;
     public GameObject Radius = null;
@@ -12,14 +12,17 @@ public class BombDetonate : MonoBehaviourPun
     public bool detonated;
     public float timer;
     public float timerAdjust;
+    public PhotonView _photonView = null;
 
     public GameObject debugger;
     // Start is called before the first frame update
     void Start()
     {
-    
+        if (!_photonView)
+        {
+            _photonView = GetComponent<PhotonView>();
+        }
     }
-
     public void OnCollisionEnter(Collision collision)
     {
         
@@ -36,10 +39,8 @@ public class BombDetonate : MonoBehaviourPun
             }
 
             Radius = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", radiusName), transform.position, transform.rotation);
-             detonated = true;
+            detonated = true;
 
-
-            timer = timerAdjust;
 
 
         }
@@ -76,21 +77,23 @@ public class BombDetonate : MonoBehaviourPun
             {
                 timer -= Time.deltaTime;
             }
-            if (timer <= 0)
+        }
+
+        if (timer <= 0)
+        {
+            if (photonView.Owner.IsMasterClient == false)
             {
-
-                if (photonView.Owner.IsMasterClient == true)
-                {
-                    Debug.Log(photonView.Owner.IsMasterClient + " for master client owning this soap bomb");
-
-                    if (PhotonNetwork.IsMasterClient)
-                    {
-                        Debug.Log("this should be destroying itself right now");
-                        PhotonNetwork.Destroy(gameObject);
-                    }
-                }
-
+                GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient);
             }
+
+            if (photonView.Owner.IsMasterClient == true)
+            {
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    PhotonNetwork.Destroy(gameObject);
+                }
+            }
+
         }
 
     }
@@ -104,7 +107,10 @@ public class BombDetonate : MonoBehaviourPun
         }
         if(stream.IsReading)
         {
-            detonated = (bool) stream.ReceiveNext();
+            bool detonation = (bool) stream.ReceiveNext();
+
+            if (detonated != detonation && detonation == true)
+                detonated = detonation;
         }
     }
 }
