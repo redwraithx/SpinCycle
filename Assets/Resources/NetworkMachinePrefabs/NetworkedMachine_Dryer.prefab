@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &-6732264468700375671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2924945934221699691}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: -8500774386602738593}
+  m_Layer: 0
+  m_Name: Dryer Concept (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &-8500774386602738593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2924945934221699691}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -6732264468700375671}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5312652589344698844}
+  m_Father: {fileID: 8207175180056093427}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &397143710013226669
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +298,7 @@ Transform:
   m_LocalScale: {x: 0.69999963, y: 0.6999999, z: 0.69999975}
   m_Children: []
   m_Father: {fileID: 8207175180056093427}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4075529732653587311
 GameObject:
@@ -305,7 +336,7 @@ Transform:
   - {fileID: 2726226314412879647}
   - {fileID: 940504469126524023}
   m_Father: {fileID: 8207175180056093427}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &4242272532982727591
 MonoBehaviour:
@@ -683,6 +714,36 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &6546923916990955624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2924945934221699691}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5312652589344698844}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5312652589344698844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7002301053738867639, guid: d23e326e7895c0e4093909a3c08650a8, type: 3}
+  m_PrefabInstance: {fileID: 2924945934221699691}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6546923916990955624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: -8500774386602738593}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6580207664935041353
 GameObject:
   m_ObjectHideFlags: 0
@@ -10581,10 +10642,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5312652589344698844}
-  - {fileID: 5044114139507137432}
   - {fileID: 3730352812852003285}
+  - {fileID: 5044114139507137432}
   - {fileID: 3769048221565347039}
+  - {fileID: -8500774386602738593}
   - {fileID: 8784971712758029021}
   - {fileID: 7787684311318273329}
   m_Father: {fileID: 0}
@@ -10647,11 +10708,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d23e326e7895c0e4093909a3c08650a8, type: 3}
---- !u!4 &5312652589344698844 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7002301053738867639, guid: d23e326e7895c0e4093909a3c08650a8, type: 3}
-  m_PrefabInstance: {fileID: 2924945934221699691}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4722853690919386227
 PrefabInstance:
   m_ObjectHideFlags: 0
