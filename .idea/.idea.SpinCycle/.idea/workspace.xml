@@ -20,25 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6edd3356-5640-48c5-9fc2-63461a08671e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Planet Items/Graphics/Planet Material 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Items/Graphics/Planet Material 2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Planet Items/Graphics/Planet Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Items/Graphics/Planet Material.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/AOE Effects.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/AOE Effects.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/NetworkSpawned_T-Shirt_Done.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/NetworkSpawned_T-Shirt_Done.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/NetworkSpawned_T-Shirt_Unfolded.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/NetworkSpawned_T-Shirt_Unfolded.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/NetworkSpawned_T-Shirt_Wet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/NetworkSpawned_T-Shirt_Wet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/SpeedBoost.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/SpeedBoost.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ProgrammerScenes/Brian/NetworkLobby/NetworkLobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ProgrammerScenes/Brian/NetworkLobby/NetworkLobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/EscapeMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/EscapeMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/LaundryBasket/LaundryBasket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/LaundryBasket/LaundryBasket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/WashingMachine/MachineScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/WashingMachine/MachineScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LoadingNetworkLobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LoadingNetworkLobby.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobby.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobbyMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobbyMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobbyMenu.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobbyMenu.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkLevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkLevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Networking/FinalizedLobby/LocalLobbyManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Networking/FinalizedLobby/LocalLobbyManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LocalLobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LocalLobbyManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,8 +105,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobby.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/LaundryBasket/LaundryBasket.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LocalLobbyManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobbyMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LocalLobbyManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jXM3iP7Giz6FodzT2B7nRGS8ar" />
@@ -209,6 +192,7 @@
       <workItem from="1628085850179" duration="1489000" />
       <workItem from="1628088344146" duration="701000" />
       <workItem from="1628090806905" duration="36693000" />
+      <workItem from="1628186344045" duration="65000" />
     </task>
     <servers />
   </component>
