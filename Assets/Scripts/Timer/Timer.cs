@@ -133,6 +133,7 @@ public class Timer : MonoBehaviour
             pointTextL.text = player2Points.ToString();
             winner = GameManager.networkLevelManager.playersJoined[0];
             loser = GameManager.networkLevelManager.playersJoined[1];
+            victoryText.text = ("Player 1(Host) Wins");
         }
         if (player2Points > player1Points)
         {
@@ -140,6 +141,7 @@ public class Timer : MonoBehaviour
             pointTextW.text = player2Points.ToString();
             winner = GameManager.networkLevelManager.playersJoined[1];
             loser = GameManager.networkLevelManager.playersJoined[0];
+            victoryText.text = ("Player 2(Joined) Wins");
         }
         else if (player1Points == player2Points)
         {
