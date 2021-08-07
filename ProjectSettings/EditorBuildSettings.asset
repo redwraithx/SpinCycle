@@ -27,20 +27,20 @@ EditorBuildSettings:
     path: Assets/Scenes/ProgrammerScenes/Brian/NetworkLobby/NetworkLevel1.unity
     guid: 5728c8a793aabcb44b92275532ea95ef
   - enabled: 0
-    path: Assets/Scenes/ProgrammerScenes/Brian/MultiplayerTestLevel.unity
-    guid: 1f6cea932d730e04d98ad959594d229d
-  - enabled: 0
     path: Assets/Scenes/Menu/GameOverMenu.unity
     guid: 4c5352f1104eee844921703af6d4dc9c
   - enabled: 1
     path: Assets/Scenes/ProgrammerScenes/Anthony/AnthonyScene.unity
     guid: 4691d3df40ab4ab45abbb67c0c573671
+  - enabled: 1
+    path: Assets/Scenes/ProgrammerScenes/Brian/MultiplayerTestLevel.unity
+    guid: 1f6cea932d730e04d98ad959594d229d
+  - enabled: 0
+    path: Assets/Scenes/ProgrammerScenes/blockout_AssetsTestLevel.unity
+    guid: 1b19b38c9eebb834fb1b7d1a7c77d8ce
   - enabled: 0
     path: Assets/Scenes/ProgrammerScenes/Chirag/LobbyWaitingRoomScene.unity
     guid: f043c827f58ff3a4cb6fbcdf3d84e944
-  - enabled: 1
-    path: Assets/Scenes/Art Scenes/NewEmptySceneForBrandon.unity
-    guid: e2920654d1c7329449f617d7312cf7e4
   - enabled: 1
     path: Assets/Scenes/Levels/TutorialLevel.unity
     guid: dbed5462e4112e04691efa0d9688330d
