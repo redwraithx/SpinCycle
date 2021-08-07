@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &-1425395957499417087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 6793326146405037683}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8709163059102934979}
+  m_Layer: 0
+  m_Name: Washer Concept (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8709163059102934979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 6793326146405037683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -1425395957499417087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6470554866164240792}
+  m_Father: {fileID: 7848343926696609405}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &744765567811036983
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,11 +362,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6470554866164240792}
   - {fileID: 1544832162582159127}
   - {fileID: 3403106597781622480}
   - {fileID: 8366783142922319128}
   - {fileID: 6804686083276340207}
+  - {fileID: 8709163059102934979}
   - {fileID: 1757879834923948805}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -376,7 +407,7 @@ Transform:
   - {fileID: 3075061716965917539}
   - {fileID: 5464282972262802420}
   m_Father: {fileID: 7848343926696609405}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &786547961859930432
 MonoBehaviour:
@@ -524,7 +555,7 @@ RectTransform:
   - {fileID: 3010048375006320683}
   - {fileID: 3723503909981067301}
   m_Father: {fileID: 7848343926696609405}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5497,7 +5528,7 @@ Transform:
   m_LocalScale: {x: 0.5916036, y: 0.5916035, z: 0.6670331}
   m_Children: []
   m_Father: {fileID: 7848343926696609405}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 180}
 --- !u!33 &6443696981420749181
 MeshFilter:
@@ -5625,6 +5656,36 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6546923916990955624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 6793326146405037683}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6470554866164240792}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6470554866164240792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ad1d477e84517924d9b1b4c94b85ef2a, type: 3}
+  m_PrefabInstance: {fileID: 6793326146405037683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6546923916990955624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8709163059102934979}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7655610852494262262
 GameObject:
   m_ObjectHideFlags: 0
@@ -5653,7 +5714,7 @@ Transform:
   m_LocalScale: {x: 0.7000001, y: 0.6999999, z: 0.7}
   m_Children: []
   m_Father: {fileID: 7848343926696609405}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7757651383200125029
 GameObject:
@@ -10730,8 +10791,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad1d477e84517924d9b1b4c94b85ef2a, type: 3}
---- !u!4 &6470554866164240792 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ad1d477e84517924d9b1b4c94b85ef2a, type: 3}
-  m_PrefabInstance: {fileID: 6793326146405037683}
-  m_PrefabAsset: {fileID: 0}

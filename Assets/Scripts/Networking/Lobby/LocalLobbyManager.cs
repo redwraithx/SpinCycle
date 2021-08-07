@@ -21,10 +21,10 @@ public class LocalLobbyManager : MonoBehaviourPun
     public TMP_Dropdown maxPlayersDropDown = null;
 
     [Header("Lobby User UI References")]
-    public GameObject loadingLobbyUI = null;
     public GameObject tabMainUI = null;
     public GameObject tabRoomsUI = null;
     public GameObject tabCreateUI = null;
+    public GameObject loadingLobbyUI = null;
 
     [Header("Main Tab Button References")]
     public Button tabMainButtonListGames = null;
@@ -36,9 +36,9 @@ public class LocalLobbyManager : MonoBehaviourPun
     public Button tabRoomsBackToMainTabUI = null;
 
     [Header("Create a new Game Buttons References")]
-    public Button tabCreateButtonBackToMainTabUI = null;
     public Button tabCreateButtonMapSelect = null;
     public Button tabCreateButtonModeSelect = null;
+    public Button tabCreateButtonBackToMainTabUI = null;
     public Button tabCreateButtonCreateGame = null;
 
     [Header("AudioSource & Click Button Sound Reference")]
