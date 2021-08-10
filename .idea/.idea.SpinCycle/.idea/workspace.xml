@@ -22,18 +22,7 @@
     <list default="true" id="6edd3356-5640-48c5-9fc2-63461a08671e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoadScreens/TitleScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoadScreens/TitleScreen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/AudioManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/AudioManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/CanvasManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/CanvasManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/LaundryBasket/LaundryBasket.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/LaundryBasket/LaundryBasket.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/BombDetonate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/BombDetonate.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkLevelManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkLevelManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkedPlayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkedPlayer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking_old/MenuController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking_old/MenuController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIDebugger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIDebugger.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TutorialBot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TutorialBot.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +57,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/HealthBarSlider.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/Health.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Player/CinemachineMouseLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/Enumerators/Enums.cs" />
@@ -119,6 +107,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/LaundryBasket/LaundryBasket.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobbyMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LocalLobbyManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TutorialBot.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jXM3iP7Giz6FodzT2B7nRGS8ar" />
@@ -206,6 +195,7 @@
       <workItem from="1628090806905" duration="36693000" />
       <workItem from="1628186344045" duration="65000" />
       <workItem from="1628355482205" duration="630000" />
+      <workItem from="1628522114338" duration="3763000" />
     </task>
     <servers />
   </component>
