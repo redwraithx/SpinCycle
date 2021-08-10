@@ -13,6 +13,10 @@ public class LocalLobbyManager : MonoBehaviourPun
     
     public static LocalLobbyManager localInstance;
 
+    //[Header("Network Lobby max games")] 
+    private const int MAXNumberOfRooms = 10;
+    
+
     [Header("User InputFields - Text - DropDown References")]
     public TMP_InputField userNameField = null;
     public TMP_InputField roomNameField = null;
@@ -59,27 +63,27 @@ public class LocalLobbyManager : MonoBehaviourPun
     {
         // tab main button setup
         tabMainButtonListGames.onClick.AddListener(TabOpenRooms); //GameManager.networkManager.TabOpenRooms);
-        //tabMainButtonListGames.onClick.AddListener(PlayClickSound);
+        tabMainButtonListGames.onClick.AddListener(PlayClickSound);
         tabMainButtonCreateGame.onClick.AddListener(TabOpenCreate); //GameManager.networkManager.TabOpenCreate);
-        //tabMainButtonCreateGame.onClick.AddListener(PlayClickSound);
+        tabMainButtonCreateGame.onClick.AddListener(PlayClickSound);
         tabMainButtonBackToMainMenu.onClick.AddListener(GameManager.networkManager.GetComponent<NetworkLobbyMenu>().BackToMainMenu);
-        //tabMainButtonQuitGame.onClick.AddListener(PlayClickSound);
+        tabMainButtonBackToMainMenu.onClick.AddListener(PlayClickSound);
         tabMainButtonQuitGame.onClick.AddListener(GameManager.networkManager.GetComponent<NetworkLobbyMenu>().QuitGame);
-        //tabMainButtonQuitGame.onClick.AddListener(PlayClickSound);
+        tabMainButtonQuitGame.onClick.AddListener(PlayClickSound);
         
         // rooms list button setup
         tabRoomsBackToMainTabUI.onClick.AddListener(TabOpenMain); //GameManager.networkManager.TabOpenMain);
-        //tabRoomsBackToMainTabUI.onClick.AddListener(PlayClickSound);
+        tabRoomsBackToMainTabUI.onClick.AddListener(PlayClickSound);
         
         // create new Game Button setup
         tabCreateButtonBackToMainTabUI.onClick.AddListener(TabOpenMain); //GameManager.networkManager.TabOpenMain);
-        //tabCreateButtonBackToMainTabUI.onClick.AddListener(PlayClickSound);
+        tabCreateButtonBackToMainTabUI.onClick.AddListener(PlayClickSound);
         tabCreateButtonMapSelect.onClick.AddListener(ChangeMap); //GameManager.networkManager.ChangeMap);
-        //tabCreateButtonMapSelect.onClick.AddListener(PlayClickSound);
+        tabCreateButtonMapSelect.onClick.AddListener(PlayClickSound);
         tabCreateButtonModeSelect.onClick.AddListener(ChangeMode); //GameManager.networkManager.ChangeMode);
-        //tabCreateButtonModeSelect.onClick.AddListener(PlayClickSound);
+        tabCreateButtonModeSelect.onClick.AddListener(PlayClickSound);
         tabCreateButtonCreateGame.onClick.AddListener(Create); //GameManager.networkManager.Create);
-        //tabCreateButtonCreateGame.onClick.AddListener(PlayClickSound);
+        tabCreateButtonCreateGame.onClick.AddListener(PlayClickSound);
 
 
         maxPlayersDropDown.value = 0;
@@ -87,7 +91,7 @@ public class LocalLobbyManager : MonoBehaviourPun
         GameManager.networkManager.StopCoroutineBeforeJoiningNewGame();
     }
 
-    //private void PlayClickSound() => audioSource.PlayOneShot(clickSound);
+    private void PlayClickSound() => audioSource.PlayOneShot(clickSound);
     
     
     public void TabOpenMain()
@@ -97,6 +101,30 @@ public class LocalLobbyManager : MonoBehaviourPun
         TabCloseAll();
         
         tabMainUI.SetActive(true);
+        
+        // check if we have to many games running currently
+        if (PhotonNetwork.CountOfRooms >= MAXNumberOfRooms)
+        {
+            Debug.Log("if");
+            if (tabMainButtonCreateGame.IsActive())
+            {
+                Debug.Log("disable button");
+
+                tabMainButtonCreateGame.image.color = new Color(tabMainButtonCreateGame.image.color.r, tabMainButtonCreateGame.image.color.g, tabMainButtonCreateGame.image.color.b, 0.45f);
+                tabMainButtonCreateGame.enabled = false;
+            }
+        }
+        else
+        {
+            Debug.Log("else");
+            if (!tabMainButtonCreateGame.IsActive())
+            {
+                Debug.Log("enable button");
+                
+                tabMainButtonCreateGame.image.color = new Color(tabMainButtonCreateGame.image.color.r, tabMainButtonCreateGame.image.color.g, tabMainButtonCreateGame.image.color.b, 1f);
+                tabMainButtonCreateGame.enabled = false;
+            }
+        }
     }
     
     public void TabOpenRooms()

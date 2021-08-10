@@ -20,9 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6edd3356-5640-48c5-9fc2-63461a08671e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TutorialBot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TutorialBot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ProgrammerScenes/Brian/NetworkLobby/NetworkLobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ProgrammerScenes/Brian/NetworkLobby/NetworkLobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LoadingNetworkLobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LoadingNetworkLobby.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LoadingNetworkLobby.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LoadingNetworkLobby.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LocalLobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LocalLobbyManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,15 +101,15 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CharacterMechanics/IntroCamera.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkedPlayer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/WashingMachine/MachineScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LoadingNetworkLobby.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkLevelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/EscapeMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobby.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/LaundryBasket/LaundryBasket.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobbyMenu.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LocalLobbyManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GamePlaySystems/TutorialBot.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LoadingNetworkLobby.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LocalLobbyManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jXM3iP7Giz6FodzT2B7nRGS8ar" />
@@ -196,6 +198,8 @@
       <workItem from="1628186344045" duration="65000" />
       <workItem from="1628355482205" duration="630000" />
       <workItem from="1628522114338" duration="3765000" />
+      <workItem from="1628615453084" duration="4289000" />
+      <workItem from="1628621127357" duration="60000" />
     </task>
     <servers />
   </component>
