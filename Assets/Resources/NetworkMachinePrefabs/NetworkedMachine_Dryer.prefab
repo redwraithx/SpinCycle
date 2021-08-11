@@ -263,7 +263,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3769048221565347036}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -0, y: 0.399, z: -3.106}
+  m_LocalPosition: {x: -0, y: 0.399, z: 2.39}
   m_LocalScale: {x: 0.69999963, y: 0.6999999, z: 0.69999975}
   m_Children: []
   m_Father: {fileID: 8207175180056093427}
@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 7683249148626721636}
   - component: {fileID: 4996081392249063206}
   - component: {fileID: 2889000184108486017}
+  - component: {fileID: 6281702712564527763}
   m_Layer: 10
   m_Name: Terminal
   m_TagString: Machine
@@ -346,8 +347,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.3157349, z: 1.2791954}
-  m_Center: {x: -0, y: 1.1578673, z: -0.24461736}
+  m_Size: {x: 4.0872073, y: 3.3157349, z: 2.492246}
+  m_Center: {x: -0.121926636, y: 1.1578673, z: -6.776074}
 --- !u!65 &7683249148626721636
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -359,8 +360,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.538615, y: 5.3741574, z: 2.1467984}
-  m_Center: {x: -0.3458732, y: 2.7436295, z: 0.28893614}
+  m_Size: {x: 3.8464952, y: 7.539002, z: 3.5736434}
+  m_Center: {x: -0.2570843, y: 3.826052, z: -3.5381286}
 --- !u!114 &4996081392249063206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,6 +421,19 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!65 &6281702712564527763
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4075529732653587311}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3895907, y: 3.4190075, z: 0.910063}
+  m_Center: {x: -0.19479582, y: 1.2095039, z: -5.9032435}
 --- !u!1 &4547599693842911392
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,19 +460,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4547599693842911392}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -2.17}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.232}
   m_LocalScale: {x: 0.69999963, y: 0.6999999, z: 0.69999975}
   m_Children:
   - {fileID: 8415768576814259327}
   - {fileID: 2224000752381861269}
   m_Father: {fileID: 8207175180056093427}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 4.58}
-  m_SizeDelta: {x: 2.9658175, y: 1.3461709}
+  m_AnchoredPosition: {x: -0.0316, y: 4.5737}
+  m_SizeDelta: {x: 2.001048, y: 1.6943245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2588344374062234479
 Canvas:
@@ -5614,14 +5628,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7790895175270740675}
-  m_LocalRotation: {x: 0.44120985, y: 0.5525703, z: 0.44120985, w: -0.5525703}
-  m_LocalPosition: {x: 0, y: 0.7, z: -2.185}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0.085, y: 1.59, z: 1.72}
   m_LocalScale: {x: 0.69999963, y: 0.6999998, z: 0.69999987}
   m_Children:
   - {fileID: 7787684309708293825}
   m_Father: {fileID: 8207175180056093427}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -77.212, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
 --- !u!198 &7971991010163197577
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -10641,6 +10655,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c1e5ccb198b94b4ba8888e30bd37545, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8507402823019552167, guid: e961dddeee5fe0641968aee6498a5002, type: 3}
     - target: {fileID: 919132149155446097, guid: 7c1e5ccb198b94b4ba8888e30bd37545, type: 3}
       propertyPath: m_Name
       value: Dryer Concept
