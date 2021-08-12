@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 7217405853725784519}
   - component: {fileID: 6462020499488801988}
   - component: {fileID: 8336185266165077840}
+  - component: {fileID: 1646196705027649202}
   m_Layer: 11
   m_Name: NetworkSpawned_T-Shirt_Dirty
   m_TagString: Item
@@ -287,6 +288,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.4
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1646196705027649202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217405853725784517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ec1ec80c6f35c4a881eecb9457cd0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
 --- !u!1001 &6188092345248352149
 PrefabInstance:
   m_ObjectHideFlags: 0

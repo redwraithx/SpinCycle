@@ -182,7 +182,7 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
             
             stream.SendNext(rb.useGravity);
             stream.SendNext(rb.constraints);
-            stream.SendNext(_price);
+            stream.SendNext(OwnerID);
             
         }
         else if(stream.IsReading)
@@ -195,7 +195,10 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
 
             rb.useGravity = (bool) stream.ReceiveNext();
             rb.constraints = (RigidbodyConstraints) stream.ReceiveNext();
-            _price = (int) stream.ReceiveNext();
+            int OwnedBy = (int)stream.ReceiveNext();
+
+            if (OwnedBy != OwnerID)
+                OwnerID = OwnedBy;
             
         }
     }
