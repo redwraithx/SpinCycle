@@ -943,7 +943,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3795880657246068852}
   m_LocalRotation: {x: 0.043532234, y: -0, z: -0, w: 0.99905205}
-  m_LocalPosition: {x: 0.45125008, y: 1.2960703, z: -2.2617197}
+  m_LocalPosition: {x: 0.45125008, y: 1.944, z: -2.205}
   m_LocalScale: {x: 1.25, y: 1.2499999, z: 1.2499999}
   m_Children:
   - {fileID: 3795880657809834137}
@@ -1050,9 +1050,9 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.35
-  m_ScreenY: 0.87
-  m_CameraDistance: 1.86
+  m_ScreenX: 0.118
+  m_ScreenY: 1.5
+  m_CameraDistance: 1.4
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
@@ -1891,7 +1891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
-  playerBody: {fileID: 6848871425079053762}
+  playerBody: {fileID: 4129634994501169939}
   xRotation: 0
   bodyRotate: {x: 0, y: 0, z: 0}
 --- !u!114 &1888807340065565272
@@ -1910,7 +1910,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   mouseSensitivity: 100
-  playerBody: {fileID: 6848871425079053762}
+  playerBody: {fileID: 4129634994501169939}
   xRotation: 0
   bodyRotate: {x: 0, y: 0, z: 0}
 --- !u!114 &3795880657705904779
