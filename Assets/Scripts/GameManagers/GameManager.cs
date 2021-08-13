@@ -121,4 +121,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("LoadingScreen2");  
     }
+
+    public void PlayTutorial()
+    {
+        SceneManager.LoadScene("TutorialLevel");
+    }
 }
