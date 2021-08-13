@@ -1779,10 +1779,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.15
-  m_fontSizeBase: 26
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2025,10 +2025,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1624602254}
+  - component: {fileID: 1624602255}
   - component: {fileID: 1624602253}
   - component: {fileID: 1624602252}
   - component: {fileID: 1624602251}
-  - component: {fileID: 1624602255}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -2143,6 +2143,8 @@ MonoBehaviour:
   playButton: {fileID: 0}
   settingsButton: {fileID: 717977059}
   MainMenuSceneIndex: 0
+  mainMenuSceneBuildIndex: 1
+  hasPlayerProfileLoaded: 0
 --- !u!1 &1707402318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,10 +2415,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.75
-  m_fontSizeBase: 26
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2547,10 +2549,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.75
-  m_fontSizeBase: 26
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
