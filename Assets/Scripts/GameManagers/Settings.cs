@@ -22,28 +22,38 @@ public class Settings : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        theme1.Play();
-
-        resolutionDropdown.ClearOptions();
-        List<string> options = new List<string>();
-        resolutions = Screen.resolutions;
-        int currentResolutionIndex = 0;
-
-
-        for (int i = 0; i < resolutions.Length; i++)
+        if (theme1 != null)
         {
-            string option = resolutions[i].width + " x " +
-                     resolutions[i].height;
-            options.Add(option);
-            if (resolutions[i].width == Screen.currentResolution.width
-                  && resolutions[i].height == Screen.currentResolution.height)
-                currentResolutionIndex = i;
+            theme1.Play();
         }
 
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.RefreshShownValue();
-        LoadSettings(currentResolutionIndex);
+        if (resolutionDropdown != null)
+        {
+            resolutionDropdown.ClearOptions();
+            List<string> options = new List<string>();
+            resolutions = Screen.resolutions;
+            int currentResolutionIndex = 0;
 
+
+            for (int i = 0; i < resolutions.Length; i++)
+            {
+                string option = resolutions[i].width + " x " +
+                         resolutions[i].height;
+                options.Add(option);
+                if (resolutions[i].width == Screen.currentResolution.width
+                      && resolutions[i].height == Screen.currentResolution.height)
+                    currentResolutionIndex = i;
+            }
+
+            resolutionDropdown.AddOptions(options);
+            resolutionDropdown.RefreshShownValue();
+            LoadSettings(currentResolutionIndex);
+
+        }
+        else
+        {
+            LoadSettings2();
+        }
     }
 
     // Update is called once per frame
@@ -87,6 +97,29 @@ public class Settings : MonoBehaviour
                          PlayerPrefs.GetInt("ResolutionPreference");
         else
             resolutionDropdown.value = currentResolutionIndex;
+        if (PlayerPrefs.HasKey("SFXVolumePreference"))
+        {
+            sfxSlide.value =
+                        PlayerPrefs.GetFloat("SFXVolumePreference");
+            SetSFXVolume(sfxSlide.value);
+        }
+        else
+            sfxSlide.value =
+                        PlayerPrefs.GetFloat("SFXVolumePreference");
+        if (PlayerPrefs.HasKey("MusicVolumePreference"))
+        {
+            musicSlide.value = PlayerPrefs.GetFloat("MusicVolumePreference");
+
+            SetMusicVolume(musicSlide.value);
+        }
+        else
+            musicSlide.value =
+                        PlayerPrefs.GetFloat("MusicVolumePreference");
+    }
+
+    public void LoadSettings2()
+    {
+
         if (PlayerPrefs.HasKey("SFXVolumePreference"))
         {
             sfxSlide.value =
