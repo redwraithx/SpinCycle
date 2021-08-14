@@ -4,6 +4,7 @@ using Cinemachine;
 using Photon.Pun;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class IntroCamera : MonoBehaviourPun
 {
@@ -14,7 +15,15 @@ public class IntroCamera : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        freeLook.SetActive(false);
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "TutorialLevel")
+        {
+            freeLook.SetActive(true);
+        }
+        else
+        {
+            freeLook.SetActive(false);
+        }
         
         // if(!photonView)
         //     photonView =  
