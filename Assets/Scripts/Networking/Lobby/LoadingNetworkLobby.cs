@@ -67,7 +67,8 @@ public class LoadingNetworkLobby : MonoBehaviour
             hasLoadedNetworkLobby = true;
 
             tabsContainer.SetActive(true);
-            LocalLobbyManager.localInstance.tabMainUI.SetActive(true);
+
+            LocalLobbyManager.localInstance.TabOpenMain();
 
             gameObject.SetActive(false);
         }

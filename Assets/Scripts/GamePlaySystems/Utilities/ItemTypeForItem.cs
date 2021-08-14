@@ -20,7 +20,6 @@ namespace GamePlaySystems.Utilities
             PhotonNetwork.SerializationRate = 22;
         }
 
-
         public void RequestOwnership()
         {
             Debug.Log("request ownership from host");

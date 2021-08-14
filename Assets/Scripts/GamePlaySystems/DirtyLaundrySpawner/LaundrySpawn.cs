@@ -26,6 +26,8 @@ public class LaundrySpawn : MonoBehaviour
         }
     }
 
+
+
     public void OnTriggerExit(Collider other)
     {
         if (PhotonNetwork.IsMasterClient)

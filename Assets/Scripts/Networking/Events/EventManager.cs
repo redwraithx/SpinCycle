@@ -21,6 +21,7 @@ namespace NetworkEvent
         public PlayerInfo(ProfileData pData, int id, int gameScore, bool isOnTeamTwo)
         {
             profile = pData;
+            
             netID = id;
             this.gameScore = gameScore;
             this.isOnTeamTwo = isOnTeamTwo;
@@ -100,12 +101,13 @@ namespace NetworkEvent
             (
                 new ProfileData
                 (
-                    (string) data[0]
+                    (string) data[0],
+                    (bool) data[1]
 
                 ),
-                (int) data[1],
                 (int) data[2],
-                (bool) data[3]
+                (int) data[3],
+                (bool) data[4]
 
             );
 
@@ -164,9 +166,10 @@ namespace NetworkEvent
                 object[] piece = new object[4];
 
                 piece[0] = info[i].profile.userName;
-                piece[1] = info[i].netID;
-                piece[2] = info[i].gameScore;
-                piece[3] = info[i].isOnTeamTwo;
+                piece[1] = info[i].profile.hasPlayedTutorial;
+                piece[2] = info[i].netID;
+                piece[3] = info[i].gameScore;
+                piece[4] = info[i].isOnTeamTwo;
 
                 package[i + 1] = piece;
             }

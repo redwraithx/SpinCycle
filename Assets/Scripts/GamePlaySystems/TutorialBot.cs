@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
 public class TutorialBot : MonoBehaviour
@@ -27,6 +26,17 @@ public class TutorialBot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!player)
+        {
+            player = GameObject.FindWithTag("Player");
+
+            return;
+        }
+        
+        // remove this once the level has been fixed
+        if (string.IsNullOrEmpty(text[currentArea]))
+            return;
+        
         instructionText.text = text[currentArea];
 
         Vector3 playerLookAt = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
