@@ -210,6 +210,7 @@ public class Grab : MonoBehaviour
             if (weapon.enabled)
             {
                 weapon.enabled = false;
+                
                 weapon.projectileSpawnPoint = null;
                 weaponCamera.gameObject.SetActive(false);
                 

@@ -21,8 +21,7 @@ public class OilCanPowerUp1 : MonoBehaviour
         Debug.Log("Picked up a Speed Boost!");
 
         PlayerMovementCC stats = player.GetComponent<PlayerMovementCC>();
-        stats.Xspeed *= speedMultiplier;
-        stats.Zspeed *= speedMultiplier;
+        stats.speedBoost = true;
 
         PhotonNetwork.Destroy(gameObject);
     }

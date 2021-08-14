@@ -1644,9 +1644,9 @@ MonoBehaviour:
   grabHold: {fileID: 0}
   Xspeed: 12
   Zspeed: 10
-  slowedXspeed: 4
-  slowedZspeed: 3
+  speedBoost: 0
   isGrabbed: 0
+  isGrabbing: 0
   enemyGrab: {x: 0, y: 0, z: 0}
   gravity: -9.8
   gravityMulitplier: 2
