@@ -15,6 +15,12 @@ public class PlayerMovementCC : MonoBehaviourPun
     public GrabAndHold grabHold;
     public float Xspeed = 12f;
     public float Zspeed = 10f;
+    float slowedXspeed;
+    float slowedZspeed;
+    float speedBoostXSpeed;
+    float speedBoostZSpeed;
+
+    //not using these rn;
     private float m_moveSpeedMultiplier = 1f;
     private float m_jumpPowerMultiplier = 1f;
     Vector3 movementDirection;
@@ -24,9 +30,10 @@ public class PlayerMovementCC : MonoBehaviourPun
     //using this bool to transition between move states
     bool shoulderCamActive = true;
 
-    public float slowedXspeed = 4f;
-    public float slowedZspeed = 3f;
+    
+    public bool speedBoost = false;
     public bool isGrabbed = false;
+    public bool isGrabbing = false;
     public Vector3 enemyGrab;
     
 
@@ -64,9 +71,9 @@ public class PlayerMovementCC : MonoBehaviourPun
     internal PhotonView _photonView = null;
     private Vector3 correctPosition = Vector3.zero;
     private Quaternion correctRotation = Quaternion.identity;
-    
-    
-    
+
+
+
 
     public float MoveSpeed
     {
@@ -120,6 +127,10 @@ public class PlayerMovementCC : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
+        slowedXspeed = Xspeed * 0.5f;
+        slowedZspeed = Zspeed * 0.5f;
+        speedBoostXSpeed = Xspeed * 1.5f;
+        speedBoostZSpeed = Zspeed * 1.5f;
         Debug.Log($"player dive inde: {playerDiveIndex}");
         //GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex] = false;
         canDive = true;
@@ -138,6 +149,22 @@ public class PlayerMovementCC : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
+        if(speedBoost)
+        {
+            Xspeed = speedBoostXSpeed;
+            Zspeed = speedBoostZSpeed;
+            Invoke("EndSpeedBoost", 8f);
+        }
+        else if(isGrabbing)
+        {
+            Xspeed = slowedXspeed;
+            Zspeed = slowedZspeed;
+        }
+        else
+        {
+            Xspeed = 12f;
+            Zspeed = 10f;
+        }
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -213,6 +240,15 @@ public class PlayerMovementCC : MonoBehaviourPun
             {
                 Invoke("RotationTransition", 1.0f);
 
+            }
+            
+            else if (isGrabbing)
+            {
+                Quaternion grabLookAt = Quaternion.identity;
+                grabLookAt = Quaternion.LookRotation(GetGrabbedPlayerLocation());
+                grabLookAt.x = 0;
+                grabLookAt.z = 0;
+                transform.rotation = grabLookAt;
             }
             else if (move.sqrMagnitude > Mathf.Epsilon)
             {
@@ -400,6 +436,11 @@ public class PlayerMovementCC : MonoBehaviourPun
         // v = SQRT(h * -2 * g) or velocity = sqrt(jumpHeight * -2 * gravity)
         return (Mathf.Sqrt((jumpHeight * m_jumpPowerMultiplier) * -2 * (gravity * gravityMulitplier)));
     }
+
+    public void EndSpeedBoost()
+    {
+        speedBoost = false;
+    }
     
     public void SlowDown()
     {
@@ -411,6 +452,19 @@ public class PlayerMovementCC : MonoBehaviourPun
         isGrabbed = false;
 
 
+    }
+
+    Vector3 GetGrabbedPlayerLocation()
+    {
+        foreach (GameObject player in GameManager.networkLevelManager.playersJoined)
+        {
+            if (player.GetComponent<PlayerMovementCC>().isGrabbed == true)
+            {
+                return player.transform.position;
+            }
+        }
+
+        return transform.position;
     }
 
 }
