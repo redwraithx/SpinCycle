@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class PlayerMovementCC : MonoBehaviourPun
 {
+    public int numberOfKeyPressed = 0;
+    
     public Camera cinemachineCamera;
     public CinemachineVirtualCamera shoulderCam;
     public Animator characterAnimator;
@@ -79,8 +81,9 @@ public class PlayerMovementCC : MonoBehaviourPun
     internal PhotonView _photonView = null;
     private Vector3 correctPosition = Vector3.zero;
     private Quaternion correctRotation = Quaternion.identity;
-
-
+    
+    
+    private static readonly int Run = Animator.StringToHash("Run");
 
 
     public float MoveSpeed
@@ -302,14 +305,45 @@ public class PlayerMovementCC : MonoBehaviourPun
         }
 
 
-        if (Input.GetKeyDown("w")||  Input.GetKeyDown("s"))
+        // this will need to be updated for controller support
+        if (Input.GetKeyDown("w") || Input.GetKeyDown("s"))
         {
-            characterAnimator.SetBool("Run",true);
+            numberOfKeyPressed += 1;
+            characterAnimator.SetBool(Run, true);
         }
+        if (Input.GetKeyDown("a") || Input.GetKeyDown("d"))
+        {
+            numberOfKeyPressed += 1;
+            characterAnimator.SetBool(Run, true);
+        }
+
         if (Input.GetKeyUp("w") || Input.GetKeyUp("s"))
         {
-            characterAnimator.SetBool("Run", false);
+
+            if (numberOfKeyPressed == 1)
+
+                characterAnimator.SetBool(Run, false);
+
+            if (numberOfKeyPressed != 0)
+            {
+                numberOfKeyPressed -= 1;
+            }
+
         }
+        if (Input.GetKeyUp("a") || Input.GetKeyUp("d"))
+        {
+            if (numberOfKeyPressed == 1)
+
+                characterAnimator.SetBool(Run, false);
+
+            if (numberOfKeyPressed != 0)
+            {
+                numberOfKeyPressed -= 1;
+            }
+
+        }
+        
+        
 
         if (isFrozen == true)
         {
