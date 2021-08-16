@@ -8,10 +8,14 @@ public class WeaponDestroyScript : MonoBehaviourPun
     internal bool hasFired = false;
     [Range(0.5f, 5f)] public float delayedTime = 2f;
 
+    public LineRenderer lineRenderer;
+
     void LateUpdate()
     {
         if (hasFired && transform.parent == null)
         {
+            if (lineRenderer != null)
+                lineRenderer.enabled = false;
             Debug.Log("Destroyed Gun");
 
             if (GetComponent<PhotonView>().Owner.IsMasterClient)

@@ -1,57 +1,116 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
-public class BombDetonate : MonoBehaviour
+public class BombDetonate : MonoBehaviourPun, IPunObservable
 {
     public GameObject Bomb;
-    public GameObject Radius;
+    public GameObject Radius = null;
+    public string radiusName;
     public bool detonated;
-    private float timer;
-    public float startingTimer;
+    public float timer;
     public float timerAdjust;
+    public PhotonView _photonView = null;
+
+    public GameObject debugger;
     // Start is called before the first frame update
     void Start()
     {
-        Radius.SetActive(false);
-        startingTimer += 1;
+        if (!_photonView)
+        {
+            _photonView = GetComponent<PhotonView>();
+        }
     }
-
     public void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag != "Player")
+        
+        if (CanDetonateObject(collision))
         {
-            if(startingTimer <= 0)
+
+            if (collision.gameObject.tag == "machine")
             {
-                Bomb.SetActive(false);
-                Radius.SetActive(true);
-                timer = timerAdjust;
-                detonated = true;
-                Radius.transform.parent = null;
+                BroadcastMessage("SabotageMachine");
             }
+            if (GameManager.uiDebugger != null)
+            {
+                GameManager.uiDebugger.ItemInfo(this.gameObject.GetComponent<PhotonView>().ViewID, this.gameObject.name, photonView.Owner.IsMasterClient);
+            }
+
+            Radius = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", radiusName), transform.position, transform.rotation);
+            detonated = true;
+
+
+
         }
 
     }
+    private bool CanDetonateObject(Collision other)
+    {
 
+        if (detonated)
+            return false;
+
+        if (transform.parent != null)
+            return false;
+
+        //if (other.gameObject?.GetComponent<Grab>().itemInHand == null)
+        //    return false;
+
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("ItemStand")) // may need to reverse this
+            return false;
+
+        if (GetComponent<Item>().OwnerID == 0)
+            return false;
+
+        return true;
+    }
     private void Update()
     {
 
+
+
         if (detonated == true)
         {
-            if (timer >= 0)
+            if (timer > 0)
             {
                 timer -= Time.deltaTime;
             }
-            if (timer <= 0)
-            {
-                Destroy(gameObject);
-            }
         }
 
-        if(startingTimer >= 0)
+        if (timer <= 0)
         {
-            startingTimer -= Time.deltaTime;
+            if (photonView.Owner.IsMasterClient == false)
+            {
+                GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient);
+            }
+
+            if (photonView.Owner.IsMasterClient == true)
+            {
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    PhotonNetwork.Destroy(gameObject);
+                }
+            }
+
         }
-        
+
+    }
+
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(detonated);
+        }
+        if(stream.IsReading)
+        {
+            bool detonation = (bool) stream.ReceiveNext();
+
+            if (detonated != detonation && detonation == true)
+                detonated = detonation;
+        }
     }
 }

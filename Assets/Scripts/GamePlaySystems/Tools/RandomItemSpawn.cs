@@ -4,8 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-
-public class RandomItemSpawn : MonoBehaviour
+using TMPro;
+public class RandomItemSpawn : MonoBehaviourPun, IPunObservable
 {
     public GameObject spawnObjectGameObject;
     public Item spawnObject;
@@ -15,10 +15,12 @@ public class RandomItemSpawn : MonoBehaviour
     public string networkItemToSpawn = "";
     public VendingIndex VendingIndex;
 
+
     [Header("Randomiser stuff")]
 
     public GameObject[] allSpawnableObjects;
     public int randomNum;
+    public TMP_Text itemName;
 
     [Header("SpeedBoostSpawnStuff")]
 
@@ -26,34 +28,68 @@ public class RandomItemSpawn : MonoBehaviour
     public int randomSpeed1;
     public int randomSpeed2;
     public GameObject speedBoost;
-        
+
+    [Header("Time")]
+
+    public float timer;
+    public float timeTotal;
+    public TMP_Text countdown;
+    public bool timeRunning;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        RandomNumber();
-        spawnPointPosition = spawnPoint.transform.position;
-        spawnObject = spawnObjectGameObject.GetComponent<Item>();
-        VendingIndex = new VendingIndex(spawnObject.name, spawnObject.Description, spawnObject.Price.ToString(), spawnObject.sprite);
-        networkItemToSpawn = VendingIndex.Name;
         if (PhotonNetwork.IsMasterClient)
         {
+            RandomNumber();
+            spawnPointPosition = spawnPoint.transform.position;
+            spawnObject = spawnObjectGameObject.GetComponent<Item>();
+            VendingIndex = new VendingIndex(spawnObject.name, spawnObject.Description, spawnObject.Price.ToString(), spawnObject.sprite);
+            networkItemToSpawn = VendingIndex.Name;
+            itemName.text = networkItemToSpawn;
+
             objectInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
+
+            SpeedBoostRandomSetup();
+            RandomNumber();
         }
-        SpeedBoostRandomSetup();
-        RandomNumber();
     }
 
     private void Update()
     {
+        
+        if(itemName.text != networkItemToSpawn)
+        {
+            itemName.text = networkItemToSpawn;
+        }
 
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            countdown.text = Mathf.Round(timer).ToString();
+        }
+        if (timer <= 0 && timeRunning == true)
+        {
+            RespawnItem();
+        }
     }
 
     public void OnTriggerExit(Collider other)
     {
         Debug.Log("trigger exit item spawner" + objectInstance);
-        RespawnItem();
+        if (timer <= 0)
+        {
+            if (objectInstance == null || Vector3.Distance(objectInstance.transform.position, spawnPointPosition) >= 1)
+            {
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    timer += timeTotal;
+                    timeRunning = true;
+                }
+            }
+        }
 
     }
 
@@ -62,7 +98,6 @@ public class RandomItemSpawn : MonoBehaviour
     {
         if (objectInstance == null)
         {
-            Debug.Log("trigger exit item spawner Null");
             if (PhotonNetwork.IsMasterClient)
             {
                 spawnObject = spawnObjectGameObject.GetComponent<Item>();
@@ -70,21 +105,23 @@ public class RandomItemSpawn : MonoBehaviour
                 VendingIndex = new VendingIndex(spawnObject.name, spawnObject.Description, spawnObject.Price.ToString(), spawnObject.sprite);
                 networkItemToSpawn = VendingIndex.Name;
                 CheckForSpeedBoost();
+                timeRunning = false;
                 objectInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
+
             }
         }
         else if (objectInstance != null)
         {
-            Debug.Log("trigger exit item spawner NotNull");
             if (Vector3.Distance(objectInstance.transform.position, spawnPointPosition) >= 1)
             {
                 if (PhotonNetwork.IsMasterClient)
-                { 
+                {
                     spawnObject = spawnObjectGameObject.GetComponent<Item>();
                     VendingIndex = this.GetComponent<VendingIndex>();
                     VendingIndex = new VendingIndex(spawnObject.name, spawnObject.Description, spawnObject.Price.ToString(), spawnObject.sprite);
                     networkItemToSpawn = VendingIndex.Name;
                     CheckForSpeedBoost();
+                    timeRunning = false;
                     objectInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
                 }
             }
@@ -100,7 +137,7 @@ public class RandomItemSpawn : MonoBehaviour
         randomSpeed1 = Random.Range(1, 15);
         randomSpeed2 = Random.Range(1, 20);
 
-        if(randomSpeed1 == randomSpeed2)
+        if (randomSpeed1 == randomSpeed2)
         {
             SpeedBoostRandomSetup();
         }
@@ -109,7 +146,7 @@ public class RandomItemSpawn : MonoBehaviour
     {
         itemsSpawned += 1;
 
-        if(itemsSpawned == randomSpeed1 || itemsSpawned == randomSpeed2)
+        if (itemsSpawned == randomSpeed1 || itemsSpawned == randomSpeed2)
         {
             spawnObjectGameObject = speedBoost;
         }
@@ -128,5 +165,30 @@ public class RandomItemSpawn : MonoBehaviour
         }
     }
 
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(timeRunning);
+            stream.SendNext(timer);
+            stream.SendNext(networkItemToSpawn);
+        }
+
+        if(stream.IsReading)
+        {
+            bool isrunning = (bool)stream.ReceiveNext();
+            float timing = (float)stream.ReceiveNext();
+            string named = (string)stream.ReceiveNext();
+
+            if (isrunning != timeRunning)
+                timeRunning = isrunning;
+
+            if (timing != timer)
+                timer = timing;
+
+            if (named != networkItemToSpawn)
+                networkItemToSpawn = named;
+        }
+    }
 }
 

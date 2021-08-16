@@ -19,7 +19,7 @@ public class LaundryBasket : MonoBehaviourPun
     
     void Start()
     {
-        StartCoroutine (CheckForPlayer());
+        //StartCoroutine (CheckForPlayer());
     }
 
     private void Update()
@@ -32,13 +32,25 @@ public class LaundryBasket : MonoBehaviourPun
         {
             if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
             {
+                //playerPoints = PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
+                
+                bool updatedPlayerPoints = UpdatePlayerPoints(other.gameObject);
+                
+                if(updatedPlayerPoints)
+                    Debug.Log("Players Points where updated");
+                else
+                    Debug.Log("Players Points were not found to be updated.");
+                
+                
                 points = other.gameObject.GetComponent<Item>().Price;
                 Debug.Log(points);
 
+                
                 //above two lines aren't needed for this code to run, only for debugging purposes
 
                 playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
-                other.gameObject.GetComponent<Item>().DisableObject();
+                //other.gameObject.GetComponent<Item>().DisableObject();
+                PhotonNetwork.Destroy(other.gameObject);
             }
         }
     }
@@ -50,13 +62,23 @@ public class LaundryBasket : MonoBehaviourPun
         {
             if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
             {
+                // playerPoints =  PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();  // this causes errors randomly, should be done in GameManager
+                bool updatedPlayerPoints = UpdatePlayerPoints(other);
+                
+                if(updatedPlayerPoints)
+                    Debug.Log("Players Points where updated");
+                else
+                    Debug.Log("Players Points were not found to be updated.");
+                
+               
                 points = other.gameObject.GetComponent<Item>().Price;
                 Debug.Log(points);
 
                 //above two lines aren't needed for this code to run, only for debugging purposes
 
                 playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
-                other.gameObject.GetComponent<Item>().DisableObject();
+                //other.gameObject.GetComponent<Item>().DisableObject();
+                PhotonNetwork.Destroy(other.gameObject);
             }
         }
     }
@@ -76,4 +98,14 @@ public class LaundryBasket : MonoBehaviourPun
                 StopCoroutine(CheckForPlayer());
             }
     }
+
+
+
+    private bool UpdatePlayerPoints(GameObject other)
+    {
+        PlayerPoints playerPointsReference = PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
+
+        return playerPoints = playerPointsReference;
+    }
+    
 }

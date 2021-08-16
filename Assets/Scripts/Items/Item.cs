@@ -39,6 +39,7 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
     [SerializeField] private int _price;
     [SerializeField] private float _timeAdjustment;
     [SerializeField] private Sprite _sprite;
+    [SerializeField] private int _ownerId;
 
     private PhotonView _photonView = null;
     private PhotonTransformView _photonTransformView = null;
@@ -166,6 +167,12 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
         private set => _sprite = value;
     }
 
+    public int OwnerID
+    {
+        get => _ownerId;
+        set => _ownerId = value;
+    }
+
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)
@@ -175,6 +182,7 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
             
             stream.SendNext(rb.useGravity);
             stream.SendNext(rb.constraints);
+            stream.SendNext(OwnerID);
             
         }
         else if(stream.IsReading)
@@ -187,6 +195,10 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
 
             rb.useGravity = (bool) stream.ReceiveNext();
             rb.constraints = (RigidbodyConstraints) stream.ReceiveNext();
+            int OwnedBy = (int)stream.ReceiveNext();
+
+            if (OwnedBy != OwnerID)
+                OwnerID = OwnedBy;
             
         }
     }

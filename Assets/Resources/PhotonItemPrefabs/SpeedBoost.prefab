@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b148622cc1351f146a17a2aeac436f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMultiplier: 2
+  speedMultiplier: 1.4
   duration: 5
 --- !u!114 &192883028337121551
 MonoBehaviour:
@@ -183,6 +183,7 @@ MonoBehaviour:
   _price: 100
   _timeAdjustment: 0
   _sprite: {fileID: 21300000, guid: 89b44901fe04867458e41e8ee04e830a, type: 3}
+  _ownerId: 0
   correctPosition: {x: 0, y: 0, z: 0}
   correctRotation: {x: 0, y: 0, z: 0, w: 1}
   originalParent: {fileID: 0}
@@ -244,14 +245,14 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 1
+  observableSearch: 2
   ObservedComponents:
   - {fileID: 192883028337121551}
   - {fileID: 6426857173608314304}
   - {fileID: 6351592316896034443}
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &6426857173608314304

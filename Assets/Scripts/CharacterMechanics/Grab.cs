@@ -58,7 +58,8 @@ public class Grab : MonoBehaviour
             {
                     itemCollider.enabled = false;
             }
-            
+
+            itemInHand.GetComponent<Item>().OwnerID = this.gameObject.GetComponent<PhotonView>().ViewID;
             itemInHand.GetComponent<Rigidbody>().useGravity = false;
             itemInHand.transform.position = grabPoint.position;
             
@@ -121,11 +122,10 @@ public class Grab : MonoBehaviour
                 if (isValidItemObject && canUseHeldItem)
                 {
                     
-                  
+                    characterAnimator.SetTrigger("PutOn");
                     
                     if (machineInteractionObject)
                     {
-                          characterAnimator.SetTrigger("PutOn");
                        // use object action will only work on one event per object
                        machineInteractionObject.thisObjectEvent.Invoke(itemInHand);
                         //If you are getting an error that calls here, make sure the machine has the event set up properly
@@ -155,16 +155,17 @@ public class Grab : MonoBehaviour
 
                     
                 }
-                else if (itemInHand.GetComponent<ItemTypeForItem>().itemType == ItemType.SabotageWaterGun)
-                {
-                    if(weapon.enabled)
-                        weapon.fire();
+                //else if (itemInHand.GetComponent<ItemTypeForItem>().itemType == ItemType.SabotageWaterGun)
+                //{
+                //    if(weapon.enabled)
+                //        weapon.fire();
                    
-                    Debug.Log("Gun");
-                    itemInHand = null;
+                //    Debug.Log("Gun");
+                //    itemInHand = null;
 
-                    ClearGrabValues();
-                }
+                //    ClearGrabValues();
+                //}
+
               
             }
             if (Input.GetMouseButtonUp(0))
@@ -182,18 +183,23 @@ public class Grab : MonoBehaviour
                 {
                     if (!weapon.enabled)
                     {
-                        weapon.enabled = true;
+                        
                         weapon.itemType = isValidItem.itemType;
                         weapon.gun = itemInHand;
                         weapon.projectileSpawnPoint = itemInHand.GetComponentInChildren<Transform>();
                         weapon.destroyGun = weapon.gun.GetComponent<WeaponDestroyScript>();
                         weaponCamera.gameObject.SetActive(true);
                         itemInHand.gameObject.transform.rotation = transform.rotation;
+                        if(isValidItem.itemType == ItemType.SabotageIceGun)
+                            itemInHand.GetComponent<DrawProjection>().weaponScript = weapon;
+                        weapon.enabled = true;
+
+
                     }
                     if (!canUseHeldItem)
                         canUseHeldItem = true;
                     
-                    Debug.Log("2");
+                    //Debug.Log("2");
                 }
                 
             }
@@ -206,6 +212,9 @@ public class Grab : MonoBehaviour
                 weapon.enabled = false;
                 weapon.projectileSpawnPoint = null;
                 weaponCamera.gameObject.SetActive(false);
+                
+
+
             }
             //if (!canUseHeldItem)
             //canUseHeldItem = false;
@@ -227,6 +236,8 @@ public class Grab : MonoBehaviour
         
         itemInHand.GetComponent<Rigidbody>().useGravity = true;
         itemInHand.transform.SetParent(null);
+        
+
 
         itemInHand = null;
     }

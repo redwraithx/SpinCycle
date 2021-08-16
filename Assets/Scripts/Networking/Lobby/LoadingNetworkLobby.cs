@@ -63,9 +63,12 @@ public class LoadingNetworkLobby : MonoBehaviour
 
         if (tickCounter <= 0)
         {
+            Debug.Log("show profile and hide wait container");
             hasLoadedNetworkLobby = true;
 
             tabsContainer.SetActive(true);
+
+            LocalLobbyManager.localInstance.TabOpenMain();
 
             gameObject.SetActive(false);
         }

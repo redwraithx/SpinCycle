@@ -56,6 +56,8 @@ namespace PlayerProfileData
 
                     profile = (ProfileData) bf.Deserialize(file);
                     
+                    Debug.Log("profile, was the tutorial seen? " + profile.hasPlayedTutorial); // THIS IS FOR TESTING DELETE IT ON CODE REVIEW
+                    
                     Debug.Log("profile Loaded from saved file, successfully");
                 }
             }

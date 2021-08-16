@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ public class EscapeMenu : MonoBehaviour
     public Button returnButton;
     public Button quitButton;
     public GameObject menu;
+    //public GameObject debugger;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,18 @@ public class EscapeMenu : MonoBehaviour
             }
         }
 
+        //if(Input.GetKeyDown(KeyCode.L))
+        //{
+        //    if (debugger.activeInHierarchy == true)
+        //    {
+        //        debugger.SetActive(false);
+        //    }
+        //    if (debugger.activeInHierarchy == false)
+        //    {
+        //        debugger.SetActive(true);
+        //    }
+        //}
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             if(menu.activeInHierarchy == true)
@@ -68,7 +82,13 @@ public class EscapeMenu : MonoBehaviour
     public void Quit()
     {
         //Photon if statement
-        SceneManager.LoadScene("MainMenuScene");
+        //SceneManager.LoadScene("MainMenuScene")
+        
+        Debug.Log($"network manager status: {GameManager.networkManager}");
+        Debug.Log($"audio manager status: {GameManager.audioManager}");
+
+        if(GameManager.networkManager)
+            GameManager.networkManager.LeavingGame();
     }
 
     public void OpenMenu()

@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public static AudioManager audioManager = null;
     public static NetworkLobby networkManager = null;
     public static NetworkLevelManager networkLevelManager = null;
+    public static UIDebugger uiDebugger = null;
     
     
     #endregion GAMEMANAGER_CORE-EXTENTIONS
@@ -50,12 +51,17 @@ public class GameManager : MonoBehaviour
         if (Instance)
         {
             DestroyImmediate(gameObject);
+
+            return;
         }
         else
         {
             _instance = this;
             DontDestroyOnLoad(this);
         }
+
+        networkManager = null;
+        networkLevelManager = null;
 
     }
 
@@ -114,5 +120,10 @@ public class GameManager : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("LoadingScreen2");  
+    }
+
+    public void PlayTutorial()
+    {
+        SceneManager.LoadScene("TutorialLevel");
     }
 }

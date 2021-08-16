@@ -15,6 +15,8 @@ public interface IItem
 
     Sprite sprite { get; }
 
+    int OwnerID { get; set; }
+
 }
     
 

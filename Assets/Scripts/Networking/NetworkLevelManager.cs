@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 
 
-public class NetworkLevelManager : MonoBehaviourPunCallbacks
+public class NetworkLevelManager : MonoBehaviourPun
 {
     public Transform[] playerStartingPositions;
 
@@ -15,6 +16,13 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
     public GameObject timer;
 
     bool timerStarted = false;
+
+    public Text player1;
+
+    public Text player2;
+
+
+    
 
     //public bool[] isPlayersDiveDelayEnabled = new bool[GameManager.networkManager.maxPlayersPerRoom];
     //public float initialDiveReuseDelay = 10f;
@@ -28,12 +36,9 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
         GameObject networkedPlayer = null;
 
         // if main camera is in scene disable it
-        //if (GameObject.FindWithTag("MainCamera"))
         foreach (var cam in GameObject.FindGameObjectsWithTag("MainCamera"))
-        {
-            //GameObject.FindWithTag("MainCamera").gameObject.SetActive(false);
-            cam.SetActive(false);
-        }
+            Destroy(cam);
+
 
         // we can add character selection here if / when we get that.
         //PlayerPrefs.GetInt("PlayerSelection");  // something like this if we had a few characters we could have them set by an int
@@ -41,48 +46,27 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
 
         if (PhotonNetwork.IsConnected)
         {
-            int newPlayerIndex = PhotonNetwork.CurrentRoom.PlayerCount - 1;
+            //int newPlayerIndex = PhotonNetwork.CurrentRoom.PlayerCount - 1;
+            int newPlayerIndex = playersJoined.Count;
 
             startingPosition = playerStartingPositions[newPlayerIndex].position;
             startingRotation = playerStartingPositions[newPlayerIndex].rotation;
 
             if (NetworkedPlayer.LocalPlayerInstance == null)
             {
-
-
                 // spawn networked Player
                 networkedPlayer = PhotonNetwork.Instantiate(Path.Combine("NetworkingPrefabs", "NetworkedPlayerAvatar"), startingPosition, startingRotation, 0);
-                //networkedPlayer = PhotonNetwork.Instantiate(Path.Combine("NetworkingPrefabs", "NetworkedPlayerAvatar_withAnimations"), startingPosition, startingRotation, 0);
 
-                networkedPlayer.GetComponent<PlayerMovementCC>().playerDiveIndex = newPlayerIndex;
-
-                Debug.Log($"spawning player {networkedPlayer.name}");
-
-
-                playersJoined.Add(networkedPlayer);
-
+                networkedPlayer.GetComponent<PlayerMovementCC>().playerDiveIndex = newPlayerIndex; // what is this for?
             }
 
             if (PhotonNetwork.IsMasterClient)
             {
-                // if we need the host to setup the level it will happen here
-                // game timers etc...
-                // we may want to wait for other players till the room lobby has been setup
-
+                // time before an empty room is destroyed in seconds
+                PhotonNetwork.CurrentRoom.EmptyRoomTtl = 1;
             }
 
-
         }
-        else
-        {
-            // if we had a single player game it would go here.
-            // set rotation and starting position
-
-
-        }
-
-        //networkedPlayer.GetComponent<PlayerMovement>().enabled = true;
-
 
     }
 
@@ -96,10 +80,11 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
                 {
                     if (!timerStarted)
                     {
+                        PhotonNetwork.CurrentRoom.IsOpen = false;
+                        
                         timer.GetComponent<NetworkedTimerNew>().InitializeTimer();
                         timerStarted = true;
                     }
-
                 }
 
                 if (playersJoined.Count <= 2)
@@ -108,16 +93,25 @@ public class NetworkLevelManager : MonoBehaviourPunCallbacks
                     {
                         if (!playersJoined.Contains(Player))
                         {
-                            playersJoined.Add(Player);
+                            if(Player.GetComponent<PhotonView>().Owner.IsMasterClient == true && playersJoined.Count >= 0)
+                            {
+                                playersJoined.Add(Player);
+                            }
+                            else if(Player.GetComponent<PhotonView>().Owner.IsMasterClient == false && playersJoined.Count >= 1)
+                            {
+                                playersJoined.Add(Player);
+                            }
+                            else
+                            {
+                                Debug.Log("having trouble finding player 2");
+                            }
+
+
                         }
                     }
                 }
-
-
-
             }
         }
-
-
     }
+
 }
