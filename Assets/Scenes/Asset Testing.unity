@@ -13302,6 +13302,19 @@ MonoBehaviour:
   objectInstance: {fileID: 0}
   networkItemToSpawn: 
   VendingIndex: {fileID: 461018922}
+--- !u!65 &461018925
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461018920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 19.921574}
+  m_Center: {x: 0, y: 7.105428e-15, z: 8.960766}
 --- !u!1001 &464117592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64570,6 +64583,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 653380944}
     m_Modifications:
+    - target: {fileID: 1375163974, guid: 2c7601b96f86f4e4fb316f0cdc1c625c, type: 3}
+      propertyPath: matchLength
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 1613277153929179190, guid: 2c7601b96f86f4e4fb316f0cdc1c625c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 42.82
