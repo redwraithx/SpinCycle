@@ -45,7 +45,6 @@ public class Grab : MonoBehaviour
         {
             characterAnimator.SetBool("PickUp", true);
          
-            Debug.Log("Can Pick Up Item?" + canPickUpItem);
 
             hasItemInHand = true;
             GetComponent<PlayerSphereCast>().itemInHand = true;
@@ -155,16 +154,7 @@ public class Grab : MonoBehaviour
 
                     
                 }
-                //else if (itemInHand.GetComponent<ItemTypeForItem>().itemType == ItemType.SabotageWaterGun)
-                //{
-                //    if(weapon.enabled)
-                //        weapon.fire();
-                   
-                //    Debug.Log("Gun");
-                //    itemInHand = null;
 
-                //    ClearGrabValues();
-                //}
 
               
             }
@@ -178,7 +168,7 @@ public class Grab : MonoBehaviour
             var isValidItem = itemInHand?.GetComponent<ItemTypeForItem>();
             if (isValidItem)
             {
-                //Debug.Log(isValidItem.itemType);
+
                 if (isValidItem.itemType == ItemType.SabotageWaterGun || isValidItem.itemType == ItemType.SabotageIceGun || isValidItem.itemType == ItemType.SabotageSoapGun)
                 {
                     if (!weapon.enabled)
@@ -198,8 +188,7 @@ public class Grab : MonoBehaviour
                     }
                     if (!canUseHeldItem)
                         canUseHeldItem = true;
-                    
-                    //Debug.Log("2");
+
                 }
                 
             }
@@ -217,8 +206,7 @@ public class Grab : MonoBehaviour
 
 
             }
-            //if (!canUseHeldItem)
-            //canUseHeldItem = false;
+
         }
     }
 
@@ -258,16 +246,11 @@ public class Grab : MonoBehaviour
 
                 Item _item = other.gameObject.GetComponent<Item>();
                 
-                // // networking TEST
-                // if (PickupObject(_item) == true)
-                // {
-                //     PickupObject(_item);
-                // }
+
             }
             else if ((repairTool = other.GetComponent<RepairToolUse>()) == true)
             {
                 canUseHeldItem = true;
-                Debug.Log("GrabScriptRepairToolDebug");
             }
             else
             {
@@ -290,20 +273,6 @@ public class Grab : MonoBehaviour
             
             }
 
-            //if (itemInHand)
-            //{
-            //    var isItemASabbotage = itemInHand?.GetComponent<ItemTypeForItem>();
-            //    if (isItemASabbotage)
-            //    {
-            //        Debug.Log(isItemASabbotage.itemType);
-            //        if (isItemASabbotage.itemType == ItemType.SabotageWaterGun)
-            //        {
-            //            canUseHeldItem = true;
-            //            weapon.enabled = true;
-            //            Debug.Log("2");
-            //        }
-            //    }
-            //}
 
         }
         
@@ -319,7 +288,6 @@ public class Grab : MonoBehaviour
         // can only hold items in your hand not machines
         if (item || machine)
         {
-            Debug.Log("collided with " + other.gameObject.tag);
             
             
             // NEW VERSION
@@ -330,11 +298,9 @@ public class Grab : MonoBehaviour
             else if ((repairTool = other.GetComponent<RepairToolUse>()) == true)
             {
                 canUseHeldItem = true;
-                Debug.Log("GrabScriptRepairToolDebug2");
             }
             else
             {
-                Debug.Log("GrabScriptRepairToolDebugElse");
                 canUseHeldItem = false;
                 machineInteractionObject = null;
             }
@@ -351,16 +317,6 @@ public class Grab : MonoBehaviour
                 itemToPickUp = null;
             }
 
-            //if (itemInHand)
-            //{
-            //    var isItemASabbotage = itemInHand?.GetComponent<ItemTypeForItem>();
-            //    if (isItemASabbotage)
-            //    {
-            //        if (isItemASabbotage.itemType == ItemType.SabotageWaterGun)
-            //            canUseHeldItem = false;
-            //    }
-                
-            //}
 
 
         }
@@ -389,7 +345,6 @@ public class Grab : MonoBehaviour
         }
         else
         {
-            //weapon.destroyGun = null;
             itemInHand = null;
             canUseHeldItem = false;
             GetComponent<PlayerSphereCast>().itemInHand = false;

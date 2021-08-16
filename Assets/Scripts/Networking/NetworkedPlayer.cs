@@ -113,78 +113,11 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
             else
                 throw new Exception("Error! Network Player Character is missing dynamic cross hair reference in NetworkPlayer Script");
 
-            // this will need to be cleaned up during bug fixes
-            // if(camera)
-            //     camera.gameObject.SetActive(false);
-            // else
-            //     gameObject.GetComponentInChildren<Camera>()
-
-
-            // gameObject.GetComponent<PlayerMovementCC>().enabled = false;
-            // gameObject.GetComponentInChildren<AudioListener>().enabled = false;
-            // gameObject.GetComponentInChildren<Camera>().enabled = false;
-            // gameObject.GetComponentInChildren<MouseLook>().enabled = false;
-            // gameObject.GetComponent<Grab>().enabled = false;
-            // cameraBrainGO.SetActive(false);
-
-            // this was for player name plates
-            //playerNameUI = GetComponentInChildren<Text>();
-
-
-
-            //GameObject playerNameUI = Instantiate(playerNameUIPrefab, gameObject.GetComponentInChildren<Canvas>().transform, true);//, gameObject.transform, true);
-            //GameObject playerNameUI = Instantiate(Path.Combine("PhotonNetworkedPlayerPrefabs", "PlayerNamePlateUI"), gameObject.transform, true);
-            // playerNameUI.transform.position = Vector3.zero;
-            // playerNameUI.transform.rotation = Quaternion.identity;
-
-            //playerNameUI.text = photonView.Owner.NickName;
-
-            //playerMesh.material.color = Color.red;
-
-            //playerNameUI.GetComponent<NameUIController>().carRend = playerMesh;
-
 
         }
     }
 
 
-    private void Update()
-    {
-
-
-
-        // if (playerNameUI)
-        // {
-        //     if (targetPlayer)
-        //     {
-        //         
-        //         
-        //         playerNameUI.transform.LookAt(targetPlayer);
-        //         //playerNameUI.transform.rotation = new Quaternion(playerNameUI.transform.rotation.x, playerNameUI.transform.rotation.y + 180f, playerNameUI.transform.rotation.z, 1f);
-        //
-        //     }
-        // }
-
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        // for nameplate facing player disabled for capstone
-        // if (!other.gameObject.CompareTag("NetworkedPlayer"))
-        //     return;
-        //
-        // targetPlayer = other.gameObject.transform;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        // for nameplate facing player disabled for capstone
-        // if (!other.gameObject.CompareTag("NetworkedPlayer"))
-        //     return;
-        //
-        // targetPlayer = null;
-    }
 
     
     // Photon callbacks

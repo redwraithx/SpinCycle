@@ -93,30 +93,6 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
     }
     
 
-    private void Update()
-    {
-        //UpdatePosition();
-        //_photonView.RPC("UpdateObject", RpcTarget.AllBuffered, transform.position, transform.rotation);
-
-    }
-
-    // [PunRPC]
-    // public void UpdateObject(Vector3 pos, Quaternion rot)
-    // {
-    //     transform.position = pos;
-    //     transform.rotation = rot;
-    // }
-    //
-    // private void FixedUpdate()
-    // {
-    //     if (!_photonView)
-    //         return;
-    //
-    // }
-
-
-    
-
     public Item(int id, string name, string description, int price, float _time)
     {
         Id = id;
@@ -177,9 +153,6 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
     {
         if (stream.IsWriting)
         {
-            //stream.SendNext(transform);
-            //stream.SendNext(transform.rotation);
-            
             stream.SendNext(rb.useGravity);
             stream.SendNext(rb.constraints);
             stream.SendNext(OwnerID);
@@ -188,12 +161,6 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
         }
         else if(stream.IsReading)
         {
-            //correctPosition = 
-            //var newParent = (Transform) stream.ReceiveNext();
-            
-            //transform.SetParent(newParent);
-            //correctRotation = (Quaternion) stream.ReceiveNext();
-
             rb.useGravity = (bool) stream.ReceiveNext();
             rb.constraints = (RigidbodyConstraints) stream.ReceiveNext();
             int OwnedBy = (int)stream.ReceiveNext();
@@ -208,36 +175,11 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
         }
     }
 
-    
-    // [PunRPC]
-    // public void SetObjectsParent(Transform newParentsTransform)
-    // {
-    //     Debug.Log("network call item parent");
-    //
-    //     if (newParentsTransform == null)
-    //     {
-    //         transform.SetParent(originalParent);
-    //     }
-    //     else
-    //     {
-    //         transform.SetParent(newParentsTransform);
-    //         
-    //     }
-    //     
-    // }
-    //
-    // public void UpdateObjectsParent(Transform newParentTransform)
-    // {
-    //     Debug.Log("updateObjects been called, sending network info");
-    //     
-    //     photonView.RPC("SetObjectsParent", RpcTarget.AllBuffered, newParentTransform);
-    // }
 
 
     [PunRPC]
     public void SetObjectsRigidBody(bool hasPickedUpItem = false)
     {
-        Debug.Log("network call items been picked up, gravity off, constraints off");
 
         if (hasPickedUpItem)
         {
@@ -258,7 +200,6 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
 
     public void UpdateObjectsRigidBody(bool hasPickedUpItem = false)
     {
-        Debug.Log("sending RPC call to update rigidbody: gravity and constraints");
         
         photonView.RPC("SetObjectsRigidBody", RpcTarget.AllBuffered, hasPickedUpItem);
     }
@@ -275,27 +216,7 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
         gameObject.SetActive(true);
     }
 
-    // [PunRPC]
-    // public void DestroyObject()//PhotonView view)
-    // {
-    //     // if (view.ViewID == photonView.ViewID)
-    //     // {
-    //         Debug.Log("destroy object");
-    //         
-    //         //Destroy(gameObject);
-    //     //}
-    // }
-    //
-    // public void RemoveThisObject()
-    // {
-    //     photonView.RPC("DestroyObject", RpcTarget.Others, 0);//1, _photonView);
-    // }
 
-    
-
-
-    
-    
 }
 
 
