@@ -85,16 +85,22 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
         CheckGrab();
         if (isGrabbing == true)
         {
+            playerCC.isGrabbing = true;
             if (PhotonNetwork.IsMasterClient)
                 GrabMaster_S();
             else
                 GrabSecondary_S();
+        }
+        else
+        {
+            playerCC.isGrabbing = false;
         }
 
         if (photonView.IsMine)
             grabberPos = grabber.transform.position;
         else
         {
+            
            grabberPos = GetOtherGrabberPos();
         }
             

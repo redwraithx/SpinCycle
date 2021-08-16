@@ -12,10 +12,15 @@ public class WeaponDestroyScript : MonoBehaviourPun
 
     void LateUpdate()
     {
-        if (hasFired && transform.parent == null)
+        if(hasFired)
         {
             if (lineRenderer != null)
                 lineRenderer.enabled = false;
+        }
+
+        if (hasFired && transform.parent == null)
+        {
+            
             Debug.Log("Destroyed Gun");
 
             if (GetComponent<PhotonView>().Owner.IsMasterClient)
