@@ -15,7 +15,7 @@ public class VendingIndex : MonoBehaviour
         Price = price;
         Description = desc;
         Sprite = sprite;
-        Debug.Log($"Name: {name}, Desc: {desc}, Price: {price}");
+
     }
 
 

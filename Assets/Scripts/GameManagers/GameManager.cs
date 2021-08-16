@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public static AudioManager audioManager = null;
     public static NetworkLobby networkManager = null;
     public static NetworkLevelManager networkLevelManager = null;
-    public static UIDebugger uiDebugger = null;
+
     
     
     #endregion GAMEMANAGER_CORE-EXTENTIONS
@@ -65,17 +65,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // checking to see if the player hit escape when in the game level
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (SceneManager.GetActiveScene().name == "GameLevelScene")
-            {
-                SceneManager.LoadScene("MainMenuScene");
-            }
-        }
-    }
 
     //loads the game level
     public void StartGame()
@@ -92,6 +81,11 @@ public class GameManager : MonoBehaviour
         #else
             Application.Quit();
         #endif
+    }
+
+    public void ToCredits()
+    {
+        SceneManager.LoadScene("Credits");
     }
     
     
@@ -115,12 +109,6 @@ public class GameManager : MonoBehaviour
         //private set => _instance = value;
     }
 
-    
-    //function with temp load for sample scene is now in LoadScreen2CanvasManager
-    public void PlayGame()
-    {
-        SceneManager.LoadScene("LoadingScreen2");  
-    }
 
     public void PlayTutorial()
     {

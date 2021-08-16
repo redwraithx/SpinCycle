@@ -17,22 +17,13 @@ public class LaundryBasket : MonoBehaviourPun
     PlayerPoints playerPoints = null;
     public string pointsToText;
     
-    void Start()
-    {
-        //StartCoroutine (CheckForPlayer());
-    }
 
-    private void Update()
-    {
-       
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Item"))
         {
             if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
             {
-                //playerPoints = PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
                 
                 bool updatedPlayerPoints = UpdatePlayerPoints(other.gameObject);
                 
@@ -42,12 +33,6 @@ public class LaundryBasket : MonoBehaviourPun
                     Debug.Log("Players Points were not found to be updated.");
                 
                 
-                points = other.gameObject.GetComponent<Item>().Price;
-                Debug.Log(points);
-
-                
-                //above two lines aren't needed for this code to run, only for debugging purposes
-
                 playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
                 //other.gameObject.GetComponent<Item>().DisableObject();
                 PhotonNetwork.Destroy(other.gameObject);
@@ -62,22 +47,16 @@ public class LaundryBasket : MonoBehaviourPun
         {
             if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
             {
-                // playerPoints =  PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();  // this causes errors randomly, should be done in GameManager
                 bool updatedPlayerPoints = UpdatePlayerPoints(other);
                 
                 if(updatedPlayerPoints)
                     Debug.Log("Players Points where updated");
                 else
                     Debug.Log("Players Points were not found to be updated.");
-                
-               
-                points = other.gameObject.GetComponent<Item>().Price;
-                Debug.Log(points);
-
-                //above two lines aren't needed for this code to run, only for debugging purposes
+                               
 
                 playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
-                //other.gameObject.GetComponent<Item>().DisableObject();
+
                 PhotonNetwork.Destroy(other.gameObject);
             }
         }
