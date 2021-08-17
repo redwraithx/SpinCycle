@@ -21,9 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6edd3356-5640-48c5-9fc2-63461a08671e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/FootIK.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/FootIK.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/PlayerCharacter@Idle(1).fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/PlayerCharacter@Idle(1).fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkingPrefabs/NetworkedPlayerAvatar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkingPrefabs/NetworkedPlayerAvatar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/SoapBomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PhotonItemPrefabs/SoapBomb.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ProgrammerScenes/Brian/NetworkLobby/NetworkLobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ProgrammerScenes/Brian/NetworkLobby/NetworkLobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LocalLobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/LocalLobbyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobby.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobbyMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Lobby/NetworkLobbyMenu.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,6 +205,7 @@
       <workItem from="1628621127357" duration="60000" />
       <workItem from="1628815898585" duration="5015000" />
       <workItem from="1629146262790" duration="7459000" />
+      <workItem from="1629214465296" duration="5512000" />
     </task>
     <servers />
   </component>
