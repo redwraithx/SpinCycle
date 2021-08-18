@@ -1,79 +1,49 @@
 fileFormatVersion: 2
-guid: 5431f449303cef944af18f7461c4da77
+guid: 324d1d229bdf4374da9954b11ca2af60
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8965487738501360822
-    second: Lobby Main
+      213: -3148128529016620232
+    second: Bar1
   - first:
-      213: -6750188249083861989
-    second: Sprite_sheet_test_2.0_1
+      213: -1981037526271542644
+    second: Bar13
   - first:
-      213: -4000488857999828458
-    second: Sprite_sheet_test_2.0_2
+      213: 4534297581666326181
+    second: Bar2
   - first:
-      213: 615770080889578233
-    second: Back to Menu
+      213: 7525535362417856517
+    second: Bar3
   - first:
-      213: 7492273815441907810
-    second: Sprite_sheet_test_2.0_4
+      213: -7106301471601428078
+    second: Bar4
   - first:
-      213: 5754696592840096412
-    second: SliderBar
+      213: 4761479383086525373
+    second: Bar5
   - first:
-      213: -6863699897663509025
-    second: SliderKnob
+      213: -818861559511294957
+    second: Bar6
   - first:
-      213: 6354194669646484043
-    second: Sprite_sheet_test_2.0_7
+      213: -1605625610802610740
+    second: Bar7
   - first:
-      213: -2035532247342553219
-    second: CreateGame
+      213: -7079550607845153022
+    second: Bar8
   - first:
-      213: 3810082689033957166
-    second: Sprite_sheet_test_2.0_9
+      213: -7267149130303931630
+    second: Bar9
   - first:
-      213: -7244031941527116271
-    second: Sprite_sheet_test_2.0_10
+      213: 3210227569864722863
+    second: Bar10
   - first:
-      213: -1551544693865151897
-    second: Sprite_sheet_test_2.0_11
+      213: -4663037861286530003
+    second: Bar11
   - first:
-      213: -2702395130537833630
-    second: Sprite_sheet_test_2.0_12
+      213: -2531797147319170789
+    second: Bar12
   - first:
-      213: -6491031728106344070
-    second: Sprite_sheet_test_2.0_13
-  - first:
-      213: 6304170982534041777
-    second: Sprite_sheet_test_2.0_14
-  - first:
-      213: -7279587755382481296
-    second: HUDBar
-  - first:
-      213: -4009338651647260304
-    second: Sprite_sheet_test_2.0_16
-  - first:
-      213: -4618615067868827328
-    second: Sprite_sheet_test_2.0_17
-  - first:
-      213: -8743662403381094412
-    second: Lobby Selections
-  - first:
-      213: -8387985384226115023
-    second: Sprite_sheet_test_2.0_19
-  - first:
-      213: -566188244624217636
-    second: Menu Button Background
-  - first:
-      213: -1201791392294319608
-    second: Sprite_sheet_test_2.0_21
-  - first:
-      213: -2694406185468535743
-    second: Sprite_sheet_test_2.0_22
-  - first:
-      213: 8365506812332128334
-    second: Sprite_sheet_test_2.0_23
+      213: 2439158566407536259
+    second: Machine_bar_charge1.0_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -233,13 +203,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lobby Main
+      name: Bar1
       rect:
         serializedVersion: 2
-        x: 58
-        y: 1251
-        width: 713
-        height: 724
+        x: 103
+        y: 1361
+        width: 61
+        height: 120
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,386 +217,281 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a43918c2760349380800000000000000
-      internalID: -8965487738501360822
+      spriteID: 83bf0b848c99f44d0800000000000000
+      internalID: -3148128529016620232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_sheet_test_2.0_1
+      name: Bar13
       rect:
         serializedVersion: 2
-        x: 833
-        y: 1222
-        width: 614
-        height: 781
+        x: 1261
+        y: 883
+        width: 592
+        height: 120
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b14275e2d838252a0800000000000000
-      internalID: -6750188249083861989
+      spriteID: c8abdd7add0f184e0800000000000000
+      internalID: -1981037526271542644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_sheet_test_2.0_2
+      name: Bar2
       rect:
         serializedVersion: 2
-        x: 1579
-        y: 1884
-        width: 138
-        height: 28
+        x: 240
+        y: 1361
+        width: 106
+        height: 120
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61a130344986b78c0800000000000000
-      internalID: -4000488857999828458
+      spriteID: 5a6522570af0dee30800000000000000
+      internalID: 4534297581666326181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Back to Menu
+      name: Bar3
       rect:
         serializedVersion: 2
-        x: 1806
-        y: 1786
-        width: 149
-        height: 130
+        x: 431
+        y: 1361
+        width: 150
+        height: 120
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f2acb640a7ab8800800000000000000
-      internalID: 615770080889578233
+      spriteID: 5009e854a82107860800000000000000
+      internalID: 7525535362417856517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_sheet_test_2.0_4
+      name: Bar4
       rect:
         serializedVersion: 2
-        x: 1586
-        y: 1782
-        width: 125
-        height: 98
+        x: 677
+        y: 1361
+        width: 195
+        height: 120
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2602061e657e9f760800000000000000
-      internalID: 7492273815441907810
+      spriteID: 2997c5e5678516d90800000000000000
+      internalID: -7106301471601428078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SliderBar
+      name: Bar5
       rect:
         serializedVersion: 2
-        x: 1537
-        y: 1705
-        width: 224
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9a726ebf0accdf40800000000000000
-      internalID: 5754696592840096412
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SliderKnob
-      rect:
-        serializedVersion: 2
-        x: 1731
-        y: 1650
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fdda1eafe4d3fb0a0800000000000000
-      internalID: -6863699897663509025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_sheet_test_2.0_7
-      rect:
-        serializedVersion: 2
-        x: 1537
-        y: 1536
-        width: 288
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b4295f5d262ae2850800000000000000
-      internalID: 6354194669646484043
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CreateGame
-      rect:
-        serializedVersion: 2
-        x: 1539
-        y: 1403
-        width: 75
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d776b4ca43650c3e0800000000000000
-      internalID: -2035532247342553219
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_sheet_test_2.0_11
-      rect:
-        serializedVersion: 2
-        x: 1677
-        y: 1405
-        width: 74
-        height: 74
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7628605425ec77ae0800000000000000
-      internalID: -1551544693865151897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_sheet_test_2.0_14
-      rect:
-        serializedVersion: 2
-        x: 1671
-        y: 1179
-        width: 307
-        height: 168
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b054419b1aec7750800000000000000
-      internalID: 6304170982534041777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HUDBar
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 950
-        width: 1763
-        height: 218
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07ed4216185b9fa90800000000000000
-      internalID: -7279587755382481296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_sheet_test_2.0_16
-      rect:
-        serializedVersion: 2
-        x: 113
-        y: 802
-        width: 634
-        height: 89
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 079425c1db7fb58c0800000000000000
-      internalID: -4009338651647260304
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_sheet_test_2.0_17
-      rect:
-        serializedVersion: 2
-        x: 1214
-        y: 802
-        width: 634
-        height: 89
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0417965f01267efb0800000000000000
-      internalID: -4618615067868827328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lobby Selections
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 30
-        width: 712
-        height: 726
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f7188abe5548a680800000000000000
-      internalID: -8743662403381094412
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_sheet_test_2.0_19
-      rect:
-        serializedVersion: 2
-        x: 833
-        y: 51
-        width: 657
-        height: 620
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 132b8080cb3e79b80800000000000000
-      internalID: -8387985384226115023
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Menu Button Background
-      rect:
-        serializedVersion: 2
-        x: 1502
-        y: 566
-        width: 499
-        height: 166
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd9eb239ace7428f0800000000000000
-      internalID: -566188244624217636
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_sheet_test_2.0_22
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 225
-        width: 270
-        height: 289
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14c588299db8b9ad0800000000000000
-      internalID: -2694406185468535743
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_sheet_test_2.0_23
-      rect:
-        serializedVersion: 2
-        x: 1566
-        y: 90
+        x: 964
+        y: 1361
         width: 240
-        height: 59
+        height: 120
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e48ba2b9f10481470800000000000000
-      internalID: 8365506812332128334
+      spriteID: dbbe732854c241240800000000000000
+      internalID: 4761479383086525373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bar6
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 1361
+        width: 285
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c5b1900c1d2a4f0800000000000000
+      internalID: -818861559511294957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bar7
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1118
+        width: 329
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd37d1930ca7b9e0800000000000000
+      internalID: -1605625610802610740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bar8
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 1118
+        width: 373
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2072df13b3260cd90800000000000000
+      internalID: -7079550607845153022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bar9
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 1118
+        width: 419
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21bf1767e56e52b90800000000000000
+      internalID: -7267149130303931630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bar10
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 1118
+        width: 465
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa9c3fd57f40d8c20800000000000000
+      internalID: 3210227569864722863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bar11
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 883
+        width: 510
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d24b1df55cf894fb0800000000000000
+      internalID: -4663037861286530003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bar12
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 883
+        width: 555
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1981b698ef3ddcd0800000000000000
+      internalID: -2531797147319170789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Machine_bar_charge1.0_13
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 357
+        width: 1033
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e729dfac1a9d120800000000000000
+      internalID: 2439158566407536259
       vertices: []
       indices: 
       edges: []
@@ -634,7 +499,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7b5df2cd14b92474dac783252882d0e7
+    spriteID: 5f30a5f25e2373c47abab56ccba28b89
     internalID: 0
     vertices: []
     indices: 
