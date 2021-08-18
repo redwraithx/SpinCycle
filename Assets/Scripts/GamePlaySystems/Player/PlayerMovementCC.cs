@@ -5,9 +5,12 @@ using Cinemachine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovementCC : MonoBehaviourPun
 {
+    public int numberOfKeyPressed = 0;
+    
     public Camera cinemachineCamera;
     public CinemachineVirtualCamera shoulderCam;
     public Animator characterAnimator;
@@ -19,6 +22,13 @@ public class PlayerMovementCC : MonoBehaviourPun
     float slowedZspeed;
     float speedBoostXSpeed;
     float speedBoostZSpeed;
+
+
+    //grabbed UI
+    public float grabEscape = 10f;
+    float currentGrab = 0f;
+    public Image grabEscapeValue;
+    public GameObject tapToEscape;
 
     //not using these rn;
     private float m_moveSpeedMultiplier = 1f;
@@ -71,8 +81,9 @@ public class PlayerMovementCC : MonoBehaviourPun
     internal PhotonView _photonView = null;
     private Vector3 correctPosition = Vector3.zero;
     private Quaternion correctRotation = Quaternion.identity;
-
-
+    
+    
+    private static readonly int Run = Animator.StringToHash("Run");
 
 
     public float MoveSpeed
@@ -118,6 +129,9 @@ public class PlayerMovementCC : MonoBehaviourPun
 
     void Start()
     {
+
+        tapToEscape.SetActive(false);
+
         slowedXspeed = Xspeed * 0.5f;
         slowedZspeed = Zspeed * 0.5f;
         speedBoostXSpeed = Xspeed * 1.5f;
@@ -138,6 +152,32 @@ public class PlayerMovementCC : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
+
+        if (isGrabbed)
+        {
+            tapToEscape.SetActive(true);
+            grabEscapeValue.fillAmount = currentGrab / 10;
+            if (Input.GetMouseButtonDown(1));
+            {
+                currentGrab += 1f;
+            }
+
+            if (currentGrab < grabEscape && currentGrab >= 0f)
+            {
+                currentGrab -= Time.deltaTime * 1.5f;
+
+            }
+
+            if (currentGrab > grabEscape)
+            {
+                isGrabbed = false;
+            }
+        }
+        else
+        {
+            tapToEscape.SetActive(false);
+        }
+
         if(speedBoost)
         {
             Xspeed = speedBoostXSpeed;
@@ -241,14 +281,45 @@ public class PlayerMovementCC : MonoBehaviourPun
         }
 
 
-        if (Input.GetKeyDown("w")||  Input.GetKeyDown("s"))
+        // this will need to be updated for controller support
+        if (Input.GetKeyDown("w") || Input.GetKeyDown("s"))
         {
-            characterAnimator.SetBool("Run",true);
+            numberOfKeyPressed += 1;
+            characterAnimator.SetBool(Run, true);
         }
+        if (Input.GetKeyDown("a") || Input.GetKeyDown("d"))
+        {
+            numberOfKeyPressed += 1;
+            characterAnimator.SetBool(Run, true);
+        }
+
         if (Input.GetKeyUp("w") || Input.GetKeyUp("s"))
         {
-            characterAnimator.SetBool("Run", false);
+
+            if (numberOfKeyPressed == 1)
+
+                characterAnimator.SetBool(Run, false);
+
+            if (numberOfKeyPressed != 0)
+            {
+                numberOfKeyPressed -= 1;
+            }
+
         }
+        if (Input.GetKeyUp("a") || Input.GetKeyUp("d"))
+        {
+            if (numberOfKeyPressed == 1)
+
+                characterAnimator.SetBool(Run, false);
+
+            if (numberOfKeyPressed != 0)
+            {
+                numberOfKeyPressed -= 1;
+            }
+
+        }
+        
+        
 
         if (isFrozen == true)
         {

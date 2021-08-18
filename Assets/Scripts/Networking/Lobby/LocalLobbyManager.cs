@@ -1,5 +1,7 @@
 ﻿
 
+using System;
+using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -49,6 +51,9 @@ public class LocalLobbyManager : MonoBehaviourPun
     public AudioSource audioSource = null;
     public AudioClip clickSound = null;
 
+    [Header("Max Hosted games reached Container object")]
+    public GameObject messageBoxGO = null;
+    
     private void Awake()
     {
         if (localInstance)
@@ -91,6 +96,16 @@ public class LocalLobbyManager : MonoBehaviourPun
         GameManager.networkManager.StopCoroutineBeforeJoiningNewGame();
     }
 
+
+    private void Update()
+    {
+        if (tabMainUI.activeInHierarchy)
+        {
+            CheckForMaxRooms();
+        }
+    }
+
+
     private void PlayClickSound() => audioSource.PlayOneShot(clickSound);
     
     
@@ -122,7 +137,7 @@ public class LocalLobbyManager : MonoBehaviourPun
                 Debug.Log("enable button");
                 
                 tabMainButtonCreateGame.image.color = new Color(tabMainButtonCreateGame.image.color.r, tabMainButtonCreateGame.image.color.g, tabMainButtonCreateGame.image.color.b, 1f);
-                tabMainButtonCreateGame.enabled = false;
+                tabMainButtonCreateGame.enabled = true; // this was false
             }
         }
     }
@@ -212,6 +227,19 @@ public class LocalLobbyManager : MonoBehaviourPun
     
     public void ChangeMap()
     {
+        if (CheckForMaxRooms())
+        {
+            // show msg that creating rooms is disabled due to max games running
+            StartCoroutine(ShowMessageForMaxGamesReached());
+            
+            //TabOpenMain();
+
+            return;
+        }
+
+
+
+        
         GameManager.networkManager.currentMap++;
 
         if (GameManager.networkManager.currentMap >= GameManager.networkManager.maps.Length)
@@ -223,6 +251,18 @@ public class LocalLobbyManager : MonoBehaviourPun
     
     public void ChangeMode()
     {
+        if (CheckForMaxRooms())
+        {
+            // show msg that creating rooms is disabled due to max games running
+            StartCoroutine(ShowMessageForMaxGamesReached());
+            
+            //TabOpenMain();
+
+            return;
+        }
+        
+        
+        
         int newMode = (int) GameSettings.GameMode + 1;
 
         if (newMode >= System.Enum.GetValues(typeof(GameModeSelections)).Length) 
@@ -232,10 +272,25 @@ public class LocalLobbyManager : MonoBehaviourPun
 
         modeValueText.text = "Mode: " + System.Enum.GetName(typeof(GameModeSelections), newMode);
     }
+
+    
+    
     
     public void Create()
     {
         Debug.Log("Create Game Button Func");
+     
+        // do we have max rooms? while creating a room?
+        if (CheckForMaxRooms())
+        {
+            // show msg that creating rooms is disabled due to max games running
+            StartCoroutine(ShowMessageForMaxGamesReached());
+            
+            //TabOpenMain();
+
+            return;
+        }
+        
         
         // is the name empty or have less then 3 characters?
         if (string.IsNullOrEmpty(roomNameField.text) || roomNameField.text.Length < 3)
@@ -271,4 +326,52 @@ public class LocalLobbyManager : MonoBehaviourPun
 
         PhotonNetwork.CreateRoom(roomNameField.text, options);
     }
+
+
+    private bool CheckForMaxRooms()
+    {
+        if (PhotonNetwork.CountOfRooms >= MAXNumberOfRooms)
+        {
+            Debug.Log("max rooms have been met while you were making a room, try again later");
+
+            //if (tabMainButtonCreateGame.IsActive())
+            //{
+            Debug.Log("disable create game button in main tab view");
+
+            tabMainButtonCreateGame.image.color = new Color(tabMainButtonCreateGame.image.color.r, tabMainButtonCreateGame.image.color.g, tabMainButtonCreateGame.image.color.b, 0.45f);
+            tabMainButtonCreateGame.enabled = false;
+            //}
+
+            // switch to main
+            //TabOpenMain();}
+
+            return true; // max rooms has been met, can not make a new game.
+        }
+
+        // enable the button for creating a game if it is not active for main
+        if (tabMainButtonCreateGame.image.color == new Color(tabMainButtonCreateGame.image.color.r, tabMainButtonCreateGame.image.color.g, tabMainButtonCreateGame.image.color.b, 0.45f))
+        {
+            tabMainButtonCreateGame.image.color = new Color(tabMainButtonCreateGame.image.color.r, tabMainButtonCreateGame.image.color.g, tabMainButtonCreateGame.image.color.b, 1f);
+            tabMainButtonCreateGame.enabled = true;
+        }
+
+        return false; // max rooms not met
+    }
+    
+    private IEnumerator ShowMessageForMaxGamesReached()
+    {
+        // show dialogue for max servers reached 
+        messageBoxGO.SetActive(true);
+        
+        
+        yield return new WaitForSeconds(2f);
+
+        // hide max servers msg
+        messageBoxGO.SetActive(false);
+        
+        // enable main lobby view
+        TabOpenMain();
+    }
+        
+        
 }
