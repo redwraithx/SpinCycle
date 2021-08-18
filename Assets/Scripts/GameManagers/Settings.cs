@@ -139,4 +139,13 @@ public class Settings : MonoBehaviour
             musicSlide.value =
                         PlayerPrefs.GetFloat("MusicVolumePreference");
     }
+
+
+    public void SaveSettings2()
+    {
+        PlayerPrefs.SetFloat("SFXVolumePreference",
+           sfxSlide.value);
+        PlayerPrefs.SetFloat("MusicVolumePreference",
+           musicSlide.value);
+    }
 }
