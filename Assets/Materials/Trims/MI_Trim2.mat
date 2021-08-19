@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MI_Trim2
-  m_Shader: {fileID: -6465566751694194690, guid: 4727793013a011c4a882300d73e177bf, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 4727793013a011c4a882300d73e177bf,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -48,7 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1D494E32: 2.1
+    - Vector1_1D494E32: 1
     - Vector1_904EE9D7: 0.5
     - Vector1_9B9A96E8: 1.5
     - Vector1_D47E58AF: 1
