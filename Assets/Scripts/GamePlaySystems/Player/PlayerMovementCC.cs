@@ -165,7 +165,7 @@ public class PlayerMovementCC : MonoBehaviourPun
         {
             tapToEscape.SetActive(true);
             grabEscapeValue.fillAmount = currentGrab / 10;
-            if (Input.GetMouseButtonDown(1));
+            if (Input.GetMouseButtonDown(1))
             {
                 currentGrab += 1f;
             }
