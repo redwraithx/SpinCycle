@@ -69,7 +69,19 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     private void Start()
     {
         animator.speed = 0.25f;
-        cycleLength = 15;
+
+        if(MachineType.washer == this.machineType)
+        {
+            cycleLength = 20;
+        }
+        else if (MachineType.dryer == this.machineType)
+        {
+            cycleLength = 25;
+        }
+        else if (MachineType.folder == this.machineType)
+        {
+            cycleLength = 15;
+        }
         //sliderTime.maxValue = cycleLength;
 
         if (isSabotaged == true)
