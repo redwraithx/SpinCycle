@@ -48,13 +48,14 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject loadRuinerMachinePart;
     public GameObject boostMachinePart;
 
-    public Animator animator;
+    //public Animator animator;
     public float percent;
     public TMP_Text percentCounter;
 
     public Sprite disabledSprite;
     public Sprite normalSprite;
     public GameObject theSprite;
+    public Image fillBarImage;
 
     private void Awake()
     {
@@ -68,7 +69,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Start()
     {
-        animator.speed = 0.25f;
+        //animator.speed = 0.25f;
 
         if(MachineType.washer == this.machineType)
         {
@@ -104,6 +105,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 percent = laundryTimer/cycleLength;
                 percentCounter.text = (100 - Mathf.Round(percent * 100) + "%");
 
+                fillBarImage.fillAmount = 1 - percent;
+
                 if (isRuined)
                 {
                     ruinTimer += Time.deltaTime;
@@ -111,9 +114,10 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             }
             if (laundryTimer <= 0 && isEnabled == true)
             {
+                percentCounter.text = ("0%");
                 SpawnFinishedProduct(laundryType);
-                animator.ResetTrigger("Go");
-                animator.SetTrigger("Stop");
+                //animator.ResetTrigger("Go");
+                //animator.SetTrigger("Stop");
                 isEnabled = false;
             }
         }
@@ -170,8 +174,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public void ProcessItems()
     {
         percentCounter.text = "0%";
-        animator.ResetTrigger("Stop");
-        animator.SetTrigger("Go");
+        //animator.ResetTrigger("Stop");
+        //animator.SetTrigger("Go");
         ruinTimer = 0;
         //sliderTime.maxValue = cycleLength;
         laundryTimer = cycleLength;
@@ -260,15 +264,21 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public void SabotageMachine()
     {
         isSabotaged = true;
-        animator.ResetTrigger("Go");
-        animator.SetTrigger("Stop");
+        //animator.ResetTrigger("Go");
+        //animator.SetTrigger("Stop");
         part.Play();
     }
     public void FixMachine()
     {
+        //animator.ResetTrigger("Stop");
         isSabotaged = false;
         sabotageTimer = 0;
         part.Stop();
+
+        if (isEnabled)
+        {
+            //animator.SetTrigger("Go");
+        }
     }
 
     public void BoostMachine()

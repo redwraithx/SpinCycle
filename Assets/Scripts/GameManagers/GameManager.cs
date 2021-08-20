@@ -65,7 +65,10 @@ public class GameManager : MonoBehaviour
 
     }
 
-
+    public void Start()
+    {
+        Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
+    }
     //loads the game level
     public void StartGame()
     {

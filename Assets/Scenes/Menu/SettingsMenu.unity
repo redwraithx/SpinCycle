@@ -647,7 +647,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1191704630}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
-        m_MethodName: SaveSettings
+        m_MethodName: SaveSettings2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3613,7 +3613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2106334263
 MonoBehaviour:
   m_ObjectHideFlags: 0

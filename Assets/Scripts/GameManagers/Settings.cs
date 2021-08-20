@@ -27,33 +27,35 @@ public class Settings : MonoBehaviour
             theme1.Play();
         }
 
-        if (resolutionDropdown != null)
-        {
-            resolutionDropdown.ClearOptions();
-            List<string> options = new List<string>();
-            resolutions = Screen.resolutions;
-            int currentResolutionIndex = 0;
+        LoadSettings2();
+
+        //if (resolutionDropdown != null)
+        //{
+        //    resolutionDropdown.ClearOptions();
+        //    List<string> options = new List<string>();
+        //    resolutions = Screen.resolutions;
+        //    int currentResolutionIndex = 0;
 
 
-            for (int i = 0; i < resolutions.Length; i++)
-            {
-                string option = resolutions[i].width + " x " +
-                         resolutions[i].height;
-                options.Add(option);
-                if (resolutions[i].width == Screen.currentResolution.width
-                      && resolutions[i].height == Screen.currentResolution.height)
-                    currentResolutionIndex = i;
-            }
+        //    for (int i = 0; i < resolutions.Length; i++)
+        //    {
+        //        string option = resolutions[i].width + " x " +
+        //                 resolutions[i].height;
+        //        options.Add(option);
+        //        if (resolutions[i].width == Screen.currentResolution.width
+        //              && resolutions[i].height == Screen.currentResolution.height)
+        //            currentResolutionIndex = i;
+        //    }
 
-            resolutionDropdown.AddOptions(options);
-            resolutionDropdown.RefreshShownValue();
-            LoadSettings(currentResolutionIndex);
+        //    resolutionDropdown.AddOptions(options);
+        //    resolutionDropdown.RefreshShownValue();
+        //    LoadSettings(currentResolutionIndex);
 
-        }
-        else
-        {
-            LoadSettings2();
-        }
+        //}
+        //else
+        //{
+        //    LoadSettings2();
+        //}
     }
 
     // Update is called once per frame
