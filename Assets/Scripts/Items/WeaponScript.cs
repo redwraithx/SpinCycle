@@ -1,8 +1,10 @@
 ﻿
+using System.IO;
 using UnityEngine;
 using EnumSpace;
 using GamePlaySystems.Utilities;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class WeaponScript : MonoBehaviourPun
 {
@@ -46,14 +48,6 @@ public class WeaponScript : MonoBehaviourPun
         yRotation = Mathf.Clamp(yRotation, -45f, 45f);
         gun.transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
 
-        //if(gun && !destroyGun)
-        //{
-        //    destroyGun = gun.GetComponent<WeaponDestroyScript>();
-        //}
-        //else
-        //{
-        //    destroyGun = null;
-        //}
 
         switch (itemType)
         {
@@ -74,7 +68,7 @@ public class WeaponScript : MonoBehaviourPun
         if (Input.GetButtonDown("Fire1")) // Set in Edit | Project Settings | Input Manager
         {
             Debug.Log("Firing");
-            fire();
+                fire();
         }
                              
     }
@@ -90,16 +84,10 @@ public class WeaponScript : MonoBehaviourPun
             destroyGun.hasFired = true;
 
             // Make bullet
-            Rigidbody temp = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+            GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", "IceCube"), projectileSpawnPoint.position, projectileSpawnPoint.rotation);
 
-            //GameObject temp = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-            
             // Shoot bullet
-            temp.GetComponent<Rigidbody>().AddForce(projectileSpawnPoint.forward * projectileSpeed, ForceMode.Impulse);
-
-            //gameObject.transform.SetParent(null);
-
-            //PhotonNetwork.Destroy(gameObject);
+            //bullet.GetComponent<IceCube>().Shoot(projectileSpawnPoint.forward, projectileSpeed);
 
         }
 
@@ -107,28 +95,4 @@ public class WeaponScript : MonoBehaviourPun
 
     }
 
-    //public int Shoot()
-    //{
-        
-    //    if (projectile && ammo > 0)
-    //    {
-            
-    //        GameObject temp = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-
-            
-    //        temp.GetComponent<Rigidbody>().AddForce(transform.forward * projectileForce, ForceMode.Impulse);
-
-    //        Destroy(temp.gameObject, 2.0f);
-            
-    //        ammo--;
-    //    }
-        
-    //    else
-    //    {
-            
-    //        Debug.Log("Auto Reload if we need this?");
-    //    }
-
-    //    return ammo;
-    //}
 }

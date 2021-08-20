@@ -69,9 +69,15 @@ public class Grab : MonoBehaviour
 
     public void CheckForMouseUp()
     {
+
+        
+
         characterAnimator.SetBool("PickUp", false);
         if (itemInHand)
         {
+
+            if (itemInHand.GetComponent<DrawProjection>() != null)
+                itemInHand.GetComponent<DrawProjection>().weaponScript = null;
 
             canPickUpItem = false;
 
@@ -82,6 +88,8 @@ public class Grab : MonoBehaviour
 
             itemInHand.GetComponent<Rigidbody>().useGravity = true;
             itemInHand.GetComponent<Item>().UpdateObjectsRigidBody(false);
+
+            
 
             if (itemInHand.GetComponent<ItemTypeForItem>())
                 itemInHand.GetComponent<ItemTypeForItem>().RequestTransferOwnershipToHost();
