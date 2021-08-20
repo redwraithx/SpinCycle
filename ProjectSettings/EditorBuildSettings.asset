@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadScreens/LoadingScreen1.unity
     guid: becbbd453bd30584d972b0b7a5dea3be
   - enabled: 1
-    path: Assets/Scenes/LoadScreens/LoadingScreen2.unity
-    guid: b7d2d09e80bb4424c9eab97d39f70a01
+    path: Assets/Scenes/Menu/Credits.unity
+    guid: 4c0fd19ad304dc844a41140b38f1bd48
   - enabled: 1
     path: Assets/Scenes/ProgrammerScenes/Brian/NetworkLobby/NetworkLobby.unity
     guid: 580bce709407fe6429bccb636b0d9257
@@ -27,9 +27,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ProgrammerScenes/Brian/NetworkLobby/NetworkLevel1.unity
     guid: 5728c8a793aabcb44b92275532ea95ef
   - enabled: 0
-    path: Assets/Scenes/Menu/GameOverMenu.unity
-    guid: 4c5352f1104eee844921703af6d4dc9c
-  - enabled: 1
     path: Assets/Scenes/ProgrammerScenes/Anthony/AnthonyScene.unity
     guid: 4691d3df40ab4ab45abbb67c0c573671
   - enabled: 1
@@ -38,9 +35,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ProgrammerScenes/Brian/MultiplayerTestLevel.unity
     guid: 1f6cea932d730e04d98ad959594d229d
-  - enabled: 0
-    path: Assets/Scenes/ProgrammerScenes/blockout_AssetsTestLevel.unity
-    guid: 1b19b38c9eebb834fb1b7d1a7c77d8ce
   - enabled: 0
     path: Assets/Scenes/ProgrammerScenes/Chirag/LobbyWaitingRoomScene.unity
     guid: f043c827f58ff3a4cb6fbcdf3d84e944

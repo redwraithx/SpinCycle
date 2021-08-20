@@ -783,6 +783,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1647314222}
     m_Modifications:
+    - target: {fileID: -3500864767156711555, guid: 2ee20cd5c8d6c5243a5c3f65783d417d, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1179965799072671629, guid: 2ee20cd5c8d6c5243a5c3f65783d417d, type: 3}
       propertyPath: m_Name
       value: ItemStand (1)
@@ -11994,6 +11998,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1647314222}
     m_Modifications:
+    - target: {fileID: -3500864767156711555, guid: 2ee20cd5c8d6c5243a5c3f65783d417d, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1179965799072671629, guid: 2ee20cd5c8d6c5243a5c3f65783d417d, type: 3}
       propertyPath: m_Name
       value: ItemStand

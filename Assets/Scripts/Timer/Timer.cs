@@ -1,8 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 using Photon.Pun;
 using System.IO;
@@ -50,7 +48,6 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         isGameOver = false;
-        // Starts the timer automatically
         networkedTimer = GameObject.FindGameObjectWithTag("Timer").GetComponent<NetworkedTimerNew>();
     }
     public void UpdatePoints()
@@ -174,7 +171,6 @@ public class Timer : MonoBehaviour
         }
 
         isGameOver = true;
-        //SceneManager.LoadScene(GameOverSceneIndex);
 
     }
 

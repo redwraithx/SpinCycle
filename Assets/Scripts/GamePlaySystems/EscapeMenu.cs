@@ -10,8 +10,6 @@ public class EscapeMenu : MonoBehaviour
     public Button returnButton;
     public Button quitButton;
     public GameObject menu;
-    //public GameObject debugger;
-    // Start is called before the first frame update
     void Start()
     {
         menu.SetActive(false);
@@ -44,18 +42,6 @@ public class EscapeMenu : MonoBehaviour
                 #endif
             }
         }
-
-        //if(Input.GetKeyDown(KeyCode.L))
-        //{
-        //    if (debugger.activeInHierarchy == true)
-        //    {
-        //        debugger.SetActive(false);
-        //    }
-        //    if (debugger.activeInHierarchy == false)
-        //    {
-        //        debugger.SetActive(true);
-        //    }
-        //}
 
         if (Input.GetKeyDown(KeyCode.P))
         {
