@@ -12692,6 +12692,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 653380944}
     m_Modifications:
+    - target: {fileID: 746018009328997027, guid: 0154c8b65a0dcc140b1c4523bfdecc00, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.06
+      objectReference: {fileID: 0}
     - target: {fileID: 2288353654662685483, guid: 0154c8b65a0dcc140b1c4523bfdecc00, type: 3}
       propertyPath: m_fontColor.r
       value: 0
@@ -12708,6 +12712,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4278190080
       objectReference: {fileID: 0}
+    - target: {fileID: 2704354049111892806, guid: 0154c8b65a0dcc140b1c4523bfdecc00, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.0600052
+      objectReference: {fileID: 0}
     - target: {fileID: 4812627673556595575, guid: 0154c8b65a0dcc140b1c4523bfdecc00, type: 3}
       propertyPath: m_Name
       value: VictoryStand
@@ -12718,7 +12726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4812627673556595579, guid: 0154c8b65a0dcc140b1c4523bfdecc00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.25
+      value: 25.7
       objectReference: {fileID: 0}
     - target: {fileID: 4812627673556595579, guid: 0154c8b65a0dcc140b1c4523bfdecc00, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12760,6 +12768,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4812627673721793060, guid: 0154c8b65a0dcc140b1c4523bfdecc00, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.0600052
+      objectReference: {fileID: 0}
     - target: {fileID: 4812627673721793063, guid: 0154c8b65a0dcc140b1c4523bfdecc00, type: 3}
       propertyPath: m_fontColor.r
       value: 0
@@ -12775,6 +12787,22 @@ PrefabInstance:
     - target: {fileID: 4812627673721793063, guid: 0154c8b65a0dcc140b1c4523bfdecc00, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812627673858079779, guid: 0154c8b65a0dcc140b1c4523bfdecc00, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812627673858079779, guid: 0154c8b65a0dcc140b1c4523bfdecc00, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812627673858079780, guid: 0154c8b65a0dcc140b1c4523bfdecc00, type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624593371646192476, guid: 0154c8b65a0dcc140b1c4523bfdecc00, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.6424127
       objectReference: {fileID: 0}
     - target: {fileID: 8704155697325508237, guid: 0154c8b65a0dcc140b1c4523bfdecc00, type: 3}
       propertyPath: m_fontColor.r
@@ -35769,6 +35797,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 653380944}
     m_Modifications:
+    - target: {fileID: 1065791550138869270, guid: 575c533f2b1ecce48adf06fabe5285ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6482560510592446127, guid: 575c533f2b1ecce48adf06fabe5285ef, type: 3}
       propertyPath: vStand
       value: 
@@ -35793,6 +35825,18 @@ PrefabInstance:
       propertyPath: vStandPrefab
       value: 
       objectReference: {fileID: 445993565}
+    - target: {fileID: 6482560510592446127, guid: 575c533f2b1ecce48adf06fabe5285ef, type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 1163237747}
+    - target: {fileID: 6482560510592446127, guid: 575c533f2b1ecce48adf06fabe5285ef, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 1163237748}
+    - target: {fileID: 6482560511517084459, guid: 575c533f2b1ecce48adf06fabe5285ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7866401223967185516, guid: 575c533f2b1ecce48adf06fabe5285ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -35886,6 +35930,16 @@ PrefabInstance:
 --- !u!224 &1163237746 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7866401223967185516, guid: 575c533f2b1ecce48adf06fabe5285ef, type: 3}
+  m_PrefabInstance: {fileID: 1163237745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1163237747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1065791550138869270, guid: 575c533f2b1ecce48adf06fabe5285ef, type: 3}
+  m_PrefabInstance: {fileID: 1163237745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1163237748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6482560511517084459, guid: 575c533f2b1ecce48adf06fabe5285ef, type: 3}
   m_PrefabInstance: {fileID: 1163237745}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1170036076

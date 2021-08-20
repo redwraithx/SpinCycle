@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour
     public TMP_Text player1PointCounter;
     public TMP_Text player2PointCounter;
     public GameObject pointCounters;
+    public GameObject background;
+    public GameObject panel;
 
 
     [Header("Timer Functions"), ] 
@@ -156,6 +158,9 @@ public class Timer : MonoBehaviour
 
         vStandPrefab.gameObject.SetActive(true);
         pointCounters.gameObject.SetActive(false);
+        panel.gameObject.SetActive(false);
+        background.gameObject.SetActive(false);
+        timeText.gameObject.SetActive(false);
         winner.gameObject.GetComponent<PlayerMovementCC>().enabled = false;
         if (PhotonNetwork.IsMasterClient)
         {
