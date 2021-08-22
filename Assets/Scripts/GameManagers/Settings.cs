@@ -4,14 +4,18 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class Settings : MonoBehaviour
 {
     public AudioMixer SFX;
     public AudioMixer Music;
     public float sfxVol;
     public float musicVol;
+    public float sense;
     public Slider sfxSlide;
     public Slider musicSlide;
+    public Slider senseSlide;
+
     public AudioSource theme1;
 
 
@@ -75,6 +79,8 @@ public class Settings : MonoBehaviour
         Music.SetFloat("Volume", volume);
         musicVol = volume;
     }
+
+
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
@@ -140,6 +146,12 @@ public class Settings : MonoBehaviour
         else
             musicSlide.value =
                         PlayerPrefs.GetFloat("MusicVolumePreference");
+
+
+       if (PlayerPrefs.HasKey("PlayerSensitivity"))
+        {
+            senseSlide.value = PlayerPrefs.GetFloat("PlayerSensitivity");
+        }
     }
 
 
@@ -149,5 +161,15 @@ public class Settings : MonoBehaviour
            sfxSlide.value);
         PlayerPrefs.SetFloat("MusicVolumePreference",
            musicSlide.value);
+        PlayerPrefs.SetFloat("PlayerSensitivity",
+           senseSlide.value);
+
+        if(SceneManager.GetActiveScene().buildIndex > 5)
+        {
+            foreach (GameObject player in GameManager.networkLevelManager.playersJoined)
+            {
+                player.BroadcastMessage("LoadPlayerSettings");
+            }
+        }
     }
 }

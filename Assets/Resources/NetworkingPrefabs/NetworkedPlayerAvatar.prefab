@@ -1777,6 +1777,7 @@ GameObject:
   - component: {fileID: 7267682287793758200}
   - component: {fileID: 6848871425079053766}
   - component: {fileID: 1354470795582759890}
+  - component: {fileID: 7434234799891964747}
   m_Layer: 0
   m_Name: NetworkedPlayerAvatar
   m_TagString: Player
@@ -2103,6 +2104,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeLook: {fileID: 3145555859428371615}
   initTime: 0
+--- !u!114 &7434234799891964747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6848871425079053767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad0d84608fc5544cb597a05c4ed8402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraForSense: {fileID: 6848871426275572189}
 --- !u!1 &6848871426206990825
 GameObject:
   m_ObjectHideFlags: 0
