@@ -54,6 +54,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     public Sprite disabledSprite;
     public Sprite normalSprite;
+    public Sprite barNormal;
+    public Sprite barDisabled;
     public GameObject theSprite;
     public Image fillBarImage;
 
@@ -142,6 +144,16 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         if (isSabotaged == false && part.isPlaying == true)
         {
             part.Stop();
+        }
+
+        if (isSabotaged == true && fillBarImage.GetComponent<Image>().sprite != barDisabled)
+        {
+            fillBarImage.GetComponent<Image>().sprite = barDisabled;
+        }
+
+        if (isSabotaged == false && fillBarImage.GetComponent<Image>().sprite == barDisabled)
+        {
+            fillBarImage.GetComponent<Image>().sprite = barNormal;
         }
     }
 
