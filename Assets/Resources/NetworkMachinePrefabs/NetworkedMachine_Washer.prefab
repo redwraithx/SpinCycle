@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 7649688613175461968}
   - component: {fileID: 7107540471703433002}
   - component: {fileID: 2766527178378444472}
+  - component: {fileID: 9129661003826356812}
   m_Layer: 10
   m_Name: Terminal
   m_TagString: Machine
@@ -249,6 +250,8 @@ MonoBehaviour:
   percentCounter: {fileID: 2211489810752103840}
   disabledSprite: {fileID: 4557732691703644111, guid: 2e4d4c9dddea68d4b8778a0f80d79e9e, type: 3}
   normalSprite: {fileID: -621341741363454929, guid: 2e4d4c9dddea68d4b8778a0f80d79e9e, type: 3}
+  barNormal: {fileID: -1981037526271542644, guid: 324d1d229bdf4374da9954b11ca2af60, type: 3}
+  barDisabled: {fileID: -7381590461290812695, guid: 2e4d4c9dddea68d4b8778a0f80d79e9e, type: 3}
   theSprite: {fileID: 9138651590280597244}
   fillBarImage: {fileID: 7709209894702266344}
 --- !u!114 &7107540471703433002
@@ -287,6 +290,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7105935, y: 4.126244, z: 1.4769028}
   m_Center: {x: -0.15402539, y: 1.5631261, z: -4.778635}
+--- !u!65 &9129661003826356812
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3298420062302689166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.213993, y: 1.3220553, z: 1.9368694}
+  m_Center: {x: 1.6069955, y: 1.8629606, z: -1.8748292}
 --- !u!1 &4184825349674307776
 GameObject:
   m_ObjectHideFlags: 0
@@ -10266,7 +10282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.2470207
+      value: -4.247
       objectReference: {fileID: 0}
     - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_LocalRotation.x
@@ -10302,19 +10318,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.1464207
+      value: -0.172
       objectReference: {fileID: 0}
     - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 5.1722317
+      value: 5.1802
       objectReference: {fileID: 0}
     - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1.8772504
+      value: 2.1988595
       objectReference: {fileID: 0}
     - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1.5545828
+      value: 2.1537359
       objectReference: {fileID: 0}
     - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_AnchorMin.x
@@ -10340,13 +10356,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1269612431824033554, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269612431824033554, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1981037526271542644, guid: 324d1d229bdf4374da9954b11ca2af60, type: 3}
     - target: {fileID: 4806107522798756899, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_Name
       value: WashTimer
       objectReference: {fileID: 0}
     - target: {fileID: 6300960412223949637, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0143998265
+      value: 0.014399886
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
