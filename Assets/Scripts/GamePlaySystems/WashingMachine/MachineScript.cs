@@ -116,8 +116,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 percentCounter.text = ("0%");
                 SpawnFinishedProduct(laundryType);
-                //animator.ResetTrigger("Go");
-                //animator.SetTrigger("Stop");
+                fillBarImage.fillAmount = 0;
                 isEnabled = false;
             }
         }
