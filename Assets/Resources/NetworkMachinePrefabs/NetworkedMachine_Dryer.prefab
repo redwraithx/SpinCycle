@@ -401,6 +401,8 @@ MonoBehaviour:
   percentCounter: {fileID: 1212800654079805650}
   disabledSprite: {fileID: 4557732691703644111, guid: 2e4d4c9dddea68d4b8778a0f80d79e9e, type: 3}
   normalSprite: {fileID: -621341741363454929, guid: 2e4d4c9dddea68d4b8778a0f80d79e9e, type: 3}
+  barNormal: {fileID: 0}
+  barDisabled: {fileID: 0}
   theSprite: {fileID: 8122086566634218382}
   fillBarImage: {fileID: 7248803141421374106}
 --- !u!114 &2889000184108486017
@@ -10836,6 +10838,10 @@ PrefabInstance:
     - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269612431824033554, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2742855830774589945, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_AnchorMax.x
