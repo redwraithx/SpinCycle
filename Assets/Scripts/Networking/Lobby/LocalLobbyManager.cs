@@ -16,8 +16,16 @@ public class LocalLobbyManager : MonoBehaviourPun
     public static LocalLobbyManager localInstance;
 
     //[Header("Network Lobby max games")] 
-    private const int MAXNumberOfRooms = 10;
-    
+    public  int MAXNumberOfRooms = 6;
+
+    //[Header("Players Max Character Name Count component reference")]
+    private const int MAXUserNameLength = 12;
+
+    [Header("User Information Message Box")]
+    public GameObject messageBoxRef = null;
+    public TMP_Text msgBoxTMP = null;
+    private const string MsgBoxText_MissingUserName = "UserName is missing!";
+    private const string MsgBoxText_MaxHostedGames = "Max hosted games reached!";
 
     [Header("User InputFields - Text - DropDown References")]
     public TMP_InputField userNameField = null;
@@ -66,6 +74,9 @@ public class LocalLobbyManager : MonoBehaviourPun
 
     private void Start()
     {
+        // set username max characters
+        userNameField.characterLimit = MAXUserNameLength;
+        
         // tab main button setup
         tabMainButtonListGames.onClick.AddListener(TabOpenRooms); //GameManager.networkManager.TabOpenRooms);
         tabMainButtonListGames.onClick.AddListener(PlayClickSound);
@@ -101,7 +112,74 @@ public class LocalLobbyManager : MonoBehaviourPun
     {
         if (tabMainUI.activeInHierarchy)
         {
-            CheckForMaxRooms();
+
+            if (CheckForValidUserName())
+            {
+                if (messageBoxRef.activeInHierarchy == true)
+                {
+                    messageBoxRef.SetActive(false);
+                    msgBoxTMP.text = "";
+                }
+                
+                if (tabMainButtonListGames.enabled == false)
+                {
+                    UpdateButtonClickableValue(tabMainButtonListGames, true);
+                    tabMainButtonListGames.enabled = true;
+                }
+                
+                bool maxHostedGamesReached = CheckForMaxRooms();
+
+                if (maxHostedGamesReached)
+                {
+                    UpdateButtonClickableValue(tabMainButtonCreateGame, false);
+                    
+                    if (!messageBoxRef.activeInHierarchy)
+                    {
+                        messageBoxRef.SetActive(true);
+                        msgBoxTMP.text = MsgBoxText_MaxHostedGames;
+                    }
+                }
+                else
+                {
+                    UpdateButtonClickableValue(tabMainButtonCreateGame, true);
+                }
+            }
+            else
+            {
+                if (!messageBoxRef.activeInHierarchy)
+                {
+                    messageBoxRef.SetActive(true);
+                    msgBoxTMP.text = MsgBoxText_MissingUserName;
+                }
+                
+                // disable list rooms button
+                UpdateButtonClickableValue(tabMainButtonListGames, false);
+                tabMainButtonListGames.enabled = false;
+
+                // disable create game button
+                UpdateButtonClickableValue(tabMainButtonCreateGame, false);
+                tabMainButtonCreateGame.enabled = false;
+
+            }
+        }
+    }
+
+    private bool CheckForValidUserName()
+    {
+        Debug.Log("Username length: " + userNameField.text.Length);
+        
+        return userNameField.text.Length >= 3 && userNameField.text.Length <= MAXUserNameLength;
+    }
+
+    private void UpdateButtonClickableValue(Button btn, bool isEnabled)
+    {
+        if (isEnabled)
+        {
+            btn.image.color = new Color(btn.image.color.r, btn.image.color.b, btn.image.color.g, 1f);
+        }
+        else
+        {
+            btn.image.color = new Color(btn.image.color.r, btn.image.color.b, btn.image.color.g, 0.45f);
         }
     }
 
@@ -349,11 +427,11 @@ public class LocalLobbyManager : MonoBehaviourPun
         }
 
         // enable the button for creating a game if it is not active for main
-        if (tabMainButtonCreateGame.image.color == new Color(tabMainButtonCreateGame.image.color.r, tabMainButtonCreateGame.image.color.g, tabMainButtonCreateGame.image.color.b, 0.45f))
-        {
-            tabMainButtonCreateGame.image.color = new Color(tabMainButtonCreateGame.image.color.r, tabMainButtonCreateGame.image.color.g, tabMainButtonCreateGame.image.color.b, 1f);
-            tabMainButtonCreateGame.enabled = true;
-        }
+    // if (tabMainButtonCreateGame.image.color == new Color(tabMainButtonCreateGame.image.color.r, tabMainButtonCreateGame.image.color.g, tabMainButtonCreateGame.image.color.b, 0.45f))
+    // {
+    //     tabMainButtonCreateGame.image.color = new Color(tabMainButtonCreateGame.image.color.r, tabMainButtonCreateGame.image.color.g, tabMainButtonCreateGame.image.color.b, 1f);
+    //     tabMainButtonCreateGame.enabled = true;
+    // }
 
         return false; // max rooms not met
     }

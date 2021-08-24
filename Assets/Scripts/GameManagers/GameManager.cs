@@ -1,6 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 
 
@@ -42,8 +43,26 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion // Tracked_Variables
+
+    #region Levels_Selector_List
+
+
+    internal enum BuildSettingLevelNames
+    {
+        TitleScreen,
+        MainMenuScene,
+        SettingsMenu,
+        LoadingScreen1,
+        Credits,
+        NetworkLobby,
+        LobbyWaitingRoomScene,
+        AssetTesting,
+        TutorialLevel,
+        
+    }
     
     
+    #endregion // Levels_Selector_List
 
     void Awake()
     {
