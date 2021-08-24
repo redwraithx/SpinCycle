@@ -84,7 +84,7 @@ public class WeaponScript : MonoBehaviourPun
             destroyGun.hasFired = true;
 
             // Make bullet
-            GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", "IceCube"), projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+            GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", "Snowball"), projectileSpawnPoint.position, projectileSpawnPoint.rotation);
 
             // Shoot bullet
             //bullet.GetComponent<IceCube>().Shoot(projectileSpawnPoint.forward, projectileSpeed);

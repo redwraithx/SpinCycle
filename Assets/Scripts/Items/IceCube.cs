@@ -10,7 +10,6 @@ public class IceCube : MonoBehaviourPun
 {
 
     public List<GameObject> currentHitObjects = new List<GameObject>();
-    public GameObject slipperyBit;
     public LayerMask layerMask;
     public BoxCollider boxCollider;
     // Start is called before the first frame update
@@ -50,7 +49,7 @@ public class IceCube : MonoBehaviourPun
             {
                 if(PhotonNetwork.IsMasterClient)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", "IcePatch"), transform.position, slipperyBit.transform.rotation);
+                    PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", "IcePatch"), transform.position, transform.rotation);
                 }
 
             }
