@@ -283,6 +283,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         if (string.IsNullOrEmpty(roomNameField.text) || roomNameField.text.Length < 3)
             return;
         
+        
         RoomOptions options = new RoomOptions();
     
         // Assign max players here
