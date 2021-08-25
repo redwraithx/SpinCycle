@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -660,7 +660,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 0cc41516ebe78384aabd3f2b80846702, type: 3}
 --- !u!4 &113737720 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0cc41516ebe78384aabd3f2b80846702, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 113737719}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &116671408
@@ -762,6 +762,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1647314222}
     m_Modifications:
+    - target: {fileID: -3500864767156711555, guid: 2ee20cd5c8d6c5243a5c3f65783d417d, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1179965799072671629, guid: 2ee20cd5c8d6c5243a5c3f65783d417d, type: 3}
       propertyPath: m_Name
       value: ItemStand (1)
@@ -1247,7 +1251,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 0cc41516ebe78384aabd3f2b80846702, type: 3}
 --- !u!4 &271698788 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0cc41516ebe78384aabd3f2b80846702, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 271698787}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &273542240
@@ -15615,6 +15619,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1647314222}
     m_Modifications:
+    - target: {fileID: -3500864767156711555, guid: 2ee20cd5c8d6c5243a5c3f65783d417d, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1179965799072671629, guid: 2ee20cd5c8d6c5243a5c3f65783d417d, type: 3}
       propertyPath: m_Name
       value: ItemStand
@@ -15698,8 +15706,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 113737720}
-  - {fileID: 2064351066}
   - {fileID: 271698788}
+  - {fileID: 2064351066}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16009,7 +16017,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 0cc41516ebe78384aabd3f2b80846702, type: 3}
 --- !u!4 &2064351066 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0cc41516ebe78384aabd3f2b80846702, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 2064351065}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2065455823

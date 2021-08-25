@@ -181,6 +181,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 //other.gameObject.SetActive(false);
                 //Destroy(other.gameObject);
 
+
             }
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.RepairTool)
             {
@@ -202,6 +203,10 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 {
                     if (isSabotaged == false)
                     {
+                        
+                        AudioClip washerSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Washer/Washer_Machine_Special_Sound_C_10-SEC");
+                        GameManager.audioManager.PlaySfx(washerSound);
+
                         initialPrice = other.GetComponent<Item>().Price;
                         //Once player is created, call to destroy the item in their hand here
                         ProcessItems();

@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections;
+using System.IO;
 using Cinemachine;
 using Photon.Pun;
 using Photon.Realtime;
@@ -268,6 +269,8 @@ public class PlayerMovementCC : MonoBehaviourPun
         if (Input.GetKeyDown("w")||  Input.GetKeyDown("s"))
         {
             characterAnimator.SetBool("Run",true);
+            AudioClip runningSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/WalkingSound/laser");
+            GameManager.audioManager.PlaySfx(runningSound);
         }
         if (Input.GetKeyUp("w") || Input.GetKeyUp("s"))
         {
@@ -316,12 +319,17 @@ public class PlayerMovementCC : MonoBehaviourPun
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Jump();
+            //FindObjectOfType<AudioManager>().Play("Jumping");
+            AudioClip jumpSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/JumpSound/Coin");
+            GameManager.audioManager.PlaySfx(jumpSound);
         }
 
 
         if (Input.GetKeyDown("space"))
         {
             characterAnimator.SetBool("Jump", true);
+            
+
         }
         if (Input.GetKeyUp("space"))
         {
