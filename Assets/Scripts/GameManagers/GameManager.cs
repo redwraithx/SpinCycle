@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     internal enum BuildSettingLevelNames
     {
-        TitleScreen,
+        TitleScreen = 0,
         MainMenuScene,
         SettingsMenu,
         LoadingScreen1,
