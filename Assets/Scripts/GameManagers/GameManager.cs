@@ -93,8 +93,18 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("LoadingScreen1"); 
     }
-    
-    
+    private void Update()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        if(scene.buildIndex == 0)
+        {
+            if(Input.anyKey)
+            {
+                ToMain();
+            }
+        }
+    }
+
     //leaves the game
     public void QuitGame()
     {

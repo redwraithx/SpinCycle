@@ -59,6 +59,10 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject theSprite;
     public Image fillBarImage;
 
+    public SpriteRenderer spinner;
+    public Sprite goodSpinner;
+    public Sprite badSpinner;
+
     private void Awake()
     {
         if (!_photonView)
@@ -106,7 +110,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 laundryTimer -= Time.deltaTime;
                 percent = laundryTimer/cycleLength;
                 percentCounter.text = (100 - Mathf.Round(percent * 100) + "%");
-
+                spinner.transform.Rotate(0, 0, 0.1f);
                 fillBarImage.fillAmount = 1 - percent;
 
                 if (isRuined)
@@ -154,6 +158,17 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         if (isSabotaged == false && fillBarImage.GetComponent<Image>().sprite == barDisabled)
         {
             fillBarImage.GetComponent<Image>().sprite = barNormal;
+        }
+
+
+        if (isSabotaged == true && spinner.GetComponent<SpriteRenderer>().sprite != badSpinner)
+        {
+            spinner.GetComponent<SpriteRenderer>().sprite = badSpinner;
+        }
+
+        if (isSabotaged == false && spinner.GetComponent<SpriteRenderer>().sprite == badSpinner)
+        {
+            spinner.GetComponent<SpriteRenderer>().sprite = goodSpinner;
         }
     }
 
