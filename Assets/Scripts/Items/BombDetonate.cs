@@ -33,10 +33,7 @@ public class BombDetonate : MonoBehaviourPun, IPunObservable
             {
                 BroadcastMessage("SabotageMachine");
             }
-            if (GameManager.uiDebugger != null)
-            {
-                GameManager.uiDebugger.ItemInfo(this.gameObject.GetComponent<PhotonView>().ViewID, this.gameObject.name, photonView.Owner.IsMasterClient);
-            }
+
 
             Radius = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", radiusName), transform.position, transform.rotation);
             detonated = true;

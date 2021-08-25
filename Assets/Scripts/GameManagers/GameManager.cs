@@ -1,6 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 
 
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     public static AudioManager audioManager = null;
     public static NetworkLobby networkManager = null;
     public static NetworkLevelManager networkLevelManager = null;
-    public static UIDebugger uiDebugger = null;
+
     
     
     #endregion GAMEMANAGER_CORE-EXTENTIONS
@@ -42,8 +43,26 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion // Tracked_Variables
+
+    #region Levels_Selector_List
+
+
+    internal enum BuildSettingLevelNames
+    {
+        TitleScreen = 0,
+        MainMenuScene,
+        SettingsMenu,
+        LoadingScreen1,
+        Credits,
+        NetworkLobby,
+        LobbyWaitingRoomScene,
+        AssetTesting,
+        TutorialLevel,
+        
+    }
     
     
+    #endregion // Levels_Selector_List
 
     void Awake()
     {
@@ -65,25 +84,27 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // checking to see if the player hit escape when in the game level
-    void Update()
+    public void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (SceneManager.GetActiveScene().name == "GameLevelScene")
-            {
-                SceneManager.LoadScene("MainMenuScene");
-            }
-        }
+        Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
     }
-
     //loads the game level
     public void StartGame()
     {
         SceneManager.LoadScene("LoadingScreen1"); 
     }
-    
-    
+    private void Update()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        if(scene.buildIndex == 0)
+        {
+            if(Input.anyKey)
+            {
+                ToMain();
+            }
+        }
+    }
+
     //leaves the game
     public void QuitGame()
     {
@@ -92,6 +113,11 @@ public class GameManager : MonoBehaviour
         #else
             Application.Quit();
         #endif
+    }
+
+    public void ToCredits()
+    {
+        SceneManager.LoadScene("Credits");
     }
     
     
@@ -115,12 +141,6 @@ public class GameManager : MonoBehaviour
         //private set => _instance = value;
     }
 
-    
-    //function with temp load for sample scene is now in LoadScreen2CanvasManager
-    public void PlayGame()
-    {
-        SceneManager.LoadScene("LoadingScreen2");  
-    }
 
     public void PlayTutorial()
     {

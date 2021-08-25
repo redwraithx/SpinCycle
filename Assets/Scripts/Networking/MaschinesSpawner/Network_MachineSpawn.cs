@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using UnityEngine;
 using Photon.Pun;
-using Photon.Realtime;
 
 
 public class Network_MachineSpawn : MonoBehaviour
@@ -19,7 +16,6 @@ public class Network_MachineSpawn : MonoBehaviour
             GameObject newObject = PhotonNetwork.Instantiate(Path.Combine("NetworkMachinePrefabs", networkItemToSpawn), transform.position, transform.rotation, 0);
             //newObject.transform.rotation = transform.rotation;
             newObject.name = newObject.name + "_" + newObject.GetComponentInChildren<PhotonView>().ViewID;
-            Debug.Log(newObject.name + ": " + newObject.GetComponentInChildren<PhotonView>().Owner);
                 
             Destroy(gameObject);
         }
@@ -33,8 +29,4 @@ public class Network_MachineSpawn : MonoBehaviour
     }
 
 
-    // void OnPhotonInstantiate(PhotonMessageInfo info)
-    // {
-    //     info.Sender.TagObject = gameObject.tag;
-    // }
 }

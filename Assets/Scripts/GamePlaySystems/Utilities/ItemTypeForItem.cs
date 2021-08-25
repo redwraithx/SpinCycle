@@ -22,7 +22,7 @@ namespace GamePlaySystems.Utilities
 
         public void RequestOwnership()
         {
-            Debug.Log("request ownership from host");
+
 
             if (!isItemHeld)
             {
@@ -37,7 +37,7 @@ namespace GamePlaySystems.Utilities
 
         public void RequestTransferOwnershipToHost()
         {
-            Debug.Log("give ownership back to host");
+
 
             // return ownership back to master client.
             if (!this.gameObject.GetComponent<BombDetonate>())

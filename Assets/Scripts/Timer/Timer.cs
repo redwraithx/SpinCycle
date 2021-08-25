@@ -1,8 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 using Photon.Pun;
 using System.IO;
@@ -13,6 +11,8 @@ public class Timer : MonoBehaviour
     public TMP_Text player1PointCounter;
     public TMP_Text player2PointCounter;
     public GameObject pointCounters;
+    public GameObject background;
+    public GameObject panel;
 
 
     [Header("Timer Functions"), ] 
@@ -50,7 +50,6 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         isGameOver = false;
-        // Starts the timer automatically
         networkedTimer = GameObject.FindGameObjectWithTag("Timer").GetComponent<NetworkedTimerNew>();
     }
     public void UpdatePoints()
@@ -159,6 +158,9 @@ public class Timer : MonoBehaviour
 
         vStandPrefab.gameObject.SetActive(true);
         pointCounters.gameObject.SetActive(false);
+        panel.gameObject.SetActive(false);
+        background.gameObject.SetActive(false);
+        timeText.gameObject.SetActive(false);
         winner.gameObject.GetComponent<PlayerMovementCC>().enabled = false;
         if (PhotonNetwork.IsMasterClient)
         {
@@ -174,7 +176,6 @@ public class Timer : MonoBehaviour
         }
 
         isGameOver = true;
-        //SceneManager.LoadScene(GameOverSceneIndex);
 
     }
 

@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.22282, g: 0.13510147, b: 0.8679245, a: 0.3137255}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.6862745}
     m_PressedColor: {r: 0.22282, g: 0.13510147, b: 0.8679245, a: 0.6745098}
     m_SelectedColor: {r: 0.22282, g: 0.13510147, b: 0.8679245, a: 0.8627451}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2283,6 +2283,7 @@ MonoBehaviour:
   backToMainButton: {fileID: 0}
   playButton: {fileID: 0}
   settingsButton: {fileID: 717977059}
+  creditsButton: {fileID: 528377417}
   MainMenuSceneIndex: 0
   mainMenuSceneBuildIndex: 1
   hasPlayerProfileLoaded: 0

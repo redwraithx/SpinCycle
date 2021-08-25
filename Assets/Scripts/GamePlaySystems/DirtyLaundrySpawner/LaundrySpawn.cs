@@ -32,7 +32,6 @@ public class LaundrySpawn : MonoBehaviour
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            Debug.Log("trigger exit item spawner");
             //if not working make sure there is a collider set as a trigger on the object
             if (Vector3.Distance(objectInstance.transform.position, spawnPointPosition) >= 1 || objectInstance == null)
             {

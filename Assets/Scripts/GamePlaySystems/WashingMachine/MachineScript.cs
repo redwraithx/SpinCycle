@@ -30,11 +30,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public bool isEnabled = false;
     public bool isBoosted = false;
     public bool isRuined = false;
-    public Slider sliderTime;
+    //public Slider sliderTime;
     public LaundryType laundryType;
     public MachineType machineType;
     public ParticleSystem part;
-    public TMP_Text pointsAdded;
+    //public TMP_Text pointsAdded;
     
     public ItemType SpawnFinishedProductItemType = ItemType.ClothingWet;
 
@@ -48,21 +48,48 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject loadRuinerMachinePart;
     public GameObject boostMachinePart;
 
+    //public Animator animator;
+    public float percent;
+    public TMP_Text percentCounter;
+
+    public Sprite disabledSprite;
+    public Sprite normalSprite;
+    public Sprite barNormal;
+    public Sprite barDisabled;
+    public GameObject theSprite;
+    public Image fillBarImage;
+
+    public SpriteRenderer spinner;
+    public Sprite goodSpinner;
+    public Sprite badSpinner;
+
     private void Awake()
     {
         if (!_photonView)
         {
             _photonView = GetComponent<PhotonView>();
 
-            //PhotonNetwork.SendRate = 22;
-            //PhotonNetwork.SerializationRate = 22;
+
         }
     }
 
     private void Start()
     {
-        cycleLength = 15;
-        sliderTime.maxValue = cycleLength;
+        //animator.speed = 0.25f;
+
+        if(MachineType.washer == this.machineType)
+        {
+            cycleLength = 20;
+        }
+        else if (MachineType.dryer == this.machineType)
+        {
+            cycleLength = 25;
+        }
+        else if (MachineType.folder == this.machineType)
+        {
+            cycleLength = 15;
+        }
+        //sliderTime.maxValue = cycleLength;
 
         if (isSabotaged == true)
         {
@@ -75,13 +102,17 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         if (_photonView == null)
             return;
 
-       // Debug.Log("Is it sabotaged?" + isSabotaged + photonView.ViewID);
 
         if (isSabotaged == false)
         {
             if (laundryTimer > 0)
             {
                 laundryTimer -= Time.deltaTime;
+                percent = laundryTimer/cycleLength;
+                percentCounter.text = (100 - Mathf.Round(percent * 100) + "%");
+                spinner.transform.Rotate(0, 0, 0.1f);
+                fillBarImage.fillAmount = 1 - percent;
+
                 if (isRuined)
                 {
                     ruinTimer += Time.deltaTime;
@@ -89,34 +120,55 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             }
             if (laundryTimer <= 0 && isEnabled == true)
             {
+                percentCounter.text = ("0%");
                 SpawnFinishedProduct(laundryType);
+                fillBarImage.fillAmount = 0;
                 isEnabled = false;
             }
         }
 
-        //if (isSabotaged == true)
-        //{
-        //    if (sabotageTimer > 0)
-        //    {
-        //        sabotageTimer -= Time.deltaTime;
-        //    }
-        //    if (sabotageTimer <= 0)
-        //    {
-        //        part.Stop();
-        //        isSabotaged = false;
-        //    }
-        //}
 
-        sliderTime.value = laundryTimer;
+        //sliderTime.value = laundryTimer;
 
         if(isSabotaged == true && part.isPlaying == false)
         {
             part.Play();
         }
 
+        if (isSabotaged == true && theSprite.GetComponent<Image>().sprite != disabledSprite)
+        {
+            theSprite.GetComponent<Image>().sprite = disabledSprite;
+        }
+
+        if (isSabotaged == false && theSprite.GetComponent<Image>().sprite == disabledSprite)
+        {
+            theSprite.GetComponent<Image>().sprite = normalSprite;
+        }
+
         if (isSabotaged == false && part.isPlaying == true)
         {
             part.Stop();
+        }
+
+        if (isSabotaged == true && fillBarImage.GetComponent<Image>().sprite != barDisabled)
+        {
+            fillBarImage.GetComponent<Image>().sprite = barDisabled;
+        }
+
+        if (isSabotaged == false && fillBarImage.GetComponent<Image>().sprite == barDisabled)
+        {
+            fillBarImage.GetComponent<Image>().sprite = barNormal;
+        }
+
+
+        if (isSabotaged == true && spinner.GetComponent<SpriteRenderer>().sprite != badSpinner)
+        {
+            spinner.GetComponent<SpriteRenderer>().sprite = badSpinner;
+        }
+
+        if (isSabotaged == false && spinner.GetComponent<SpriteRenderer>().sprite == badSpinner)
+        {
+            spinner.GetComponent<SpriteRenderer>().sprite = goodSpinner;
         }
     }
 
@@ -131,17 +183,15 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
         if (newGO)
         {
-            Debug.Log($"new Item Type: {SpawnFinishedProductItemType}");
             
             newGO.GetComponent<ItemTypeForItem>().itemType = SpawnFinishedProductItemType;
             float ruinedPrice = (10 * ruinTimer);
-            pointsAdded.text = (((int)initialPrice + (int)priceAddition) - (int)ruinedPrice).ToString() + "!";
             newGO.GetComponent<Item>().Price += ((int)initialPrice + (int)priceAddition) - (int)ruinedPrice;
             
         }
             
 
-        Debug.Log("final owner is: " + _photonView.Owner);
+
         
         RequestTransferOwnershipToHost();
 
@@ -149,9 +199,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     public void ProcessItems()
     {
-        Debug.Log("processing item in machine");
+        percentCounter.text = "0%";
+        //animator.ResetTrigger("Stop");
+        //animator.SetTrigger("Go");
         ruinTimer = 0;
-        sliderTime.maxValue = cycleLength;
+        //sliderTime.maxValue = cycleLength;
         laundryTimer = cycleLength;
         isEnabled = true;
     }
@@ -178,8 +230,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 BoostMachine();
                 PhotonNetwork.Destroy(other.gameObject);
-                //other.gameObject.SetActive(false);
-                //Destroy(other.gameObject);
+
 
 
             }
@@ -187,15 +238,14 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 FixMachine();
                 RepairToolZoneSpawn.instance.RemoveObject();
-                //other.gameObject.SetActive(false);
+                
                 PhotonNetwork.Destroy(other.gameObject);
-                //Destroy(other.gameObject);
+                
             }
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.LoadRuiner)
             {
                 RuinLoad();
                 PhotonNetwork.Destroy(other.gameObject);
-                //other.gameObject.SetActive(false);
             }
             else if (other.GetComponent<ItemTypeForItem>().itemType == this.gameObject.GetComponent<ItemTypeForUsingItem>().itemType[0])
             {
@@ -208,19 +258,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                         GameManager.audioManager.PlaySfx(washerSound);
 
                         initialPrice = other.GetComponent<Item>().Price;
-                        //Once player is created, call to destroy the item in their hand here
                         ProcessItems();
-                        // we may want to use a bool in case the machine is full we dont destroy or use the object
                         other.transform.parent = null;
-                        //other.gameObject.GetComponent<Item>().DisableObject();
-
-
-                        // send msg to destroy other copies of this object on other network clients here
-                        //other.GetComponent<Item>().RemoveThisObject();
-
                         PhotonNetwork.Destroy(other.gameObject);
-                        //other.gameObject.SetActive(false);
-                        //Destroy(other.gameObject);
                     }
                 }
             }
@@ -255,13 +295,21 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public void SabotageMachine()
     {
         isSabotaged = true;
+        //animator.ResetTrigger("Go");
+        //animator.SetTrigger("Stop");
         part.Play();
     }
     public void FixMachine()
     {
+        //animator.ResetTrigger("Stop");
         isSabotaged = false;
         sabotageTimer = 0;
         part.Stop();
+
+        if (isEnabled)
+        {
+            //animator.SetTrigger("Go");
+        }
     }
 
     public void BoostMachine()
@@ -284,7 +332,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     }
     public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
     {
-        Debug.Log("requesting ownership by: " + requestingPlayer.NickName + " of machine viewID: " + targetView.ViewID);
+
 
         if (targetView != base.photonView)
             return;
@@ -292,12 +340,12 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         
         base.photonView.TransferOwnership(requestingPlayer);
         
-        Debug.Log("ownership of this object is: " + photonView.Owner);
+
     }
    
     public void RequestOwnership()
     {
-        Debug.Log("request ownership from host");
+
 
         // get ownership of the object were about to pickup
         base.photonView.RequestOwnership();
@@ -306,22 +354,17 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     }
 
     public void RequestTransferOwnershipToHost()
-    {
-        Debug.Log("give ownership back to host");
-        
+    {      
         // return ownership back to master client.
         base.photonView.TransferOwnership(PhotonNetwork.MasterClient);
             
-        Debug.Log("master client is new owner. ownership of this object is: " + photonView.Owner);
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        Debug.Log("OnPhotonSerializeView called");
         
         if (stream.IsWriting)
         {
-            Debug.Log("stream.IsWriting");
             
             stream.SendNext(textString);
             stream.SendNext(counter);
@@ -340,7 +383,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         }
         else if(stream.IsReading)
         {
-            Debug.Log("stream.IsReading");
             
             string newTextString = (string) stream.ReceiveNext();
             int newCounter = (int) stream.ReceiveNext();
@@ -373,7 +415,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 isBoosted = machineBoosted;
 
 
-            Debug.Log($"LaundryTimer: {laundryTimer}\ncycleLength: {cycleLength}\nsiEnabled: {isEnabled}/nisSabotaged: {isSabotaged}");
         }
     }
 }

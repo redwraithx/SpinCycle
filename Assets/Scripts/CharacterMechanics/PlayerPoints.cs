@@ -31,24 +31,11 @@ public class  PlayerPoints : MonoBehaviourPun, IPunObservable
         set
         {
             points = value;
-
-            //playerPointText.text = points.ToString();
             Debug.Log("New Points Inbound");
             Timer.BroadcastMessage("UpdatePoints");
         }
     }
 
-    private void Start()
-    {
-        if(GetComponent<PhotonView>().IsMine)
-        {
-            //playerPointText = GameObject.FindWithTag("PointsCounter").GetComponent<Text>();
-        }
-    }
-    private void Update()
-    {
-        
-    }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {

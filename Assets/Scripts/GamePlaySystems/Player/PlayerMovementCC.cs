@@ -6,6 +6,7 @@ using Cinemachine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovementCC : MonoBehaviourPun
 {
@@ -20,6 +21,13 @@ public class PlayerMovementCC : MonoBehaviourPun
     float slowedZspeed;
     float speedBoostXSpeed;
     float speedBoostZSpeed;
+
+
+    //grabbed UI
+    public float grabEscape = 10f;
+    float currentGrab = 0f;
+    public Image grabEscapeValue;
+    public GameObject tapToEscape;
 
     //not using these rn;
     private float m_moveSpeedMultiplier = 1f;
@@ -128,6 +136,9 @@ public class PlayerMovementCC : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
+
+        tapToEscape.SetActive(false);
+
         slowedXspeed = Xspeed * 0.5f;
         slowedZspeed = Zspeed * 0.5f;
         speedBoostXSpeed = Xspeed * 1.5f;
@@ -150,6 +161,32 @@ public class PlayerMovementCC : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
+
+        if (isGrabbed)
+        {
+            tapToEscape.SetActive(true);
+            grabEscapeValue.fillAmount = currentGrab / 10;
+            if (Input.GetMouseButtonDown(1))
+            {
+                currentGrab += 1f;
+            }
+
+            if (currentGrab < grabEscape && currentGrab >= 0f)
+            {
+                currentGrab -= Time.deltaTime * 1.5f;
+
+            }
+
+            if (currentGrab > grabEscape)
+            {
+                isGrabbed = false;
+            }
+        }
+        else
+        {
+            tapToEscape.SetActive(false);
+        }
+
         if(speedBoost)
         {
             Xspeed = speedBoostXSpeed;

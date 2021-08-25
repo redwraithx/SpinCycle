@@ -14,6 +14,7 @@ public class CanvasManager : MonoBehaviour
     public Button backToMainButton;
     public Button playButton;
     public Button settingsButton;
+    public Button creditsButton;
 
     public int MainMenuSceneIndex = 0;
 
@@ -22,14 +23,12 @@ public class CanvasManager : MonoBehaviour
     
     void Start()
     {
-        Debug.Log(this.name + " has loaded start()");
         
         Cursor.lockState = CursorLockMode.None;
         
         //these are all just checking to see if you've hit the button and then triggering the scripts in game manager
         if (startButton)
         {
-            Debug.Log("start button does exist");
             // This is for checking for tutorial has been played or not
             // if (SceneManager.GetActiveScene().buildIndex == mainMenuSceneBuildIndex)
             // {
@@ -82,13 +81,13 @@ public class CanvasManager : MonoBehaviour
         {
             backToMainButton.onClick.AddListener(GameManager.Instance.ToMain);
         }
-        if (playButton)
-        {
-            playButton.onClick.AddListener(GameManager.Instance.PlayGame);
-        }
         if (settingsButton)
         {
             settingsButton.onClick.AddListener(GameManager.Instance.ToSettings);
+        }
+        if (creditsButton)
+        {
+            creditsButton.onClick.AddListener(GameManager.Instance.ToCredits);
         }
     }
 
@@ -104,23 +103,18 @@ public class CanvasManager : MonoBehaviour
             
             // show the tutorial if they have not seen it yet.
             
-            if (playButton)
-            {
-                playButton.onClick.AddListener(GameManager.Instance.PlayGame);
-            }
+
             
         }
     }
 
     public void LoadMainMenu()
     {
-        Debug.Log("goto main menu");
         SceneManager.LoadSceneAsync(MainMenuSceneIndex);
     }
 
     public void ExitGame()
     {
-        Debug.Log("exitgame button");
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #else

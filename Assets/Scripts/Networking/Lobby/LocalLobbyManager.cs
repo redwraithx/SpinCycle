@@ -1,5 +1,7 @@
 ﻿
 
+using System;
+using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -14,8 +16,19 @@ public class LocalLobbyManager : MonoBehaviourPun
     public static LocalLobbyManager localInstance;
 
     //[Header("Network Lobby max games")] 
-    private const int MAXNumberOfRooms = 10;
-    
+    public  int MAXNumberOfRooms = 6;
+
+    //[Header("Players Max Character Name Count component reference")]
+    private const int MAXUserNameLength = 12;
+
+    [Header("User Information Message Box")]
+    public GameObject messageBoxMainUIRef = null;
+    public TMP_Text msgBoxMainTabUI_TMP = null;
+    [Space] public GameObject messageBoxCreateUIRef = null;
+    public TMP_Text msgBoxCreateTabUI_TMP = null;
+    private const string MsgBoxText_MissingUserName = "UserName is missing!";
+    private const string MsgBoxText_MaxHostedGames = "Max hosted games reached!";
+    private const string MsgBoxText_RoomNameRequired = "Room Name is required!";
 
     [Header("User InputFields - Text - DropDown References")]
     public TMP_InputField userNameField = null;
@@ -49,6 +62,9 @@ public class LocalLobbyManager : MonoBehaviourPun
     public AudioSource audioSource = null;
     public AudioClip clickSound = null;
 
+    [Header("Max Hosted games reached Container object")]
+    public GameObject messageBoxGO = null;
+    
     private void Awake()
     {
         if (localInstance)
@@ -61,6 +77,9 @@ public class LocalLobbyManager : MonoBehaviourPun
 
     private void Start()
     {
+        // set username max characters
+        userNameField.characterLimit = MAXUserNameLength;
+        
         // tab main button setup
         tabMainButtonListGames.onClick.AddListener(TabOpenRooms); //GameManager.networkManager.TabOpenRooms);
         tabMainButtonListGames.onClick.AddListener(PlayClickSound);
@@ -90,6 +109,186 @@ public class LocalLobbyManager : MonoBehaviourPun
         
         GameManager.networkManager.StopCoroutineBeforeJoiningNewGame();
     }
+
+
+    private void Update()
+    {
+        if (tabMainUI.activeInHierarchy)
+        {
+
+            if (CheckForValidUserName())
+            {
+                if (messageBoxMainUIRef.activeInHierarchy == true)
+                {
+                    msgBoxMainTabUI_TMP.text = "";
+                    messageBoxMainUIRef.SetActive(false);
+                }
+                
+                if (tabMainButtonListGames.interactable == false)
+                {
+                    UpdateButtonClickableValue(tabMainButtonListGames, true);
+                    tabMainButtonListGames.interactable = true;
+                }
+                
+                bool maxHostedGamesReached = CheckForMaxRooms();
+                
+                
+
+                if (maxHostedGamesReached)
+                {
+                    if (tabMainButtonCreateGame.interactable == true)
+                    {
+                        UpdateButtonClickableValue(tabMainButtonCreateGame, false);
+                        tabMainButtonCreateGame.interactable = false;
+                    }
+                    
+                    if (!messageBoxMainUIRef.activeInHierarchy)
+                    {
+                        messageBoxMainUIRef.SetActive(true);
+                        msgBoxMainTabUI_TMP.text = MsgBoxText_MaxHostedGames;
+                    }
+                    
+                }
+                else
+                {
+                    if (tabMainButtonCreateGame.interactable == false)
+                    {
+                        UpdateButtonClickableValue(tabMainButtonCreateGame, true);
+                        tabMainButtonCreateGame.interactable = true;
+                    }
+                }
+            }
+            else
+            {
+                if (!messageBoxMainUIRef.activeInHierarchy)
+                {
+                    messageBoxMainUIRef.SetActive(true);
+                    msgBoxMainTabUI_TMP.text = MsgBoxText_MissingUserName;
+                }
+                
+                // disable list rooms button
+                if (tabMainButtonListGames.interactable == true)
+                {
+                    UpdateButtonClickableValue(tabMainButtonListGames, false);
+                    tabMainButtonListGames.interactable = false;
+                }
+
+                // disable create game button
+                if (tabMainButtonCreateGame.interactable == true)
+                {
+                    UpdateButtonClickableValue(tabMainButtonCreateGame, false);
+                    tabMainButtonCreateGame.interactable = false;
+                }
+
+            }
+        }
+
+        if (tabCreateUI.activeInHierarchy)
+        {
+            bool atMaxHostedGames = CheckForMaxRooms();
+
+            if (atMaxHostedGames && roomNameField.text.Length < 3)
+            {
+                Debug.Log("max hosts & room name is less then 3 - show room name is required");
+                // max hosted servers running
+                if (tabCreateButtonCreateGame.interactable == true)
+                {
+                    UpdateButtonClickableValue(tabCreateButtonCreateGame, false);
+                    tabCreateButtonCreateGame.interactable = false;
+                }
+
+                if (!messageBoxCreateUIRef.activeInHierarchy)
+                {
+                    messageBoxCreateUIRef.SetActive(true);
+                    msgBoxCreateTabUI_TMP.text = MsgBoxText_RoomNameRequired;
+                }
+                else
+                {
+                    msgBoxCreateTabUI_TMP.text = MsgBoxText_RoomNameRequired;
+                }
+                
+                
+            }
+
+            else if (atMaxHostedGames && roomNameField.text.Length >= 3)
+            {
+                Debug.Log("max hosts & room name is les then or equal to 3 - show max hosts detected");
+                
+                // max hosted servers running
+                if (tabCreateButtonCreateGame.interactable == true)
+                {
+                    UpdateButtonClickableValue(tabCreateButtonCreateGame, false);
+                    tabCreateButtonCreateGame.interactable = false;
+                }
+
+                if (!messageBoxCreateUIRef.activeInHierarchy)
+                {
+                    messageBoxCreateUIRef.SetActive(true);
+                    msgBoxCreateTabUI_TMP.text = MsgBoxText_MaxHostedGames;
+                }
+                else
+                {
+                    msgBoxCreateTabUI_TMP.text = MsgBoxText_MaxHostedGames;
+                }
+                    
+                
+                
+            }
+            else if (!atMaxHostedGames && roomNameField.text.Length < 3)
+            {
+                if (tabCreateButtonCreateGame.interactable == true)
+                {
+                    UpdateButtonClickableValue(tabCreateButtonCreateGame, false);
+                    tabCreateButtonCreateGame.interactable = false;
+                }
+                
+                if (!messageBoxCreateUIRef.activeInHierarchy)
+                {
+                    messageBoxCreateUIRef.SetActive(true);
+                    msgBoxCreateTabUI_TMP.text = MsgBoxText_RoomNameRequired;
+                }
+                else
+                {
+                    msgBoxCreateTabUI_TMP.text = MsgBoxText_RoomNameRequired;
+                }
+            }
+            else
+            {
+                if(tabCreateButtonCreateGame.interactable == false)
+                {
+                    UpdateButtonClickableValue(tabCreateButtonCreateGame, true);
+                    tabCreateButtonCreateGame.interactable = true;
+                }
+                
+                if (messageBoxCreateUIRef.activeInHierarchy)
+                {
+                    msgBoxCreateTabUI_TMP.text = "";
+                    messageBoxCreateUIRef.SetActive(false);
+                }
+                
+            }
+        }
+    }
+
+    private bool CheckForValidUserName()
+    {
+        Debug.Log("Username length: " + userNameField.text.Length);
+        
+        return userNameField.text.Length >= 3 && userNameField.text.Length <= MAXUserNameLength;
+    }
+
+    private void UpdateButtonClickableValue(Button btn, bool isEnabled)
+    {
+        if (isEnabled)
+        {
+            btn.image.color = new Color(btn.image.color.r, btn.image.color.g, btn.image.color.b, 1f);
+        }
+        else
+        {
+            btn.image.color = new Color(btn.image.color.r, btn.image.color.g, btn.image.color.b, 0.45f);
+        }
+    }
+
 
     private void PlayClickSound() => audioSource.PlayOneShot(clickSound);
     
@@ -122,7 +321,7 @@ public class LocalLobbyManager : MonoBehaviourPun
                 Debug.Log("enable button");
                 
                 tabMainButtonCreateGame.image.color = new Color(tabMainButtonCreateGame.image.color.r, tabMainButtonCreateGame.image.color.g, tabMainButtonCreateGame.image.color.b, 1f);
-                tabMainButtonCreateGame.enabled = false;
+                tabMainButtonCreateGame.enabled = true; // this was false
             }
         }
     }
@@ -212,6 +411,19 @@ public class LocalLobbyManager : MonoBehaviourPun
     
     public void ChangeMap()
     {
+        if (CheckForMaxRooms())
+        {
+            // show msg that creating rooms is disabled due to max games running
+            StartCoroutine(ShowMessageForMaxGamesReached());
+            
+            //TabOpenMain();
+
+            return;
+        }
+
+
+
+        
         GameManager.networkManager.currentMap++;
 
         if (GameManager.networkManager.currentMap >= GameManager.networkManager.maps.Length)
@@ -223,6 +435,16 @@ public class LocalLobbyManager : MonoBehaviourPun
     
     public void ChangeMode()
     {
+        if (CheckForMaxRooms())
+        {
+            // show msg that creating rooms is disabled due to max games running
+            StartCoroutine(ShowMessageForMaxGamesReached());
+            
+            //TabOpenMain();
+
+            return;
+        }
+        
         int newMode = (int) GameSettings.GameMode + 1;
 
         if (newMode >= System.Enum.GetValues(typeof(GameModeSelections)).Length) 
@@ -232,10 +454,25 @@ public class LocalLobbyManager : MonoBehaviourPun
 
         modeValueText.text = "Mode: " + System.Enum.GetName(typeof(GameModeSelections), newMode);
     }
+
+    
+    
     
     public void Create()
     {
         Debug.Log("Create Game Button Func");
+     
+        // do we have max rooms? while creating a room?
+        if (CheckForMaxRooms())
+        {
+            // show msg that creating rooms is disabled due to max games running
+            StartCoroutine(ShowMessageForMaxGamesReached());
+            
+            //TabOpenMain();
+
+            return;
+        }
+        
         
         // is the name empty or have less then 3 characters?
         if (string.IsNullOrEmpty(roomNameField.text) || roomNameField.text.Length < 3)
@@ -271,4 +508,64 @@ public class LocalLobbyManager : MonoBehaviourPun
 
         PhotonNetwork.CreateRoom(roomNameField.text, options);
     }
+
+
+    private bool CheckForMaxRooms()
+    {
+        if (PhotonNetwork.CountOfRooms >= MAXNumberOfRooms)
+        {
+            Debug.Log("max rooms have been met while you were making a room, try again later");
+
+            //if (tabMainButtonCreateGame.IsActive())
+            //{
+            Debug.Log("disable create game button in main tab view");
+
+            if (tabMainUI.activeInHierarchy && tabMainButtonCreateGame.interactable == true)
+            {
+                tabMainButtonCreateGame.image.color = new Color(tabMainButtonCreateGame.image.color.r, tabMainButtonCreateGame.image.color.g, tabMainButtonCreateGame.image.color.b, 0.45f);
+
+                tabMainButtonCreateGame.interactable = false;
+
+            }
+            if (tabCreateUI.activeInHierarchy && tabCreateButtonCreateGame.interactable == true)
+            {
+                tabCreateButtonCreateGame.image.color = new Color(tabCreateButtonCreateGame.image.color.r, tabCreateButtonCreateGame.image.color.g, tabCreateButtonCreateGame.image.color.b, 0.45f);
+
+                tabCreateButtonCreateGame.interactable = false;
+
+            }
+            //}
+
+            // switch to main
+            //TabOpenMain();}
+
+            return true; // max rooms has been met, can not make a new game.
+        }
+
+        // enable the button for creating a game if it is not active for main
+    // if (tabMainButtonCreateGame.image.color == new Color(tabMainButtonCreateGame.image.color.r, tabMainButtonCreateGame.image.color.g, tabMainButtonCreateGame.image.color.b, 0.45f))
+    // {
+    //     tabMainButtonCreateGame.image.color = new Color(tabMainButtonCreateGame.image.color.r, tabMainButtonCreateGame.image.color.g, tabMainButtonCreateGame.image.color.b, 1f);
+    //     tabMainButtonCreateGame.enabled = true;
+    // }
+
+        return false; // max rooms not met
+    }
+    
+    private IEnumerator ShowMessageForMaxGamesReached()
+    {
+        // show dialogue for max servers reached 
+        messageBoxGO.SetActive(true);
+        
+        
+        yield return new WaitForSeconds(2f);
+
+        // hide max servers msg
+        messageBoxGO.SetActive(false);
+        
+        // enable main lobby view
+        TabOpenMain();
+    }
+        
+        
 }

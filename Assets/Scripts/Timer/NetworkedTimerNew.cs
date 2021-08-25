@@ -16,8 +16,6 @@ public class NetworkedTimerNew : MonoBehaviourPunCallbacks, IOnEventCallback
     public const byte refreshTimer = 1;
     
 
-    //use for demonstration of effect
-    public Text ui_timer;
 
     // Start is called before the first frame update
     void Start()
@@ -112,7 +110,7 @@ public class NetworkedTimerNew : MonoBehaviourPunCallbacks, IOnEventCallback
     {
         string minutes = (currentMatchTime / 60).ToString("0");
         string seconds = (currentMatchTime % 60).ToString("00");
-        ui_timer.text = $"{minutes}:{seconds}";
+
     }
 }
 
