@@ -1112,6 +1112,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterAudioMixerGroup: {fileID: 24300002, guid: 0db846f7ed54a6443b88cd9d4e726522, type: 2}
   masterSfxMixerGroup: {fileID: 24300002, guid: 488fd56100e65b74794fa9dd33ec2c4a, type: 2}
+  m_MusicSource1: {fileID: 0}
+  m_MusicSource2: {fileID: 0}
+  m_SfxSource: {fileID: 0}
+  menuSettingTestSFX: {fileID: 0}
 --- !u!4 &2100507037
 Transform:
   m_ObjectHideFlags: 0

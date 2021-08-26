@@ -80,6 +80,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         if(MachineType.washer == this.machineType)
         {
             cycleLength = 20;
+
         }
         else if (MachineType.dryer == this.machineType)
         {
@@ -206,6 +207,28 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         //sliderTime.maxValue = cycleLength;
         laundryTimer = cycleLength;
         isEnabled = true;
+
+
+        if (MachineType.washer == this.machineType)
+        {
+            AudioClip washingSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Washer/Washer_Machine_Special_Sound_C_10-SEC");
+            GameManager.audioManager.PlaySfx(washingSound);
+
+            /*var sound = GetComponent<AudioSource>();
+            sound.loop = true;
+            sound.clip = washingSound;
+            sound.Play();*/
+        }
+        else if (MachineType.dryer == this.machineType)
+        {
+            AudioClip dryingSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Dryer/Dryer_Machine_Special_Sound_B_10-SEC");
+            GameManager.audioManager.PlaySfx(dryingSound);
+        }
+        else if (MachineType.folder == this.machineType)
+        {
+            AudioClip foldingSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Folder/Ambient_Noises_A_10-SEC");
+            GameManager.audioManager.PlaySfx(foldingSound);
+        }
     }
 
 
@@ -254,8 +277,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                     if (isSabotaged == false)
                     {
                         
-                        AudioClip washerSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Washer/Washer_Machine_Special_Sound_C_10-SEC");
-                        GameManager.audioManager.PlaySfx(washerSound);
+                       
 
                         initialPrice = other.GetComponent<Item>().Price;
                         ProcessItems();
