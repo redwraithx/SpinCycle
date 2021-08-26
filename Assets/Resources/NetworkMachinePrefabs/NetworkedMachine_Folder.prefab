@@ -10064,13 +10064,13 @@ MonoBehaviour:
   percentCounter: {fileID: 6365372237506724674}
   disabledSprite: {fileID: 4557732691703644111, guid: 2e4d4c9dddea68d4b8778a0f80d79e9e, type: 3}
   normalSprite: {fileID: -621341741363454929, guid: 2e4d4c9dddea68d4b8778a0f80d79e9e, type: 3}
-  barNormal: {fileID: 0}
-  barDisabled: {fileID: 0}
+  barNormal: {fileID: -1981037526271542644, guid: 324d1d229bdf4374da9954b11ca2af60, type: 3}
+  barDisabled: {fileID: -7381590461290812695, guid: 2e4d4c9dddea68d4b8778a0f80d79e9e, type: 3}
   theSprite: {fileID: 4050303027205466142}
   fillBarImage: {fileID: 3177869645144723722}
   spinner: {fileID: 5421624093350035506}
-  goodSpinner: {fileID: 0}
-  badSpinner: {fileID: 0}
+  goodSpinner: {fileID: -722119813425603779, guid: fe3baaaa37c2f1d4095d06938db17bdd, type: 3}
+  badSpinner: {fileID: -9164130464008331663, guid: fe3baaaa37c2f1d4095d06938db17bdd, type: 3}
 --- !u!114 &7952955573406482846
 MonoBehaviour:
   m_ObjectHideFlags: 0

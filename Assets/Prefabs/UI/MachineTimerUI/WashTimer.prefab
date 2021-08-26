@@ -340,6 +340,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!65 &6834998139561503848
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5191959864528217973}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0260417, y: 0.21189316, z: 1.143789}
+  m_Center: {x: 0.009391427, y: 0.085418865, z: 0.020566823}
 --- !u!1 &8292839240206450642
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +556,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a05ac729cfeac541894785d3e6b9272, type: 3}
+--- !u!1 &5191959864528217973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a05ac729cfeac541894785d3e6b9272, type: 3}
+  m_PrefabInstance: {fileID: 4957585972482480676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4847662454776954319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3a05ac729cfeac541894785d3e6b9272, type: 3}
