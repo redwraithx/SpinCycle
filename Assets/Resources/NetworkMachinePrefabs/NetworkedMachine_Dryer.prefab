@@ -325,8 +325,8 @@ MonoBehaviour:
   percentCounter: {fileID: 1212800654079805650}
   disabledSprite: {fileID: 4557732691703644111, guid: 2e4d4c9dddea68d4b8778a0f80d79e9e, type: 3}
   normalSprite: {fileID: -621341741363454929, guid: 2e4d4c9dddea68d4b8778a0f80d79e9e, type: 3}
-  barNormal: {fileID: 0}
-  barDisabled: {fileID: 0}
+  barNormal: {fileID: -1981037526271542644, guid: 324d1d229bdf4374da9954b11ca2af60, type: 3}
+  barDisabled: {fileID: -7381590461290812695, guid: 2e4d4c9dddea68d4b8778a0f80d79e9e, type: 3}
   theSprite: {fileID: 8122086566634218382}
   fillBarImage: {fileID: 7248803141421374106}
   spinner: {fileID: 270103778125220770}
@@ -10269,9 +10269,25 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3809707238627723414, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.044
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817349998273675414, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.033
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583024525437038464, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.043
+      objectReference: {fileID: 0}
     - target: {fileID: 4806107522798756899, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_Name
       value: WashTimer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6300960412223949637, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.033
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
