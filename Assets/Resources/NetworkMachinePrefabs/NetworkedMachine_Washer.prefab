@@ -255,7 +255,7 @@ MonoBehaviour:
   theSprite: {fileID: 9138651590280597244}
   fillBarImage: {fileID: 7709209894702266344}
   spinner: {fileID: 998647329322608336}
-  goodSpinner: {fileID: 0}
+  goodSpinner: {fileID: -722119813425603779, guid: fe3baaaa37c2f1d4095d06938db17bdd, type: 3}
   badSpinner: {fileID: 7652371028627859435, guid: 2e4d4c9dddea68d4b8778a0f80d79e9e, type: 3}
 --- !u!114 &7107540471703433002
 MonoBehaviour:
@@ -10284,18 +10284,6 @@ PrefabInstance:
     - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4806107522798756899, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_Name
