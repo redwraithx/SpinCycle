@@ -5,10 +5,12 @@ using Cinemachine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovementCC : MonoBehaviourPun
 {
     public int numberOfKeyPressed = 0;
+
     public Camera cinemachineCamera;
     public CinemachineVirtualCamera shoulderCam;
     public Animator characterAnimator;
@@ -16,6 +18,19 @@ public class PlayerMovementCC : MonoBehaviourPun
     public GrabAndHold grabHold;
     public float Xspeed = 12f;
     public float Zspeed = 10f;
+    float slowedXspeed;
+    float slowedZspeed;
+    float speedBoostXSpeed;
+    float speedBoostZSpeed;
+
+
+    //grabbed UI
+    public float grabEscape = 10f;
+    float currentGrab = 0f;
+    public Image grabEscapeValue;
+    public GameObject tapToEscape;
+
+    //not using these rn;
     private float m_moveSpeedMultiplier = 1f;
     private float m_jumpPowerMultiplier = 1f;
     Vector3 movementDirection;
@@ -25,9 +40,10 @@ public class PlayerMovementCC : MonoBehaviourPun
     //using this bool to transition between move states
     bool shoulderCamActive = true;
 
-    public float slowedXspeed = 4f;
-    public float slowedZspeed = 3f;
+
+    public bool speedBoost = false;
     public bool isGrabbed = false;
+    public bool isGrabbing = false;
     public Vector3 enemyGrab;
 
 
@@ -55,7 +71,9 @@ public class PlayerMovementCC : MonoBehaviourPun
     private Vector3 velocity;
     public bool isGrounded;
 
-    private bool canDive = true;
+    public bool canDive = true;
+    public bool cooldown = false;
+
     public float diveReuseDelayTime = 1f;
 
     public bool isFrozen;
@@ -67,7 +85,8 @@ public class PlayerMovementCC : MonoBehaviourPun
     private Quaternion correctRotation = Quaternion.identity;
 
 
-
+    private static readonly int Run = Animator.StringToHash("Run");
+    public DashSphereCast playerDash;
 
     public float MoveSpeed
     {
@@ -121,6 +140,13 @@ public class PlayerMovementCC : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
+        playerDash = GetComponent<DashSphereCast>();
+        tapToEscape.SetActive(false);
+
+        slowedXspeed = Xspeed * 0.5f;
+        slowedZspeed = Zspeed * 0.5f;
+        speedBoostXSpeed = Xspeed * 1.5f;
+        speedBoostZSpeed = Zspeed * 1.5f;
         Debug.Log($"player dive inde: {playerDiveIndex}");
         //GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex] = false;
         canDive = true;
@@ -139,6 +165,48 @@ public class PlayerMovementCC : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
+
+        if (isGrabbed)
+        {
+            tapToEscape.SetActive(true);
+            grabEscapeValue.fillAmount = currentGrab / 10;
+            if (Input.GetMouseButtonDown(1)) ;
+            {
+                currentGrab += 1f;
+            }
+
+            if (currentGrab < grabEscape && currentGrab >= 0f)
+            {
+                currentGrab -= Time.deltaTime * 1.5f;
+
+            }
+
+            if (currentGrab > grabEscape)
+            {
+                isGrabbed = false;
+            }
+        }
+        else
+        {
+            tapToEscape.SetActive(false);
+        }
+
+        if (speedBoost)
+        {
+            Xspeed = speedBoostXSpeed;
+            Zspeed = speedBoostZSpeed;
+            Invoke("EndSpeedBoost", 8f);
+        }
+        else if (isGrabbing)
+        {
+            Xspeed = slowedXspeed;
+            Zspeed = slowedZspeed;
+        }
+        else
+        {
+            Xspeed = 12f;
+            Zspeed = 10f;
+        }
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -215,6 +283,15 @@ public class PlayerMovementCC : MonoBehaviourPun
                 Invoke("RotationTransition", 1.0f);
 
             }
+
+            else if (isGrabbing)
+            {
+                Quaternion grabLookAt = Quaternion.identity;
+                grabLookAt = Quaternion.LookRotation(GetGrabbedPlayerLocation());
+                grabLookAt.x = 0;
+                grabLookAt.z = 0;
+                transform.rotation = grabLookAt;
+            }
             else if (move.sqrMagnitude > Mathf.Epsilon)
             {
                 captureMouseRotation = false;
@@ -230,16 +307,16 @@ public class PlayerMovementCC : MonoBehaviourPun
         }
 
 
+        // this will need to be updated for controller support
         if (Input.GetKeyDown("w") || Input.GetKeyDown("s"))
-
         {
             numberOfKeyPressed += 1;
-            characterAnimator.SetBool("Run", true);
+            characterAnimator.SetBool(Run, true);
         }
         if (Input.GetKeyDown("a") || Input.GetKeyDown("d"))
         {
             numberOfKeyPressed += 1;
-            characterAnimator.SetBool("Run", true);
+            characterAnimator.SetBool(Run, true);
         }
 
         if (Input.GetKeyUp("w") || Input.GetKeyUp("s"))
@@ -247,7 +324,7 @@ public class PlayerMovementCC : MonoBehaviourPun
 
             if (numberOfKeyPressed == 1)
 
-                characterAnimator.SetBool("Run", false);
+                characterAnimator.SetBool(Run, false);
 
             if (numberOfKeyPressed != 0)
             {
@@ -259,7 +336,7 @@ public class PlayerMovementCC : MonoBehaviourPun
         {
             if (numberOfKeyPressed == 1)
 
-                characterAnimator.SetBool("Run", false);
+                characterAnimator.SetBool(Run, false);
 
             if (numberOfKeyPressed != 0)
             {
@@ -267,6 +344,8 @@ public class PlayerMovementCC : MonoBehaviourPun
             }
 
         }
+
+
 
         if (isFrozen == true)
         {
@@ -404,11 +483,13 @@ public class PlayerMovementCC : MonoBehaviourPun
 
         //GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex] = true;
         canDive = false;
-
+        cooldown = true;
         float startTime = Time.time; // need to remember this to know how long to dash
         while (Time.time < startTime + _initialDashTime)
         {
-            transform.Translate(transform.forward * (diveSpeed * Time.deltaTime), Space.World);
+
+            if (playerDash.stopDive == false)
+                transform.Translate(transform.forward * (diveSpeed * Time.deltaTime), Space.World);
             // or controller.Move(...), dunno about that script
             yield return null; // this will make Unity stop here and continue next frame
         }
@@ -419,6 +500,7 @@ public class PlayerMovementCC : MonoBehaviourPun
 
         //GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex] = false;
         canDive = true;
+        cooldown = false;
 
 
 
@@ -431,6 +513,11 @@ public class PlayerMovementCC : MonoBehaviourPun
         return (Mathf.Sqrt((jumpHeight * m_jumpPowerMultiplier) * -2 * (gravity * gravityMulitplier)));
     }
 
+    public void EndSpeedBoost()
+    {
+        speedBoost = false;
+    }
+
     public void SlowDown()
     {
         isGrabbed = true;
@@ -441,6 +528,19 @@ public class PlayerMovementCC : MonoBehaviourPun
         isGrabbed = false;
 
 
+    }
+
+    Vector3 GetGrabbedPlayerLocation()
+    {
+        foreach (GameObject player in GameManager.networkLevelManager.playersJoined)
+        {
+            if (player.GetComponent<PlayerMovementCC>().isGrabbed == true)
+            {
+                return player.transform.position;
+            }
+        }
+
+        return transform.position;
     }
 
 }

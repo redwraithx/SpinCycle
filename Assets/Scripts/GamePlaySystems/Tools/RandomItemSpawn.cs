@@ -158,7 +158,7 @@ public class RandomItemSpawn : MonoBehaviourPun, IPunObservable
 
     public void RandomNumber()
     {
-        randomNum = Random.Range(0, allSpawnableObjects.Length - 1);
+        randomNum = Random.Range(0, allSpawnableObjects.Length);
         if (allSpawnableObjects.Length > 0)
         {
             spawnObjectGameObject = allSpawnableObjects[randomNum];

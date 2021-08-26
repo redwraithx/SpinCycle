@@ -113,7 +113,6 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
             
             if (Cursor.lockState == CursorLockMode.Locked || Cursor.visible == false)
             {
-                Debug.Log("unlock and show cursor Func");
                 
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
@@ -122,35 +121,35 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
             if (!userNameField)
             {
-                Debug.Log("get userNameField Ref");
+
                 
                 userNameField = LocalLobbyManager.localInstance.userNameField;
             }
     
             if (!roomNameField)
             {
-                Debug.Log("get roomNameField Ref");
+
                 
                 roomNameField = LocalLobbyManager.localInstance.roomNameField;
             }
     
             if (!mapValue)
             {
-                Debug.Log("get mapValue Ref");
+
                 
                 mapValue = LocalLobbyManager.localInstance.mapValueText;
             }
     
             if (!modeValue)
             {
-                Debug.Log("get modeValue Ref");
+
                 
                 modeValue = LocalLobbyManager.localInstance.modeValueText;
             }
     
             if (!maxPlayersDropDown)
             {
-                Debug.Log("Get maxPlayersDropDown Ref");
+
                 
                 maxPlayersDropDown = LocalLobbyManager.localInstance.maxPlayersDropDown;
             }
@@ -158,7 +157,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
             
             if (!loadingLobby)
             {
-                Debug.Log("get loadingLobby Ref");
+
                 
                 loadingLobby = LocalLobbyManager.localInstance.loadingLobbyUI;
     
@@ -167,7 +166,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
             if (!tabMain)
             {
-                Debug.Log("get tabMain Ref");
+
                 
                 tabMain = LocalLobbyManager.localInstance.tabMainUI;
                 
@@ -176,7 +175,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
             if (!tabRooms)
             {
-                Debug.Log("get tabRooms Ref");
+
                 
                 tabRooms = LocalLobbyManager.localInstance.tabRoomsUI;
                 
@@ -185,17 +184,16 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
             if (!tabCreate)
             {
-                Debug.Log("get tabCreate Ref");
+
                 
                 tabCreate = LocalLobbyManager.localInstance.tabCreateUI;
                 
                 tabCreate.SetActive(false);
             }
     
-            Debug.Log($"references found <> loadingLobby: {loadingLobby}, tabMain: {tabMain}, tabRooms: {tabRooms}, tabCreate: {tabCreate}");
             if (loadingLobby && tabMain && tabCreate && tabRooms)
             {
-                Debug.Log("got all references for network lobby");
+
                 
                 
                 
@@ -223,9 +221,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
     public override void OnConnectedToMaster()
     {
-        Debug.Log("Connected to master server!");
         
-        //PhotonNetwork.JoinLobby();
         
         JoinLobby();
         
@@ -243,7 +239,6 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     {
         base.OnJoinedLobby();
         
-        Debug.Log($"you have joined: {PhotonNetwork.CurrentLobby.Name}");
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
@@ -348,7 +343,6 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
     private void ResetTabsForLobby()
     {
-        Debug.Log("Reset Tabs For Lobby Func");
         
         TabCloseAll();
         
@@ -357,21 +351,18 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
     private void ShowLoadingLobby()
     {
-        Debug.Log("Show Loading Lobby Func");
         
         loadingLobby.SetActive(true);
     }
 
     private void HideLoadingLobby()
     {
-        Debug.Log("Hide Loading Lobby Func");
         
         loadingLobby.SetActive(false);
     }
     
     private void RemoveOldLobbyReferences()
     {
-        Debug.Log("network lobby reference links are set to null");
 
 
         userNameField = null;
@@ -397,7 +388,6 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
 
     private void TabCloseAll()
     {
-        Debug.Log("disabling lobby tabs: Main, rooms, create");
         
         tabMain.SetActive(false);
         tabRooms.SetActive(false);
@@ -409,49 +399,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         StopCoroutine(End(0.5f));
     }
 
-    // public void TabOpenMain()
-    // {
-    //     TabCloseAll();
-    //     tabMain.SetActive(true);
-    // }
 
-    // public void TabOpenRooms()
-    // {
-    //     TabCloseAll();
-    //     tabRooms.SetActive(true);
-    // }
-
-    // public void TabOpenCreate()
-    // {
-    //     TabCloseAll();
-    //     tabCreate.SetActive(true);
-    //
-    //     roomNameField.text = "";
-    //
-    //     currentMap = 0;
-    //     mapValue.text = "Map: " + maps[currentMap].name.ToUpper();
-    //
-    //     GameSettings.GameMode = (GameModeSelections) 0;
-    //     modeValue.text = "Mode: " + System.Enum.GetName(typeof(GameModeSelections), (GameModeSelections) 0);
-    //
-    //     // GOING TO CHANGE THIS TO A DROP DOWN MENU I THINK
-    //     //maxPlayersSlider.value = maxPlayersSlider.maxValue;
-    //     
-    //     // Players selection
-    //     // int 0 = 1 vs 1
-    //     // int 1 = 2 vs 2
-    //     int playersSelection = maxPlayersDropDown.value;
-    //
-    //     if (playersSelection == 0)
-    //     {
-    //         Debug.Log("2 players selected");
-    //         
-    //         
-    //     }
-    //     // else
-    //     //     Debug.Log("4");
-    //     
-    // }
 
     private void ClearRoomList()
     {
@@ -491,17 +439,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         roomList = list;
         ClearRoomList();
         
-        
-        // // verify list is valid
-        // foreach (RoomInfo roomInfo in roomList)
-        // {
-        //     if (roomInfo.PlayerCount == 0)
-        //     {
-        //         Debug.Log("removing dead room");
-        //         
-        //         roomList.Remove(roomInfo);
-        //     }
-        // }
+       
         
 
         Transform content = tabRooms?.transform.Find("Scroll View/Viewport/Content");
@@ -550,25 +488,21 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
 
     public void JoinRoom(Transform _button)
     {
-        Debug.Log("Join Room Func Entered");
         
         //string _roomName = _button.Find("RoomName").GetComponent<TMP_Text>().text;
         string _roomName = _button.GetComponent<RoomButtonInfo>().roomName.text;
         
-        Debug.Log("join room name: " + _roomName);
         
         VerifyUserName();
 
         RoomInfo roomInfo = null;
         Transform buttonParent = _button.parent;
 
-        Debug.Log("button child count: " + buttonParent.childCount);
         
         for (int i = 0; i < buttonParent.childCount; i++)
         {
             if (buttonParent.GetChild(i).Equals(_button))
             {
-                Debug.Log("roomInfo name: " + roomList[i].Name + ", found");
                 
                 roomInfo = roomList[i];
                 break;
@@ -582,30 +516,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         }
     }
 
-    // public void LeaveRoom(GameObject gameRoomGameObject)
-    // {
-    //     if (PhotonNetwork.CurrentRoom == null)
-    //         return;
-    //     
-    //     // need to add functionality here to leave a room you maybe in or hosting
-    //     Debug.Log("Connection status: " + PhotonNetwork.CurrentRoom);
-    //     
-    //     PhotonNetwork.LeaveRoom();
-    //     
-    //     Destroy(gameRoomGameObject);
-    // }
-    //
-    // public void LeaveRoomList()
-    // {
-    //     Debug.Log("leave room list func entered");
-    //     
-    //     if (PhotonNetwork.CurrentRoom == null)
-    //         return;
-    //
-    //     Debug.Log("leaving room now");
-    //     
-    //     PhotonNetwork.LeaveRoom();
-    // }
+  
 
     public void LoadGameSettings(RoomInfo roomInfo)
     {
@@ -621,7 +532,6 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
 
         if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
         {
-            Debug.Log("starting game");
             
             DataClass.SaveProfile(myProfile);
             

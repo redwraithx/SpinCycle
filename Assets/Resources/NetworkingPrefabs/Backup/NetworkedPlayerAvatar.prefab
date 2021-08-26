@@ -116,6 +116,7 @@ MonoBehaviour:
   cam: {fileID: 6848871426275572185}
   crosshair: {fileID: 1366710518620943385}
   player: {fileID: 6848871425079053767}
+  selectedObject: {fileID: 0}
 --- !u!1 &379402503921353135
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1189,8 @@ MonoBehaviour:
   cameraBrainGO: {fileID: 3145555859428371615}
   cameraBrainShouldGO: {fileID: 0}
   camGO: {fileID: 6848871426275572189}
+  introCam: {fileID: 0}
+  dynamicCrossHair: {fileID: 0}
   canvasGO: {fileID: 0}
 --- !u!114 &6667616382123124497
 MonoBehaviour:
@@ -1202,6 +1205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 0}
+  destroyGun: {fileID: 0}
   itemType: 0
   projectiles:
   - {fileID: -6487827619003692647, guid: ac266ad8da2d7cd4a891d49134b67487, type: 3}
@@ -1248,6 +1252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a2e62ad87a8d34eb83785d020e8bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterAnimator: {fileID: 0}
   grabPoint: {fileID: 2536938193671778017}
   target: {fileID: 0}
   weapon: {fileID: 0}
@@ -1274,13 +1279,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c0aa986a63eb34a823f44def99e2d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfKeyPressed: 0
+  cinemachineCamera: {fileID: 0}
+  shoulderCam: {fileID: 0}
+  characterAnimator: {fileID: 0}
   controller: {fileID: 6848871425079053764}
   grabHold: {fileID: 0}
   Xspeed: 12
   Zspeed: 10
-  slowedXspeed: 4
-  slowedZspeed: 3
+  grabEscape: 10
+  grabEscapeValue: {fileID: 0}
+  tapToEscape: {fileID: 0}
+  speedBoost: 0
   isGrabbed: 0
+  isGrabbing: 0
+  enemyGrab: {x: 0, y: 0, z: 0}
   gravity: -9.8
   gravityMulitplier: 2
   jumpHeight: 3
@@ -1299,9 +1312,12 @@ MonoBehaviour:
     m_Bits: 256
   rotationSpeed: 30
   isGrounded: 0
+  canDive: 1
+  cooldown: 0
   diveReuseDelayTime: 1
   isFrozen: 0
   frozenTimer: 10
+  playerDash: {fileID: 0}
 --- !u!114 &1882224007562441043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1314,8 +1330,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f47a7a588608e64790713ff67b883e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPointText: {fileID: 5674233447180277663}
+  _photonView: {fileID: 0}
+  playerPointText: {fileID: 0}
   points: 1000
+  Timer: {fileID: 0}
 --- !u!143 &6848871425079053764
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1365,13 +1383,14 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 1
+  observableSearch: 2
   ObservedComponents:
+  - {fileID: 1882224007562441043}
   - {fileID: 7267682287793758200}
   - {fileID: 6848871425079053766}
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &7267682287793758200
