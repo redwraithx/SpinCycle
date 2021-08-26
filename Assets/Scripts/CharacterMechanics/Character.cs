@@ -85,6 +85,7 @@ public class Character : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             moveDirection.y = jumpSpeed;
+            
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
