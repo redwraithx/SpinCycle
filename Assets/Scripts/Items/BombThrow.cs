@@ -26,8 +26,9 @@ public class BombThrow : MonoBehaviourPun, IBombThrow
 
     public void Throw()
     {
-        
 
+        AudioClip throwBombSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/Bombs/Soapbomb/584170__unfa__explosion-02");
+        GameManager.audioManager.PlaySfx(throwBombSound);
         GameObject bomb = this.gameObject;
 
         Vector3 direction = facingDirection;
