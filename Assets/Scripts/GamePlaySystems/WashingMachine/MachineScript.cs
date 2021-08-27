@@ -251,8 +251,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.WasherBoost)
             {
-                BoostMachine();
-                PhotonNetwork.Destroy(other.gameObject);
+                if (isBoosted == false)
+                {
+                    BoostMachine();
+                    PhotonNetwork.Destroy(other.gameObject);
+                }
 
 
 
