@@ -30,11 +30,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public bool isEnabled = false;
     public bool isBoosted = false;
     public bool isRuined = false;
-    public Slider sliderTime;
+    //public Slider sliderTime;
     public LaundryType laundryType;
     public MachineType machineType;
     public ParticleSystem part;
-    public TMP_Text pointsAdded;
+    //public TMP_Text pointsAdded;
     
     public ItemType SpawnFinishedProductItemType = ItemType.ClothingWet;
 
@@ -48,6 +48,14 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject loadRuinerMachinePart;
     public GameObject boostMachinePart;
 
+    public Animator animator;
+    public float percent;
+    public TMP_Text percentCounter;
+
+    public Sprite disabledSprite;
+    public Sprite normalSprite;
+    public GameObject theSprite;
+
     private void Awake()
     {
         if (!_photonView)
@@ -60,8 +68,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Start()
     {
+        animator.speed = 0.25f;
         cycleLength = 15;
-        sliderTime.maxValue = cycleLength;
+        //sliderTime.maxValue = cycleLength;
 
         if (isSabotaged == true)
         {
@@ -80,6 +89,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             if (laundryTimer > 0)
             {
                 laundryTimer -= Time.deltaTime;
+                percent = laundryTimer/cycleLength;
+                percentCounter.text = (100 - Mathf.Round(percent * 100) + "%");
+
                 if (isRuined)
                 {
                     ruinTimer += Time.deltaTime;
@@ -88,16 +100,28 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             if (laundryTimer <= 0 && isEnabled == true)
             {
                 SpawnFinishedProduct(laundryType);
+                animator.ResetTrigger("Go");
+                animator.SetTrigger("Stop");
                 isEnabled = false;
             }
         }
 
 
-        sliderTime.value = laundryTimer;
+        //sliderTime.value = laundryTimer;
 
         if(isSabotaged == true && part.isPlaying == false)
         {
             part.Play();
+        }
+
+        if (isSabotaged == true && theSprite.GetComponent<Image>().sprite != disabledSprite)
+        {
+            theSprite.GetComponent<Image>().sprite = disabledSprite;
+        }
+
+        if (isSabotaged == false && theSprite.GetComponent<Image>().sprite == disabledSprite)
+        {
+            theSprite.GetComponent<Image>().sprite = normalSprite;
         }
 
         if (isSabotaged == false && part.isPlaying == true)
@@ -120,7 +144,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             
             newGO.GetComponent<ItemTypeForItem>().itemType = SpawnFinishedProductItemType;
             float ruinedPrice = (10 * ruinTimer);
-            pointsAdded.text = (((int)initialPrice + (int)priceAddition) - (int)ruinedPrice).ToString() + "!";
             newGO.GetComponent<Item>().Price += ((int)initialPrice + (int)priceAddition) - (int)ruinedPrice;
             
         }
@@ -134,9 +157,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     public void ProcessItems()
     {
-
+        percentCounter.text = "0%";
+        animator.ResetTrigger("Stop");
+        animator.SetTrigger("Go");
         ruinTimer = 0;
-        sliderTime.maxValue = cycleLength;
+        //sliderTime.maxValue = cycleLength;
         laundryTimer = cycleLength;
         isEnabled = true;
     }
@@ -223,6 +248,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public void SabotageMachine()
     {
         isSabotaged = true;
+        animator.ResetTrigger("Go");
+        animator.SetTrigger("Stop");
         part.Play();
     }
     public void FixMachine()

@@ -113,6 +113,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
             
             if (Cursor.lockState == CursorLockMode.Locked || Cursor.visible == false)
             {
+                
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
@@ -120,32 +121,44 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
             if (!userNameField)
             {
+
+                
                 userNameField = LocalLobbyManager.localInstance.userNameField;
             }
     
             if (!roomNameField)
             {
+
+                
                 roomNameField = LocalLobbyManager.localInstance.roomNameField;
             }
     
             if (!mapValue)
             {
+
+                
                 mapValue = LocalLobbyManager.localInstance.mapValueText;
             }
     
             if (!modeValue)
             {
+
+                
                 modeValue = LocalLobbyManager.localInstance.modeValueText;
             }
     
             if (!maxPlayersDropDown)
             {
+
+                
                 maxPlayersDropDown = LocalLobbyManager.localInstance.maxPlayersDropDown;
             }
             
             
             if (!loadingLobby)
             {
+
+                
                 loadingLobby = LocalLobbyManager.localInstance.loadingLobbyUI;
     
                 HideLoadingLobby();
@@ -153,6 +166,8 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
             if (!tabMain)
             {
+
+                
                 tabMain = LocalLobbyManager.localInstance.tabMainUI;
                 
                 tabMain.SetActive(false);
@@ -160,6 +175,8 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
             if (!tabRooms)
             {
+
+                
                 tabRooms = LocalLobbyManager.localInstance.tabRoomsUI;
                 
                 tabRooms.SetActive(false);
@@ -167,6 +184,8 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
             if (!tabCreate)
             {
+
+                
                 tabCreate = LocalLobbyManager.localInstance.tabCreateUI;
                 
                 tabCreate.SetActive(false);
@@ -174,6 +193,10 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
             if (loadingLobby && tabMain && tabCreate && tabRooms)
             {
+
+                
+                
+                
                 hasLobbyLoaded = true;
                 
                 ResetTabsForLobby();
@@ -198,6 +221,8 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
     public override void OnConnectedToMaster()
     {
+        
+        
         JoinLobby();
         
         base.OnConnectedToMaster();
@@ -218,9 +243,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
-        Debug.Log("failed to join a random room, but this is disabled");
-        
-        //Create();
+        Create();
 
         base.OnJoinRandomFailed(returnCode, message);
     }
@@ -254,42 +277,42 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom();
     }
 
-    // public void Create()
-    // {
-    //     // is the name empty or have less then 3 characters?
-    //     if (string.IsNullOrEmpty(roomNameField.text) || roomNameField.text.Length < 3)
-    //         return;
-    //     
-    //     RoomOptions options = new RoomOptions();
-    //
-    //     // Assign max players here
-    //     int currentGamesMaxPlayers = 1;
-    //     int playersSelection = maxPlayersDropDown.value;
-    //     
-    //     if (playersSelection == 0)
-    //     {
-    //         currentGamesMaxPlayers = 2;
-    //     }
-    //     else// if (playersSelection == 1)
-    //     {
-    //         currentGamesMaxPlayers = 1;
-    //     }
-    //     
-    //     options.MaxPlayers = (byte) currentGamesMaxPlayers;
-    //
-    //     options.CustomRoomPropertiesForLobby = new string[]
-    //     {
-    //         "map", 
-    //         "mode"
-    //     };
-    //
-    //     ExitGames.Client.Photon.Hashtable properties = new ExitGames.Client.Photon.Hashtable();
-    //     properties.Add("map", currentMap);
-    //     properties.Add("mode", (int) GameSettings.GameMode);
-    //     options.CustomRoomProperties = properties;
-    //
-    //     PhotonNetwork.CreateRoom(roomNameField.text, options);
-    // }
+    public void Create()
+    {
+        // is the name empty or have less then 3 characters?
+        if (string.IsNullOrEmpty(roomNameField.text) || roomNameField.text.Length < 3)
+            return;
+        
+        RoomOptions options = new RoomOptions();
+    
+        // Assign max players here
+        int currentGamesMaxPlayers = 1;
+        int playersSelection = maxPlayersDropDown.value;
+        
+        if (playersSelection == 0)
+        {
+            currentGamesMaxPlayers = 2;
+        }
+        else// if (playersSelection == 1)
+        {
+            currentGamesMaxPlayers = 1;
+        }
+        
+        options.MaxPlayers = (byte) currentGamesMaxPlayers;
+    
+        options.CustomRoomPropertiesForLobby = new string[]
+        {
+            "map", 
+            "mode"
+        };
+    
+        ExitGames.Client.Photon.Hashtable properties = new ExitGames.Client.Photon.Hashtable();
+        properties.Add("map", currentMap);
+        properties.Add("mode", (int) GameSettings.GameMode);
+        options.CustomRoomProperties = properties;
+    
+        PhotonNetwork.CreateRoom(roomNameField.text, options);
+    }
 
     // public void ChangeMap()
     // {
@@ -320,6 +343,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
     private void ResetTabsForLobby()
     {
+        
         TabCloseAll();
         
         ShowLoadingLobby();
@@ -327,16 +351,20 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
     private void ShowLoadingLobby()
     {
+        
         loadingLobby.SetActive(true);
     }
 
     private void HideLoadingLobby()
     {
+        
         loadingLobby.SetActive(false);
     }
     
     private void RemoveOldLobbyReferences()
     {
+
+
         userNameField = null;
         roomNameField = null;
         mapValue = null;
@@ -360,6 +388,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
 
     private void TabCloseAll()
     {
+        
         tabMain.SetActive(false);
         tabRooms.SetActive(false);
         tabCreate.SetActive(false);
@@ -420,15 +449,13 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         
         foreach (RoomInfo room in roomList)
         {
-            Debug.Log("listing current room in list: " + room.Name);
-            
             if (room.RemovedFromList == false)
             {
-                Debug.Log($" <> room [ {room.Name} ] is open");
+                Debug.Log($"room [ {room.Name} ] is open");
             }
             else
             {
-                Debug.Log($" <> room [ {room.Name} ] is closed");
+                Debug.Log($"room [ {room.Name} ] is closed");
 
                 continue;
             }

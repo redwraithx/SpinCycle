@@ -116,14 +116,6 @@ public class PlayerMovementCC : MonoBehaviourPun
             _photonView = GetComponent<PhotonView>();
         
         
-        // if (!_photonView.IsMine)
-        // {
-        //     var cam = gameObject.GetComponentInChildren<Camera>();
-        //     cam.gameObject.SetActive(false);
-        //
-        //     var disableCamera = GetComponentInChildren<CinemachineFreeLook>();
-        //     disableCamera.gameObject.SetActive(false);
-        // }
 
         GameManager.Instance.Player1 = this.gameObject;
 
@@ -135,7 +127,6 @@ public class PlayerMovementCC : MonoBehaviourPun
     }
 
 
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -145,8 +136,6 @@ public class PlayerMovementCC : MonoBehaviourPun
         slowedZspeed = Zspeed * 0.5f;
         speedBoostXSpeed = Xspeed * 1.5f;
         speedBoostZSpeed = Zspeed * 1.5f;
-        Debug.Log($"player dive inde: {playerDiveIndex}");
-        //GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex] = false;
         canDive = true;
 
         if (diveReuseDelayTime < 1f)
@@ -230,19 +219,6 @@ public class PlayerMovementCC : MonoBehaviourPun
             }
 
 
-            /*Vector3 movement;
-            movement = cinemachineCamera.transform.right * Input.GetAxis("Horizontal") * (Xspeed * m_moveSpeedMultiplier) * Time.deltaTime;
-            movement += cinemachineCamera.transform.forward * Input.GetAxis("Vertical") * (Zspeed * m_moveSpeedMultiplier) * Time.deltaTime;
-            movement.y = 0.0f;*/
-
-            
-
-
-            //rotate based on camera
-            /*Quaternion lookRotation = cinemachineCamera.transform.rotation;
-            lookRotation.x = 0f;
-            lookRotation.z = 0f;         
-            transform.rotation = lookRotation;*/
 
 
             Vector3 move = cinemachineCamera.transform.forward * moveZ;
@@ -357,26 +333,15 @@ public class PlayerMovementCC : MonoBehaviourPun
         }
 
 
-        //Vector3 move = transform.right * moveX + transform.forward * moveZ;
+
 
         Vector3 newVec = Vector3.zero;
         
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Debug.Log("diving maybe");
-            
-            
-            //Diving(true);
-
-            //if(!GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex])
             if(canDive)
                 StartCoroutine(DiveCoroutine());
-
-            //Input a way to let go of the player when diving.
-            //grabHold.isBeingGrabbed = false;
-            //grabHold.isHoldingOtherPlayer = false;
-
-            //GetComponent<GrabAndHold>().BeingReleased();
             SpeedUp();
 
         }
@@ -450,29 +415,29 @@ public class PlayerMovementCC : MonoBehaviourPun
     }
 
 
-    private void Diving(bool canDive)
-    {
-        if (!canDive || !isGrounded)
-            return;
+    //private void Diving(bool canDive)
+    //{
+    //    if (!canDive || !isGrounded)
+    //        return;
         
-        //Vector3 localForward = transform.worldToLocalMatrix.MultiplyVector(transform.forward);
+    //    //Vector3 localForward = transform.worldToLocalMatrix.MultiplyVector(transform.forward);
         
-        //rb.AddForce(transform.forward * (diveMultiplier * diveSpeed), ForceMode.Force);
+    //    //rb.AddForce(transform.forward * (diveMultiplier * diveSpeed), ForceMode.Force);
 
-        //controller.Move(localForward * (diveSpeed * diveMultiplier * Time.deltaTime));
+    //    //controller.Move(localForward * (diveSpeed * diveMultiplier * Time.deltaTime));
 
-        controller.enabled = false;
-        Debug.Log("controller off");
+    //    controller.enabled = false;
+    //    Debug.Log("controller off");
         
-        //rb.AddForce(playerModelTransform.up * (diveSpeed * diveMultiplier), ForceMode.Force);
-        transform.Translate(transform.forward * (diveSpeed * diveMultiplier), Space.World);
+    //    //rb.AddForce(playerModelTransform.up * (diveSpeed * diveMultiplier), ForceMode.Force);
+    //    transform.Translate(transform.forward * (diveSpeed * diveMultiplier), Space.World);
         
-        controller.enabled = true;
-        Debug.Log("controller on");
+    //    controller.enabled = true;
+    //    Debug.Log("controller on");
 
         
 
-    }
+    //}
     
 
     private IEnumerator DiveCoroutine()
