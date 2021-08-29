@@ -10,6 +10,7 @@ public class VFX_IceBullet_DissolveIn : MonoBehaviour
     [SerializeField] GameObject snowballOuterVFX;
     [SerializeField] GameObject iceTrailVFX;
     [SerializeField] GameObject chargeVFX;
+    [SerializeField] GameObject collideVFX;
 
     //Materials
     private Material snowballMaterial;
@@ -48,7 +49,7 @@ public class VFX_IceBullet_DissolveIn : MonoBehaviour
             DissolveIn();
         }
 
-        //Turns on effect trail for icechunk when the dissolve is completed
+        //Turns on effect trail for snowball when the dissolve is completed
         if(fade >= 1)
         {
             iceTrailVFX.SetActive(true);
@@ -81,5 +82,20 @@ public class VFX_IceBullet_DissolveIn : MonoBehaviour
     float GetTime()
     {
         return Time.deltaTime;
+    }
+
+    public void InsantiateCollideVFX(Collision collision)
+    {
+        Debug.Log("SNOWBALL HIT");
+        ContactPoint contact = collision.GetContact(0);
+        Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
+        Vector3 position = contact.point;
+        Instantiate(collideVFX, position, rotation);
+        Destroy(gameObject);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+
     }
 }
