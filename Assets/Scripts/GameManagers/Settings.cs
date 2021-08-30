@@ -161,4 +161,6 @@ public class Settings : MonoBehaviour
         AudioClip runningSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/WalkingSound/laser");
         GameManager.audioManager.PlaySettingSfx(runningSound);
     }
+
+    public void ResetPlayerPrefs() => PlayerPrefs.DeleteAll();
 }

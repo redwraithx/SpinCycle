@@ -543,7 +543,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
     
     // this is not tested
-    private void EndGame()
+    private void EndGame() // maybe deleting soon
     {
         // set state of game
         // state  = GameState.Ending;

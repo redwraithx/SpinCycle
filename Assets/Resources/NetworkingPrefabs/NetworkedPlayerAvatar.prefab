@@ -1730,7 +1730,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6071313163213872554}
-  m_LocalRotation: {x: -0.112463884, y: 0.06381741, z: -0.000107212465, w: 0.9916044}
+  m_LocalRotation: {x: -0.112463884, y: 0.063817374, z: -0.000107212465, w: 0.9916044}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1939,7 +1939,7 @@ MonoBehaviour:
   projectileSpeed: 50
   ammo: 0
   projectileSpawnPoint: {fileID: 0}
-  projectileForce: 50
+  projectileForce: 1
   mouseSensitivity: 100
   yRotation: 0
   gunRotation: {x: 0, y: 0, z: 0}
@@ -2448,7 +2448,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
+  sharedProfile: {fileID: 11400000, guid: a9411b6dbc0c485468bea2217e4fd416, type: 2}
 --- !u!1 &6879573002328560541
 GameObject:
   m_ObjectHideFlags: 0
