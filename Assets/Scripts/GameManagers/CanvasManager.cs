@@ -69,25 +69,36 @@ public class CanvasManager : MonoBehaviour
             // {
             //     Debug.Log("did not load player profile as we are not on the main menu scene.");
             //     
-                 startButton.onClick.AddListener(GameManager.Instance.StartGame);
+            
+            startButton.onClick.AddListener(GameManager.Instance.StartGame);
+            
+
             // }
         }
 
         if (quitButton)
         {
             quitButton.onClick.AddListener(GameManager.Instance.QuitGame);
+           
+
         }
         if (backToMainButton)
         {
             backToMainButton.onClick.AddListener(GameManager.Instance.ToMain);
+            
+
         }
         if (settingsButton)
         {
             settingsButton.onClick.AddListener(GameManager.Instance.ToSettings);
+            
+
         }
         if (creditsButton)
         {
             creditsButton.onClick.AddListener(GameManager.Instance.ToCredits);
+            
+
         }
     }
 
@@ -111,6 +122,7 @@ public class CanvasManager : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadSceneAsync(MainMenuSceneIndex);
+
     }
 
     public void ExitGame()

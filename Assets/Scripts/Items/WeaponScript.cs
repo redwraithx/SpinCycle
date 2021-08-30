@@ -96,7 +96,8 @@ public class WeaponScript : MonoBehaviourPun
             
             // Shoot bullet
             temp.GetComponent<Rigidbody>().AddForce(projectileSpawnPoint.forward * projectileSpeed, ForceMode.Impulse);
-
+            AudioClip freezeGunSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/FreezeGun/explosion");
+            GameManager.audioManager.PlaySfx(freezeGunSound);
             //gameObject.transform.SetParent(null);
 
             //PhotonNetwork.Destroy(gameObject);

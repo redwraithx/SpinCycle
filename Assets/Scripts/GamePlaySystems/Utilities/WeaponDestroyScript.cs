@@ -23,9 +23,17 @@ public class WeaponDestroyScript : MonoBehaviourPun
             
             Debug.Log("Destroyed Gun");
 
-            if (GetComponent<PhotonView>().Owner.IsMasterClient)
+            if (photonView.Owner.IsMasterClient == false)
             {
-                StartCoroutine(DelayedDestroy(delayedTime));
+                GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient);
+            }
+
+            if (photonView.Owner.IsMasterClient == true)
+            {
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    StartCoroutine(DelayedDestroy(delayedTime));
+                }
             }
                 
         }

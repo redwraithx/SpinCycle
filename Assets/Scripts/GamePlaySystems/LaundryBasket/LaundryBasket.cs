@@ -18,27 +18,27 @@ public class LaundryBasket : MonoBehaviourPun
     public string pointsToText;
     
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Item"))
-        {
-            if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
-            {
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Item"))
+    //    {
+    //        if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
+    //        {
                 
-                bool updatedPlayerPoints = UpdatePlayerPoints(other.gameObject);
+    //            bool updatedPlayerPoints = UpdatePlayerPoints(other.gameObject);
                 
-                if(updatedPlayerPoints)
-                    Debug.Log("Players Points where updated");
-                else
-                    Debug.Log("Players Points were not found to be updated.");
+    //            if(updatedPlayerPoints)
+    //                Debug.Log("Players Points where updated");
+    //            else
+    //                Debug.Log("Players Points were not found to be updated.");
                 
                 
-                playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
-                //other.gameObject.GetComponent<Item>().DisableObject();
-                PhotonNetwork.Destroy(other.gameObject);
-            }
-        }
-    }
+    //            playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
+    //            //other.gameObject.GetComponent<Item>().DisableObject();
+    //            PhotonNetwork.Destroy(other.gameObject);
+    //        }
+    //    }
+    //}
     
     // below is the function to click items in which is needed for when the actual models come in place, above is dropping them in
     public void AddClothing(GameObject other)

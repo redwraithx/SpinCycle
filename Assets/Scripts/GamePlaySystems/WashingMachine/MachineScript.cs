@@ -48,13 +48,20 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject loadRuinerMachinePart;
     public GameObject boostMachinePart;
 
-    public Animator animator;
+    //public Animator animator;
     public float percent;
     public TMP_Text percentCounter;
 
     public Sprite disabledSprite;
     public Sprite normalSprite;
+    public Sprite barNormal;
+    public Sprite barDisabled;
     public GameObject theSprite;
+    public Image fillBarImage;
+
+    public SpriteRenderer spinner;
+    public Sprite goodSpinner;
+    public Sprite badSpinner;
 
     private void Awake()
     {
@@ -68,8 +75,21 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Start()
     {
-        animator.speed = 0.25f;
-        cycleLength = 15;
+        //animator.speed = 0.25f;
+
+        if(MachineType.washer == this.machineType)
+        {
+            cycleLength = 20;
+
+        }
+        else if (MachineType.dryer == this.machineType)
+        {
+            cycleLength = 25;
+        }
+        else if (MachineType.folder == this.machineType)
+        {
+            cycleLength = 15;
+        }
         //sliderTime.maxValue = cycleLength;
 
         if (isSabotaged == true)
@@ -91,6 +111,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 laundryTimer -= Time.deltaTime;
                 percent = laundryTimer/cycleLength;
                 percentCounter.text = (100 - Mathf.Round(percent * 100) + "%");
+                spinner.transform.Rotate(0, 0, 0.1f);
+                fillBarImage.fillAmount = 1 - percent;
 
                 if (isRuined)
                 {
@@ -99,9 +121,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             }
             if (laundryTimer <= 0 && isEnabled == true)
             {
+                percentCounter.text = ("0%");
                 SpawnFinishedProduct(laundryType);
-                animator.ResetTrigger("Go");
-                animator.SetTrigger("Stop");
+                fillBarImage.fillAmount = 0;
                 isEnabled = false;
             }
         }
@@ -127,6 +149,27 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         if (isSabotaged == false && part.isPlaying == true)
         {
             part.Stop();
+        }
+
+        if (isSabotaged == true && fillBarImage.GetComponent<Image>().sprite != barDisabled)
+        {
+            fillBarImage.GetComponent<Image>().sprite = barDisabled;
+        }
+
+        if (isSabotaged == false && fillBarImage.GetComponent<Image>().sprite == barDisabled)
+        {
+            fillBarImage.GetComponent<Image>().sprite = barNormal;
+        }
+
+
+        if (isSabotaged == true && spinner.GetComponent<SpriteRenderer>().sprite != badSpinner)
+        {
+            spinner.GetComponent<SpriteRenderer>().sprite = badSpinner;
+        }
+
+        if (isSabotaged == false && spinner.GetComponent<SpriteRenderer>().sprite == badSpinner)
+        {
+            spinner.GetComponent<SpriteRenderer>().sprite = goodSpinner;
         }
     }
 
@@ -158,12 +201,34 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public void ProcessItems()
     {
         percentCounter.text = "0%";
-        animator.ResetTrigger("Stop");
-        animator.SetTrigger("Go");
+        //animator.ResetTrigger("Stop");
+        //animator.SetTrigger("Go");
         ruinTimer = 0;
         //sliderTime.maxValue = cycleLength;
         laundryTimer = cycleLength;
         isEnabled = true;
+
+
+        if (MachineType.washer == this.machineType)
+        {
+            AudioClip washingSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Washer/Washer_Machine_Special_Sound_C_10-SEC");
+            GameManager.audioManager.PlaySfx(washingSound);
+
+            /*var sound = GetComponent<AudioSource>();
+            sound.loop = true;
+            sound.clip = washingSound;
+            sound.Play();*/
+        }
+        else if (MachineType.dryer == this.machineType)
+        {
+            AudioClip dryingSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Dryer/Dryer_Machine_Special_Sound_B_10-SEC");
+            GameManager.audioManager.PlaySfx(dryingSound);
+        }
+        else if (MachineType.folder == this.machineType)
+        {
+            AudioClip foldingSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Folder/Ambient_Noises_A_10-SEC");
+            GameManager.audioManager.PlaySfx(foldingSound);
+        }
     }
 
 
@@ -186,8 +251,12 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.WasherBoost)
             {
-                BoostMachine();
-                PhotonNetwork.Destroy(other.gameObject);
+                if (isBoosted == false)
+                {
+                    BoostMachine();
+                    PhotonNetwork.Destroy(other.gameObject);
+                }
+
 
 
             }
@@ -210,6 +279,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 {
                     if (isSabotaged == false)
                     {
+                        
+                       
+
                         initialPrice = other.GetComponent<Item>().Price;
                         ProcessItems();
                         other.transform.parent = null;
@@ -248,15 +320,21 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public void SabotageMachine()
     {
         isSabotaged = true;
-        animator.ResetTrigger("Go");
-        animator.SetTrigger("Stop");
+        //animator.ResetTrigger("Go");
+        //animator.SetTrigger("Stop");
         part.Play();
     }
     public void FixMachine()
     {
+        //animator.ResetTrigger("Stop");
         isSabotaged = false;
         sabotageTimer = 0;
         part.Stop();
+
+        if (isEnabled)
+        {
+            //animator.SetTrigger("Go");
+        }
     }
 
     public void BoostMachine()
