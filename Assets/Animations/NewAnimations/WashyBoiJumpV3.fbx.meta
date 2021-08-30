@@ -1,0 +1,1071 @@
+fileFormatVersion: 2
+guid: 9b9c026b9b155f649a5efd14a376d3ef
+ModelImporter:
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      74: 5539831331247536789
+    second: Jump
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: WashyBoi_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_HeadTip
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_Jaw
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WashyBoi_Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: WashyBoi_Rig_V6_04082021(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_Geo
+      parentName: WashyBoi_Rig_V6_04082021(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eyes_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Head_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Neck_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Waiste_Bendy_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Waiste_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: HipPlate_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Toe_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Foot_Break_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Heel_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Ankle_JNT_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Shin_JNT_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Shin_Casing_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Knee_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Thigh_Casing_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Thigh_JNT_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Hip_BallJNT_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Shoulder_Rotator_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ShockAbsorber_Bendy_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ShockAbsorber_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Bicep_Casing_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Elbow_Bendy_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Elbow_Rotator_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ForeArm_Rotator_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Bicep_BallJNT_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Shoulder_BaallJNT_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ForeArm_Bar_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ForeArm_Bottom_Casing_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Magnet_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: PropMount_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ForeArm_Front_Upper_Rotator_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ForeArm_Front_Upper_Casing_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ForeArm_Back_Upper_Rotator_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ForeArm_Back_Upper_Casing_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Clavicle_Bendy_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Chest_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: EarPiece_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Antenna_Small_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Antenna_Large_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Clavicle_Bendy_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Shoulder_Rotator_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Shoulder_BaallJNT_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Bicep_BallJNT_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Bicep_Casing_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Elbow_Bendy_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Elbow_Rotator_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ForeArm_Rotator_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ForeArm_Front_Upper_Casing_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ForeArm_Bar_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ForeArm_Back_Upper_Casing_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ForeArm_Bottom_Casing_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ForeArm_Back_Upper_Rotator_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ForeArm_Front_Upper_Rotator_Left_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: PropMount_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Magnet_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ShockAbsorber_Bendy_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ShockAbsorber_Rightlow
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ShockAbsorber_Bendy_Left_low.001
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ShockAbsorber_Left_low.001
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ShockAbsorber_Bendy_Right_low.001
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ShockAbsorber_Rightlow.001
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ShockAbsorber_Bendy_Left_low.002
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ShockAbsorber_Left_low.002
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ShockAbsorber_Bendy_Right_low.002
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: ShockAbsorber_Rightlow.002
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: HipPlate_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Hip_BallJNT_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Thigh_JNT_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Thigh_Casing_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Knee_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Shin_Casing_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Shin_JNT_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Ankle_JNT_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Heel_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Foot_Break_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Toe_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Eyes_Right_low
+      parentName: WashyBoi_Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: -0.000000057601163, z: -0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: WashyBoi_Refrence_DEF
+      parentName: WashyBoi_Rig_V6_04082021(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_Hips
+      parentName: WashyBoi_Refrence_DEF
+      position: {x: -0, y: 1.0136303, z: -0.03032973}
+      rotation: {x: -0.42435673, y: 0.5656159, z: -0.42435673, w: 0.5656159}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_Spine
+      parentName: WashyBoi_Hips
+      position: {x: -0.0900051, y: 3.5527136e-17, z: 4.8253535e-19}
+      rotation: {x: 0, y: -0, z: -0.10659794, w: 0.9943022}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_Spine1
+      parentName: WashyBoi_Spine
+      position: {x: -0.09560034, y: 1.7763568e-17, z: -8.975974e-18}
+      rotation: {x: 0.99283636, y: -0.11948198, z: 7.316161e-18, w: -6.079369e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_Spine2
+      parentName: WashyBoi_Spine1
+      position: {x: -0.0850447, y: -3.5527136e-17, z: 1.4977422e-17}
+      rotation: {x: 0, y: -0, z: -0.0754092, w: 0.9971527}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_Chest
+      parentName: WashyBoi_Spine2
+      position: {x: -0.34015948, y: 9.992007e-17, z: 4.9765442e-17}
+      rotation: {x: 0.9991829, y: -0.040418528, z: -4.0882773e-13, w: 1.0106594e-11}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightShoulder
+      parentName: WashyBoi_Chest
+      position: {x: -0.048177045, y: -0.030076627, z: 0.0874843}
+      rotation: {x: -0.49940073, y: 0.52441317, z: 0.46890402, w: 0.50568646}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightArm
+      parentName: WashyBoi_RightShoulder
+      position: {x: -0.28276286, y: 1.4210854e-15, z: -1.9984014e-17}
+      rotation: {x: 0.00024568537, y: -0.024416288, z: 0.0032347678, w: 0.9996966}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightForeArm
+      parentName: WashyBoi_RightArm
+      position: {x: -0.26075906, y: 5.684342e-16, z: -1.1589705e-11}
+      rotation: {x: 0, y: 0, z: 0.0049517034, w: 0.9999878}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightArmCaseBack
+      parentName: WashyBoi_RightForeArm
+      position: {x: -0.13844135, y: 0.05241625, z: 0.0195942}
+      rotation: {x: 9.4091384e-15, y: -0.0029059087, z: -0.0015385643, w: 0.99999464}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightArmCaseBackTip
+      parentName: WashyBoi_RightArmCaseBack
+      position: {x: -0.06235605, y: 8.5265126e-16, z: -5.9952044e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightMidNubBase
+      parentName: WashyBoi_RightForeArm
+      position: {x: -0.53685147, y: -0.08350842, z: -0.000117207}
+      rotation: {x: -0.003941975, y: -0.005419927, z: 0.5856877, w: 0.81050915}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightMidNubMiddle
+      parentName: WashyBoi_RightMidNubBase
+      position: {x: -0.058721747, y: 2.842171e-16, z: 1.3322676e-17}
+      rotation: {x: 0.0060864277, y: 0.0028053822, z: -0.11541068, w: 0.99329525}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightMidNubTip
+      parentName: WashyBoi_RightMidNubMiddle
+      position: {x: -0.1028589, y: 0, z: 1.1494332e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightHand
+      parentName: WashyBoi_RightForeArm
+      position: {x: -0.57845473, y: -1.4210854e-15, z: -2.5710658e-11}
+      rotation: {x: -0.9590968, y: 0.06717279, z: -0.19128175, w: -0.19756617}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightRepairToolRotator
+      parentName: WashyBoi_RightHand
+      position: {x: -0.08210008, y: 1.1368684e-15, z: 1.4210854e-16}
+      rotation: {x: -0.31849065, y: 0.8142203, z: -0.17043456, w: -0.45449004}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightRepairToolRotatorTip
+      parentName: WashyBoi_RightRepairToolRotator
+      position: {x: -0.0624552, y: -2.842171e-16, z: 1.3228884e-12}
+      rotation: {x: 0.017315552, y: 0.99984777, z: 0.000067707144, w: 0.0021550877}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightRepairToolBase
+      parentName: WashyBoi_RightRepairToolRotatorTip
+      position: {x: -0.0301822, y: 2.842171e-16, z: 5.684342e-16}
+      rotation: {x: -0.015757471, y: -0.7054046, z: -0.018697858, w: 0.7083831}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightRepairToolHinge
+      parentName: WashyBoi_RightRepairToolBase
+      position: {x: -0.14305118, y: -5.684342e-16, z: -1.4530416e-16}
+      rotation: {x: 0.30585846, y: 0.95207703, z: 7.702634e-17, w: -3.9569478e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightRepairTool
+      parentName: WashyBoi_RightRepairToolHinge
+      position: {x: -0.041540556, y: 2.842171e-16, z: -3.5314185e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightArmRotatorFront
+      parentName: WashyBoi_RightForeArm
+      position: {x: -0.102467544, y: -0.0009946952, z: -0.00003588689}
+      rotation: {x: 0.4382887, y: -0.5434863, z: -0.45112213, w: 0.55589074}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightFrontNubBase
+      parentName: WashyBoi_RightArmRotatorFront
+      position: {x: -0.0743315, y: -0.049218144, z: 0.43783432}
+      rotation: {x: -0.16178906, y: 0.08373634, z: 0.24342707, w: 0.9526573}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightFrontNubMid
+      parentName: WashyBoi_RightFrontNubBase
+      position: {x: -0.061112277, y: 1.4210854e-16, z: 0}
+      rotation: {x: -0.1187127, y: 0.11732768, z: 0.051009882, w: 0.984652}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightFrontNubTip
+      parentName: WashyBoi_RightFrontNubMid
+      position: {x: -0.102904804, y: -5.684342e-16, z: 2.842171e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightArmRotatorTip
+      parentName: WashyBoi_RightArmRotatorFront
+      position: {x: -0.048509147, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightArmRotatorBack
+      parentName: WashyBoi_RightForeArm
+      position: {x: -0.12752758, y: -0.00096758135, z: -0.00015377499}
+      rotation: {x: -0.44897512, y: 0.54627955, z: -0.450654, w: 0.5448954}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightBackNubBase
+      parentName: WashyBoi_RightArmRotatorBack
+      position: {x: -0.07223995, y: -0.03584661, z: -0.416458}
+      rotation: {x: 0.14560528, y: -0.07295241, z: 0.26567045, w: 0.95020854}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightBackNubMid
+      parentName: WashyBoi_RightBackNubBase
+      position: {x: -0.0583317, y: 2.842171e-16, z: 1.4210854e-16}
+      rotation: {x: 0.12633193, y: -0.13011524, z: 0.061963055, w: 0.9814636}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightBackNubTip
+      parentName: WashyBoi_RightBackNubMid
+      position: {x: -0.10389081, y: 1.4210854e-16, z: -5.684342e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightArmRotatorBackTip
+      parentName: WashyBoi_RightArmRotatorBack
+      position: {x: -0.054509982, y: 0, z: -7.898393e-13}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightArmCaseFront
+      parentName: WashyBoi_RightForeArm
+      position: {x: -0.10267961, y: 0.046102762, z: -0.021171855}
+      rotation: {x: 0.008507337, y: -0.000004419459, z: -0.002770772, w: 0.99996}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightArmCaseFrontTip
+      parentName: WashyBoi_RightArmCaseFront
+      position: {x: -0.0981262, y: 2.5579537e-15, z: -2.256897e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_Neck
+      parentName: WashyBoi_Chest
+      position: {x: -0.21934158, y: 7.105427e-17, z: -1.09691825e-10}
+      rotation: {x: 0, y: -0, z: -0.008916254, w: 0.99996024}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_Neck1
+      parentName: WashyBoi_Neck
+      position: {x: -0.048496705, y: 2.1316282e-16, z: -1.1471737e-11}
+      rotation: {x: 0, y: 0, z: 0.012154211, w: 0.99992615}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_Head
+      parentName: WashyBoi_Neck1
+      position: {x: -0.429876, y: -1.0302869e-15, z: -5.3515536e-10}
+      rotation: {x: 0.9993361, y: -0.03643238, z: -0.0000000039621875, w: 0.00000010868235}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_HeadTip
+      parentName: WashyBoi_Head
+      position: {x: -0.42169032, y: 1.4255264e-15, z: -3.9112194e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_Jaw
+      parentName: WashyBoi_Head
+      position: {x: 0.11844268, y: 0.076446734, z: 0.000000015973283}
+      rotation: {x: -0.17237113, y: 0.9850321, z: 0.00000010713655, w: 0.000000018748546}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_Jaw1
+      parentName: WashyBoi_Jaw
+      position: {x: -0.24104264, y: -1.4210854e-16, z: 0}
+      rotation: {x: 3.083269e-17, y: 6.4444106e-17, z: -0.43158758, w: 0.90207106}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_JawTip
+      parentName: WashyBoi_Jaw1
+      position: {x: -0.20020595, y: 5.684342e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftShoulder
+      parentName: WashyBoi_Chest
+      position: {x: -0.048173834, y: -0.030076819, z: -0.08748434}
+      rotation: {x: 0.48422378, y: -0.5152934, z: 0.48422378, w: 0.5152934}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftArm
+      parentName: WashyBoi_LeftShoulder
+      position: {x: -0.28240088, y: 0.0037674084, z: -0.013803391}
+      rotation: {x: 0, y: -0, z: -0.0034090315, w: 0.9999942}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftForeArm
+      parentName: WashyBoi_LeftArm
+      position: {x: -0.2607593, y: 2.5579537e-15, z: 0}
+      rotation: {x: 0, y: 0, z: 0.00494575, w: 0.9999878}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftArmCaseBack
+      parentName: WashyBoi_LeftForeArm
+      position: {x: -0.13844143, y: 0.05241255, z: -0.019594204}
+      rotation: {x: 0.0000044652256, y: 0.0029056605, z: -0.0015367252, w: 0.99999464}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftArmCaseBackTip
+      parentName: WashyBoi_LeftArmCaseBack
+      position: {x: -0.062356085, y: 0, z: 2.842171e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftArmCaseFront
+      parentName: WashyBoi_LeftForeArm
+      position: {x: -0.10270067, y: 0.045736022, z: 0.02197012}
+      rotation: {x: -5.828671e-16, y: 2.7755576e-17, z: -0.002561318, w: 0.9999967}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftArmCaseFrontTip
+      parentName: WashyBoi_LeftArmCaseFront
+      position: {x: -0.09812645, y: 5.1159075e-15, z: -8.881784e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftHand
+      parentName: WashyBoi_LeftForeArm
+      position: {x: -0.5784566, y: -5.684342e-16, z: 0}
+      rotation: {x: -0.00000008949845, y: -0.000000059467176, z: 0.90723073, w: 0.42063326}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftRepairToolRotator
+      parentName: WashyBoi_LeftHand
+      position: {x: 0.052025113, y: 0.054684777, z: 0.03230293}
+      rotation: {x: 0.0038751739, y: -0.70709616, z: -0.006048387, w: 0.7070809}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftRepairToolRotatorTip
+      parentName: WashyBoi_LeftRepairToolRotator
+      position: {x: -0.062455148, y: 2.842171e-16, z: -1.4210854e-16}
+      rotation: {x: 0.017335463, y: 0.9998477, z: -0.000063444495, w: -0.0020217597}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftRepairToolBase
+      parentName: WashyBoi_LeftRepairToolRotatorTip
+      position: {x: -0.030182108, y: -5.684342e-16, z: 2.842171e-16}
+      rotation: {x: 0.015744174, y: 0.70549935, z: -0.018699102, w: 0.70828885}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftRepairToolHinge
+      parentName: WashyBoi_LeftRepairToolBase
+      position: {x: -0.14305629, y: -8.5265126e-16, z: -1.3322676e-17}
+      rotation: {x: 0.3058273, y: 0.952087, z: -7.076376e-15, w: -6.777992e-16}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftRepairTool
+      parentName: WashyBoi_LeftRepairToolHinge
+      position: {x: -0.041541222, y: 1.4210854e-15, z: -2.1389646e-18}
+      rotation: {x: 6.821951e-16, y: -5.4075774e-16, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftArmRotatorFront
+      parentName: WashyBoi_LeftForeArm
+      position: {x: -0.10246743, y: -0.0009932863, z: 0.00003588692}
+      rotation: {x: -0.43364903, y: 0.5471953, z: -0.44637457, w: 0.55971026}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftArmRotatorTip
+      parentName: WashyBoi_LeftArmRotatorFront
+      position: {x: -0.04850934, y: 1.4210854e-16, z: -4.2632563e-16}
+      rotation: {x: -8.326673e-17, y: 2.7755576e-17, z: -1.6653345e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftFrontNubBase
+      parentName: WashyBoi_LeftArmRotatorFront
+      position: {x: -0.074328944, y: -0.049218874, z: -0.4378296}
+      rotation: {x: 0.26484862, y: -0.14938669, z: 0.26888135, w: 0.9139156}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftFrontNubMid
+      parentName: WashyBoi_LeftFrontNubBase
+      position: {x: -0.060036663, y: 0.005282835, z: 0.010117783}
+      rotation: {x: 0.01315088, y: -0.014013793, z: 0.017451951, w: 0.999663}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftFrontNubTip
+      parentName: WashyBoi_LeftFrontNubMid
+      position: {x: -0.10284619, y: 0.0003948358, z: -0.0034506037}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftArmRotatorBack
+      parentName: WashyBoi_LeftForeArm
+      position: {x: -0.12752755, y: -0.00097255025, z: 0.00015377482}
+      rotation: {x: 0.44898278, y: -0.5462733, z: -0.4506596, w: 0.54489076}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftArmRotatorBackTip
+      parentName: WashyBoi_LeftArmRotatorBack
+      position: {x: -0.054516613, y: 0, z: -1.1368684e-15}
+      rotation: {x: 1.0019763e-14, y: -1.2184698e-14, z: 8.326673e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftBackNubBase
+      parentName: WashyBoi_LeftArmRotatorBack
+      position: {x: -0.07224457, y: -0.035847303, z: 0.41645393}
+      rotation: {x: -0.2586184, y: 0.14075305, z: 0.28844115, w: 0.911102}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftBackNubMid
+      parentName: WashyBoi_LeftBackNubBase
+      position: {x: -0.057168894, y: 0.004942536, z: -0.0104742255}
+      rotation: {x: -0.019307671, y: 0.020653876, z: 0.014047013, w: 0.9995016}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftBackNubTip
+      parentName: WashyBoi_LeftBackNubMid
+      position: {x: -0.10380374, y: -0.003087021, z: 0.002970407}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftMidNubBase
+      parentName: WashyBoi_LeftForeArm
+      position: {x: -0.53684723, y: -0.08350966, z: 0.00011720688}
+      rotation: {x: 0.0029211608, y: 0.004369332, z: 0.5532241, w: 0.8330159}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftMidNubMiddle
+      parentName: WashyBoi_LeftMidNubBase
+      position: {x: -0.05854233, y: -0.0046356726, z: 0.00005280199}
+      rotation: {x: -0.0046939463, y: -0.0023645537, z: -0.07133234, w: 0.9974388}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftMidNubTip
+      parentName: WashyBoi_LeftMidNubMiddle
+      position: {x: -0.102855004, y: 0.0009892911, z: -9.965494e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftUpLeg
+      parentName: WashyBoi_Hips
+      position: {x: 0.037529137, y: -0.042523112, z: -0.24018006}
+      rotation: {x: -0.00029532684, y: 0.000027770984, z: 0.9820594, w: 0.18857159}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftLeg
+      parentName: WashyBoi_LeftUpLeg
+      position: {x: -0.45581973, y: 0, z: -6.3948843e-16}
+      rotation: {x: -2.5575018e-15, y: -0.00029607333, z: 0.11136281, w: 0.9937798}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftFoot
+      parentName: WashyBoi_LeftLeg
+      position: {x: -0.39021575, y: 1.2434498e-16, z: -1.811884e-14}
+      rotation: {x: 4.445789e-14, y: -0.000004583442, z: -0.4907441, w: 0.8713038}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftToeBase
+      parentName: WashyBoi_LeftFoot
+      position: {x: -0.20006604, y: -1.7763567e-16, z: -3.6379787e-14}
+      rotation: {x: 2.9617662e-14, y: -0.0000030612623, z: -0.327766, w: 0.94475895}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_LeftToeEnd
+      parentName: WashyBoi_LeftToeBase
+      position: {x: -0.18287069, y: 3.413936e-17, z: -3.300471e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightUpLeg
+      parentName: WashyBoi_Hips
+      position: {x: 0.03752894, y: -0.042523053, z: 0.24017999}
+      rotation: {x: 0.00029513435, y: -0.00002775288, z: 0.9820594, w: 0.1885716}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightLeg
+      parentName: WashyBoi_RightUpLeg
+      position: {x: -0.4558196, y: 2.1316282e-16, z: -1.7763567e-16}
+      rotation: {x: 4.471826e-16, y: 0.00029588034, z: 0.11136269, w: 0.9937798}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightFoot
+      parentName: WashyBoi_RightLeg
+      position: {x: -0.3902165, y: 5.1958436e-16, z: 3.4816593e-15}
+      rotation: {x: -4.266273e-16, y: 0.0000045804227, z: -0.49074534, w: 0.8713031}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightToeBase
+      parentName: WashyBoi_RightFoot
+      position: {x: -0.2000661, y: 2.842171e-16, z: 2.4868996e-16}
+      rotation: {x: -6.5922364e-15, y: 0.0000030592241, z: -0.3277645, w: 0.9447595}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WashyBoi_RightToeEnd
+      parentName: WashyBoi_RightToeBase
+      position: {x: -0.18287067, y: -4.315992e-17, z: 7.389644e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: back
+      parentName: WashyBoi_Rig_V6_04082021(Clone)
+      position: {x: -1.1789411, y: 1.5504013, z: -10.000999}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: left
+      parentName: WashyBoi_Rig_V6_04082021(Clone)
+      position: {x: 10.000999, y: 1.3431596, z: 0.025935272}
+      rotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 9cb84f4a04aaee146a01e48995557ccb, type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

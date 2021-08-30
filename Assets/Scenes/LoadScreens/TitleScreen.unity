@@ -456,7 +456,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -513,13 +513,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526775433}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.65534836, y: -0.0937195, z: -0.29001132, w: 0.69110686}
+  m_LocalPosition: {x: 457, y: 1093, z: -792}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 58.372, y: -76.382, z: -92.971}
 --- !u!1 &1035269741
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.7926813, b: 0.8867924, a: 1}
+  m_Color: {r: 0, g: 0.7841876, b: 0.8773585, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -934,6 +934,7 @@ GameObject:
   - component: {fileID: 2008560768}
   - component: {fileID: 2008560767}
   - component: {fileID: 2008560766}
+  - component: {fileID: 2008560769}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1001,11 +1002,42 @@ Transform:
   m_GameObject: {fileID: 2008560765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000002}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2008560769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008560765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &2093614270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,6 +1144,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterAudioMixerGroup: {fileID: 24300002, guid: 0db846f7ed54a6443b88cd9d4e726522, type: 2}
   masterSfxMixerGroup: {fileID: 24300002, guid: 488fd56100e65b74794fa9dd33ec2c4a, type: 2}
+  m_MusicSource1: {fileID: 0}
+  m_MusicSource2: {fileID: 0}
+  m_SfxSource: {fileID: 0}
+  menuSettingTestSFX: {fileID: 0}
 --- !u!4 &2100507037
 Transform:
   m_ObjectHideFlags: 0
