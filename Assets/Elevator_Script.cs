@@ -26,7 +26,7 @@ public class Elevator_Script : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (isElevator1GoingUp == true && delayElevatorTimer1 <= 0)
         {
@@ -70,5 +70,25 @@ public class Elevator_Script : MonoBehaviour
             isDelayTimerRunning = false;
         }
 
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log(other.gameObject);
+
+            //other.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            other.gameObject.transform.SetParent(this.transform);
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            //other.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            other.gameObject.transform.parent = null;
+        }
     }
 }
