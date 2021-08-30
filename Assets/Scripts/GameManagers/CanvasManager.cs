@@ -15,6 +15,7 @@ public class CanvasManager : MonoBehaviour
     public Button playButton;
     public Button settingsButton;
     public Button creditsButton;
+    public Button returnToNetworkLobbyButton;
 
     public int MainMenuSceneIndex = 0;
 
@@ -100,6 +101,11 @@ public class CanvasManager : MonoBehaviour
             
 
         }
+
+        if (returnToNetworkLobbyButton)
+        {
+            returnToNetworkLobbyButton.onClick.AddListener(ReturnToNetworkLobby);
+        }
     }
 
     private void Update()
@@ -134,5 +140,9 @@ public class CanvasManager : MonoBehaviour
         #endif
     }
 
+    public void ReturnToNetworkLobby()
+    {
+        GameManager.networkManager.LeavingGame();
+    }
 
 }
