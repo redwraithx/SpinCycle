@@ -228,6 +228,7 @@ MonoBehaviour:
   _photonView: {fileID: 0}
   networkItemToSpawn: NetworkSpawned_T-Shirt_Wet
   cycleLength: 600
+  cycleLengthHold: 0
   itemSpawnPoint: {fileID: 7655610852494262262}
   laundryTimer: 0
   sabotageTimer: 0
@@ -243,7 +244,7 @@ MonoBehaviour:
   textString: Sending
   showTextString: 
   counter: 0
-  priceAddition: 50
+  priceAddition: 2
   initialPrice: 0
   loadRuinerMachinePart: {fileID: 0}
   boostMachinePart: {fileID: 0}
