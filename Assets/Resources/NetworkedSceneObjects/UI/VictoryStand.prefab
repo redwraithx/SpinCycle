@@ -173,7 +173,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play Again?
+  m_Text: Back To Lobby
 --- !u!1 &4083646318996552090
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 3965928573398135461}
   - component: {fileID: 1391531317235318909}
   m_Layer: 0
-  m_Name: Quit
+  m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -486,10 +486,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4812627673556595579}
+  - component: {fileID: 4812627673460941129}
   - component: {fileID: 4812627673556595576}
   - component: {fileID: 4812627673556595577}
   - component: {fileID: 4812627673556595574}
-  - component: {fileID: 4812627673460941129}
   m_Layer: 0
   m_Name: VictoryStand
   m_TagString: Untagged
@@ -515,6 +515,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4812627673460941129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4812627673556595575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b1c8c660207b740bda80bb4069de5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startButton: {fileID: 0}
+  quitButton: {fileID: 1391531317235318909}
+  backToMainButton: {fileID: 1841468820849116368}
+  playButton: {fileID: 1841468820849116368}
+  settingsButton: {fileID: 0}
+  creditsButton: {fileID: 0}
+  MainMenuSceneIndex: 0
+  mainMenuSceneBuildIndex: 1
+  hasPlayerProfileLoaded: 0
 --- !u!33 &4812627673556595576
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -577,26 +598,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4812627673460941129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4812627673556595575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60b1c8c660207b740bda80bb4069de5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startButton: {fileID: 0}
-  quitButton: {fileID: 1391531317235318909}
-  backToMainButton: {fileID: 1841468820849116368}
-  playButton: {fileID: 0}
-  settingsButton: {fileID: 0}
-  MainMenuSceneIndex: 0
-  mainMenuSceneBuildIndex: 1
-  hasPlayerProfileLoaded: 0
 --- !u!1 &4812627673721793061
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,7 +886,7 @@ GameObject:
   - component: {fileID: 940869786890212823}
   - component: {fileID: 1841468820849116368}
   m_Layer: 0
-  m_Name: Rematch
+  m_Name: ReturnToLobbyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
