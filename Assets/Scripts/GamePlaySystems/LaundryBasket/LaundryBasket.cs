@@ -45,7 +45,7 @@ public class LaundryBasket : MonoBehaviourPun
     {
         if (other.CompareTag("Item"))
         {
-            if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
+            if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone || other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingUnfolded)
             {
                 bool updatedPlayerPoints = UpdatePlayerPoints(other);
                 
