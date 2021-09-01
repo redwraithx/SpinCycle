@@ -142,7 +142,10 @@ public class CanvasManager : MonoBehaviour
 
     public void ReturnToNetworkLobby()
     {
-        GameManager.networkManager.LeavingGame();
+        Debug.Log("Returning to network lobby at end of game.");
+        
+        if(GameManager.networkManager)
+            GameManager.networkManager.LeavingGame();
     }
 
 }
