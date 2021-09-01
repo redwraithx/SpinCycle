@@ -26,10 +26,6 @@ public class Timer : MonoBehaviour
     [Header("Autofill Sections"), ] 
     public float player1Points;
     public float player2Points;
-    public string player1Name;
-    public string player2Name;
-    public GameObject winner;
-    public GameObject loser;
     public NetworkedTimerNew networkedTimer;
 
     [Header("Victory Stand Items"),]
@@ -124,6 +120,7 @@ public class Timer : MonoBehaviour
 
     public void EndGame()
     {
+        Debug.Log("GameEnding");
         player1Points = GameManager.networkLevelManager.playersJoined[0].GetComponent<PlayerPoints>().points;
         player2Points = GameManager.networkLevelManager.playersJoined[1].GetComponent<PlayerPoints>().points;
 
@@ -148,6 +145,7 @@ public class Timer : MonoBehaviour
     }
     IEnumerator Fading()
     {
+        Debug.Log("fading happening");
         anim.SetBool("Fade", true);
         yield return new WaitUntil(() => BlackImage.color.a == 1);
 
