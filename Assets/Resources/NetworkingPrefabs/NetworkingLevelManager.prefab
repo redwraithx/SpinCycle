@@ -43,8 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ac19bfbc194a94db7838def5e2ffae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  matchLength: 20
-  currentMatchTime: 0
+  currentMatchTime: 600
 --- !u!1 &266056412828842980
 GameObject:
   m_ObjectHideFlags: 0
