@@ -12,7 +12,8 @@ public class RoomButtonInfo : MonoBehaviour
 
     public Button joinRoomButton = null;
     public Button leaveRoomButton = null;
-    
+
+    public bool hasBeenClicked = false;
     
     public void LeaveRoom(GameObject gameRoomGameObject)
     {
