@@ -1,7 +1,9 @@
 ﻿
+using System.IO;
 using UnityEngine;
 using EnumSpace;
 using GamePlaySystems.Utilities;
+using Photon;
 using Photon.Pun;
 
 public class WeaponScript : MonoBehaviourPun
@@ -12,7 +14,7 @@ public class WeaponScript : MonoBehaviourPun
     public Rigidbody[] projectiles;
     public Rigidbody projectile;
     //public GameObject projectile;
-    public float projectileSpeed;
+    public float projectileSpeed = 50f;
     public int ammo;                        
     public Transform projectileSpawnPoint;  
     public float projectileForce;
@@ -46,6 +48,8 @@ public class WeaponScript : MonoBehaviourPun
         yRotation = Mathf.Clamp(yRotation, -45f, 45f);
         gun.transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
 
+        projectileSpawnPoint = gun.transform.GetChild(0).transform;
+
         //if(gun && !destroyGun)
         //{
         //    destroyGun = gun.GetComponent<WeaponDestroyScript>();
@@ -73,8 +77,12 @@ public class WeaponScript : MonoBehaviourPun
 
         if (Input.GetButtonDown("Fire1")) // Set in Edit | Project Settings | Input Manager
         {
-            Debug.Log("Firing");
-            fire();
+            if(photonView.IsMine)
+            {
+                Debug.Log("Firing");
+                fire();
+            }
+
         }
                              
     }
@@ -88,24 +96,26 @@ public class WeaponScript : MonoBehaviourPun
         if (projectileSpawnPoint && projectile)
         {
             destroyGun.hasFired = true;
-
-            // Make bullet
-            Rigidbody temp = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-
-            //GameObject temp = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-            
-            // Shoot bullet
-            temp.GetComponent<Rigidbody>().AddForce(projectileSpawnPoint.forward * projectileSpeed, ForceMode.Impulse);
-            AudioClip freezeGunSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/FreezeGun/explosion");
-            GameManager.audioManager.PlaySfx(freezeGunSound);
-            //gameObject.transform.SetParent(null);
-
-            //PhotonNetwork.Destroy(gameObject);
+            Quaternion rotation = Quaternion.LookRotation(projectileSpawnPoint.transform.forward, Vector3.up);
+            photonView.RPC("RPCShoot", RpcTarget.MasterClient, projectileSpawnPoint.transform.position, rotation);
+            //PhotonNetwork.Destroy(gun);
 
         }
 
 
 
+    }
+
+    [PunRPC]
+    public void RPCShoot(Vector3 spawnPoint, Quaternion spawnRotation)
+    {
+
+    
+        GameObject iceCube = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", "IceCube"), spawnPoint, spawnRotation);
+        iceCube.GetComponent<Rigidbody>().AddForce(iceCube.transform.forward * projectileSpeed, ForceMode.Impulse);
+        AudioClip freezeGunSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/FreezeGun/explosion");
+        //iceCube.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient);
+        //GameManager.audioManager.PlaySfx(freezeGunSound);
     }
 
     //public int Shoot()

@@ -57,7 +57,6 @@ public class PlayerMovementCC : MonoBehaviourPun
     public float _dashTime = 0f;
     public float _initialDashTime = 2f;
     public Vector3 originalVel = Vector3.zero;
-    public Rigidbody rb = null;
     public Transform playerModelTransform = null;
     public int playerDiveIndex = 0;
 
@@ -68,7 +67,7 @@ public class PlayerMovementCC : MonoBehaviourPun
 
     [SerializeField] private float rotationSpeed = 0f;
 
-    private Vector3 velocity;
+    public Vector3 velocity;
     public bool isGrounded;
 
     public bool canDive = true;
@@ -129,8 +128,6 @@ public class PlayerMovementCC : MonoBehaviourPun
 
         GameManager.Instance.Player1 = this.gameObject;
 
-        if (!rb)
-            rb = GetComponent<Rigidbody>();
 
         if (!characterAnimator)
             characterAnimator = GetComponentInChildren<Animator>();
@@ -389,13 +386,14 @@ public class PlayerMovementCC : MonoBehaviourPun
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Jump();
-        }
-
-
-        if (Input.GetKeyDown("space"))
-        {
             characterAnimator.SetBool("Jump", true);
         }
+
+
+        //if (Input.GetKeyDown("space"))
+        //{
+        //    characterAnimator.SetBool("Jump", true);
+        //}
         if (Input.GetKeyUp("space"))
         {
             characterAnimator.SetBool("Jump", false);
@@ -459,14 +457,13 @@ public class PlayerMovementCC : MonoBehaviourPun
 
         //Vector3 localForward = transform.worldToLocalMatrix.MultiplyVector(transform.forward);
 
-        //rb.AddForce(transform.forward * (diveMultiplier * diveSpeed), ForceMode.Force);
 
         //controller.Move(localForward * (diveSpeed * diveMultiplier * Time.deltaTime));
 
         controller.enabled = false;
         Debug.Log("controller off");
 
-        //rb.AddForce(playerModelTransform.up * (diveSpeed * diveMultiplier), ForceMode.Force);
+    
         transform.Translate(transform.forward * (diveSpeed * diveMultiplier), Space.World);
 
         controller.enabled = true;

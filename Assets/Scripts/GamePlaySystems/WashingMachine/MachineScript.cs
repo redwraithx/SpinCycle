@@ -22,6 +22,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public string networkItemToSpawn = "";
     
     public float cycleLength;
+    public float cycleLengthHold;
     public GameObject itemSpawnPoint;
     public float laundryTimer;
     public float sabotageTimer;
@@ -109,7 +110,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             if (laundryTimer > 0)
             {
                 laundryTimer -= Time.deltaTime;
-                percent = laundryTimer/cycleLength;
+                percent = laundryTimer/cycleLengthHold;
                 percentCounter.text = (100 - Mathf.Round(percent * 100) + "%");
                 spinner.transform.Rotate(0, 0, 0.1f);
                 fillBarImage.fillAmount = 1 - percent;
@@ -206,6 +207,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         ruinTimer = 0;
         //sliderTime.maxValue = cycleLength;
         laundryTimer = cycleLength;
+        cycleLengthHold = cycleLength;
         isEnabled = true;
 
 

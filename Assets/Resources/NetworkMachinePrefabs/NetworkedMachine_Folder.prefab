@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2654619902742494054}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: NetworkedMachine_Folder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 7177850272468607744}
   - component: {fileID: 8692412541395118748}
   - component: {fileID: 6454000368017287647}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Terminal Casing001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 3051805812969853230}
   - component: {fileID: 2948568301047564950}
   - component: {fileID: 2924799602822918706}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Particle jiggly bubble soapy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4922,7 +4922,7 @@ GameObject:
   - component: {fileID: 3051805810285054686}
   - component: {fileID: 2948568289391905920}
   - component: {fileID: 2924799610976412648}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SubEmitterDeath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9747,7 +9747,7 @@ GameObject:
   - component: {fileID: 408804690885825547}
   - component: {fileID: 4402741917493931958}
   - component: {fileID: 1762260405438085105}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Terminal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9829,7 +9829,7 @@ GameObject:
   - component: {fileID: 5423476883448422504}
   - component: {fileID: 2938782341396466880}
   - component: {fileID: 8597648039824860349}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: TerminalLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9909,7 +9909,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8216538012678367424}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: ItemSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9948,7 +9948,7 @@ GameObject:
   - component: {fileID: 7288617089619193036}
   - component: {fileID: 7904004534243990500}
   - component: {fileID: 8199293378144987165}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Terminal
   m_TagString: Machine
   m_Icon: {fileID: 0}
@@ -10041,6 +10041,7 @@ MonoBehaviour:
   _photonView: {fileID: 7952955573406482846}
   networkItemToSpawn: NetworkSpawned_T-Shirt_Done
   cycleLength: 600
+  cycleLengthHold: 0
   itemSpawnPoint: {fileID: 8216538012678367427}
   laundryTimer: 0
   sabotageTimer: 0
@@ -10056,8 +10057,8 @@ MonoBehaviour:
   textString: Sending
   showTextString: 
   counter: 0
-  priceAddition: 50
-  initialPrice: 100
+  priceAddition: 4
+  initialPrice: 4
   loadRuinerMachinePart: {fileID: 0}
   boostMachinePart: {fileID: 0}
   percent: 0
@@ -10153,6 +10154,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2654619902742494054}
     m_Modifications:
+    - target: {fileID: 142585478585304502, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 410126055804169734, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10253,6 +10262,10 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3580660271922054831, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 3809707238627723414, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_LocalRotation.y
       value: 1
@@ -10269,6 +10282,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WashTimer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4806107522798756899, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191959864528217973, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 7337144508446623066, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_text
       value: 0%
@@ -10276,6 +10297,10 @@ PrefabInstance:
     - target: {fileID: 8292839240206450642, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_Name
       value: PercentText
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292839240206450642, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
@@ -10323,9 +10348,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2654619902742494054}
     m_Modifications:
+    - target: {fileID: 4681010557630672143, guid: a7aa1de6d707ef04c800a136f87a7222, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041909405388974921, guid: a7aa1de6d707ef04c800a136f87a7222, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 7236999021448454532, guid: a7aa1de6d707ef04c800a136f87a7222, type: 3}
       propertyPath: m_Name
       value: Folder (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236999021448454532, guid: a7aa1de6d707ef04c800a136f87a7222, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8008856890848623422, guid: a7aa1de6d707ef04c800a136f87a7222, type: 3}
       propertyPath: m_LocalPosition.x

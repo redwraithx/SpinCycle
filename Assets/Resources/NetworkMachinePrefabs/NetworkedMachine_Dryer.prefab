@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4892322180312537108}
   - component: {fileID: 8885873485385753513}
   - component: {fileID: 6790748916004895726}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Terminal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 940504469126524023}
   - component: {fileID: 7962925241652003039}
   - component: {fileID: 3538039295725037730}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: TerminalLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3769048221565347039}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: ItemSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 4996081392249063206}
   - component: {fileID: 2889000184108486017}
   - component: {fileID: 6281702712564527763}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Terminal
   m_TagString: Machine
   m_Icon: {fileID: 0}
@@ -302,6 +302,7 @@ MonoBehaviour:
   _photonView: {fileID: 2889000184108486017}
   networkItemToSpawn: NetworkSpawned_T-Shirt_Unfolded
   cycleLength: 600
+  cycleLengthHold: 0
   itemSpawnPoint: {fileID: 3769048221565347036}
   laundryTimer: 0
   sabotageTimer: 0
@@ -317,8 +318,8 @@ MonoBehaviour:
   textString: Sending
   showTextString: 
   counter: 0
-  priceAddition: 50
-  initialPrice: 50
+  priceAddition: 2
+  initialPrice: 2
   loadRuinerMachinePart: {fileID: 0}
   boostMachinePart: {fileID: 0}
   percent: 0
@@ -379,7 +380,7 @@ GameObject:
   - component: {fileID: 2726226314412879647}
   - component: {fileID: 4533154017035544195}
   - component: {fileID: 2294706651483170240}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Terminal Casing001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +461,7 @@ GameObject:
   - component: {fileID: 7787684309708293825}
   - component: {fileID: 7971991009060438175}
   - component: {fileID: 7989281382020640759}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SubEmitterDeath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5285,7 +5286,7 @@ GameObject:
   - component: {fileID: 7787684311318273329}
   - component: {fileID: 7971991010163197577}
   - component: {fileID: 7989281386013851181}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Particle jiggly bubble soapy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10078,7 +10079,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8207175180056093427}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: NetworkedMachine_Dryer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10111,6 +10112,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8207175180056093427}
     m_Modifications:
+    - target: {fileID: 1378562668225739197, guid: 24c82f1889cb9674e82b8b0306bb3feb, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1691697356763774558, guid: 24c82f1889cb9674e82b8b0306bb3feb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10159,6 +10164,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dryer V3
       objectReference: {fileID: 0}
+    - target: {fileID: 2031630740259562724, guid: 24c82f1889cb9674e82b8b0306bb3feb, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7620739331516570994, guid: 24c82f1889cb9674e82b8b0306bb3feb, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8238708766429490604, guid: 24c82f1889cb9674e82b8b0306bb3feb, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848173401137198249, guid: 24c82f1889cb9674e82b8b0306bb3feb, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24c82f1889cb9674e82b8b0306bb3feb, type: 3}
 --- !u!4 &2793410705857707620 stripped
@@ -10173,6 +10194,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8207175180056093427}
     m_Modifications:
+    - target: {fileID: 142585478585304502, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 410126055804169734, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10269,6 +10298,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3580660271922054831, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 3809707238627723414, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.044
@@ -10285,9 +10318,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: WashTimer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4806107522798756899, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191959864528217973, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 6300960412223949637, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.033
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292839240206450642, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
