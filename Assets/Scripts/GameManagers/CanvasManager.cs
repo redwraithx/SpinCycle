@@ -104,7 +104,7 @@ public class CanvasManager : MonoBehaviour
 
         if (returnToNetworkLobbyButton)
         {
-            returnToNetworkLobbyButton.onClick.AddListener(ReturnToNetworkLobby);
+            returnToNetworkLobbyButton.onClick.AddListener(GameManager.networkManager.LeavingGame);
         }
     }
 
@@ -140,12 +140,6 @@ public class CanvasManager : MonoBehaviour
         #endif
     }
 
-    public void ReturnToNetworkLobby()
-    {
-        Debug.Log("Returning to network lobby at end of game.");
-        
-        if(GameManager.networkManager)
-            GameManager.networkManager.LeavingGame();
-    }
+    
 
 }

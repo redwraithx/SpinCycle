@@ -17,6 +17,11 @@ public class Elevator_Script : MonoBehaviour
     public Vector3 topPos1;
     public Vector3 botPos1;
 
+    public GameObject top;
+    public GameObject bottom;
+
+    public GameObject target;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,16 +33,19 @@ public class Elevator_Script : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (isElevator1GoingUp == true && delayElevatorTimer1 <= 0)
-        {
-            Elevator1.transform.Translate(new Vector3(0, 0, 1) * elevatorSpeed1);
-        }
-        else if (isElevator1GoingUp == false && delayElevatorTimer1 <= 0)
-        {
-            Elevator1.transform.Translate(new Vector3(0, 0, -1) * elevatorSpeed1);
-        }
+        this.gameObject.transform.position = Vector3.MoveTowards(this.transform.position, target.transform.position, 0.1f);
 
-        if (Mathf.Abs(Vector3.Distance(topPos1, Elevator1.transform.position)) <= 0.1f)
+
+        //if (isElevator1GoingUp == true && delayElevatorTimer1 <= 0)
+        //{
+        //    Elevator1.transform.Translate(new Vector3(0, 0, 1) * elevatorSpeed1);
+        //}
+        //else if (isElevator1GoingUp == false && delayElevatorTimer1 <= 0)
+        //{
+        //    Elevator1.transform.Translate(new Vector3(0, 0, -1) * elevatorSpeed1);
+        //}
+
+        if (Mathf.Abs(Vector3.Distance(target.transform.position, Elevator1.transform.position)) <= 0.1f)
         {
             isElevator1GoingUp = false;
 
@@ -47,28 +55,35 @@ public class Elevator_Script : MonoBehaviour
 
                 isDelayTimerRunning = true;
             }
-        }
 
-        if (Mathf.Abs(Vector3.Distance(botPos1, Elevator1.transform.position)) <= 0.1f)
-        {
-            isElevator1GoingUp = true;
-
-            if (isDelayTimerRunning == false)
+            if (isDelayTimerRunning == true)
             {
-                delayElevatorTimer1 += 2f;
-
-                isDelayTimerRunning = true;
+                if (delayElevatorTimer1 <= 0)
+                {
+                    if (target.CompareTag("Top"))
+                    {
+                        Debug.Log("going down");
+                        target = bottom;
+                        isDelayTimerRunning = false;
+                    }
+                    else if (target.CompareTag("Bottom"))
+                    {
+                        Debug.Log("going up");
+                        target = top;
+                        isDelayTimerRunning = false;
+                    }
+                    
+                }
             }
         }
+
+        
 
         if (delayElevatorTimer1 > 0)
         {          
             delayElevatorTimer1 -= Time.deltaTime;
         }
-        else if(delayElevatorTimer1 < 0)
-        {
-            isDelayTimerRunning = false;
-        }
+
 
     }
 
@@ -81,6 +96,7 @@ public class Elevator_Script : MonoBehaviour
             //other.gameObject.GetComponent<Rigidbody>().useGravity = false;
             other.gameObject.transform.SetParent(this.transform);
         }
+
     }
 
     public void OnTriggerExit(Collider other)
