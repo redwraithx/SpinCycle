@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5464282972262802420}
   - component: {fileID: 933347444575615990}
   - component: {fileID: 2740270366284090710}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: TerminalLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7848343926696609405}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: NetworkedMachine_Washer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 9129661003826356812}
   - component: {fileID: 7522659194214942846}
   - component: {fileID: 8772606763916291803}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Terminal
   m_TagString: Machine
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 1757879834923948805}
   - component: {fileID: 5739699276442009136}
   - component: {fileID: 6360177233381139841}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Particle jiggly bubble soapy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5223,7 +5223,7 @@ GameObject:
   - component: {fileID: 3075061716965917539}
   - component: {fileID: 8537272887366204128}
   - component: {fileID: 2804468883225724210}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Terminal Casing001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5302,7 +5302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6804686083276340207}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: ItemSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5334,7 +5334,7 @@ GameObject:
   - component: {fileID: 6991359332670938736}
   - component: {fileID: 4838274589039320951}
   - component: {fileID: 7947666939911523934}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Terminal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5416,7 +5416,7 @@ GameObject:
   - component: {fileID: 9129220035074931386}
   - component: {fileID: 2993746772171600446}
   - component: {fileID: 1480439801749548262}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SubEmitterDeath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10241,6 +10241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Washer V3
       objectReference: {fileID: 0}
+    - target: {fileID: 1483705841062314031, guid: 02b2ac9085d3b3b47b3476224c2a7fb6, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 2295989415467637397, guid: 02b2ac9085d3b3b47b3476224c2a7fb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10285,6 +10289,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6874573180353411856, guid: 02b2ac9085d3b3b47b3476224c2a7fb6, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8789539477897280587, guid: 02b2ac9085d3b3b47b3476224c2a7fb6, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02b2ac9085d3b3b47b3476224c2a7fb6, type: 3}
 --- !u!4 &5308773781382214705 stripped
@@ -10299,6 +10311,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7848343926696609405}
     m_Modifications:
+    - target: {fileID: 142585478585304502, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 410126055804169734, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10383,9 +10403,25 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3580660271922054831, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 4806107522798756899, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_Name
       value: WashTimer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806107522798756899, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191959864528217973, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292839240206450642, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
