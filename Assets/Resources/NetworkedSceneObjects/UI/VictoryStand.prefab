@@ -529,10 +529,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startButton: {fileID: 0}
   quitButton: {fileID: 1391531317235318909}
-  backToMainButton: {fileID: 1841468820849116368}
-  playButton: {fileID: 1841468820849116368}
+  backToMainButton: {fileID: 0}
+  playButton: {fileID: 0}
   settingsButton: {fileID: 0}
   creditsButton: {fileID: 0}
+  returnToNetworkLobbyButton: {fileID: 1841468820849116368}
   MainMenuSceneIndex: 0
   mainMenuSceneBuildIndex: 1
   hasPlayerProfileLoaded: 0
