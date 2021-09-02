@@ -19,7 +19,7 @@ public class IntroGameText : MonoBehaviour
     void Update()
     {
         //rewrite this when networking is working
-       /* if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime == 185)
+        if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime == 185)
         {
             countDown.text = "5!";
         }
@@ -46,15 +46,15 @@ public class IntroGameText : MonoBehaviour
         else if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime <= 178)
         {
             gameObject.SetActive(false);
-        }*/
+        }
 
-        tempTime -= Time.deltaTime;
+        /*tempTime -= Time.deltaTime;
         timeTranslate = Mathf.RoundToInt(tempTime);
         if (timeTranslate > 0)
             countDown.text = timeTranslate + "!";
         else if (tempTime > -2)
             countDown.text = "GO!";
         else
-            gameObject.SetActive(false);
+            gameObject.SetActive(false);*/
     }
 }
