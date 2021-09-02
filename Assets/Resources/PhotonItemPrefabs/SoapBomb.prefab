@@ -253,7 +253,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sabotage_SoapBomb
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1700153082819787326, guid: 15fb30bb229b03b448ba7f8b0b306f40, type: 3}
+    - {fileID: 1700153082819787327, guid: 15fb30bb229b03b448ba7f8b0b306f40, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 15fb30bb229b03b448ba7f8b0b306f40, type: 3}
 --- !u!1 &8228939642273122441 stripped
 GameObject:

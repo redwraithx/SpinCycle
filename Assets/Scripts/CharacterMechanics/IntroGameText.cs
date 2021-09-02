@@ -19,31 +19,31 @@ public class IntroGameText : MonoBehaviour
     void Update()
     {
         //rewrite this when networking is working
-        if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime == 185)
+        if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime == 600)
         {
             countDown.text = "5!";
         }
-        else if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime == 184)
+        else if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime == 599)
         {
             countDown.text = "4!";
         }
-        else if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime == 183)
+        else if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime == 598)
         {
             countDown.text = "3!";
         }
-        else if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime == 182)
+        else if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime == 597)
         {
             countDown.text = "2!";
         }
-        else if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime == 181)
+        else if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime == 596)
         {
             countDown.text = "1!";
         }
-        else if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime == 180)
+        else if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime == 595)
         {
             countDown.text = "GO!";
         }
-        else if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime <= 178)
+        else if (GameManager.networkLevelManager.timer.GetComponent<NetworkedTimerNew>().currentMatchTime <= 594)
         {
             gameObject.SetActive(false);
         }
