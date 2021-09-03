@@ -9,25 +9,12 @@ using UnityEngine.UI;
 public class NetworkedTimerNew : MonoBehaviourPunCallbacks, IOnEventCallback
 {
 
-    public int matchLength = 600;
+    private int matchLength = 600;
     public int currentMatchTime;
 
     private Coroutine timerCoroutine;
     public const byte refreshTimer = 1;
     
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void OnEnable()
     {

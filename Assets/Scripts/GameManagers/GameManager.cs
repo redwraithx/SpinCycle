@@ -1,6 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 
 
@@ -42,8 +43,26 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion // Tracked_Variables
+
+    #region Levels_Selector_List
+
+
+    internal enum BuildSettingLevelNames
+    {
+        TitleScreen = 0,
+        MainMenuScene,
+        SettingsMenu,
+        LoadingScreen1,
+        Credits,
+        NetworkLobby,
+        LobbyWaitingRoomScene,
+        AssetTesting,
+        TutorialLevel,
+        
+    }
     
     
+    #endregion // Levels_Selector_List
 
     void Awake()
     {
@@ -72,10 +91,21 @@ public class GameManager : MonoBehaviour
     //loads the game level
     public void StartGame()
     {
-        SceneManager.LoadScene("LoadingScreen1"); 
+        SceneManager.LoadScene("LoadingScreen1");
+        
     }
-    
-    
+    private void Update()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        if(scene.buildIndex == 0)
+        {
+            if(Input.anyKey)
+            {
+                ToMain();
+            }
+        }
+    }
+
     //leaves the game
     public void QuitGame()
     {
@@ -88,7 +118,10 @@ public class GameManager : MonoBehaviour
 
     public void ToCredits()
     {
+        AudioClip anyKeySound = Resources.Load<AudioClip>("AudioFiles/TitleScreen/PressAnyKey/Beeping_Sound_B_1-BEEP");
+        audioManager.PlaySfx(anyKeySound);
         SceneManager.LoadScene("Credits");
+        
     }
     
     
@@ -96,16 +129,24 @@ public class GameManager : MonoBehaviour
     public void ToMain()
     {
         networkLevelManager = null;
-        
+
+        AudioClip anyKeySound = Resources.Load<AudioClip>("AudioFiles/TitleScreen/PressAnyKey/Beeping_Sound_B_1-BEEP");
+        audioManager.PlaySfx(anyKeySound);
+
         SceneManager.LoadScene("MainMenuScene");
     }
 
     public void ToSettings()
     {
+        AudioClip anyKeySound = Resources.Load<AudioClip>("AudioFiles/TitleScreen/PressAnyKey/Beeping_Sound_B_1-BEEP");
+        audioManager.PlaySfx(anyKeySound);
         SceneManager.LoadScene("SettingsMenu");
+        
+
+
     }
-    
-    
+
+
     public static GameManager Instance
     {
         get => _instance;

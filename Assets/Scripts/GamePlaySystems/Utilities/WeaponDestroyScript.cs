@@ -6,7 +6,7 @@ using Photon.Pun;
 public class WeaponDestroyScript : MonoBehaviourPun
 {
     internal bool hasFired = false;
-    [Range(0.5f, 5f)] public float delayedTime = 2f;
+    [Range(0.5f, 5f)] public float delayedTime = 1f;
 
     public LineRenderer lineRenderer;
 
@@ -44,7 +44,7 @@ public class WeaponDestroyScript : MonoBehaviourPun
     private IEnumerator DelayedDestroy(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-
+        GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient);
         PhotonNetwork.Destroy(gameObject);
     }
 }

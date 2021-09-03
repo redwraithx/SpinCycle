@@ -13,6 +13,7 @@ using Photon.Pun;
 using Photon.Realtime;
 //using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
 
@@ -283,6 +284,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
         if (string.IsNullOrEmpty(roomNameField.text) || roomNameField.text.Length < 3)
             return;
         
+        
         RoomOptions options = new RoomOptions();
     
         // Assign max players here
@@ -478,10 +480,26 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
             
             Debug.Log("new room buttons name: " + newRoomButton.name);
             
-            newRoomButton.GetComponent<RoomButtonInfo>().joinRoomButton.onClick.AddListener( delegate { JoinRoom(newRoomButton.transform); });
+            newRoomButton.GetComponent<RoomButtonInfo>().joinRoomButton.onClick.AddListener( 
+                delegate 
+                {
+                    JoinGameButtonClick(newRoomButton.GetComponent<RoomButtonInfo>(), newRoomButton);
+                });
         }
 
         base.OnRoomListUpdate(roomList);
+    }
+
+    public void JoinGameButtonClick(RoomButtonInfo roomButtonInfo, GameObject newRoomButton)
+    {
+        if (roomButtonInfo.hasBeenClicked == false)
+        {
+            Debug.Log("delegate used and joining game and updating button has been clicked");
+                        
+            roomButtonInfo.hasBeenClicked = true;
+                        
+            JoinRoom(newRoomButton.transform);
+        }
     }
     
     
@@ -542,7 +560,7 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
     
     
     // this is not tested
-    private void EndGame()
+    private void EndGame() // maybe deleting soon
     {
         // set state of game
         // state  = GameState.Ending;
