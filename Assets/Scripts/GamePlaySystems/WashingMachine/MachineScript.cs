@@ -68,6 +68,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public Sprite goodSpinner;
     public Sprite badSpinner;
 
+
+    PlayerPoints playerPoints;
     private void Awake()
     {
         if (!_photonView)
@@ -180,7 +182,12 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             spinner.GetComponent<SpriteRenderer>().sprite = goodSpinner;
         }
     }
+    private bool UpdatePlayerPoints(GameObject other)
+    {
+        PlayerPoints playerPointsReference = PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
 
+        return playerPoints = playerPointsReference;
+    }
     public void SpawnFinishedProduct(LaundryType type)
     {
 
@@ -293,6 +300,16 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
                         initialPrice = other.GetComponent<Item>().Price;
                         ProcessItems();
+                        bool updatedPlayerPoints = UpdatePlayerPoints(other);
+
+                        if (updatedPlayerPoints)
+                            Debug.Log("Players Points where updated");
+                        else
+                            Debug.Log("Players Points were not found to be updated.");
+
+
+                        playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
+
                         other.transform.parent = null;
                         PhotonNetwork.Destroy(other.gameObject);
                     }
