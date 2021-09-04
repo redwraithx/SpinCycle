@@ -117,7 +117,8 @@ public class Grab : MonoBehaviour
 
         if (hasItemInHand)
         {
-            
+            if(itemInHand)
+            itemInHand.transform.position = grabPoint.position;
             if (Input.GetMouseButtonDown(0) )
             {
                 var isValidItemObject = false;
@@ -129,12 +130,14 @@ public class Grab : MonoBehaviour
                 if (isValidItemObject && canUseHeldItem)
                 {
                     
-                    characterAnimator.SetTrigger("PutOn");
+                   // characterAnimator.SetTrigger("PutOn");
                     
                     if (machineInteractionObject)
                     {
-                       // use object action will only work on one event per object
-                       machineInteractionObject.thisObjectEvent.Invoke(itemInHand);
+                        characterAnimator.SetBool("PickUp", false);
+                        
+                        // use object action will only work on one event per object
+                        machineInteractionObject.thisObjectEvent.Invoke(itemInHand);
                         //If you are getting an error that calls here, make sure the machine has the event set up properly
                        //itemInHand = null;
                        
@@ -349,6 +352,7 @@ public class Grab : MonoBehaviour
             {
                 canUseHeldItem = true;
             }
+
             
         }
         else
