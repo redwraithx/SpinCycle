@@ -429,6 +429,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(isSabotaged);
             stream.SendNext(isRuined);
             stream.SendNext(isBoosted);
+            stream.SendNext(cycleLengthHold);
 
 
             counter++;
@@ -447,6 +448,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             bool machineSabotaged = (bool)stream.ReceiveNext();
             bool loadRuined = (bool) stream.ReceiveNext();
             bool machineBoosted = (bool)stream.ReceiveNext();
+            float cycleHold = (float)stream.ReceiveNext();
 
             if (laundry > laundryTimer || laundry < laundryTimer)
                 laundryTimer = laundry;
@@ -465,6 +467,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
             if (isBoosted != machineBoosted)
                 isBoosted = machineBoosted;
+
+            if (cycleLengthHold != cycleHold)
+                cycleLengthHold = cycleHold;
 
 
         }
