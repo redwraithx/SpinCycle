@@ -12,6 +12,7 @@ public class TESTOnly : MonoBehaviourPunCallbacks
 {
     public GameObject gameOverContainer = null;
     public GameObject waitForItContainer = null;
+    public GameObject loadingContainer = null;
 
     public int LevelGameLevelToLoad = 0;
     
@@ -88,6 +89,7 @@ public class TESTOnly : MonoBehaviourPunCallbacks
 
     public void LoadGameLevel()
     {
+        loadingContainer.SetActive(true);
         PhotonNetwork.LoadLevel(LevelGameLevelToLoad);
     }
 }
