@@ -34,7 +34,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     //public Slider sliderTime;
     public LaundryType laundryType;
     public MachineType machineType;
+
+    //old particle effects
     public ParticleSystem part;
+    //new particle effects
+    public GameObject sabotageEffects;
     //public TMP_Text pointsAdded;
     
     public ItemType SpawnFinishedProductItemType = ItemType.ClothingWet;
@@ -64,6 +68,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public Sprite goodSpinner;
     public Sprite badSpinner;
 
+
+    PlayerPoints playerPoints;
     private void Awake()
     {
         if (!_photonView)
@@ -95,7 +101,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
         if (isSabotaged == true)
         {
-            part.Play();
+            //part.Play();
+            sabotageEffects.SetActive(true);
         }
     }
 
@@ -132,9 +139,10 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
         //sliderTime.value = laundryTimer;
 
-        if(isSabotaged == true && part.isPlaying == false)
+        if(isSabotaged == true && sabotageEffects.activeInHierarchy == false)
         {
-            part.Play();
+            //part.Play();
+            sabotageEffects.SetActive(true);
         }
 
         if (isSabotaged == true && theSprite.GetComponent<Image>().sprite != disabledSprite)
@@ -147,9 +155,10 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             theSprite.GetComponent<Image>().sprite = normalSprite;
         }
 
-        if (isSabotaged == false && part.isPlaying == true)
+        if (isSabotaged == false && sabotageEffects.activeInHierarchy == true)
         {
             part.Stop();
+            sabotageEffects.SetActive(false);
         }
 
         if (isSabotaged == true && fillBarImage.GetComponent<Image>().sprite != barDisabled)
@@ -173,7 +182,12 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             spinner.GetComponent<SpriteRenderer>().sprite = goodSpinner;
         }
     }
+    private bool UpdatePlayerPoints(GameObject other)
+    {
+        PlayerPoints playerPointsReference = PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
 
+        return playerPoints = playerPointsReference;
+    }
     public void SpawnFinishedProduct(LaundryType type)
     {
 
@@ -286,6 +300,16 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
                         initialPrice = other.GetComponent<Item>().Price;
                         ProcessItems();
+                        bool updatedPlayerPoints = UpdatePlayerPoints(other);
+
+                        if (updatedPlayerPoints)
+                            Debug.Log("Players Points where updated");
+                        else
+                            Debug.Log("Players Points were not found to be updated.");
+
+
+                        playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
+
                         other.transform.parent = null;
                         PhotonNetwork.Destroy(other.gameObject);
                     }
@@ -324,14 +348,15 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         isSabotaged = true;
         //animator.ResetTrigger("Go");
         //animator.SetTrigger("Stop");
-        part.Play();
+        sabotageEffects.SetActive(true);
     }
     public void FixMachine()
     {
         //animator.ResetTrigger("Stop");
         isSabotaged = false;
         sabotageTimer = 0;
-        part.Stop();
+        //part.Stop();
+        sabotageEffects.SetActive(false);
 
         if (isEnabled)
         {

@@ -57,6 +57,7 @@ public class PlayerMovementCC : MonoBehaviourPun
     public float _dashTime = 0f;
     public float _initialDashTime = 2f;
     public Vector3 originalVel = Vector3.zero;
+    public Rigidbody rb = null;
     public Transform playerModelTransform = null;
     public int playerDiveIndex = 0;
 
@@ -67,7 +68,7 @@ public class PlayerMovementCC : MonoBehaviourPun
 
     [SerializeField] private float rotationSpeed = 0f;
 
-    public Vector3 velocity;
+    private Vector3 velocity;
     public bool isGrounded;
 
     public bool canDive = true;
@@ -86,6 +87,8 @@ public class PlayerMovementCC : MonoBehaviourPun
 
     private static readonly int Run = Animator.StringToHash("Run");
     public DashSphereCast playerDash;
+
+
 
     public float MoveSpeed
     {
@@ -128,6 +131,8 @@ public class PlayerMovementCC : MonoBehaviourPun
 
         GameManager.Instance.Player1 = this.gameObject;
 
+        if (!rb)
+            rb = GetComponent<Rigidbody>();
 
         if (!characterAnimator)
             characterAnimator = GetComponentInChildren<Animator>();
@@ -137,6 +142,7 @@ public class PlayerMovementCC : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
+       
         playerDash = GetComponent<DashSphereCast>();
         tapToEscape.SetActive(false);
 
@@ -162,7 +168,7 @@ public class PlayerMovementCC : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-
+        
         if (isGrabbed)
         {
             tapToEscape.SetActive(true);
@@ -385,16 +391,13 @@ public class PlayerMovementCC : MonoBehaviourPun
         // can we jump?
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+           
             velocity.y = Jump();
+                        
             characterAnimator.SetBool("Jump", true);
         }
 
-
-        //if (Input.GetKeyDown("space"))
-        //{
-        //    characterAnimator.SetBool("Jump", true);
-        //}
-        if (Input.GetKeyUp("space"))
+        else if (!isGrounded)
         {
             characterAnimator.SetBool("Jump", false);
         }
@@ -457,13 +460,14 @@ public class PlayerMovementCC : MonoBehaviourPun
 
         //Vector3 localForward = transform.worldToLocalMatrix.MultiplyVector(transform.forward);
 
+        //rb.AddForce(transform.forward * (diveMultiplier * diveSpeed), ForceMode.Force);
 
         //controller.Move(localForward * (diveSpeed * diveMultiplier * Time.deltaTime));
 
         controller.enabled = false;
         Debug.Log("controller off");
 
-    
+        //rb.AddForce(playerModelTransform.up * (diveSpeed * diveMultiplier), ForceMode.Force);
         transform.Translate(transform.forward * (diveSpeed * diveMultiplier), Space.World);
 
         controller.enabled = true;
@@ -472,6 +476,10 @@ public class PlayerMovementCC : MonoBehaviourPun
 
 
     }
+
+
+
+   
 
 
     private IEnumerator DiveCoroutine()
