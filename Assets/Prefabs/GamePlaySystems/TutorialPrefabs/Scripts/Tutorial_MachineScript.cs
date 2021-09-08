@@ -1,9 +1,6 @@
-
-using System;
+﻿
 using System.Collections;
-using System.Diagnostics;
 using System.IO;
-//using emotitron;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -11,16 +8,11 @@ using TMPro;
 using GamePlaySystems.Utilities;
 using EnumSpace;
 
-using Photon.Pun;
-using Photon.Realtime;
 using Debug = UnityEngine.Debug;
 
 
-public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
+public class Tutorial_MachineScript : MonoBehaviour
 {
-    public PhotonView _photonView = null;
-    public string networkItemToSpawn = "";
-    
     public float cycleLength;
     public float cycleLengthHold;
     public GameObject itemSpawnPoint;
@@ -42,10 +34,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     //public TMP_Text pointsAdded;
     
     public ItemType SpawnFinishedProductItemType = ItemType.ClothingWet;
-
-    public string textString = "Sending";
-    public string showTextString = "";
-    public int counter = 0;
 
     public float priceAddition;
     public float initialPrice;
@@ -69,16 +57,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public Sprite badSpinner;
 
 
-    PlayerPoints playerPoints;
-    private void Awake()
-    {
-        if (!_photonView)
-        {
-            _photonView = GetComponent<PhotonView>();
+    TutorialPlayerPoints playerPoints;
 
-
-        }
-    }
+    public GameObject spawnFinishedProductPrefab = null;
 
     private void Start()
     {
@@ -108,10 +89,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     void Update()
     {
-        if (_photonView == null)
-            return;
-
-
         if (isSabotaged == false)
         {
             if (laundryTimer > 0)
@@ -184,17 +161,17 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     }
     private bool UpdatePlayerPoints(GameObject other)
     {
-        PlayerPoints playerPointsReference = PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
+        //PlayerPoints playerPointsReference = GameObject.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
 
-        return playerPoints = playerPointsReference;
+
+        return playerPoints = other.gameObject.GetComponent<TutorialPlayerPoints>();
     }
     public void SpawnFinishedProduct(LaundryType type)
     {
 
         GameObject newGO = null;
-        if (PhotonNetwork.IsMasterClient)
         {
-            newGO = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), itemSpawnPoint.transform.position, itemSpawnPoint.transform.rotation, 0);
+            newGO = Instantiate(spawnFinishedProductPrefab, itemSpawnPoint.transform.position, itemSpawnPoint.transform.rotation);
         }
 
         if (newGO)
@@ -206,11 +183,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             
         }
             
-
-
-        
-        RequestTransferOwnershipToHost();
-
     }
 
     public void ProcessItems()
@@ -250,7 +222,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     public void UseMachine(GameObject other)
     {
-        OnOwnershipRequest(_photonView, PhotonNetwork.LocalPlayer);
 
         StartCoroutine(UseMachineDelay(other, 0.25f));
     }
@@ -270,7 +241,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 if (isBoosted == false)
                 {
                     BoostMachine();
-                    PhotonNetwork.Destroy(other.gameObject);
+                    Destroy(other.gameObject);
                 }
 
 
@@ -281,13 +252,13 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 FixMachine();
                 RepairToolZoneSpawn.instance.RemoveObject();
                 
-                PhotonNetwork.Destroy(other.gameObject);
+                Destroy(other.gameObject);
                 
             }
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.LoadRuiner)
             {
                 RuinLoad();
-                PhotonNetwork.Destroy(other.gameObject);
+                Destroy(other.gameObject);
             }
             else if (other.GetComponent<ItemTypeForItem>().itemType == this.gameObject.GetComponent<ItemTypeForUsingItem>().itemType[0])
             {
@@ -311,14 +282,12 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                         playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
 
                         other.transform.parent = null;
-                        PhotonNetwork.Destroy(other.gameObject);
+                        Destroy(other.gameObject);
                     }
                 }
             }
         }
 
-        if(other.gameObject)
-            RequestTransferOwnershipToHost();
     }
 
     public void OnTriggerStay(Collider other)
@@ -382,96 +351,5 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             loadRuinerMachinePart.SetActive(true);
         }
     }
-    public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
-    {
-
-
-        if (targetView != base.photonView)
-            return;
-        
-        
-        base.photonView.TransferOwnership(requestingPlayer);
-        
-
-    }
-   
-    public void RequestOwnership()
-    {
-
-
-        // get ownership of the object were about to pickup
-        base.photonView.RequestOwnership();
-
-
-    }
-
-    public void RequestTransferOwnershipToHost()
-    {      
-        // return ownership back to master client.
-        base.photonView.TransferOwnership(PhotonNetwork.MasterClient);
-            
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        
-        if (stream.IsWriting)
-        {
-            
-            stream.SendNext(textString);
-            stream.SendNext(counter);
-            showTextString = $"Sending: {counter}";
-
-
-            stream.SendNext(laundryTimer);
-            stream.SendNext(cycleLength);
-            stream.SendNext(isEnabled);
-            stream.SendNext(isSabotaged);
-            stream.SendNext(isRuined);
-            stream.SendNext(isBoosted);
-            stream.SendNext(cycleLengthHold);
-
-
-            counter++;
-        }
-        else if(stream.IsReading)
-        {
-            
-            string newTextString = (string) stream.ReceiveNext();
-            int newCounter = (int) stream.ReceiveNext();
-            showTextString = $"Receiving: {newCounter}";
-
-
-            float laundry = (float) stream.ReceiveNext();
-            float cycle = (float) stream.ReceiveNext();
-            bool sliderIsEnabled = (bool) stream.ReceiveNext();
-            bool machineSabotaged = (bool)stream.ReceiveNext();
-            bool loadRuined = (bool) stream.ReceiveNext();
-            bool machineBoosted = (bool)stream.ReceiveNext();
-            float cycleHold = (float)stream.ReceiveNext();
-
-            if (laundry > laundryTimer || laundry < laundryTimer)
-                laundryTimer = laundry;
-
-            if (cycle > cycleLength || cycle < cycleLength)
-                cycleLength = cycle;
-
-            if (isEnabled != sliderIsEnabled)
-                isEnabled = sliderIsEnabled;
-
-            if (isSabotaged != machineSabotaged)
-                isSabotaged = machineSabotaged;
-
-            if (isRuined != loadRuined)
-                isRuined = loadRuined;
-
-            if (isBoosted != machineBoosted)
-                isBoosted = machineBoosted;
-
-            if (cycleLengthHold != cycleHold)
-                cycleLengthHold = cycleHold;
-
-
-        }
-    }
+    
 }

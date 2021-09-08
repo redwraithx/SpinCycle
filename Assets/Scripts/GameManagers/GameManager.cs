@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
     //loads the game level
     public void StartGame()
     {
-        SceneManager.LoadScene("LoadingScreen1");
+        SceneManager.LoadScene("NetworkLobby");
         
     }
     private void Update()
