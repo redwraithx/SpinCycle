@@ -24,6 +24,9 @@ public class WeaponScript : MonoBehaviourPun
     public float mouseSensitivity = 100f;
     public float yRotation = 0f;
     public Vector3 gunRotation;
+
+    //bool for gun fx
+    public bool isFiring = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -104,13 +107,15 @@ public class WeaponScript : MonoBehaviourPun
 
 
 
+
+
     }
 
     [PunRPC]
     public void RPCShoot(Vector3 spawnPoint, Quaternion spawnRotation)
     {
+        isFiring = true;
 
-    
         GameObject iceCube = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", "IceCube"), spawnPoint, spawnRotation);
         iceCube.GetComponent<Rigidbody>().AddForce(iceCube.transform.forward * projectileSpeed, ForceMode.Impulse);
         AudioClip freezeGunSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/FreezeGun/explosion");
