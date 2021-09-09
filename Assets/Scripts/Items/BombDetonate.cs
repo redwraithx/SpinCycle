@@ -22,23 +22,26 @@ public class BombDetonate : MonoBehaviourPun, IPunObservable
         {
             _photonView = GetComponent<PhotonView>();
         }
+
+
     }
     public void OnCollisionEnter(Collision collision)
     {
         
         if (CanDetonateObject(collision))
         {
+            if (detonated)
+                return;
+
+            detonated = true;
 
             if (collision.gameObject.tag == "machine")
             {
                 BroadcastMessage("SabotageMachine");
             }
 
-
-            Radius = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", radiusName), transform.position, transform.rotation);
-            detonated = true;
-
-
+            if(photonView.IsMine)
+                Radius = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", radiusName), transform.position, transform.rotation);
 
         }
 
