@@ -37,7 +37,7 @@ public class VFX_IceBullet_DissolveIn : MonoBehaviour
         }
 
         //Enable the charge VFX
-        chargeVFX.SetActive(true);
+        //chargeVFX.SetActive(true);
     }
 
     void Update()
@@ -84,7 +84,7 @@ public class VFX_IceBullet_DissolveIn : MonoBehaviour
         return Time.deltaTime;
     }
 
-    public void InsantiateCollideVFX(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         Debug.Log("SNOWBALL HIT");
         ContactPoint contact = collision.GetContact(0);
@@ -92,10 +92,5 @@ public class VFX_IceBullet_DissolveIn : MonoBehaviour
         Vector3 position = contact.point;
         Instantiate(collideVFX, position, rotation);
         Destroy(gameObject);
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-
     }
 }
