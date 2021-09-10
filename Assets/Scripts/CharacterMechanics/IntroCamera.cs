@@ -16,7 +16,7 @@ public class IntroCamera : MonoBehaviourPun
     void Start()
     {
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "TutorialLevel")
+        if (scene.name == "LobbyWaitingRoomScene" || scene.name == "TutorialLevel")
         {
             freeLook.SetActive(true);
         }
@@ -24,7 +24,7 @@ public class IntroCamera : MonoBehaviourPun
         {
             freeLook.SetActive(false);
         }
-        
+
         // if(!photonView)
         //     photonView =  
     }
