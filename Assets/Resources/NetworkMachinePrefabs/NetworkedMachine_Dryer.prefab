@@ -35278,14 +35278,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8207175180056093427}
     m_Modifications:
-    - target: {fileID: 142585478585304502, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 410126055804169734, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -35370,54 +35362,14 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3580660271922054831, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3809707238627723414, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.044
-      objectReference: {fileID: 0}
-    - target: {fileID: 3817349998273675414, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.033
-      objectReference: {fileID: 0}
-    - target: {fileID: 4583024525437038464, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.043
-      objectReference: {fileID: 0}
     - target: {fileID: 4806107522798756899, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_Name
       value: WashTimer (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4806107522798756899, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191959864528217973, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 6300960412223949637, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.033
-      objectReference: {fileID: 0}
-    - target: {fileID: 8292839240206450642, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
+    - target: {fileID: 5732389929984561992, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5006909237436640126, guid: bc45c7149ce143341882a6d057b5c37e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
 --- !u!224 &8825007362685524074 stripped
