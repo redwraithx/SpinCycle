@@ -42,6 +42,11 @@ public class IceCube : MonoBehaviourPun
         RaycastHit[] hits = Physics.SphereCastAll(transform.position, 4.0f, transform.forward, 1.0f, layerMask, QueryTriggerInteraction.UseGlobal);
         foreach (RaycastHit hit in hits)
         {
+            if (spawnedPatch)
+            {
+                break;
+            }
+
             Debug.Log("hit");
             if (hit.transform.gameObject.tag == "Player")
             {
@@ -52,9 +57,12 @@ public class IceCube : MonoBehaviourPun
                     PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", "IcePatch"), transform.position, transform.rotation);
                     spawnedPatch = true;
                 }
+                
             }
+            
+            
 
-            if (hit.transform.gameObject.layer == 8)
+            else if (hit.transform.gameObject.layer == 8)
             {
                 if(PhotonNetwork.IsMasterClient)
                 {
