@@ -46,6 +46,13 @@ public class WeaponScript : MonoBehaviourPun
 
     private void Update()
     {
+        if(gun.GetComponent<ItemTypeForItem>().itemType == ItemType.SabotageSoapGun)
+        {
+          Debug.Log("Weapon Script For Soap Bomb");
+            return;
+        }
+
+
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
         yRotation -= mouseY;
         yRotation = Mathf.Clamp(yRotation, -45f, 45f);

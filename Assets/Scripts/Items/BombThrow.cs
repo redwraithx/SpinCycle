@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BombThrow : MonoBehaviourPun, IBombThrow
 {
-
+    
     public float elevationAngle { get { return m_ElevationAngle; } set { m_ElevationAngle = value; } }
     [SerializeField]
     float m_ElevationAngle = 45f;
@@ -26,7 +26,7 @@ public class BombThrow : MonoBehaviourPun, IBombThrow
 
     public void Throw()
     {
-
+        Debug.Log("Throw Bomb Script");
         AudioClip throwBombSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/Bombs/Soapbomb/584170__unfa__explosion-02");
         GameManager.audioManager.PlaySfx(throwBombSound);
         GameObject bomb = this.gameObject;
