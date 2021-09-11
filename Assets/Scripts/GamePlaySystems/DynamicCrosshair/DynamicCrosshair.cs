@@ -8,14 +8,18 @@ public class DynamicCrosshair : MonoBehaviourPun
 {
     public Camera cam;
     public Image crosshair;
+    public Sprite[] crosshairArray;
     public GameObject player;
     public GameObject selectedObject;
 
     bool outOfRange = true;
     bool holdingWeapon = false;
+    int arrayIterator = 0;
 
     PlayerSphereCast sphereCast;
     Grab grab;
+
+    float tickWait;
     
     void Start()
     {
@@ -25,9 +29,9 @@ public class DynamicCrosshair : MonoBehaviourPun
             grab = player.gameObject.GetComponent<Grab>();
         //PlayerSphereCast.ObjectSelected += PlayerSphereCast_ObjectSelected;
         if (photonView.IsMine)
-            crosshair.gameObject.SetActive(true);
+            crosshair.transform.gameObject.SetActive(true);
         else
-            crosshair.gameObject.SetActive(false);
+            crosshair.transform.gameObject.SetActive(false);
         
     }
 
@@ -44,25 +48,47 @@ public class DynamicCrosshair : MonoBehaviourPun
         outOfRange = sphereCast.outOfRange;
         holdingWeapon = grab.weapon.enabled;
 
-        crosshair.transform.Rotate(0, 0, 70 * Time.deltaTime);
+       // crosshair.transform.Rotate(0, 0, 70 * Time.deltaTime);
 
         if(selectedObject != null)
         {
             Vector3 screenPos = cam.WorldToScreenPoint(selectedObject.transform.position);
             crosshair.transform.position = Vector3.MoveTowards(crosshair.transform.position, screenPos, 40);
+            //crosshair.transform.LookAt(cam.transform);    
         }
 
-        if (!outOfRange && holdingWeapon == false)
+        if (!outOfRange && holdingWeapon == false && grab.itemInHand == false)
         {
             if(photonView.IsMine)
-                crosshair.gameObject.SetActive(true);
+                crosshair.transform.gameObject.SetActive(true);
         }
 
-        else if (outOfRange == true || holdingWeapon == true)
+        else if (outOfRange == true || holdingWeapon == true || grab.itemInHand == true)
         {
             //crosshair.transform.position = transform.position;
-            crosshair.gameObject.SetActive(false);
+            crosshair.transform.gameObject.SetActive(false);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if(tickWait < 1)
+        {
+            tickWait++;
+            return;
+        }
+        
+        if(crosshair.gameObject.activeInHierarchy == true)
+        {
+            if (arrayIterator < crosshairArray.Length - 1)
+                arrayIterator++;
+            else
+                arrayIterator = 0;
+
+            crosshair.sprite = crosshairArray[arrayIterator];
+        }
+
+        tickWait = 0;
     }
 
     public void ActivateCrosshair(GameObject obj)
