@@ -24,6 +24,9 @@ TagManager:
   - ButtonPlayerCountText
   - MainTimer
   - Wall
+  - Top
+  - Bottom
+  - Repair USB
   layers:
   - Default
   - TransparentFX
@@ -39,7 +42,7 @@ TagManager:
   - Items
   - Layout
   - OuterWalls
-  - 
+  - Bullet
   - 
   - 
   - 

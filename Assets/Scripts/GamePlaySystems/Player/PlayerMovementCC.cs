@@ -88,6 +88,8 @@ public class PlayerMovementCC : MonoBehaviourPun
     private static readonly int Run = Animator.StringToHash("Run");
     public DashSphereCast playerDash;
 
+
+
     public float MoveSpeed
     {
         get => m_moveSpeedMultiplier;
@@ -140,6 +142,7 @@ public class PlayerMovementCC : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
+       
         playerDash = GetComponent<DashSphereCast>();
         tapToEscape.SetActive(false);
 
@@ -165,7 +168,7 @@ public class PlayerMovementCC : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-
+        
         if (isGrabbed)
         {
             tapToEscape.SetActive(true);
@@ -388,15 +391,13 @@ public class PlayerMovementCC : MonoBehaviourPun
         // can we jump?
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+           
             velocity.y = Jump();
-        }
-
-
-        if (Input.GetKeyDown("space"))
-        {
+                        
             characterAnimator.SetBool("Jump", true);
         }
-        if (Input.GetKeyUp("space"))
+
+        else if (!isGrounded)
         {
             characterAnimator.SetBool("Jump", false);
         }
@@ -475,6 +476,10 @@ public class PlayerMovementCC : MonoBehaviourPun
 
 
     }
+
+
+
+   
 
 
     private IEnumerator DiveCoroutine()

@@ -91,7 +91,8 @@ public class GameManager : MonoBehaviour
     //loads the game level
     public void StartGame()
     {
-        SceneManager.LoadScene("LoadingScreen1"); 
+        SceneManager.LoadScene("NetworkLobby");
+        
     }
     private void Update()
     {
@@ -117,7 +118,10 @@ public class GameManager : MonoBehaviour
 
     public void ToCredits()
     {
+        AudioClip anyKeySound = Resources.Load<AudioClip>("AudioFiles/TitleScreen/PressAnyKey/Beeping_Sound_B_1-BEEP");
+        audioManager.PlaySfx(anyKeySound);
         SceneManager.LoadScene("Credits");
+        
     }
     
     
@@ -125,16 +129,24 @@ public class GameManager : MonoBehaviour
     public void ToMain()
     {
         networkLevelManager = null;
-        
+
+        AudioClip anyKeySound = Resources.Load<AudioClip>("AudioFiles/TitleScreen/PressAnyKey/Beeping_Sound_B_1-BEEP");
+        audioManager.PlaySfx(anyKeySound);
+
         SceneManager.LoadScene("MainMenuScene");
     }
 
     public void ToSettings()
     {
+        AudioClip anyKeySound = Resources.Load<AudioClip>("AudioFiles/TitleScreen/PressAnyKey/Beeping_Sound_B_1-BEEP");
+        audioManager.PlaySfx(anyKeySound);
         SceneManager.LoadScene("SettingsMenu");
+        
+
+
     }
-    
-    
+
+
     public static GameManager Instance
     {
         get => _instance;

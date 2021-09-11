@@ -52,7 +52,7 @@ public class RandomItemSpawn : MonoBehaviourPun, IPunObservable
 
             objectInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
 
-            SpeedBoostRandomSetup();
+            //SpeedBoostRandomSetup();
             RandomNumber();
         }
     }
@@ -100,11 +100,12 @@ public class RandomItemSpawn : MonoBehaviourPun, IPunObservable
         {
             if (PhotonNetwork.IsMasterClient)
             {
+                RandomNumber();
                 spawnObject = spawnObjectGameObject.GetComponent<Item>();
                 VendingIndex = this.GetComponent<VendingIndex>();
                 VendingIndex = new VendingIndex(spawnObject.name, spawnObject.Description, spawnObject.Price.ToString(), spawnObject.sprite);
                 networkItemToSpawn = VendingIndex.Name;
-                CheckForSpeedBoost();
+                //CheckForSpeedBoost();
                 timeRunning = false;
                 objectInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
 
@@ -116,11 +117,12 @@ public class RandomItemSpawn : MonoBehaviourPun, IPunObservable
             {
                 if (PhotonNetwork.IsMasterClient)
                 {
+                    RandomNumber();
                     spawnObject = spawnObjectGameObject.GetComponent<Item>();
                     VendingIndex = this.GetComponent<VendingIndex>();
                     VendingIndex = new VendingIndex(spawnObject.name, spawnObject.Description, spawnObject.Price.ToString(), spawnObject.sprite);
                     networkItemToSpawn = VendingIndex.Name;
-                    CheckForSpeedBoost();
+                    //CheckForSpeedBoost();
                     timeRunning = false;
                     objectInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
                 }

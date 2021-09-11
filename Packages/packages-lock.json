@@ -6,6 +6,25 @@
       "source": "builtin",
       "dependencies": {}
     },
+    "com.unity.animation.rigging": {
+      "version": "0.3.4-preview",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.burst": "1.2.0-preview.12",
+        "com.unity.test-framework": "1.0.7"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.burst": {
+      "version": "1.2.0-preview.12",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.mathematics": "1.1.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.cinemachine": {
       "version": "2.6.3",
       "depth": 0,
@@ -27,6 +46,15 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.formats.alembic": {
+      "version": "1.0.7",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.ide.rider": {
       "version": "1.2.1",
       "depth": 0,
@@ -46,6 +74,13 @@
     "com.unity.ide.vscode": {
       "version": "1.2.2",
       "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.mathematics": {
+      "version": "1.1.0",
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"

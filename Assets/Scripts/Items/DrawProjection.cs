@@ -18,6 +18,8 @@ public class DrawProjection : MonoBehaviourPun
     //the physics layers that will cause the line to stop being drawn
     public LayerMask CollidableLayers;
 
+    public GameObject shootingFx;
+
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +58,10 @@ public class DrawProjection : MonoBehaviourPun
 
                 lineRenderer.SetPositions(points.ToArray());
             }
+
+            if (weaponScript.isFiring)
+                shootingFx.SetActive(true);
+
             
         }
             

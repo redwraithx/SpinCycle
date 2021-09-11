@@ -46,19 +46,23 @@ public class NetworkLevelManager : MonoBehaviourPun
 
         if (PhotonNetwork.IsConnected)
         {
-            //int newPlayerIndex = PhotonNetwork.CurrentRoom.PlayerCount - 1;
-            int newPlayerIndex = playersJoined.Count;
-
-            startingPosition = playerStartingPositions[newPlayerIndex].position;
-            startingRotation = playerStartingPositions[newPlayerIndex].rotation;
 
             if (NetworkedPlayer.LocalPlayerInstance == null)
             {
-                // spawn networked Player
-                networkedPlayer = PhotonNetwork.Instantiate(Path.Combine("NetworkingPrefabs", "NetworkedPlayerAvatar"), startingPosition, startingRotation, 0);
+                int newPlayerIndex = PhotonNetwork.LocalPlayer.ActorNumber - 1;
+                
+                Debug.Log("newPlayerIndex: " + newPlayerIndex);
+                
+                    startingPosition = playerStartingPositions[newPlayerIndex].position;
+                    startingRotation = playerStartingPositions[newPlayerIndex].rotation;
+                    
+                    // spawn networked Player
+                    networkedPlayer = PhotonNetwork.Instantiate(Path.Combine("NetworkingPrefabs", "NetworkedPlayerAvatar"), startingPosition, startingRotation, 0);
 
-                networkedPlayer.GetComponent<PlayerMovementCC>().playerDiveIndex = newPlayerIndex; // what is this for?
+                    networkedPlayer.GetComponent<PlayerMovementCC>().playerDiveIndex = 1; // what is this for?
             }
+            
+            
 
             if (PhotonNetwork.IsMasterClient)
             {

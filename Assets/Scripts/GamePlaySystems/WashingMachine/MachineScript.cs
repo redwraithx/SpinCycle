@@ -22,6 +22,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public string networkItemToSpawn = "";
     
     public float cycleLength;
+    public float cycleLengthHold;
     public GameObject itemSpawnPoint;
     public float laundryTimer;
     public float sabotageTimer;
@@ -33,7 +34,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     //public Slider sliderTime;
     public LaundryType laundryType;
     public MachineType machineType;
+
+    //old particle effects
     public ParticleSystem part;
+    //new particle effects
+    public GameObject sabotageEffects;
     //public TMP_Text pointsAdded;
     
     public ItemType SpawnFinishedProductItemType = ItemType.ClothingWet;
@@ -63,6 +68,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public Sprite goodSpinner;
     public Sprite badSpinner;
 
+
+    PlayerPoints playerPoints;
     private void Awake()
     {
         if (!_photonView)
@@ -80,6 +87,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         if(MachineType.washer == this.machineType)
         {
             cycleLength = 20;
+
         }
         else if (MachineType.dryer == this.machineType)
         {
@@ -93,7 +101,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
         if (isSabotaged == true)
         {
-            part.Play();
+            //part.Play();
+            sabotageEffects.SetActive(true);
         }
     }
 
@@ -108,7 +117,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             if (laundryTimer > 0)
             {
                 laundryTimer -= Time.deltaTime;
-                percent = laundryTimer/cycleLength;
+                percent = laundryTimer/cycleLengthHold;
                 percentCounter.text = (100 - Mathf.Round(percent * 100) + "%");
                 spinner.transform.Rotate(0, 0, 0.1f);
                 fillBarImage.fillAmount = 1 - percent;
@@ -130,9 +139,10 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
         //sliderTime.value = laundryTimer;
 
-        if(isSabotaged == true && part.isPlaying == false)
+        if(isSabotaged == true && sabotageEffects.activeInHierarchy == false)
         {
-            part.Play();
+            //part.Play();
+            sabotageEffects.SetActive(true);
         }
 
         if (isSabotaged == true && theSprite.GetComponent<Image>().sprite != disabledSprite)
@@ -145,9 +155,10 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             theSprite.GetComponent<Image>().sprite = normalSprite;
         }
 
-        if (isSabotaged == false && part.isPlaying == true)
+        if (isSabotaged == false && sabotageEffects.activeInHierarchy == true)
         {
             part.Stop();
+            sabotageEffects.SetActive(false);
         }
 
         if (isSabotaged == true && fillBarImage.GetComponent<Image>().sprite != barDisabled)
@@ -171,7 +182,12 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             spinner.GetComponent<SpriteRenderer>().sprite = goodSpinner;
         }
     }
+    private bool UpdatePlayerPoints(GameObject other)
+    {
+        PlayerPoints playerPointsReference = PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
 
+        return playerPoints = playerPointsReference;
+    }
     public void SpawnFinishedProduct(LaundryType type)
     {
 
@@ -205,7 +221,30 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         ruinTimer = 0;
         //sliderTime.maxValue = cycleLength;
         laundryTimer = cycleLength;
+        cycleLengthHold = cycleLength;
         isEnabled = true;
+
+
+        if (MachineType.washer == this.machineType)
+        {
+            AudioClip washingSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Washer/Washer_Machine_Special_Sound_C_10-SEC");
+            GameManager.audioManager.PlaySfx(washingSound);
+
+            /*var sound = GetComponent<AudioSource>();
+            sound.loop = true;
+            sound.clip = washingSound;
+            sound.Play();*/
+        }
+        else if (MachineType.dryer == this.machineType)
+        {
+            AudioClip dryingSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Dryer/Dryer_Machine_Special_Sound_B_10-SEC");
+            GameManager.audioManager.PlaySfx(dryingSound);
+        }
+        else if (MachineType.folder == this.machineType)
+        {
+            AudioClip foldingSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Folder/Ambient_Noises_A_10-SEC");
+            GameManager.audioManager.PlaySfx(foldingSound);
+        }
     }
 
 
@@ -228,8 +267,12 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.WasherBoost)
             {
-                BoostMachine();
-                PhotonNetwork.Destroy(other.gameObject);
+                if (isBoosted == false)
+                {
+                    BoostMachine();
+                    PhotonNetwork.Destroy(other.gameObject);
+                }
+
 
 
             }
@@ -252,8 +295,21 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 {
                     if (isSabotaged == false)
                     {
+                        
+                       
+
                         initialPrice = other.GetComponent<Item>().Price;
                         ProcessItems();
+                        bool updatedPlayerPoints = UpdatePlayerPoints(other);
+
+                        if (updatedPlayerPoints)
+                            Debug.Log("Players Points where updated");
+                        else
+                            Debug.Log("Players Points were not found to be updated.");
+
+
+                        playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
+
                         other.transform.parent = null;
                         PhotonNetwork.Destroy(other.gameObject);
                     }
@@ -292,14 +348,15 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         isSabotaged = true;
         //animator.ResetTrigger("Go");
         //animator.SetTrigger("Stop");
-        part.Play();
+        sabotageEffects.SetActive(true);
     }
     public void FixMachine()
     {
         //animator.ResetTrigger("Stop");
         isSabotaged = false;
         sabotageTimer = 0;
-        part.Stop();
+        //part.Stop();
+        sabotageEffects.SetActive(false);
 
         if (isEnabled)
         {
@@ -372,6 +429,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(isSabotaged);
             stream.SendNext(isRuined);
             stream.SendNext(isBoosted);
+            stream.SendNext(cycleLengthHold);
 
 
             counter++;
@@ -390,6 +448,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             bool machineSabotaged = (bool)stream.ReceiveNext();
             bool loadRuined = (bool) stream.ReceiveNext();
             bool machineBoosted = (bool)stream.ReceiveNext();
+            float cycleHold = (float)stream.ReceiveNext();
 
             if (laundry > laundryTimer || laundry < laundryTimer)
                 laundryTimer = laundry;
@@ -408,6 +467,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
             if (isBoosted != machineBoosted)
                 isBoosted = machineBoosted;
+
+            if (cycleLengthHold != cycleHold)
+                cycleLengthHold = cycleHold;
 
 
         }

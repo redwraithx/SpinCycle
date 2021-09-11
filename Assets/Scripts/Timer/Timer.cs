@@ -26,10 +26,6 @@ public class Timer : MonoBehaviour
     [Header("Autofill Sections"), ] 
     public float player1Points;
     public float player2Points;
-    public string player1Name;
-    public string player2Name;
-    public GameObject winner;
-    public GameObject loser;
     public NetworkedTimerNew networkedTimer;
 
     [Header("Victory Stand Items"),]
@@ -89,12 +85,7 @@ public class Timer : MonoBehaviour
                 {
                     if (GameManager.networkLevelManager.playersJoined.Count < 2)
                     {
-                        player1Points = GameManager.networkLevelManager.playersJoined[0].GetComponent<PlayerPoints>().points;
-                        player1Name = GameManager.networkLevelManager.playersJoined[0].name;
-                        winner = GameManager.networkLevelManager.playersJoined[0];
-                        pointTextW.text = player1Points.ToString();
-                        pointTextL.text = "Coward";
-                        victoryText.text = "Win by disconnect";
+                        OnePlayerQuit();
                     }
                     else if (GameManager.networkLevelManager.playersJoined.Count == 2)
                     {
@@ -109,6 +100,14 @@ public class Timer : MonoBehaviour
 
     }
 
+    public void OnePlayerQuit()
+    {
+        player1Points = GameManager.networkLevelManager.playersJoined[0].GetComponent<PlayerPoints>().points;
+        pointTextW.text = player1Points.ToString();
+        pointTextL.text = "Coward";
+        victoryText.text = "Win by disconnect";
+    }
+
     void DisplayTime(float timeToDisplay)
     {
         timeToDisplay += 1;
@@ -121,25 +120,20 @@ public class Timer : MonoBehaviour
 
     public void EndGame()
     {
+        Debug.Log("GameEnding");
         player1Points = GameManager.networkLevelManager.playersJoined[0].GetComponent<PlayerPoints>().points;
         player2Points = GameManager.networkLevelManager.playersJoined[1].GetComponent<PlayerPoints>().points;
-        player1Name = GameManager.networkLevelManager.playersJoined[0].name;
-        player2Name = GameManager.networkLevelManager.playersJoined[1].name;
 
         if (player1Points > player2Points)
         {
             pointTextW.text = player1Points.ToString();
             pointTextL.text = player2Points.ToString();
-            winner = GameManager.networkLevelManager.playersJoined[0];
-            loser = GameManager.networkLevelManager.playersJoined[1];
             victoryText.text = ("Player 1(Host) Wins");
         }
         if (player2Points > player1Points)
         {
             pointTextL.text = player1Points.ToString();
             pointTextW.text = player2Points.ToString();
-            winner = GameManager.networkLevelManager.playersJoined[1];
-            loser = GameManager.networkLevelManager.playersJoined[0];
             victoryText.text = ("Player 2(Joined) Wins");
         }
         else if (player1Points == player2Points)
@@ -147,12 +141,11 @@ public class Timer : MonoBehaviour
             pointTextL.text = player1Points.ToString();
             pointTextW.text = player2Points.ToString();
             victoryText.text = ("Tied");
-            winner = GameManager.networkLevelManager.playersJoined[1];
-            loser = GameManager.networkLevelManager.playersJoined[0];
         }
     }
     IEnumerator Fading()
     {
+        Debug.Log("fading happening");
         anim.SetBool("Fade", true);
         yield return new WaitUntil(() => BlackImage.color.a == 1);
 
@@ -161,19 +154,7 @@ public class Timer : MonoBehaviour
         panel.gameObject.SetActive(false);
         background.gameObject.SetActive(false);
         timeText.gameObject.SetActive(false);
-        winner.gameObject.GetComponent<PlayerMovementCC>().enabled = false;
-        if (PhotonNetwork.IsMasterClient)
-        {
-            winnerModel = PhotonNetwork.Instantiate(Path.Combine("NetworkedSceneObjects", modelName), vStand.transform.position, vStand.transform.rotation);
-        }
-        if (GameManager.networkLevelManager.playersJoined.Count == 2)
-        {
-            loser.gameObject.GetComponent<PlayerMovementCC>().enabled = false;
-            if (PhotonNetwork.IsMasterClient)
-            {
-                loserModel = PhotonNetwork.Instantiate(Path.Combine("NetworkedSceneObjects", modelName), loserVille.transform.position, loserVille.transform.rotation);
-            }
-        }
+
 
         isGameOver = true;
 

@@ -12,25 +12,28 @@ public class IceCube : MonoBehaviourPun
     public List<GameObject> currentHitObjects = new List<GameObject>();
     public LayerMask layerMask;
     public BoxCollider boxCollider;
+
+    bool spawnedPatch = false;
     // Start is called before the first frame update
     void Start()
     {
         boxCollider.enabled = false;
-        Shoot();
-        Invoke("StartSphereCast", 0.5f);
+        Invoke("StartSphereCast", 0.3f);
     }
 
     // Update is called once per frame
     void Update()
     {
-/*        if (isShooting == true)
-        {
-            RaycastHit[] hits = Physics.SphereCastAll(transform.position, 4.0f, transform.forward, 1.0f, layerMask, QueryTriggerInteraction.UseGlobal);
-            foreach (RaycastHit hit in hits)
-            {
-                currentHitObjects.Add(hit.transform.gameObject);
-            }
-        }*/
+        /*        if (isShooting == true)
+                {
+                    RaycastHit[] hits = Physics.SphereCastAll(transform.position, 4.0f, transform.forward, 1.0f, layerMask, QueryTriggerInteraction.UseGlobal);
+                    foreach (RaycastHit hit in hits)
+                    {
+                        currentHitObjects.Add(hit.transform.gameObject);
+                    }
+                }*/
+
+        Debug.Log(transform.position);
     }
 
 
@@ -39,22 +42,43 @@ public class IceCube : MonoBehaviourPun
         RaycastHit[] hits = Physics.SphereCastAll(transform.position, 4.0f, transform.forward, 1.0f, layerMask, QueryTriggerInteraction.UseGlobal);
         foreach (RaycastHit hit in hits)
         {
+            if (spawnedPatch)
+            {
+                break;
+            }
+
             Debug.Log("hit");
             if (hit.transform.gameObject.tag == "Player")
             {
                 hit.transform.gameObject.GetComponent<PlayerMovementCC>().isFrozen = true;
+                if (spawnedPatch == false)
+                {
+                    //GetComponentInChildren<VFX_IceBullet_DissolveIn>().InsantiateCollideVFX(collision);
+                    PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", "IcePatch"), transform.position, transform.rotation);
+                    spawnedPatch = true;
+                }
+                
             }
+            
+            
 
-            if (hit.transform.gameObject.layer == 8)
+            else if (hit.transform.gameObject.layer == 8)
             {
                 if(PhotonNetwork.IsMasterClient)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", "IcePatch"), transform.position, transform.rotation);
+                    if(spawnedPatch == false)
+                    {
+                        //GetComponentInChildren<VFX_IceBullet_DissolveIn>().InsantiateCollideVFX(collision);
+                        PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", "IcePatch"), transform.position, transform.rotation);
+                        spawnedPatch = true;
+                    }
+
                 }
 
             }
         }
-        Destroy(gameObject);
+        GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient);
+        PhotonNetwork.Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()
@@ -63,13 +87,11 @@ public class IceCube : MonoBehaviourPun
         Gizmos.DrawWireSphere(transform.position, 4.0f);
     }
 
-    public void Shoot()
-    {
-        GetComponent<Rigidbody>().AddForce(transform.forward * 30f, ForceMode.Impulse);
-    }
 
     void StartSphereCast()
     {
         boxCollider.enabled = true;
     }
+
+   
 }
