@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class NetworkedTimerNew : MonoBehaviourPunCallbacks, IOnEventCallback
 {
 
-    private int matchLength = 600;
+    private int matchLength = 605;
     public int currentMatchTime;
 
     private Coroutine timerCoroutine;
