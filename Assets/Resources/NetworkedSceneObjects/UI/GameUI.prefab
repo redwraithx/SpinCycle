@@ -3305,33 +3305,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4626427164193543696, guid: d1558dfa03de0ed409cea20cf1ec406e, type: 3}
   m_PrefabInstance: {fileID: 4582066327191003357}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &880029331745230856 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3720178967586992341, guid: d1558dfa03de0ed409cea20cf1ec406e, type: 3}
-  m_PrefabInstance: {fileID: 4582066327191003357}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &438167588540905388 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4143991248017839985, guid: d1558dfa03de0ed409cea20cf1ec406e, type: 3}
-  m_PrefabInstance: {fileID: 4582066327191003357}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &9197084853552926246 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4626427162371190523, guid: d1558dfa03de0ed409cea20cf1ec406e, type: 3}
-  m_PrefabInstance: {fileID: 4582066327191003357}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7866401224803747447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3339,50 +3312,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7866401223967185516}
     m_Modifications:
-    - target: {fileID: 1774584391142282904, guid: f07519b785a0bde4bb7a2d40bd14325b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 49
-      objectReference: {fileID: 0}
-    - target: {fileID: 1774584391142282904, guid: f07519b785a0bde4bb7a2d40bd14325b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 3809407894476246365, guid: f07519b785a0bde4bb7a2d40bd14325b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 3809407894476246365, guid: f07519b785a0bde4bb7a2d40bd14325b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 3809407894988083252, guid: f07519b785a0bde4bb7a2d40bd14325b, type: 3}
       propertyPath: m_Name
       value: ClockTimerContainer
       objectReference: {fileID: 0}
-    - target: {fileID: 3809407896005273816, guid: f07519b785a0bde4bb7a2d40bd14325b, type: 3}
-      propertyPath: player1PointCounter
-      value: 
-      objectReference: {fileID: 880029331745230856}
-    - target: {fileID: 3809407896005273816, guid: f07519b785a0bde4bb7a2d40bd14325b, type: 3}
-      propertyPath: player2PointCounter
-      value: 
-      objectReference: {fileID: 438167588540905388}
-    - target: {fileID: 3809407896005273816, guid: f07519b785a0bde4bb7a2d40bd14325b, type: 3}
-      propertyPath: pointCounters
-      value: 
-      objectReference: {fileID: 9197084853552926246}
-    - target: {fileID: 3809407896005273816, guid: f07519b785a0bde4bb7a2d40bd14325b, type: 3}
-      propertyPath: GameOverImage
-      value: 
-      objectReference: {fileID: 7866401224278008597}
-    - target: {fileID: 3809407896005273816, guid: f07519b785a0bde4bb7a2d40bd14325b, type: 3}
-      propertyPath: BlackImage
-      value: 
-      objectReference: {fileID: 7866401223162512413}
-    - target: {fileID: 3809407896005273816, guid: f07519b785a0bde4bb7a2d40bd14325b, type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 7866401223162512386}
     - target: {fileID: 3809407896005273823, guid: f07519b785a0bde4bb7a2d40bd14325b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
