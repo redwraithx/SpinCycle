@@ -216,10 +216,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public void ProcessItems()
     {
         percentCounter.text = "0%";
-        //animator.ResetTrigger("Stop");
-        //animator.SetTrigger("Go");
         ruinTimer = 0;
-        //sliderTime.maxValue = cycleLength;
         laundryTimer = cycleLength;
         cycleLengthHold = cycleLength;
         isEnabled = true;
@@ -294,10 +291,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 if (isEnabled == false)
                 {
                     if (isSabotaged == false)
-                    {
-                        
-                       
-
+                    {                                              
                         initialPrice = other.GetComponent<Item>().Price;
                         ProcessItems();
                         bool updatedPlayerPoints = UpdatePlayerPoints(other);
@@ -307,10 +301,18 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                         else
                             Debug.Log("Players Points were not found to be updated.");
 
+                        if(GameManager.networkLevelManager.playersJoined.Count > 1)
+                        {
+                            playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
+                        }
 
-                        playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
+                        Debug.Log(other.gameObject + "is being removed from parent");
 
                         other.transform.parent = null;
+
+                        Debug.Log(other.gameObject + "is being destroyed");
+
+
                         PhotonNetwork.Destroy(other.gameObject);
                     }
                 }
