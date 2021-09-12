@@ -231,6 +231,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUp_New (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6409639012736634824, guid: 4440180ce350ba6478bf58ea97bc10e1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f6ccbe2230df0243a58e85c6447d9b4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4440180ce350ba6478bf58ea97bc10e1, type: 3}
 --- !u!4 &8399155665143488201 stripped

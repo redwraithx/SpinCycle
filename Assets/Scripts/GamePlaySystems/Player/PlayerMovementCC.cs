@@ -368,21 +368,21 @@ public class PlayerMovementCC : MonoBehaviourPun
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Debug.Log("diving maybe");
+            Debug.Log("diving was removed, go to line 369 in the player movement script to fix");
 
 
             //Diving(true);
 
             //if(!GameManager.networkLevelManager.isPlayersDiveDelayEnabled[playerDiveIndex])
-            if (canDive)
-                StartCoroutine(DiveCoroutine());
+            //if (canDive)
+            //    StartCoroutine(DiveCoroutine());
 
             //Input a way to let go of the player when diving.
             //grabHold.isBeingGrabbed = false;
             //grabHold.isHoldingOtherPlayer = false;
 
             //GetComponent<GrabAndHold>().BeingReleased();
-            SpeedUp();
+            //SpeedUp();
 
         }
 
