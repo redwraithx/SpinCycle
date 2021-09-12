@@ -48,7 +48,7 @@ public class Grab : MonoBehaviour
         if (canPickUpItem && itemToPickUp && outOfRange == false)
         {
 
-
+            characterAnimator.ResetTrigger("Idle2");
             hasItemInHand = true;
             GetComponent<PlayerSphereCast>().itemInHand = true;
             itemInHand = itemToPickUp;
@@ -228,6 +228,7 @@ public class Grab : MonoBehaviour
                     else if (itemInHand.GetComponent<RepairToolUse>())
                     {
                         Debug.Log("ItemInHand: " + itemInHand.gameObject.name + ", Using Repair");
+                        characterAnimator.SetTrigger("RepairOpened");
                         itemInHand.GetComponent<RepairToolUse>().UseItem();
 
                         itemInHand = null;
@@ -241,7 +242,6 @@ public class Grab : MonoBehaviour
                         characterAnimator.SetTrigger("Throw2");
                         //soapBombThrow();
                     }
-                    
 
 
                 }
@@ -251,7 +251,7 @@ public class Grab : MonoBehaviour
             }
             if (Input.GetMouseButtonUp(0))
             {
-
+                            
             }
         }
         if (itemInHand)
@@ -311,7 +311,10 @@ public class Grab : MonoBehaviour
         throwBomb = true;
         itemInHand.GetComponent<BombThrow>().Throw();
         ThrowCoroutine();
-
+       
+            characterAnimator.SetTrigger("Idle2");
+            // characterAnimator.SetBool("PickUp", false);
+        
         CheckForMouseUp();
 
         itemInHand = null;
