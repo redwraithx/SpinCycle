@@ -68,7 +68,7 @@ public class CreditsScroll : MonoBehaviour
         string playerName = GetCurrentPlayersName();
 
         StringBuilder endingString = new StringBuilder();
-        endingString.AppendFormat("\n\n\n\nThank you\n\n{0}\n\nFor Playing Our Game.\n\n\nPress any Key to return to menu\n", playerName);
+        endingString.AppendFormat("\n\n\n\n\n\n\nThank you\n\n{0}\n\nFor Playing Our Game.\n\n\nPress any Key to return to menu\n", playerName);
 
         return endingString.ToString();
     }
