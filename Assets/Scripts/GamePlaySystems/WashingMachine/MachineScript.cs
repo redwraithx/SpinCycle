@@ -144,7 +144,13 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 fillBarImage.fillAmount = 0;
                 isEnabled = false;
             }
+
+            if(laundryTimer <= 0 && isEnabled == false)
+            {
+                percentCounter.text = ("0%");
+            }
         }
+
 
 
         //sliderTime.value = laundryTimer;
