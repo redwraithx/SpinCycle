@@ -1748,11 +1748,19 @@ MonoBehaviour:
   - Type: 9
     SynchronizeType: 0
     Name: Idle2
+  - Type: 9
+    SynchronizeType: 0
+    Name: RepairUsed
+  - Type: 9
+    SynchronizeType: 0
+    Name: RepairOpened
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
   - SynchronizeType: 0
     LayerIndex: 1
+  - SynchronizeType: 0
+    LayerIndex: 2
 --- !u!114 &859618440305262334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2235,7 +2243,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6848871425079053767}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67a2cbf8ea1aff74f9ec7b60959cfa15, type: 3}
   m_Name: 
@@ -2243,8 +2251,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  DistanceToGround: 0.06
-  localForward: {fileID: 0}
+  DistanceToGround: 0.168
 --- !u!114 &3848306796407299469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2661,11 +2668,19 @@ MonoBehaviour:
   - Type: 9
     SynchronizeType: 1
     Name: Idle2
+  - Type: 9
+    SynchronizeType: 0
+    Name: RepairUsed
+  - Type: 9
+    SynchronizeType: 0
+    Name: RepairOpened
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
   - SynchronizeType: 1
     LayerIndex: 1
+  - SynchronizeType: 0
+    LayerIndex: 2
 --- !u!1 &6848871426206990825
 GameObject:
   m_ObjectHideFlags: 0

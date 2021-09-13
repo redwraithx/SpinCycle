@@ -125,9 +125,9 @@ public class WeaponScript : MonoBehaviourPun
 
         GameObject iceCube = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", "IceCube"), spawnPoint, spawnRotation);
         iceCube.GetComponent<Rigidbody>().AddForce(iceCube.transform.forward * projectileSpeed, ForceMode.Impulse);
-        AudioClip freezeGunSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/FreezeGun/explosion");
+        AudioClip freezeGunSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/FreezeGun/freeze");
         //iceCube.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient);
-        //GameManager.audioManager.PlaySfx(freezeGunSound);
+        GameManager.audioManager.PlaySfx(freezeGunSound);
     }
 
     //public int Shoot()

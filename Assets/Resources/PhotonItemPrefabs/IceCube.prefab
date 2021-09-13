@@ -187,7 +187,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5540446888189738018}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdc126397751e194ba8b95953edc3800, type: 3}
   m_Name: 
@@ -246,7 +246,6 @@ GameObject:
   - component: {fileID: 2801090943936756512}
   - component: {fileID: 1172298783007793456}
   - component: {fileID: -9208037133819103790}
-  - component: {fileID: 5109846260473912234}
   m_Layer: 14
   m_Name: IceCube
   m_TagString: Bullet
@@ -263,7 +262,7 @@ Transform:
   m_GameObject: {fileID: 6072436598178246640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 17.8, y: 2, z: -7.07}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 6534005125213337923}
   m_Father: {fileID: 0}
@@ -276,7 +275,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6072436598178246640}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &6072436598178246642
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -296,7 +295,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7eaf5d32b64c4ba4fbb3d5c001d14847, type: 2}
+  - {fileID: 2100000, guid: e7e5d8a6b93786d45a04039b1a94da12, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -385,7 +384,6 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 1172298783007793456}
   - {fileID: -9208037133819103790}
-  - {fileID: 5109846260473912234}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -421,28 +419,6 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 0.001
---- !u!114 &5109846260473912234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6072436598178246640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f90a41f1c18f8e4aa8eede153b212ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: 0
-  _name: 
-  _description: 
-  _price: 0
-  _timeAdjustment: 0
-  _sprite: {fileID: 0}
-  _ownerId: 0
-  correctPosition: {x: 0, y: 0, z: 0}
-  correctRotation: {x: 0, y: 0, z: 0, w: 1}
-  originalParent: {fileID: 0}
 --- !u!1 &6498834877068313792
 GameObject:
   m_ObjectHideFlags: 0
@@ -5266,6 +5242,7 @@ GameObject:
   - component: {fileID: 19105690006615051}
   - component: {fileID: 4170936333666122897}
   - component: {fileID: 3146025308144626699}
+  - component: {fileID: 5213328939630807384}
   m_Layer: 0
   m_Name: Snowflakes
   m_TagString: Untagged
@@ -10067,6 +10044,28 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &5213328939630807384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6942406781534453762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &8917841582949413826
 GameObject:
   m_ObjectHideFlags: 0
