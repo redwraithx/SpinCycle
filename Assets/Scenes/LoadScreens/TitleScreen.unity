@@ -1283,6 +1283,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   netWorkLobbySceneIndex: 5
+  sfx: 0
+  music: 0
+  SFX: {fileID: 24100000, guid: 488fd56100e65b74794fa9dd33ec2c4a, type: 2}
+  Music: {fileID: 24100000, guid: 0db846f7ed54a6443b88cd9d4e726522, type: 2}
   masterAudioMixerGroup: {fileID: 24300002, guid: 0db846f7ed54a6443b88cd9d4e726522, type: 2}
   masterSfxMixerGroup: {fileID: 24300002, guid: 488fd56100e65b74794fa9dd33ec2c4a, type: 2}
   m_MusicSource1: {fileID: 0}

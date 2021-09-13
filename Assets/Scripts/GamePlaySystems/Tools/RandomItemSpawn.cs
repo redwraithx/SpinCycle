@@ -62,13 +62,13 @@ public class RandomItemSpawn : MonoBehaviourPun, IPunObservable
         
         if(itemName.text != networkItemToSpawn)
         {
-            itemName.text = networkItemToSpawn;
+            //itemName.text = networkItemToSpawn;
         }
 
         if (timer > 0)
         {
             timer -= Time.deltaTime;
-            countdown.text = Mathf.Round(timer).ToString();
+            //countdown.text = Mathf.Round(timer).ToString();
         }
         if (timer <= 0 && timeRunning == true)
         {
