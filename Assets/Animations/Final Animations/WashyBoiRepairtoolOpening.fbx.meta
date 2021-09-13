@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 4adb6dff765c4ee49807d74851ea0d47
+guid: f5fc711388607a243ad265fd71f3abaa
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
   - first:
-      74: -6374082628681470384
-    second: FreezegunRun
+      74: 3207831043903199856
+    second: RepairOpen
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -33,36 +33,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: FreezegunRun
-      takeName: FreezegunRun
-      internalID: 0
-      firstFrame: 1
-      lastFrame: 24
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
