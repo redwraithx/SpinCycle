@@ -21,9 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6edd3356-5640-48c5-9fc2-63461a08671e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpinCycle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Planet Items/Graphics/Planet Material 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Items/Graphics/Planet Material 2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Planet Items/Graphics/Planet Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Items/Graphics/Planet Material.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreditsScroll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreditsScroll.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +42,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/05250243-5982-472D-92DA-7F939C7F8164/15/a0ac672e/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/Crossplatforms2_networking/Assets/Scripts/Level1/Player/PlayerHealth.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/GamePlaySystems/TutorialPrefabs/Scripts/Tutorial_MachineScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../UnityProjects/UnitTest_Project2/Assets/Tests/EditMode/damage_calculator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/Crossplatforms2_networking/Assets/Scripts/Level1/Player/PlayerWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/Crossplatforms2_networking/Assets/Scripts/Level1/Player/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
@@ -51,7 +50,6 @@
     <setting file="file://$PROJECT_DIR$/../../../UnityProjects/2D_EventTest_Project1/Assets/Scripts/AimAtMouse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Funamentals2_Labs/Fundamentals2_Lab7/Assets/Scripts/Enemy/EnemyUnit.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Networking/ItemSpawner/Network_ItemSpawn.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/GamePlaySystems/TutorialPrefabs/Scripts/Tutorial_MachineScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Networking/MaschinesSpawner/Network_MachineSpawn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/05250243-5982-472D-92DA-7F939C7F8164/31/64b90b70/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../CROSSPLATFORM_CLASS/CrossPlatforms2_Lab7/Assets/Scripts/LoadSaveManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -217,6 +215,7 @@
       <workItem from="1630521189066" duration="117000" />
       <workItem from="1631119290898" duration="448000" />
       <workItem from="1631125368605" duration="5434000" />
+      <workItem from="1631556422495" duration="2367000" />
     </task>
     <servers />
   </component>
