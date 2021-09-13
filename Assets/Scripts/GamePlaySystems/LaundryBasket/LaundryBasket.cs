@@ -11,7 +11,7 @@ using Photon.Realtime;
 
 public class LaundryBasket : MonoBehaviourPun
 {
-
+    public MachineConveyor conveyor;
     public TMP_Text pointsText = null;
     public int points;
     PlayerPoints playerPoints = null;
@@ -45,6 +45,10 @@ public class LaundryBasket : MonoBehaviourPun
     {
         if (other.CompareTag("Item"))
         {
+            if (!conveyor.isRunning)
+            {
+                conveyor.SpawnObject();
+            }
             if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone || other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingUnfolded)
             {
                 bool updatedPlayerPoints = UpdatePlayerPoints(other);

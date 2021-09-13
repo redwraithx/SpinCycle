@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 4996081392249063206}
   - component: {fileID: 2889000184108486017}
   - component: {fileID: 6281702712564527763}
+  - component: {fileID: 7499348814358326619}
   m_Layer: 13
   m_Name: Terminal
   m_TagString: Machine
@@ -299,6 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38265891638d2a648bb7ae58a9418fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  conveyor: {fileID: 0}
   _photonView: {fileID: 2889000184108486017}
   networkItemToSpawn: NetworkSpawned_T-Shirt_Unfolded
   cycleLength: 600
@@ -319,7 +321,7 @@ MonoBehaviour:
   textString: Sending
   showTextString: 
   counter: 0
-  priceAddition: 2
+  priceAddition: 0
   initialPrice: 5
   loadRuinerMachinePart: {fileID: 0}
   boostMachinePart: {fileID: 0}
@@ -334,6 +336,10 @@ MonoBehaviour:
   spinner: {fileID: 270103778125220770}
   goodSpinner: {fileID: -722119813425603779, guid: fe3baaaa37c2f1d4095d06938db17bdd, type: 3}
   badSpinner: {fileID: -9164130464008331663, guid: fe3baaaa37c2f1d4095d06938db17bdd, type: 3}
+  washerAudioDis: {fileID: 0}
+  dryingAudioDis: {fileID: 0}
+  foldingAudioDis: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &2889000184108486017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +376,102 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.3237243, y: 2.514527, z: 1.8034368}
   m_Center: {x: -0.21094093, y: 0.75726384, z: -6.3499303}
+--- !u!82 &7499348814358326619
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4075529732653587311}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 30
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5604447417031965013
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,6 +34,9 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
     public Text vectorText;
     public Text myVectorText;
 
+    float maxTimer = 5;
+    float grabTime;
+
 
     private void OnEnable()
     {
@@ -85,6 +88,7 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
         CheckGrab();
         if (isGrabbing == true)
         {
+            grabTime += Time.deltaTime;
             playerCC.isGrabbing = true;
             if (PhotonNetwork.IsMasterClient)
                 GrabMaster_S();
@@ -94,6 +98,7 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
         else
         {
             playerCC.isGrabbing = false;
+
         }
 
         if (photonView.IsMine)
@@ -114,18 +119,20 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
     private void CheckGrab()
     {
 
-        if (targetPlayer && Input.GetMouseButtonDown(0) && !isBeingGrabbed)
+        if (targetPlayer && Input.GetMouseButtonDown(0) && !isBeingGrabbed && grabTime < maxTimer)
         {
             if (!targetPlayer)
                 return;
 
             isGrabbing = true;
 
+
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) || grabTime >= maxTimer)
         {
             isGrabbing = false;
+            Invoke("ResetGrabTime", 2f);
             if (PhotonNetwork.IsMasterClient)
                 GrabMaster_S();
             else
@@ -133,6 +140,11 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
         }
 
 
+    }
+
+    void ResetGrabTime()
+    {
+        grabTime = 0f;
     }
 
 
@@ -173,7 +185,7 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
     public void GrabMaster_S()
     {
         
-        object[] package = new object[] {  grabberPos, isGrabbing };
+        object[] package = new object[] {  grabberPos, isGrabbing, grabTime };
 
         PhotonNetwork.RaiseEvent(
             (byte)grabByte,
@@ -186,7 +198,7 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
     public void GrabSecondary_S()
     {
         
-        object[] package = new object[] { this.grabberPos, isGrabbing };
+        object[] package = new object[] { this.grabberPos, isGrabbing, grabTime };
 
         PhotonNetwork.RaiseEvent(
             (byte)secondGrabByte,
@@ -207,6 +219,7 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
                 playerCC.enemyGrab = grabMovement;            
                 //Debug.Log(data[0]);
                 playerCC.isGrabbed = (bool)data[1];
+                playerCC.grabTimer = (float)data[2];
 
                 //vectorText.text = grabMovement.ToString();
             }
@@ -222,6 +235,7 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
                 playerCC.enemyGrab = grabMovement;
                 //Debug.Log(data[0]);
                 playerCC.isGrabbed = (bool)data[1];
+                playerCC.grabTimer = (float)data[2];
 
                 //vectorText.text = grabMovement.ToString();
             }

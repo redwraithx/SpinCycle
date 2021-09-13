@@ -18,6 +18,7 @@ using Debug = UnityEngine.Debug;
 
 public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 {
+    public MachineConveyor conveyor;
     public PhotonView _photonView = null;
     public string networkItemToSpawn = "";
     
@@ -68,6 +69,10 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public Sprite goodSpinner;
     public Sprite badSpinner;
 
+    public AudioClip washerAudioDis;
+    public AudioClip dryingAudioDis;
+    public AudioClip foldingAudioDis;
+    public AudioSource audioSource;
 
     PlayerPoints playerPoints;
     private void Awake()
@@ -78,6 +83,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
 
         }
+
+        audioSource = GetComponent<AudioSource>();
+        washerAudioDis = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Washer/Washer_Machine_Special_Sound_C_20-SEC");
+        dryingAudioDis = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Dryer/Dryer_Machine_Special_Sound_B_25-SEC");
+        foldingAudioDis = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Folder/Ambient_Noises_A_15-SEC");
     }
 
     private void Start()
@@ -216,34 +226,45 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public void ProcessItems()
     {
         percentCounter.text = "0%";
-        //animator.ResetTrigger("Stop");
-        //animator.SetTrigger("Go");
         ruinTimer = 0;
-        //sliderTime.maxValue = cycleLength;
         laundryTimer = cycleLength;
         cycleLengthHold = cycleLength;
         isEnabled = true;
 
 
+
         if (MachineType.washer == this.machineType)
         {
-            AudioClip washingSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Washer/Washer_Machine_Special_Sound_C_10-SEC");
-            GameManager.audioManager.PlaySfx(washingSound);
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = washerAudioDis;
+                audioSource.Play();
+                Debug.Log("Audio is playing herer!@!#@#@#2");
+            }
 
-            /*var sound = GetComponent<AudioSource>();
-            sound.loop = true;
-            sound.clip = washingSound;
-            sound.Play();*/
+
         }
         else if (MachineType.dryer == this.machineType)
         {
-            AudioClip dryingSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Dryer/Dryer_Machine_Special_Sound_B_10-SEC");
-            GameManager.audioManager.PlaySfx(dryingSound);
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = dryingAudioDis;
+                audioSource.Play();
+
+            }
         }
         else if (MachineType.folder == this.machineType)
         {
-            AudioClip foldingSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Folder/Ambient_Noises_A_10-SEC");
-            GameManager.audioManager.PlaySfx(foldingSound);
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = foldingAudioDis;
+                audioSource.Play();
+            }
+            if (!conveyor.isRunning)
+            {
+                conveyor.SpawnObject();
+            }
+
         }
     }
 
@@ -294,10 +315,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 if (isEnabled == false)
                 {
                     if (isSabotaged == false)
-                    {
-                        
-                       
-
+                    {                                              
                         initialPrice = other.GetComponent<Item>().Price;
                         ProcessItems();
                         bool updatedPlayerPoints = UpdatePlayerPoints(other);
@@ -307,10 +325,18 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                         else
                             Debug.Log("Players Points were not found to be updated.");
 
+                        if(GameManager.networkLevelManager.playersJoined.Count > 1)
+                        {
+                            playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
+                        }
 
-                        playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
+                        Debug.Log(other.gameObject + "is being removed from parent");
 
                         other.transform.parent = null;
+
+                        Debug.Log(other.gameObject + "is being destroyed");
+
+
                         PhotonNetwork.Destroy(other.gameObject);
                     }
                 }
