@@ -535,5 +535,29 @@ public class PlayerMovementCC : MonoBehaviourPun
 
         return transform.position;
     }
+    public void LeftFootSound()
+    {
+        AudioClip leftFoot = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/WalkingSound/LeftFoot/Metal_Footstep_A_01");
+        GameManager.audioManager.PlaySfx(leftFoot);
+        
+    }
 
+    public void RightFootSound()
+    {
+        AudioClip rightFoot = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/WalkingSound/RightFoot/Metal_Footstep_A_05");
+        GameManager.audioManager.PlaySfx(rightFoot);
+    }
+
+    public void JumpUp()
+    {
+        AudioClip jumpUp = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/JumpUp/Metal_Footstep_Jump_03");
+        GameManager.audioManager.PlaySfx(jumpUp);
+        
+    }
+
+    public void JumpLand()
+    {
+        AudioClip jumpLand = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/JumpLand/Metal_Footstep_Land_02");
+        GameManager.audioManager.PlaySfx(jumpLand);
+    }
 }

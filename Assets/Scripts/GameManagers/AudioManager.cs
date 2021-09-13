@@ -4,7 +4,7 @@ using System.Collections;
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
-
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     //public static AudioManager instance;
 
     public static AudioManager audioManager;
-
+    public int netWorkLobbySceneIndex;
 
     #region Fields
 
@@ -84,14 +84,27 @@ public class AudioManager : MonoBehaviour
 
     }
 
-
-   /* public void Play (string name)
+    void Update()
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
-            return;
-        s.source.Play();
-    }*/
+        if (SceneManager.GetActiveScene().buildIndex == netWorkLobbySceneIndex)
+        {
+            Debug.Log("Not Stopingasdjkahdskajhdsj");
+
+
+            if (GameManager.audioManager.IsMusicPlaying())
+            {
+                GameManager.audioManager.StopMusic();
+            }
+        }
+    }
+
+    /* public void Play (string name)
+     {
+         Sound s = Array.Find(sounds, sound => sound.name == name);
+         if (s == null)
+             return;
+         s.source.Play();
+     }*/
     public void PlayMusic(AudioClip musicClip)
     {
         AudioSource activeSource = (m_FirstMusicSourceIsPlaying) ? m_MusicSource1 : m_MusicSource2;
@@ -237,7 +250,14 @@ public class AudioManager : MonoBehaviour
         m_SfxSource.volume = volume;
     }
 
+    public bool IsMusicPlaying()
+    {
+        AudioSource activeSource = (m_FirstMusicSourceIsPlaying) ? m_MusicSource1 : m_MusicSource2;
+        if (activeSource)
+            return true;
 
+        return false;
+    }
     public void StopMusic()
     {
         AudioSource activeSource = (m_FirstMusicSourceIsPlaying) ? m_MusicSource1 : m_MusicSource2;
