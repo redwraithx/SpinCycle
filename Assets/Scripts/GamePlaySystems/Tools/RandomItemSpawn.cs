@@ -48,7 +48,7 @@ public class RandomItemSpawn : MonoBehaviourPun, IPunObservable
             spawnObject = spawnObjectGameObject.GetComponent<Item>();
             VendingIndex = new VendingIndex(spawnObject.name, spawnObject.Description, spawnObject.Price.ToString(), spawnObject.sprite);
             networkItemToSpawn = VendingIndex.Name;
-            itemName.text = networkItemToSpawn;
+            //itemName.text = networkItemToSpawn;
 
             objectInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
 

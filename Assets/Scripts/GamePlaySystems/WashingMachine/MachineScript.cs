@@ -140,17 +140,18 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             if (laundryTimer <= 0 && isEnabled == true)
             {
                 percentCounter.text = ("0%");
-                percent = 0;
                 SpawnFinishedProduct(laundryType);
                 fillBarImage.fillAmount = 0;
                 isEnabled = false;
             }
+
+            if(laundryTimer <= 0 && isEnabled == false)
+            {
+                percentCounter.text = ("0%");
+            }
         }
 
-        if(percentCounter.text != percent.ToString() + "%")
-        {
-            percentCounter.text = percent.ToString() + "%";
-        }
+
 
         //sliderTime.value = laundryTimer;
 
