@@ -102,8 +102,9 @@ namespace NetworkEvent
                 new ProfileData
                 (
                     (string) data[0],
-                    (bool) data[1]
-
+                    (bool) data[1],
+                    (float) data[2],
+                    (float)data[3]
                 ),
                 (int) data[2],
                 (int) data[3],
