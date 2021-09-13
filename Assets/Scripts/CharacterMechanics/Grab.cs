@@ -27,6 +27,10 @@ public class Grab : MonoBehaviour
 
 
     [SerializeField] private PhotonView _photonView;
+    
+    private static readonly int Idle2 = Animator.StringToHash("Idle2");
+    private static readonly int Shooting = Animator.StringToHash("Shooting");
+    private static readonly int PickUp2 = Animator.StringToHash("PickUp2");
 
 
     public bool CanUseHeldItem
@@ -48,7 +52,8 @@ public class Grab : MonoBehaviour
         if (canPickUpItem && itemToPickUp && outOfRange == false)
         {
 
-            characterAnimator.ResetTrigger("Idle2");
+            characterAnimator.ResetTrigger(Idle2);
+            
             hasItemInHand = true;
             GetComponent<PlayerSphereCast>().itemInHand = true;
             itemInHand = itemToPickUp;
@@ -56,10 +61,15 @@ public class Grab : MonoBehaviour
             {
                 var isValidItem = itemInHand?.GetComponent<ItemTypeForItem>();
                 if (isValidItem.itemType == ItemType.SabotageWaterGun || isValidItem.itemType == ItemType.SabotageIceGun)
-                    characterAnimator.SetBool("Shooting", true);
+                    characterAnimator.SetBool(Shooting, true);
+                else
+                    characterAnimator.SetTrigger(PickUp2);
+                
             }
+
+            
             // characterAnimator.SetBool("PickUp", true);
-            characterAnimator.SetTrigger("PickUp2");
+
 
             if (itemInHand.GetComponent<ItemTypeForItem>())
                 itemInHand.GetComponent<ItemTypeForItem>().RequestOwnership();
