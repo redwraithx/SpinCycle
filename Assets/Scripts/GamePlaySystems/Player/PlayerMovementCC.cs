@@ -79,6 +79,8 @@ public class PlayerMovementCC : MonoBehaviourPun
     public bool isFrozen;
     public float frozenTimer = 10;
 
+    public float grabTimer;
+
     // networking
     internal PhotonView _photonView = null;
     private Vector3 correctPosition = Vector3.zero;
@@ -146,8 +148,8 @@ public class PlayerMovementCC : MonoBehaviourPun
         playerDash = GetComponent<DashSphereCast>();
         tapToEscape.SetActive(false);
 
-        slowedXspeed = Xspeed * 0.5f;
-        slowedZspeed = Zspeed * 0.5f;
+        slowedXspeed = Xspeed * 0.3f;
+        slowedZspeed = Zspeed * 0.3f;
         speedBoostXSpeed = Xspeed * 1.5f;
         speedBoostZSpeed = Zspeed * 1.5f;
         Debug.Log($"player dive inde: {playerDiveIndex}");
@@ -172,22 +174,8 @@ public class PlayerMovementCC : MonoBehaviourPun
         if (isGrabbed)
         {
             tapToEscape.SetActive(true);
-            grabEscapeValue.fillAmount = currentGrab / 10;
-            if (Input.GetMouseButtonDown(1)) ;
-            {
-                currentGrab += 1f;
-            }
-
-            if (currentGrab < grabEscape && currentGrab >= 0f)
-            {
-                currentGrab -= Time.deltaTime * 1.5f;
-
-            }
-
-            if (currentGrab > grabEscape)
-            {
-                isGrabbed = false;
-            }
+            grabEscapeValue.fillAmount = grabTimer / 5;
+            
         }
         else
         {
@@ -389,7 +377,7 @@ public class PlayerMovementCC : MonoBehaviourPun
 
 
         // can we jump?
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded && isFrozen == false)
         {
            
             velocity.y = Jump();
@@ -547,5 +535,29 @@ public class PlayerMovementCC : MonoBehaviourPun
 
         return transform.position;
     }
+    public void LeftFootSound()
+    {
+        AudioClip leftFoot = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/WalkingSound/LeftFoot/Metal_Footstep_A_01");
+        GameManager.audioManager.PlaySfx(leftFoot);
+        
+    }
 
+    public void RightFootSound()
+    {
+        AudioClip rightFoot = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/WalkingSound/RightFoot/Metal_Footstep_A_05");
+        GameManager.audioManager.PlaySfx(rightFoot);
+    }
+
+    public void JumpUp()
+    {
+        AudioClip jumpUp = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/JumpUp/Metal_Footstep_Jump_03");
+        GameManager.audioManager.PlaySfx(jumpUp);
+        
+    }
+
+    public void JumpLand()
+    {
+        AudioClip jumpLand = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/JumpLand/Metal_Footstep_Land_02");
+        GameManager.audioManager.PlaySfx(jumpLand);
+    }
 }
