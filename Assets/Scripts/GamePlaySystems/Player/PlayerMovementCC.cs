@@ -268,7 +268,7 @@ public class PlayerMovementCC : MonoBehaviourPun
             else
             {
                 controller.enabled = false;
-                transform.position = enemyGrab;
+                transform.position = Vector3.Lerp(transform.position, enemyGrab, Time.deltaTime);
             }
 
             if (shoulderCam.isActiveAndEnabled == true)
