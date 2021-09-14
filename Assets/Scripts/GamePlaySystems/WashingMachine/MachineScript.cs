@@ -73,6 +73,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public AudioClip dryingAudioDis;
     public AudioClip foldingAudioDis;
     public AudioSource audioSource;
+    public AudioSource convAudioSource;
+    public AudioSource sabMachineSound;
 
     PlayerPoints playerPoints;
     private void Awake()
@@ -259,10 +261,17 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 audioSource.clip = foldingAudioDis;
                 audioSource.Play();
+
             }
             if (!conveyor.isRunning)
             {
                 conveyor.SpawnObject();
+                if (!convAudioSource.isPlaying)
+                {
+                    AudioClip convAudioClip = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Conveyor/Conveyor_Belt_Folding_Machine");
+                    convAudioSource.clip = convAudioClip;
+                    convAudioSource.Play();
+                }
             }
 
         }
@@ -299,6 +308,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             }
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.RepairTool)
             {
+                
                 FixMachine();
                 RepairToolZoneSpawn.instance.RemoveObject();
                 
@@ -353,6 +363,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         if (other.gameObject.name == "AOE Effects(Clone)")
         {
             SabotageMachine();
+           
         }
 
         if (other.gameObject.name == "EMPSphere")
@@ -371,6 +382,15 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     public void SabotageMachine()
     {
+        if(!sabMachineSound.isPlaying)
+        {
+            AudioClip sabotageSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/Bombs/Soapbomb/Sparks_SFX_SparkSFX-St");
+            sabMachineSound.clip = sabotageSound;
+            sabMachineSound.Play();
+        }
+        
+       
+
         isSabotaged = true;
         //animator.ResetTrigger("Go");
         //animator.SetTrigger("Stop");
@@ -378,11 +398,19 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     }
     public void FixMachine()
     {
+        AudioClip repairToolSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/NotSabotages/RepairTool/584174__unfa__mining-consume");
+        GameManager.audioManager.PlaySfx(repairToolSound);
         //animator.ResetTrigger("Stop");
         isSabotaged = false;
         sabotageTimer = 0;
         //part.Stop();
         sabotageEffects.SetActive(false);
+
+        if(sabMachineSound.isPlaying)
+        {
+            sabMachineSound.Stop();
+            sabMachineSound.clip = null;
+        }
 
         if (isEnabled)
         {
@@ -499,5 +527,10 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
 
         }
+    }
+    public void StopSound()
+    {
+        convAudioSource.Stop();
+        convAudioSource.clip = null;
     }
 }
