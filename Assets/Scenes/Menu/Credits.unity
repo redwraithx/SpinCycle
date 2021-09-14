@@ -1168,7 +1168,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1084.6023, y: 317.16174}
+  m_SizeDelta: {x: 1120, y: 380.71155}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &877685085
 MonoBehaviour:
@@ -1421,6 +1421,7 @@ MonoBehaviour:
   creditsTopInitLocation: {x: 0, y: 0, z: 0}
   creditsBottomLocation: {x: 0, y: 0, z: 0}
   speed: 0.75
+  endOfCreditsText: {fileID: 1611045711}
 --- !u!1 &940187254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,7 +1618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.1764706, g: 0.28627452, b: 0.41960785, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

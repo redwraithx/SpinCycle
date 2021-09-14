@@ -48,7 +48,7 @@ public class RandomItemSpawn : MonoBehaviourPun, IPunObservable
             spawnObject = spawnObjectGameObject.GetComponent<Item>();
             VendingIndex = new VendingIndex(spawnObject.name, spawnObject.Description, spawnObject.Price.ToString(), spawnObject.sprite);
             networkItemToSpawn = VendingIndex.Name;
-            itemName.text = networkItemToSpawn;
+            //itemName.text = networkItemToSpawn;
 
             objectInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
 
@@ -62,13 +62,13 @@ public class RandomItemSpawn : MonoBehaviourPun, IPunObservable
         
         if(itemName.text != networkItemToSpawn)
         {
-            itemName.text = networkItemToSpawn;
+            //itemName.text = networkItemToSpawn;
         }
 
         if (timer > 0)
         {
             timer -= Time.deltaTime;
-            countdown.text = Mathf.Round(timer).ToString();
+            //countdown.text = Mathf.Round(timer).ToString();
         }
         if (timer <= 0 && timeRunning == true)
         {
