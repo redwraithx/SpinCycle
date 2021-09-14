@@ -47,8 +47,12 @@ public class Grab : MonoBehaviour
     {
         if (canPickUpItem && itemToPickUp && outOfRange == false)
         {
+            if(!itemInHand)
+            {
+                AudioClip grabItem = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/GrabItem/Magnetic_Grab_SFX_Magnetic Grab2SFX-St");
+                GameManager.audioManager.PlaySfx(grabItem);
+            }
 
-            characterAnimator.ResetTrigger("Idle2");
             hasItemInHand = true;
             GetComponent<PlayerSphereCast>().itemInHand = true;
             itemInHand = itemToPickUp;
@@ -60,7 +64,7 @@ public class Grab : MonoBehaviour
             }
             // characterAnimator.SetBool("PickUp", true);
             characterAnimator.SetTrigger("PickUp2");
-
+            
             if (itemInHand.GetComponent<ItemTypeForItem>())
                 itemInHand.GetComponent<ItemTypeForItem>().RequestOwnership();
 
@@ -103,7 +107,7 @@ public class Grab : MonoBehaviour
         Debug.Log("Start Couroutine Throwing Bomb");
         // Print the time of when the function is first called.
         Debug.Log("Started Throw at timestamp : " + Time.time);
-        // characterAnimator.SetBool("Throw", true);
+       // characterAnimator.SetBool("Throw", true);
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(0.6f);
 
@@ -111,14 +115,14 @@ public class Grab : MonoBehaviour
         // characterAnimator.SetBool("Throw", false);
         characterAnimator.SetTrigger("Idle2");
         Debug.Log("Finished Throw at timestamp : " + Time.time);
-        // characterAnimator.SetBool("PickUp", false);
+       // characterAnimator.SetBool("PickUp", false);
     }
 
 
 
     public void CheckForMouseUp()
     {
-        characterAnimator.ResetTrigger("PickUp2");
+
         //make sure this part only play when bomb is not throw
         if (itemInHand)
         {
@@ -131,7 +135,7 @@ public class Grab : MonoBehaviour
         if (!throwBomb)
         {
             characterAnimator.SetTrigger("Idle2");
-            // characterAnimator.SetBool("PickUp", false);
+           // characterAnimator.SetBool("PickUp", false);
         }
         if (itemInHand)
         {
@@ -162,16 +166,13 @@ public class Grab : MonoBehaviour
         }
     }
 
- 
-
-
     private void Update()
     {
         if (justPutIn && !itemInHand)
         {
 
             justPutIn = false;
-            characterAnimator.SetBool("PickUp", false);
+             characterAnimator.SetBool("PickUp", false);
             //characterAnimator.SetTrigger("PickUp2");
 
             StartCoroutine(WaitCoroutine());
@@ -182,7 +183,7 @@ public class Grab : MonoBehaviour
 
             throwBomb = false;
             characterAnimator.SetBool("Throw", false);
-
+          
             // StartCoroutine(ThrowCoroutine());
 
         }
@@ -201,6 +202,8 @@ public class Grab : MonoBehaviour
         {
             if (itemInHand)
                 itemInHand.transform.position = grabPoint.position;
+
+
             if (Input.GetMouseButtonDown(0))
             {
 
@@ -231,7 +234,6 @@ public class Grab : MonoBehaviour
                     else if (itemInHand.GetComponent<RepairToolUse>())
                     {
                         Debug.Log("ItemInHand: " + itemInHand.gameObject.name + ", Using Repair");
-                        characterAnimator.SetTrigger("RepairOpened");
                         itemInHand.GetComponent<RepairToolUse>().UseItem();
 
                         itemInHand = null;
@@ -245,6 +247,7 @@ public class Grab : MonoBehaviour
                         characterAnimator.SetTrigger("Throw2");
                         //soapBombThrow();
                     }
+                    
 
 
                 }
@@ -314,9 +317,6 @@ public class Grab : MonoBehaviour
         throwBomb = true;
         itemInHand.GetComponent<BombThrow>().Throw();
         ThrowCoroutine();
-
-        characterAnimator.SetTrigger("Idle2");
-        // characterAnimator.SetBool("PickUp", false);
 
         CheckForMouseUp();
 
@@ -435,8 +435,6 @@ public class Grab : MonoBehaviour
 
         }
     }
-
-
 
 
     private void OnTriggerExit(Collider other)

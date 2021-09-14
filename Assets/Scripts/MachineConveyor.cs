@@ -2,6 +2,8 @@
 
 public class MachineConveyor : MonoBehaviour
 {
+    public LaundryBasket basket;
+    public MachineScript machine;
     public GameObject conveyorObjectPrefab;
     public Transform spawnPoint;
     public Transform spline;
@@ -18,8 +20,15 @@ public class MachineConveyor : MonoBehaviour
         isRunning = true;
         Debug.Log("Spawing.............");
         GameObject obj = Instantiate(conveyorObjectPrefab, spawnPoint);
-
         obj.transform.SetParent(spline);
+
+
+        if (basket)
+            obj.GetComponent<FolderBelt>().basket = basket;
+        else if (machine)
+            obj.GetComponent<FolderBelt>().machine = machine;
+
+        
 
        
     }

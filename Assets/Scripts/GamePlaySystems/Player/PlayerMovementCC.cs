@@ -79,8 +79,6 @@ public class PlayerMovementCC : MonoBehaviourPun
     public bool isFrozen;
     public float frozenTimer = 10;
 
-    public float grabTimer;
-
     // networking
     internal PhotonView _photonView = null;
     private Vector3 correctPosition = Vector3.zero;
@@ -148,8 +146,8 @@ public class PlayerMovementCC : MonoBehaviourPun
         playerDash = GetComponent<DashSphereCast>();
         tapToEscape.SetActive(false);
 
-        slowedXspeed = Xspeed * 0.3f;
-        slowedZspeed = Zspeed * 0.3f;
+        slowedXspeed = Xspeed * 0.5f;
+        slowedZspeed = Zspeed * 0.5f;
         speedBoostXSpeed = Xspeed * 1.5f;
         speedBoostZSpeed = Zspeed * 1.5f;
         Debug.Log($"player dive inde: {playerDiveIndex}");
@@ -167,30 +165,29 @@ public class PlayerMovementCC : MonoBehaviourPun
 
     }
 
-    public void pauseJump()
-    {
-        characterAnimator.speed = 0;
-    }
-    public void continueJump()
-    {
-        characterAnimator.speed = 1;
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if(isGrounded)
-        {
-            
-            continueJump();
-           
-        }
         
         if (isGrabbed)
         {
             tapToEscape.SetActive(true);
-            grabEscapeValue.fillAmount = grabTimer / 5;
-            
+            grabEscapeValue.fillAmount = currentGrab / 10;
+            if (Input.GetMouseButtonDown(1)) ;
+            {
+                currentGrab += 1f;
+            }
+
+            if (currentGrab < grabEscape && currentGrab >= 0f)
+            {
+                currentGrab -= Time.deltaTime * 1.5f;
+
+            }
+
+            if (currentGrab > grabEscape)
+            {
+                isGrabbed = false;
+            }
         }
         else
         {
@@ -392,7 +389,7 @@ public class PlayerMovementCC : MonoBehaviourPun
 
 
         // can we jump?
-        if (Input.GetButtonDown("Jump") && isGrounded && isFrozen == false)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
            
             velocity.y = Jump();

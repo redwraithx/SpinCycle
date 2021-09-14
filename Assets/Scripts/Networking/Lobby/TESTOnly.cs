@@ -26,6 +26,7 @@ public class TESTOnly : MonoBehaviourPunCallbacks
 
     private void Start()
     {
+        
 
         startTime = 5;
         timerGoing = false;
@@ -33,8 +34,9 @@ public class TESTOnly : MonoBehaviourPunCallbacks
 
         gameOverContainer.SetActive(false);
         waitForItContainer.SetActive(true);
-        
-        
+
+      
+
     }
 
 
@@ -64,6 +66,8 @@ public class TESTOnly : MonoBehaviourPunCallbacks
                 hasLevelBeenLoaded = true;
                 
                 LoadGameLevel();
+
+                
             }    
         }
     }
@@ -91,5 +95,6 @@ public class TESTOnly : MonoBehaviourPunCallbacks
     {
         loadingContainer.SetActive(true);
         PhotonNetwork.LoadLevel(LevelGameLevelToLoad);
+       
     }
 }
