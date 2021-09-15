@@ -11,6 +11,7 @@ using Photon.Realtime;
 
 public class LaundryBasket : MonoBehaviourPun
 {
+    public AudioSource audioSource;
     public MachineConveyor conveyor;
     public TMP_Text pointsText = null;
     public int points;
@@ -48,6 +49,13 @@ public class LaundryBasket : MonoBehaviourPun
             if (!conveyor.isRunning)
             {
                 conveyor.SpawnObject();
+
+                if (!audioSource.isPlaying)
+                {
+                    AudioClip audioClip = Resources.Load<AudioClip>("AudioFiles/SoundFX/Machines/Conveyor/Conveyor_Belt_Folding_Machine");
+                    audioSource.clip = audioClip;
+                    audioSource.Play();
+                }
             }
             if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone || other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingUnfolded)
             {
@@ -90,5 +98,11 @@ public class LaundryBasket : MonoBehaviourPun
 
         return playerPoints = playerPointsReference;
     }
-    
+
+    public void StopSound()
+    {
+        audioSource.Stop();
+        audioSource.clip = null;
+    }
+
 }
