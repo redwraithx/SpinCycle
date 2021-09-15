@@ -120,7 +120,6 @@ public class Timer : MonoBehaviour
 
     public void EndGame()
     {
-        Debug.Log("GameEnding");
         player1Points = GameManager.networkLevelManager.playersJoined[0].GetComponent<PlayerPoints>().points;
         player2Points = GameManager.networkLevelManager.playersJoined[1].GetComponent<PlayerPoints>().points;
 
@@ -145,9 +144,7 @@ public class Timer : MonoBehaviour
     }
     IEnumerator Fading()
     {
-        Debug.Log("fading happening");
-        anim.SetBool("Fade", true);
-        yield return new WaitUntil(() => BlackImage.color.a == 1);
+        yield return new WaitForSeconds(1);
 
         vStandPrefab.gameObject.SetActive(true);
         pointCounters.gameObject.SetActive(false);
