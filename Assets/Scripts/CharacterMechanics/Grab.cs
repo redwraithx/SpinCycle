@@ -47,6 +47,11 @@ public class Grab : MonoBehaviour
     {
         if (canPickUpItem && itemToPickUp && outOfRange == false)
         {
+            if (!itemInHand)
+            {
+                AudioClip grabItem = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/GrabItem/Magnetic_Grab_SFX_Magnetic Grab2SFX-St");
+                GameManager.audioManager.PlaySfx(grabItem);
+            }
 
             characterAnimator.ResetTrigger("Idle2");
             hasItemInHand = true;
