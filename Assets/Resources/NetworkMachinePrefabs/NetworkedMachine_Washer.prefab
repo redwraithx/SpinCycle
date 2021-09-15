@@ -5348,7 +5348,7 @@ MonoBehaviour:
   washerAudioDis: {fileID: 0}
   dryingAudioDis: {fileID: 0}
   foldingAudioDis: {fileID: 0}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 8772606763916291803}
   convAudioSource: {fileID: 0}
   sabMachineSound: {fileID: 1731444234636746602}
 --- !u!114 &7107540471703433002
@@ -5422,10 +5422,10 @@ AudioSource:
   m_GameObject: {fileID: 3298420062302689166}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 488fd56100e65b74794fa9dd33ec2c4a, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5518,12 +5518,12 @@ AudioSource:
   m_GameObject: {fileID: 3298420062302689166}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 488fd56100e65b74794fa9dd33ec2c4a, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -27012,7 +27012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 902538182872725869, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.27
+      value: -1.071
       objectReference: {fileID: 0}
     - target: {fileID: 1116546061103617506, guid: b557a9ab6da63774a8cdb94cf695d748, type: 3}
       propertyPath: m_LocalPosition.x

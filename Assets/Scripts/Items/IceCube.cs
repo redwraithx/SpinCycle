@@ -39,6 +39,8 @@ public class IceCube : MonoBehaviourPun
 
     private void OnCollisionEnter(Collision collision)
     {
+        AudioClip freezeCollison = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/FreezeGun/freeze");
+        GameManager.audioManager.PlaySfx(freezeCollison);
         RaycastHit[] hits = Physics.SphereCastAll(transform.position, 4.0f, transform.forward, 1.0f, layerMask, QueryTriggerInteraction.UseGlobal);
         foreach (RaycastHit hit in hits)
         {
