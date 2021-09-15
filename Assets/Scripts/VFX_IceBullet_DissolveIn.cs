@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
-using Photon.Realtime;
 
 public class VFX_IceBullet_DissolveIn : MonoBehaviour
 {
@@ -39,12 +37,11 @@ public class VFX_IceBullet_DissolveIn : MonoBehaviour
         }
 
         //Enable the charge VFX
-        //chargeVFX.SetActive(true);
+       // chargeVFX.SetActive(true);
     }
 
     void Update()
     {
-        transform.position = transform.parent.gameObject.transform.position;
         // Runs until fade is completed
         if(fade < 1)
         {

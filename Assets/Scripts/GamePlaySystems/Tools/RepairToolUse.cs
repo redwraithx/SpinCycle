@@ -13,6 +13,8 @@ public class RepairToolUse : MonoBehaviour, IRepairToolUse
         Debug.Log("repair tool goes away");
         RepairToolZoneSpawn.instance.RemoveObject();
         PhotonNetwork.Destroy(gameObject);
+
+        
     }
 
     void Start()

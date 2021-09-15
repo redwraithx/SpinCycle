@@ -14,8 +14,6 @@ public class Grab : MonoBehaviour
     public bool justPutIn;
     public bool throwBomb;
 
-    public CharacterController charController = null;
-    
     [SerializeField] public bool canPickUpItem = false;
     [SerializeField] private bool hasItemInHand = false;
     [SerializeField] internal GameObject itemInHand = null;
@@ -42,8 +40,6 @@ public class Grab : MonoBehaviour
         if (!weapon)
             weapon = GetComponent<WeaponScript>();
 
-        if (!charController)
-            charController = GetComponent<CharacterController>();
 
 
     }
@@ -53,7 +49,7 @@ public class Grab : MonoBehaviour
         {
             if (!itemInHand)
             {
-                AudioClip grabItem = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/GrabItem/Magnetic_Grab_SFX_Magnetic Grab2SFX-St");
+                AudioClip grabItem = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/GrabItem/Pick-Up_Sound_01");
                 GameManager.audioManager.PlaySfx(grabItem);
             }
 
@@ -75,9 +71,7 @@ public class Grab : MonoBehaviour
 
             foreach (var itemCollider in itemInHand.GetComponents<Collider>())
             {
-                //itemCollider.enabled = false;
-                
-                Physics.IgnoreCollision(charController, itemCollider);
+                itemCollider.enabled = false;
             }
 
             itemInHand.GetComponent<Item>().OwnerID = this.gameObject.GetComponent<PhotonView>().ViewID;
@@ -154,9 +148,7 @@ public class Grab : MonoBehaviour
 
             foreach (var itemCollider in itemInHand.GetComponents<Collider>())
             {
-                //itemCollider.enabled = true;
-                
-                Physics.IgnoreCollision(charController, itemCollider);
+                itemCollider.enabled = true;
             }
 
             itemInHand.GetComponent<Rigidbody>().useGravity = true;
