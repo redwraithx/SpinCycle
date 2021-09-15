@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class FolderBelt : MonoBehaviour
 {
-
+    public LaundryBasket basket;
+    public MachineScript machine;
     public PathCreator pathCreator;
     public float speed;
     float distanceTravelled;
@@ -30,5 +31,12 @@ public class FolderBelt : MonoBehaviour
             distanceTravelled += speed * Time.deltaTime;
             transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
         
+    }
+    public void StopSound()
+    {
+        if (basket)
+            basket.GetComponent<LaundryBasket>().StopSound();
+        else if (machine)
+            machine.GetComponent<MachineScript>().StopSound();
     }
 }
