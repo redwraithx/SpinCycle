@@ -116,6 +116,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             //part.Play();
             sabotageEffects.SetActive(true);
         }
+
+        
     }
 
     void Update()
@@ -126,6 +128,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
         if (isSabotaged == false)
         {
+
+
+           
             if (laundryTimer > 0)
             {
                 laundryTimer -= Time.deltaTime;
@@ -223,10 +228,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             newGO.GetComponent<Item>().Price += ((int)initialPrice + (int)priceAddition) - (int)ruinedPrice;
             
         }
-            
 
-
-        
         RequestTransferOwnershipToHost();
 
     }
@@ -247,10 +249,12 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 audioSource.clip = washerAudioDis;
                 audioSource.Play();
+                
+               
                 Debug.Log("Audio is playing herer!@!#@#@#2");
+               
             }
-
-
+           
         }
         else if (MachineType.dryer == this.machineType)
         {
@@ -258,8 +262,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 audioSource.clip = dryingAudioDis;
                 audioSource.Play();
-
             }
+            
         }
         else if (MachineType.folder == this.machineType)
         {
@@ -314,11 +318,15 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             }
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.RepairTool)
             {
+                
                 FixMachine();
+                
                 RepairToolZoneSpawn.instance.RemoveObject();
                 
                 PhotonNetwork.Destroy(other.gameObject);
+
                 
+
             }
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.LoadRuiner)
             {
@@ -330,7 +338,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 if (isEnabled == false)
                 {
                     if (isSabotaged == false)
-                    {                                              
+                    {
+
                         initialPrice = other.GetComponent<Item>().Price;
                         ProcessItems();
                         bool updatedPlayerPoints = UpdatePlayerPoints(other);
@@ -368,7 +377,14 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         if (other.gameObject.name == "AOE Effects(Clone)")
         {
             SabotageMachine();
+            audioSource.clip = washerAudioDis;
+            audioSource.Pause();
+            audioSource.clip = dryingAudioDis;
+            audioSource.Pause();
+            audioSource.clip = foldingAudioDis;
+            audioSource.Pause();
         }
+       
 
         if (other.gameObject.name == "EMPSphere")
         {
@@ -389,12 +405,13 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
         if (!sabMachineSound.isPlaying)
         {
-            AudioClip sabotageSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/Bombs/Soapbomb/Sparks_SFX_SparkSFX-St");
+            AudioClip sabotageSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/Bombs/Soapbomb/Smoke_B_10_SEC");
             sabMachineSound.clip = sabotageSound;
             sabMachineSound.Play();
         }
 
         isSabotaged = true;
+
         //animator.ResetTrigger("Go");
         //animator.SetTrigger("Stop");
         sabotageEffects.SetActive(true);
@@ -402,22 +419,46 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public void FixMachine()
     {
 
-        AudioClip repairToolSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/NotSabotages/RepairTool/584174__unfa__mining-consume");
+        AudioClip repairToolSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/NotSabotages/RepairTool/Repair_Tool_03");
         GameManager.audioManager.PlaySfx(repairToolSound);
+
+        if (sabMachineSound.isPlaying)
+        {
+            AudioClip sabotageSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/Bombs/Soapbomb/Smoke_B_10_SEC");
+            sabMachineSound.clip = sabotageSound;
+            sabMachineSound.Stop();
+        }
         //animator.ResetTrigger("Stop");
         isSabotaged = false;
+        audioSource.clip = washerAudioDis;
+        audioSource.UnPause();
+        /*audioSource.clip = washerAudioDis;
+        audioSource.UnPause();*/
+        /*audioSource.clip = dryingAudioDis;
+        audioSource.UnPause();
+        audioSource.clip = foldingAudioDis;
+        audioSource.UnPause();*/
+
+
         sabotageTimer = 0;
         //part.Stop();
         sabotageEffects.SetActive(false);
+
+
 
         if (isEnabled)
         {
             //animator.SetTrigger("Go");
         }
+
+        
     }
 
     public void BoostMachine()
     {
+        AudioClip boostSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Boost/Magnetic_Connection");
+        GameManager.audioManager.PlaySfx(boostSound);
+
         isBoosted = true;
         cycleLength = cycleLength * 0.75f;
         if(boostMachinePart != null)

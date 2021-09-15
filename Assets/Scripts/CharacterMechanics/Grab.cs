@@ -49,7 +49,7 @@ public class Grab : MonoBehaviour
         {
             if (!itemInHand)
             {
-                AudioClip grabItem = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/GrabItem/Magnetic_Grab_SFX_Magnetic Grab2SFX-St");
+                AudioClip grabItem = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/GrabItem/Pick-Up_Sound_01");
                 GameManager.audioManager.PlaySfx(grabItem);
             }
 

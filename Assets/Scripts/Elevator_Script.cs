@@ -22,6 +22,8 @@ public class Elevator_Script : MonoBehaviour
 
     public GameObject target;
 
+    public AudioSource elevatorAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +70,16 @@ public class Elevator_Script : MonoBehaviour
                     }
                     else if (target.CompareTag("Bottom"))
                     {
+                    
+                            AudioClip elevator = Resources.Load<AudioClip>("AudioFiles/SoundFX/ElevatorSound/Elevator");
+                            elevatorAudioSource.clip = elevator;
+                            elevatorAudioSource.Play();
+                        
+
+
+                        /*AudioClip elevator = Resources.Load<AudioClip>("AudioFiles/SoundFX/ElevatorSound/Elevator");
+                        GameManager.audioManager.PlaySfx(elevator);*/
+
                         Debug.Log("going up");
                         target = top;
                         isDelayTimerRunning = false;
@@ -107,4 +119,6 @@ public class Elevator_Script : MonoBehaviour
             other.gameObject.transform.parent = null;
         }
     }
+
+    
 }
