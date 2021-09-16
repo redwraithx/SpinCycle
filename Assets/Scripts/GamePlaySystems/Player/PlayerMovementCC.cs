@@ -169,11 +169,11 @@ public class PlayerMovementCC : MonoBehaviourPun
 
     public void pauseJump()
     {
-        characterAnimator.speed = 0;
+      //  characterAnimator.speed = 0;
     }
     public void continueJump()
     {
-        characterAnimator.speed = 1;
+     //  characterAnimator.speed = 1;
     }
 
     // Update is called once per frame
@@ -447,11 +447,13 @@ public class PlayerMovementCC : MonoBehaviourPun
         {
             stream.SendNext(transform.position);
             stream.SendNext(transform.rotation);
+            stream.SendNext(isGrounded);
         }
-        else
+        else if(stream.IsReading)
         {
             correctPosition = (Vector3)stream.ReceiveNext();
             correctRotation = (Quaternion)stream.ReceiveNext();
+            isGrounded = (bool)stream.ReceiveNext();
         }
     }
 

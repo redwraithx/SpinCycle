@@ -64,7 +64,7 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
             else
                 gameObject.GetComponent<Grab>().enabled = false;
 
-            if (playerMovementCCScript)
+           if (playerMovementCCScript)
                 playerMovementCCScript.enabled = false;
             else
                 gameObject.GetComponent<PlayerMovementCC>().enabled = false;
