@@ -98,7 +98,8 @@ public class WeaponScript : MonoBehaviourPun
     }
     public void fire()
     {
-
+        AudioClip fireGun = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/FreezeGun/Freeze_Gun");
+        GameManager.audioManager.PlaySfx(fireGun);
 
         if (!destroyGun || destroyGun.hasFired)
             return;
@@ -125,9 +126,9 @@ public class WeaponScript : MonoBehaviourPun
 
         GameObject iceCube = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", "IceCube"), spawnPoint, spawnRotation);
         iceCube.GetComponent<Rigidbody>().AddForce(iceCube.transform.forward * projectileSpeed, ForceMode.Impulse);
-        AudioClip freezeGunSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/FreezeGun/freeze");
+        //AudioClip freezeGunSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/FreezeGun/freeze");
         //iceCube.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient);
-        GameManager.audioManager.PlaySfx(freezeGunSound);
+        //GameManager.audioManager.PlaySfx(freezeGunSound);
     }
 
     //public int Shoot()

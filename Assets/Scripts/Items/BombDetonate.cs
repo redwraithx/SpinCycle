@@ -34,8 +34,10 @@ public class BombDetonate : MonoBehaviourPun, IPunObservable
                 BroadcastMessage("SabotageMachine");
             }
 
-
-            Radius = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", radiusName), transform.position, transform.rotation);
+            if (PhotonNetwork.IsMasterClient)
+            {
+                Radius = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", radiusName), transform.position, transform.rotation);
+            }
             detonated = true;
 
 
