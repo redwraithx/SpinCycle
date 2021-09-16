@@ -51,12 +51,13 @@ public class TESTOnly : MonoBehaviourPunCallbacks
             if(startTime <= 0)
             {
                 isTheGameOver = true;
+                timerGoing = false;
             }
         }
 
         if (isTheGameOver)
         {
-            gameOverContainer.SetActive(true);
+            //gameOverContainer.SetActive(true);
             waitForItContainer.SetActive(false);
 
             if (!hasLevelBeenLoaded && PhotonNetwork.IsMasterClient)

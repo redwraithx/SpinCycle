@@ -27,10 +27,6 @@ public class Grab : MonoBehaviour
 
 
     [SerializeField] private PhotonView _photonView;
-    
-    private static readonly int Idle2 = Animator.StringToHash("Idle2");
-    private static readonly int Shooting = Animator.StringToHash("Shooting");
-    private static readonly int PickUp2 = Animator.StringToHash("PickUp2");
 
 
     public bool CanUseHeldItem
@@ -51,9 +47,13 @@ public class Grab : MonoBehaviour
     {
         if (canPickUpItem && itemToPickUp && outOfRange == false)
         {
+            if (!itemInHand)
+            {
+                AudioClip grabItem = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/GrabItem/Pick-Up_Sound_01");
+                GameManager.audioManager.PlaySfx(grabItem);
+            }
 
-            characterAnimator.ResetTrigger(Idle2);
-            
+            characterAnimator.ResetTrigger("Idle2");
             hasItemInHand = true;
             GetComponent<PlayerSphereCast>().itemInHand = true;
             itemInHand = itemToPickUp;
@@ -61,15 +61,10 @@ public class Grab : MonoBehaviour
             {
                 var isValidItem = itemInHand?.GetComponent<ItemTypeForItem>();
                 if (isValidItem.itemType == ItemType.SabotageWaterGun || isValidItem.itemType == ItemType.SabotageIceGun)
-                    characterAnimator.SetBool(Shooting, true);
-                else
-                    characterAnimator.SetTrigger(PickUp2);
-                
+                    characterAnimator.SetBool("Shooting", true);
             }
-
-            
             // characterAnimator.SetBool("PickUp", true);
-
+            characterAnimator.SetTrigger("PickUp2");
 
             if (itemInHand.GetComponent<ItemTypeForItem>())
                 itemInHand.GetComponent<ItemTypeForItem>().RequestOwnership();
@@ -113,7 +108,7 @@ public class Grab : MonoBehaviour
         Debug.Log("Start Couroutine Throwing Bomb");
         // Print the time of when the function is first called.
         Debug.Log("Started Throw at timestamp : " + Time.time);
-       // characterAnimator.SetBool("Throw", true);
+        // characterAnimator.SetBool("Throw", true);
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(0.6f);
 
@@ -121,14 +116,14 @@ public class Grab : MonoBehaviour
         // characterAnimator.SetBool("Throw", false);
         characterAnimator.SetTrigger("Idle2");
         Debug.Log("Finished Throw at timestamp : " + Time.time);
-       // characterAnimator.SetBool("PickUp", false);
+        // characterAnimator.SetBool("PickUp", false);
     }
 
 
 
     public void CheckForMouseUp()
     {
-
+        characterAnimator.ResetTrigger("PickUp2");
         //make sure this part only play when bomb is not throw
         if (itemInHand)
         {
@@ -141,7 +136,7 @@ public class Grab : MonoBehaviour
         if (!throwBomb)
         {
             characterAnimator.SetTrigger("Idle2");
-           // characterAnimator.SetBool("PickUp", false);
+            // characterAnimator.SetBool("PickUp", false);
         }
         if (itemInHand)
         {
@@ -172,13 +167,16 @@ public class Grab : MonoBehaviour
         }
     }
 
+ 
+
+
     private void Update()
     {
         if (justPutIn && !itemInHand)
         {
 
             justPutIn = false;
-             characterAnimator.SetBool("PickUp", false);
+            characterAnimator.SetBool("PickUp", false);
             //characterAnimator.SetTrigger("PickUp2");
 
             StartCoroutine(WaitCoroutine());
@@ -189,7 +187,7 @@ public class Grab : MonoBehaviour
 
             throwBomb = false;
             characterAnimator.SetBool("Throw", false);
-          
+
             // StartCoroutine(ThrowCoroutine());
 
         }
@@ -261,7 +259,7 @@ public class Grab : MonoBehaviour
             }
             if (Input.GetMouseButtonUp(0))
             {
-                            
+
             }
         }
         if (itemInHand)
@@ -321,10 +319,10 @@ public class Grab : MonoBehaviour
         throwBomb = true;
         itemInHand.GetComponent<BombThrow>().Throw();
         ThrowCoroutine();
-       
-            characterAnimator.SetTrigger("Idle2");
-            // characterAnimator.SetBool("PickUp", false);
-        
+
+        characterAnimator.SetTrigger("Idle2");
+        // characterAnimator.SetBool("PickUp", false);
+
         CheckForMouseUp();
 
         itemInHand = null;
@@ -442,6 +440,8 @@ public class Grab : MonoBehaviour
 
         }
     }
+
+
 
 
     private void OnTriggerExit(Collider other)

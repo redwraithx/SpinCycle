@@ -59,14 +59,14 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.055963863
+      - time: 0.062962964
         functionName: RightFootSound
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.5027967
+      - time: 0.0656971
         functionName: LeftFootSound
         data: 
         objectReferenceParameter: {instanceID: 0}

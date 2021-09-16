@@ -8,7 +8,9 @@ public class Trigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("ConveyorObject"))
         {
+            other.GetComponent<FolderBelt>().StopSound();
             Destroy(other.gameObject);
+
             Debug.Log("Destoryed.........");
             conveyor.ResetConveyor();
         }

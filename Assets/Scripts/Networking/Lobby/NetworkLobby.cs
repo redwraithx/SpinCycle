@@ -207,6 +207,8 @@ public class NetworkLobby : MonoBehaviourPunCallbacks
                 if (myProfile != null && !string.IsNullOrEmpty(myProfile.userName))
                 {
                     userNameField.text = myProfile.userName;
+
+                    PhotonNetwork.LocalPlayer.NickName = myProfile.userName;
                 }
                 
                 if(!PhotonNetwork.IsConnected)

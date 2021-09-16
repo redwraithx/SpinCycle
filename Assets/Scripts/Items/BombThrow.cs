@@ -27,7 +27,7 @@ public class BombThrow : MonoBehaviourPun, IBombThrow
     public void Throw()
     {
         Debug.Log("Throw Bomb Script");
-        AudioClip throwBombSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/Bombs/Soapbomb/584170__unfa__explosion-02");
+        AudioClip throwBombSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/Bombs/Soapbomb/BubbleLaunchAndBurst_5_SEC");
         GameManager.audioManager.PlaySfx(throwBombSound);
         GameObject bomb = this.gameObject;
 

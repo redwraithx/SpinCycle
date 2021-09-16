@@ -167,9 +167,24 @@ public class PlayerMovementCC : MonoBehaviourPun
 
     }
 
+    public void pauseJump()
+    {
+        characterAnimator.speed = 0;
+    }
+    public void continueJump()
+    {
+        characterAnimator.speed = 1;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if(isGrounded)
+        {
+            
+            continueJump();
+           
+        }
         
         if (isGrabbed)
         {
@@ -253,7 +268,7 @@ public class PlayerMovementCC : MonoBehaviourPun
             else
             {
                 controller.enabled = false;
-                transform.position = enemyGrab;
+                transform.position = Vector3.Lerp(transform.position, enemyGrab, Time.deltaTime);
             }
 
             if (shoulderCam.isActiveAndEnabled == true)

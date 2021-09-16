@@ -37,7 +37,7 @@ public class VFX_IceBullet_DissolveIn : MonoBehaviour
         }
 
         //Enable the charge VFX
-        chargeVFX.SetActive(true);
+       // chargeVFX.SetActive(true);
     }
 
     void Update()
