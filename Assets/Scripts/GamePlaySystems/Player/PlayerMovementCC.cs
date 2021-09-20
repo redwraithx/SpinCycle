@@ -360,6 +360,7 @@ public class PlayerMovementCC : MonoBehaviourPun
             {
                 isFrozen = false;
                 frozenTimer = 10;
+                characterAnimator.SetBool("Run", false);
             }
 
         }
@@ -433,6 +434,14 @@ public class PlayerMovementCC : MonoBehaviourPun
             _photonView.RPC("SendMessage", RpcTarget.AllBuffered, 5, transform.position, transform.rotation);
         }
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "IcePatch" && isFrozen == false)
+        {
+            isFrozen = true;
+        }
     }
 
     void RotationTransition()

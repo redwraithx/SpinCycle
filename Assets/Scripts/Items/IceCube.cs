@@ -51,22 +51,15 @@ public class IceCube : MonoBehaviourPun
                 playingAudio = true;
             }
 
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4);
+            //Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4);
             //RaycastHit[] hits = Physics.SphereCastAll(transform.position, 4.0f, transform.forward, 1.0f, layerMask, QueryTriggerInteraction.UseGlobal);
 
-            foreach (var hitCollider in hitColliders)
+            /*foreach (var hitCollider in hitColliders)
             {
 
                 Debug.Log("hit");
                 if (hitCollider.transform.gameObject.tag == "Player")
-                {
-                    /*foreach(GameObject player in GameManager.networkLevelManager.playersJoined)
-                    {
-                        if(hitCollider.transform.gameObject == player)
-                        {
-                            player.transform.gameObject.GetComponent<PlayerMovementCC>().isFrozen = true;
-                        }
-                    }*/
+                {                   
 
                     foreach (GameObject player in GameManager.networkLevelManager.playersJoined)
                     {
@@ -75,12 +68,12 @@ public class IceCube : MonoBehaviourPun
                             player.GetComponent<PlayerMovementCC>().isFrozen = true;
                         }
                     }
-/*                    hitCollider.transform.gameObject.GetPhotonView();
-                    hitCollider.transform.gameObject.GetComponent<PlayerMovementCC>().isFrozen = true;*/
+*//*                    hitCollider.transform.gameObject.GetPhotonView();
+                    hitCollider.transform.gameObject.GetComponent<PlayerMovementCC>().isFrozen = true;*//*
 
                 }
 
-            }
+            }*/
 
             //Instantiate(icePatch, transform.position, transform.rotation);
             if (PhotonNetwork.IsMasterClient)

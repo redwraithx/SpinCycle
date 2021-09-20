@@ -32,7 +32,7 @@ public class WeaponDestroyScript : MonoBehaviourPun
             {
                 if (PhotonNetwork.IsMasterClient)
                 {
-                    StartCoroutine(DelayedDestroy(delayedTime));
+                    Invoke("DestroyGun", 1f);
                 }
             }
                 
@@ -41,10 +41,14 @@ public class WeaponDestroyScript : MonoBehaviourPun
 
     }
 
+    void DestroyGun()
+    {
+        PhotonNetwork.Destroy(gameObject);
+    }
     private IEnumerator DelayedDestroy(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient);
+        //GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient);
         PhotonNetwork.Destroy(gameObject);
     }
 }
