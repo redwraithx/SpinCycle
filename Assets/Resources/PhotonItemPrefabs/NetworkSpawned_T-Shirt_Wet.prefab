@@ -96,6 +96,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -237,6 +238,10 @@ PrefabInstance:
       value: Capsule02_low (1)
       objectReference: {fileID: 0}
     - target: {fileID: 880128353370121997, guid: a20aed27158a7a247b119b6269a1b9f8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880128353370121997, guid: a20aed27158a7a247b119b6269a1b9f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -249,6 +254,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 880128353370121997, guid: a20aed27158a7a247b119b6269a1b9f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 880128353370121997, guid: a20aed27158a7a247b119b6269a1b9f8, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -258,14 +267,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 880128353370121997, guid: a20aed27158a7a247b119b6269a1b9f8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 880128353370121997, guid: a20aed27158a7a247b119b6269a1b9f8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 880128353370121997, guid: a20aed27158a7a247b119b6269a1b9f8, type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 880128353370121997, guid: a20aed27158a7a247b119b6269a1b9f8, type: 3}

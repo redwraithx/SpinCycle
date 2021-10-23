@@ -111,6 +111,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -235,6 +236,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 743204714180158750}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 475d873287809c24fb15e3c263fd3ee7, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 475d873287809c24fb15e3c263fd3ee7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
@@ -247,6 +252,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 475d873287809c24fb15e3c263fd3ee7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 475d873287809c24fb15e3c263fd3ee7, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -257,14 +266,6 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 475d873287809c24fb15e3c263fd3ee7, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 475d873287809c24fb15e3c263fd3ee7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 475d873287809c24fb15e3c263fd3ee7, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 475d873287809c24fb15e3c263fd3ee7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
