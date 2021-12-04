@@ -1,15 +1,12 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using NetworkProfile;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
-
 namespace NetworkEvent
 {
-
     public class PlayerInfo
     {
         public ProfileData profile;
@@ -17,26 +14,19 @@ namespace NetworkEvent
         public int gameScore;
         public bool isOnTeamTwo;
 
-
         public PlayerInfo(ProfileData pData, int id, int gameScore, bool isOnTeamTwo)
         {
             profile = pData;
-            
+
             netID = id;
             this.gameScore = gameScore;
             this.isOnTeamTwo = isOnTeamTwo;
-
         }
-
     }
-
-
 
     public class EventManager : MonoBehaviourPunCallbacks, IOnEventCallback
     {
         public List<PlayerInfo> playerInfo = new List<PlayerInfo>();
-
-
 
         #region Event_Codes
 
@@ -45,12 +35,9 @@ namespace NetworkEvent
             TestEvent3 = 197,
             TestEvent2 = 198,
             TestEvent = 199
-
         }
 
-        #endregion // Event_Codes
-
-
+        #endregion Event_Codes
 
         #region PhotonCode
 
@@ -59,34 +46,33 @@ namespace NetworkEvent
             if (photonEvent.Code >= 200)
                 return;
 
-            EventCodes eventCode = (EventCodes) photonEvent.Code;
-            object[] obj = (object[]) photonEvent.CustomData;
+            EventCodes eventCode = (EventCodes)photonEvent.Code;
+            object[] obj = (object[])photonEvent.CustomData;
 
             switch (eventCode)
             {
                 case EventCodes.TestEvent:
-                {
-                    TestEvent_Recv();
+                    {
+                        TestEvent_Recv();
 
-                    break;
-                }
+                        break;
+                    }
                 case EventCodes.TestEvent2:
-                {
-                    TestEvent_2_Recv(obj);
+                    {
+                        TestEvent_2_Recv(obj);
 
-                    break;
-                }
+                        break;
+                    }
                 case EventCodes.TestEvent3:
-                {
-                    TestEvent_3_Recv(obj);
+                    {
+                        TestEvent_3_Recv(obj);
 
-                    break;
-                }
-
+                        break;
+                    }
             }
         }
 
-        #endregion // PhotonCode
+        #endregion PhotonCode
 
         private void TestEvent_Recv()
         {
@@ -101,35 +87,38 @@ namespace NetworkEvent
             (
                 new ProfileData
                 (
-                    (string) data[0],
-                    (bool) data[1],
-                    (float) data[2],
-                    (float)data[3]
+                    (string)data[0],   // username
+                    (bool)data[1],     // played tutorial?
+                    (float)data[2],    // music volume
+                    (float)data[3],     // sfx volume
+                    (int)data[4],       // high score
+                    (int)data[5],       // games won
+                    (int)data[6],       // games lost
+                    (int)data[7],       // game draws
+                    (int)data[8]       // incomplete games - left for some reason, quit_internet_etc...
+
                 ),
-                (int) data[2],
-                (int) data[3],
-                (bool) data[4]
+                (int)data[9],
+                (int)data[10],
+                (bool)data[11]
 
             );
 
             playerInfo.Add(player);
 
-
             // resync
             foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Player"))
             {
                 // sync local players data if needed
-
             }
 
             // update all clients
             UpdateTestEvent_2_Send(playerInfo);
-
         }
 
         private void TestEvent_3_Recv(object[] data)
         {
-            string receivedMessage = (string) data[0];
+            string receivedMessage = (string)data[0];
 
             Debug.Log("TestEvent 3 Received message from: " + receivedMessage);
 
@@ -140,11 +129,9 @@ namespace NetworkEvent
         {
             Debug.Log("Sending update");
 
-
-
             PhotonNetwork.RaiseEvent
             (
-                (byte) EventCodes.TestEvent,
+                (byte)EventCodes.TestEvent,
                 null,
                 new RaiseEventOptions
                 {
@@ -156,7 +143,6 @@ namespace NetworkEvent
                 }
             );
         }
-
 
         public void UpdateTestEvent_2_Send(List<PlayerInfo> info)
         {
@@ -177,7 +163,7 @@ namespace NetworkEvent
 
             PhotonNetwork.RaiseEvent
             (
-                (byte) EventCodes.TestEvent2,
+                (byte)EventCodes.TestEvent2,
                 package,
                 new RaiseEventOptions
                 {
@@ -189,7 +175,6 @@ namespace NetworkEvent
                 }
             );
         }
-
 
         public void UpdateTextEvent_3_Send(string message)
         {
@@ -201,7 +186,7 @@ namespace NetworkEvent
 
             PhotonNetwork.RaiseEvent
             (
-                (byte) EventCodes.TestEvent3,
+                (byte)EventCodes.TestEvent3,
                 package,
                 new RaiseEventOptions
                 {
@@ -213,7 +198,6 @@ namespace NetworkEvent
                 }
             );
         }
-
 
         // // player class sync local player EXAMPLES
         // public void TrySync()
@@ -251,8 +235,6 @@ namespace NetworkEvent
         //     }
         // }
 
-
-
         #region Monobehaviors
 
         // private void OnEnable()
@@ -265,7 +247,6 @@ namespace NetworkEvent
         //     PhotonNetwork.RemoveCallbackTarget(this);
         // }
 
-        #endregion
-
+        #endregion Monobehaviors
     }
 }
