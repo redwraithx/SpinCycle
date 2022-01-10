@@ -10,6 +10,7 @@ public class EscapeMenu : MonoBehaviour
     public Button returnButton;
     public Button quitButton;
     public GameObject menu;
+    public GameObject emoteMenu;
     void Start()
     {
         menu.SetActive(false);
@@ -58,6 +59,18 @@ public class EscapeMenu : MonoBehaviour
                 #endif
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            emoteMenu.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+        }
+
+        if(Input.GetKeyUp(KeyCode.G))
+        {
+            emoteMenu.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
     public void Return()
     {
@@ -79,7 +92,8 @@ public class EscapeMenu : MonoBehaviour
 
     public void OpenMenu()
     {
-        menu.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
+        menu.SetActive(true);
     }
+
 }
