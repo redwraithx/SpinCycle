@@ -2,34 +2,35 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Photon.Pun;
-using System.IO;
 
 public class Timer : MonoBehaviour
 {
     [Header("For Point Counters"),]
     public TMP_Text player1PointCounter;
+
     public TMP_Text player2PointCounter;
     public GameObject pointCounters;
     public GameObject background;
     public GameObject panel;
 
-
-    [Header("Timer Functions"), ] 
+    [Header("Timer Functions"),]
     public float timeRemaining = 10;
+
     public bool timerIsRunning = false;
     public TMP_Text timeText;
     public Image GameOverImage;
     public Image BlackImage;
     public Animator anim;
 
-    [Header("Autofill Sections"), ] 
+    [Header("Autofill Sections"),]
     public float player1Points;
+
     public float player2Points;
     public NetworkedTimerNew networkedTimer;
 
     [Header("Victory Stand Items"),]
-    bool isGameOver;
+    private bool isGameOver;
+
     public GameObject vStand;
     public GameObject loserVille;
     public TMP_Text pointTextL;
@@ -40,7 +41,6 @@ public class Timer : MonoBehaviour
     public GameObject winnerModel;
     public GameObject loserModel;
 
-
     public int GameOverSceneIndex = 0;
 
     private void Start()
@@ -48,9 +48,9 @@ public class Timer : MonoBehaviour
         isGameOver = false;
         networkedTimer = GameObject.FindGameObjectWithTag("Timer").GetComponent<NetworkedTimerNew>();
     }
+
     public void UpdatePoints()
     {
-
         player1Points = GameManager.networkLevelManager.playersJoined[0].GetComponent<PlayerPoints>().points;
         player1PointCounter.text = player1Points.ToString();
 
@@ -59,11 +59,10 @@ public class Timer : MonoBehaviour
             player2Points = GameManager.networkLevelManager.playersJoined[1].GetComponent<PlayerPoints>().points;
             player2PointCounter.text = player2Points.ToString();
         }
-
     }
-    void Update()
-    {
 
+    private void Update()
+    {
         if (networkedTimer.currentMatchTime <= 0.1)
         {
             timerIsRunning = false;
@@ -97,7 +96,6 @@ public class Timer : MonoBehaviour
                 }
             }
         }
-
     }
 
     public void OnePlayerQuit()
@@ -108,7 +106,7 @@ public class Timer : MonoBehaviour
         victoryText.text = "Win by disconnect";
     }
 
-    void DisplayTime(float timeToDisplay)
+    private void DisplayTime(float timeToDisplay)
     {
         timeToDisplay += 1;
 
@@ -142,7 +140,8 @@ public class Timer : MonoBehaviour
             victoryText.text = ("Tied");
         }
     }
-    IEnumerator Fading()
+
+    private IEnumerator Fading()
     {
         yield return new WaitForSeconds(1);
 
@@ -152,10 +151,6 @@ public class Timer : MonoBehaviour
         background.gameObject.SetActive(false);
         timeText.gameObject.SetActive(false);
 
-
         isGameOver = true;
-
     }
-
-
 }

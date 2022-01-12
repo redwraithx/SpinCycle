@@ -1,11 +1,8 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
-using Photon.Realtime;
-
 
 public class NetworkLevelManager : MonoBehaviourPun
 {
@@ -15,14 +12,11 @@ public class NetworkLevelManager : MonoBehaviourPun
 
     public GameObject timer;
 
-    bool timerStarted = false;
+    private bool timerStarted = false;
 
     public Text player1;
 
     public Text player2;
-
-
-    
 
     //public bool[] isPlayersDiveDelayEnabled = new bool[GameManager.networkManager.maxPlayersPerRoom];
     //public float initialDiveReuseDelay = 10f;
@@ -39,41 +33,32 @@ public class NetworkLevelManager : MonoBehaviourPun
         foreach (var cam in GameObject.FindGameObjectsWithTag("MainCamera"))
             Destroy(cam);
 
-
         // we can add character selection here if / when we get that.
         //PlayerPrefs.GetInt("PlayerSelection");  // something like this if we had a few characters we could have them set by an int
 
-
         if (PhotonNetwork.IsConnected)
         {
-
             if (NetworkedPlayer.LocalPlayerInstance == null)
             {
                 int newPlayerIndex = PhotonNetwork.LocalPlayer.ActorNumber - 1;
-                
+
                 Debug.Log("newPlayerIndex: " + newPlayerIndex);
-                
-                    startingPosition = playerStartingPositions[newPlayerIndex].position;
-                    startingRotation = playerStartingPositions[newPlayerIndex].rotation;
-                    
-                    // spawn networked Player
-                    networkedPlayer = PhotonNetwork.Instantiate(Path.Combine("NetworkingPrefabs", "NetworkedPlayerAvatar"), startingPosition, startingRotation, 0);
-                    
-                
-                
+
+                startingPosition = playerStartingPositions[newPlayerIndex].position;
+                startingRotation = playerStartingPositions[newPlayerIndex].rotation;
+
+                // spawn networked Player
+                networkedPlayer = PhotonNetwork.Instantiate(Path.Combine("NetworkingPrefabs", "NetworkedPlayerAvatar"), startingPosition, startingRotation, 0);
+
                 networkedPlayer.GetComponent<PlayerMovementCC>().playerDiveIndex = 1; // what is this for?
             }
-            
-            
 
             if (PhotonNetwork.IsMasterClient)
             {
                 // time before an empty room is destroyed in seconds
                 PhotonNetwork.CurrentRoom.EmptyRoomTtl = 1;
             }
-
         }
-
     }
 
     private void Update()
@@ -87,7 +72,7 @@ public class NetworkLevelManager : MonoBehaviourPun
                     if (!timerStarted)
                     {
                         PhotonNetwork.CurrentRoom.IsOpen = false;
-                        
+
                         timer.GetComponent<NetworkedTimerNew>().InitializeTimer();
                         timerStarted = true;
                     }
@@ -99,11 +84,11 @@ public class NetworkLevelManager : MonoBehaviourPun
                     {
                         if (!playersJoined.Contains(Player))
                         {
-                            if(Player.GetComponent<PhotonView>().Owner.IsMasterClient == true && playersJoined.Count >= 0)
+                            if (Player.GetComponent<PhotonView>().Owner.IsMasterClient == true && playersJoined.Count >= 0)
                             {
                                 playersJoined.Add(Player);
                             }
-                            else if(Player.GetComponent<PhotonView>().Owner.IsMasterClient == false && playersJoined.Count >= 1)
+                            else if (Player.GetComponent<PhotonView>().Owner.IsMasterClient == false && playersJoined.Count >= 1)
                             {
                                 playersJoined.Add(Player);
                             }
@@ -111,13 +96,10 @@ public class NetworkLevelManager : MonoBehaviourPun
                             {
                                 Debug.Log("having trouble finding player 2");
                             }
-
-
                         }
                     }
                 }
             }
         }
     }
-
 }

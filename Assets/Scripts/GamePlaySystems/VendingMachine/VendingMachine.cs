@@ -1,8 +1,6 @@
-﻿
-using Cinemachine;
+﻿using Cinemachine;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(EventSystem))]
@@ -10,6 +8,7 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
 {
     //add index for button hover
     public GameObject VendingUI;
+
     public GameObject Canvas;
     public ButtonHover[] buttonHoverScripts;
     public Button closeButton;
@@ -19,44 +18,38 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
 
     [SerializeField] private float closeUIDistance = 4f;
 
-
-    void Start()
+    private void Start()
     {
         if (closeButton)
         {
             closeButton.onClick.AddListener(CloseUI);
         }
 
-
         Canvas.GetComponent<CanvasGroup>().alpha = 1;
         Canvas.GetComponent<CanvasGroup>().interactable = true;
         Canvas.GetComponent<CanvasGroup>().blocksRaycasts = true;
         VendingUI.SetActive(false);
-
     }
-    
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("press E to spawn item trigger");
+        //Debug.Log("press E to spawn item trigger");
 
         if (other.gameObject.CompareTag("Player"))
         {
             currentUser = other.gameObject;
         }
-
     }
-    
+
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("press E to spawn item trigger (stay)");
+        //Debug.Log("press E to spawn item trigger (stay)");
 
         if (other.gameObject.CompareTag("Player"))
         {
             currentUser = other.gameObject;
             currentObjectMouseLook = currentUser.GetComponentInChildren<CinemachineBrain>();
         }
-
     }
 
     //private void OnTriggerExit(Collider other)
@@ -75,26 +68,23 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
 
     private void Update()
     {
-        
-        if(currentUser && Input.GetKeyDown(KeyCode.E))
+        if (currentUser && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("User using vending machine trigger");
+            //Debug.Log("User using vending machine trigger");
             VendingUI.SetActive(true);
 
             foreach (var buttonHoverScript in buttonHoverScripts)
             {
-                
                 Debug.Log($"button {buttonHoverScript.Name}");
-                
+
                 buttonHoverScript.Description.SetActive(false);
                 buttonHoverScript.Price.SetActive(false);
                 buttonHoverScript.Name.SetActive(false);
             }
-            
-            
+
             // enable mouse
             Cursor.lockState = CursorLockMode.None;
-            
+
             // disable mouse camera view
             currentObjectMouseLook.enabled = false;
         }
@@ -107,33 +97,25 @@ public class VendingMachine : MonoBehaviour /*IVendingMachine*/
         }
     }
 
-
-private void CloseUI()
+    private void CloseUI()
     {
         // enable mouse camera movement
         currentObjectMouseLook.enabled = true;
-        
-        
+
         foreach (var buttonHoverScript in buttonHoverScripts)
         {
-                
-            Debug.Log($"button {buttonHoverScript.Name}");
-                
+            //Debug.Log($"button {buttonHoverScript.Name}");
+
             buttonHoverScript.Description.SetActive(false);
             buttonHoverScript.Price.SetActive(false);
             buttonHoverScript.Name.SetActive(false);
         }
-        
+
         VendingUI.SetActive(false);
-        
-        
-        
+
         Cursor.lockState = CursorLockMode.Locked;
-        
+
         // clear current object
         currentUser = null;
-        
     }
-    
 }
-

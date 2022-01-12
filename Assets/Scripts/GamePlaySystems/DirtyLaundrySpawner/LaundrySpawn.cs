@@ -1,9 +1,7 @@
 ﻿using Photon.Pun;
-using Photon.Realtime;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+
 public class LaundrySpawn : MonoBehaviour
 {
     public GameObject spawnObjectGameObject;
@@ -13,8 +11,8 @@ public class LaundrySpawn : MonoBehaviour
     public GameObject objectInstance;
     public string networkItemToSpawn = "";
     public VendingIndex VendingIndex;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
         spawnPointPosition = spawnPoint.transform.position;
         spawnObject = spawnObjectGameObject.GetComponent<Item>();
@@ -26,8 +24,6 @@ public class LaundrySpawn : MonoBehaviour
         }
     }
 
-
-
     public void OnTriggerExit(Collider other)
     {
         if (PhotonNetwork.IsMasterClient)
@@ -35,9 +31,8 @@ public class LaundrySpawn : MonoBehaviour
             //if not working make sure there is a collider set as a trigger on the object
             if (Vector3.Distance(objectInstance.transform.position, spawnPointPosition) >= 1 || objectInstance == null)
             {
-               objectInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
+                objectInstance = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", networkItemToSpawn), spawnPointPosition, Quaternion.identity);
             }
         }
     }
-
 }

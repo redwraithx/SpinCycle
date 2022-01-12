@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 [RequireComponent(typeof(CharacterController))]
 public class Character : MonoBehaviour
 {
@@ -8,29 +7,27 @@ public class Character : MonoBehaviour
     public Rigidbody rb;
     public float speed = 5f;
     public float jumpSpeed = 7f;
-    public float rotationSpeed = 0f; 
+    public float rotationSpeed = 0f;
     public float gravity = 0f;
 
     private Vector3 moveDirection = Vector3.zero;
 
-    enum ControllerType
+    private enum ControllerType
     {
-        SimpleMove, 
+        SimpleMove,
         Move
     };
-    
-    
-    [SerializeField] ControllerType type;
+
+    [SerializeField] private ControllerType type;
 
     // Handles weapon shooting
     public float projectileSpeed;
+
     public Rigidbody projectilePrefab;
     public Transform projectileSpawnPoint;
 
-
-    void Start()
+    private void Start()
     {
-
         cc = GetComponent<CharacterController>();
 
         rb = GetComponent<Rigidbody>();
@@ -47,19 +44,15 @@ public class Character : MonoBehaviour
         if (gravity <= 0)
             gravity = 9.81f;
 
-        
         moveDirection = Vector3.zero;
 
         if (projectileSpeed <= 0)
         {
             projectileSpeed = 6.0f;
-
         }
+    }
 
-
-    }        
-
-    void Update()
+    private void Update()
     {
         transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed, 0);
 
@@ -68,7 +61,6 @@ public class Character : MonoBehaviour
         float curSpeed = Input.GetAxis("Vertical") * speed;
 
         cc.SimpleMove(transform.forward * (Input.GetAxis("Vertical") * speed));
-
 
         if (cc.isGrounded)
         {
@@ -79,26 +71,22 @@ public class Character : MonoBehaviour
             moveDirection = transform.TransformDirection(moveDirection);
 
             moveDirection *= speed;
-                        
         }
 
         if (Input.GetButtonDown("Jump"))
         {
             moveDirection.y = jumpSpeed;
-            
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
 
         cc.Move(moveDirection * Time.deltaTime);
 
-
         if (Input.GetKeyDown(KeyCode.LeftControl))
             if (Input.GetButtonDown("Fire1")) // Set in Edit | Project Settings | Input Manager
             {
                 fire();
             }
-
     }
 
     public void fire()

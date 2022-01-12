@@ -1,10 +1,7 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CinemachineMouseLook : MonoBehaviour
 {
-
-
     public LayerMask layerMask;
 
     public float mouseSensitivity = 100f;
@@ -19,32 +16,27 @@ public class CinemachineMouseLook : MonoBehaviour
 
     private TransparentWalls currentTransparentWall;
 
-    
-
-    
-    void Start()
+    private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    
-    void Update()
+    private void Update()
     {
         if (!isAlive)
             return;
 
         Vector3 direction = playerBody.position - transform.position;
         float length = Vector3.Distance(playerBody.position, transform.position);
-        Debug.DrawRay(transform.position, direction.normalized * length, Color.red);
+        //Debug.DrawRay(transform.position, direction.normalized * length, Color.red);
 
         RaycastHit currentHit;
         if (Physics.Raycast(transform.position, direction, out currentHit, length, layerMask))
         {
-            
             TransparentWalls transparentWall = currentHit.transform.parent.gameObject.GetComponent<TransparentWalls>();
             if (transparentWall)
             {
-                Debug.Log("hitting wall");
+                //Debug.Log("hitting wall");
                 if (currentTransparentWall && currentTransparentWall.gameObject != transparentWall.gameObject)
                 {
                     currentTransparentWall.ChangeTransparency(false);
@@ -60,15 +52,10 @@ public class CinemachineMouseLook : MonoBehaviour
                 currentTransparentWall.ChangeTransparency(false);
             }
         }
-
-
     }
-
 
     internal void SetIsAlive(bool value)
     {
         isAlive = value;
     }
 }
-
-

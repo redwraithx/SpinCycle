@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Playables;
 
 public class WasherAlembic : MonoBehaviour
@@ -8,18 +6,16 @@ public class WasherAlembic : MonoBehaviour
     public MachineScript machineScript;
     public PlayableDirector playableDirector;
     public GameObject laundryAnim;
-    bool alembicOn = false;
-    // Start is called before the first frame update
-    void Start()
+    private bool alembicOn = false;
+
+    private void Start()
     {
         Invoke("GetMachine", 3f);
-
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-       if(machineScript != null)
+        if (machineScript != null)
         {
             if (machineScript.laundryTimer > 0 && alembicOn == false)
             {
@@ -34,35 +30,28 @@ public class WasherAlembic : MonoBehaviour
                 alembicOn = false;
             }
         }
-
     }
 
-
-    void GetMachine()
+    private void GetMachine()
     {
         GameObject washer = null;
         float distance = Mathf.Infinity;
-        foreach(GameObject washMachine in GameObject.FindGameObjectsWithTag("WashingMachine"))
+        foreach (GameObject washMachine in GameObject.FindGameObjectsWithTag("WashingMachine"))
         {
             float washerDistance = Vector3.Distance(transform.position, washMachine.transform.position);
-            if(washerDistance < distance)
+            if (washerDistance < distance)
             {
                 distance = washerDistance;
                 washer = washMachine;
             }
-
-
         }
 
-        if(washer != null)
+        if (washer != null)
         {
             transform.parent = washer.transform;
             transform.localPosition = Vector3.zero;
         }
 
-
         machineScript = transform.parent.gameObject.GetComponentInChildren<MachineScript>();
-
-
     }
 }

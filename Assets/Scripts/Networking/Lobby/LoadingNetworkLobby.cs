@@ -1,8 +1,6 @@
-﻿
-using System;
+﻿using System;
 using TMPro;
 using UnityEngine;
-
 
 public class LoadingNetworkLobby : MonoBehaviour
 {
@@ -17,18 +15,17 @@ public class LoadingNetworkLobby : MonoBehaviour
 
     private bool hasLoadedNetworkLobby = false;
 
-
     private void OnEnable()
     {
-        if(tabsContainer.activeInHierarchy)
+        if (tabsContainer.activeInHierarchy)
             tabsContainer.SetActive(false);
 
         loadingText.text = "";
 
         tickCounter = 5;
-        
+
         hasLoadedNetworkLobby = false;
-        
+
         ResetTickTimer();
     }
 
@@ -36,7 +33,7 @@ public class LoadingNetworkLobby : MonoBehaviour
     {
         if (!loadingText || !tabsContainer)
             throw new Exception("Error! missing loadingText and/or tabsContainer reference, Fix this and retry");
-        
+
         ResetTickTimer();
     }
 
@@ -56,14 +53,14 @@ public class LoadingNetworkLobby : MonoBehaviour
                 loadingText.text += ".";
 
                 tickCounter--;
-                
+
                 ResetTickTimer();
             }
         }
 
         if (tickCounter <= 0)
         {
-            Debug.Log("show profile and hide wait container");
+            //Debug.Log("show profile and hide wait container");
             hasLoadedNetworkLobby = true;
 
             tabsContainer.SetActive(true);
@@ -73,7 +70,6 @@ public class LoadingNetworkLobby : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
 
     private void ResetTickTimer()
     {

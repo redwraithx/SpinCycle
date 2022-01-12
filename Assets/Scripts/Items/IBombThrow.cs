@@ -1,5 +1,4 @@
-﻿
-public interface IBombThrow
+﻿public interface IBombThrow
 {
     void Throw();
 }

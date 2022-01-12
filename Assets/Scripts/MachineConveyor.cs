@@ -10,10 +10,9 @@ public class MachineConveyor : MonoBehaviour
 
     public bool isRunning = false;
 
-
     public void SpawnObject()
     {
-        if(isRunning == true)
+        if (isRunning == true)
         {
             return;
         }
@@ -26,12 +25,10 @@ public class MachineConveyor : MonoBehaviour
             obj.GetComponent<FolderBelt>().basket = basket;
         else if (machine)
             obj.GetComponent<FolderBelt>().machine = machine;
-
     }
 
     public void ResetConveyor()
     {
         isRunning = false;
     }
-
 }

@@ -1,9 +1,5 @@
-﻿using UnityEngine;
-
-
-namespace GamePlaySystems.Utilities
+﻿namespace GamePlaySystems.Utilities
 {
-
     public enum ItemType
     {
         None,
@@ -21,7 +17,4 @@ namespace GamePlaySystems.Utilities
         LoadRuiner,
         Bomb
     }
-
-
-
 }

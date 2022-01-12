@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ItemOutOfGameDestroy : MonoBehaviour
 {
@@ -7,7 +6,7 @@ public class ItemOutOfGameDestroy : MonoBehaviour
 
     private void Update()
     {
-        if(transform.position.y <= depthOfItemWhenOutOfWorld)
+        if (transform.position.y <= depthOfItemWhenOutOfWorld)
             Destroy(this.gameObject);
     }
 }

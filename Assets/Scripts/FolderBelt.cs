@@ -7,10 +7,9 @@ public class FolderBelt : MonoBehaviour
     public MachineScript machine;
     public PathCreator pathCreator;
     public float speed;
-    float distanceTravelled;
+    private float distanceTravelled;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         if (gameObject.CompareTag("ConveyorObject"))
         {
@@ -18,20 +17,17 @@ public class FolderBelt : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         StartBelt();
-
     }
-        
 
     public void StartBelt()
     {
-            distanceTravelled += speed * Time.deltaTime;
-            transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
-        
+        distanceTravelled += speed * Time.deltaTime;
+        transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
     }
+
     public void StopSound()
     {
         if (basket)

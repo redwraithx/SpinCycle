@@ -2,7 +2,6 @@
 using System.Collections;
 using Photon.Pun;
 
-
 public class WeaponDestroyScript : MonoBehaviourPun
 {
     internal bool hasFired = false;
@@ -10,9 +9,9 @@ public class WeaponDestroyScript : MonoBehaviourPun
 
     public LineRenderer lineRenderer;
 
-    void LateUpdate()
+    private void LateUpdate()
     {
-        if(hasFired)
+        if (hasFired)
         {
             if (lineRenderer != null)
                 lineRenderer.enabled = false;
@@ -20,7 +19,6 @@ public class WeaponDestroyScript : MonoBehaviourPun
 
         if (hasFired && transform.parent == null)
         {
-            
             Debug.Log("Destroyed Gun");
 
             if (photonView.Owner.IsMasterClient == false)
@@ -35,16 +33,14 @@ public class WeaponDestroyScript : MonoBehaviourPun
                     Invoke("DestroyGun", 1f);
                 }
             }
-                
         }
-
-
     }
 
-    void DestroyGun()
+    private void DestroyGun()
     {
         PhotonNetwork.Destroy(gameObject);
     }
+
     private IEnumerator DelayedDestroy(float seconds)
     {
         yield return new WaitForSeconds(seconds);

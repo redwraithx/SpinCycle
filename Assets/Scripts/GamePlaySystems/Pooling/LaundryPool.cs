@@ -1,31 +1,27 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using EnumSpace;
 using Photon.Pun;
-using Photon.Realtime;
-
 
 [System.Serializable]
-
 public class LaundryPool : MonoBehaviour
 {
     public static LaundryPool poolInstance = null;
 
     [SerializeField]
     public GameObject[] pooledItems;
+
     private bool notEnoughObjectsInPool = true;
 
     private List<GameObject>[] pool;
-
 
     private void Awake()
     {
         poolInstance = this;
     }
-    
-    void Start()
+
+    private void Start()
     {
         if (PhotonNetwork.IsMasterClient)
         {
@@ -39,19 +35,17 @@ public class LaundryPool : MonoBehaviour
                 pool[i].Add(obj);
             }
         }
-
     }
 
-    void OnPhotonInstantiate(PhotonMessageInfo info)
+    private void OnPhotonInstantiate(PhotonMessageInfo info)
     {
         info.Sender.TagObject = gameObject.tag;
     }
 
-
-public GameObject GetItem(LaundryType type)
+    public GameObject GetItem(LaundryType type)
     {
         int id = (int)type;
-        
+
         if (pool[id].Count > 0)
         {
             for (int i = 0; i < pool[id].Count; i++)

@@ -1,13 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 
-    
 {
-
     private Collider collider;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Machine") || collision.gameObject.CompareTag("VendingMachine"))
@@ -20,5 +17,4 @@ public class BulletScript : MonoBehaviour
     {
         collider = GetComponent<Collider>();
     }
-
 }

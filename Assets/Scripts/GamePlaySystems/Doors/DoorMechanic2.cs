@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,18 +5,8 @@ public class DoorMechanic2 : MonoBehaviour
 {
     public Animator m_Animator;
     public List<GameObject> whatWeHave = new List<GameObject>();
-    int count = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
+    private int count = 0;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -26,7 +15,7 @@ public class DoorMechanic2 : MonoBehaviour
             m_Animator.SetBool("isOpen", true);
         }
         whatWeHave.Add(other.gameObject);
-        //prepare the check array 
+        //prepare the check array
         // search all objects to see if we have all 3 parts
         for (int i = 0; i < whatWeHave.Count; i++)
         {

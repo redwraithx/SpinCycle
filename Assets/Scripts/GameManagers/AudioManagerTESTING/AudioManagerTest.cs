@@ -1,8 +1,5 @@
-﻿
-
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
-
 
 public class AudioManagerTest : MonoBehaviour
 {
@@ -11,9 +8,7 @@ public class AudioManagerTest : MonoBehaviour
     [Space] [SerializeField] private AudioClip music1;
     [SerializeField] private AudioClip music2;
 
-
     [SerializeField] private GameObject textVisualsContainer;
-
 
     private void Update()
     {
@@ -24,20 +19,17 @@ public class AudioManagerTest : MonoBehaviour
             textVisualsContainer.SetActive(!textVisualsContainer.activeInHierarchy);
         }
 
-
         if (Input.GetKeyDown(KeyCode.Alpha1))
             GameManager.audioManager.PlaySfx(sfxClips[0]);
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
             GameManager.audioManager.PlaySfx(GetRandomAudioClip());
 
-
         if (Input.GetKeyDown(KeyCode.Alpha3))
             GameManager.audioManager.PlayMusic(music1);
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
             GameManager.audioManager.PlayMusic(music2);
-
 
         if (Input.GetKeyDown(KeyCode.Alpha5))
             GameManager.audioManager.PlayMusicWithFade(music1);
@@ -51,17 +43,12 @@ public class AudioManagerTest : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha8))
             GameManager.audioManager.PlayMusicWithCrossFade(music2);
 
-
-
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
             GameManager.audioManager.StopMusic();
             GameManager.audioManager.StopSfx();
-
         }
     }
-
-
 
     // TESTING FUNCTION ONLY
     private AudioClip GetRandomAudioClip()

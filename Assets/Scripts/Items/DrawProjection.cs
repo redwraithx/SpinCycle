@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
@@ -7,7 +6,7 @@ public class DrawProjection : MonoBehaviourPun
 {
     public WeaponScript weaponScript;
     public GameObject spawnPoint;
-    LineRenderer lineRenderer;
+    private LineRenderer lineRenderer;
 
     //number of points on line
     public int numPoints = 50;
@@ -20,25 +19,23 @@ public class DrawProjection : MonoBehaviourPun
 
     public GameObject shootingFx;
 
-
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
-
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (weaponScript == null)
             lineRenderer.enabled = false;
         else
         {
-            if(photonView.IsMine)
+            if (photonView.IsMine)
             {
                 lineRenderer.enabled = true;
-                Debug.Log("Calculating");
+                //Debug.Log("Calculating");
                 lineRenderer.positionCount = numPoints;
                 List<Vector3> points = new List<Vector3>();
                 Vector3 startingPosition = spawnPoint.transform.position;
@@ -61,14 +58,6 @@ public class DrawProjection : MonoBehaviourPun
 
             if (weaponScript.isFiring)
                 shootingFx.SetActive(true);
-
-            
         }
-            
-
-
-       
-        
-
     }
 }

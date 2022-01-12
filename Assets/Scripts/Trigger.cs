@@ -1,9 +1,9 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
     public MachineConveyor conveyor;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("ConveyorObject"))
@@ -11,7 +11,7 @@ public class Trigger : MonoBehaviour
             other.GetComponent<FolderBelt>().StopSound();
             Destroy(other.gameObject);
 
-            Debug.Log("Destoryed.........");
+            //Debug.Log("Destoryed.........");
             conveyor.ResetConveyor();
         }
     }

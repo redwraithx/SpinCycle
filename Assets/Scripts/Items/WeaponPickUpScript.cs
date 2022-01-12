@@ -1,26 +1,21 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-
 public class WeaponPickUpScript : MonoBehaviour
 {
-    public GameObject weapon;               
-    public GameObject weaponAttach;     
-    public float weaponDropForce;      
+    public GameObject weapon;
+    public GameObject weaponAttach;
+    public float weaponDropForce;
     //public TMP_Text ammoText;
-    
-    void Start()
+
+    private void Start()
     {
-        
         weapon = null;
 
-        
         //ammoText.text = string.Empty;
 
-       
         if (!weaponAttach)
         {
-            
             weaponAttach = GameObject.Find("WeaponPlacement");
         }
 
@@ -28,89 +23,62 @@ public class WeaponPickUpScript : MonoBehaviour
         {
             weaponDropForce = 5.0f;
 
-            Debug.Log("WeaponDropForce not set on " + name + ". Defaulting to " + weaponDropForce);
+            //Debug.Log("WeaponDropForce not set on " + name + ". Defaulting to " + weaponDropForce);
         }
     }
 
-    
-    void Update()
+    private void Update()
     {
-        
         if (Input.GetKeyDown(KeyCode.T))
         {
-            
             if (weapon)
             {
-                
                 weaponAttach.transform.DetachChildren();
 
-                
                 StartCoroutine(EnableCollisions(1.0f));
 
-                
                 weapon.GetComponent<Rigidbody>().isKinematic = false;
 
-                
                 weapon.GetComponent<Rigidbody>().AddForce(weapon.transform.forward * weaponDropForce, ForceMode.Impulse);
 
-               
                 //ammoText.text = string.Empty;
             }
         }
 
-        
-        if (Input.GetButtonDown("Fire1"))
-        {
-            
-            if (weapon)
-            {
-               
-                //ammoText.text = weapon.Shoot().ToString();
-            }
-        }
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+        //    if (weapon)
+        //    {
+        //        ammoText.text = weapon.Shoot().ToString();
+        //    }
+        //}
     }
 
-    void OnTriggerEnter(Collider hit)
+    private void OnTriggerEnter(Collider hit)
     {
-       
-            
         if (!weapon && hit.gameObject.CompareTag("Weapon") || !weapon && hit.gameObject.CompareTag("Item"))
         {
-
             weapon = hit.gameObject;
-
-
 
             weapon.GetComponent<Rigidbody>().isKinematic = true;
 
-            
             weapon.transform.position = weaponAttach.transform.position;
 
-            
             weapon.transform.SetParent(weaponAttach.transform);
 
-            
             weapon.transform.localRotation = weaponAttach.transform.localRotation;
-
-            
 
             Physics.IgnoreCollision(weapon.transform.GetComponent<Collider>(), transform.GetComponent<Collider>());
         }
-
-       
     }
 
-    IEnumerator EnableCollisions(float timeToDisable)
+    private IEnumerator EnableCollisions(float timeToDisable)
     {
         if (weapon.gameObject.GetComponent<WeaponScript>() != null)
-
         {
-
             yield return new WaitForSeconds(timeToDisable);
 
-
             Physics.IgnoreCollision(weapon.transform.GetComponent<Collider>(), transform.GetComponent<Collider>(), false);
-
 
             weapon = null;
         }

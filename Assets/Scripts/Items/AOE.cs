@@ -1,21 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Photon.Pun;
 
 public class AOE : MonoBehaviourPun
 {
     public float timer;
     public bool transferring;
-    // Start is called before the first frame update
-    private void Start()
-    {
 
-    }
     public void OnTriggerStay(Collider other)
     {
-       
-        if(other.gameObject.CompareTag("Machine"))
+        if (other.gameObject.CompareTag("Machine"))
         {
             other.gameObject.BroadcastMessage("SabotageMachine");
 
@@ -42,12 +35,11 @@ public class AOE : MonoBehaviourPun
         }
     }
 
-
     public void TransferOwner()
     {
-            if (PhotonNetwork.IsMasterClient)
-            {
-                PhotonNetwork.Destroy(gameObject);
-            }
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.Destroy(gameObject);
+        }
     }
 }

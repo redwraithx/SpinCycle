@@ -1,13 +1,9 @@
-﻿
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using TMPro;
 using GamePlaySystems.Utilities;
 using System.Collections;
 
 using Photon.Pun;
-using Photon.Realtime;
-
 
 public class LaundryBasket : MonoBehaviourPun
 {
@@ -15,9 +11,8 @@ public class LaundryBasket : MonoBehaviourPun
     public MachineConveyor conveyor;
     public TMP_Text pointsText = null;
     public int points;
-    PlayerPoints playerPoints = null;
+    private PlayerPoints playerPoints = null;
     public string pointsToText;
-    
 
     //private void OnTriggerEnter(Collider other)
     //{
@@ -25,22 +20,20 @@ public class LaundryBasket : MonoBehaviourPun
     //    {
     //        if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone)
     //        {
-                
     //            bool updatedPlayerPoints = UpdatePlayerPoints(other.gameObject);
-                
+
     //            if(updatedPlayerPoints)
     //                Debug.Log("Players Points where updated");
     //            else
     //                Debug.Log("Players Points were not found to be updated.");
-                
-                
+
     //            playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
     //            //other.gameObject.GetComponent<Item>().DisableObject();
     //            PhotonNetwork.Destroy(other.gameObject);
     //        }
     //    }
     //}
-    
+
     // below is the function to click items in which is needed for when the actual models come in place, above is dropping them in
     public void AddClothing(GameObject other)
     {
@@ -60,12 +53,11 @@ public class LaundryBasket : MonoBehaviourPun
             if (other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingDone || other.gameObject.GetComponent<ItemTypeForItem>().itemType == ItemType.ClothingUnfolded)
             {
                 bool updatedPlayerPoints = UpdatePlayerPoints(other);
-                
-                if(updatedPlayerPoints)
+
+                if (updatedPlayerPoints)
                     Debug.Log("Players Points where updated");
                 else
                     Debug.Log("Players Points were not found to be updated.");
-                               
 
                 playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
 
@@ -74,23 +66,20 @@ public class LaundryBasket : MonoBehaviourPun
         }
     }
 
-
-    IEnumerator CheckForPlayer()
+    private IEnumerator CheckForPlayer()
     {
         yield return new WaitForSeconds(2f);
 
-            if(!GameManager.Instance.Player1)
-            {
-                StartCoroutine (CheckForPlayer());
-            }
-            else
-            {
-                playerPoints = GameManager.Instance.Player1.GetComponent<PlayerPoints>();
-                StopCoroutine(CheckForPlayer());
-            }
+        if (!GameManager.Instance.Player1)
+        {
+            StartCoroutine(CheckForPlayer());
+        }
+        else
+        {
+            playerPoints = GameManager.Instance.Player1.GetComponent<PlayerPoints>();
+            StopCoroutine(CheckForPlayer());
+        }
     }
-
-
 
     private bool UpdatePlayerPoints(GameObject other)
     {
@@ -104,5 +93,4 @@ public class LaundryBasket : MonoBehaviourPun
         audioSource.Stop();
         audioSource.clip = null;
     }
-
 }

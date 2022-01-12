@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 [System.Serializable]
 public class VendingIndex : MonoBehaviour
@@ -10,13 +9,10 @@ public class VendingIndex : MonoBehaviour
     public Sprite Sprite;
 
     public VendingIndex(string name, string desc, string price, Sprite sprite)
-        {
+    {
         Name = name;
         Price = price;
         Description = desc;
         Sprite = sprite;
-
     }
-
-
 }

@@ -1,12 +1,8 @@
-﻿
-
-
-using System;
+﻿using System;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-
 
 public class LobbyPlayerCounter : MonoBehaviourPunCallbacks
 {
@@ -30,17 +26,13 @@ public class LobbyPlayerCounter : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-
         startTime = 5;
         timerGoing = false;
-        Debug.Log("Photon player: " + PhotonNetwork.LocalPlayer.ActorNumber);
+        //Debug.Log("Photon player: " + PhotonNetwork.LocalPlayer.ActorNumber);
 
         gameOverContainer.SetActive(false);
         waitForItContainer.SetActive(true);
-
-
     }
-
 
     private void Update()
     {
@@ -49,7 +41,7 @@ public class LobbyPlayerCounter : MonoBehaviourPunCallbacks
 
         if (timerGoing == true)
         {
-            if(playersReady < maxPlayers)
+            if (playersReady < maxPlayers)
             {
                 ticker.gameObject.GetComponent<AudioSource>().Stop();
                 ticker.gameObject.SetActive(false);
@@ -67,7 +59,7 @@ public class LobbyPlayerCounter : MonoBehaviourPunCallbacks
             }
         }
 
-        if(timerGoing == false && ticker.gameObject.activeInHierarchy == true)
+        if (timerGoing == false && ticker.gameObject.activeInHierarchy == true)
         {
             ticker.gameObject.GetComponent<AudioSource>().Stop();
             ticker.gameObject.SetActive(false);
@@ -95,11 +87,10 @@ public class LobbyPlayerCounter : MonoBehaviourPunCallbacks
     //         Destroy(networkObj);
     //
     //     //SceneManager.LoadScene(0); // 0 is title scene
-    //     
+    //
     //     if(PhotonNetwork.IsMasterClient)
     //         PhotonNetwork.LoadLevel(0);
     // }
-
 
     public void QuitApp()
     {
@@ -114,7 +105,7 @@ public class LobbyPlayerCounter : MonoBehaviourPunCallbacks
 
     public void ReadyButton()
     {
-        Debug.Log("Ready Button Hit");
+        //Debug.Log("Ready Button Hit");
 
         if (clientReady == false)
         {
@@ -127,13 +118,11 @@ public class LobbyPlayerCounter : MonoBehaviourPunCallbacks
             clientReady = false;
         }
 
-
-        if(playersReady >= maxPlayers)
+        if (playersReady >= maxPlayers)
         {
             timerGoing = true;
         }
     }
-
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -143,7 +132,7 @@ public class LobbyPlayerCounter : MonoBehaviourPunCallbacks
         }
         if (stream.IsReading)
         {
-            float ReadyPlayers = (int) stream.ReceiveNext();
+            float ReadyPlayers = (int)stream.ReceiveNext();
 
             if (ReadyPlayers != playersReady)
                 playersReady = (int)ReadyPlayers;

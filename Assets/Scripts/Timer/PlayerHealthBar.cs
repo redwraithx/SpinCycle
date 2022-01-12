@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -12,11 +11,9 @@ public class PlayerHealthBar : MonoBehaviour
     public Image frontHealthBar = null;
     public Image backHealthBar = null;
 
-
     private void Start()
     {
         health = maxHealth;
-        
     }
 
     private void Update()
@@ -28,7 +25,7 @@ public class PlayerHealthBar : MonoBehaviour
         {
             TakeDamage(Random.Range(5, 10));
         }
-        
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             RestoreHealth(Random.Range(5, 10));
@@ -50,7 +47,7 @@ public class PlayerHealthBar : MonoBehaviour
 
             LerpTimer += Time.deltaTime;
             float percentComplete = LerpTimer / chipSpeed;
-            
+
             // its an easing effect
             percentComplete = percentComplete * percentComplete;
 
@@ -67,10 +64,9 @@ public class PlayerHealthBar : MonoBehaviour
 
             // its an easing effect
             percentComplete = percentComplete * percentComplete;
-            
+
             frontHealthBar.fillAmount = Mathf.Lerp(fillFront, healthFraction, percentComplete);
         }
-        
     }
 
     public void TakeDamage(float damage)
@@ -78,7 +74,6 @@ public class PlayerHealthBar : MonoBehaviour
         health -= damage;
 
         LerpTimer = 0f;
-        
     }
 
     public void RestoreHealth(float healAmount)

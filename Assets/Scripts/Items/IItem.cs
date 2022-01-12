@@ -1,7 +1,6 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
-public interface IItem 
+public interface IItem
 {
     int Id { get; }
 
@@ -16,8 +15,4 @@ public interface IItem
     Sprite sprite { get; }
 
     int OwnerID { get; set; }
-
 }
-    
-
-

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 using NetworkProfile;
 using PlayerProfileData;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-
 
 public class CreditsScroll : MonoBehaviour
 {
@@ -20,12 +16,10 @@ public class CreditsScroll : MonoBehaviour
 
     public TMP_Text endOfCreditsText = null;
 
-
     private ProfileData myProfile = null;
-    
-    
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         creditsTopInitLocation = creditsTop.transform.position;
 
@@ -33,24 +27,21 @@ public class CreditsScroll : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(Input.anyKey)
+        if (Input.anyKey)
         {
             SceneManager.LoadScene("MainMenuScene");
         }
 
         creditsBottomLocation = creditsBottom.transform.position;
 
-        if(Mathf.Abs(Vector3.Distance(creditsTopInitLocation, creditsBottomLocation)) >= 50)
+        if (Mathf.Abs(Vector3.Distance(creditsTopInitLocation, creditsBottomLocation)) >= 50)
         {
             creditsScroll.transform.Translate(Vector3.up * speed);
         }
-        
-
     }
-    
-    
+
     private string GetCurrentPlayersName()
     {
         myProfile = DataClass.LoadProfile();
@@ -58,7 +49,6 @@ public class CreditsScroll : MonoBehaviour
         {
             return myProfile.userName;
         }
-
 
         return "Player";
     }
@@ -72,5 +62,4 @@ public class CreditsScroll : MonoBehaviour
 
         return endingString.ToString();
     }
-    
 }

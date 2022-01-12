@@ -4,8 +4,6 @@ using UnityEngine;
 using EnumSpace;
 using GamePlaySystems.Utilities;
 using Photon.Pun;
-using Photon.Realtime;
-
 
 public class DirtyLaundrySpawner : MonoBehaviour
 {
@@ -13,13 +11,11 @@ public class DirtyLaundrySpawner : MonoBehaviour
     public float timeSinceLastSpawn = 0f;
     public float spawnRate = 0f;
     public bool isSpawning = true;
-    float randTime = 0f;
-    int laundryRandomizer = 0;
+    private float randTime = 0f;
+    private int laundryRandomizer = 0;
     public LaundryType laundryType;
-    
-    
 
-    void Update()
+    private void Update()
     {
         if (PhotonNetwork.IsMasterClient)
         {
@@ -35,7 +31,6 @@ public class DirtyLaundrySpawner : MonoBehaviour
                 }
             }
         }
-
     }
 
     private void SpawnDirtyLaundry(LaundryType type)
@@ -45,6 +40,5 @@ public class DirtyLaundrySpawner : MonoBehaviour
         newLaundry.transform.rotation = spawnPoint.transform.rotation;
         newLaundry.GetComponent<ItemTypeForItem>().itemType = ItemType.ClothingDirty;
         newLaundry.GetComponent<Item>().EnableObject();
-
     }
 }

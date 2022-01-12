@@ -76,7 +76,7 @@ namespace NetworkEvent
 
         private void TestEvent_Recv()
         {
-            Debug.Log("TestEvent Received");
+            //Debug.Log("TestEvent Received");
 
             UpdateTestEvent_Send();
         }
@@ -120,14 +120,14 @@ namespace NetworkEvent
         {
             string receivedMessage = (string)data[0];
 
-            Debug.Log("TestEvent 3 Received message from: " + receivedMessage);
+            //Debug.Log("TestEvent 3 Received message from: " + receivedMessage);
 
             UpdateTextEvent_3_Send(PhotonNetwork.NickName);
         }
 
         public void UpdateTestEvent_Send()
         {
-            Debug.Log("Sending update");
+            //Debug.Log("Sending update");
 
             PhotonNetwork.RaiseEvent
             (
@@ -178,7 +178,7 @@ namespace NetworkEvent
 
         public void UpdateTextEvent_3_Send(string message)
         {
-            Debug.Log("Sending message from " + message);
+            //Debug.Log("Sending message from " + message);
 
             object[] package = new object[1];
 

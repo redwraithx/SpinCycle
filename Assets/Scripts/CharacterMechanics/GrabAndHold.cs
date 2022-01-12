@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
@@ -14,25 +12,23 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
     public CapsuleCollider grabCollider = null;
     internal bool isBeingGrabbed = false;
     internal bool isHoldingOtherPlayer = false;
-    float playerSpeedWhenBeingGrabed;
+    private float playerSpeedWhenBeingGrabed;
     private bool isGettingOwnership = false;
     public float holdTimeDuration = 5f;
     public float currentHoldTimer = 0f;
     public bool isHoldTimerEnabled = false;
     public bool hasLostGripOfPlayer = false;
 
-    PhotonView originalClientPhotonViewID = null;
-    PhotonView myPhotonViewID = null;
-    PhotonView originalTargetView = null;
-    Player originalPlayer = null;
-    GrabAndHold otherPlayersGrabAndHoldScript = null;
-    RaycastHit hit;
+    private PhotonView originalClientPhotonViewID = null;
+    private PhotonView myPhotonViewID = null;
+    private PhotonView originalTargetView = null;
+    private Player originalPlayer = null;
+    private GrabAndHold otherPlayersGrabAndHoldScript = null;
+    private RaycastHit hit;
 
     public string textString = "Sending";
     public string showTextString = "";
     public int counter = 0;
-
-
 
     private void Start()
     {
@@ -64,13 +60,10 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 
         //Physics.IgnoreCollision(grabCollider, GetComponent<CharacterController>());
 
-
-
         Physics.SphereCast(transform.position + new Vector3(0f, 0.5f, 0f), 0.5f, transform.forward, out hit, 0.5f);
 
         if (hit.collider != null)
             Debug.Log("can hit: " + hit.collider.name);
-
     }
 
     private void Update()
@@ -83,7 +76,6 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
         {
             RelasedHeldPlayer();
         }
-
 
         if (isHoldTimerEnabled)
         {
@@ -100,17 +92,14 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
                 hasLostGripOfPlayer = true;
             }
         }
-
     }
 
     private void CheckGrab()
     {
         otherPlayersGrabAndHoldScript = targetPlayer.GetComponent<GrabAndHold>();
 
-
         if (!otherPlayersGrabAndHoldScript)
             return;
-
 
         if (targetPlayer && Input.GetMouseButtonDown(0) && !isBeingGrabbed)
         {
@@ -130,21 +119,16 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
             //otherPlayersGrabAndHoldScript.SetParent(transform);
 
             isHoldingOtherPlayer = true;
-
         }
 
         if (targetPlayer && Input.GetMouseButtonUp(0) && isHoldingOtherPlayer)
         {
-
             //RelasedHeldPlayer();
             //targetPlayer.GetComponent<PlayerMovementCC>().enemyGrab = Vector3.zero;
 
             //otherPlayersGrabAndHoldScript.BeingReleased();
             isHoldingOtherPlayer = false;
         }
-
-
-
     }
 
     public void BeingGrabbed()
@@ -153,14 +137,11 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
         GetComponent<PlayerMovementCC>().isGrabbed = true;
         GetComponent<PlayerMovementCC>().SlowDown();
 
-
         //isHoldingOtherPlayer = true;
 
         currentHoldTimer = holdTimeDuration;
 
         isHoldTimerEnabled = true;
-
-
     }
 
     public void BeingReleased()
@@ -173,10 +154,7 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
         //GetComponent<PlayerMovementCC>().SpeedUp();
 
         isBeingGrabbed = false;
-
-
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -186,7 +164,6 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
     private void OnTriggerStay(Collider other)
     {
         GetTarget(other);
-
     }
 
     private void GetTarget(Collider other)
@@ -205,10 +182,8 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
             return;
 
         targetPlayer = other.gameObject;
-        Debug.Log("Target player = true");
-
+        //Debug.Log("Target player = true");
     }
-
 
     private void OnTriggerExit(Collider other)
     {
@@ -217,8 +192,7 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 
         targetPlayer = null;
 
-        Debug.Log("Target player = true");
-
+        //Debug.Log("Target player = true");
     }
 
     public void SetParent(Transform parent)
@@ -246,7 +220,7 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 
     public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
     {
-        Debug.Log($"Requestingownership by: {requestingPlayer.NickName} of PlayerID: {targetView.ViewID}");
+        //Debug.Log($"Requestingownership by: {requestingPlayer.NickName} of PlayerID: {targetView.ViewID}");
 
         if (targetView != base.photonView)
             return;
@@ -265,12 +239,11 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        Debug.Log("OnPhotonSerializeView called");
+        //Debug.Log("OnPhotonSerializeView called");
 
         if (stream.IsWriting)
         {
-
-            Debug.Log("Stream.IsWritting");
+            //Debug.Log("Stream.IsWritting");
 
             stream.SendNext(textString);
             stream.SendNext(counter);
@@ -286,11 +259,10 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(isHoldingOtherPlayer);
             stream.SendNext(currentHoldTimer);
             stream.SendNext(isHoldTimerEnabled);
-
         }
         else if (stream.IsReading)
         {
-            Debug.Log("stream.IsReading");
+            //Debug.Log("stream.IsReading");
 
             string newTextString = (string)stream.ReceiveNext();
             int newCounter = (int)stream.ReceiveNext();
@@ -310,8 +282,7 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 
             if (isBeingGrabbed)
             {
-
-                Debug.Log("Update Location");
+                //Debug.Log("Update Location");
 
                 //GetComponent<PlayerMovementCC>().enemyGrab = garbageVec;
             }
@@ -335,8 +306,6 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
             //{
             isHoldTimerEnabled = holdingTimerEnabled;
             //}
-
-
         }
     }
 
@@ -351,15 +320,12 @@ public class GrabAndHold : MonoBehaviourPunCallbacks, IPunObservable
 
         //targetPlayer.GetComponent<PlayerMovementCC>().isGrabbed = false;
 
-
         isHoldingOtherPlayer = false;
 
         BeingReleased();
 
-
         //otherPlayersGrabAndHoldScript.OnOwnershipRequest(targetPlayer.GetPhotonView(), PhotonNetwork.LocalPlayer);
         //otherPlayersGrabAndHoldScript.RequestOwnerShip(photonView);
-
 
         //isGettingOwnership = false;
 

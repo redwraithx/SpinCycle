@@ -1,13 +1,5 @@
-﻿
-using System;
-using System.IO;
-using System.Security.AccessControl;
-using UnityEngine;
-
-using Photon;
-using Photon.Realtime;
+﻿using UnityEngine;
 using Photon.Pun;
-
 
 public class GetLocationData
 {
@@ -26,11 +18,8 @@ public class GetLocationData
     }
 }
 
-
-
 [RequireComponent(typeof(PhotonView))]
 [RequireComponent(typeof(PhotonRigidbodyView))]
-//[RequireComponent(typeof(PhotonTransformView))]
 public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
 {
     [SerializeField] private int _id;
@@ -49,41 +38,35 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
     [SerializeField] private Transform originalParent = null;
 
     private Rigidbody rb = null;
-    
-    
+
     private void Awake()
     {
-        if(!_photonView)
+        if (!_photonView)
             _photonView = GetComponent<PhotonView>();
-        
-        // if(!_photonTransformView)
-        //     _photonTransformView = GetComponent<PhotonTransformView>();
 
         if (!rb)
             rb = GetComponent<Rigidbody>();
 
         if (!originalParent)
             originalParent = transform.parent;
-        
+
         gameObject.tag = "Item";
 
         gameObject.layer = LayerMask.NameToLayer("Items");
 
         PhotonNetwork.SendRate = 20;
-        
-        
     }
 
     private void OnEnable()
     {
-        foreach(Collider collider in GetComponents<Collider>())
+        foreach (Collider collider in GetComponents<Collider>())
         {
-            if(!collider.enabled)
+            if (!collider.enabled)
             {
                 collider.enabled = true;
             }
         }
-        
+
         PhotonNetwork.AddCallbackTarget(this);
     }
 
@@ -91,7 +74,6 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
     {
         PhotonNetwork.RemoveCallbackTarget(this);
     }
-    
 
     public Item(int id, string name, string description, int price, float _time)
     {
@@ -104,7 +86,6 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
 
     public Item()
     {
-
     }
 
     public int Id
@@ -112,7 +93,7 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
         get => _id;
         private set => _id = value;
     }
-    
+
     public string Name
     {
         get => _name;
@@ -157,12 +138,11 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
             stream.SendNext(rb.constraints);
             stream.SendNext(OwnerID);
             stream.SendNext(Price);
-            
         }
-        else if(stream.IsReading)
+        else if (stream.IsReading)
         {
-            rb.useGravity = (bool) stream.ReceiveNext();
-            rb.constraints = (RigidbodyConstraints) stream.ReceiveNext();
+            rb.useGravity = (bool)stream.ReceiveNext();
+            rb.constraints = (RigidbodyConstraints)stream.ReceiveNext();
             int OwnedBy = (int)stream.ReceiveNext();
             int Cost = (int)stream.ReceiveNext();
 
@@ -171,16 +151,12 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
 
             if (Cost >= Price)
                 Price = Cost;
-            
         }
     }
-
-
 
     [PunRPC]
     public void SetObjectsRigidBody(bool hasPickedUpItem = false)
     {
-
         if (hasPickedUpItem)
         {
             // picked up item
@@ -197,10 +173,8 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
         }
     }
 
-
     public void UpdateObjectsRigidBody(bool hasPickedUpItem = false)
     {
-        
         photonView.RPC("SetObjectsRigidBody", RpcTarget.AllBuffered, hasPickedUpItem);
     }
 
@@ -208,16 +182,11 @@ public class Item : MonoBehaviourPunCallbacks, IPunObservable, IItem
     {
         PhotonView Disable = GetComponent<PhotonView>();
         gameObject.SetActive(false);
-
     }
+
     public void EnableObject()
     {
         PhotonView Enable = GetComponent<PhotonView>();
         gameObject.SetActive(true);
     }
-
-
 }
-
-
-

@@ -1,26 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TransparentWalls : MonoBehaviour
 {
     public Material[] material;
     private bool transparent = false;
     private MeshRenderer rend;
-    bool isFading = false;
-    float fadeLerp = 2f;
+    private bool isFading = false;
+    private float fadeLerp = 2f;
+
     private void Start()
     {
         rend = GetComponent<MeshRenderer>();
-
-
     }
 
     private void Update()
     {
-
     }
-
 
     public void ChangeTransparency(bool transparent)
     {
@@ -36,7 +31,5 @@ public class TransparentWalls : MonoBehaviour
         {
             rend.material = material[0];
         }
-
-
     }
 }

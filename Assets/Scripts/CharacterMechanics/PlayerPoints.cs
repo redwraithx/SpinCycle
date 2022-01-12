@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
 //[System.Serializable]
-public class  PlayerPoints : MonoBehaviourPun, IPunObservable
+public class PlayerPoints : MonoBehaviourPun, IPunObservable
 {
     public PhotonView _photonView = null;
     public TMP_Text playerPointText = null;
@@ -21,10 +20,8 @@ public class  PlayerPoints : MonoBehaviourPun, IPunObservable
         {
             _photonView = GetComponent<PhotonView>();
         }
-
-
-
     }
+
     public int Points
     {
         get => points;
@@ -36,11 +33,8 @@ public class  PlayerPoints : MonoBehaviourPun, IPunObservable
         }
     }
 
-
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-
-
         if (stream.IsWriting)
         {
             stream.SendNext(points);

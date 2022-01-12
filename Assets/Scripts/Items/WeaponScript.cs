@@ -1,9 +1,6 @@
-﻿
-using System.IO;
+﻿using System.IO;
 using UnityEngine;
-using EnumSpace;
 using GamePlaySystems.Utilities;
-using Photon;
 using Photon.Pun;
 
 public class WeaponScript : MonoBehaviourPun
@@ -13,22 +10,22 @@ public class WeaponScript : MonoBehaviourPun
     public ItemType itemType;
     public Rigidbody[] projectiles;
     public Rigidbody projectile;
-    //public GameObject projectile;
     public float projectileSpeed = 50f;
-    public int ammo;                        
-    public Transform projectileSpawnPoint;  
+    public int ammo;
+    public Transform projectileSpawnPoint;
     public float projectileForce;
-    private bool hasFired = false; 
+    private bool hasFired = false;
 
     //rotation values
     public float mouseSensitivity = 100f;
+
     public float yRotation = 0f;
     public Vector3 gunRotation;
 
     //bool for gun fx
     public bool isFiring = false;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
         if (ammo <= 0)
         {
@@ -39,19 +36,15 @@ public class WeaponScript : MonoBehaviourPun
         {
             projectileForce = 3.0f;
         }
-        
-
-
     }
 
     private void Update()
     {
-        if(gun.GetComponent<ItemTypeForItem>().itemType == ItemType.SabotageSoapGun)
+        if (gun.GetComponent<ItemTypeForItem>().itemType == ItemType.SabotageSoapGun)
         {
-          Debug.Log("Weapon Script For Soap Bomb");
+            //Debug.Log("Weapon Script For Soap Bomb");
             return;
         }
-
 
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
         yRotation -= mouseY;
@@ -75,10 +68,12 @@ public class WeaponScript : MonoBehaviourPun
                 projectileSpeed = 50f;
                 projectile = projectiles[0];
                 break;
+
             case ItemType.SabotageIceGun:
                 projectileSpeed = 30;
                 projectile = projectiles[1];
                 break;
+
             case ItemType.SabotageSoapGun:
                 projectileSpeed = 40;
                 projectile = projectiles[2];
@@ -87,15 +82,14 @@ public class WeaponScript : MonoBehaviourPun
 
         if (Input.GetButtonDown("Fire1")) // Set in Edit | Project Settings | Input Manager
         {
-            if(photonView.IsMine)
+            if (photonView.IsMine)
             {
-                Debug.Log("Firing");
+                //Debug.Log("Firing");
                 fire();
             }
-
         }
-                             
     }
+
     public void fire()
     {
         AudioClip fireGun = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/FreezeGun/Freeze_Gun");
@@ -110,13 +104,7 @@ public class WeaponScript : MonoBehaviourPun
             Quaternion rotation = Quaternion.LookRotation(projectileSpawnPoint.transform.forward, Vector3.up);
             photonView.RPC("RPCShoot", RpcTarget.MasterClient, projectileSpawnPoint.transform.position, rotation);
             //PhotonNetwork.Destroy(gun);
-
         }
-
-
-
-
-
     }
 
     [PunRPC]
@@ -133,23 +121,19 @@ public class WeaponScript : MonoBehaviourPun
 
     //public int Shoot()
     //{
-        
     //    if (projectile && ammo > 0)
     //    {
-            
     //        GameObject temp = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
 
-            
     //        temp.GetComponent<Rigidbody>().AddForce(transform.forward * projectileForce, ForceMode.Impulse);
 
     //        Destroy(temp.gameObject, 2.0f);
-            
+
     //        ammo--;
     //    }
-        
+
     //    else
     //    {
-            
     //        Debug.Log("Auto Reload if we need this?");
     //    }
 

@@ -1,5 +1,4 @@
-﻿
-namespace EnumSpace
+﻿namespace EnumSpace
 {
     public enum LaundryType  // DO WE NEED THIS?
     {

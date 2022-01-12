@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
+﻿using UnityEngine;
 
 public class AudioTheme : MonoBehaviour
 {
     //public int netWorkLobbySceneIndex;
     public static AudioTheme instance;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         if (instance == null)
             instance = this;
@@ -24,17 +21,16 @@ public class AudioTheme : MonoBehaviour
     }
 
     // Update is called once per frame
-  /*  void Update()
-    {
-        if(SceneManager.GetActiveScene().buildIndex == netWorkLobbySceneIndex)
-        {
-            Debug.Log("Not Stopingasdjkahdskajhdsj");
-            
+    /*  void Update()
+      {
+          if(SceneManager.GetActiveScene().buildIndex == netWorkLobbySceneIndex)
+          {
+              Debug.Log("Not Stopingasdjkahdskajhdsj");
 
-            if (GameManager.audioManager.IsMusicPlaying())
-            {
-                GameManager.audioManager.StopMusic();
-            }
-        }
-    }*/
+              if (GameManager.audioManager.IsMusicPlaying())
+              {
+                  GameManager.audioManager.StopMusic();
+              }
+          }
+      }*/
 }

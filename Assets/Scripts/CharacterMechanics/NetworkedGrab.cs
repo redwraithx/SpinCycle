@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using ExitGames.Client.Photon;
+﻿using ExitGames.Client.Photon;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
@@ -19,13 +17,12 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
     public CapsuleCollider grabCollider = null;
     public bool isGrabbing = false;
 
-    PhotonView myPhotonViewID = null;
+    private PhotonView myPhotonViewID = null;
     public const byte grabByte = 2;
     public const byte secondGrabByte = 3;
     //public const byte secondPlayerGrab = 3;
 
-    RaycastHit hit;
-
+    private RaycastHit hit;
 
     public string textString = "Sending";
     public string showTextString = "";
@@ -34,20 +31,21 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
     public Text vectorText;
     public Text myVectorText;
 
-    float maxTimer = 5;
-    float grabTime;
-
+    private float maxTimer = 5;
+    private float grabTime;
 
     private void OnEnable()
     {
         PhotonNetwork.AddCallbackTarget(this);
     }
+
     private void OnDisable()
     {
         PhotonNetwork.RemoveCallbackTarget(this);
     }
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         if (!myPhotonViewID)
             myPhotonViewID = GetComponent<PhotonView>();
@@ -72,7 +70,6 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
             Physics.IgnoreCollision(grabCollider, collider, true);
         }
 
-
         Physics.SphereCast(transform.position + new Vector3(0f, 0.5f, 0f), 0.5f, transform.forward, out hit, 0.5f);
 
         if (hit.collider != null)
@@ -82,7 +79,7 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         //isBeingGrabbed = playerCC.isGrabbed;
         CheckGrab();
@@ -98,35 +95,28 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
         else
         {
             playerCC.isGrabbing = false;
-
         }
 
         if (photonView.IsMine)
             grabberPos = grabber.transform.position;
         else
         {
-            
-           grabberPos = GetOtherGrabberPos();
+            grabberPos = GetOtherGrabberPos();
         }
-            
 
         //myVectorText.text = grabberPos.ToString();
 
         //vectorText.text = grabber.position.ToString();
-
     }
 
     private void CheckGrab()
     {
-
         if (targetPlayer && Input.GetMouseButtonDown(0) && !isBeingGrabbed && grabTime < maxTimer)
         {
             if (!targetPlayer)
                 return;
 
             isGrabbing = true;
-
-
         }
 
         if (Input.GetMouseButtonUp(0) || grabTime >= maxTimer)
@@ -138,20 +128,18 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
             else
                 GrabSecondary_S();
         }
-
-
     }
 
-    void ResetGrabTime()
+    private void ResetGrabTime()
     {
         grabTime = 0f;
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
         GetTarget(other);
     }
+
     private void OnTriggerStay(Collider other)
     {
         GetTarget(other);
@@ -173,19 +161,18 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
             return;
 
         targetPlayer = other.gameObject;
-        Debug.Log("Target player = true");
+        //Debug.Log("Target player = true");
     }
 
     private void OnTriggerExit(Collider other)
     {
         targetPlayer = null;
-        Debug.Log("Target lost");
+        //Debug.Log("Target lost");
     }
 
     public void GrabMaster_S()
     {
-        
-        object[] package = new object[] {  grabberPos, isGrabbing, grabTime };
+        object[] package = new object[] { grabberPos, isGrabbing, grabTime };
 
         PhotonNetwork.RaiseEvent(
             (byte)grabByte,
@@ -197,7 +184,6 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public void GrabSecondary_S()
     {
-        
         object[] package = new object[] { this.grabberPos, isGrabbing, grabTime };
 
         PhotonNetwork.RaiseEvent(
@@ -208,24 +194,23 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
             );
     }
 
-    public void OnEvent (EventData photonEvent)
+    public void OnEvent(EventData photonEvent)
     {
         if (photonEvent.Code == 2)
         {
-            if(!PhotonNetwork.IsMasterClient)
+            if (!PhotonNetwork.IsMasterClient)
             {
                 object[] data = (object[])photonEvent.CustomData;
                 Vector3 grabMovement = (Vector3)data[0];
-                playerCC.enemyGrab = grabMovement;            
+                playerCC.enemyGrab = grabMovement;
                 //Debug.Log(data[0]);
                 playerCC.isGrabbed = (bool)data[1];
                 playerCC.grabTimer = (float)data[2];
 
                 //vectorText.text = grabMovement.ToString();
             }
-
         }
-        
+
         if (photonEvent.Code == 3)
         {
             if (PhotonNetwork.IsMasterClient)
@@ -242,7 +227,7 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
         }
     }
 
-    Vector3 GetOtherGrabberPos()
+    private Vector3 GetOtherGrabberPos()
     {
         foreach (GameObject player in GameManager.networkLevelManager.playersJoined)
         {
@@ -253,5 +238,4 @@ public class NetworkedGrab : MonoBehaviourPunCallbacks, IOnEventCallback
         }
         return Vector3.zero;
     }
-
 }

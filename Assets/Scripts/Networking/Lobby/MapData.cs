@@ -1,7 +1,4 @@
-﻿
-
-
-namespace NetworkMaps
+﻿namespace NetworkMaps
 {
     [System.Serializable]
     public class MapData

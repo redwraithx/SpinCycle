@@ -1,27 +1,20 @@
-
-using System;
 using System.Collections;
-using System.Diagnostics;
 using System.IO;
-//using emotitron;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
 using GamePlaySystems.Utilities;
 using EnumSpace;
-
 using Photon.Pun;
 using Photon.Realtime;
 using Debug = UnityEngine.Debug;
-
 
 public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public MachineConveyor conveyor;
     public PhotonView _photonView = null;
     public string networkItemToSpawn = "";
-    
+
     public float cycleLength;
     public float cycleLengthHold;
     public GameObject itemSpawnPoint;
@@ -32,16 +25,17 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public bool isEnabled = false;
     public bool isBoosted = false;
     public bool isRuined = false;
-    //public Slider sliderTime;
     public LaundryType laundryType;
     public MachineType machineType;
 
     //old particle effects
     public ParticleSystem part;
+
     //new particle effects
     public GameObject sabotageEffects;
+
     //public TMP_Text pointsAdded;
-    
+
     public ItemType SpawnFinishedProductItemType = ItemType.ClothingWet;
 
     public string textString = "Sending";
@@ -56,6 +50,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     //public Animator animator;
     public float percent;
+
     public TMP_Text percentCounter;
 
     public Sprite disabledSprite;
@@ -76,14 +71,13 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
     public AudioSource convAudioSource;
     public AudioSource sabMachineSound;
 
-    PlayerPoints playerPoints;
+    private PlayerPoints playerPoints;
+
     private void Awake()
     {
         if (!_photonView)
         {
             _photonView = GetComponent<PhotonView>();
-
-
         }
 
         audioSource = GetComponent<AudioSource>();
@@ -94,12 +88,9 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Start()
     {
-        //animator.speed = 0.25f;
-
-        if(MachineType.washer == this.machineType)
+        if (MachineType.washer == this.machineType)
         {
             cycleLength = 20;
-
         }
         else if (MachineType.dryer == this.machineType)
         {
@@ -109,32 +100,24 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         {
             cycleLength = 15;
         }
-        //sliderTime.maxValue = cycleLength;
 
         if (isSabotaged == true)
         {
-            //part.Play();
             sabotageEffects.SetActive(true);
         }
-
-        
     }
 
-    void Update()
+    private void Update()
     {
         if (_photonView == null)
             return;
 
-
         if (isSabotaged == false)
         {
-
-
-           
             if (laundryTimer > 0)
             {
                 laundryTimer -= Time.deltaTime;
-                percent = laundryTimer/cycleLengthHold;
+                percent = laundryTimer / cycleLengthHold;
                 percentCounter.text = (100 - Mathf.Round(percent * 100) + "%");
                 spinner.transform.Rotate(0, 0, 0.1f);
                 fillBarImage.fillAmount = 1 - percent;
@@ -152,19 +135,14 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 isEnabled = false;
             }
 
-            if(laundryTimer <= 0 && isEnabled == false)
+            if (laundryTimer <= 0 && isEnabled == false)
             {
                 percentCounter.text = ("0%");
             }
         }
 
-
-
-        //sliderTime.value = laundryTimer;
-
-        if(isSabotaged == true && sabotageEffects.activeInHierarchy == false)
+        if (isSabotaged == true && sabotageEffects.activeInHierarchy == false)
         {
-            //part.Play();
             sabotageEffects.SetActive(true);
         }
 
@@ -194,7 +172,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             fillBarImage.GetComponent<Image>().sprite = barNormal;
         }
 
-
         if (isSabotaged == true && spinner.GetComponent<SpriteRenderer>().sprite != badSpinner)
         {
             spinner.GetComponent<SpriteRenderer>().sprite = badSpinner;
@@ -205,15 +182,16 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             spinner.GetComponent<SpriteRenderer>().sprite = goodSpinner;
         }
     }
+
     private bool UpdatePlayerPoints(GameObject other)
     {
         PlayerPoints playerPointsReference = PhotonView.Find(other.gameObject.GetComponent<Item>().OwnerID).GetComponent<PlayerPoints>();
 
         return playerPoints = playerPointsReference;
     }
+
     public void SpawnFinishedProduct(LaundryType type)
     {
-
         GameObject newGO = null;
         if (PhotonNetwork.IsMasterClient)
         {
@@ -222,15 +200,12 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
         if (newGO)
         {
-            
             newGO.GetComponent<ItemTypeForItem>().itemType = SpawnFinishedProductItemType;
             float ruinedPrice = (10 * ruinTimer);
             newGO.GetComponent<Item>().Price += ((int)initialPrice + (int)priceAddition) - (int)ruinedPrice;
-            
         }
 
         RequestTransferOwnershipToHost();
-
     }
 
     public void ProcessItems()
@@ -241,20 +216,15 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
         cycleLengthHold = cycleLength;
         isEnabled = true;
 
-
-
         if (MachineType.washer == this.machineType)
         {
             if (!audioSource.isPlaying)
             {
                 audioSource.clip = washerAudioDis;
                 audioSource.Play();
-                
-               
+
                 Debug.Log("Audio is playing herer!@!#@#@#2");
-               
             }
-           
         }
         else if (MachineType.dryer == this.machineType)
         {
@@ -263,7 +233,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 audioSource.clip = dryingAudioDis;
                 audioSource.Play();
             }
-            
         }
         else if (MachineType.folder == this.machineType)
         {
@@ -283,10 +252,8 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                     convAudioSource.Play();
                 }
             }
-
         }
     }
-
 
     public void UseMachine(GameObject other)
     {
@@ -294,13 +261,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
         StartCoroutine(UseMachineDelay(other, 0.25f));
     }
-    
+
     private IEnumerator UseMachineDelay(GameObject other, float delayTime)
     {
-
         yield return new WaitForSeconds(delayTime);
-        
-        
+
         if (other.CompareTag("Item"))
         {
             laundryType = other.GetComponent<ItemTypeForItem>().laundryType;
@@ -312,21 +277,14 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                     BoostMachine();
                     PhotonNetwork.Destroy(other.gameObject);
                 }
-
-
-
             }
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.RepairTool)
             {
-                
                 FixMachine();
-                
+
                 RepairToolZoneSpawn.instance.RemoveObject();
-                
+
                 PhotonNetwork.Destroy(other.gameObject);
-
-                
-
             }
             if (other.GetComponent<ItemTypeForItem>().itemType == ItemType.LoadRuiner)
             {
@@ -339,7 +297,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                 {
                     if (isSabotaged == false)
                     {
-
                         initialPrice = other.GetComponent<Item>().Price;
                         ProcessItems();
                         bool updatedPlayerPoints = UpdatePlayerPoints(other);
@@ -349,7 +306,7 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
                         else
                             Debug.Log("Players Points were not found to be updated.");
 
-                        if(GameManager.networkLevelManager.playersJoined.Count > 1)
+                        if (GameManager.networkLevelManager.playersJoined.Count > 1)
                         {
                             playerPoints.Points += other.gameObject.GetComponent<Item>().Price;
                         }
@@ -360,20 +317,18 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
                         Debug.Log(other.gameObject + "is being destroyed");
 
-
                         PhotonNetwork.Destroy(other.gameObject);
                     }
                 }
             }
         }
 
-        if(other.gameObject)
+        if (other.gameObject)
             RequestTransferOwnershipToHost();
     }
 
     public void OnTriggerStay(Collider other)
     {
-
         if (other.gameObject.name == "AOE Effects(Clone)")
         {
             SabotageMachine();
@@ -384,7 +339,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             audioSource.clip = foldingAudioDis;
             audioSource.Pause();
         }
-       
 
         if (other.gameObject.name == "EMPSphere")
         {
@@ -402,7 +356,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
     public void SabotageMachine()
     {
-
         if (!sabMachineSound.isPlaying)
         {
             AudioClip sabotageSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Sabotages/Bombs/Soapbomb/Smoke_B_10_SEC");
@@ -412,13 +365,11 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
         isSabotaged = true;
 
-        //animator.ResetTrigger("Go");
-        //animator.SetTrigger("Stop");
         sabotageEffects.SetActive(true);
     }
+
     public void FixMachine()
     {
-
         AudioClip repairToolSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/NotSabotages/RepairTool/Repair_Tool_03");
         GameManager.audioManager.PlaySfx(repairToolSound);
 
@@ -428,30 +379,17 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             sabMachineSound.clip = sabotageSound;
             sabMachineSound.Stop();
         }
-        //animator.ResetTrigger("Stop");
         isSabotaged = false;
         audioSource.clip = washerAudioDis;
         audioSource.UnPause();
-        /*audioSource.clip = washerAudioDis;
-        audioSource.UnPause();*/
-        /*audioSource.clip = dryingAudioDis;
-        audioSource.UnPause();
-        audioSource.clip = foldingAudioDis;
-        audioSource.UnPause();*/
-
 
         sabotageTimer = 0;
-        //part.Stop();
         sabotageEffects.SetActive(false);
 
-
-
-        if (isEnabled)
-        {
-            //animator.SetTrigger("Go");
-        }
-
-        
+        //if (isEnabled)
+        //{
+        //    animator.SetTrigger("Go");
+        //}
     }
 
     public void BoostMachine()
@@ -461,12 +399,12 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
         isBoosted = true;
         cycleLength = cycleLength * 0.75f;
-        if(boostMachinePart != null)
+        if (boostMachinePart != null)
         {
             boostMachinePart.SetActive(true);
         }
     }
-    
+
     public void RuinLoad()
     {
         isRuined = true;
@@ -475,46 +413,34 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             loadRuinerMachinePart.SetActive(true);
         }
     }
+
     public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
     {
-
-
         if (targetView != base.photonView)
             return;
-        
-        
-        base.photonView.TransferOwnership(requestingPlayer);
-        
 
+        base.photonView.TransferOwnership(requestingPlayer);
     }
-   
+
     public void RequestOwnership()
     {
-
-
         // get ownership of the object were about to pickup
         base.photonView.RequestOwnership();
-
-
     }
 
     public void RequestTransferOwnershipToHost()
-    {      
+    {
         // return ownership back to master client.
         base.photonView.TransferOwnership(PhotonNetwork.MasterClient);
-            
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        
         if (stream.IsWriting)
         {
-            
             stream.SendNext(textString);
             stream.SendNext(counter);
             showTextString = $"Sending: {counter}";
-
 
             stream.SendNext(laundryTimer);
             stream.SendNext(cycleLength);
@@ -524,22 +450,19 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(isBoosted);
             stream.SendNext(cycleLengthHold);
 
-
             counter++;
         }
-        else if(stream.IsReading)
+        else if (stream.IsReading)
         {
-            
-            string newTextString = (string) stream.ReceiveNext();
-            int newCounter = (int) stream.ReceiveNext();
+            string newTextString = (string)stream.ReceiveNext();
+            int newCounter = (int)stream.ReceiveNext();
             showTextString = $"Receiving: {newCounter}";
 
-
-            float laundry = (float) stream.ReceiveNext();
-            float cycle = (float) stream.ReceiveNext();
-            bool sliderIsEnabled = (bool) stream.ReceiveNext();
+            float laundry = (float)stream.ReceiveNext();
+            float cycle = (float)stream.ReceiveNext();
+            bool sliderIsEnabled = (bool)stream.ReceiveNext();
             bool machineSabotaged = (bool)stream.ReceiveNext();
-            bool loadRuined = (bool) stream.ReceiveNext();
+            bool loadRuined = (bool)stream.ReceiveNext();
             bool machineBoosted = (bool)stream.ReceiveNext();
             float cycleHold = (float)stream.ReceiveNext();
 
@@ -563,8 +486,6 @@ public class MachineScript : MonoBehaviourPunCallbacks, IPunObservable
 
             if (cycleLengthHold != cycleHold)
                 cycleLengthHold = cycleHold;
-
-
         }
     }
 

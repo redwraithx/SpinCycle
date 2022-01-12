@@ -1,9 +1,7 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace RedWraith.Player
 {
-
     public class MouseLook : MonoBehaviour
     {
         public float mouseSensitivity = 100f;
@@ -16,12 +14,12 @@ namespace RedWraith.Player
 
         private bool isAlive = true;
 
-        void Start()
+        private void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        void Update()
+        private void Update()
         {
             if (!isAlive)
                 return;
@@ -39,10 +37,8 @@ namespace RedWraith.Player
                 bodyRotate = Vector3.up * mouseX;
                 Quaternion newQuad = Quaternion.Euler(bodyRotate);
 
-                
                 playerBody.Rotate(bodyRotate, Space.World);
             }
-
         }
 
         internal void SetIsAlive(bool value)
@@ -50,5 +46,4 @@ namespace RedWraith.Player
             isAlive = value;
         }
     }
-
 }

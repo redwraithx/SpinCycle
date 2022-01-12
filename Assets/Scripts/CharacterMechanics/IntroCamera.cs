@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using Cinemachine;
 using Photon.Pun;
 using UnityEngine;
+
 using Photon.Pun;
+
 using UnityEngine.SceneManagement;
 
 public class IntroCamera : MonoBehaviourPun
@@ -11,9 +13,8 @@ public class IntroCamera : MonoBehaviourPun
     public GameObject freeLook;
     public float initTime = 0f;
     //public PhotonView photonView = null;
-    
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
         Scene scene = SceneManager.GetActiveScene();
         if (scene.name == "LobbyWaitingRoomScene" || scene.name == "TutorialLevel")
@@ -24,15 +25,10 @@ public class IntroCamera : MonoBehaviourPun
         {
             freeLook.SetActive(false);
         }
-
-        // if(!photonView)
-        //     photonView =  
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
         //use this function once networking is active again
         /*        if(!freeLook.activeSelf)
                 {
@@ -45,10 +41,8 @@ public class IntroCamera : MonoBehaviourPun
         initTime += Time.deltaTime;
         if (initTime >= 5f)
         {
-            if(photonView.IsMine)
+            if (photonView.IsMine)
                 freeLook.SetActive(true);
         }
-
     }
 }
-

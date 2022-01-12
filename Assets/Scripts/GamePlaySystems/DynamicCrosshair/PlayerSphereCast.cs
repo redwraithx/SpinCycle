@@ -23,8 +23,7 @@ public class PlayerSphereCast : MonoBehaviour
 
     public Grab grab;
 
-    
-    void Start()
+    private void Start()
     {
         if (maxDistance <= 0)
         {
@@ -34,10 +33,8 @@ public class PlayerSphereCast : MonoBehaviour
         grab = GetComponent<Grab>();
     }
 
-
-    void Update()
-    {       
-
+    private void Update()
+    {
         if (itemInHand == false)
         {
             maxDistance = 5;
@@ -59,7 +56,6 @@ public class PlayerSphereCast : MonoBehaviour
             grab.itemToPickUp = currentHitObject;
             grab.canPickUpItem = true;
         }
-
         else
         {
             grab.itemToPickUp = null;
@@ -76,13 +72,10 @@ public class PlayerSphereCast : MonoBehaviour
         //     if (itemInHand == false)
         //         grab.objectToInteractWith = currentHitObject;
         // }
-
         else
         {
             grab.objectToInteractWith = null;
         }
-
-        
 
         RaycastHit hit;
 
@@ -91,7 +84,6 @@ public class PlayerSphereCast : MonoBehaviour
             currentHitObject = hit.transform.gameObject;
             currentHitDistance = hit.distance;
         }
-
         else
         {
             currentHitDistance = maxDistance;
@@ -111,16 +103,13 @@ public class PlayerSphereCast : MonoBehaviour
                 outOfRange = true;
                 grab.outOfRange = true;
             }
-
         }
         else
         {
             outOfRange = true;
-            
         }
     }
 
-    
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

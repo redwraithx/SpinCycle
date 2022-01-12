@@ -3,17 +3,14 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
-using Cinemachine;
 using Photon.Pun;
-using Photon.Realtime;
 using System.IO;
 
-public class ButtonHover : MonoBehaviour
-    , IPointerEnterHandler
-    , IPointerExitHandler
+public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Parts of the Buttons")]
     public GameObject Description;
+
     public GameObject Price;
     public GameObject Name;
     public TextMeshProUGUI DescriptionText;
@@ -23,6 +20,7 @@ public class ButtonHover : MonoBehaviour
 
     [Header("Parts of the Machine")]
     public GameObject SaleItemGameObject;
+
     public GameObject itemSpawnPoint;
     public VendingIndex VendingIndex;
     public GameObject VendingUI;
@@ -30,14 +28,14 @@ public class ButtonHover : MonoBehaviour
 
     [Header("Autofill Items")]
     public bool FirstRun = false;
+
     public Item saleItem;
-    PlayerPoints playerPoints = null;
+    private PlayerPoints playerPoints = null;
     public string networkItemToSpawn = "";
 
-
     [Header("External View Items")]
-
     public Image displayButton;
+
     //public GameObject Description2;
     //public GameObject Price2;
     //public GameObject Name2;
@@ -88,11 +86,12 @@ public class ButtonHover : MonoBehaviour
         //PriceText2.text = "";
         //NameText2.text = "";
     }
+
     //if the following functions dont work make sure there is no ui items blocking the vending UI ESPECIALLY THE BLACK SCREEN OBJECT, disable raycast :)
     public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("Pointer enter");
-        
+
         if (!FirstRun)
         {
             DescriptionText.text = VendingIndex.Description;
@@ -123,12 +122,11 @@ public class ButtonHover : MonoBehaviour
         //Price2.SetActive(false);
         //Name2.SetActive(false);
     }
-    
+
     public void Buy()
     {
-        RealPrice = RealPrice += Convert.ToInt32(VendingIndex.Price); 
-        
-        
+        RealPrice = RealPrice += Convert.ToInt32(VendingIndex.Price);
+
         if (RealPrice <= playerPoints.Points)
         {
             Debug.Log("buyingItemButtonHoverCS");
@@ -141,14 +139,13 @@ public class ButtonHover : MonoBehaviour
             //Price2.SetActive(false);
             //Name2.SetActive(false);
             BuyItemZone.BroadcastMessage("CloseUI");
-
         }
     }
 
     private void OnDisable()
     {
         Debug.Log($"{gameObject.name} has been disabled");
-        
+
         Description.SetActive(false);
         Price.SetActive(false);
         Name.SetActive(false);

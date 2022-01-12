@@ -1,5 +1,4 @@
-﻿
-using GamePlaySystems.Utilities;
+﻿using GamePlaySystems.Utilities;
 using Photon.Pun;
 using System.Collections;
 using UnityEngine;
@@ -25,9 +24,7 @@ public class Grab : MonoBehaviour
 
     [SerializeField] private ItemTypeForUsingItem objectYouCanUse = null;
 
-
     [SerializeField] private PhotonView _photonView;
-
 
     public bool CanUseHeldItem
     {
@@ -39,10 +36,8 @@ public class Grab : MonoBehaviour
     {
         if (!weapon)
             weapon = GetComponent<WeaponScript>();
-
-
-
     }
+
     private void CheckForMouseDown()
     {
         if (canPickUpItem && itemToPickUp && outOfRange == false)
@@ -80,34 +75,27 @@ public class Grab : MonoBehaviour
 
             itemInHand.transform.parent = gameObject.transform;
             itemInHand.GetComponent<Item>().UpdateObjectsRigidBody(true);
-
         }
     }
 
-
-
     private IEnumerator WaitCoroutine()
     {
-
-
         // Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        //Debug.Log("Started Coroutine at timestamp : " + Time.time);
         characterAnimator.SetBool("PutIn", true);
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(1);
 
         //After we have waited 5 seconds print the time again.
         characterAnimator.SetBool("PutIn", false);
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
-
+        //Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 
     private IEnumerator ThrowCoroutine()
     {
-
-        Debug.Log("Start Couroutine Throwing Bomb");
+        //Debug.Log("Start Couroutine Throwing Bomb");
         // Print the time of when the function is first called.
-        Debug.Log("Started Throw at timestamp : " + Time.time);
+        //Debug.Log("Started Throw at timestamp : " + Time.time);
         // characterAnimator.SetBool("Throw", true);
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(0.6f);
@@ -115,11 +103,9 @@ public class Grab : MonoBehaviour
         //After we have waited 5 seconds print the time again.
         // characterAnimator.SetBool("Throw", false);
         characterAnimator.SetTrigger("Idle2");
-        Debug.Log("Finished Throw at timestamp : " + Time.time);
+        //Debug.Log("Finished Throw at timestamp : " + Time.time);
         // characterAnimator.SetBool("PickUp", false);
     }
-
-
 
     public void CheckForMouseUp()
     {
@@ -127,8 +113,6 @@ public class Grab : MonoBehaviour
         //make sure this part only play when bomb is not throw
         if (itemInHand)
         {
-
-
             var isValidItem = itemInHand?.GetComponent<ItemTypeForItem>();
             if (isValidItem.itemType == ItemType.SabotageWaterGun || isValidItem.itemType == ItemType.SabotageIceGun || isValidItem.itemType == ItemType.SabotageSoapGun)
                 characterAnimator.SetBool("Shooting", false);
@@ -140,7 +124,6 @@ public class Grab : MonoBehaviour
         }
         if (itemInHand)
         {
-
             if (itemInHand.GetComponent<DrawProjection>() != null)
                 itemInHand.GetComponent<DrawProjection>().weaponScript = null;
 
@@ -154,8 +137,6 @@ public class Grab : MonoBehaviour
             itemInHand.GetComponent<Rigidbody>().useGravity = true;
             itemInHand.GetComponent<Item>().UpdateObjectsRigidBody(false);
 
-
-
             if (itemInHand.GetComponent<ItemTypeForItem>())
                 itemInHand.GetComponent<ItemTypeForItem>().RequestTransferOwnershipToHost();
 
@@ -167,34 +148,26 @@ public class Grab : MonoBehaviour
         }
     }
 
- 
-
-
     private void Update()
     {
         if (justPutIn && !itemInHand)
         {
-
             justPutIn = false;
             characterAnimator.SetBool("PickUp", false);
             //characterAnimator.SetTrigger("PickUp2");
 
             StartCoroutine(WaitCoroutine());
-
         }
         else if (throwBomb && !itemInHand)
         {
-
             throwBomb = false;
             characterAnimator.SetBool("Throw", false);
 
             // StartCoroutine(ThrowCoroutine());
-
         }
         if (Input.GetMouseButtonDown(1))
         {
             CheckForMouseDown();
-
         }
 
         if (Input.GetMouseButtonUp(1))
@@ -208,7 +181,6 @@ public class Grab : MonoBehaviour
                 itemInHand.transform.position = grabPoint.position;
             if (Input.GetMouseButtonDown(0))
             {
-
                 var isValidItemObject = false;
 
                 // is it an item? or weapon?
@@ -217,12 +189,11 @@ public class Grab : MonoBehaviour
 
                 if (isValidItemObject && canUseHeldItem)
                 {
-
                     // characterAnimator.SetTrigger("PutOn");
-                    Debug.Log("ItemInHand: " + itemInHand.gameObject.name);
+                    //Debug.Log("ItemInHand: " + itemInHand.gameObject.name);
                     if (machineInteractionObject)
                     {
-                        Debug.Log("ItemInHand: " + itemInHand.gameObject.name + ", Using Machine");
+                        //Debug.Log("ItemInHand: " + itemInHand.gameObject.name + ", Using Machine");
 
                         justPutIn = true;
                         // use object action will only work on one event per object
@@ -231,11 +202,10 @@ public class Grab : MonoBehaviour
                         //itemInHand = null;
 
                         ClearGrabValues();
-
                     }
                     else if (itemInHand.GetComponent<RepairToolUse>())
                     {
-                        Debug.Log("ItemInHand: " + itemInHand.gameObject.name + ", Using Repair");
+                        //Debug.Log("ItemInHand: " + itemInHand.gameObject.name + ", Using Repair");
                         characterAnimator.SetTrigger("RepairOpened");
                         itemInHand.GetComponent<RepairToolUse>().UseItem();
 
@@ -245,34 +215,26 @@ public class Grab : MonoBehaviour
                     }
                     else if (itemInHand.GetComponent<BombThrow>())
                     {
-                        Debug.Log("ItemInHand: " + itemInHand.gameObject.name + ", Using Bomb");
+                        //Debug.Log("ItemInHand: " + itemInHand.gameObject.name + ", Using Bomb");
                         //      characterAnimator.SetBool("Throw", true);
                         characterAnimator.SetTrigger("Throw2");
                         //soapBombThrow();
                     }
-
-
                 }
-
-
-
             }
-            if (Input.GetMouseButtonUp(0))
-            {
-
-            }
+            //if (Input.GetMouseButtonUp(0))
+            //{
+            //}
         }
         if (itemInHand)
         {
             var isValidItem = itemInHand?.GetComponent<ItemTypeForItem>();
             if (isValidItem)
             {
-
                 if (isValidItem.itemType == ItemType.SabotageWaterGun || isValidItem.itemType == ItemType.SabotageIceGun || isValidItem.itemType == ItemType.SabotageSoapGun)
                 {
                     if (!weapon.enabled)
                     {
-
                         weapon.itemType = isValidItem.itemType;
                         weapon.gun = itemInHand;
                         weapon.projectileSpawnPoint = itemInHand.GetComponentInChildren<Transform>();
@@ -282,16 +244,11 @@ public class Grab : MonoBehaviour
                         if (isValidItem.itemType == ItemType.SabotageIceGun)
                             itemInHand.GetComponent<DrawProjection>().weaponScript = weapon;
                         weapon.enabled = true;
-
-
                     }
                     if (!canUseHeldItem)
                         canUseHeldItem = true;
-
                 }
-
             }
-
         }
         else
         {
@@ -301,21 +258,16 @@ public class Grab : MonoBehaviour
 
                 weapon.projectileSpawnPoint = null;
                 weaponCamera.gameObject.SetActive(false);
-
-
-
             }
-
         }
     }
 
-
     public void soapBombThrow()
     {
-        Debug.Log("Before if Throwing Bomb");
+        //Debug.Log("Before if Throwing Bomb");
         if (!itemInHand)
             return;
-        Debug.Log("Throwing Bomb");
+        //Debug.Log("Throwing Bomb");
         throwBomb = true;
         itemInHand.GetComponent<BombThrow>().Throw();
         ThrowCoroutine();
@@ -345,8 +297,6 @@ public class Grab : MonoBehaviour
         itemInHand.GetComponent<Rigidbody>().useGravity = true;
         itemInHand.transform.SetParent(null);
 
-
-
         itemInHand = null;
     }
 
@@ -356,7 +306,6 @@ public class Grab : MonoBehaviour
         var machine = other.gameObject.CompareTag("Machine");
         RepairToolUse repairTool = null;
 
-
         if (item || machine)
         {
             if ((machineInteractionObject = other.GetComponent<ItemTypeForUsingItem>()) == true && itemInHand)
@@ -364,8 +313,6 @@ public class Grab : MonoBehaviour
                 CanUseHeldItem = true;
 
                 Item _item = other.gameObject.GetComponent<Item>();
-
-
             }
             else if ((repairTool = other.GetComponent<RepairToolUse>()) == true)
             {
@@ -375,28 +322,20 @@ public class Grab : MonoBehaviour
             {
                 canUseHeldItem = false;
                 machineInteractionObject = null;
-
             }
-
 
             if (item)
             {
                 canPickUpItem = true;
                 itemToPickUp = other.gameObject;
-
             }
             else
             {
                 canPickUpItem = false;
                 itemToPickUp = null;
-
             }
-
-
         }
-
     }
-
 
     private void OnTriggerStay(Collider other)
     {
@@ -407,8 +346,6 @@ public class Grab : MonoBehaviour
         // can only hold items in your hand not machines
         if (item || machine)
         {
-
-
             // NEW VERSION
             if ((machineInteractionObject = other.GetComponent<ItemTypeForUsingItem>()) == true && itemInHand)
             {
@@ -424,7 +361,6 @@ public class Grab : MonoBehaviour
                 machineInteractionObject = null;
             }
 
-
             if (item)
             {
                 canPickUpItem = true;
@@ -435,56 +371,37 @@ public class Grab : MonoBehaviour
                 canPickUpItem = false;
                 itemToPickUp = null;
             }
-
-
-
         }
     }
 
-
-
-
     private void OnTriggerExit(Collider other)
     {
-
         ClearGrabValues();
     }
 
-
     private void ClearGrabValues()
     {
-
-
-
         if (itemInHand)
         {
-
             var isItemASabbotage = itemInHand.GetComponent<ItemTypeForItem>().itemType;
 
             if (isItemASabbotage == ItemType.SabotageWaterGun)
             {
                 canUseHeldItem = true;
             }
-
-
         }
         else
         {
-
             hasItemInHand = false;
             itemInHand = null;
             canUseHeldItem = false;
 
             GetComponent<PlayerSphereCast>().itemInHand = false;
-
         }
 
         canPickUpItem = false;
         itemToPickUp = null;
 
-
         machineInteractionObject = null;
-
     }
-
 }

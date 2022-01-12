@@ -1,6 +1,4 @@
 ﻿using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RepairToolUse : MonoBehaviour, IRepairToolUse
@@ -8,25 +6,22 @@ public class RepairToolUse : MonoBehaviour, IRepairToolUse
     public int repairIndex;
     public float timer;
     public Vector3 spawner;
+
     public void UseItem()
     {
         Debug.Log("repair tool goes away");
         RepairToolZoneSpawn.instance.RemoveObject();
         PhotonNetwork.Destroy(gameObject);
-
-        
     }
 
-    void Start()
+    private void Start()
     {
         spawner = RepairToolZoneSpawn.instance.spawnPointPosition;
 
         timer = 60;
-
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Vector3.Distance(this.transform.position, spawner) >= 1)
         {
@@ -39,5 +34,4 @@ public class RepairToolUse : MonoBehaviour, IRepairToolUse
             }
         }
     }
-
 }

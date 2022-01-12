@@ -1,25 +1,22 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class NetworkedTimerNew : MonoBehaviourPunCallbacks, IOnEventCallback
 {
-
     private int matchLength = 605;
     public int currentMatchTime;
 
     private Coroutine timerCoroutine;
     public const byte refreshTimer = 1;
-    
 
     private void OnEnable()
     {
         PhotonNetwork.AddCallbackTarget(this);
     }
+
     private void OnDisable()
     {
         PhotonNetwork.RemoveCallbackTarget(this);
@@ -27,7 +24,7 @@ public class NetworkedTimerNew : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public void InitializeTimer()
     {
-        Debug.Log("InitializingTimer");
+        //Debug.Log("InitializingTimer");
         currentMatchTime = matchLength;
         RefreshTimerUI();
 
@@ -45,7 +42,6 @@ public class NetworkedTimerNew : MonoBehaviourPunCallbacks, IOnEventCallback
 
         if (PhotonNetwork.IsMasterClient)
         {
-
         }
     }
 
@@ -84,7 +80,7 @@ public class NetworkedTimerNew : MonoBehaviourPunCallbacks, IOnEventCallback
         RefreshTimerUI();
     }
 
-    public void OnEvent (EventData photonEvent)
+    public void OnEvent(EventData photonEvent)
     {
         if (photonEvent.Code == 1)
         {
@@ -97,7 +93,5 @@ public class NetworkedTimerNew : MonoBehaviourPunCallbacks, IOnEventCallback
     {
         string minutes = (currentMatchTime / 60).ToString("0");
         string seconds = (currentMatchTime % 60).ToString("00");
-
     }
 }
-

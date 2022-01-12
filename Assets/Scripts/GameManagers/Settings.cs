@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -17,13 +16,12 @@ public class Settings : MonoBehaviour
     public AudioSource theme1;
     private int settingSceneIndex = 2; // Setting Menu Scene
 
-
     public TMP_Dropdown resolutionDropdown;
-    Resolution[] resolutions;
+    private Resolution[] resolutions;
 
     public Button ApplyButton;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
         if (theme1 != null)
         {
@@ -36,7 +34,6 @@ public class Settings : MonoBehaviour
             List<string> options = new List<string>();
             resolutions = Screen.resolutions;
             int currentResolutionIndex = 0;
-
 
             for (int i = 0; i < resolutions.Length; i++)
             {
@@ -51,32 +48,27 @@ public class Settings : MonoBehaviour
             resolutionDropdown.AddOptions(options);
             resolutionDropdown.RefreshShownValue();
             LoadSettings(currentResolutionIndex);
-
         }
         else
         {
             LoadSettings2();
         }
-        sfxSlide.onValueChanged.AddListener(delegate { ValueChangeCheck();});
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+        sfxSlide.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
     }
 
     public void SetSFXVolume(float volume)
     {
         SFX.SetFloat("SFXVolume", volume);
         sfxVol = volume;
-
     }
+
     public void SetMusicVolume(float volume)
     {
         Music.SetFloat("Volume", volume);
         musicVol = volume;
     }
+
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
@@ -91,7 +83,7 @@ public class Settings : MonoBehaviour
             PlayerPrefs.SetInt("ResolutionPreference",
            resolutionDropdown.value);
         }
-        
+
         PlayerPrefs.SetFloat("SFXVolumePreference",
            sfxSlide.value);
         PlayerPrefs.SetFloat("MusicVolumePreference",
@@ -100,9 +92,8 @@ public class Settings : MonoBehaviour
 
     public void LoadSettings(int currentResolutionIndex)
     {
-
-        Debug.Log("loadsettings");
-        if(SceneManager.GetActiveScene().buildIndex == settingSceneIndex)
+        //Debug.Log("loadsettings");
+        if (SceneManager.GetActiveScene().buildIndex == settingSceneIndex)
         {
             if (PlayerPrefs.HasKey("ResolutionPreference"))
                 resolutionDropdown.value =
@@ -110,7 +101,7 @@ public class Settings : MonoBehaviour
             else
                 resolutionDropdown.value = currentResolutionIndex;
         }
-        
+
         if (PlayerPrefs.HasKey("SFXVolumePreference"))
         {
             sfxSlide.value =
@@ -134,7 +125,7 @@ public class Settings : MonoBehaviour
 
     public void LoadSettings2()
     {
-        Debug.Log("loadsettings2");
+        //Debug.Log("loadsettings2");
         if (PlayerPrefs.HasKey("SFXVolumePreference"))
         {
             sfxSlide.value =
@@ -157,7 +148,6 @@ public class Settings : MonoBehaviour
 
     public void ValueChangeCheck()
     {
-        
         AudioClip runningSound = Resources.Load<AudioClip>("AudioFiles/SoundFX/Player/WalkingSound/laser");
         GameManager.audioManager.PlaySettingSfx(runningSound);
     }

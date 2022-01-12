@@ -1,6 +1,4 @@
 ﻿using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -15,20 +13,19 @@ public class BombDetonate : MonoBehaviourPun, IPunObservable
     public PhotonView _photonView = null;
 
     public GameObject debugger;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
         if (!_photonView)
         {
             _photonView = GetComponent<PhotonView>();
         }
     }
+
     public void OnCollisionEnter(Collision collision)
     {
-        
         if (CanDetonateObject(collision))
         {
-
             if (collision.gameObject.tag == "machine")
             {
                 BroadcastMessage("SabotageMachine");
@@ -39,23 +36,13 @@ public class BombDetonate : MonoBehaviourPun, IPunObservable
                 Radius = PhotonNetwork.Instantiate(Path.Combine("PhotonItemPrefabs", radiusName), transform.position, transform.rotation);
             }
             detonated = true;
-
-
-
         }
-
     }
+
     private bool CanDetonateObject(Collision other)
     {
-
-        if (detonated)
+        if (detonated || transform.parent != null)
             return false;
-
-        if (transform.parent != null)
-            return false;
-
-        //if (other.gameObject?.GetComponent<Grab>().itemInHand == null)
-        //    return false;
 
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("ItemStand")) // may need to reverse this
             return false;
@@ -65,11 +52,9 @@ public class BombDetonate : MonoBehaviourPun, IPunObservable
 
         return true;
     }
+
     private void Update()
     {
-
-
-
         if (detonated == true)
         {
             if (timer > 0)
@@ -92,11 +77,8 @@ public class BombDetonate : MonoBehaviourPun, IPunObservable
                     PhotonNetwork.Destroy(gameObject);
                 }
             }
-
         }
-
     }
-
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -104,15 +86,12 @@ public class BombDetonate : MonoBehaviourPun, IPunObservable
         {
             stream.SendNext(detonated);
         }
-        if(stream.IsReading)
+        if (stream.IsReading)
         {
-            bool detonation = (bool) stream.ReceiveNext();
+            bool detonation = (bool)stream.ReceiveNext();
 
             if (detonated != detonation && detonation == true)
                 detonated = detonation;
         }
     }
-
-
-
 }

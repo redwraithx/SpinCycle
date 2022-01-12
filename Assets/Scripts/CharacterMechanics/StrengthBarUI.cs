@@ -1,26 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class StrengthBarUI : MonoBehaviour
 {
     public Slider strengthBarSlider = null;
-    bool isIncreasing;
-    bool isStrengthBarTimeEnable = false;
-    bool canGainStrength = false;
-    bool isStrengthBarRegenTimeEnable = false;
+    private bool isIncreasing;
+    private bool isStrengthBarTimeEnable = false;
+    private bool canGainStrength = false;
+    private bool isStrengthBarRegenTimeEnable = false;
     public float initialDelayTime = 1f;
     public float delayTimer = 0f;
-     
 
     private void Awake()
     {
-        if(!strengthBarSlider)
+        if (!strengthBarSlider)
             strengthBarSlider = GetComponentInChildren<Slider>();
 
         delayTimer = initialDelayTime;
-        
     }
 
     private void Update()
@@ -57,15 +53,13 @@ public class StrengthBarUI : MonoBehaviour
                 delayTimer = initialDelayTime;
                 isStrengthBarRegenTimeEnable = false;
             }
-
-            
         }
 
         if (canGainStrength)
         {
             strengthBarSlider.value += Time.deltaTime;
-            
-            if(strengthBarSlider.value >= strengthBarSlider.maxValue)
+
+            if (strengthBarSlider.value >= strengthBarSlider.maxValue)
             {
                 canGainStrength = false;
             }
@@ -77,17 +71,14 @@ public class StrengthBarUI : MonoBehaviour
             {
                 isStrengthBarRegenTimeEnable = true;
                 isStrengthBarTimeEnable = true;
-                
             }
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-
-        }
-    }
-
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Player"))
+    //    {
+    //    }
+    //}
 }

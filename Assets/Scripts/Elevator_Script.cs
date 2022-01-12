@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Elevator_Script : MonoBehaviour
 {
@@ -25,7 +23,7 @@ public class Elevator_Script : MonoBehaviour
     public AudioSource elevatorAudioSource;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         botPos1 = Elevator1.transform.position;
         topPos1 = Elevator1.transform.position;
@@ -33,10 +31,9 @@ public class Elevator_Script : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         this.gameObject.transform.position = Vector3.MoveTowards(this.transform.position, target.transform.position, 0.1f);
-
 
         //if (isElevator1GoingUp == true && delayElevatorTimer1 <= 0)
         //{
@@ -51,7 +48,7 @@ public class Elevator_Script : MonoBehaviour
         {
             isElevator1GoingUp = false;
 
-            if(isDelayTimerRunning == false)
+            if (isDelayTimerRunning == false)
             {
                 delayElevatorTimer1 += 2f;
 
@@ -64,39 +61,31 @@ public class Elevator_Script : MonoBehaviour
                 {
                     if (target.CompareTag("Top"))
                     {
-                        Debug.Log("going down");
+                        //Debug.Log("going down");
                         target = bottom;
                         isDelayTimerRunning = false;
                     }
                     else if (target.CompareTag("Bottom"))
                     {
-                    
-                            AudioClip elevator = Resources.Load<AudioClip>("AudioFiles/SoundFX/ElevatorSound/Elevator");
-                            elevatorAudioSource.clip = elevator;
-                            elevatorAudioSource.Play();
-                        
-
+                        AudioClip elevator = Resources.Load<AudioClip>("AudioFiles/SoundFX/ElevatorSound/Elevator");
+                        elevatorAudioSource.clip = elevator;
+                        elevatorAudioSource.Play();
 
                         /*AudioClip elevator = Resources.Load<AudioClip>("AudioFiles/SoundFX/ElevatorSound/Elevator");
                         GameManager.audioManager.PlaySfx(elevator);*/
 
-                        Debug.Log("going up");
+                        //Debug.Log("going up");
                         target = top;
                         isDelayTimerRunning = false;
                     }
-                    
                 }
             }
         }
 
-        
-
         if (delayElevatorTimer1 > 0)
-        {          
+        {
             delayElevatorTimer1 -= Time.deltaTime;
         }
-
-
     }
 
     public void OnTriggerEnter(Collider other)
@@ -108,7 +97,6 @@ public class Elevator_Script : MonoBehaviour
             //other.gameObject.GetComponent<Rigidbody>().useGravity = false;
             other.gameObject.transform.SetParent(this.transform);
         }
-
     }
 
     public void OnTriggerExit(Collider other)
@@ -119,6 +107,4 @@ public class Elevator_Script : MonoBehaviour
             other.gameObject.transform.parent = null;
         }
     }
-
-    
 }

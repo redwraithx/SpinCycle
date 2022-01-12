@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 
-
 public class ConveyerBelt : MonoBehaviour
 {
-
     public GameObject belt;
     public Transform endPoint;
     public float speed;
@@ -15,7 +13,4 @@ public class ConveyerBelt : MonoBehaviour
             collision.transform.position = Vector3.MoveTowards(collision.transform.position, endPoint.position, speed * Time.deltaTime);
         }
     }
-
-
-
 }

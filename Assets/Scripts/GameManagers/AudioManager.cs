@@ -1,7 +1,4 @@
-﻿
-
-using System.Collections;
-using System;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -14,8 +11,6 @@ public class AudioManager : MonoBehaviour
     public static AudioManager audioManager;
     public int netWorkLobbySceneIndex;
 
-
-
     #region Fields
 
     [SerializeField] private AudioMixerGroup masterAudioMixerGroup;
@@ -23,19 +18,18 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource m_MusicSource1;
     [SerializeField] private AudioSource m_MusicSource2;
-    
+
     [SerializeField] private AudioSource m_SfxSource;
     [SerializeField] private AudioSource menuSettingTestSFX;
 
     // public AudioSource[] m_SfxSource = new AudioSource[6];
 
     private bool m_FirstMusicSourceIsPlaying;
-    #endregion // Fields
 
+    #endregion Fields
 
     private void Awake()
     {
-
         /*if (instance == null)
             instance = this;
         else
@@ -78,20 +72,16 @@ public class AudioManager : MonoBehaviour
         menuSettingTestSFX = this.gameObject.AddComponent<AudioSource>();
         menuSettingTestSFX.outputAudioMixerGroup = masterSfxMixerGroup;
 
-
-
         // music tracks are looped
         m_MusicSource1.loop = true;
         m_MusicSource2.loop = true;
-
     }
 
-    void Update()
+    private void Update()
     {
         if (SceneManager.GetActiveScene().buildIndex == netWorkLobbySceneIndex)
         {
             Debug.Log("Not Stopingasdjkahdskajhdsj");
-
 
             if (GameManager.audioManager.IsMusicPlaying())
             {
@@ -107,6 +97,7 @@ public class AudioManager : MonoBehaviour
              return;
          s.source.Play();
      }*/
+
     public void PlayMusic(AudioClip musicClip)
     {
         AudioSource activeSource = (m_FirstMusicSourceIsPlaying) ? m_MusicSource1 : m_MusicSource2;
@@ -116,14 +107,12 @@ public class AudioManager : MonoBehaviour
         activeSource.Play();
     }
 
-
     public void PlayMusicWithFade(AudioClip newClip, float transitionTime = 1.0f)
     {
         AudioSource activeSource = (m_FirstMusicSourceIsPlaying) ? m_MusicSource1 : m_MusicSource2;
 
         StartCoroutine(UpdateMusicWithFade(activeSource, newClip, transitionTime));
     }
-
 
     public void PlayMusicWithCrossFade(AudioClip musicClip, float transitionTime = 1.0f)
     {
@@ -137,7 +126,6 @@ public class AudioManager : MonoBehaviour
 
         StartCoroutine(UpdateMusicWithFade(activeSource, newSource, transitionTime));
     }
-
 
     private IEnumerator UpdateMusicWithFade(AudioSource activeSource, AudioClip newClip, float transitionTime)
     {
@@ -165,7 +153,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-
     private IEnumerator UpdateMusicWithFade(AudioSource original, AudioSource newSource, float transitionTime)
     {
         float fadeTime = 0.0f;
@@ -180,7 +167,6 @@ public class AudioManager : MonoBehaviour
 
         original.Stop();
     }
-
 
     private IEnumerator FadeMusic(AudioSource activeSource, float transitionTime)
     {
@@ -204,11 +190,8 @@ public class AudioManager : MonoBehaviour
         activeSource.Stop();
     }
 
-   
-
     public void PlaySfx(AudioClip clip)
     {
-
         m_SfxSource.PlayOneShot(clip);
     }
 
@@ -219,7 +202,6 @@ public class AudioManager : MonoBehaviour
         else
             menuSettingTestSFX.clip = null;
 
-
         menuSettingTestSFX.clip = clip;
         menuSettingTestSFX.Play();
     }
@@ -228,16 +210,12 @@ public class AudioManager : MonoBehaviour
     {
         if (menuSettingTestSFX.isPlaying)
             menuSettingTestSFX.volume = volume;
-
     }
 
     public void PlaySfx(AudioClip clip, float volume)
     {
-        
-
         m_SfxSource.PlayOneShot(clip, volume);
     }
-
 
     public void SetMusicVolume(float volume)
     {
@@ -245,10 +223,8 @@ public class AudioManager : MonoBehaviour
         m_MusicSource2.volume = volume;
     }
 
-
     public void SetSfxVolume(float volume)
     {
-      
         m_SfxSource.volume = volume;
     }
 
@@ -260,24 +236,19 @@ public class AudioManager : MonoBehaviour
 
         return false;
     }
+
     public void StopMusic()
     {
         AudioSource activeSource = (m_FirstMusicSourceIsPlaying) ? m_MusicSource1 : m_MusicSource2;
 
         StartCoroutine(FadeMusic(activeSource, 3f));
-
     }
 
     public void StopSfx()
     {
-
         if (menuSettingTestSFX.isPlaying)
             menuSettingTestSFX.Stop();
-        if(m_SfxSource.isPlaying)
+        if (m_SfxSource.isPlaying)
             m_SfxSource.Stop();
-        
     }
-
-
-
 }

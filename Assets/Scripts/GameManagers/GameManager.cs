@@ -3,8 +3,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
-
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance = null;
@@ -15,14 +13,10 @@ public class GameManager : MonoBehaviour
     public static NetworkLobby networkManager = null;
     public static NetworkLevelManager networkLevelManager = null;
 
-    
-    
     #endregion GAMEMANAGER_CORE-EXTENTIONS
-    
+
     #region Tracked_Variables
 
-    
-    
     [SerializeField] private GameObject player1;
 
     public GameObject Player1
@@ -30,22 +24,22 @@ public class GameManager : MonoBehaviour
         get => player1 ? player1 : null;
         set
         {
-            if(!player1)
+            if (!player1)
                 player1 = value;
         }
     }
-    
+
     [SerializeField] private GameObject player2;
+
     public GameObject Player2
     {
         get => player2 != null ? player2 : null;
         set => player2 = value;
     }
 
-    #endregion // Tracked_Variables
+    #endregion Tracked_Variables
 
     #region Levels_Selector_List
-
 
     internal enum BuildSettingLevelNames
     {
@@ -58,15 +52,12 @@ public class GameManager : MonoBehaviour
         LobbyWaitingRoomScene,
         AssetTesting,
         TutorialLevel,
-        
     }
-    
-    
-    #endregion // Levels_Selector_List
 
-    void Awake()
+    #endregion Levels_Selector_List
+
+    private void Awake()
     {
-
         if (Instance)
         {
             DestroyImmediate(gameObject);
@@ -81,25 +72,25 @@ public class GameManager : MonoBehaviour
 
         networkManager = null;
         networkLevelManager = null;
-
     }
 
     public void Start()
     {
         Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
     }
+
     //loads the game level
     public void StartGame()
     {
         SceneManager.LoadScene("NetworkLobby");
-        
     }
+
     private void Update()
     {
         Scene scene = SceneManager.GetActiveScene();
-        if(scene.buildIndex == 0)
+        if (scene.buildIndex == 0)
         {
-            if(Input.anyKey)
+            if (Input.anyKey)
             {
                 ToMain();
             }
@@ -109,11 +100,11 @@ public class GameManager : MonoBehaviour
     //leaves the game
     public void QuitGame()
     {
-        #if UNITY_EDITOR
-            EditorApplication.isPlaying = false;
-        #else
+#if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+#else
             Application.Quit();
-        #endif
+#endif
     }
 
     public void ToCredits()
@@ -121,10 +112,8 @@ public class GameManager : MonoBehaviour
         AudioClip anyKeySound = Resources.Load<AudioClip>("AudioFiles/TitleScreen/PressAnyKey/Beeping_Sound_B_1-BEEP");
         audioManager.PlaySfx(anyKeySound);
         SceneManager.LoadScene("Credits");
-        
     }
-    
-    
+
     // to get to the main menu
     public void ToMain()
     {
@@ -141,18 +130,13 @@ public class GameManager : MonoBehaviour
         AudioClip anyKeySound = Resources.Load<AudioClip>("AudioFiles/TitleScreen/PressAnyKey/Beeping_Sound_B_1-BEEP");
         audioManager.PlaySfx(anyKeySound);
         SceneManager.LoadScene("SettingsMenu");
-        
-
-
     }
-
 
     public static GameManager Instance
     {
         get => _instance;
         //private set => _instance = value;
     }
-
 
     public void PlayTutorial()
     {

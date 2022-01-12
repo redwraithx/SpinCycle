@@ -1,39 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Photon.Pun;
-using Photon.Realtime;
+﻿using UnityEngine;
 
 public class VFX_IceBullet_DissolveIn : MonoBehaviour
 {
     #region Variables
+
     // Game Objects
-    [SerializeField] GameObject snowball;
-    [SerializeField] GameObject snowballOuterVFX;
-    [SerializeField] GameObject iceTrailVFX;
-    [SerializeField] GameObject chargeVFX;
-    [SerializeField] GameObject collideVFX;
+    [SerializeField] private GameObject snowball;
+
+    [SerializeField] private GameObject snowballOuterVFX;
+    [SerializeField] private GameObject iceTrailVFX;
+    [SerializeField] private GameObject chargeVFX;
+    [SerializeField] private GameObject collideVFX;
 
     //Materials
     private Material snowballMaterial;
+
     private Material snowballOuterMaterial;
-    
+
     //VFX Handlers
     [SerializeField] private float speed = 1;
+
     [SerializeField] private float spawnSpeedDivider = 1;
     [SerializeField] private float spinSpeed = 1;
     private bool isDissolvingIn = false;
     private float fade = 0;
 
-    #endregion
-    void Awake() 
+    #endregion Variables
+
+    private void Awake()
     {
-        if(snowball != null)
+        if (snowball != null)
         {
             snowballMaterial = snowball.GetComponent<Renderer>().material;
         }
 
-        if(snowballOuterVFX != null)
+        if (snowballOuterVFX != null)
         {
             snowballOuterMaterial = snowballOuterVFX.GetComponent<Renderer>().material;
         }
@@ -42,18 +43,18 @@ public class VFX_IceBullet_DissolveIn : MonoBehaviour
         //chargeVFX.SetActive(true);
     }
 
-    void Update()
+    private void Update()
     {
         transform.position = transform.parent.gameObject.transform.position;
         // Runs until fade is completed
-        if(fade < 1)
+        if (fade < 1)
         {
             //Dissolves the ice chunk in
             DissolveIn();
         }
 
         //Turns on effect trail for snowball when the dissolve is completed
-        if(fade >= 1)
+        if (fade >= 1)
         {
             iceTrailVFX.SetActive(true);
         }
@@ -76,13 +77,13 @@ public class VFX_IceBullet_DissolveIn : MonoBehaviour
                 isDissolvingIn = false;
             }
 
-            //Gets the Snowball Material and fades it in over time. 
+            //Gets the Snowball Material and fades it in over time.
             snowballMaterial.SetFloat("dissolveIn", fade);
             snowballOuterMaterial.SetFloat("dissolveIn", fade);
         }
     }
 
-    float GetTime()
+    private float GetTime()
     {
         return Time.deltaTime;
     }
@@ -97,8 +98,7 @@ public class VFX_IceBullet_DissolveIn : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-
-    }
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //}
 }

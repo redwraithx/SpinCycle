@@ -1,10 +1,8 @@
-﻿
-using System;
+﻿using System;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using NetworkProfile;
-
 
 namespace PlayerProfileData
 {
@@ -16,8 +14,8 @@ namespace PlayerProfileData
             {
                 // sdt = saved data
                 string path = Application.persistentDataPath + "/userData.sdt";
-                
-                Debug.Log("save path: " + path);
+
+                //Debug.Log("save path: " + path);
 
                 if (File.Exists(path + path))
                 {
@@ -29,11 +27,10 @@ namespace PlayerProfileData
 
                 BinaryFormatter bf = new BinaryFormatter();
                 bf.Serialize(file, _profile);
-                
+
                 file.Close();
-                
-                Debug.Log("Profile saved successfully");
-                
+
+                //Debug.Log("Profile saved successfully");
             }
             catch (Exception e)
             {
@@ -44,7 +41,7 @@ namespace PlayerProfileData
         public static ProfileData LoadProfile()
         {
             ProfileData profile = new ProfileData();
-            
+
             try
             {
                 string path = Application.persistentDataPath + "/userData.sdt";
@@ -54,23 +51,21 @@ namespace PlayerProfileData
                     FileStream file = File.Open(path, FileMode.Open);
                     BinaryFormatter bf = new BinaryFormatter();
 
-                    profile = (ProfileData) bf.Deserialize(file);
-                    
-                    Debug.Log("profile, was the tutorial seen? " + profile.hasPlayedTutorial); // THIS IS FOR TESTING DELETE IT ON CODE REVIEW
-                    
-                    Debug.Log("profile Loaded from saved file, successfully");
+                    profile = (ProfileData)bf.Deserialize(file);
+
+                    //Debug.Log("profile, was the tutorial seen? " + profile.hasPlayedTutorial); // THIS IS FOR TESTING DELETE IT ON CODE REVIEW
+
+                    //Debug.Log("profile Loaded from saved file, successfully");
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Debug.Log($"File was not found at: {e.Message}");
 
                 return null;
             }
-            
+
             return profile;
         }
-        
     }
-
 }
