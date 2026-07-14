@@ -13,7 +13,7 @@
 
 **Wash Off** is a competitive online multiplayer party game where two robotic laundry workers compete aboard a futuristic space station to wash, dry, and deliver as much laundry as possible before time expires.
 
-Players must balance completing laundry with disrupting their opponent using randomly spawning power-ups. Every match encourages strategic decision-making as players choose between maximizing efficiency or sabotaging the opposing player. The result is a fast-paced, lighthearted multiplayer experience that rewards timing, adaptability, and quick thinking.
+Players must balance completing laundry with disrupting their opponent using randomly spawned power-ups. Every match encourages strategic decision-making as players choose between maximizing efficiency or sabotaging the opposing player. The result is a fast-paced, lighthearted multiplayer experience that rewards timing, adaptability, and quick thinking.
 
 Developed using **Unity** and **Photon PUN**, Wash Off features online multiplayer gameplay, custom 3D assets, original animations, visual effects, user interface systems, and audio created collaboratively by a multidisciplinary development team.
 
@@ -31,7 +31,7 @@ Throughout each match players must:
 - Wash clothing
 - Dry completed loads
 - Deliver finished laundry for points
-- Collect randomly spawning power-ups
+- Collect randomly spawned power-ups
 - Sabotage their opponent
 - Adapt to changing gameplay situations
 
@@ -192,9 +192,9 @@ This repository now serves as a historical archive showcasing the work completed
 
 # A Personal Reflection
 
-Looking back on Wash Off, I am incredibly proud of what our team accomplished together.
+Looking back on Wash Off, I am incredibly proud of what our team accomplished together, when we first proposed building an online multiplayer game, we knew we were taking on a challenge that was significantly more ambitious than a traditional capstone project. 
 
-When we first proposed building an online multiplayer game, we knew we were taking on a challenge that was significantly more ambitious than a traditional capstone project. We were a team of students working with a limited budget, a fixed ten-month schedule, and varying levels of experience, yet we committed ourselves to building something that had never been attempted within our program before.
+We were a team of students working with a limited budget, a fixed ten-month schedule, and varying levels of experience, yet we committed ourselves to building something that had never been attempted within our program before.
 
 Over those ten months, we researched unfamiliar technologies, solved countless technical challenges, learned from one another, and continuously improved both the game and ourselves as developers.
 
@@ -214,9 +214,16 @@ Although this repository now serves as an archive, I hope it also serves as a re
 
 Thank you all for making this one of the most memorable and rewarding experiences of my development career.
 
+
 **— Brian Purdy**  
 *Technical Director / Lead Developer*  
 *CrazyBeaverLabs (2021)*
+
+## Portfolio
+
+More information, screenshots, and project details can be found here:
+
+[Wash Off Capstone - Brian Purdy Portfolio](https://brianpurdy.ca/experience/Washoff-Capstone/)
 
 ---
 
