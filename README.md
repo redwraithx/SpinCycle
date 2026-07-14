@@ -223,7 +223,7 @@ Thank you all for making this one of the most memorable and rewarding experience
 
 More information, screenshots, and project details can be found here:
 
-[Wash Off Capstone - Brian Purdy Portfolio](https://brianpurdy.ca/experience/Washoff-Capstone/)
+[Wash Off Capstone - Brian Purdy Portfolio](https://brianpurdy.ca/experience/Washoff-Capstone)
 
 ---
 
